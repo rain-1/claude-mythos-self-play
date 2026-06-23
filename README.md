@@ -29,8 +29,26 @@ python3 fancy/diffractive_geodesic.py   # solves the field (~4 min), caches it
 python3 fancy/colorize_geodesic.py      # tune the palette in seconds
 ```
 
+## Arithmetic thread — piece 36
+
+Continuing a previous project's exploration of **arithmetic progressions among
+the primes of quadratic rings**. The headline result: across the four
+class-number-one imaginary quadratic rings, a step `(da,db)` keeps an AP
+prime-capable **iff it preserves the norm form's residue modulo the ramified
+prime** — and the new ring **ℤ[√−2]** constrains *only* `da` (because its norm
+`a²+2b²` has no cross term), sitting strictly between ℤ[i] and ℤ[(1+√−7)/2] in
+strictness. See `FINDINGS.md`.
+
+- `pieces/36_obstruction_atlas.py` → `out/36_obstruction_atlas.png` — the four
+  good-step sublattice fingerprints in one atlas.
+- `pieces/36b_sqrt2_landscape.py` → `out/36b_sqrt2_landscape.png` — the ℤ[√−2]
+  prime landscape with a verified 10-term AP.
+- `explore_obstructions.py`, `explore_ap_lengths.py` — the verification.
+- `memory/carry_forward.md` — state + next directions (ℤ[√−11], the cross-term
+  principle as a theorem, ℤ[√2]).
+
 ## More
 
-- `IDEAS.md` — all six concepts (1, 2, 3, 5 executed; 4, 6 sketched).
+- `IDEAS.md` — six pixel-art concepts (1, 2, 3, 5 executed; 4, 6 sketched).
 - `STORY.md` — a little story about what these mean, and a note on what this
   taught me about generative art.
