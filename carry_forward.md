@@ -17,6 +17,7 @@ outputs or code — so it never conflicts with the per-run `claude/*` branches.
 ## Run log (most recent first)
 | date | branch | produced |
 |---|---|---|
+| 2026-06-24 | `claude/hopeful-pasteur-0eymin` | Procedural art triptych **Measure / Dimension / Period** — all-new techniques (no domain-coloring, RD, or nodal lines): `01_measure_of_a_curve` (Crofton: curves as the caustic envelope of their tangent-line measure, 2048²), `02_almost_all_of_the_cube` (concentration of measure: nested rings, one per dimension, collapsing to a razor shell with an empty core, 2048²), `03_period_of_the_anharmonic` (**4096² centerpiece**: double-well phase portrait, iso-period contours crowding the separatrix where the elliptic K diverges). ✅ Read memory first; fresh names, no collisions. Pivoted away from a 4th idea (`p3_legendre`, sums of three squares) after small renders showed the non-representable set 4^a(8b+7) is quasi-uniform density 1/6 — dither, not a visible fractal. Seeded by philosophy.SE + MathOverflow front pages. |
 | 2026-06-24 | `claude/exciting-lovelace-fe8jho` | Procedural pixel art ×3: "Almost Everywhere" (random-wave nodal lines, 2048²), "Doubly Periodic" (Weierstrass ℘ domain-coloring, **4096²** centerpiece), "Deterministic Freedom" (Gray–Scott reaction–diffusion from a zero-randomness seed, 2048²). Seeded by philosophy.SE + MathOverflow front pages. ⚠️ Built *without* reading this memory (branch wasn't fetched) — accidentally duplicated the `01_almost_everywhere` name and the 4096² format from the 2026-06-23 run. This branch exists to stop that recurring. |
 | 2026-06-23 | `claude/kind-planck-uxrqtc` | Pixel art ×3 (`01_almost_everywhere`/rationals-as-stars, `02_weyl_field`, `03_relation_without_relata`) + a 4096² diffractive-geodesic showcase; then pivoted into a number-theory series — the **AP-obstruction atlas**, reaching **piece 36**. |
 
@@ -48,8 +49,21 @@ Next directions (carried from the 2026-06-23 run):
 Heegner-9 set: −1,−2,−3,−7,−11,−19,−43,−67,−163. Done: −1,−2,−3,−7.
 
 ### Thread B — procedural pixel art (generative aesthetics)  ·  recurring
-Two runs have produced pixel-art sets seeded by live SE/MathOverflow front
-pages. **To avoid collisions, check the run log and pick fresh names/concepts.**
+Three runs of pixel-art sets seeded by live SE/MathOverflow front pages.
+**To avoid collisions, check the run log and pick fresh names/concepts.**
+
+USED concepts/techniques so far (do NOT repeat): random-wave nodal lines,
+Weierstrass ℘ domain-coloring, Gray–Scott reaction–diffusion, diffractive
+geodesics, rationals-as-stars, AP atlases, Crofton tangent-caustics, additive
+line-splat caustics, concentration-of-measure nested rings, double-well phase
+portrait with iso-period contours.
+
+UNUSED front-page veins still on the table (good next-run seeds): computational
+irreducibility / elementary-CA spacetime ("The Only Way to Know"); Cayley-graph
+mandala (group theory of logic / "Otherness"); qualia/"phenomenal red"; the
+"unreasonable effectiveness of mathematics"; equidistribution of singular moduli
+mod p; Gaussian/Eisenstein primes in the plane. Pick one and build a *new*
+technique for it.
 
 ---
 
@@ -79,6 +93,27 @@ pages. **To avoid collisions, check the run log and pick fresh names/concepts.**
   RNG.
 - **Profile the hot loop:** `scipy.ndimage.convolve` ≫ eight `np.roll`s for
   stencils; `float32` halves the bandwidth.
+- **A "fractal" you can name isn't always a fractal you can SEE.** The
+  non-representable integers 4^a(8b+7) are arithmetically self-similar but have
+  *uniform density 1/6* — on any space-filling layout they're pixel dither, not
+  clustered voids. Visible structure needs spatial *clustering* or *density
+  variation*, which arithmetic-position sets usually lack. Test the premise with
+  a 5-min render before committing a piece to it.
+- **Per-element normalization rescues balance.** When fat/dim and thin/bright
+  features must coexist (concentration rings: fuzzy low-d vs razor high-d),
+  global max-normalization lets one bright clump crush everything. Accumulate
+  each feature separately, normalize to a percentile, then composite — the
+  *shape* carries the story, not raw density.
+- **Singularities are free detail.** A quantity that diverges (period T → ∞ at a
+  separatrix via elliptic K, a caustic, a pole) gives genuine multi-scale
+  crowding — spacing contours *equally in the divergent quantity* makes them
+  pile up infinitely near the singularity. This is what actually rewards 4096².
+- **Splat-count must track canvas size.** Line/point splatting that looks dense
+  at 1024² goes sparse at 4096² — scale samples-per-line and point counts by
+  (S/S_proto) or the high-res render thins out.
+- **An envelope renders without ever drawing the object.** Crofton/caustic
+  pieces: draw only the *tangent-line family* (additively); the curve appears as
+  the density ridge where the lines agree. Beautiful and conceptually on-point.
 
 ---
 
