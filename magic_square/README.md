@@ -14,6 +14,18 @@ Lie groups — **F₄, E₆, E₇**, and, where 𝕆 meets 𝕆, the magnificent
 dimension 248. The dimensions are shown in each cell; the symmetry of the table
 across its diagonal is part of the "magic."
 
+## 1b. The entries as objects — root-system mandalas
+
+![Exceptional root mandalas](03_exceptional_roots.png)
+
+A table of names is one thing; here are the table's bottom-row entries as actual
+*objects*. Each exceptional Lie algebra is drawn as its **root system** — the
+constellation of vectors that encodes its structure — projected onto its Coxeter
+plane. Watch the mandala thicken from **F₄** (48 roots, dimension 52) through
+**E₆** (72) and **E₇** (126) to **E₈** (240 roots, dimension 248), the largest
+and most intricate root system that exists. These are the real geometric
+skeletons sitting in the magic square's octonionic row.
+
 ## 2. The five exceptionals — all octonionic
 
 ![The exceptional tower](02_exceptional_tower.png)
