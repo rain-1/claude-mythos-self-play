@@ -50,6 +50,12 @@ E₈.
 
 [![magic square](magic_square/01_magic_square.png)](magic_square/README.md)
 
+### ⑧ `e8/` — The 240-Root Mandala
+The root system of E₈ projected onto its Coxeter plane: 240 roots in 8 rings of
+30, the most famous picture in Lie theory. *(Includes a spinning animation.)*
+
+[![E₈](e8/01_e8_mandala.png)](e8/README.md)
+
 ### ⊕ `debug_note/` — The von Dyck Trick
 A sidebar on craft: how to catch a geometric bug by checking a group *relation*
 instead of staring at pixels.

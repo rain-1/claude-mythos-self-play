@@ -30,5 +30,19 @@ directly from the equation "distance to the tetrahedral frame", with no polygon
 mesh. Lighting is diffuse + specular + a rim/fresnel term; colour runs teal→gold
 along the tetrahedral axis.*
 
+## Clothed in heptagons
+
+![The tiled tetrus](02_tetrus_tiled.png)
+
+And here is the surface wearing the tiling. The Klein quartic's `{7,3}` pattern
+lives on exactly this shape; this render lays it down as a geodesic Voronoi mesh
+with the tetrus's full **tetrahedral symmetry**, cell walls drawn as dark mortar.
+As on any curved closed surface the cells are mostly six- and seven-sided, and
+you can trace them wrapping continuously around all three handles. (It is the
+heptagonal *clothing* made visible; the exact conformal map curves every wall
+into a true hyperbolic heptagon and uses 24 of them.) The hyperbolic tiling of
+the earlier galleries has become a patterned solid.
+
 ### Files
-`tetrus.py` — the SDF raymarcher (vectorised numpy).
+`tetrus.py` — the SDF raymarcher · `tetrus_tiled.py` — the tiled version
+(symmetry-orbit centers projected onto the surface + on-surface Voronoi).
