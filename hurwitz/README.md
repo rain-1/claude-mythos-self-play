@@ -30,6 +30,18 @@ the very first PSL(2,7) figure. One finite field holds both the additive
 geometry of the Fano plane and its multiplicative symmetry. PSL(2,8) then acts on
 the 9 points of ℙ¹(GF(8)) with order 8·9·7 = **504** = 84·6.
 
+## 3. GF(8), concretely — its two tables
+
+![GF(8) tables](03_gf8_tables.png)
+
+The most honest portrait of a field is simply its two arithmetics. **Addition**
+in GF(8) is bitwise XOR — flat, symmetric, every element its own negative (the
+vector space 𝔽₂³). **Multiplication** of the seven non-zero elements, written as
+powers of a generator α, becomes pure cyclic addition of exponents
+(α^i · α^j = α^(i+j mod 7)) — the clean diagonal Latin square of C₇. Two utterly
+different patterns on one set of eight symbols: that tension *is* the field, and
+it is the engine inside PSL(2,8).
+
 ---
 
 The Klein quartic is not a lonely miracle but the opening note of an infinite
