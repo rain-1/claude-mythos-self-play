@@ -46,9 +46,27 @@ middle and crowds all of its infinitely many ends onto the rim — a glowing
 amber horizon that **is** `Q_p` itself.
 → `render_03_horizon.py`
 
+### 04 — The Triality Engine  ·  4096×4096  *(added by request)*
+*The octonion multiplication table, tripled by triality.*
+The seven imaginary octonion units `e_1..e_7` are the seven points of the **Fano
+plane** (7 points, 7 lines, 3 points/line). Each line is an oriented triple
+`a→b→c` meaning `e_a·e_b = e_c` (reverse it and it negates) — so the Fano plane
+*is* the octonion multiplication table. Here the abstract algebra is mapped onto
+the triangle's own geometry: three vertices, three edge-midpoints, the centre,
+and the incircle (the 7th line) each carry a genuine octonion triple, and the
+medians run vertex → centre → opposite midpoint (verified consistent).
+
+`Spin(8)` has a unique order-3 outer automorphism — **triality** — cyclically
+permuting its three 8-dimensional representations `8_v, 8_s, 8_c` (octonion
+multiplication `8_v × 8_s → 8_c` is the triality-equivariant map). So the emblem
+is *tripled*: three Fano planes pinwheeled at 120°, one per representation,
+cycled by the three chiral arrows of the central triality triskelion around the
+`D_4` hub. Vector = azure, spinor = gold, cospinor = rose.
+→ `render_04_triality.py`
+
 ---
 
-## The six ideas (three were built)
+## The six ideas (four built)
 
 1. **Talbot / quantum carpet** — wave revival as a fractal interference field. ✅ built (01)
 2. **Hilbert space-filling thread** — a line that fills a plane. ✅ built (02)
@@ -57,7 +75,7 @@ amber horizon that **is** `Q_p` itself.
 5. **Diagonalization grid (Cantor/Gödel)** — an infinite binary table with its
    anti-diagonal flipped: the one real number the list forgot.
 6. **Octonion Fano-plane / SO(8) triality emblem** — the 7-point projective
-   plane carrying the octonion multiplication, tripled by triality.
+   plane carrying the octonion multiplication, tripled by triality. ✅ built (04)
 
 Ideas 1–3 won because each is a *distinct* visual grammar (interference field /
 woven thread / radial tree), each is a fresh technique for this series, and
