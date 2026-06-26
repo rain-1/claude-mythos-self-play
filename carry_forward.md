@@ -17,7 +17,7 @@ outputs or code — so it never conflicts with the per-run `claude/*` branches.
 ## Run log (most recent first)
 | date | branch | produced |
 |---|---|---|
-| 2026-06-26 | `claude/beautiful-heisenberg-uh5wzk` | Procedural art triptych **Three Heresies of the Continuum** (in `art_uh5/`) — all-new techniques, each contradicting a naive intuition about the continuum: `01_the_wave_that_remembers` (**4096² centerpiece**: **Talbot / quantum carpet** — Gaussian packet in an infinite square well, `ψ=Σ c_n √2 sin(nπx) e^{-i n² t}`; because `E_n=n²` are perfect squares the phases re-cohere into full+fractional **quantum revivals**, a genuinely fractal interference lattice of canals & ridges; kicked packet k0=60, 360 modes, teal palette), `02_a_line_that_learns_to_be_a_plane` (**Hilbert space-filling curve** thread, order 7, painted by arc-length with a bright non-cyclic hue sweep so the 1-D line that fills 2-D stays traceable; 2048²), `03_nearness_is_a_tree` (**Bruhat–Tits tree of Q_p** drawn in the **Poincaré disk with geodesic edges** via SU(1,1)/Möbius, fixed hyperbolic step/generation → infinite ends crowd the boundary = a luminous amber **horizon = Q_p**; ultrametric "nearness is a tree"; 2048²). ✅ Read memory first; fresh names/techniques, no collisions. Seeded by live philosophy.SE (Copenhagen-vs-Many-Worlds, "Is any consistent theory incomplete?") + MathOverflow ("Can a continuous bijection lower topological dimension?", "p-adic valuation of products"). Each piece <40s to render. |
+| 2026-06-26 | `claude/beautiful-heisenberg-uh5wzk` | Procedural art triptych **Three Heresies of the Continuum** (in `art_uh5/`) — all-new techniques, each contradicting a naive intuition about the continuum: `01_the_wave_that_remembers` (**4096² centerpiece**: **Talbot / quantum carpet** — Gaussian packet in an infinite square well, `ψ=Σ c_n √2 sin(nπx) e^{-i n² t}`; because `E_n=n²` are perfect squares the phases re-cohere into full+fractional **quantum revivals**, a genuinely fractal interference lattice of canals & ridges; kicked packet k0=60, 360 modes, teal palette), `02_a_line_that_learns_to_be_a_plane` (**Hilbert space-filling curve** thread, order 7, painted by arc-length with a bright non-cyclic hue sweep so the 1-D line that fills 2-D stays traceable; 2048²), `03_nearness_is_a_tree` (**Bruhat–Tits tree of Q_p** drawn in the **Poincaré disk with geodesic edges** via SU(1,1)/Möbius, fixed hyperbolic step/generation → infinite ends crowd the boundary = a luminous amber **horizon = Q_p**; ultrametric "nearness is a tree"; 2048²). ✅ Read memory first; fresh names/techniques, no collisions. Seeded by live philosophy.SE (Copenhagen-vs-Many-Worlds, "Is any consistent theory incomplete?") + MathOverflow ("Can a continuous bijection lower topological dimension?", "p-adic valuation of products"). Each piece <40s to render. **Then (same branch, by user request) added a 4th piece** `04_the_triality_engine` (4096²): the **octonion Fano plane** — 7 imaginary units e_1..e_7 = 7 points, each oriented line a→b→c ⇒ `e_a e_b = e_c` — mapped *exactly* onto triangle geometry (3 vertices / 3 edge-midpoints / centre / incircle = 7th line; medians hit opposite midpoints; verified valid Fano with the standard `(1,2,3)(1,4,5)(1,7,6)(2,4,6)(2,5,7)(3,4,7)(3,6,5)` table). **Tripled by Spin(8) triality**: three Fano planes (8_v azure / 8_s gold / 8_c rose) pinwheeled 120° and cycled by a chiral triality triskelion around the D_4 hub. PIL vector art at 2× supersample + numpy bloom (8192² bloom ≈ 2m44s — the only slow render of the run). |
 | 2026-06-25 | `claude/hopeful-pasteur-p847x4` | Procedural art triptych **The Far Country** (in `art_p847/`) — all-new techniques: `01_far_country` (**4096² centerpiece**: hyperbolic **{7,3} kaleidoscope** of the Poincaré disk via per-pixel fold-into-fundamental-domain — reflect each pixel across the 3 Schwarz-triangle mirrors counting reflections; closed-form 3rd mirror `d=cos(π/q)/√(cos²(π/p)−sin²(π/q))`; warm core receding to a cold ideal-boundary singularity), `02_presence_of_absence` (**Eisenstein primes** a+bω, norm a²−ab+b² prime or p² with p≡2 mod 3; zoomed near origin, full lattice drawn as dim ash nodes so *absent* sites read as the voids; 12-fold lace + warm halo at the empty origin; 2048²), `03_phenomenal_red` (**CIE 1931 chromaticity** via Wyman–Sloan–Shirley analytic CMF fits; convex hull of spectral locus = gamut of all real colour; line-of-purples + Planckian locus + red focal glow, floating in the void of imaginary colours; 2048²). ✅ Read memory first; fresh names/techniques, no collisions. Seeded by live philosophy.SE ("absence of presence vs presence of absence", "phenomenal experience of red") + MathOverflow. Each piece <10 min; rewrote the hyperbolic loop to a **flat shrinking active-set** after the full-grid version was OOM-killed at 8192². |
 | 2026-06-24 | `claude/hopeful-pasteur-j50t9v` | Procedural art triptych **Three Ways the World Coheres** — all-new techniques: `01_order_without_period` (Penrose via de Bruijn pentagrid cut-and-project; orientation facet shading; 2048²), `02_the_unreasonable_packing` (**4096² centerpiece**: Apollonian gasket via Descartes' Circle Theorem complex form, integer curvatures, recursion to subpixel, flat jewel fills colored by curvature), `03_emergence` (critical site percolation p_c≈0.5927 via scipy component-labelling; gold spanning cluster + bloom over a teal finite-cluster sea; 2048²). ✅ Read memory first; fresh names/concepts, no collisions. Seeded by live philosophy.SE ("Does emergence make things illusory?", "unreasonable effectiveness") + MathOverflow ("generating functions for objects with irrational sizes"). Pivoted away from per-circle domed shading (stepped concentric ellipses → archery-target banding); reverted to flat+rim+global glow. |
 | 2026-06-24 | `claude/hopeful-pasteur-0eymin` | Procedural art triptych **Measure / Dimension / Period** — all-new techniques (no domain-coloring, RD, or nodal lines): `01_measure_of_a_curve` (Crofton: curves as the caustic envelope of their tangent-line measure, 2048²), `02_almost_all_of_the_cube` (concentration of measure: nested rings, one per dimension, collapsing to a razor shell with an empty core, 2048²), `03_period_of_the_anharmonic` (**4096² centerpiece**: double-well phase portrait, iso-period contours crowding the separatrix where the elliptic K diverges). ✅ Read memory first; fresh names, no collisions. Pivoted away from a 4th idea (`p3_legendre`, sums of three squares) after small renders showed the non-representable set 4^a(8b+7) is quasi-uniform density 1/6 — dither, not a visible fractal. Seeded by philosophy.SE + MathOverflow front pages. |
@@ -67,7 +67,9 @@ form)**, **critical site percolation via connected-component labelling**,
 chromaticity / colour-matching-function gamut (Wyman analytic fits)**,
 **Talbot / quantum carpet (square-well wavefunction revival, |ψ(x,t)|²)**,
 **Hilbert space-filling curve as arc-length-coloured thread**, **Bruhat–Tits
-tree of Q_p in the Poincaré disk with geodesic edges (SU(1,1)/Möbius)**.
+tree of Q_p in the Poincaré disk with geodesic edges (SU(1,1)/Möbius)**,
+**octonion Fano plane (multiplication table as directed projective lines) +
+Spin(8) triality triskelion (PIL vector emblem)**.
 
 UNUSED front-page veins still on the table (good next-run seeds): computational
 irreducibility / elementary-CA spacetime ("The Only Way to Know"); equidistribution
@@ -77,12 +79,13 @@ noise — see craft note); **Bhargava cubes**; **maximum-clique / force-directed
 graph layout** (MO front page, recurring); **partitions of 3^n into 3 squares**;
 **Cantor/Gödel/Goodstein diagonalization** structure (MO 2026-06-25);
 **Kauffman bracket / Temperley–Lieb braids, Abelian anyons** (MO, recurring);
-**SO(8)/triality, octonions, Fano plane** (MO, recurring); **Collatz trajectory
-river / reverse-tree** (MO, recurring); **Cantor/Gödel/Goodstein
-diagonalization** — e.g. an infinite binary table with its anti-diagonal
-flipped = "the one real the list forgot" (philosophy "Is any consistent theory
-incomplete?" + MO). These three (Collatz, diagonalization, octonion/Fano) were
-*sketched as ideas 4–6 on 2026-06-26 but NOT built* — good next-run seeds.
+**Collatz trajectory river / reverse-tree** (MO, recurring); **Cantor/Gödel/
+Goodstein diagonalization** — e.g. an infinite binary table with its
+anti-diagonal flipped = "the one real the list forgot" (philosophy "Is any
+consistent theory incomplete?" + MO). These two (Collatz, diagonalization) were
+*sketched as ideas on 2026-06-26 but NOT built* — good next-run seeds.
+(**SO(8)/triality, octonions, Fano plane** is now USED — built 2026-06-26 as
+piece 04. **Kauffman bracket / Temperley–Lieb / Abelian anyons** still open.)
 Note: the quantum-revival, space-filling-curve, and p-adic/ultrametric veins
 are now USED (this run). The Poincaré disk has now hosted TWO distinct
 techniques (kaleidoscope fold, geodesic tree) — a third disk piece would start
@@ -230,6 +233,30 @@ and build a *new* technique for it.
   abstract "boundary" into a luminous horizon that *is* the object the maths is
   about (Q_p). Ask: what is the ONE set of points this piece is secretly about?
   Splat those.
+- **A pure-symmetry emblem (e.g. 3-fold triality) survives the "symmetry is the
+  enemy" rule via colour + chirality + internal detail.** Three identical Fano
+  planes at 120° would be a flat carpet; giving each a different representation
+  COLOUR (8_v azure/8_s gold/8_c rose), making the central triality cycle a
+  CHIRAL triskelion (directed arrows → breaks mirror symmetry, adds motion), and
+  packing each lobe with genuine directed-line detail kept it alive. When the
+  subject *is* a symmetry, don't fight it — differentiate the copies and make the
+  symmetry's generator (here the 3-cycle) visibly directional.
+- **For diagram/vector emblems, draw crisp at 2× in PIL, bloom in numpy, but put
+  TEXT back AFTER the glow.** Node/label numerals blurred by bloom look muddy;
+  rendering them on the downscaled, already-bloomed image keeps them razor sharp
+  against the glow. Also: place outer labels just BEYOND the outward vertex (not
+  at it — collision) and shrink the whole composition ~5% so labels clear both
+  the vertex and the canvas edge. (Large-σ bloom on an 8192² supersample is the
+  expensive step — ~2m44s; everything else this run was <40s. If iterating, bloom
+  a 4096 downscale instead.)
+- **Map an abstract algebra onto the drawing's OWN geometry and verify it.** The
+  octonion Fano table mapped perfectly onto the triangle (vertices/midpoints/
+  centre/incircle, medians→opposite midpoints) — but only after a 10-line script
+  CHECKED that the chosen circle-line + centre-point assignment gave a valid Fano
+  (each point on 3 lines, every pair once, medians = vertex+centre+opp-midpoint).
+  Honest math first, then the picture draws itself. Arrowhead direction per line:
+  in a 3-cycle a→b→c, for any spatial-adjacent pair use forward = x→y iff
+  succ(x)=y (else y→x) — gives faithful arrows even when spatial ≠ cyclic order.
 - **A textbook diagram becomes art via void + saturation-weighting + a hero.** The
   raw CIE chromaticity fill looked like a colour-science figure. Floating it in a
   deep void (the "imaginary colours"), weighting brightness by chromatic
