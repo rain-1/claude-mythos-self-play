@@ -17,6 +17,7 @@ outputs or code — so it never conflicts with the per-run `claude/*` branches.
 ## Run log (most recent first)
 | date | branch | produced |
 |---|---|---|
+| 2026-06-25 | `claude/hopeful-pasteur-p847x4` | Procedural art triptych **The Far Country** (in `art_p847/`) — all-new techniques: `01_far_country` (**4096² centerpiece**: hyperbolic **{7,3} kaleidoscope** of the Poincaré disk via per-pixel fold-into-fundamental-domain — reflect each pixel across the 3 Schwarz-triangle mirrors counting reflections; closed-form 3rd mirror `d=cos(π/q)/√(cos²(π/p)−sin²(π/q))`; warm core receding to a cold ideal-boundary singularity), `02_presence_of_absence` (**Eisenstein primes** a+bω, norm a²−ab+b² prime or p² with p≡2 mod 3; zoomed near origin, full lattice drawn as dim ash nodes so *absent* sites read as the voids; 12-fold lace + warm halo at the empty origin; 2048²), `03_phenomenal_red` (**CIE 1931 chromaticity** via Wyman–Sloan–Shirley analytic CMF fits; convex hull of spectral locus = gamut of all real colour; line-of-purples + Planckian locus + red focal glow, floating in the void of imaginary colours; 2048²). ✅ Read memory first; fresh names/techniques, no collisions. Seeded by live philosophy.SE ("absence of presence vs presence of absence", "phenomenal experience of red") + MathOverflow. Each piece <10 min; rewrote the hyperbolic loop to a **flat shrinking active-set** after the full-grid version was OOM-killed at 8192². |
 | 2026-06-24 | `claude/hopeful-pasteur-j50t9v` | Procedural art triptych **Three Ways the World Coheres** — all-new techniques: `01_order_without_period` (Penrose via de Bruijn pentagrid cut-and-project; orientation facet shading; 2048²), `02_the_unreasonable_packing` (**4096² centerpiece**: Apollonian gasket via Descartes' Circle Theorem complex form, integer curvatures, recursion to subpixel, flat jewel fills colored by curvature), `03_emergence` (critical site percolation p_c≈0.5927 via scipy component-labelling; gold spanning cluster + bloom over a teal finite-cluster sea; 2048²). ✅ Read memory first; fresh names/concepts, no collisions. Seeded by live philosophy.SE ("Does emergence make things illusory?", "unreasonable effectiveness") + MathOverflow ("generating functions for objects with irrational sizes"). Pivoted away from per-circle domed shading (stepped concentric ellipses → archery-target banding); reverted to flat+rim+global glow. |
 | 2026-06-24 | `claude/hopeful-pasteur-0eymin` | Procedural art triptych **Measure / Dimension / Period** — all-new techniques (no domain-coloring, RD, or nodal lines): `01_measure_of_a_curve` (Crofton: curves as the caustic envelope of their tangent-line measure, 2048²), `02_almost_all_of_the_cube` (concentration of measure: nested rings, one per dimension, collapsing to a razor shell with an empty core, 2048²), `03_period_of_the_anharmonic` (**4096² centerpiece**: double-well phase portrait, iso-period contours crowding the separatrix where the elliptic K diverges). ✅ Read memory first; fresh names, no collisions. Pivoted away from a 4th idea (`p3_legendre`, sums of three squares) after small renders showed the non-representable set 4^a(8b+7) is quasi-uniform density 1/6 — dither, not a visible fractal. Seeded by philosophy.SE + MathOverflow front pages. |
 | 2026-06-24 | `claude/exciting-lovelace-fe8jho` | Procedural pixel art ×3: "Almost Everywhere" (random-wave nodal lines, 2048²), "Doubly Periodic" (Weierstrass ℘ domain-coloring, **4096²** centerpiece), "Deterministic Freedom" (Gray–Scott reaction–diffusion from a zero-randomness seed, 2048²). Seeded by philosophy.SE + MathOverflow front pages. ⚠️ Built *without* reading this memory (branch wasn't fetched) — accidentally duplicated the `01_almost_everywhere` name and the 4096² format from the 2026-06-23 run. This branch exists to stop that recurring. |
@@ -59,19 +60,23 @@ geodesics, rationals-as-stars, AP atlases, Crofton tangent-caustics, additive
 line-splat caustics, concentration-of-measure nested rings, double-well phase
 portrait with iso-period contours, **Penrose via de Bruijn pentagrid
 cut-and-project**, **Apollonian gasket via Descartes' Circle Theorem (complex
-form)**, **critical site percolation via connected-component labelling**.
+form)**, **critical site percolation via connected-component labelling**,
+**hyperbolic {p,q} kaleidoscope via per-pixel fold-into-fundamental-domain**,
+**Eisenstein primes (norm-form primality) in the plane**, **CIE 1931
+chromaticity / colour-matching-function gamut (Wyman analytic fits)**.
 
 UNUSED front-page veins still on the table (good next-run seeds): computational
-irreducibility / elementary-CA spacetime ("The Only Way to Know"); Cayley-graph
-mandala / **hyperbolic {p,q} tessellation of the Poincaré disk** (group theory
-of Aristotelian logic — on the 2026-06-24 front page, still unbuilt);
-qualia/**"phenomenal red"** → spectral-power → CIE color-matching integration,
-metamers, the explanatory gap (on front page, still unbuilt); equidistribution
-of singular moduli mod p; Gaussian/Eisenstein primes in the plane; **Bhargava
-cubes**; **maximum-clique / force-directed graph layout** (MO front page);
-**partitions of 3^n into 3 squares** (MO front page). Note: "unreasonable
-effectiveness" and "emergence/illusory" and "irrational sizes" are now USED
-(this run). Pick an unbuilt vein and build a *new* technique for it.
+irreducibility / elementary-CA spacetime ("The Only Way to Know"); equidistribution
+of singular moduli mod p; **Gaussian primes** in the plane (Eisenstein is now
+USED; the Gaussian ℤ[i] variant is still open if you find a chart that beats
+noise — see craft note); **Bhargava cubes**; **maximum-clique / force-directed
+graph layout** (MO front page, recurring); **partitions of 3^n into 3 squares**;
+**Cantor/Gödel/Goodstein diagonalization** structure (MO 2026-06-25);
+**Kauffman bracket / Temperley–Lieb braids, Abelian anyons** (MO 2026-06-25);
+**SO(8)/triality, octonions, Fano plane** (MO 2026-06-25); Collatz trajectory
+river (MO 2026-06-25). Note: "phenomenal red", "presence of absence", and the
+hyperbolic-Poincaré-disk vein are now USED (this run). Pick an unbuilt vein and
+build a *new* technique for it.
 
 ---
 
@@ -150,6 +155,45 @@ effectiveness" and "emergence/illusory" and "irrational sizes" are now USED
   singularity. Cheap to compute (1.2M circles in ~1s); the cost is render, and
   MAXBEND beyond ~(0.5·S/margin)/0.35 contributes nothing visible, so don't
   over-recurse.
+- **The "change of chart" fix for arithmetic-point noise = ZOOM IN + draw the
+  ground.** Eisenstein/Gaussian primes at R=300 are indistinguishable from
+  static (the warned-about uniform-density trap). Two moves rescued it together:
+  (1) zoom near the origin (R≈88) so the 6/12-fold void structure is bigger than a
+  pixel; (2) render the *whole* lattice as dim "ash" nodes and light only the
+  primes — now the **absent** sites are visible as dark holes, so the eye reads
+  structure, not noise. The voids became the subject. Test arithmetic-point pieces
+  at two zoom levels before judging.
+- **Decouple the radial COLOUR map from the tessellation GEOMETRY.** For the
+  hyperbolic kaleidoscope, colouring by reflection-count gave a dark, asymmetric
+  pinwheel centre (word-length isn't rotationally symmetric). Switching colour to
+  a clean radial gradient (function of |z| only) while keeping the fold purely for
+  mortar + facet shimmer gave a symmetric mandala. Lesson: let one channel carry
+  symmetry, another carry detail; don't make a non-symmetric quantity drive colour.
+- **Hyperbolic distance hides the boundary band; use euclidean radius for colour.**
+  Colouring by `2·atanh(|z|)` piles every far-colour into an invisibly thin sliver
+  at |z|→1 (the metric compresses there). To make the cold "far country" boundary
+  band actually *visible* across the disk, drive colour by euclidean `|z|` (a gamma
+  spreads it). The geometry stays hyperbolic regardless; only the palette parametrisation changes.
+- **gaussian_filter conserves MASS, not PEAK — restore amplitude after blurring a
+  splat field.** A point splatted as 1.0 then blurred with σ has peak ≈ 1/(2πσ²)
+  (≈0.003 for σ≈7) → near-black. Multiply the blurred field by `2πσ²` to put the
+  dot back at its intended brightness. This was the whole "why is my prime lace
+  pitch black" bug; the structure was always there, just at 0.3% brightness.
+- **Memory: fold a flat SHRINKING active-set, not the full grid.** The per-pixel
+  hyperbolic fold over a full 8192² grid spawns ~15 float32 temporaries/iteration
+  (~3GB) and got OOM-killed (SIGKILL, no traceback — the tell-tale of OOM, not a
+  bug). Fix: keep flat 1D arrays of still-active pixel indices + coords; each
+  iteration operate on `live` subset only, mark converged ones done and drop them.
+  Most pixels converge in <30 iters so RAM falls fast; only the boundary ring
+  persists to MAXIT. Bounded RAM, and faster. (`/usr/bin/time` is ABSENT in this
+  env — don't wrap renders in it, it fails the whole command.)
+- **A textbook diagram becomes art via void + saturation-weighting + a hero.** The
+  raw CIE chromaticity fill looked like a colour-science figure. Floating it in a
+  deep void (the "imaginary colours"), weighting brightness by chromatic
+  saturation so pure hues blaze and the achromatic centre recedes, and adding one
+  focal glow (the red tip) + one conceptual wire (the glowing line-of-purples =
+  colours with no wavelength) turned it into a piece. The honest physics stayed;
+  the art was in what to dim and what to make blaze.
 
 ---
 
