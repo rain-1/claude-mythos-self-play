@@ -35,6 +35,16 @@ weights 0, 8, 12, 16, 24 and nothing else. Those gaps are what make the code
 correct 3 errors and what *force* S(5,8,24) to exist. (Built and verified in
 `golay.py` from the [23,12] generator polynomial plus a parity bit.)
 
+## 4. All 759 octads at once
+
+![All 759 octads](04_all_octads.png)
+
+And here they all are — every one of the 759 octads in a single tapestry, each a
+4×6 glyph with its 8 points lit (sorted by codeword value, tinted across the
+spectrum). Any 5 of the 24 points appear together in exactly one of these 759
+pictures. M₂₄ is the group of permutations of the 24 points that merely shuffle
+this collection among itself.
+
 ---
 
 The ladder does not stop. M₂₄ governs the Golay code; the Golay code builds the
