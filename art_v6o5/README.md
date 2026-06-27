@@ -85,7 +85,50 @@ for free. 2048×2048.
 
 ---
 
+## Two more, by request — on irreducibility and composition
+
+A different pair, built after the triptych: not about loops, but about *how much
+work it takes to know a thing*.
+
+### 04 · The Only Way to Know — *computational irreducibility, made visible*
+
+![The Only Way to Know](04_the_only_way_to_know.png)
+
+Rule 30 is a one-line cellular automaton (`s' = s₋ XOR (s OR s₊)`) that
+manufactures genuine chaos from order. Wolfram's claim of **computational
+irreducibility**: there is no shortcut — to know row *N* you must run rows
+`1…N−1`. We make it visible by taking two universes whose start rows differ in a
+**single bit** and XOR-ing their entire space-times. Outside the bit's reach the
+histories are *identical* (dead black); inside, they have diverged into mutual
+chaos. The damage spreads at most one cell per step, so its envelope is a
+discrete **light cone** — the right edge ruler-straight at the speed limit, the
+left edge a fractal front that advances only as fast as the chaos allows. The
+teal ground is the irreducible Rule-30 substrate; the gold triangle is one bit's
+worth of unforeseeable consequence. 2048×2048 (one cell = one pixel — the grain
+*is* the point). *(Backup idea from the original six, promoted by request.)*
+
+### 05 · The Cube That Composes to One — *Bhargava + Conway*
+
+![The Cube That Composes to One](05_the_cube_that_composes_to_one.png)
+
+A 2×2×2 integer cube, sliced three ways, gives three binary quadratic forms of
+one shared discriminant. **Bhargava** (2004) proved they compose to the identity
+of the form **class group** — a hand-built rediscovery of Gauss's composition
+law. We take the cube `(-1,-1,-1,2,0,1,2,2)`: discriminant **−23**, the smallest
+with three distinct classes. Its forms `(1,1,6)`, `(2,1,3)`, `(2,-1,3)` are the
+*entire* class group `{1, g, g²}`, and `1·g·g² = 1` — verified here by Dirichlet
+composition. Each form is drawn as its **Conway topograph**: a trivalent tree
+whose faces are primitive vectors `(p,q)` labelled by `Q(p,q)`, obeying the
+parallelogram law `Q(u+v)+Q(u−v)=2Q(u)+2Q(v)`, warm at the well and cooling
+outward. 2048×2048 annotated plate. *(Backup idea from the original six,
+promoted by request.)*
+
+---
+
 *Technique notes: honest math first (functional equations of `Li₂` verified to
 1e-16; torus-link components from `gcd`; Bing's complex assembled from thin-slab
-SDFs), then the picture draws itself. Each piece renders in seconds-to-minutes;
-the dilogarithm field is cached so the colormap can be tuned without recomputing.*
+SDFs; Gauss composition verified against the C₃ group of D=−23; Rule 30 light
+cone simulated 2× wider than the crop so the periodic boundary never wraps into
+frame), then the picture draws itself. High-entropy fields (the CA) are kept at
+2048² — both the right scale for the visible grain and a sane file size, since
+noise barely compresses.*
