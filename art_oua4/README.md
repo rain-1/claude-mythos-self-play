@@ -1,15 +1,18 @@
 # What Cannot Be Avoided
 
 *Procedural pieces about **inevitable structure** — patterns that must appear no
-matter how free the input. Two conjectures bracketing one theorem — plus a fourth, added
-by request, on the inevitability of *simplicity itself*. Seeded by the live front pages of
-MathOverflow and Philosophy.SE on 2026‑06‑28.*
+matter how free the input. Two conjectures bracketing one theorem — then three codas, added
+by request, on the inevitability of *simplicity itself* (Solomonoff / algorithmic
+information). Seeded by the live front pages of MathOverflow and Philosophy.SE on
+2026‑06‑28.*
 
 Give the world all the freedom you like — start from any number, rotate by any irrational
 angle, draw any loop you please — and a shape you did not ask for is already waiting
 inside. The first three say so in three different grammars: a tide of threads, a field of
-gaps, a cage of squares. The fourth turns the knife inward — even *explanation* is not
-free; the simplest account is always already the most probable.
+gaps, a cage of squares. The last three turn the knife inward — even *explanation* is not
+free: the simplest account is always already the most probable (04), most tiny programs do
+almost nothing while a rare few are unknowably rich (05), and a program is just a bitstring
+whose probability is its length (06).
 
 ---
 
@@ -96,12 +99,56 @@ tape/head/state as `[K]`‑vectors), so 12M machines run in minutes; outputs tal
 packed `(length,value)` key. Skyline rendered by additive towers with peak‑caps and
 two‑scale bloom, labelled after downscale.*
 
+## 05 · The Busy Beaver Garden  *(2048×2048 — added by request, extends 04)*
+
+![The Busy Beaver Garden](05_the_busy_beaver_garden.png)
+
+If a program is an explanation (piece 04), here is the *zoo of explanations* — 49 small
+(5‑state, 2‑symbol) Turing machines, each shown as its **space‑time diagram**: time runs
+downward, the tape runs across, teal cells are marked, and the gold thread is the head's
+worldline weaving through. They are drawn from millions of random machines and **sorted by
+the complexity of what they compute** (how poorly their space‑time compresses — a
+Kolmogorov‑flavoured measure). The garden runs from the machines that barely stir (a lone
+gold diagonal) through clean sweeping triangles and ruled stripes to dense, busy textures.
+
+The name is a wink at the **Busy Beaver function** `BB(n)` — the most steps any halting
+`n`‑state machine takes. The true champions can't appear here: `BB(5)` is **47,176,870
+steps**, and its machine roams far beyond any tile. Worse, `BB` is **uncomputable** — it
+eventually outgrows every function you can define, so there is no formula, ever, for which
+tiny machine is the busiest. A few bits of program; unbounded, unknowable ambition.
+
+*Technique: the same vectorised lockstep TM engine as piece 04 (now also recording the
+head's worldline); ~1.5M machines run 300 steps in a tape too wide to escape, curated by
+gzip‑density of the space‑time to span trivial→complex, tiled by NEAREST upscale.*
+
+## 06 · Programs Are Bitstrings  *(2048×2048 — added by request, extends 04)*
+
+![Programs Are Bitstrings](06_programs_are_bitstrings.png)
+
+The purest substrate for Solomonoff's prior. In **John Tromp's Binary Lambda Calculus**,
+every closed λ‑term *is* a bitstring, and its universal‑prior weight is *exactly* `2⁻ⁿ` for
+an `n`‑bit program — no Turing machines, no measurement, the prior falls straight out of
+the encoding. Here are twelve fundamental programs as **Tromp lambda diagrams** — the
+canonical way to *draw* a λ‑term: a **blue** horizontal bar is an abstraction `λ`, a
+**gold** link is an application, a **white** vertical line is a variable running up to the
+bar that binds it. Beneath each is its actual binary code (the gold/teal cells) and its
+length `|p|` = its complexity. They are sorted by program length, smallest prior first:
+identity `I` (`0010`, 4 bits) and zero, through the Church numerals and the combinators
+`S`, `K`, `succ`, `plus`, up to the fixed‑point combinator `Y` and `Ω`, the 18‑bit program
+that runs forever. Every diagram round‑trips through its bitstring; every reduction was
+checked (`plus 2 1 ⇒ 3`). A program is a picture is a number is a probability.
+
+*Technique: a small verified λ‑calculus engine (`blc.py`: de Bruijn terms, BLC
+encode/decode, normal‑order β‑reduction) feeds a Tromp‑diagram layout (`blc_diagram.py`,
+the abstraction‑bar / variable / application‑link recursion) rendered with additive glow.*
+
 ---
 
 ### Colophon
 All pure NumPy/SciPy/Pillow, dark‑field additive rendering, filmic tone‑mapping,
 no external assets. Reproduce: `build_feather.py` (+`tone_feather.py`), `build_gap.py`,
-`build_square.py`, and `tm_sample.py` → `build_occam.py`. Part of the long‑running
+`build_square.py`, `tm_sample.py`→`build_occam.py`, `tm_garden.py`→`build_garden.py`, and
+`blc.py`/`blc_diagram.py`→`build_blc.py`. Part of the long‑running
 `claude-mythos-self-play` generative‑art thread — see the `memory` branch for the full
 lineage.
 
