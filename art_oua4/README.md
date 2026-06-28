@@ -121,6 +121,13 @@ tiny machine is the busiest. A few bits of program; unbounded, unknowable ambiti
 head's worldline); ~1.5M machines run 300 steps in a tape too wide to escape, curated by
 gzip‑density of the space‑time to span trivial→complex, tiled by NEAREST upscale.*
 
+> **Why are they (almost) all triangles?** Geometry, not computation. A head moves at most
+> one cell per step, so the region it has touched can widen by at most one per side per
+> step — a discrete light‑cone, i.e. a triangle, and the gold diagonal *is* the head. The
+> interior fills solid or striped because the overwhelmingly common behaviour of a random
+> tiny machine is to **drift** one way laying a periodic trail. To escape the triangle you
+> have to find a machine that *doesn't* drift — see piece 07.
+
 ## 06 · Programs Are Bitstrings  *(2048×2048 — added by request, extends 04)*
 
 ![Programs Are Bitstrings](06_programs_are_bitstrings.png)
@@ -142,13 +149,34 @@ checked (`plus 2 1 ⇒ 3`). A program is a picture is a number is a probability.
 encode/decode, normal‑order β‑reduction) feeds a Tromp‑diagram layout (`blc_diagram.py`,
 the abstraction‑bar / variable / application‑link recursion) rendered with additive glow.*
 
+## 07 · The Rare Ones  *(2048×2048 — the hunt from piece 05)*
+
+![The Rare Ones](07_the_rare_ones.png)
+
+Piece 05 came out almost all triangles, because a random Turing head almost always *drifts*
+— and a drifting head sweeps out a triangle no matter what it writes. So this is the hunt
+for the exceptions: machines whose head **stays put and bounces**, revisiting each column
+over and over (here, on average **3 to 30 times** — `steps ≫ width`) instead of racing for
+the horizon. Out of millions, these are the confined ones, and their worlds are not
+triangles but slow **tapering spires** — the gold zigzag is the head sweeping back and
+forth, carving notched, striped, counter‑like structure as it goes. They are exactly the
+machines that *compute* something instead of just smearing a stripe, and they are
+genuinely rare: you cannot reason your way to which tiny program will do this (that is the
+Busy Beaver's whole unknowable point) — you can only run millions and keep the few that
+refuse to leave home.
+
+*Technique: same vectorised TM engine; ~1.2M machines run 700 steps, gated on confinement
+`steps/width ≥ 3` (which kills the drift‑triangles), then ranked by gzip‑incompressibility
+of the space‑time; the tall thin survivors are shown as a colonnade of full‑height
+specimens rather than crammed into square tiles.*
+
 ---
 
 ### Colophon
 All pure NumPy/SciPy/Pillow, dark‑field additive rendering, filmic tone‑mapping,
 no external assets. Reproduce: `build_feather.py` (+`tone_feather.py`), `build_gap.py`,
-`build_square.py`, `tm_sample.py`→`build_occam.py`, `tm_garden.py`→`build_garden.py`, and
-`blc.py`/`blc_diagram.py`→`build_blc.py`. Part of the long‑running
+`build_square.py`, `tm_sample.py`→`build_occam.py`, `tm_garden.py`→`build_garden.py`,
+`tm_hunt.py`→`build_colonnade.py`, and `blc.py`/`blc_diagram.py`→`build_blc.py`. Part of the long‑running
 `claude-mythos-self-play` generative‑art thread — see the `memory` branch for the full
 lineage.
 
