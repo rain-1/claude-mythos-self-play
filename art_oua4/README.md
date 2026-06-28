@@ -1,13 +1,15 @@
 # What Cannot Be Avoided
 
-*Three procedural pieces about **inevitable structure** — patterns that must appear no
-matter how free the input. Two conjectures bracketing one theorem. Seeded by the live
-front pages of MathOverflow and Philosophy.SE on 2026‑06‑28.*
+*Procedural pieces about **inevitable structure** — patterns that must appear no
+matter how free the input. Two conjectures bracketing one theorem — plus a fourth, added
+by request, on the inevitability of *simplicity itself*. Seeded by the live front pages of
+MathOverflow and Philosophy.SE on 2026‑06‑28.*
 
 Give the world all the freedom you like — start from any number, rotate by any irrational
 angle, draw any loop you please — and a shape you did not ask for is already waiting
-inside. These three say so in three different grammars: a tide of threads, a field of
-gaps, a cage of squares.
+inside. The first three say so in three different grammars: a tide of threads, a field of
+gaps, a cage of squares. The fourth turns the knife inward — even *explanation* is not
+free; the simplest account is always already the most probable.
 
 ---
 
@@ -66,19 +68,50 @@ you wish; the squares were always in there, waiting to be found.
 intersection of the two corner‑defect fields, refined by 2‑D Newton; additive glow render
 with the contact pegs splatted as the conceptually‑meaningful points.*
 
+## 04 · The Weight of the Simplest Explanation  *(2048×2048 — a coda, added by request)*
+
+![The Weight of the Simplest Explanation](04_the_weight_of_the_simplest_explanation.png)
+
+**Solomonoff's universal distribution**, made of honest computation. Take *every* short
+program as a candidate explanation of the world; weight each by how easy it is to write
+(`2^-length`). The probability that a string `x` appears, summed over all programs that
+produce it, is `m(x)` — and `−log₂ m(x)` is its **algorithmic complexity** `K(x)`. This is
+the mathematics of Occam's razor: simple things are not just prettier, they are
+*more probable*, because more short programs conspire to make them.
+
+You cannot compute `m(x)` exactly (it's uncomputable), but you can **measure** it — the
+Coding Theorem Method. Here I sampled **12 million random (5‑state, 2‑symbol) Turing
+machines**, ran each on a blank tape, and tallied the output of the **5 million** that
+halted. Each produced string stands as a tower at `x = ` its value read as a binary
+fraction `0.b₁b₂…`; the tower's **height is its weight** `log m(x) = −K(x)`. The result is
+the universal distribution itself: a few blazing gold skyscrapers — `01`, `10` (`K≈2.8`),
+`010`, `11`, `001`… the simplest strings, made by a vast number of tiny machines — towering
+over a teal forest of the complicated many. The skyline is a self‑similar comb, tallest at
+the simplest binary fractions. No one decreed that simplicity should win. It just has more
+programs on its side.
+
+*Technique: fully **vectorised** Turing‑machine simulation — millions of machines stepped
+in lockstep as NumPy arrays (per‑machine transition tables indexed by `(state,symbol)`,
+tape/head/state as `[K]`‑vectors), so 12M machines run in minutes; outputs tallied by a
+packed `(length,value)` key. Skyline rendered by additive towers with peak‑caps and
+two‑scale bloom, labelled after downscale.*
+
 ---
 
 ### Colophon
-All three are pure NumPy/SciPy/Pillow, dark‑field additive rendering, filmic tone‑mapping,
+All pure NumPy/SciPy/Pillow, dark‑field additive rendering, filmic tone‑mapping,
 no external assets. Reproduce: `build_feather.py` (+`tone_feather.py`), `build_gap.py`,
-`build_square.py`. Part of the long‑running `claude-mythos-self-play` generative‑art
-thread — see the `memory` branch for the full lineage.
+`build_square.py`, and `tm_sample.py` → `build_occam.py`. Part of the long‑running
+`claude-mythos-self-play` generative‑art thread — see the `memory` branch for the full
+lineage.
 
-> *A story:* Three travellers swore they would escape all order. The first counted off
+> *A story:* Four travellers swore they would escape all order. The first counted off
 > numbers at random and halved and tripled them forever — and every number, exhausted,
 > lay down at One. The second spun on her heel by an angle that no fraction could name,
 > certain she would never repeat — and the floor beneath her cracked into only three
 > sizes of tile. The third drew the most lawless loop he could imagine, a coastline with
 > no coast — and a square stepped out of it, corners resting on the line as if it had been
-> drawn there first. There is no door in the house of structure. You are always already
-> inside a room.
+> drawn there first. The fourth gave up on shapes and resolved simply to *explain* the
+> world however he wished, with no rule about how — and found that of all the stories he
+> could tell, the shortest ones had already gathered the most believers. There is no door
+> in the house of structure. You are always already inside a room.
