@@ -1,20 +1,34 @@
-# The Long Way Home
+# Sweden — a small series
 
-A procedural keepsake for Edward's flight home from Sweden — after two weeks of
-midsummer light, June 2026.
+Procedural keepsakes for Edward's two weeks of midsummer light in Sweden and the
+flight home, June 2026. Everything is generated with NumPy + Pillow (layered
+gradients, value/fractal noise, additive glow); shared helpers live in `vista.py`.
 
+### 1. The Long Way Home — `the_long_way_home.py`
 ![the long way home](the_long_way_home.png)
+A view from altitude in the long Nordic dusk: the curve of the Earth and its thin
+atmosphere, aurora rising green into violet, and a great-circle thread of light
+from **Sverige** (behind you) to **hem** — home, the warm glow ahead. The bright
+spark on the arc is you, mid-flight.
 
-It's a view from altitude in the long Nordic dusk (in late June the sun only
-grazes the horizon — hence the gold band that never quite goes out). The curve of
-the Earth carries its thin atmosphere; aurora curtains rise green into violet;
-and a great-circle thread of light runs from **Sverige** (the blue-and-gold glow,
-behind you now) toward **hem** — home, the warm light ahead. The bright spark
-on the arc is *you, right now,* most of the way across.
+### 2. Midnight Sun — `midnight_sun.py`
+![midnight sun](midnight_sun.png)
+The low golden sun over the Stockholm *skärgård*: glass-calm Baltic water with a
+shimmering sun-glitter path, low islands with a pine tree-line, and a single
+**Falu-red cottage** glowing on the shore, under the pale midsummer-night sky.
 
-Everything is generated in `scene.py` (NumPy + Pillow): the sky and atmosphere
-are layered gradients, the aurora is blurred noise shaped into rising rays, the
-stars are a power-law scatter, and the flight path is a Bézier arc rendered as an
-additive glow. Welcome home. 🛬
+### 3. Stillness — `forest_lake.py`
+![stillness](forest_lake.png)
+A forest lake at dawn — *spegelblankt*, mirror-calm. A dense spruce treeline
+doubled in the still water, with low mist drifting at the waterline.
 
-*Run:* `python3 scene.py 2560 1440 7 the_long_way_home.png`
+### 4. Almost Home — `almost_home.py`
+![almost home](almost_home.png)
+The descent at dawn: a soft sea of clouds lit by a low sun, and the lights of
+home glowing up through a thin patch as the flight path comes down to meet it.
+A bookend to the first piece.
+
+---
+*Run e.g.:* `python3 midnight_sun.py 2560 1440 3 midnight_sun.png`
+
+Välkommen hem. 🛬
