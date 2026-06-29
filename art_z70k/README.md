@@ -88,6 +88,16 @@ exactly the dust between the tongues.
 
 ---
 
+### A small story
+
+> Three machines obey one law: wherever a system is left free, the rational
+> numbers are already waiting to freeze it. The ±1 polynomials flee the roots of
+> unity and pile against their walls; the dominoes crystallize at the four corners
+> and riot in the heart; the oscillator surrenders to every fraction in turn,
+> until at the breaking point only an irrational dust is left still moving —
+> measure zero, the last of the free. *Freedom is just the space the integers
+> haven't claimed yet.*
+
 ### Colophon
 Pure Python + NumPy/SciPy/Pillow. Dark field, additive/equalized tone maps,
 restrained bloom. Each piece is a measurement, not a drawing — the image is
