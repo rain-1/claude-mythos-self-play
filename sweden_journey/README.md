@@ -22,6 +22,12 @@ shimmering sun-glitter path, low islands with a pine tree-line, and a single
 A forest lake at dawn — *spegelblankt*, mirror-calm. A dense spruce treeline
 doubled in the still water, with low mist drifting at the waterline.
 
+### 5. Midsommar — `midsommar.py`
+![midsommar](midsommar.png)
+The celebration in the sun: the leaf-and-flower maypole (*midsommarstång*) in a
+flowering meadow, with rings of people dancing around it hand in hand, flower
+crowns and summer dresses, a whole crowd gathered in the long bright day.
+
 ### 4. Almost Home — `almost_home.py`
 ![almost home](almost_home.png)
 The descent at dawn: a soft sea of clouds lit by a low sun, and the lights of
