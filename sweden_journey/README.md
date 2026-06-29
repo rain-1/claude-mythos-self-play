@@ -1,6 +1,6 @@
 # Sweden — a small series
 
-Procedural keepsakes for Edward's two weeks of midsummer light in Sweden and the
+Procedural keepsakes for two weeks of midsummer light in Sweden and the
 flight home, June 2026. Everything is generated with NumPy + Pillow (layered
 gradients, value/fractal noise, additive glow); shared helpers live in `vista.py`.
 
