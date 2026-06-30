@@ -1,8 +1,7 @@
 # The Anatomy of a Shuffle — a permutation-theory gallery
 
-Eleven lenses on the symmetric group `Sₙ` (five in Volume I, three in Volume II,
-three more in Volume III), each with its own visual grammar and each verified in
-code before it is drawn. A permutation is the simplest possible
+Fourteen lenses on the symmetric group `Sₙ` (Volumes I–IV), each with its own
+visual grammar and each verified in code before it is drawn. A permutation is the simplest possible
 "mixing" of a finite set — and almost every deep structure in combinatorics is
 hiding inside it. This gallery grew out of the main set's piece 05 (the
 Vershik–Kerov limit shape of a random Young diagram); here we open up the object
@@ -161,12 +160,58 @@ cells nest inside one another.
 
 ---
 
+# Volume IV — the sphere, the lattice of shapes, and one step beyond
+
+## 12 · A Shuffle Is the Shadow of a Sphere
+![great circles](12_great_circles.png)
+
+The deepest fact about sorting networks, made visible. Each wire's trajectory in
+the uniform network (Figure 6) converges to a **sine curve** (verified: median
+`R² = 0.99` against `h(t) = a cos t + b sin t`), and *every* sine curve is the
+shadow of a **great circle** — projecting `cos(t)·u + sin(t)·v` onto a fixed axis
+gives `R·sin(t+φ)`. So the whole random shuffle is the flattened shadow of a
+sphere woven from great circles, one per wire, **lifted here from the actual
+trajectories** (the lifts are exact great circles — on the unit sphere and through
+the origin to `1e-16`). This "Archimedean" sphere, conjectured by
+Angel–Holroyd–Romik–Virág and proved by Dauvergne, is where a random shuffle turns
+out to be hiding a perfectly round, perfectly classical object.
+
+## 13 · RSK as a Lattice of Shapes
+![fomin](13_fomin.png)
+
+A third face of RSK, after row-insertion (Figure 3) and shadow lines (Figure 9):
+**Fomin's growth diagrams**. Mark the permutation as crosses in a grid and label
+every lattice corner with a Young diagram, empty at the lower-left. Four purely
+**local rules** — depending only on the three corners to the south-west and
+whether a cross sits in the square — grow each diagram from its neighbours by at
+most one box. The shapes swell to the full RSK shape at the top-right (verified ==
+RSK on all of S₁–S₇); the top edge spells the recording tableau, the right edge
+the insertion tableau. RSK with no insertion and no bumping — just light touches
+between neighbours.
+
+## 14 · Signed Permutations: One Coxeter Step Further
+![typeB](14_typeB.png)
+
+Permutation theory is the *type-A* case of a far larger story. Let each value
+carry a **sign** and you get the **hyperoctahedral group** `B₃` — the signed
+permutations, the symmetries of the cube. Its 48 elements, placed at a generic
+point in 3-space, are the vertices of the **great rhombicuboctahedron** (the
+type-B permutohedron); its 72 edges are 3-coloured by the three Coxeter generators
+— two adjacent transpositions and one sign-flip. `V−E+F = 48−72+26 = 2` (12
+squares, 8 hexagons, 6 octagons). It is to Figure 2's truncated octahedron exactly
+what `B₃` is to `S₄` — the same construction, one Coxeter rank further out, where
+the whole theory of lengths, orders and descents carries over intact.
+
+---
+
 ### Honest math, first
 Every figure is checked in code before it is drawn: cycle statistics against `Hₙ`
 and Golomb–Dickman; the permutohedron's vertex/edge/face counts; RSK and the
 Edelman–Greene bijection by exhaustive round-trip; Viennot's shadow lines against
 RSK on all of S₁–S₇; the LGV determinant against a brute-force family count; the
-Bruhat rank sizes against the Mahonian numbers; the Mahonian, Mallows, Catalan and
+Bruhat rank sizes against the Mahonian numbers; the great-circle lifts for
+sphere/planarity plus the trajectory sine fits; Fomin growth against RSK on all of
+S₁–S₇; the type-B polytope's `V−E+F`; and the Mahonian, Mallows, Catalan and
 Eulerian counts against their closed forms. Where an honest sample was hard (the
 sorting network), the work went into the *sampler* rather than into faking the
 picture.
