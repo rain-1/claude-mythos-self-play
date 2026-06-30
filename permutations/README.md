@@ -1,8 +1,8 @@
 # The Anatomy of a Shuffle — a permutation-theory gallery
 
-Eight lenses on the symmetric group `Sₙ` (five in Volume I, three deeper ones in
-Volume II), each with its own visual grammar and each verified in code before it
-is drawn. A permutation is the simplest possible
+Eleven lenses on the symmetric group `Sₙ` (five in Volume I, three in Volume II,
+three more in Volume III), each with its own visual grammar and each verified in
+code before it is drawn. A permutation is the simplest possible
 "mixing" of a finite set — and almost every deep structure in combinatorics is
 hiding inside it. This gallery grew out of the main set's piece 05 (the
 Vershik–Kerov limit shape of a random Young diagram); here we open up the object
@@ -119,10 +119,54 @@ Worpitzky's identity and the `h`-vector of the permutohedron in Figure 2.
 
 ---
 
+# Volume III — permutations as light, water, and a lattice
+
+## 9 · RSK, Cast as Shadows
+![viennot](09_viennot.png)
+
+**Viennot's "light and shadows"** rebuilds the entire RSK correspondence from pure
+geometry. Plot the permutation as points `(i, σ(i))`; a light at the lower-left
+casts each point's shadow into its upper-right quadrant, and the boundaries of the
+merged shadows are the **shadow lines** (the nested rainbow staircases). The number
+of shadow lines is exactly the **longest increasing subsequence**; the lowest point
+of each line gives the first row of the RSK tableau `P`, and the inner north-east
+corners of the lines form a new constellation whose shadow lines give the next row,
+and so on. Verified: this reconstructs RSK's `P` *exactly* on all of S₁–S₇.
+
+## 10 · Paths That May Never Touch
+![lgv](10_lgv.png)
+
+A family of **non-intersecting lattice paths** ("vicious walkers"): random up/down
+paths pinned at both ends and forbidden ever to touch, sampled uniformly by
+corner-flip Glauber. The **Lindström–Gessel–Viennot lemma** says the number of such
+families equals a single **determinant** of one-path counts (verified: det = 10 =
+brute-force count) — and the signed cancellation in that determinant is precisely a
+sum over **permutations**, every intersecting family annihilated by its
+sign-flipped partner. The band's edges fluctuate by the Tracy–Widom law — the same
+random-matrix universality, and the same non-intersecting-paths picture that
+underlies the plane-partition / lozenge tilings of the main set.
+
+## 11 · The Other Order on the Symmetric Group
+![bruhat](11_bruhat.png)
+
+The **strong Bruhat order** on `S₄`: the 24 permutations stacked by inversion count
+(identity `1234` at the bottom, reversal `4321` at the top). One permutation covers
+another when a single transposition of two values — *any* two, not just neighbours
+— raises the inversion count by one. **Gold** edges are neighbour-swaps (these
+alone give the weak order, i.e. the permutohedron of Figure 2); **violet** edges
+are the long-range relations the strong order adds. Each rank holds a Mahonian
+number of permutations (`1,3,5,6,5,3,1`, verified) and the poset is self-dual. This
+order is the combinatorial skeleton of a flag variety — it records how Schubert
+cells nest inside one another.
+
+---
+
 ### Honest math, first
 Every figure is checked in code before it is drawn: cycle statistics against `Hₙ`
 and Golomb–Dickman; the permutohedron's vertex/edge/face counts; RSK and the
-Edelman–Greene bijection by exhaustive round-trip; the Mahonian, Mallows, Catalan
-and Eulerian counts against their closed forms. Where an honest sample was hard
-(the sorting network), the work went into the *sampler* rather than into faking the
+Edelman–Greene bijection by exhaustive round-trip; Viennot's shadow lines against
+RSK on all of S₁–S₇; the LGV determinant against a brute-force family count; the
+Bruhat rank sizes against the Mahonian numbers; the Mahonian, Mallows, Catalan and
+Eulerian counts against their closed forms. Where an honest sample was hard (the
+sorting network), the work went into the *sampler* rather than into faking the
 picture.
