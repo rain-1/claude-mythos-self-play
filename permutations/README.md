@@ -1,6 +1,6 @@
 # The Anatomy of a Shuffle — a permutation-theory gallery
 
-Fourteen lenses on the symmetric group `Sₙ` (Volumes I–IV), each with its own
+Eighteen lenses on the symmetric group `Sₙ` (Volumes I–V), each with its own
 visual grammar and each verified in code before it is drawn. A permutation is the simplest possible
 "mixing" of a finite set — and almost every deep structure in combinatorics is
 hiding inside it. This gallery grew out of the main set's piece 05 (the
@@ -204,6 +204,59 @@ the whole theory of lengths, orders and descents carries over intact.
 
 ---
 
+# Volume V — representation theory, the lattice of shapes, and the plactic algebra
+
+## 15 · The Character Table of the Symmetric Group
+![characters](15_characters.png)
+
+The soul of the representation theory of `Sₙ`, here for `n = 14`. Both axes are
+**partitions** of 14: rows are the irreducible representations, columns the
+conjugacy classes, each cell the character value `χ^λ(μ)` (signed-log colour),
+computed by the **Murnaghan–Nakayama** rim-hook rule. The blazing column on the
+right (the identity class) is the **dimensions** `χ^λ(1ⁿ)` = the number of
+standard Young tableaux of shape `λ` (hook-length formula, **verified**); the rows
+are orthonormal under the class-size weighting (**0 violations**). Irreducibles
+*and* conjugacy classes are both counted by partitions — and RSK is the bijection
+that explains why.
+
+## 16 · The Tree of All Shapes — Young's Lattice
+![young](16_young_lattice.png)
+
+Every partition, drawn as its Young diagram, with an edge whenever one is obtained
+from another by adding a single box — rising from the empty diagram at the root.
+A **standard Young tableau** of shape `λ` is exactly a saturated chain from the
+root up to `λ`, so the number of upward paths to `λ` equals `f^λ`, the dimension
+from Figure 15 (**verified: paths == hook-length formula**); nodes are tinted by
+`f^λ`. This is the prototypical **differential poset**: the up/down operators obey
+`DU − UD = I`, which alone forces `Σ (f^λ)² = n!` — the identity RSK proves
+bijectively.
+
+## 17 · The Sliding Game Behind RSK — Jeu de Taquin
+![jdt](17_jdt.png)
+
+**Jeu de taquin**, the engine of the plactic monoid. From a skew tableau, slide a
+hole outward — each step pulling in the smaller of its right/lower neighbour —
+until the shape straightens. The result, the **rectification**, is independent of
+the order of slides (confluence) and equals the **RSK insertion tableau** of the
+reading word (verified here and on 400 random skew tableaux). Two words are
+*Knuth-equivalent* exactly when they rectify to the same tableau — this is how the
+symmetric group's combinatorics becomes an associative algebra.
+
+## 18 · Two Statistics, One Distribution — Foata's Bijection
+![foata](18_foata.png)
+
+A permutation's **inversions** (pairs out of order) and its **major index** (the
+sum of its descent positions) are *equidistributed* — exactly as many permutations
+have major index `k` as have `k` inversions. **Foata's second fundamental
+transformation** proves it by an explicit bijection (**verified:
+`inv(foata(σ)) = maj(σ)` on all of S₁–S₇**). Each of the 720 permutations of 6 is
+a thread from its major index (left) to the inversions of its Foata image (right);
+because the map preserves the value every thread runs level, and the glowing bell
+both sides share is the Mahonian distribution of Figure 4 — the same shape, twice,
+joined cell by cell.
+
+---
+
 ### Honest math, first
 Every figure is checked in code before it is drawn: cycle statistics against `Hₙ`
 and Golomb–Dickman; the permutohedron's vertex/edge/face counts; RSK and the
@@ -211,7 +264,9 @@ Edelman–Greene bijection by exhaustive round-trip; Viennot's shadow lines agai
 RSK on all of S₁–S₇; the LGV determinant against a brute-force family count; the
 Bruhat rank sizes against the Mahonian numbers; the great-circle lifts for
 sphere/planarity plus the trajectory sine fits; Fomin growth against RSK on all of
-S₁–S₇; the type-B polytope's `V−E+F`; and the Mahonian, Mallows, Catalan and
-Eulerian counts against their closed forms. Where an honest sample was hard (the
+S₁–S₇; the type-B polytope's `V−E+F`; the character table's dimensions and
+orthogonality; Young's-lattice path counts against `f^λ`; jeu-de-taquin
+rectification against RSK; Foata's `inv∘foata = maj`; and the Mahonian, Mallows,
+Catalan and Eulerian counts against their closed forms. Where an honest sample was hard (the
 sorting network), the work went into the *sampler* rather than into faking the
 picture.
