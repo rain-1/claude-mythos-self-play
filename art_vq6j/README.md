@@ -1,8 +1,9 @@
 # The Edge of the Possible
 
-A procedural triptych. Each piece is a **boundary that no one drew** — a hard
-edge that geometry or dynamics produces on its own, the moment a system is
-pushed to its limit. Order frays into chaos along a coastline of gold foam; a
+A procedural triptych — with two companion pieces (04, 05) added by request.
+Each of the first three is a **boundary that no one drew** — a hard edge that
+geometry or dynamics produces on its own, the moment a system is pushed to its
+limit. Order frays into chaos along a coastline of gold foam; a
 million random cubes freeze the instant they cross an unpainted ellipse; and
 when you try to color the plane so that no two points one unit apart share a
 hue, you run out of room somewhere between five colors and seven.
@@ -99,6 +100,54 @@ itself builds the structure.*
 
 ---
 
+## Coda — two limit shapes  *(added by request)*
+
+Two companions extend the set from *hard boundaries* toward their gentler
+cousins: **limit shapes** and **singular measures** — the smooth, deterministic
+laws that emerge from the arithmetic of *all* the cases. (Both were on the
+"next-run" list this routine carries in its memory.)
+
+## 04 · The Singular Staircase — *2048²*
+![04](04_singular_staircase.png)
+
+The **Minkowski question-mark function `?(x)`** — Conway's "slippery devil's
+staircase." It maps each continued fraction `[0;a₁,a₂,…]` to the binary number
+`0.0…01…10…` (runs of `aᵢ` bits), sending the **Stern–Brocot** mediant tree to
+the **dyadic** tree. It is continuous and strictly increasing, yet its
+derivative is **zero almost everywhere**: all of its rise is hoarded on a
+measure-zero set (the quadratic irrationals). A function *alive only where the
+rationals are not.*
+
+The graph is the attractor of a two-map **iterated function system**
+(`L(x,y)=(x/(1+x), y/2)`, `R(x,y)=(1/(2−x),(1+y)/2)` — verified to land on `?`
+to 1e-13), rendered by a **vectorised chaos game** of ~250M points
+(ensemble-as-numpy-axis) splatted with additive bilinear weights so brightness
+*is* the singular **Stern–Brocot measure**; hue sweeps with height. Behind it,
+the nested **Stern–Brocot boxes** (Farey-width × dyadic-height) make the
+self-similarity literal: the curve inside every box is an affine copy of the
+whole. *Strictly increasing, yet standing still almost everywhere.*
+
+## 05 · The Limit Shape — *2048×1073*
+![05](05_limit_shape.png)
+
+A **Plancherel-random Young diagram** and the smooth curve it cannot help
+becoming. Sample a uniform random permutation, run **RSK insertion** to get its
+shape (the probability of a partition is `(dim λ)²/n!`); drawn in the Russian
+convention. The **Logan–Shepp / Vershik–Kerov** theorem (1977) says that as
+`n→∞` the rescaled boundary converges to a single deterministic curve,
+`Ω(u) = (2/π)(u·arcsin(u/2) + √(4−u²))` for `|u|≤2` — verified here:
+`max|φ−Ω| ≈ 0.01` over the bulk at `n=10⁵`.
+
+The glowing tiled mountain is one random diagram (`n ≈ 5,200`), its cells
+coloured by **content** `j−i` (the Russian diagonals); the jagged staircases are
+the boundaries of *smaller* random diagrams (`n = 110, 900, …`) — visibly
+rougher, fluctuating around the same shape — and the bold gold arc is `Ω`, the
+law they are all converging to. The random object is jagged and different every
+time; the shape it wants to be is fixed. (A direct cousin of **02**'s arctic
+ellipse — another limit shape of a random combinatorial object.)
+
+---
+
 ### Colophon
 Pure `numpy` / `scipy` / `Pillow`. Dark fields, additive Gaussian bloom, filmic
 tone-mapping, ×2 supersample → LANCZOS downscale. Everything is honest math:
@@ -114,3 +163,7 @@ code before they are drawn.
 > cross an ellipse no hand has painted. Colour the plane so no twins ever touch:
 > you run out of room before seven. We don't draw the edges — we only run the
 > arithmetic far enough to find where they were already waiting.
+
+> *Coda.* And two shapes randomness keeps drawing by accident: a staircase that
+> climbs the whole way up while standing still almost everywhere, and a mountain
+> that any random heap of boxes becomes, if you only pile enough of them.
