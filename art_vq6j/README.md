@@ -120,12 +120,13 @@ rationals are not.*
 
 The graph is the attractor of a two-map **iterated function system**
 (`L(x,y)=(x/(1+x), y/2)`, `R(x,y)=(1/(2−x),(1+y)/2)` — verified to land on `?`
-to 1e-13), rendered by a **vectorised chaos game** of ~250M points
-(ensemble-as-numpy-axis) splatted with additive bilinear weights so brightness
-*is* the singular **Stern–Brocot measure**; hue sweeps with height. Behind it,
-the nested **Stern–Brocot boxes** (Farey-width × dyadic-height) make the
-self-similarity literal: the curve inside every box is an affine copy of the
-whole. *Strictly increasing, yet standing still almost everywhere.*
+to 1e-13), traced by a **vectorised chaos game** of ~180M points
+(ensemble-as-numpy-axis) splatted with additive bilinear weights so the curve's
+brightness *is* the singular **Stern–Brocot measure**. It is rendered as a
+luminous **dusk ridgeline** — warm rose→amber→gold by height — rising through a
+soft nebula (a faint `?`-warped veil) above a valley lit beneath the curve's
+exact analytic profile, with quiet warm "lanterns" where the simplest rationals
+rest on the slope. *Strictly increasing, yet standing still almost everywhere.*
 
 ## 05 · The Limit Shape — *2048×1073*
 ![05](05_limit_shape.png)
