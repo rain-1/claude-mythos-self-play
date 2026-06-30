@@ -1,7 +1,8 @@
 # The Anatomy of a Shuffle — a permutation-theory gallery
 
-Five lenses on the symmetric group `Sₙ`, each with its own visual grammar and
-each verified in code before it is drawn. A permutation is the simplest possible
+Eight lenses on the symmetric group `Sₙ` (five in Volume I, three deeper ones in
+Volume II), each with its own visual grammar and each verified in code before it
+is drawn. A permutation is the simplest possible
 "mixing" of a finite set — and almost every deep structure in combinatorics is
 hiding inside it. This gallery grew out of the main set's piece 05 (the
 Vershik–Kerov limit shape of a random Young diagram); here we open up the object
@@ -71,12 +72,57 @@ anti-diagonal. The same "frozen ↔ free" story as the main set's tilings, now o
 
 ---
 
-### A note on what isn't here
-The most famous permutation artwork — the **uniform random sorting network** with
-its trajectories converging to sine curves (Angel–Holroyd–Romik–Virág) — is
-deliberately absent. Sampling one *uniformly* requires the Edelman–Greene
-bijection with random staircase tableaux; the naive braid/commutation Markov
-chain mixes far too slowly to be honest about uniformity (even `n=30` stays
-visibly biased after 30M moves). `sortnet.py` builds and verifies real reduced
-words of `w₀`, but rather than ship a biased sample dressed up as uniform, it is
-left for a future run with the exact sampler. Honest math first.
+# Volume II — going deeper
+
+## 6 · The Sine Curves of a Perfect Shuffle
+![sorting network](06_sorting_network.png)
+
+The piece the first volume deliberately left undone: a **uniform random sorting
+network** — a uniformly chosen *shortest* sequence of adjacent swaps that reverses
+`1,2,…,n` (a reduced word for the longest permutation `w₀`). Sampling one
+*uniformly* is the hard part: the naive braid/commutation Markov chain mixes far
+too slowly (even `n=30` stays visibly biased after 30M moves). The honest route,
+built here, is exact: sample a **uniform standard Young tableau of staircase
+shape** (the Greene–Nijenhuis–Wilf hook walk), then map it through the
+**Edelman–Greene bijection** to a reduced word — with the bijection's forward and
+inverse *round-trip verified on every reduced word of `S₄` and `S₅`* (0
+mismatches), and the inverse's special-case rule (trigger iff the bumped value is
+already present in the row) derived and checked by hand.
+
+Each wire's path is a trajectory. **Angel–Holroyd–Romik–Virág** proved that as
+`n→∞` these converge to **sine curves** (six highlighted in white over the woven
+mesh), the swarm fills an ellipse, and a marked particle's path is the shadow of a
+great circle on a sphere. This is one of the most beautiful theorems in modern
+combinatorics, drawn from a genuinely uniform sample.
+
+## 7 · Catalan's Permutations
+![patterns](07_patterns.png)
+
+A permutation **avoids the pattern 231** if no three positions carry values in the
+relative order 2-3-1. These are exactly Knuth's **stack-sortable** permutations,
+and they number the **Catalan** number `Cₙ` (verified: 1, 2, 5, 14, 42, 132, 429,
+…) — as do the avoiders of any single length-3 pattern (all six are
+Wilf-equivalent). Sampled here *exactly uniformly* via the recursive Catalan
+decomposition `σ = L · max · R`; at scale the matrix reveals the class's **permuton
+limit shape** — a Brownian-wandering diagonal — structure that a uniform
+permutation (white noise) has no trace of.
+
+## 8 · The Eulerian Triangle
+![eulerian](08_eulerian.png)
+
+The **Eulerian number** `A(n,k)` counts permutations of `n` with exactly `k`
+**descents** (`σ(i) > σ(i+1)`). Each row, per-row-normalised to brightness, sums
+to `n!` and is symmetric — ascents and descents balance — and concentrates on a
+bright central ridge at `k ≈ (n-1)/2` (built by the recurrence
+`A(n,k)=(k+1)A(n-1,k)+(n-k)A(n-1,k-1)`, verified). Eulerian numbers also yield
+Worpitzky's identity and the `h`-vector of the permutohedron in Figure 2.
+
+---
+
+### Honest math, first
+Every figure is checked in code before it is drawn: cycle statistics against `Hₙ`
+and Golomb–Dickman; the permutohedron's vertex/edge/face counts; RSK and the
+Edelman–Greene bijection by exhaustive round-trip; the Mahonian, Mallows, Catalan
+and Eulerian counts against their closed forms. Where an honest sample was hard
+(the sorting network), the work went into the *sampler* rather than into faking the
+picture.
