@@ -1,7 +1,8 @@
 # The Anatomy of a Shuffle — a permutation-theory gallery
 
-Eighteen lenses on the symmetric group `Sₙ` (Volumes I–V), each with its own
-visual grammar and each verified in code before it is drawn. A permutation is the simplest possible
+Twenty-one lenses on the symmetric group `Sₙ` (Volumes I–VI, including one
+animation), each with its own visual grammar and each verified in code before it
+is drawn. A permutation is the simplest possible
 "mixing" of a finite set — and almost every deep structure in combinatorics is
 hiding inside it. This gallery grew out of the main set's piece 05 (the
 Vershik–Kerov limit shape of a random Young diagram); here we open up the object
@@ -257,6 +258,46 @@ joined cell by cell.
 
 ---
 
+# Volume VI — plumbing, associativity, and a clock on tableaux
+
+## 19 · A Permutation as Plumbing — Pipe Dreams
+![pipedreams](19_pipedreams.png)
+
+A **pipe dream** (RC-graph) lays `n` pipes on a triangular board so that the pipe
+entering row `i` leaves at column `w(i)`; at a `+` tile two pipes cross, elsewhere
+they bounce past in an elbow. A pipe dream is **reduced** when no two pipes cross
+twice — and then its crosses, read along diagonals, spell a reduced word for `w`.
+Shown are all **9** reduced pipe dreams of `w = 14532` (each with exactly
+`inv(w) = 5` crosses). Summed with monomial weights they build the **Schubert
+polynomial** of `w`; the longest permutation has just one (the full staircase),
+and *ladder/chute moves* turn any pipe dream into any other. (Verified: `w₀` has a
+unique pipe dream, for `n = 3,4,5`.)
+
+## 20 · The Shape of Associativity — Associahedron & Tamari
+![associahedron](20_associahedron.png)
+
+The **associahedron**, the Catalan cousin of the permutohedron. Its **14** vertices
+(Catalan `C₄`) are the ways to bracket five factors — triangulations of a hexagon,
+binary trees on 4 nodes — each placed by **Loday's** rule; its **21** edges are
+single re-bracketings (rotations), and `V−E+F = 14−21+9 = 2` (6 pentagons +
+3 squares, verified). Orienting each edge in the rightward-rotation direction turns
+the polytope into the **Tamari lattice** (vertices tinted by Tamari height). The
+231-avoiding permutations of Figure 7 are these vertices in disguise.
+
+## 21 · A Clock on Tableaux — Promotion & Cyclic Sieving
+![promotion](21_promotion.gif)
+
+**Schützenberger promotion**, animated (montage above; `21_promotion.gif` is the
+loop). Delete the `1` from a standard Young tableau, slide the hole out by jeu de
+taquin, subtract 1 from every entry, and drop `n` into the vacated corner — one
+tick of a clock on tableaux. On a rectangle it has finite order: here the **16-step
+orbit** of a 4×4 tableau returns exactly to the start (verified). The orbit sizes
+obey the **cyclic sieving phenomenon** of Reiner–Stanton–White — substitute a root
+of unity into the `q`-analogue of the hook-length formula and you read off exactly
+how many tableaux each rotation fixes.
+
+---
+
 ### Honest math, first
 Every figure is checked in code before it is drawn: cycle statistics against `Hₙ`
 and Golomb–Dickman; the permutohedron's vertex/edge/face counts; RSK and the
@@ -266,7 +307,8 @@ Bruhat rank sizes against the Mahonian numbers; the great-circle lifts for
 sphere/planarity plus the trajectory sine fits; Fomin growth against RSK on all of
 S₁–S₇; the type-B polytope's `V−E+F`; the character table's dimensions and
 orthogonality; Young's-lattice path counts against `f^λ`; jeu-de-taquin
-rectification against RSK; Foata's `inv∘foata = maj`; and the Mahonian, Mallows,
-Catalan and Eulerian counts against their closed forms. Where an honest sample was hard (the
+rectification against RSK; Foata's `inv∘foata = maj`; the pipe-dream model against
+`w₀`; the associahedron's `V−E+F`; promotion's order on rectangles; and the
+Mahonian, Mallows, Catalan and Eulerian counts against their closed forms. Where an honest sample was hard (the
 sorting network), the work went into the *sampler* rather than into faking the
 picture.
