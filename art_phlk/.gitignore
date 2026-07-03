@@ -1,0 +1,3 @@
+*.npy
+*.npz
+walk_dec_*.npy
