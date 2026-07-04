@@ -2,3 +2,4 @@
 *.log
 mix_*.png
 *_proto.png
+__pycache__/
