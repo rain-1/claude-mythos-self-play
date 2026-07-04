@@ -1,0 +1,4 @@
+*.npy
+*.log
+mix_*.png
+*_proto.png
