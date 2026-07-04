@@ -3,3 +3,4 @@
 mix_*.png
 *_proto.png
 __pycache__/
+*.pkl
