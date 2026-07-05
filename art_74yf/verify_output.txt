@@ -1,0 +1,8 @@
+[1] max RELATIVE residual |P|/max|term| over 4000x6 roots = 3.85e-12  (should be ~1e-12)
+    (building Ronkin field for checks [3]/[5] ...)
+ronkHI computed N range -32.4 174.99 grad max 6.0
+[2] bounded complement components (connected interior-order regions) = 10  (expected interior lattice pts = 10)
+[3] fraction of clean-gradient pixels whose round(gradN) is a valid Newton lattice pt = 1.0000
+    max component of grad N = 6.000  (Newton polygon max coord = 6)
+[4] tropical unbounded rays (argmax changes around big circle) = 18  (expected 3d = 18)
+[5] interior lattice orders realised as holes = 10/10 (maximal Harnack amoeba)
