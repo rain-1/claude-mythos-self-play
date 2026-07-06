@@ -1,0 +1,6 @@
+*.npy
+*.log
+proto*.png
+crop*.png
+prev*.png
+__pycache__/
