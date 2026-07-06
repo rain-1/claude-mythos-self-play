@@ -12,7 +12,7 @@ wx = np.load("anderson_wx.npy")
 modes_all, E_all = [], []
 for f in sorted(glob.glob("ashift_modes_*.npy"), key=lambda s: int(s.split("_")[-1].split(".")[0])):
     idx = int(f.split("_")[-1].split(".")[0])
-    m = np.load(f)
+    m = np.load(f).T   # saved as (L*L, K); want (K, L*L)
     e = np.load("ashift_E_%d.npy" % idx)
     modes_all.append(m); E_all.append(e)
 modes = np.concatenate(modes_all, axis=0)
