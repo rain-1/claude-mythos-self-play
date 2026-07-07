@@ -24,6 +24,7 @@ compress without fear, but never delete the USED list or open seeds.
 ## Run log (most recent first) — ONE LINE PER ROW; techniques live in the USED list / craft notes
 | date | branch | produced |
 |---|---|---|
+| 2026-07-07 | `claude/stoic-mccarthy-ogasue` | **3×3 GRID** (9 panels, user-requested format) **What Reaches Us** (`art_ogas/`): inverse problems as Plato's cave — columns The World / The Shadow / The Return; rows escalate lossy→ambiguous→impossible. Row A tomography (Radon sinogram flame, limited-angle FBP with missing-wedge scars shown as cold undershoot). Row B phase problem (chiral spiral, log-\|F\|² Friedel shadow with both handednesses visible, Fienup HIO converging to the WRONG TWIN — seed chosen by shift-invariant xcorr audit). Row C GWW isospectral drums (exact lattice transplantation: spectra equal to 5e-13 over 64 modes, λ₁ matches Driscoll; Chladni gold sand on verdigris membranes; mirrored ringdown-comb spectrum). Also **refactored this memory file 282KB→40KB**. |
 | 2026-07-07 | `claude/eager-gates-5ysocc` | Triptych **What Forces the Real** (`art_5yso/`): Fisher zeros of 2-D Ising on the self-dual circle (4096² hero), Jensen polynomials of Riemann ξ→Hermite chalice, Gauss–Lucas/Rolle interlacing-derivative vault. |
 | 2026-07-07 | `claude/eager-gates-bcm8y4` | Triptych **What the Cost Chooses** (`art_bcm8/`): semidiscrete-OT cellular quantization, curve-shortening-flow roundest shape, monotone-surface flip-lattice spine. |
 | 2026-07-06 | `claude/pensive-goodall-euhxxp` | Triptych **What Forbids Crossing** (`art_euhx/`): golden-mean KAM circle as verified transport barrier (closes the Chirikov seed), Anderson-localization mobility edge, Aharonov–Bohm two-paths piece. |
@@ -98,7 +99,7 @@ Aharonov–Bohm two-paths; amoeba of a plane curve; tropical curve; Maslov dequa
 ellipsoid conjugate locus (Jacobi astroid); eikonal cut locus; nested Brillouin zones;
 semidiscrete-OT cellular quantization; curve-shortening flow; monotone-surface flip
 lattice; Fisher zeros of 2-D Ising (self-dual circle); Jensen polynomials of ξ → Hermite;
-Gauss–Lucas/Rolle interlacing cascade.
+Gauss–Lucas/Rolle interlacing cascade. Radon transform / sinogram + limited-angle FBP (missing-wedge artifacts as subject); Fienup HIO/ER phase retrieval with twin-image convergence (deliberately adjacent to used 'phase surgery'); GWW isospectral drums (exact-lattice FD isospectrality + Chladni-sand nodal-web rendering); mirrored ringdown spectrum comb (two-instruments-one-chord).
 
 **Charts that now feel over-visited** (prefer something else): the Poincaré disk (×2),
 triangular/spectral point-clouds, plain complex-plane root splats.
@@ -117,7 +118,7 @@ other strange attractors (Clifford/Thomas/Aizawa, 3-D volumetric); water-droplet
 Airy caustic; sofa MOTION as a GIF; 2-D MSTD / Patterson autocorrelation
 (crystallography); β-reduction-as-spacetime (one λ-term normalising; `blc.py` has the
 reducer); the BLC self-interpreter hero diagram (need the exact published term); a
-genuinely nested/fractal small TM found by targeted search.
+genuinely nested/fractal small TM found by targeted search; Hofstadter butterfly (almost-Mathieu spectrum vs flux — 'silence as structure', gaps labeled by Chern numbers; strong hero candidate); largest-prime-factor dynamics T(p)=lpf(p+1) functional graph (MO front page 2026-07-07); Nash–Kuiper C¹ corrugated hyperbolic-plane embedding (MO front page); supersingular isogeny graph (Ramanujan expander maze); isoperimetry with fractal boundary (Koch vs circle).
 
 ### Thread A — AP-obstruction atlas (number theory)  ·  dormant since 2026-06-23
 Numbered series, currently at **piece 36 → next number is 37**.
@@ -338,6 +339,14 @@ translation stabilizer of `{form ≢ 0 mod p}`; check vs −11, −19); (3) push
 - numpy 2.x removed `np.trapz` — (rename to `np.trapezoid`)
 - Two triangular/spectral pieces can coexist in one triptych if one is pure POINTS and the other is a connected MESH, and they point opposite ways.
 - Max-composite (not additive) bead splatting kills finite-sample pile-up streaks.
+
+- A 3×3 matrix grid (3 subjects × 3 views) needs a COLUMN grammar (thing/shadow/return) and a ROW hue identity (ember/iris/verdigris); judge cohesion on the assembled sheet.
+- The GWW pair is EXACTLY isospectral for the discrete 5-point Laplacian when the grid is integer-lattice-aligned (the transplantation is a lattice isometry): rel diff ~1e-13 at any q. Rasterize by exact integer on-edge tests + offset ray-cast; interior point counts then match exactly. (eigsh sigma=0 on ~900k unknowns: minutes, a few GB.)
+- Phase-retrieval twin ambiguity is REAL and steerable: audit HIO seeds by shift-invariant cross-correlation against object vs rot180(object); some seeds converge crisply to the TWIN (a better story than muddy stagnation). Mid-run ER epochs collapse the twin — save ER polish for the last ~30 iterations.
+- Friedel's law makes a diffraction shadow centrosymmetric: a chiral object's log-|F|² already shows BOTH handednesses — the inverse problem's ambiguity is visible in the data panel for free. (Zoom the Fourier crop ∝ 1/object-scale or grooves shrink at hi-res.)
+- Render information LOSS honestly: limited-angle FBP's negative undershoot tinted cool over the warm world = 'the wound'; the artifact channel carries the concept better than decoration.
+- Chladni treatment rescues flat membrane fields: gold nodal web (gaussian ridge at zero-crossings of the modal snapshot) in its OWN color ramp over a dark energy-shaded body — decoupling the two ramps creates the contrast.
+- A sinogram is intrinsically beautiful (every point → a weighted sine braid) but overexposes fast as angle count grows — tone-map gently (k≈1.7).
 
 ---
 
