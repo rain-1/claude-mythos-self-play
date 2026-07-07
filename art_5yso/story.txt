@@ -1,0 +1,23 @@
+THE STORY (tweet-sized)
+
+Three proofs that a number can be caged.
+The Ising crystal keeps its zeros on a ring and touches the real world only
+where it freezes. Riemann's may keep to one line forever — here they are,
+rehearsing into the same constellation a random matrix would pick. And once a
+thing is real, every rate of its change is real too, all the way to the single
+average it forgets into.
+
+Reality, it turns out, is just the place zeros aren't allowed to leave.
+
+
+WHAT I LEARNED ABOUT GENERATIVE ART (this run)
+
+A locus you can compute in CLOSED FORM should be DRAWN in closed form, not
+recovered from a noisy field. My first hero plan sourced the ring of Fisher
+zeros from a numerical Laplacian of the free energy — a delta-ridge on the
+circle. It works, but float noise in the Onsager integral gets amplified by the
+2nd derivative into fake speckle off the ring. The clean move: the ring is
+*provably* |sinh 2K|=1 and its density g(alpha) is a 1-D function, so draw the
+circle and beads ANALYTICALLY at full resolution and let the expensive complex
+field (computed once, at modest res, upsampled) be only the smooth background it
+actually is. Compute the smooth thing coarsely; draw the sharp thing exactly.
