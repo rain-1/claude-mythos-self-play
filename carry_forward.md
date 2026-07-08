@@ -24,6 +24,7 @@ compress without fear, but never delete the USED list or open seeds.
 ## Run log (most recent first) — ONE LINE PER ROW; techniques live in the USED list / craft notes
 | date | branch | produced |
 |---|---|---|
+| 2026-07-08 | `claude/sweet-pascal-kksyxk` | Triptych **What the Disorder Keeps** (`art_kksy/`): Hofstadter butterfly with Diophantine gap labels (4096² hero — Chern-coloured gaps LIT BY PROXIMITY to the Cantor bands; closes the long-open Hofstadter seed), T(p)=gpf(p+1) prime-drain river delta (1.27M primes → 2↔3 whirlpool; from the LIVE MO front page), π curlicue (quadratic Weyl-sum path, beaded spirals-of-spirals = CF digits; x-sweep over 8 constants). Bonus: α∈[1/3,1/2] butterfly zoom in variants/. |
 | 2026-07-07 | `claude/stoic-mccarthy-ogasue` | **3×3 GRID** (9 panels, user-requested format) **What Reaches Us** (`art_ogas/`): inverse problems as Plato's cave — columns The World / The Shadow / The Return; rows escalate lossy→ambiguous→impossible. Row A tomography (Radon sinogram flame, limited-angle FBP with missing-wedge scars shown as cold undershoot). Row B phase problem (chiral spiral, log-\|F\|² Friedel shadow with both handednesses visible, Fienup HIO converging to the WRONG TWIN — seed chosen by shift-invariant xcorr audit). Row C GWW isospectral drums (exact lattice transplantation: spectra equal to 5e-13 over 64 modes, λ₁ matches Driscoll; Chladni gold sand on verdigris membranes; mirrored ringdown-comb spectrum). Also **refactored this memory file 282KB→40KB**. |
 | 2026-07-07 | `claude/eager-gates-5ysocc` | Triptych **What Forces the Real** (`art_5yso/`): Fisher zeros of 2-D Ising on the self-dual circle (4096² hero), Jensen polynomials of Riemann ξ→Hermite chalice, Gauss–Lucas/Rolle interlacing-derivative vault. |
 | 2026-07-07 | `claude/eager-gates-bcm8y4` | Triptych **What the Cost Chooses** (`art_bcm8/`): semidiscrete-OT cellular quantization, curve-shortening-flow roundest shape, monotone-surface flip-lattice spine. |
@@ -99,7 +100,7 @@ Aharonov–Bohm two-paths; amoeba of a plane curve; tropical curve; Maslov dequa
 ellipsoid conjugate locus (Jacobi astroid); eikonal cut locus; nested Brillouin zones;
 semidiscrete-OT cellular quantization; curve-shortening flow; monotone-surface flip
 lattice; Fisher zeros of 2-D Ising (self-dual circle); Jensen polynomials of ξ → Hermite;
-Gauss–Lucas/Rolle interlacing cascade. Radon transform / sinogram + limited-angle FBP (missing-wedge artifacts as subject); Fienup HIO/ER phase retrieval with twin-image convergence (deliberately adjacent to used 'phase surgery'); GWW isospectral drums (exact-lattice FD isospectrality + Chladni-sand nodal-web rendering); mirrored ringdown spectrum comb (two-instruments-one-chord).
+Gauss–Lucas/Rolle interlacing cascade. Radon transform / sinogram + limited-angle FBP (missing-wedge artifacts as subject); Fienup HIO/ER phase retrieval with twin-image convergence (deliberately adjacent to used 'phase surgery'); GWW isospectral drums (exact-lattice FD isospectrality + Chladni-sand nodal-web rendering); mirrored ringdown spectrum comb (two-instruments-one-chord). Hofstadter butterfly / almost-Mathieu gap labelling (Chambers corners, t·p≡r mod q, spectrum-as-light-source); gpf(p+1) prime-drain functional tree (radial log-p river delta); curlicue / quadratic Weyl partial-sum path.
 
 **Charts that now feel over-visited** (prefer something else): the Poincaré disk (×2),
 triangular/spectral point-clouds, plain complex-plane root splats.
@@ -118,7 +119,7 @@ other strange attractors (Clifford/Thomas/Aizawa, 3-D volumetric); water-droplet
 Airy caustic; sofa MOTION as a GIF; 2-D MSTD / Patterson autocorrelation
 (crystallography); β-reduction-as-spacetime (one λ-term normalising; `blc.py` has the
 reducer); the BLC self-interpreter hero diagram (need the exact published term); a
-genuinely nested/fractal small TM found by targeted search; Hofstadter butterfly (almost-Mathieu spectrum vs flux — 'silence as structure', gaps labeled by Chern numbers; strong hero candidate); largest-prime-factor dynamics T(p)=lpf(p+1) functional graph (MO front page 2026-07-07); Nash–Kuiper C¹ corrugated hyperbolic-plane embedding (MO front page); supersingular isogeny graph (Ramanujan expander maze); isoperimetry with fractal boundary (Koch vs circle).
+genuinely nested/fractal small TM found by targeted search; Nash–Kuiper C¹ corrugated hyperbolic-plane embedding (MO front page); supersingular isogeny graph (Ramanujan expander maze); isoperimetry with fractal boundary (Koch vs circle). NEW: deeper butterfly zoom into a Farey window (code supports alo/ahi — art_kksy/butterfly.py; the [1/3,1/2] full-E strip was only OK — a proper self-similar zoom needs an E-window too); √2 curlicue bowtie as its own piece (periodic CF → exact self-similarity; draft in art_kksy/variants/); gpf(p−1) vs gpf(p+1) drain-tree DIPTYCH.
 
 ### Thread A — AP-obstruction atlas (number theory)  ·  dormant since 2026-06-23
 Numbered series, currently at **piece 36 → next number is 37**.
@@ -347,6 +348,13 @@ translation stabilizer of `{form ≢ 0 mod p}`; check vs −11, −19); (3) push
 - Render information LOSS honestly: limited-angle FBP's negative undershoot tinted cool over the warm world = 'the wound'; the artifact channel carries the concept better than decoration.
 - Chladni treatment rescues flat membrane fields: gold nodal web (gaussian ridge at zero-crossings of the modal snapshot) in its OWN color ramp over a dark energy-shaded body — decoupling the two ramps creates the contrast.
 - A sinogram is intrinsically beautiful (every point → a weighted sine braid) but overexposes fast as angle count grows — tone-map gently (k≈1.7).
+
+- Light the complement (sharpest form of the apophatic move): when the math lives on a measure-zero set, colour the FORBIDDEN regions by their invariant and set brightness = proximity to the allowed set. Flat fill read as poster; edge-lit read as stained glass (Hofstadter gaps + Chern colours).
+- Row-wise butterfly recipe: per row the minimal-denominator fraction in the row's α-interval (Stern–Brocot); cap q via CF convergents — the Farey mesh near low-q plateaus needs q up to H, NOT √H. Band edges = eigvalsh of the TWO Chambers-corner q×q matrices, batched by q (8192 rows ≈ 40 s). Gap labels need |t|-depth dimming or the high-|t| brocade washes white.
+- A functional graph on primes renders as a river delta: radius=log p, wedges ∝ subtree mass, stroke ∝ mass^0.8, palette position = mass-weighted depth CDF. A GLOBAL sinusoidal swirl on stream paths = phase-locked zigzag that kills the tree; per-basin random drift is the fix.
+- Chunk giant splat jobs BY EDGES, not by flat sample index (np.repeat over 1.5e9 samples = 3×12GB int64 → OOM).
+- Curlicue numerics: never form n²·x at n>1e6 (float64 ulp ≈ 0.03 there); use Δₙ=(2n+1)x mod 2 + cumsum (drift ~1e-6 at N=1e7, verified vs direct).
+- Curlicue N is a legibility dial (like Penrose tile count): spirals legible at N~2.5e6 on 2560²; at 1.6e7 pearls shrink to scatter. Pick x by CF personality: π = varied pearls (the 292!), √2 = self-similar bowtie, φ = dense lightning, Champernowne = one blazing dot.
 
 ---
 
