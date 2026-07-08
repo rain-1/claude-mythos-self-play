@@ -240,6 +240,7 @@ def render(S=1280, SS=2, A=6000, Bb=2, n_chords=120_000, seed=11,
     print(f"{len(fx)} group elements via verified angle arithmetic")
 
     W = H = S * SS
+    scl = S / 1024.0
     x_lo, x_hi = -1.42, 1.05
     y_lo, y_hi = -2.35, 2.35
 
@@ -385,7 +386,7 @@ def render(S=1280, SS=2, A=6000, Bb=2, n_chords=120_000, seed=11,
         splat_segments(fbuf, px(xs[:-1]), py(ys[:-1]), px(xs[1:]), py(ys[1:]),
                        170.0 * founders_gain * wseg * Ls / (SS * 100.0),
                        samples_per_px=1.3)
-    fbuf = gaussian_filter(fbuf, 0.9 * SS) * (1 + (0.9 * SS) ** 2)
+    fbuf = gaussian_filter(fbuf, 0.9 * SS * scl ** 0.5) * (1 + (0.9 * SS * scl ** 0.5) ** 2)
     for c, cv in enumerate((1.0, 0.95, 0.82)):
         acc[..., c] += fbuf * cv
 
@@ -395,7 +396,7 @@ def render(S=1280, SS=2, A=6000, Bb=2, n_chords=120_000, seed=11,
         g = np.zeros((H, W))
         splat_points(g, px(fx[mask]), py(fy[mask]),
                      np.full(int(mask.sum()), amp * point_gain))
-        g = gaussian_filter(g, 0.9 * SS) * (0.9 * SS) ** 2 * 6.28
+        g = gaussian_filter(g, 0.9 * SS * scl ** 0.5) * (0.9 * SS * scl ** 0.5) ** 2 * 6.28
         for c in range(3):
             acc[..., c] += g * col[c]
 
@@ -406,11 +407,11 @@ def render(S=1280, SS=2, A=6000, Bb=2, n_chords=120_000, seed=11,
         g = np.zeros((H, W))
         splat_points(g, np.array([px(xa)]), np.array([py(ya)]),
                      np.array([26.0 * point_gain]))
-        g = gaussian_filter(g, 2.6 * SS) * (2.6 * SS) ** 2 * 6.28
+        g = gaussian_filter(g, 2.6 * SS * scl ** 0.7) * (2.6 * SS * scl ** 0.7) ** 2 * 6.28
         for c in range(3):
             acc[..., c] += g * colf[c] * 0.4
 
-    rgb = bloom(acc, sigma=2.2 * SS, amount=0.32, thresh=0.52)
+    rgb = bloom(acc, sigma=2.2 * SS * scl ** 0.7, amount=0.32, thresh=0.52)
     rgb = filmic(rgb, k=k_tone, gamma=0.88)
     save(rgb, out, down=SS)
     print("saved", out)
