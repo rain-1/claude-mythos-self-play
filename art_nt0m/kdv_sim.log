@@ -1,0 +1,14 @@
+t=0.974  max u=2.419  rows=400
+t=1.950  max u=1.886  rows=800
+t=2.926  max u=2.631  rows=1200
+t=3.902  max u=2.066  rows=1600
+t=4.878  max u=1.620  rows=2000
+t=5.854  max u=1.997  rows=2400
+t=6.830  max u=2.161  rows=2800
+t=7.806  max u=2.381  rows=3200
+t=8.782  max u=2.751  rows=3600
+t=9.758  max u=1.430  rows=4000
+t=10.734  max u=2.418  rows=4400
+invariant drift: M1 8.33e-17  M2 7.52e-12  M3 1.28e-10
+best late-time shift-max correlation with u0: 0.9259 at t=9.538 (Zabusky: ~30.4/pi=9.677)
+saved kdv_field.npz (4427, 2048)

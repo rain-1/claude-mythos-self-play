@@ -1,0 +1,16 @@
+total energy drift: 2.53e-07 (relative)
+initial mode-1 share: 1.0000
+near-recurrences (t, mode-1 share):
+   t=   158.0   0.9931
+   t=   288.0   0.9754
+   t=   388.0   0.9553
+   t=   518.0   0.9200
+   t=   618.0   0.8877
+   t=   748.0   0.8380
+   t=   848.0   0.7968
+   t=   980.0   0.7375
+   t=  9176.0   0.7346
+   t=  9276.0   0.7788
+   t=  9406.0   0.8331
+   t=  9538.0   0.8807
+saved fput_modes.npz (11001, 32)
