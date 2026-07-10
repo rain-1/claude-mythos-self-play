@@ -32,7 +32,7 @@ def render(p=4093, S=1280, out=None):
     R = 2.45
     cx, cy = 0.0, 0.0
     scale = S / (2 * R)
-    mass = 80.0 * S / 1280.0
+    mass = 80.0 * (S / 1280.0) ** 1.65
 
     inv = np.array([pow(x, p - 2, p) for x in range(1, p)], dtype=np.int64)
     xg = np.arange(1, p, dtype=np.int64)
@@ -79,7 +79,7 @@ def render(p=4093, S=1280, out=None):
         # endpoint pegs (in path color, whitened)
         ex = ((Pv[:, -1].real - (cx - R)) * scale).astype(np.float32)
         ey = ((Pv[:, -1].imag - (cy - R)) * scale).astype(np.float32)
-        pw = (0.6 * col + 0.4) * (0.42 * S / 1280.0)
+        pw = (0.6 * col + 0.4) * (0.42 * (S / 1280.0) ** 1.3)
         splat_rgb(pegs, ex, ey, pw.astype(np.float32), W, H)
         if (i // 256) % 4 == 0:
             print("fog chunk", i, flush=True)
@@ -98,7 +98,7 @@ def render(p=4093, S=1280, out=None):
         Z = (A[:, None] + (B - A)[:, None] * fh[None, :]).ravel()
         xs = ((Z.real - (cx - R)) * scale).astype(np.float32)
         ys = ((Z.imag - (cy - R)) * scale).astype(np.float32)
-        w = np.tile(col.astype(np.float32), (xs.size, 1)) * (mass * 26.0 / (T * mh))
+        w = np.tile(col.astype(np.float32), (xs.size, 1)) * (mass * 18.0 / (T * mh))
         splat_rgb(acc, xs, ys, w, W, H)
         # blazing endpoint peg for the hero (near-Weil landings touch the wall)
         epx = np.full(9, (Pv[-1].real - (cx - R)) * scale, dtype=np.float32)
@@ -106,12 +106,12 @@ def render(p=4093, S=1280, out=None):
         rng_ = np.random.default_rng(int(a_hero))
         epx += rng_.normal(0, 0.7 * S / 1280.0, 9).astype(np.float32)
         epy += rng_.normal(0, 0.7 * S / 1280.0, 9).astype(np.float32)
-        epw = np.tile((0.55 * col + 0.45).astype(np.float32), (9, 1)) * (0.55 * S / 1280.0 / 9)
+        epw = np.tile((0.55 * col + 0.45).astype(np.float32), (9, 1)) * (0.55 * (S / 1280.0) ** 1.3 / 9)
         splat_rgb(acc, epx, epy, epw, W, H)
 
     # law-bar glow: blur pegs slightly, add
     for c in range(3):
-        pegs[..., c] = gaussian_filter(pegs[..., c], 1.0 * S / 1280.0)
+        pegs[..., c] = gaussian_filter(pegs[..., c], 0.6 * S / 1280.0)
     acc += pegs
 
     img = filmic(acc, k=0.92, gamma=0.85)
