@@ -103,7 +103,8 @@ for k, fi in enumerate(eidx):
         wseg = BASE * bright[k] * (shade[:-1] + shade[1:]) * 0.5
         hue = HUES[i] * (1.0 + 0.8 * (k >= NEXPO - 2))
         # soft multi-stroke for body
-        for off, ow in ((-2.4, 0.10), (-1.2, 0.22), (0.0, 0.40), (1.2, 0.22), (2.4, 0.10)):
+        SCL = W / 3200.0
+        for off, ow in ((-2.4*SCL, 0.10), (-1.2*SCL, 0.22), (0.0, 0.40), (1.2*SCL, 0.22), (2.4*SCL, 0.10)):
             rr = (R[fi, i] * s0 + off * SS)
             Y2 = rr * np.cos(th); Z2 = rr * np.sin(th)
             px2, py2, f2 = project(np.full(NTH, cx3), Y2, Z2)
