@@ -53,7 +53,7 @@ ns = 2 * starts + 1; ne = 2 * (ends - 1) + 1
 runlen = (ends - starts).astype(np.float64)
 print("runs:", len(ns))
 
-LVL_FOG = 1.35 * GAIN
+LVL_FOG = 1.9 * GAIN
 FOG_COL = np.array([0.60, 0.105, 0.105])
 dlg = np.log2(ne.astype(np.float64) + 2) - np.log2(ns.astype(np.float64))
 big = dlg > 0.004
@@ -63,7 +63,8 @@ wf = LVL_FOG * endfade(ns[~big])
 # three radial-offset strokes to survive the LANCZOS downscale
 dxu = x0 - cx; dyu = y0 - cy
 rn = np.hypot(dxu, dyu); dxu /= rn; dyu /= rn
-for off, ow in ((-0.8, 0.28), (0.0, 0.44), (0.8, 0.28)):
+OSC = W / 2560.0
+for off, ow in ((-0.8*OSC, 0.28), (0.0, 0.44), (0.8*OSC, 0.28)):
     splat_segments(acc, x0 + off * dxu, y0 + off * dyu, x1 + off * dxu, y1 + off * dyu,
                    wf * ow * 3.0, FOG_COL)
 ib = np.nonzero(big)[0]
@@ -87,9 +88,9 @@ def line_mass(nvals, level, fade_slope=0.030, fade_floor=0.30):
     return level * 2 * np.pi * rmid / np.maximum(cnt[k], 1) * fade * endfade(nvals)
 
 xs, ys = polar_xy(two_p)
-splat_points(acc, xs, ys, line_mass(two_p, 1.35 * GAIN), np.array([0.40, 0.78, 1.20]))
+splat_points(acc, xs, ys, line_mass(two_p, 1.8 * GAIN), np.array([0.40, 0.78, 1.20]))
 xs, ys = polar_xy(four_p)
-splat_points(acc, xs, ys, line_mass(four_p, 0.95 * GAIN), np.array([0.82, 0.50, 1.20]))
+splat_points(acc, xs, ys, line_mass(four_p, 1.3 * GAIN), np.array([0.82, 0.50, 1.20]))
 
 # ---- chains (radial hatch): per-chain mass spread over its DR length -----------
 d4 = four_p; d2 = 2 * (four_p // 4)
@@ -98,7 +99,7 @@ k4 = np.floor(np.log2(d4.astype(np.float64))).astype(int)
 cnt4 = np.bincount(k4, minlength=32).astype(np.float64)
 rmid4 = R0 + DR * (k4 + 0.5 - LG0)
 fade4 = np.clip(1.20 - 0.034 * k4, 0.22, 1.0)
-wch = 0.60 * GAIN * 2 * np.pi * rmid4 / np.maximum(cnt4[k4], 1) / DR * fade4 * endfade(d4)
+wch = 0.85 * GAIN * 2 * np.pi * rmid4 / np.maximum(cnt4[k4], 1) / DR * fade4 * endfade(d4)
 splat_segments(acc, x0, y0, x1, y1, wch, np.array([0.55, 0.65, 1.10]))
 print("families done")
 
