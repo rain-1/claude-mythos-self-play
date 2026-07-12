@@ -1,0 +1,12 @@
+seed 14769093  range 0.843  quadratic variation 0.999852 (expect 1)
+level j, N_j boxes, N_j * eps^{3/2}:
+   4       108   1.6875
+   5       295   1.6297
+   6       874   1.7070
+   7      2351   1.6234
+   8      6556   1.6006
+   9     18671   1.6116
+  10     52613   1.6056
+slope of log2 N_j (j=5..10): 1.4892  (theory: 3/2, dim_H graph = 3/2 a.s.)
+covering completeness (finest level, 16k sample pts): True
+the value of the 3/2-Hausdorff measure itself: OPEN (MO front page 2026-07-12)

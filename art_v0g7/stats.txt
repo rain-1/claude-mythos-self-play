@@ -1,0 +1,17 @@
+primes up to N: 7603553
+phi brute-force check (2000 random): OK
+exit mass = 134217728 (expect 134217728) OK
+parity-crossing edges = 2 (expect 2: 1->2, 2->3)
+max in-degree = 23 at a=132094463
+doubling locks 2^k->3*2^(k-1)->2^(k+1), k=2..25: OK
+nodes with mass >= 2^10: 478
+nodes with mass >= 2^12: 63
+nodes with mass >= 2^14: 2
+nodes with mass >= 2^16: 0
+nodes with mass >= 2^18: 0
+nodes with mass >= 2^20: 0
+nodes with mass >= 16 (ch2 edges): 3150865
+confluences (>=2 heavy tributaries): 3739
+river edges exported (mass>=64): 194950
+splat time 38.1 s
+poster squarefree indices 1..120 reproduced exactly: [1..15 pattern] + [71..78] (sympy big-int, a_120 has 25 digits)

@@ -1,0 +1,6 @@
+mode (m,n)=(120,14), j_mn=193.021062804, caustic r_c/R=0.621694
+first antinode: observed r=0.64242, Airy prediction r=0.64236 (rel err 9.47e-05)
+Helmholtz residual (rel, FD polar 400x1200): 3.05e-02
+ray chords tangent to r_c: max |dist - r_c| = 2.22e-16
+rotation number 2*alpha/2pi = 0.286445  vs 2/7 = 0.285714 (detuning 7.31e-04 -> star precesses 1.841 deg/return)
+front-page inequality along mode radius: min D = 0 (>=0: True)
