@@ -24,9 +24,10 @@ z^(a+b)/(1+z^(a+b)); conditioned on the endpoint, the arc is EXACTLY uniform.
 Overlaid additively, the ensemble condenses onto the **Bárány parabolic
 square** — four parabola arcs tangent to the sides — sharpening inward as
 N^(−1/3) in relative width. Arcs are destiny-colored by signed area deviation
-from the exact finite-N limit path: teal bulged toward the center, ember
+from the exact finite-N limit path: steel blue bulged toward the center, ember
 pressed toward the walls, ivory where they agree. Faint pewter threads are
-individual whole polygons.
+individual whole polygons; the gold point at the center is the fixed point of
+the recursion — the parliament all parliaments converge to.
 
 **Verified:** at N=6 the sampler was checked against complete enumeration
 (44 convex arcs, 40 000 samples, χ² = 36.6 at 43 dof — exactly uniform);

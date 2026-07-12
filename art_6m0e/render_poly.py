@@ -49,9 +49,11 @@ def render(mode="proto"):
                   dict(N=384, count=520, window=1)]
     else:
         SIZE, SS = 4096, 2
-        levels = [dict(N=24, count=4200), dict(N=48, count=3400),
-                  dict(N=96, count=2800), dict(N=192, count=2200),
-                  dict(N=384, count=1500, window=1),
+        # diffuse bands lose per-pixel density faster than sharp ones at the
+        # size jump: outer levels get compensating gain
+        levels = [dict(N=24, count=4200, gain=5.2), dict(N=48, count=3400, gain=3.6),
+                  dict(N=96, count=2800, gain=2.5), dict(N=192, count=2200, gain=1.7),
+                  dict(N=384, count=1500, window=1, gain=1.2),
                   dict(N=768, count=1000, window=2)]
     S = SIZE * SS
     acc = np.zeros((S, S), np.float32)
@@ -143,7 +145,7 @@ def render(mode="proto"):
     vbar = np.where(den > 1e-8, accv / np.maximum(den, 1e-8), 0.0)
     # smooth the value field slightly so color doesn't sparkle
     vs = gaussian_filter(vbar * den, 1.5) / np.maximum(gaussian_filter(den, 1.5), 1e-8)
-    k_tone = 2.6 / np.percentile(den[den > 0], 99.2)
+    k_tone = (2.6 if mode == "proto" else 3.2) / np.percentile(den[den > 0], 99.2)
     L = filmic(den * k_tone, 1.0) ** 1.0
     col = palette3(np.clip(vs * 1.4, -1, 1),
                    c_neg=(0.34, 0.55, 0.90),   # steel blue: bulged toward center
