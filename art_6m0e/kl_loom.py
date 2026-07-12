@@ -104,7 +104,10 @@ def render(mode="proto"):
 
     # tone: fog ice-blue, gold thread warm
     fog = acc_fog / max(1, NFOG)
-    kf = 1.45 / np.percentile(fog[fog > 0], 99.5) if (fog > 0).any() else 1
+    # fog is an overlap phenomenon: per-pixel density falls ~1/S at fixed
+    # per-thread mass — restore with a gain that tracks the size jump
+    kf_gain = 1.45 if mode == "proto" else 2.9
+    kf = kf_gain / np.percentile(fog[fog > 0], 99.5) if (fog > 0).any() else 1
     Lf = filmic(fog * kf, 1.0)
     gold = acc_gold
     kg = 1.0 / np.percentile(gold[gold > 0], 92)
@@ -120,7 +123,7 @@ def render(mode="proto"):
     ke = 0.9 / max(np.percentile(acc_env[acc_env > 0], 95), 1e-9) if (acc_env > 0).any() else 0
     Le = filmic(acc_env * ke, 1.0)
     rgb = (Lf[..., None] * c_fog[:, None, :] + np.clip(Lg, 0, 1.4)[..., None] * c_gold
-           + 0.5 * Le[..., None] * c_env)
+           + (0.5 if mode == "proto" else 0.7) * Le[..., None] * c_env)
     # bloom the gold
     bl = gaussian_filter(np.clip(Lg - 0.5, 0, None), Wb / 500)
     rgb += bl[..., None] * c_gold * 0.8

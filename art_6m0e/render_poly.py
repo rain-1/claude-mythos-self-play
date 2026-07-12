@@ -146,15 +146,21 @@ def render(mode="proto"):
     k_tone = 2.6 / np.percentile(den[den > 0], 99.2)
     L = filmic(den * k_tone, 1.0) ** 1.0
     col = palette3(np.clip(vs * 1.4, -1, 1),
-                   c_neg=(0.16, 0.58, 0.62),   # teal: bulged toward center
+                   c_neg=(0.34, 0.55, 0.90),   # steel blue: bulged toward center
                    c_mid=(1.00, 0.92, 0.74),   # ivory-gold: agreement
-                   c_pos=(0.93, 0.34, 0.16))   # ember: pressed to the walls
+                   c_pos=(0.96, 0.40, 0.13))   # ember: pressed to the walls
     rgb = L[..., None] * col
     # crisp individual polygons: faint pewter threads over the law
     if hero_acc.max() > 0:
         kh = 0.85 / np.percentile(hero_acc[hero_acc > 0], 90)
         Lh = filmic(hero_acc * kh, 1.0)
-        rgb += 0.28 * Lh[..., None] * np.array([0.72, 0.78, 0.80], np.float32)
+        rgb += 0.38 * Lh[..., None] * np.array([0.72, 0.78, 0.80], np.float32)
+    # the fixed point of the recursion: a small star where all parliaments
+    # would converge
+    yy, xx = np.mgrid[0:S, 0:S].astype(np.float32)
+    r2 = (xx - C[0]) ** 2 + (yy - C[1]) ** 2
+    star = 0.55 * np.exp(-r2 / (2 * (S / 160.0) ** 2)) + 0.9 * np.exp(-r2 / (2 * (S / 1100.0) ** 2))
+    rgb += star[..., None] * np.array([1.0, 0.9, 0.62], np.float32)
     # gentle bloom on the bright core
     lum = 0.2126 * rgb[..., 0] + 0.7152 * rgb[..., 1] + 0.0722 * rgb[..., 2]
     mask = np.clip((lum - 0.55) / 0.45, 0, 1) ** 2
