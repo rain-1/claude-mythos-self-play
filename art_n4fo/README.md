@@ -61,6 +61,16 @@ spectrum is a **ghost**, pinned in place yet fleeing at the faintest perturbatio
 is the resolvent norm `1/σ_min`; the nested shells are decades of ε. *Verified:*
 `σ_min = 6×10⁻¹⁰` at an eigenvalue on the grid (a true zero of the resolvent).
 
+## Bonus · The Capture Dance
+`capture_dance.gif` — 720×720, 60-frame loop
+
+The hero states the 2nd theorem; this animates it. Three cages breathe: when disjoint,
+each holds exactly one eigenvalue (gold, resolved); as a coupling grows two discs merge
+into one component that now holds two (teal) — and you watch the two eigenstars get
+*caught together*, then freed as the cage shrinks. The colour is recomputed live from the
+component structure every frame, so the theorem literally choreographs the loop. Six gold
+jewel-witnesses stay resolved throughout.
+
 ---
 
 ## The story
