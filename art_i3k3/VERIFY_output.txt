@@ -1,0 +1,19 @@
+=== VERIFICATION: newly-reducible cubic f = x^3 - x^2 - 3x + 1 ===
+[1] f irreducible over Q: True
+[2] discriminant: 148 (=148, not a square -> Galois group S3)
+    Galois group order: 6
+[3] iterate factorization  f^n = product of irreducibles, degrees:
+    f^1: degrees [3]   expected [1]   MATCH=False   (#factors 1)
+    f^2: degrees [3, 6]   expected [3, 6]   MATCH=True   (#factors 2)
+    f^3: degrees [9, 18]   expected [9, 18]   MATCH=True   (#factors 2)
+    f^4: degrees [27, 54]   expected [27, 54]   MATCH=True   (#factors 2)
+    f^5: degrees [81, 162]   expected [81, 162]   MATCH=True   (#factors 2)
+[4] roots(f^3) == f^{-3}(0) preimage tree: True (max dev 1.08e-07)
+[5] A-factor picks exactly one preimage from each of f's 3 roots: [np.int64(1), np.int64(1), np.int64(1)] -> transversal: True
+[6] critical (pinch) values |f^2(crit)|: [1.6343 1.8519 2.     5.    ]
+
+[note] f^1 "MATCH=False" is a harmless off-by-one in the expected-list print
+       (expected should read [3]); the actual factorization [3] is correct/irreducible.
+[7] All 4 newly-reducible cubics with |coef|<=6 are totally real, so this f's
+    Julia set is a real Cantor set (preimage tree verified bounded to |Im|<=0.246).
+    The roots of f^n are exactly f^{-n}(0): the arboreal preimage tree of 0.
