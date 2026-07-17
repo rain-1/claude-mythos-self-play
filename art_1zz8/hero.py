@@ -146,11 +146,15 @@ def render(prm, S=1024, SS=2, ncurve=400000, nexpo=12, nfog=500,
     if rs <= 1.01:
         cb += 0.85*gaussian_filter(cb, (1.0*SS, 1.0*SS, 0))
     else:
-        pc = np.percentile(cb.max(-1), 99.9)
+        def typ(buf):
+            v = buf.max(-1)
+            nz = v[v > 0.02*v.max()]
+            return np.percentile(nz, 70) if len(nz) else 0.0
+        pc = typ(cb)
         raw = cb.copy()
         for sig, fr in ((2.2*SS, 0.9), (1.0*SS*rs, 0.5)):
             h = gaussian_filter(raw, (sig, sig, 0))
-            ph = np.percentile(h.max(-1), 99.9)
+            ph = typ(h)
             if ph > 1e-9:
                 cb += h*(fr*pc/ph)
     cv.img += cb
