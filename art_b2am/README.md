@@ -55,6 +55,14 @@ between neighboring tiles is exactly the fold of the hero: the same object, seen
 `tm_common.py` (shared), `make_contact.py`, `verify_all.py`, `contact_sheet.png`.
 
 ## Story
+
+**Tweet:**
+> Fold a strip of paper, then fold the fold, forever — each crease the negation
+> of the last. Unfold it: a dragon that never repeats and never escapes itself,
+> yet paves a whole plane. Heard as sound it's a spectrum with no notes. Progress
+> isn't a circle or a line. It's a spiral. 🐉
+
+**Longer:**
 > A strip of paper is folded, and folded again — each crease the reversal of the
 > last, each generation the negation of the one before. Unfold it: a dragon. It
 > never repeats and never escapes itself; it is its own opposite at every scale,
