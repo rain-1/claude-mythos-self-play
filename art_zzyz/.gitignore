@@ -1,0 +1,7 @@
+*.npy
+*.npz
+*_view.png
+crop*.png
+proto_*.png
+*.log
+nohup.out
