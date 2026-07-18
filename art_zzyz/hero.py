@@ -142,7 +142,7 @@ P = dict(
     bg=[0.012, 0.014, 0.030],
     star_amp=1.5, star_gamma=0.52, glint_amp=0.5, ov_pow=0.58,
     deep_gain=2.4,
-    beacon_amp=2.4, bloom_sigma=0.010, bloom_gain=0.55,
+    beacon_amp=2.4, bloom_sigma=0.010, bloom_gain=0.70,
     expo=1.30, gamma=0.90,
 )
 
@@ -153,13 +153,14 @@ def render():
     H = W = S
     yfrac = (np.arange(H, dtype=np.float32) + 0.5) / H
     dg = (1 + P["deep_gain"] * smoothstep((yfrac - 0.33) / 0.45)
-          + 1.8 * smoothstep((yfrac - 0.86) / 0.12))
+          + 2.6 * smoothstep((yfrac - 0.86) / 0.12))
     F *= dg[:, None]
-    toe = 0.06
+    toe = 0.09
     pos = np.maximum(F - toe, 0)
     neg = np.maximum(-F, 0)
     warm = 1 - np.exp(-P["kp"] * pos)
     coolL = (1 - np.exp(-P["kn"] * neg)) * np.exp(-neg / P["cool_crush"])
+    coolL *= (1 - 0.45 * smoothstep((yfrac - 0.55) / 0.35))[:, None]
     wramp = np.clip(pos / 2.6, 0, 1) ** 1.4
     cramp = np.clip(neg / 3.2, 0, 1) ** 1.2
     del F
@@ -181,7 +182,8 @@ def render():
     # vertically from adjacent strata) so the wall never stacks to white.
     ns = np.unique(n_of).astype(int)
     zcount = {int(n): int(((n_of == n) & ~pole & bright).sum()) for n in ns}
-    sig_g = 0.85 * SS
+    RS = (FINAL / 1024.0) ** 0.85          # ink tracks canvas size
+    sig_g = 1.05 * SS
     sig_s = 2.2 * SS
     amp_eff = np.zeros(len(cat))
     for n in ns:
@@ -191,30 +193,41 @@ def render():
         dy_gap = PXY * 1.6 / n            # px between adjacent strata
         dy_ov = max(1.0, 2.0 * sig_g / max(dy_gap, 1e-9))
         base = (1.0 / n) ** (0.78 if n <= 10 else P["star_gamma"])
-        cresc = 1 + 2.0 * smoothstep((np.log(n) - np.log(60)) /
+        cresc = 1 + 3.2 * smoothstep((np.log(n) - np.log(60)) /
                                      (np.log(420) - np.log(60)))
-        amp_eff[m] = base * cresc / (dx_ov * dy_ov) ** P["ov_pow"]
+        amp_eff[m] = base * cresc * RS / (dx_ov * dy_ov) ** P["ov_pow"]
     big = bright & ~pole & (n_of <= 10)
     small = bright & ~pole & (n_of > 10)
     splat(stars, px[big], py[big], P["star_amp"] * amp_eff[big], sig_s)
     splat(stars, px[big], py[big], 0.55 * P["star_amp"] * amp_eff[big], 1.0 * SS)
     splat(glints, px[small], py[small], P["glint_amp"] * amp_eff[small], sig_g)
-    ampl = cat[:, 2] ** P["star_gamma"]
+    ampl = cat[:, 2] ** P["star_gamma"] * np.sqrt(RS)
     bp = pole & bright
     splat(stars, px[bp], py[bp], P["beacon_amp"] * ampl[bp], 5.0 * SS)
     splat(stars, px[bp], py[bp], 1.2 * P["beacon_amp"] * ampl[bp], 1.8 * SS)
     dp = pole & ~bright
-    ampr = cat[:, 2] ** 0.8
+    ampr = cat[:, 2] ** 0.8 * np.sqrt(RS)
     splat(rim, px[dp], py[dp], 0.85 * ampr[dp], 5.5 * SS)
     splat(rim, px[dp], py[dp], -0.94 * 0.85 * ampr[dp], 3.6 * SS)
     dz = ~bright & ~pole & (n_of <= 3)
     splat(rim, px[dz], py[dz], 0.8 * ampl[dz], 4.6 * SS)
     splat(rim, px[dz], py[dz], -0.77 * ampl[dz], 3.1 * SS)
     rim = np.maximum(rim, 0)
+    # depth-graded glint hue: gold above, ember at the wall
+    emb = smoothstep((yfrac - 0.5) / 0.4)[:, None].astype(np.float32)
     rgb[..., 0] += stars + glints + rim * P["cyan"][0] * 0.9
-    rgb[..., 1] += stars * 0.86 + glints * 0.8 + rim * P["cyan"][1] * 0.9
-    rgb[..., 2] += stars * 0.62 + glints * 0.55 + rim * P["cyan"][2] * 0.9
-    del stars, glints, rim
+    rgb[..., 1] += stars * 0.86 + glints * (0.80 - 0.28 * emb) + rim * P["cyan"][1] * 0.9
+    rgb[..., 2] += stars * 0.62 + glints * (0.55 - 0.38 * emb) + rim * P["cyan"][2] * 0.9
+    # the wall itself smolders: data-driven glow rising from the bottom edge
+    prof = glints[int(0.90 * H):, :].sum(0)
+    prof = gaussian_filter(prof, 30.0 * SS)
+    prof /= max(prof.max(), 1e-9)
+    fall = np.exp(-(H - 1 - np.arange(H, dtype=np.float32)) / (0.016 * H))
+    wallg = (fall[:, None] * prof[None, :]).astype(np.float32)
+    rgb[..., 0] += 1.5 * wallg
+    rgb[..., 1] += 0.9 * wallg
+    rgb[..., 2] += 0.38 * wallg
+    del stars, glints, rim, wallg
     lum = rgb.mean(-1)
     mask = np.clip((lum - 0.75) / 0.6, 0, 1) ** 2
     bs = P["bloom_sigma"] * S

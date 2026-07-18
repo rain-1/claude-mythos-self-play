@@ -83,7 +83,7 @@ def render():
     cA = np.array([0.24 * S, 0.29 * S])
     cB = np.array([0.76 * S, 0.29 * S])
     cP = np.array([0.50 * S, 0.67 * S])
-    scale_body = 0.165 * S / 60.0          # constellation units -> px
+    scale_body = 0.175 * S / 60.0          # constellation units -> px
     scale_pat = 0.17 * S / 100.0
     # ---- silk: shared diffraction, k-origin at the Patterson heart
     kscale = 10.5 / S
@@ -97,7 +97,7 @@ def render():
     rgb = np.zeros((S, S, 3), dtype=np.float32)
     silk_col = np.array([0.30, 0.34, 0.62])
     sun_col = np.array([0.95, 0.80, 0.55])
-    rgb += fab[..., None] * silk_col[None, None, :] * 0.34
+    rgb += fab[..., None] * silk_col[None, None, :] * 0.42
     rgb += (silkN ** 1.35)[..., None] * sun_col[None, None, :] * 0.75
     # ---- the two bodies: same gold, opposite-wound arms
     gold = np.array([1.0, 0.82, 0.48])
@@ -141,7 +141,7 @@ def render():
     for (dx, dy), mult in dA.items():
         dpts.append((cP[0] + dx * scale_pat, cP[1] - dy * scale_pat))
         a = (mult / mmax) ** 0.5
-        damps.append(cyan * (0.20 + 1.5 * a))
+        damps.append(cyan * (0.24 + 1.8 * a))
     splat_beads(rgb, dpts, damps, 2.0 * SS)
     # ---- bloom + tone
     lum = rgb.mean(-1)
@@ -152,7 +152,7 @@ def render():
     rr = np.hypot(xx - S / 2, yy - S / 2) / (S * 0.72)
     rgb *= (1 - 0.38 * np.clip(rr, 0, 1) ** 2.2)[..., None]
     bg = np.array([0.010, 0.012, 0.026])
-    out = 1 - np.exp(-1.35 * rgb)
+    out = 1 - np.exp(-1.72 * rgb)
     out = np.clip(out + bg[None, None, :], 0, 1) ** 0.90
     img = Image.fromarray((out * 255).astype(np.uint8)).resize((FINAL, FINAL), Image.LANCZOS)
     img.save("same_shadow.png")

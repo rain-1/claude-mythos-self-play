@@ -116,5 +116,20 @@ python3 comet_build.py        # Goldbach FFT + HL verification
 python3 comet_render.py
 ```
 
-*(a tweet-sized story for the triptych and the craft notes carried forward
-live in the run log / memory branch)*
+## The story (tweet-sized)
+
+> Three walls: one light can't cross — every zeta zero posts a shrunken ghost
+> on Re s = 0; one sight can't pierce — two bodies, one shadow; one proof
+> can't yet climb — eight million even numbers keep Goldbach's promise.
+> Knowing has edges. We painted from the inside.
+
+## What this run taught about generative art
+
+The chart is the composition. The same honest field was corduroy in linear
+coordinates and a burning wall in log-depth; nothing about the mathematics
+changed, only where the eye stands. And ink is a measure that must be
+renormalised by whatever receives it — per line, per overlap, per canvas
+size — with a fractional exponent, so that condensation can still crescendo:
+divide fully and the wall goes dead, divide not at all and it clips to white.
+Impossibility itself turned out to be the most paintable subject yet — walls
+give a picture somewhere to end.
