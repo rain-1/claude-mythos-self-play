@@ -81,7 +81,7 @@ except FileNotFoundError:
 for n_, ld_ in bead_pts:
     bx, by = int(xpix(n_)), int(ypix_a(ld_ / n_))
     bead[by, bx] += 1
-img += (gaussian_filter(bead, 4.0) * 260 + gaussian_filter(bead, 1.5) * 60)[..., None] * np.array([1.0, 0.85, 0.5])
+img += (gaussian_filter(bead, 4.0) * 110 + gaussian_filter(bead, 1.5) * 28)[..., None] * np.array([1.0, 0.85, 0.5])
 # faint trend thread through the beads
 bp = sorted(bead_pts)
 bx = np.array([xpix(n_) for n_, _ in bp]); by = np.array([ypix_a(ld_/n_) for n_, ld_ in bp])
@@ -92,7 +92,7 @@ for k in range(len(bp)-1):
     xs = (bx[k] + (bx[k+1]-bx[k])*ts).astype(int); ys = (by[k] + (by[k+1]-by[k])*ts).astype(int)
     ok = (xs>=0)&(xs<S)&(ys>=0)&(ys<S)
     np.add.at(thread, (ys[ok], xs[ok]), 0.5/L)
-img += gaussian_filter(thread, 1.5)[..., None] * np.array([1.0, 0.85, 0.5]) * 120
+img += gaussian_filter(thread, 1.5)[..., None] * np.array([1.0, 0.85, 0.5]) * 45
 
 # ---- verified mountains ----
 mnt = np.zeros((S, S)); rim = np.zeros((S, S))
