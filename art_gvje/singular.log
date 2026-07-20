@@ -1,0 +1,32 @@
+loaded cached small table
+table built (1300, 1300)
+p=1048573 n=100 corank=0 t=0s
+p=1048573 n=200 corank=0 t=1s
+p=1048573 n=300 corank=33 t=2s
+p=1048573 n=400 corank=61 t=5s
+p=1048573 n=500 corank=9 t=13s
+p=1048573 n=600 corank=46 t=29s
+p=1048573 n=700 corank=30 t=55s
+p=1048573 n=800 corank=22 t=94s
+p=1048573 n=900 corank=43 t=152s
+p=1048573 n=1000 corank=11 t=232s
+p=1048573 n=1100 corank=20 t=338s
+p=1048573 n=1200 corank=0 t=476s
+p=1048573 n=1300 corank=0 t=653s
+p=1048583 n=100 corank=0 t=653s
+p=1048583 n=200 corank=0 t=653s
+p=1048583 n=300 corank=33 t=655s
+p=1048583 n=400 corank=61 t=658s
+p=1048583 n=500 corank=9 t=666s
+p=1048583 n=600 corank=46 t=681s
+p=1048583 n=700 corank=30 t=706s
+p=1048583 n=800 corank=22 t=747s
+p=1048583 n=900 corank=43 t=805s
+p=1048583 n=1000 corank=11 t=884s
+p=1048583 n=1100 corank=20 t=990s
+p=1048583 n=1200 corank=0 t=1129s
+p=1048583 n=1300 corank=0 t=1307s
+singular intervals: [[np.int64(19), np.int64(28)], [np.int64(43), np.int64(44)], [np.int64(55), np.int64(55)], [np.int64(259), np.int64(508)], [np.int64(517), np.int64(764)], [np.int64(773), np.int64(1018)], [np.int64(1035), np.int64(1161)]]
+MO claim: [19,28] [43,44] [55,55] [259,508] [517,764] [773,1018] [1035,1161] (then nonsingular to 1260)
+corank peaks: n=23 -> 3 (MO: 3);  n=383 -> 63 (MO: 63)
+max corank overall: 63 at n= 383
