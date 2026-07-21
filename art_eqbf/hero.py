@@ -58,7 +58,7 @@ inside = D > 0
 # 1. base atmosphere: two regimes, lit by the escape field (the wind of flight)
 # presence of the pasts: flare as they flee, extinguish where they pass beyond sight
 en = np.clip(esc / 1.9, 0, 2.5) ** 1.5 * np.exp(-(esc / 2.75) ** 4)
-warm_lo = np.array([0.10, 0.048, 0.020]); warm_hi = np.array([0.85, 0.34, 0.09])
+warm_lo = np.array([0.115, 0.055, 0.023]); warm_hi = np.array([0.85, 0.34, 0.09])
 cool_lo = np.array([0.016, 0.036, 0.070]); cool_hi = np.array([0.10, 0.30, 0.38])
 glow_in = warm_lo + en[..., None] * warm_hi
 glow_out = cool_lo + 0.75 * en[..., None] * cool_hi
@@ -71,7 +71,7 @@ buf += np.where(inside[..., None], 0.0, 1.0) * irid * 0.65
 qs = np.quantile(U, np.linspace(0.001, 0.999, 512))
 lev = np.interp(U, qs, np.linspace(0, 1, 512))
 Uc = np.maximum(U, -3.6)          # freeze levels below the moat floor
-ring = kit.contour_ridge(Uc, 0.40, 1.05 * SS * rs ** 0.5)
+ring = kit.contour_ridge(Uc, 0.32, 1.05 * SS * rs ** 0.5)
 ring *= np.clip((U + 3.6) / 1.1, 0, 1)   # fade the last ring into the moat
 ringcol = kit.ramp(1 - lev, kit.DUSK)
 buf += ring[..., None] * ringcol * (0.62 + 0.55 * (1 - lev[..., None]))
@@ -80,7 +80,7 @@ buf += ring[..., None] * ringcol * (0.62 + 0.55 * (1 - lev[..., None]))
 esc_s = gaussian_filter(esc, 1.5 * SS)
 ering = kit.contour_ridge(esc_s, 0.16, 0.85 * SS * rs ** 0.5)
 ering *= np.clip((U + 3.6) / 1.1, 0, 1)
-buf += np.where(inside[..., None], 1.0, 0.12) * ering[..., None] * np.array([0.45, 0.20, 0.07]) * 0.55
+buf += np.where(inside[..., None], 1.0, 0.12) * ering[..., None] * np.array([0.50, 0.22, 0.08]) * 0.85
 
 # 3. the veil (branch locus) -- cyan blaze with an escape aura
 veil = kit.locus_glow(D, 1.6 * SS * rs ** 0.5)
