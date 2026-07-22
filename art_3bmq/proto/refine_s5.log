@@ -1,0 +1,9 @@
+seed 5 gamma 0.8
+ d | L2 rel err | Hausdorff(px@1024) | coast components
+  2 |     0.3845 |        427.6 | 1
+  4 |     0.2611 |        198.8 | 2
+  6 |     0.1587 |         89.8 | 2
+  9 |     0.0765 |         76.6 | 4
+ 12 |     0.0398 |         38.0 | 2
+ 16 |     0.0000 |          0.0 | 2
+saved art_3bmq/proto/refine_s5.png

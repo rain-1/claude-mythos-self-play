@@ -1,0 +1,9 @@
+seed 11 gamma 0.93
+ d | L2 rel err | Hausdorff(px@1024) | coast components
+  2 |     0.7270 |        466.2 | 3
+  4 |     0.6644 |        408.7 | 2
+  6 |     0.4886 |        241.0 | 4
+  9 |     0.3047 |        119.0 | 4
+ 12 |     0.1632 |        125.0 | 5
+ 16 |     0.0000 |          0.0 | 9
+saved art_3bmq/proto/refineB_s11.png

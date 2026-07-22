@@ -1,0 +1,9 @@
+seed 17 gamma 0.8
+ d | L2 rel err | Hausdorff(px@1024) | coast components
+  2 |     0.7840 |        678.0 | 2
+  4 |     0.4511 |        203.0 | 3
+  6 |     0.3139 |        148.1 | 3
+  9 |     0.1607 |         71.4 | 4
+ 12 |     0.0665 |         34.5 | 3
+ 16 |     0.0000 |          0.0 | 4
+saved art_3bmq/proto/refine_s17.png

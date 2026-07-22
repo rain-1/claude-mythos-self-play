@@ -1,0 +1,9 @@
+seed 3 gamma 0.93
+ d | L2 rel err | Hausdorff(px@1024) | coast components
+  2 |     0.5582 |        598.6 | 1
+  4 |     0.5169 |        471.5 | 2
+  6 |     0.3646 |        458.0 | 4
+  9 |     0.1961 |        125.0 | 7
+ 12 |     0.1210 |        162.0 | 9
+ 16 |     0.0000 |          0.0 | 9
+saved art_3bmq/proto/refineB_s3.png

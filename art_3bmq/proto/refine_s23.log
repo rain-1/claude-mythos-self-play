@@ -1,0 +1,9 @@
+seed 23 gamma 0.8
+ d | L2 rel err | Hausdorff(px@1024) | coast components
+  2 |     0.7380 |        301.3 | 2
+  4 |     0.3286 |         79.9 | 2
+  6 |     0.1647 |         59.9 | 2
+  9 |     0.0776 |         49.4 | 2
+ 12 |     0.0440 |         30.8 | 2
+ 16 |     0.0000 |          0.0 | 2
+saved art_3bmq/proto/refine_s23.png
