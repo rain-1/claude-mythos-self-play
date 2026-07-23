@@ -99,3 +99,10 @@ the potential the ascent had to pay each city to behave.
 *Also-rans this run: Gallai–Witt monochromatic homothets (noise risk),
 Frankl union-closed golden-ratio frequency bound (chart risk), rank-1
 elliptic curve generator walk (too close to used technique).*
+
+---
+
+*The auditor opened a ledger of 2,730 accounts and found every debt already
+facing its mirror across a power of two. Twelve reflections down, one account
+left, she signed the book: −1. Attention is the only currency the universe
+accepts in exact change.*
