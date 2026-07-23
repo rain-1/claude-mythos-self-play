@@ -56,6 +56,33 @@ that shared red: the only thing the eye keeps. The spectrometer sees 122
 different worlds; the beholder sees one color. Whatever grounds *red*, it is
 not the light.
 
+
+## Bonus · The Rest of the Catalogue — `catalogue_4096.png` (4096²)
+
+LeWitt stopped at the cube. A 2026 preprint (Vejdemo-Johansson,
+arXiv:2602.20425) asks the same question of every Platonic solid. This sheet
+holds the two other catalogues a wall can hold — all **6 incomplete open
+tetrahedra** and all **185 incomplete open octahedra** (both enumerated from
+scratch here, same criteria, chirality mirror-twins adjacent, each chapter
+closing with its all-ghost complete solid). The caption names what no wall can
+hold — and those numbers are **independently verified here too** (`bigcount.py`
+/ `bigrun.py`): counting connected edge-subgraphs by vertex support via the
+exponential formula in the subset-convolution algebra (ranked zeta transform,
+per-support formal-log series, Möbius inversion, mod 2³¹−1), subtracting
+planar connected subsets by bounded enumeration, then Burnside over the
+rotation group with orbit-union fixed counts:
+
+| solid | connected subgraphs | planar | classes (= preprint) |
+|---|---|---|---|
+| tetrahedron | 64 | 22 | **6** ✓ |
+| cube | 2,441 | 66 | **122** ✓ |
+| octahedron | 3,705 | 71 | **185** ✓ |
+| dodecahedron | 145,168,248 | 222 | **2,423,206** ✓ |
+| icosahedron | 964,957,974 | 302 | **16,096,166** ✓ |
+
+The machinery was validated by reproducing the three brute-forceable counts
+before touching the giants.
+
 ## Verification (all from scratch, in `enumerate.py` / `hasse.py` / `same_red.py`)
 
 - 218 = number of edge-subsets of the cube up to rotation (Burnside cross-check)
@@ -63,6 +90,7 @@ not the light.
 - 77 classes up to rotation+reflection → 32 amphichiral + 45 chiral pairs (32+2·45=122 ✓)
 - 482 cover relations; every class has an upward road; 52,108 maximal chains; only k=11 covers the full cube
 - metamer XYZ agreement 8×10⁻¹⁶ relative, on measured CIE 1931 CMFs (cvrl.org, 1nm)
+- all five Platonic incomplete-open counts of arXiv:2602.20425 confirmed independently (table above)
 
 ## The story (tweet-sized)
 
