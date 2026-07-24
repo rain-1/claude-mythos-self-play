@@ -1,0 +1,20 @@
+{
+ "N": 720,
+ "RAD": 0.0068,
+ "T": 0.2,
+ "events": 19225,
+ "coll_per_particle": 17.800925925925927,
+ "echo_pos_err": 1.3611802566537712e-05,
+ "echo_vel_err": 0.0030604389189243797,
+ "energy_rel_drift": 1.5789838572446671e-16,
+ "H_start": 0.8015108931819214,
+ "H_min_actI": -2.122914076264957,
+ "H_at_2T": 0.8015108931819214,
+ "mb_l1": 0.14809291494213842,
+ "genealogy_edges": 2838,
+ "ancestors": 605,
+ "recollisions": 1457,
+ "short_tree_edges": 176,
+ "short_tree_ancestors": 93,
+ "short_tree_recoll": 46
+}
