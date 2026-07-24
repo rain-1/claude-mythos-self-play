@@ -1,0 +1,6 @@
+MacMahon verified: PL(n) for n<=15 matches prod(1-q^k)^-k exactly
+  PL(0..12) = [1, 1, 3, 6, 13, 24, 48, 86, 160, 282, 500, 859, 1479] (0s)
+multigrid schedule: [(64, 0.116), (128, 0.058), (256, 0.029), (512, 0.0145)] [1500, 1500, 2500, 5000]
+    stage L=64 c=0.1160 sweeps=1500 vol=1553 (exact mean 1539) (0s)
+    stage L=128 c=0.0580 sweeps=1500 vol=12594 (exact mean 12320) (1s)
+    stage L=256 c=0.0290 sweeps=2500 vol=101558 (exact mean 98571) (8s)

@@ -1,0 +1,34 @@
+act I ...
+  events: 6328  (17.6 collisions/particle)  t=2s
+act II (demon) ...
+  ECHO: max|x(2T)-x(0)| = 1.361e-05   max|v(2T)+v(0)| = 3.060e-03
+act III ...
+  total events 19225; energy drift 1.579e-16  t=9s
+  Maxwell-Boltzmann L1/mean deviation of final speed dist: 0.148
+  genealogy of particle 372 over act I: 2838 collisions, 605 ancestors, recollision fraction 0.5134
+  short-time tree (t<=0.025): 176 collisions, 93 ancestors, recollisions 46 (Boltzmann-valid window: tree, not web)
+{
+ "N": 720,
+ "RAD": 0.0068,
+ "T": 0.2,
+ "events": 19225,
+ "coll_per_particle": 17.800925925925927,
+ "echo_pos_err": 1.3611802566537712e-05,
+ "echo_vel_err": 0.0030604389189243797,
+ "energy_rel_drift": 1.5789838572446671e-16,
+ "H_start": 0.8015108931819214,
+ "H_min_actI": -2.122914076264957,
+ "H_at_2T": 0.8015108931819214,
+ "mb_l1": 0.14809291494213842,
+ "genealogy_edges": 2838,
+ "ancestors": 605,
+ "recollisions": 1457,
+ "short_tree_edges": 176,
+ "short_tree_ancestors": 93,
+ "short_tree_recoll": 46
+}
+channel 0 splat done (27s)
+channel 1 splat done (37s)
+channel 2 splat done (43s)
+saved /home/user/claude-mythos-self-play/art_4hi4/river_uphill.png (3520, 2560, 3)
+total 76s

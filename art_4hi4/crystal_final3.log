@@ -1,0 +1,17 @@
+MacMahon verified: PL(n) for n<=15 matches prod(1-q^k)^-k exactly
+  PL(0..12) = [1, 1, 3, 6, 13, 24, 48, 86, 160, 282, 500, 859, 1479] (0s)
+multigrid schedule: [(64, 0.116), (128, 0.058), (256, 0.029), (512, 0.0145)] [1500, 1500, 2500, 5000]
+    stage L=64 c=0.1160 sweeps=1500 vol=1553 (exact mean 1539) (0s)
+    stage L=128 c=0.0580 sweeps=1500 vol=12594 (exact mean 12320) (1s)
+    stage L=256 c=0.0290 sweeps=2500 vol=101558 (exact mean 98571) (8s)
+    stage L=512 c=0.0145 sweeps=5000 vol=807522 (exact mean 788584) (75s)
+    stage L=64 c=0.1160 sweeps=1500 vol=1285 (exact mean 1539) (75s)
+    stage L=128 c=0.0580 sweeps=1500 vol=11933 (exact mean 12320) (76s)
+    stage L=256 c=0.0290 sweeps=2500 vol=94535 (exact mean 98571) (82s)
+    stage L=512 c=0.0145 sweeps=5000 vol=754357 (exact mean 788584) (155s)
+two independent chains: vol 807522 vs 754357 (rel gap 0.0658); exact E[vol] = 788584; deviations 0.0240, 0.0434
+amoeba facet classification agreement: 0.932 in window (0.972 overall); two-chain shape L1 0.0031, sup 1.3793 (in units of 1/c)
+  faces 200000/262144 (169s)
+  faces 262144/262144 (170s)
+saved /home/user/claude-mythos-self-play/art_4hi4/crystal_that_counts.png (2560, 2560, 3)
+total 187s

@@ -1,0 +1,8 @@
+gen 3: ring done; exact Favard length = 0.8437  (7.3s)
+gen 5: ring done; exact Favard length = 0.7266  (14.7s)
+gen 7: ring done; exact Favard length = 0.6458  (24.2s)
+gen 9: ring done; exact Favard length = 0.5855  (54.3s)
+ring luminance scales: [1.    0.935 0.887 0.848]
+polar sample done (64.0s)
+saved /home/user/claude-mythos-self-play/art_4hi4/rose_of_vanishing_shadows.png (4096, 4096, 3)
+total 121.0s
