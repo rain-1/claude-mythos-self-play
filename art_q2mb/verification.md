@@ -59,7 +59,12 @@ connected.
    to H, exactly one preserves negativity: the diagonal ac joining the two
    triangle-bearing corners, giving a 13-vertex claw-free graph with
    [s₍₃,₃,₃,₃,₁₎] = −64 — the wound persists with a singleton part appended.
-   (Further families: see `variants.json`.)
+   Among 228 structural variants (C₄/C₅/C₆ cores, all placements of the two triangles
+   and two pendants), only the original C₄ configuration — triangles at opposite
+   corners, pendants at the two remaining corners — is negative; no C₅ or C₆ analogue
+   exists in this family. Line graphs of 400 random connected graphs (8–12 edges):
+   all Schur-positive. In total: 725 nearby/random machines scanned, and the failure
+   is exactly the original design and its one 13-vertex extension (`variants.json`).
 
 ## Method and cross-checks
 
