@@ -1,0 +1,10 @@
+knap
+knap_bands
+tree_edges.npz
+nohup.out
+*_log*.txt
+shore/rle_18.txt
+shore/rle_20.txt
+shore/rle_22.txt
+shore/rle_24.txt
+__pycache__/
