@@ -1,0 +1,2816 @@
+{
+ "rigid": [
+  {
+   "ring": [
+    2,
+    2
+   ],
+   "rigid": true,
+   "verdict": "RIGID (core prestress stable + wedged fills)",
+   "extra": [],
+   "sizes": [
+    2
+   ]
+  },
+  {
+   "ring": [
+    2,
+    2,
+    3
+   ],
+   "rigid": true,
+   "verdict": "RIGID (core prestress stable + wedged fills)",
+   "extra": [],
+   "sizes": [
+    2,
+    3
+   ]
+  },
+  {
+   "ring": [
+    2,
+    2,
+    3,
+    6
+   ],
+   "rigid": true,
+   "verdict": "RIGID (core prestress stable + wedged fills)",
+   "extra": [
+    [
+     0,
+     2
+    ]
+   ],
+   "sizes": [
+    2,
+    3,
+    6
+   ]
+  },
+  {
+   "ring": [
+    2,
+    3,
+    2,
+    3
+   ],
+   "rigid": true,
+   "verdict": "RIGID (core prestress stable + wedged fills)",
+   "extra": [
+    [
+     0,
+     2
+    ]
+   ],
+   "sizes": [
+    2,
+    3
+   ]
+  },
+  {
+   "ring": [
+    2,
+    2,
+    6,
+    3,
+    6
+   ],
+   "rigid": true,
+   "verdict": "RIGID (core prestress stable + wedged fills)",
+   "extra": [
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     3
+    ]
+   ],
+   "sizes": [
+    2,
+    3,
+    6
+   ]
+  },
+  {
+   "ring": [
+    2,
+    3,
+    2,
+    3,
+    6
+   ],
+   "rigid": true,
+   "verdict": "RIGID (core prestress stable + wedged fills)",
+   "extra": [
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     3
+    ]
+   ],
+   "sizes": [
+    2,
+    3,
+    6
+   ]
+  },
+  {
+   "ring": [
+    2,
+    3,
+    2,
+    4,
+    4
+   ],
+   "rigid": true,
+   "verdict": "RIGID (core prestress stable + wedged fills)",
+   "extra": [
+    [
+     0,
+     2
+    ]
+   ],
+   "sizes": [
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "ring": [
+    2,
+    3,
+    3,
+    3,
+    3
+   ],
+   "rigid": true,
+   "verdict": "RIGID (core prestress stable + wedged fills)",
+   "extra": [],
+   "sizes": [
+    2,
+    3
+   ]
+  },
+  {
+   "ring": [
+    2,
+    3,
+    2,
+    6,
+    3,
+    6
+   ],
+   "rigid": true,
+   "verdict": "RIGID (core prestress stable + wedged fills)",
+   "extra": [
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     4
+    ],
+    [
+     2,
+     4
+    ]
+   ],
+   "sizes": [
+    2,
+    3,
+    6
+   ]
+  },
+  {
+   "ring": [
+    2,
+    3,
+    3,
+    3,
+    3,
+    6
+   ],
+   "rigid": true,
+   "verdict": "RIGID (core prestress stable + wedged fills)",
+   "extra": [
+    [
+     0,
+     4
+    ]
+   ],
+   "sizes": [
+    2,
+    3,
+    6
+   ]
+  },
+  {
+   "ring": [
+    2,
+    3,
+    6,
+    2,
+    3,
+    6
+   ],
+   "rigid": true,
+   "verdict": "RIGID (core prestress stable + wedged fills)",
+   "extra": [
+    [
+     0,
+     3
+    ],
+    [
+     0,
+     4
+    ],
+    [
+     1,
+     3
+    ]
+   ],
+   "sizes": [
+    2,
+    3,
+    6
+   ]
+  },
+  {
+   "ring": [
+    2,
+    3,
+    6,
+    2,
+    4,
+    4
+   ],
+   "rigid": true,
+   "verdict": "RIGID (core prestress stable + wedged fills)",
+   "extra": [
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     3
+    ]
+   ],
+   "sizes": [
+    2,
+    3,
+    4,
+    6
+   ]
+  },
+  {
+   "ring": [
+    2,
+    3,
+    6,
+    2,
+    6,
+    3
+   ],
+   "rigid": true,
+   "verdict": "RIGID (core prestress stable + wedged fills)",
+   "extra": [
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     3,
+     5
+    ]
+   ],
+   "sizes": [
+    2,
+    3,
+    6
+   ]
+  },
+  {
+   "ring": [
+    2,
+    4,
+    4,
+    2,
+    4,
+    4
+   ],
+   "rigid": true,
+   "verdict": "RIGID (core prestress stable + wedged fills)",
+   "extra": [
+    [
+     0,
+     3
+    ]
+   ],
+   "sizes": [
+    2,
+    4
+   ]
+  },
+  {
+   "ring": [
+    3,
+    3,
+    3,
+    3,
+    3,
+    3
+   ],
+   "rigid": true,
+   "verdict": "RIGID (core prestress stable + wedged fills)",
+   "extra": [],
+   "sizes": [
+    3
+   ]
+  },
+  {
+   "ring": [
+    2,
+    3,
+    2,
+    5,
+    8,
+    8,
+    5
+   ],
+   "rigid": true,
+   "verdict": "RIGID (core prestress stable + wedged fills)",
+   "extra": [
+    [
+     0,
+     2
+    ]
+   ],
+   "sizes": [
+    2,
+    3,
+    5,
+    8
+   ]
+  },
+  {
+   "ring": [
+    2,
+    3,
+    6,
+    2,
+    6,
+    3,
+    6
+   ],
+   "rigid": true,
+   "verdict": "RIGID (core prestress stable + wedged fills)",
+   "extra": [
+    [
+     0,
+     3
+    ],
+    [
+     0,
+     5
+    ],
+    [
+     1,
+     3
+    ],
+    [
+     3,
+     5
+    ]
+   ],
+   "sizes": [
+    2,
+    3,
+    6
+   ]
+  },
+  {
+   "ring": [
+    2,
+    4,
+    4,
+    2,
+    6,
+    3,
+    6
+   ],
+   "rigid": true,
+   "verdict": "RIGID (core prestress stable + wedged fills)",
+   "extra": [
+    [
+     0,
+     3
+    ],
+    [
+     0,
+     5
+    ],
+    [
+     3,
+     5
+    ]
+   ],
+   "sizes": [
+    2,
+    3,
+    4,
+    6
+   ]
+  },
+  {
+   "ring": [
+    2,
+    6,
+    3,
+    3,
+    3,
+    3,
+    6
+   ],
+   "rigid": true,
+   "verdict": "RIGID (core prestress stable + wedged fills)",
+   "extra": [
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     5
+    ]
+   ],
+   "sizes": [
+    2,
+    3,
+    6
+   ]
+  },
+  {
+   "ring": [
+    2,
+    3,
+    6,
+    2,
+    5,
+    8,
+    8,
+    5
+   ],
+   "rigid": true,
+   "verdict": "RIGID (core prestress stable + wedged fills)",
+   "extra": [
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     3
+    ]
+   ],
+   "sizes": [
+    2,
+    3,
+    5,
+    6,
+    8
+   ]
+  },
+  {
+   "ring": [
+    2,
+    4,
+    4,
+    2,
+    5,
+    8,
+    8,
+    5
+   ],
+   "rigid": true,
+   "verdict": "RIGID (core prestress stable + wedged fills)",
+   "extra": [
+    [
+     0,
+     3
+    ]
+   ],
+   "sizes": [
+    2,
+    4,
+    5,
+    8
+   ]
+  },
+  {
+   "ring": [
+    2,
+    6,
+    3,
+    6,
+    2,
+    6,
+    3,
+    6
+   ],
+   "rigid": true,
+   "verdict": "RIGID (core prestress stable + wedged fills)",
+   "extra": [
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     4
+    ],
+    [
+     0,
+     6
+    ],
+    [
+     2,
+     4
+    ],
+    [
+     4,
+     6
+    ]
+   ],
+   "sizes": [
+    2,
+    3,
+    6
+   ]
+  },
+  {
+   "ring": [
+    2,
+    5,
+    8,
+    8,
+    5,
+    2,
+    6,
+    3,
+    6
+   ],
+   "rigid": true,
+   "verdict": "RIGID (core prestress stable + wedged fills)",
+   "extra": [
+    [
+     0,
+     5
+    ],
+    [
+     0,
+     7
+    ],
+    [
+     5,
+     7
+    ]
+   ],
+   "sizes": [
+    2,
+    3,
+    5,
+    6,
+    8
+   ]
+  },
+  {
+   "ring": [
+    2,
+    5,
+    8,
+    8,
+    5,
+    2,
+    5,
+    8,
+    8,
+    5
+   ],
+   "rigid": true,
+   "verdict": "RIGID (core prestress stable + wedged fills)",
+   "extra": [
+    [
+     0,
+     5
+    ]
+   ],
+   "sizes": [
+    2,
+    5,
+    8
+   ]
+  }
+ ],
+ "flexible": [
+  {
+   "ring": [
+    2,
+    2,
+    4,
+    4
+   ],
+   "rigid": false,
+   "verdict": "UNDETERMINED (coins [2, 3] not pinned)",
+   "extra": [],
+   "sizes": [
+    2,
+    4
+   ]
+  },
+  {
+   "ring": [
+    2,
+    2,
+    5,
+    8,
+    8,
+    5
+   ],
+   "rigid": false,
+   "verdict": "UNDETERMINED (coins [2, 3, 4, 5] not pinned)",
+   "extra": [],
+   "sizes": [
+    2,
+    5,
+    8
+   ]
+  },
+  {
+   "ring": [
+    2,
+    5,
+    8,
+    5,
+    8,
+    5,
+    8,
+    5,
+    8,
+    8,
+    8,
+    8,
+    8,
+    5
+   ],
+   "rigid": false,
+   "verdict": "FLEXIBLE (strict first-order flex)",
+   "extra": [],
+   "sizes": [
+    2,
+    5,
+    8
+   ]
+  },
+  {
+   "ring": [
+    2,
+    5,
+    8,
+    5,
+    8,
+    5,
+    8,
+    8,
+    5,
+    8,
+    8,
+    8,
+    8,
+    5
+   ],
+   "rigid": false,
+   "verdict": "FLEXIBLE (strict first-order flex)",
+   "extra": [],
+   "sizes": [
+    2,
+    5,
+    8
+   ]
+  },
+  {
+   "ring": [
+    2,
+    5,
+    8,
+    5,
+    8,
+    5,
+    8,
+    8,
+    8,
+    5,
+    8,
+    8,
+    8,
+    5
+   ],
+   "rigid": false,
+   "verdict": "FLEXIBLE (strict first-order flex)",
+   "extra": [],
+   "sizes": [
+    2,
+    5,
+    8
+   ]
+  },
+  {
+   "ring": [
+    2,
+    5,
+    8,
+    5,
+    8,
+    5,
+    8,
+    8,
+    8,
+    8,
+    5,
+    8,
+    8,
+    5
+   ],
+   "rigid": false,
+   "verdict": "FLEXIBLE (strict first-order flex)",
+   "extra": [],
+   "sizes": [
+    2,
+    5,
+    8
+   ]
+  },
+  {
+   "ring": [
+    2,
+    5,
+    8,
+    5,
+    8,
+    5,
+    8,
+    8,
+    8,
+    8,
+    8,
+    5,
+    8,
+    5
+   ],
+   "rigid": false,
+   "verdict": "FLEXIBLE (strict first-order flex)",
+   "extra": [],
+   "sizes": [
+    2,
+    5,
+    8
+   ]
+  },
+  {
+   "ring": [
+    2,
+    5,
+    8,
+    5,
+    8,
+    8,
+    5,
+    8,
+    5,
+    8,
+    8,
+    8,
+    8,
+    5
+   ],
+   "rigid": false,
+   "verdict": "FLEXIBLE (strict first-order flex)",
+   "extra": [],
+   "sizes": [
+    2,
+    5,
+    8
+   ]
+  },
+  {
+   "ring": [
+    2,
+    5,
+    8,
+    5,
+    8,
+    8,
+    5,
+    8,
+    8,
+    5,
+    8,
+    8,
+    8,
+    5
+   ],
+   "rigid": false,
+   "verdict": "FLEXIBLE (strict first-order flex)",
+   "extra": [],
+   "sizes": [
+    2,
+    5,
+    8
+   ]
+  },
+  {
+   "ring": [
+    2,
+    5,
+    8,
+    5,
+    8,
+    8,
+    5,
+    8,
+    8,
+    8,
+    5,
+    8,
+    8,
+    5
+   ],
+   "rigid": false,
+   "verdict": "FLEXIBLE (strict first-order flex)",
+   "extra": [],
+   "sizes": [
+    2,
+    5,
+    8
+   ]
+  },
+  {
+   "ring": [
+    2,
+    5,
+    8,
+    5,
+    8,
+    8,
+    5,
+    8,
+    8,
+    8,
+    8,
+    5,
+    8,
+    5
+   ],
+   "rigid": false,
+   "verdict": "FLEXIBLE (strict first-order flex)",
+   "extra": [],
+   "sizes": [
+    2,
+    5,
+    8
+   ]
+  },
+  {
+   "ring": [
+    2,
+    5,
+    8,
+    5,
+    8,
+    8,
+    8,
+    5,
+    8,
+    5,
+    8,
+    8,
+    8,
+    5
+   ],
+   "rigid": false,
+   "verdict": "FLEXIBLE (strict first-order flex)",
+   "extra": [],
+   "sizes": [
+    2,
+    5,
+    8
+   ]
+  },
+  {
+   "ring": [
+    2,
+    5,
+    8,
+    5,
+    8,
+    8,
+    8,
+    5,
+    8,
+    8,
+    5,
+    8,
+    8,
+    5
+   ],
+   "rigid": false,
+   "verdict": "FLEXIBLE (strict first-order flex)",
+   "extra": [],
+   "sizes": [
+    2,
+    5,
+    8
+   ]
+  },
+  {
+   "ring": [
+    2,
+    5,
+    8,
+    5,
+    8,
+    8,
+    8,
+    5,
+    8,
+    8,
+    8,
+    5,
+    8,
+    5
+   ],
+   "rigid": false,
+   "verdict": "FLEXIBLE (strict first-order flex)",
+   "extra": [],
+   "sizes": [
+    2,
+    5,
+    8
+   ]
+  },
+  {
+   "ring": [
+    2,
+    5,
+    8,
+    5,
+    8,
+    8,
+    8,
+    8,
+    5,
+    8,
+    5,
+    8,
+    8,
+    5
+   ],
+   "rigid": false,
+   "verdict": "FLEXIBLE (strict first-order flex)",
+   "extra": [],
+   "sizes": [
+    2,
+    5,
+    8
+   ]
+  },
+  {
+   "ring": [
+    2,
+    5,
+    8,
+    8,
+    5,
+    8,
+    5,
+    8,
+    5,
+    8,
+    8,
+    8,
+    8,
+    5
+   ],
+   "rigid": false,
+   "verdict": "FLEXIBLE (strict first-order flex)",
+   "extra": [],
+   "sizes": [
+    2,
+    5,
+    8
+   ]
+  },
+  {
+   "ring": [
+    2,
+    5,
+    8,
+    8,
+    5,
+    8,
+    5,
+    8,
+    8,
+    5,
+    8,
+    8,
+    8,
+    5
+   ],
+   "rigid": false,
+   "verdict": "FLEXIBLE (strict first-order flex)",
+   "extra": [],
+   "sizes": [
+    2,
+    5,
+    8
+   ]
+  },
+  {
+   "ring": [
+    2,
+    5,
+    8,
+    8,
+    5,
+    8,
+    5,
+    8,
+    8,
+    8,
+    5,
+    8,
+    8,
+    5
+   ],
+   "rigid": false,
+   "verdict": "FLEXIBLE (strict first-order flex)",
+   "extra": [],
+   "sizes": [
+    2,
+    5,
+    8
+   ]
+  },
+  {
+   "ring": [
+    2,
+    5,
+    8,
+    8,
+    5,
+    8,
+    8,
+    5,
+    8,
+    5,
+    8,
+    8,
+    8,
+    5
+   ],
+   "rigid": false,
+   "verdict": "FLEXIBLE (strict first-order flex)",
+   "extra": [],
+   "sizes": [
+    2,
+    5,
+    8
+   ]
+  },
+  {
+   "ring": [
+    2,
+    5,
+    8,
+    8,
+    5,
+    8,
+    8,
+    5,
+    8,
+    8,
+    5,
+    8,
+    8,
+    5
+   ],
+   "rigid": false,
+   "verdict": "FLEXIBLE (strict first-order flex)",
+   "extra": [],
+   "sizes": [
+    2,
+    5,
+    8
+   ]
+  },
+  {
+   "ring": [
+    2,
+    5,
+    8,
+    8,
+    8,
+    5,
+    8,
+    5,
+    8,
+    5,
+    8,
+    8,
+    8,
+    5
+   ],
+   "rigid": false,
+   "verdict": "FLEXIBLE (strict first-order flex)",
+   "extra": [],
+   "sizes": [
+    2,
+    5,
+    8
+   ]
+  },
+  {
+   "ring": [
+    5,
+    8,
+    5,
+    8,
+    5,
+    8,
+    5,
+    8,
+    5,
+    8,
+    5,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8
+   ],
+   "rigid": false,
+   "verdict": "FLEXIBLE (strict first-order flex)",
+   "extra": [],
+   "sizes": [
+    5,
+    8
+   ]
+  },
+  {
+   "ring": [
+    5,
+    8,
+    5,
+    8,
+    5,
+    8,
+    5,
+    8,
+    5,
+    8,
+    8,
+    5,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8
+   ],
+   "rigid": false,
+   "verdict": "FLEXIBLE (strict first-order flex)",
+   "extra": [],
+   "sizes": [
+    5,
+    8
+   ]
+  },
+  {
+   "ring": [
+    5,
+    8,
+    5,
+    8,
+    5,
+    8,
+    5,
+    8,
+    5,
+    8,
+    8,
+    8,
+    5,
+    8,
+    8,
+    8,
+    8,
+    8
+   ],
+   "rigid": false,
+   "verdict": "FLEXIBLE (strict first-order flex)",
+   "extra": [],
+   "sizes": [
+    5,
+    8
+   ]
+  },
+  {
+   "ring": [
+    5,
+    8,
+    5,
+    8,
+    5,
+    8,
+    5,
+    8,
+    5,
+    8,
+    8,
+    8,
+    8,
+    5,
+    8,
+    8,
+    8,
+    8
+   ],
+   "rigid": false,
+   "verdict": "FLEXIBLE (strict first-order flex)",
+   "extra": [],
+   "sizes": [
+    5,
+    8
+   ]
+  },
+  {
+   "ring": [
+    5,
+    8,
+    5,
+    8,
+    5,
+    8,
+    5,
+    8,
+    8,
+    5,
+    8,
+    5,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8
+   ],
+   "rigid": false,
+   "verdict": "FLEXIBLE (strict first-order flex)",
+   "extra": [],
+   "sizes": [
+    5,
+    8
+   ]
+  },
+  {
+   "ring": [
+    5,
+    8,
+    5,
+    8,
+    5,
+    8,
+    5,
+    8,
+    8,
+    5,
+    8,
+    8,
+    5,
+    8,
+    8,
+    8,
+    8,
+    8
+   ],
+   "rigid": false,
+   "verdict": "FLEXIBLE (strict first-order flex)",
+   "extra": [],
+   "sizes": [
+    5,
+    8
+   ]
+  },
+  {
+   "ring": [
+    5,
+    8,
+    5,
+    8,
+    5,
+    8,
+    5,
+    8,
+    8,
+    5,
+    8,
+    8,
+    8,
+    5,
+    8,
+    8,
+    8,
+    8
+   ],
+   "rigid": false,
+   "verdict": "FLEXIBLE (strict first-order flex)",
+   "extra": [],
+   "sizes": [
+    5,
+    8
+   ]
+  },
+  {
+   "ring": [
+    5,
+    8,
+    5,
+    8,
+    5,
+    8,
+    5,
+    8,
+    8,
+    5,
+    8,
+    8,
+    8,
+    8,
+    5,
+    8,
+    8,
+    8
+   ],
+   "rigid": false,
+   "verdict": "FLEXIBLE (strict first-order flex)",
+   "extra": [],
+   "sizes": [
+    5,
+    8
+   ]
+  },
+  {
+   "ring": [
+    5,
+    8,
+    5,
+    8,
+    5,
+    8,
+    5,
+    8,
+    8,
+    5,
+    8,
+    8,
+    8,
+    8,
+    8,
+    5,
+    8,
+    8
+   ],
+   "rigid": false,
+   "verdict": "FLEXIBLE (strict first-order flex)",
+   "extra": [],
+   "sizes": [
+    5,
+    8
+   ]
+  },
+  {
+   "ring": [
+    5,
+    8,
+    5,
+    8,
+    5,
+    8,
+    5,
+    8,
+    8,
+    8,
+    5,
+    8,
+    5,
+    8,
+    8,
+    8,
+    8,
+    8
+   ],
+   "rigid": false,
+   "verdict": "FLEXIBLE (strict first-order flex)",
+   "extra": [],
+   "sizes": [
+    5,
+    8
+   ]
+  },
+  {
+   "ring": [
+    5,
+    8,
+    5,
+    8,
+    5,
+    8,
+    5,
+    8,
+    8,
+    8,
+    5,
+    8,
+    8,
+    5,
+    8,
+    8,
+    8,
+    8
+   ],
+   "rigid": false,
+   "verdict": "FLEXIBLE (strict first-order flex)",
+   "extra": [],
+   "sizes": [
+    5,
+    8
+   ]
+  },
+  {
+   "ring": [
+    5,
+    8,
+    5,
+    8,
+    5,
+    8,
+    5,
+    8,
+    8,
+    8,
+    5,
+    8,
+    8,
+    8,
+    5,
+    8,
+    8,
+    8
+   ],
+   "rigid": false,
+   "verdict": "FLEXIBLE (strict first-order flex)",
+   "extra": [],
+   "sizes": [
+    5,
+    8
+   ]
+  },
+  {
+   "ring": [
+    5,
+    8,
+    5,
+    8,
+    5,
+    8,
+    5,
+    8,
+    8,
+    8,
+    8,
+    5,
+    8,
+    5,
+    8,
+    8,
+    8,
+    8
+   ],
+   "rigid": false,
+   "verdict": "FLEXIBLE (strict first-order flex)",
+   "extra": [],
+   "sizes": [
+    5,
+    8
+   ]
+  },
+  {
+   "ring": [
+    5,
+    8,
+    5,
+    8,
+    5,
+    8,
+    8,
+    5,
+    8,
+    5,
+    8,
+    5,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8
+   ],
+   "rigid": false,
+   "verdict": "FLEXIBLE (strict first-order flex)",
+   "extra": [],
+   "sizes": [
+    5,
+    8
+   ]
+  },
+  {
+   "ring": [
+    5,
+    8,
+    5,
+    8,
+    5,
+    8,
+    8,
+    5,
+    8,
+    5,
+    8,
+    8,
+    5,
+    8,
+    8,
+    8,
+    8,
+    8
+   ],
+   "rigid": false,
+   "verdict": "FLEXIBLE (strict first-order flex)",
+   "extra": [],
+   "sizes": [
+    5,
+    8
+   ]
+  },
+  {
+   "ring": [
+    5,
+    8,
+    5,
+    8,
+    5,
+    8,
+    8,
+    5,
+    8,
+    5,
+    8,
+    8,
+    8,
+    5,
+    8,
+    8,
+    8,
+    8
+   ],
+   "rigid": false,
+   "verdict": "FLEXIBLE (strict first-order flex)",
+   "extra": [],
+   "sizes": [
+    5,
+    8
+   ]
+  },
+  {
+   "ring": [
+    5,
+    8,
+    5,
+    8,
+    5,
+    8,
+    8,
+    5,
+    8,
+    5,
+    8,
+    8,
+    8,
+    8,
+    5,
+    8,
+    8,
+    8
+   ],
+   "rigid": false,
+   "verdict": "FLEXIBLE (strict first-order flex)",
+   "extra": [],
+   "sizes": [
+    5,
+    8
+   ]
+  },
+  {
+   "ring": [
+    5,
+    8,
+    5,
+    8,
+    5,
+    8,
+    8,
+    5,
+    8,
+    5,
+    8,
+    8,
+    8,
+    8,
+    8,
+    5,
+    8,
+    8
+   ],
+   "rigid": false,
+   "verdict": "FLEXIBLE (strict first-order flex)",
+   "extra": [],
+   "sizes": [
+    5,
+    8
+   ]
+  },
+  {
+   "ring": [
+    5,
+    8,
+    5,
+    8,
+    5,
+    8,
+    8,
+    5,
+    8,
+    8,
+    5,
+    8,
+    5,
+    8,
+    8,
+    8,
+    8,
+    8
+   ],
+   "rigid": false,
+   "verdict": "FLEXIBLE (strict first-order flex)",
+   "extra": [],
+   "sizes": [
+    5,
+    8
+   ]
+  },
+  {
+   "ring": [
+    5,
+    8,
+    5,
+    8,
+    5,
+    8,
+    8,
+    5,
+    8,
+    8,
+    5,
+    8,
+    8,
+    5,
+    8,
+    8,
+    8,
+    8
+   ],
+   "rigid": false,
+   "verdict": "FLEXIBLE (strict first-order flex)",
+   "extra": [],
+   "sizes": [
+    5,
+    8
+   ]
+  },
+  {
+   "ring": [
+    5,
+    8,
+    5,
+    8,
+    5,
+    8,
+    8,
+    5,
+    8,
+    8,
+    5,
+    8,
+    8,
+    8,
+    5,
+    8,
+    8,
+    8
+   ],
+   "rigid": false,
+   "verdict": "FLEXIBLE (strict first-order flex)",
+   "extra": [],
+   "sizes": [
+    5,
+    8
+   ]
+  },
+  {
+   "ring": [
+    5,
+    8,
+    5,
+    8,
+    5,
+    8,
+    8,
+    5,
+    8,
+    8,
+    5,
+    8,
+    8,
+    8,
+    8,
+    5,
+    8,
+    8
+   ],
+   "rigid": false,
+   "verdict": "FLEXIBLE (strict first-order flex)",
+   "extra": [],
+   "sizes": [
+    5,
+    8
+   ]
+  },
+  {
+   "ring": [
+    5,
+    8,
+    5,
+    8,
+    5,
+    8,
+    8,
+    5,
+    8,
+    8,
+    8,
+    5,
+    8,
+    5,
+    8,
+    8,
+    8,
+    8
+   ],
+   "rigid": false,
+   "verdict": "FLEXIBLE (strict first-order flex)",
+   "extra": [],
+   "sizes": [
+    5,
+    8
+   ]
+  },
+  {
+   "ring": [
+    5,
+    8,
+    5,
+    8,
+    5,
+    8,
+    8,
+    5,
+    8,
+    8,
+    8,
+    5,
+    8,
+    8,
+    5,
+    8,
+    8,
+    8
+   ],
+   "rigid": false,
+   "verdict": "FLEXIBLE (strict first-order flex)",
+   "extra": [],
+   "sizes": [
+    5,
+    8
+   ]
+  },
+  {
+   "ring": [
+    5,
+    8,
+    5,
+    8,
+    5,
+    8,
+    8,
+    5,
+    8,
+    8,
+    8,
+    5,
+    8,
+    8,
+    8,
+    5,
+    8,
+    8
+   ],
+   "rigid": false,
+   "verdict": "FLEXIBLE (strict first-order flex)",
+   "extra": [],
+   "sizes": [
+    5,
+    8
+   ]
+  },
+  {
+   "ring": [
+    5,
+    8,
+    5,
+    8,
+    5,
+    8,
+    8,
+    5,
+    8,
+    8,
+    8,
+    8,
+    5,
+    8,
+    5,
+    8,
+    8,
+    8
+   ],
+   "rigid": false,
+   "verdict": "FLEXIBLE (strict first-order flex)",
+   "extra": [],
+   "sizes": [
+    5,
+    8
+   ]
+  },
+  {
+   "ring": [
+    5,
+    8,
+    5,
+    8,
+    5,
+    8,
+    8,
+    8,
+    5,
+    8,
+    5,
+    8,
+    5,
+    8,
+    8,
+    8,
+    8,
+    8
+   ],
+   "rigid": false,
+   "verdict": "FLEXIBLE (strict first-order flex)",
+   "extra": [],
+   "sizes": [
+    5,
+    8
+   ]
+  },
+  {
+   "ring": [
+    5,
+    8,
+    5,
+    8,
+    5,
+    8,
+    8,
+    8,
+    5,
+    8,
+    5,
+    8,
+    8,
+    5,
+    8,
+    8,
+    8,
+    8
+   ],
+   "rigid": false,
+   "verdict": "FLEXIBLE (strict first-order flex)",
+   "extra": [],
+   "sizes": [
+    5,
+    8
+   ]
+  },
+  {
+   "ring": [
+    5,
+    8,
+    5,
+    8,
+    5,
+    8,
+    8,
+    8,
+    5,
+    8,
+    5,
+    8,
+    8,
+    8,
+    5,
+    8,
+    8,
+    8
+   ],
+   "rigid": false,
+   "verdict": "FLEXIBLE (strict first-order flex)",
+   "extra": [],
+   "sizes": [
+    5,
+    8
+   ]
+  },
+  {
+   "ring": [
+    5,
+    8,
+    5,
+    8,
+    5,
+    8,
+    8,
+    8,
+    5,
+    8,
+    8,
+    5,
+    8,
+    5,
+    8,
+    8,
+    8,
+    8
+   ],
+   "rigid": false,
+   "verdict": "FLEXIBLE (strict first-order flex)",
+   "extra": [],
+   "sizes": [
+    5,
+    8
+   ]
+  },
+  {
+   "ring": [
+    5,
+    8,
+    5,
+    8,
+    5,
+    8,
+    8,
+    8,
+    5,
+    8,
+    8,
+    5,
+    8,
+    8,
+    5,
+    8,
+    8,
+    8
+   ],
+   "rigid": false,
+   "verdict": "FLEXIBLE (strict first-order flex)",
+   "extra": [],
+   "sizes": [
+    5,
+    8
+   ]
+  },
+  {
+   "ring": [
+    5,
+    8,
+    5,
+    8,
+    5,
+    8,
+    8,
+    8,
+    8,
+    5,
+    8,
+    5,
+    8,
+    5,
+    8,
+    8,
+    8,
+    8
+   ],
+   "rigid": false,
+   "verdict": "FLEXIBLE (strict first-order flex)",
+   "extra": [],
+   "sizes": [
+    5,
+    8
+   ]
+  },
+  {
+   "ring": [
+    5,
+    8,
+    5,
+    8,
+    8,
+    5,
+    8,
+    5,
+    8,
+    8,
+    5,
+    8,
+    5,
+    8,
+    8,
+    8,
+    8,
+    8
+   ],
+   "rigid": false,
+   "verdict": "FLEXIBLE (strict first-order flex)",
+   "extra": [],
+   "sizes": [
+    5,
+    8
+   ]
+  },
+  {
+   "ring": [
+    5,
+    8,
+    5,
+    8,
+    8,
+    5,
+    8,
+    5,
+    8,
+    8,
+    5,
+    8,
+    8,
+    5,
+    8,
+    8,
+    8,
+    8
+   ],
+   "rigid": false,
+   "verdict": "FLEXIBLE (strict first-order flex)",
+   "extra": [],
+   "sizes": [
+    5,
+    8
+   ]
+  },
+  {
+   "ring": [
+    5,
+    8,
+    5,
+    8,
+    8,
+    5,
+    8,
+    5,
+    8,
+    8,
+    5,
+    8,
+    8,
+    8,
+    5,
+    8,
+    8,
+    8
+   ],
+   "rigid": false,
+   "verdict": "FLEXIBLE (strict first-order flex)",
+   "extra": [],
+   "sizes": [
+    5,
+    8
+   ]
+  },
+  {
+   "ring": [
+    5,
+    8,
+    5,
+    8,
+    8,
+    5,
+    8,
+    5,
+    8,
+    8,
+    5,
+    8,
+    8,
+    8,
+    8,
+    5,
+    8,
+    8
+   ],
+   "rigid": false,
+   "verdict": "FLEXIBLE (strict first-order flex)",
+   "extra": [],
+   "sizes": [
+    5,
+    8
+   ]
+  },
+  {
+   "ring": [
+    5,
+    8,
+    5,
+    8,
+    8,
+    5,
+    8,
+    5,
+    8,
+    8,
+    8,
+    5,
+    8,
+    5,
+    8,
+    8,
+    8,
+    8
+   ],
+   "rigid": false,
+   "verdict": "FLEXIBLE (strict first-order flex)",
+   "extra": [],
+   "sizes": [
+    5,
+    8
+   ]
+  },
+  {
+   "ring": [
+    5,
+    8,
+    5,
+    8,
+    8,
+    5,
+    8,
+    5,
+    8,
+    8,
+    8,
+    5,
+    8,
+    8,
+    5,
+    8,
+    8,
+    8
+   ],
+   "rigid": false,
+   "verdict": "FLEXIBLE (strict first-order flex)",
+   "extra": [],
+   "sizes": [
+    5,
+    8
+   ]
+  },
+  {
+   "ring": [
+    5,
+    8,
+    5,
+    8,
+    8,
+    5,
+    8,
+    8,
+    5,
+    8,
+    5,
+    8,
+    8,
+    5,
+    8,
+    8,
+    8,
+    8
+   ],
+   "rigid": false,
+   "verdict": "FLEXIBLE (strict first-order flex)",
+   "extra": [],
+   "sizes": [
+    5,
+    8
+   ]
+  },
+  {
+   "ring": [
+    5,
+    8,
+    5,
+    8,
+    8,
+    5,
+    8,
+    8,
+    5,
+    8,
+    5,
+    8,
+    8,
+    8,
+    5,
+    8,
+    8,
+    8
+   ],
+   "rigid": false,
+   "verdict": "FLEXIBLE (strict first-order flex)",
+   "extra": [],
+   "sizes": [
+    5,
+    8
+   ]
+  },
+  {
+   "ring": [
+    5,
+    8,
+    5,
+    8,
+    8,
+    5,
+    8,
+    8,
+    5,
+    8,
+    8,
+    5,
+    8,
+    5,
+    8,
+    8,
+    8,
+    8
+   ],
+   "rigid": false,
+   "verdict": "FLEXIBLE (strict first-order flex)",
+   "extra": [],
+   "sizes": [
+    5,
+    8
+   ]
+  },
+  {
+   "ring": [
+    5,
+    8,
+    5,
+    8,
+    8,
+    5,
+    8,
+    8,
+    5,
+    8,
+    8,
+    5,
+    8,
+    8,
+    5,
+    8,
+    8,
+    8
+   ],
+   "rigid": false,
+   "verdict": "FLEXIBLE (strict first-order flex)",
+   "extra": [],
+   "sizes": [
+    5,
+    8
+   ]
+  },
+  {
+   "ring": [
+    5,
+    8,
+    5,
+    8,
+    8,
+    5,
+    8,
+    8,
+    5,
+    8,
+    8,
+    5,
+    8,
+    8,
+    8,
+    5,
+    8,
+    8
+   ],
+   "rigid": false,
+   "verdict": "FLEXIBLE (strict first-order flex)",
+   "extra": [],
+   "sizes": [
+    5,
+    8
+   ]
+  },
+  {
+   "ring": [
+    5,
+    8,
+    5,
+    8,
+    8,
+    5,
+    8,
+    8,
+    5,
+    8,
+    8,
+    8,
+    5,
+    8,
+    5,
+    8,
+    8,
+    8
+   ],
+   "rigid": false,
+   "verdict": "FLEXIBLE (strict first-order flex)",
+   "extra": [],
+   "sizes": [
+    5,
+    8
+   ]
+  },
+  {
+   "ring": [
+    5,
+    8,
+    5,
+    8,
+    8,
+    5,
+    8,
+    8,
+    5,
+    8,
+    8,
+    8,
+    5,
+    8,
+    8,
+    5,
+    8,
+    8
+   ],
+   "rigid": false,
+   "verdict": "FLEXIBLE (strict first-order flex)",
+   "extra": [],
+   "sizes": [
+    5,
+    8
+   ]
+  },
+  {
+   "ring": [
+    5,
+    8,
+    5,
+    8,
+    8,
+    5,
+    8,
+    8,
+    8,
+    5,
+    8,
+    5,
+    8,
+    8,
+    5,
+    8,
+    8,
+    8
+   ],
+   "rigid": false,
+   "verdict": "FLEXIBLE (strict first-order flex)",
+   "extra": [],
+   "sizes": [
+    5,
+    8
+   ]
+  },
+  {
+   "ring": [
+    5,
+    8,
+    5,
+    8,
+    8,
+    5,
+    8,
+    8,
+    8,
+    5,
+    8,
+    5,
+    8,
+    8,
+    8,
+    5,
+    8,
+    8
+   ],
+   "rigid": false,
+   "verdict": "FLEXIBLE (strict first-order flex)",
+   "extra": [],
+   "sizes": [
+    5,
+    8
+   ]
+  },
+  {
+   "ring": [
+    5,
+    8,
+    5,
+    8,
+    8,
+    5,
+    8,
+    8,
+    8,
+    5,
+    8,
+    8,
+    5,
+    8,
+    5,
+    8,
+    8,
+    8
+   ],
+   "rigid": false,
+   "verdict": "FLEXIBLE (strict first-order flex)",
+   "extra": [],
+   "sizes": [
+    5,
+    8
+   ]
+  },
+  {
+   "ring": [
+    5,
+    8,
+    5,
+    8,
+    8,
+    8,
+    5,
+    8,
+    5,
+    8,
+    8,
+    8,
+    5,
+    8,
+    5,
+    8,
+    8,
+    8
+   ],
+   "rigid": false,
+   "verdict": "FLEXIBLE (strict first-order flex)",
+   "extra": [],
+   "sizes": [
+    5,
+    8
+   ]
+  },
+  {
+   "ring": [
+    5,
+    8,
+    8,
+    5,
+    8,
+    8,
+    5,
+    8,
+    8,
+    5,
+    8,
+    8,
+    5,
+    8,
+    8,
+    5,
+    8,
+    8
+   ],
+   "rigid": false,
+   "verdict": "FLEXIBLE (strict first-order flex)",
+   "extra": [],
+   "sizes": [
+    5,
+    8
+   ]
+  }
+ ],
+ "ghosts": [
+  [
+   2,
+   3,
+   3,
+   2,
+   5
+  ],
+  [
+   2,
+   2,
+   9,
+   2,
+   9,
+   9
+  ],
+  [
+   2,
+   3,
+   3,
+   6,
+   2,
+   5
+  ],
+  [
+   2,
+   3,
+   6,
+   3,
+   2,
+   6
+  ],
+  [
+   2,
+   4,
+   2,
+   4,
+   4,
+   4
+  ],
+  [
+   2,
+   5,
+   2,
+   5,
+   2,
+   5
+  ],
+  [
+   2,
+   3,
+   2,
+   9,
+   2,
+   9,
+   9
+  ],
+  [
+   2,
+   3,
+   6,
+   3,
+   6,
+   2,
+   6
+  ],
+  [
+   2,
+   5,
+   2,
+   6,
+   3,
+   3,
+   6
+  ],
+  [
+   2,
+   3,
+   6,
+   2,
+   9,
+   2,
+   9,
+   9
+  ],
+  [
+   2,
+   3,
+   6,
+   2,
+   9,
+   9,
+   2,
+   9
+  ],
+  [
+   2,
+   4,
+   4,
+   2,
+   9,
+   2,
+   9,
+   9
+  ],
+  [
+   2,
+   6,
+   2,
+   6,
+   3,
+   6,
+   3,
+   6
+  ],
+  [
+   2,
+   6,
+   3,
+   6,
+   2,
+   9,
+   2,
+   9,
+   9
+  ],
+  [
+   2,
+   5,
+   2,
+   5,
+   8,
+   5,
+   8,
+   8,
+   8,
+   5
+  ],
+  [
+   2,
+   5,
+   2,
+   5,
+   8,
+   8,
+   5,
+   8,
+   8,
+   5
+  ],
+  [
+   2,
+   5,
+   8,
+   5,
+   2,
+   5,
+   8,
+   8,
+   8,
+   5
+  ],
+  [
+   2,
+   5,
+   8,
+   8,
+   5,
+   2,
+   9,
+   2,
+   9,
+   9
+  ],
+  [
+   2,
+   9,
+   2,
+   9,
+   2,
+   9,
+   2,
+   9,
+   9,
+   9
+  ],
+  [
+   2,
+   9,
+   2,
+   9,
+   2,
+   9,
+   9,
+   2,
+   9,
+   9
+  ],
+  [
+   2,
+   9,
+   2,
+   9,
+   9,
+   2,
+   9,
+   2,
+   9,
+   9
+  ]
+ ]
+}
