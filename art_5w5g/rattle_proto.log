@@ -1,0 +1,11 @@
+multiset (1, 1, 2, 7) N = 11 area = 2.406809038500181
+s_max = 1.005969117  slack = 5.969e-03
+samples 1000, near-contact events 4930
+at jammed config (scaled radii): contacts=21, strict flex LP t=-0.000e+00
+Traceback (most recent call last):
+  File "/home/user/claude-mythos-self-play/art_5w5g/rattle.py", line 249, in <module>
+    main()
+  File "/home/user/claude-mythos-self-play/art_5w5g/rattle.py", line 210, in main
+    draw_segment(cv, p0, p1, (0.35, 0.37, 0.45), amp=0.30, width=1.0 * SS)
+    ^^^^^^^^^^^^
+NameError: name 'draw_segment' is not defined

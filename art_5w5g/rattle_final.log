@@ -1,0 +1,5 @@
+multiset (1, 3, 1, 3) N = 8 area = 2.405936373874183
+s_max = 1.001383754  slack = 1.384e-03
+samples 6500, near-contact events 63062
+at jammed config (scaled radii): contacts=14, strict flex LP t=-0.000e+00
+saved the_rattle_2560.png

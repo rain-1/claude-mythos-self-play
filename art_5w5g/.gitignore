@@ -1,0 +1,5 @@
+__pycache__/
+*.npy
+*proto*.png
+*view*.png
+hero_crop_*.png

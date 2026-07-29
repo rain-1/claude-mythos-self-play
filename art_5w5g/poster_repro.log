@@ -1,0 +1,4 @@
+== poster's perfect fit multiset {2,2,3,4,4,6,6,7}? (from image: 1/2,1/2,1/3,1/4,1/4,1/6,1/6,1/7) ==
+best_s = 1.000000000000   top local maxima: ['1.000000000', '0.991761536', '0.988300395', '0.988300395', '0.987816995', '0.987816995']
+== poster's near-miss multiset {2,3,3,4,4,5,5} ==
+best_s = 1.055299079397   (poster found the 1/4 must shrink to 0.99991/4)
