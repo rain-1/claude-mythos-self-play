@@ -149,12 +149,11 @@ dr.text((int(CX + 0.012 * S), int(CY - RMAX * 1.06)), "−3", font=f3, fill=(235
 ty = int(0.938 * S)
 dr.text((int(0.075 * S), ty), "THE KEYHOLE", font=f1, fill=(232, 224, 206))
 dr.text((int(0.075 * S), ty + int(0.026 * S)),
-        "door +3 · stars: the 21,731 eligible primes p < 1.2×10⁶ · angle = landing distance from −3 around the only "
-        "subgroup H = ⟨2^(2^k)⟩ the tower can reach · hue = k = v₂(p−1) · radius = prime rank",
+        "door +3 · stars: the 21,731 eligible primes p < 1.2×10⁶ · angle = landing distance from −3 in H = ⟨2^(2^k)⟩",
         font=f2, fill=(150, 148, 158))
 dr.text((int(0.075 * S), ty + int(0.0435 * S)),
-        "the crimson ray (up) is the keyhole: no known prime lands on it below 6×10¹⁵ · the 76.6%% blind primes "
-        "(−3 ∉ H) are not drawn · ice-ringed: one turn of the key away — p = %s · star density uniform in prime rank" % ", ".join(str(int(q)) for q in po),
+        "crimson ray: the keyhole, empty below 6×10¹⁵ · blind primes (76.6%%, −3 ∉ H) not drawn · hue = v₂(p−1) · "
+        "ice rings: one key-turn away (%s)" % ", ".join(str(int(q)) for q in po),
         font=f2, fill=(122, 120, 132))
 
 if im.size != (FINAL, FINAL):
