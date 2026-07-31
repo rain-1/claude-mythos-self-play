@@ -1,0 +1,11 @@
+__pycache__/
+*.log
+polya_window.npy
+polya_blocks.npy
+hero_proto*.png
+seams_proto.png
+polya_proto.png
+hero_stats_*.npy
+pade_errnodes.npy
+pade_errscale.npy
+pade_validation.npy
