@@ -9,3 +9,6 @@ hero_stats_*.npy
 pade_errnodes.npy
 pade_errscale.npy
 pade_validation.npy
+liouville
+liouville2
+polya_island.npy
