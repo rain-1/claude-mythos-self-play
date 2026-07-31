@@ -58,12 +58,21 @@ evaluation, no grids).  Level squares: 3-D grid scan + full Newton on
   IVT, verified: every fiber of the 640²-center scan has ≥ 2 sign changes
   of g).
 
-**d-sweep** (3 terrains × 12 sides, `sweep_results.json`): see run log —
-level-tripod curves existed for **every** (terrain, d) tested; level squares
-are few (0–8) and **do vanish** for some (terrain, d) pairs, supporting the
-guess that the square version of MO 513737 needs more than topology (cf.
-Fenn's table theorem, which levels a square on a *hill* — a positive bump on
-a convex support — not on a general sign-changing floor).
+**d-sweep** (3 terrains × 12 sides, `sweep_results.json`, centers restricted
+to |c| ≤ 1 − R): level-tripod curves in every case but one; the one zero
+(seed 23, d = 1.3) was a *scan-region artifact* — re-scanning with centers to
+|c| ≤ 0.999 and a per-configuration feet-in-disk test found 115 polished
+level triangles there (example c = (−0.260, 0.055), θ = 1.300, k = −0.0017).
+So: **level equilateral triangles were found for every (terrain, d) tested —
+36/36** — consistent with a YES for the question's triangle half.
+Level squares are *rare*: counts 0–8 in the restricted scan, decreasing with
+d.  But the zeros are not trustworthy either: a rim-extended re-check of
+seed 7, d = 0.9 found **exactly one** level square hiding at |c| = 0.398,
+just beyond the restricted radius 0.364.  Within this resolution we never
+certified a floor with NO level square — only that they thin out to one or
+two isolated miracles as d grows.  (Cf. Fenn's table theorem, which levels a
+square table on a *hill*; whether a general sign-changing floor with h = 0 at
+the shore can starve the square entirely stays open — and interesting.)
 
 The dimensional hierarchy — touching is a surface, resting level is a curve,
 standing true is a point — is the subject of the piece.
