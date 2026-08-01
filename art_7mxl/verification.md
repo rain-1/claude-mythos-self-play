@@ -77,7 +77,20 @@ growing with available prefix depth (155 states at k*=5 on the 28k census)
 words to close. Signature machines trained at depth ≤ 16 mispredict some
 held-out values, so we do NOT claim a finite characterization; the exact
 window laws above are the safe, fully verified statements.
-(See §1a addendum below for the final census status.)
+**§1a addendum (census to 75,024 = F₂₄−1 complete).**
+- Window laws PREDICTIVELY confirmed on the two blocks that landed after
+  the laws were fitted: k=22 first/last nonzero = 31,241 / 35,421 and
+  k=23 = 50,549 / 57,313 — all four exactly as predicted. Laws now hold
+  for every block k = 8..23. Nonzero-det count to 75,024: 1,611.
+- Lone-voice law deep tail: per(12,815) = per(20,736) = 1 (DP-verified);
+  all 23 values of u_k ≤ 75,024 have det = ±1. Signs at u_k:
+  +,−,−,+,+,−,−,−,−,−,−,−,−,+,+,−,−,+,+,+,+,+,+ (n = 1 … 54,288).
+- Automaton saturation diagnosis (signature depth 6): states discovered
+  grow steadily with prefix length — 51 at length 12, 90 at 14, 155 at 16,
+  198 at 17 — with NO plateau. Evidence that the sign sequence is not
+  recognized by a small Zeckendorf DFA; a finite characterization, if one
+  exists, needs either a much deeper census or (better) a peeling theorem.
+  The window laws above remain the fully verified statements.
 
 ## 2. APs of consecutive sums of two squares (MO 513787) — piece 37
 

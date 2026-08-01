@@ -27,11 +27,10 @@ for k in (22, 23):
 
 # u_k check in census: per=1 positions have det != 0; also check det value at
 u = [1, 2, 3, 5, 9, 15, 24, 39, 64, 104, 168, 272, 441, 714, 1155, 1869,
-     3025, 4895, 7920, 12815, 20735, 33551, 54287]
+     3025, 4895, 7920, 12815, 20736, 33552, 54288]
 print("det at u_k:", [(n, d.get(n)) for n in u if n <= 75024])
 
 # saturation: states discovered vs max prefix length (signature depth 6)
-import learn2  # noqa  (reuse zeck utilities style but do inline here)
 from functools import lru_cache
 
 F2 = [0, 1, 2]
