@@ -60,6 +60,9 @@ All computations from scratch in this repo; no CAS, no external tables.
    n = 1, 2, 3, 5, 9, 15, 24, 39, 64, 104, 168, 272, 441, 714, 1155
    (all n ≤ 1597), satisfying the recursion **u_k = F_k + u_{k−4}** —
    Zeckendorf pattern `1(0001)*`. All of these have det ≠ 0.
+   **Predictively confirmed beyond the fit range**: the law's next values
+   1869, 3025, 4895, 7920 all have permanent exactly 1 (checked by DP),
+   while the neighbour n = 1868 has permanent ≈ 1.9×10⁴⁵.
 
 3. **Massive cancellation quantified.** n = 97: 333,973,125 permutations,
    166,986,563 even vs 166,986,562 odd (det = +1 — "carried by one vote");
