@@ -1,0 +1,5 @@
+l=2 first AP start=1 gap=2 end=3
+l=3 first AP start=3 gap=1 end=5
+l=4 first AP start=33092159 gap=22 end=33092225
+N=4000000000 |S|=593798441 density=0.148450
+res mod 11: 57411162 107277607 0 107277524 107277318 107277289 0 0 0 107277541 0 
