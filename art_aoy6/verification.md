@@ -102,13 +102,33 @@ on 2^[n] with ∅ first and de Finetti additivity
   {1,2} < {3}, {2,3} < {1,4}, {5} < {1,2,3}, {1,3,4} < {2,5}
   (each side sums to the multiset {1²,2²,3²,4,5}) — so no measure can
   satisfy all four, verified by integer arithmetic.
-- **Structure of the flip graph** (verified in-render): the graph of
-  single-adjacent-swap moves between the 546 orders is a **perfect
-  matching**: every order has exactly one axiom-free adjacent swap, always
-  at the central ranks 15|16, and the central pair is always complementary
-  {A, Ā} (checked: XOR = 31 in all 546). Moreover **all 30 landless orders
-  are matched to representable twins** (0 ice–ice pairs): every order that
-  owns no measure is one central swap away from one that does.
+- **Structure of the flip graph — now a THEOREM (for every n).** The graph
+  of single-adjacent-swap moves between comparative probability orders is a
+  **perfect matching**: every order has exactly one axiom-free adjacent
+  swap, at the central ranks 2^(n−1)−1 | 2^(n−1), and the swapped pair is
+  always complementary {A, Ā}.
+
+  *Proof.* (i) *Complementation reverses the order:* the canonical
+  disjoint pair of (B̄, Ā) is (B̄\Ā, Ā\B̄) = (A\B, B\A), the same pair with
+  the same orientation as (A, B), so A < B ⇔ B̄ < Ā by additivity; hence
+  rank(Ā) = (2^n −1) − rank(A). [Machine-checked in all 2 + 14 + 546
+  orders for n = 3, 4, 5.]
+  (ii) *Only a complementary adjacent pair can swap:* swapping adjacent
+  X < Y flips the orientation of the canonical pair (S, T) = (X\Y, Y\X);
+  for every OTHER subset C disjoint from S∪T the pair (S∪C, T∪C) sits
+  elsewhere in the order and keeps the old orientation, contradicting
+  additivity — unless there is no other C, i.e. S ∪ T = [n], which with
+  disjointness forces Y = X̄ (then C = ∅ is the only realization, so the
+  flip touches nothing else, and adjacency keeps the result a total
+  order: the swap is legal).
+  (iii) *Exactly one such pair, at the center:* if X, X̄ are adjacent at
+  ranks (r, r+1), then by (i) r + 1 = (2^n − 1) − r, so r = 2^(n−1) − 1;
+  conversely the subset at rank 2^(n−1) − 1 always has its complement at
+  rank 2^(n−1), adjacent. ∎
+
+  Moreover (data, n = 5): **all 30 landless orders are matched to
+  representable twins** (0 ice–ice pairs) — every order that owns no
+  measure is one central swap away from one that does.
 - Defiance (inversions vs cardinality) of the 30 landless orders spans
   6–44 of the full 0–55 range: landlessness is not extremism.
 
