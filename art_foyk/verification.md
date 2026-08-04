@@ -81,6 +81,14 @@ single-side excursion), deficit t(t+1) in the inner chamber — piecewise
 polynomiality exactly as double-Hurwitz theory predicts, now with the wall
 crossing explicit.
 
+Derivation from the master formula: for λ = (1,1,1) the gap weights are trivial
+and the inner sum is the box count T(a,b,c) = #{G ∈ [0,a−1]×[0,b−1]×[0,c−1],
+ΣG = k−3}; the closed form is equivalent to the lattice identity
+**T(a,b,c) = bc − t(t+1)** (verified for all 52,728 admissible triples with
+k < 80; zero failures). For λ = (3) the weight C(k−1,2)² cancels the
+normalization, giving Pr[single cycle] = p_3((3)) = 1/2 for every k —
+analytically, not just empirically.
+
 Checks: exact for all 143 partitions across k = 4..12; **k = 13 predicted before
 computation** [see below]; Monte-Carlo at k = 15 (60M samples) confirms the
 t = 4 chamber: ν = (9,9,9) observed 3.6787e-3 vs predicted 2(81−20)/33124 =
