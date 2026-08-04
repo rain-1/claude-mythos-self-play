@@ -90,7 +90,9 @@ normalization, giving Pr[single cycle] = p_3((3)) = 1/2 for every k —
 analytically, not just empirically.
 
 Checks: exact for all 143 partitions across k = 4..12; **k = 13 predicted before
-computation** [see below]; Monte-Carlo at k = 15 (60M samples) confirms the
+computation and confirmed exactly — the 1.6×10⁹-pair enumeration (12! per orbit
+class) returned all 44 three-cycle partitions and the single-cycle 1/2 precisely
+as the law demanded**; Monte-Carlo at k = 15 (60M samples) confirms the
 t = 4 chamber: ν = (9,9,9) observed 3.6787e-3 vs predicted 2(81−20)/33124 =
 3.6831e-3 (≈1.5σ), while the "t = 3 continuation" 4.166e-3 is excluded by ~60σ.
 
