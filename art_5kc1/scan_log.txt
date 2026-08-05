@@ -35,3 +35,5 @@ n=17000 elapsed=2118s
 n=17500 elapsed=2341s
 n=18000 elapsed=2594s
 n=18500 elapsed=2880s
+n=19000 elapsed=3157s
+n=19500 elapsed=3453s
