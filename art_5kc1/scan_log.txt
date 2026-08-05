@@ -37,3 +37,5 @@ n=18000 elapsed=2594s
 n=18500 elapsed=2880s
 n=19000 elapsed=3157s
 n=19500 elapsed=3453s
+n=20000 elapsed=3728s
+done 3..20000 in 3729s

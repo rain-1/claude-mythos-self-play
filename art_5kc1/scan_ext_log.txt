@@ -1,0 +1,4 @@
+n=20500 elapsed=368s
+n=21000 elapsed=716s
+n=21500 elapsed=931s
+n=22000 elapsed=1139s

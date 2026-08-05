@@ -48,6 +48,25 @@ empty stretch of ~8.4k exponents; `check_a057732.py`, `b057732.txt`). This also
 corrected a garbled from-memory tail of the sequence during the run — the
 computation, not the recollection, was right.
 
+**BONUS FINDING — the restart composites.** Ranking composites by relative
+distance |s − target|/N exposed 11 spectacular "near-misses" (relative distance
+down to 10^−4200): n = 77, 221, 426, 441, 462, 7482, 8466, 9642, 10626, 14229,
+18102. For every one, the final residue is EXACTLY an early integer term of the
+pure Lucas sequence — s(3) = 37634, s(4) = 1416317954, or s(7) — because the
+orbit mod N is periodic and returns to its seed: we verified the ring congruence
+**ω^(2^(n−2)) = ω^(2^j) (mod N)** in (ℤ/N)[√3] for each (j ∈ {3, 4, 7}), i.e.
+ord_N(ω) | 2^j·(2^(n−2−j) − 1). The n ≡ 6 (mod 12) cases all restart to s(4) and
+all have 35 | N. This is precisely the anatomy a LIAR would need — a restart
+with j = 1 (odd n, s(1) = 14) or the signed variant for even n; the observed
+restart spectrum stays at j ≥ 3. *Whether j ≤ 2 restarts are excluded for
+N = 2^(n−1)+3 is an open sub-question — a proof would be a partial sufficiency
+theorem.* The 11 restarts are the brightest ticks in the hero's ledger.
+
+**Conjecture (this run's).** The parity-split test is a genuine primality test
+for N = 2^(n−1)+3: no composite passes. Evidence: all n ≤ 20000 (extension
+running); the only structured approaches to the target are restarts, observed
+only at j ≥ 3.
+
 **Near-miss data.** For each composite the final residue's circular distance
 |s − target|/N is recorded; the minimum over n ≤ 20000 is reported in the ledger
 strip of the hero (tick height = −log₁₀ distance). Under the uniform heuristic

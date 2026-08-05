@@ -10,11 +10,15 @@ noted g = 14, 17 as "admissible but unseen — two open channels". This piece as
 `sqrt2_deep.c`: unified segmented full-factorization sieve (per segment, divide out
 all primes ≤ √X from a residual array; the leftover cofactor is 1 or a single large
 prime — a p·q leftover with p, q > √X would exceed X). Certificates:
-- |S|(4×10⁹) = [CERT4E9] (piece 39: 601,376,078) — [CERTMATCH]
-- |S|(3.2×10¹⁰) = [S32], density [DENS32].
+- |S|(4×10⁹) = 601,376,078 (piece 39: 601,376,078) — EXACT MATCH (from `capcount`).
+- |S|(3.2×10¹⁰) = 4,588,527,208, density 0.1434 (down from 0.1503 at 4×10⁹ — the
+  Landau-type C/√log n thinning).
 - l=5 first occurrences below 4e9 reproduce piece 39 exactly (574/4892/... per gap).
 - Sliding-window counts W5 per gap at 4×10⁹ from the independent `capcount.c` pass
-  sum to [W5SUM] vs piece 39's 58,590 maximal runs — [W5MATCH].
+  sum to 58,590 = piece 39's count EXACTLY, per-gap identical
+  (40629/9723/772/1499/4785/1064/104/13/1).
+- Global-count confirmation of the gap-scaling theorem: C5(14)/C5(2) = 1.020,
+  C5(17)/C5(1) = 1.0004, C5(23)/C5(1) = 0.999, C5(7)/C5(1) = 1.008.
 
 ## 2. The singular series — the discovery
 
@@ -52,12 +56,30 @@ W5(g) = C5(g) · q(g): C5 = number of 5-term g-APs wholly in S (exact, census);
 q(g) = probability the 4 inter-post windows contain no member (fit
 ln q = a − b(g−1) + c·[g odd] on the nine speaking gaps):
 
-[FITTABLE]
+    ln q = -0.125 - 0.6863(g-1) + 0.324[g odd]   (9 gaps, residuals <= 0.8;
+    q spans 1 -> 6e-6 across g = 1..18 — each unit of gap costs a factor ~2 of
+    solitude; odd gaps are slightly cheaper per unit)
 
-Predictions at 4×10⁹: W5(14) ≈ [P14], W5(17) ≈ [P17] (observed 0 — consistent:
-[CONS]). Expected first fence: g=14 near X ≈ [X14], g=17 near X ≈ [X17].
+Predictions at 4×10⁹: W5(14) ≈ 2.6, W5(17) ≈ 0.84 (observed 0/0 — a mild 7%
+Poisson slip for 14, unremarkable for 17). First fences expected at
+X ≈ 1.5×10⁹ (g=14, i.e. "overdue") and X ≈ 4.7×10⁹ (g=17).
 
-**Deep-census verdict (3.2×10¹⁰):** [VERDICT]
+**Deep-census verdict (3.2×10¹⁰):** CHANNEL 14 SPOKE. First l=5, g=14 fence at
+n = 5,341,738,436 — only 1.34× past the old shoreline — and 20 maximal runs below
+3.2×10¹⁰. Witness independently factor-certified (all five posts in S, all four
+windows empty, flanking gaps 18 and 6):
+  5341738436 = 2²·17²·4620881,  5341738450 = 2·5²·106834769,
+  5341738464 = 2⁵·3²·31·41·14593,  5341738478 = 2·2670869239,
+  5341738492 = 2²·1335434623.
+**Channel 17 keeps its silence** through 3.2×10¹⁰ (as do the far channels 23, 24,
+25). Channel 18 grew from 1 run to 2. l = 6: still ZERO (theorem 24 | g stands).
+The atlas records its first *predicted-then-heard* channel: the model put ~21-23
+fences below 3.2×10¹⁰ for g=14 (scaling the 4×10⁹ prediction by the observed
+growth), and the census found 20 — agreement within Poisson error. **But the same
+calibration puts E[W5(17)] ≈ 5-6 below 3.2×10¹⁰, and the census found NONE:
+P(silence) < 1%. Channel 17's quiet is no longer luck — it is the next riddle.**
+Something beyond the (2,3,5,...)-local model suppresses odd-gap-17 solitude, or
+the emptiness fit's parity term hides structure; piece 41's opening question.
 
 ## 4. Thread A updates
 

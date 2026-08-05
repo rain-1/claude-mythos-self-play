@@ -26,7 +26,8 @@ C_STEEL= np.array([0.60, 0.70, 0.88])
 
 GMAX = 26
 ADM = {1,2,4,7,8,9,14,15,16,17,18,23,24,25}
-SILENT = {14,17,23,24,25}
+SILENT = {17,23,24,25}
+OPENED = {14}   # spoke in THIS census: first fence 5,341,738,436
 
 # ---- data ----
 try:
@@ -121,19 +122,27 @@ for g in range(1, GMAX + 1):
     prev_count = npos
     if dg and dg["count"] > prev_count:
         newc = dg["count"] - prev_count
-        fy = ydep(dg["first"]) if dg["first"] > 4e9 else None
-        # mark the deep-zone finds
         if dg["first"] > 4e9:
-            star(buf, x, ydep(dg["first"]), C_AMBER, amp=2.0, rad=2.2 * rs)
+            # newly opened: amber gate at true first + aggregate shaft to shoreline
+            yf = ydep(dg["first"])
+            fence_glyph(x, yf, C_AMBER, 1.1, CW * 0.62)
+            star(buf, x, yf, C_AMBER, amp=2.3, rad=2.4 * rs)
+            ysagg = np.linspace(yf, YSHORE, int(90 * rs))
+            _splat_points(buf, np.full_like(ysagg, x), ysagg,
+                          0.075 * rs * np.log10(1 + newc), C_AMBER * 0.8, 1)
+        else:
+            star(buf, x, Y4E9 + 0.5 * (YSHORE - Y4E9), C_GOLD * 0.8,
+                 amp=0.7 + 0.35 * np.log10(1 + newc), rad=1.6 * rs)
     if g in SILENT:
         # ghost fence at predicted first depth (model); channels 23..25: off-frame
         if predW.get(g):
             Xfirst = 4e9 / max(predW[g], 1e-12)
             if Xfirst < 10 ** LGBOT:
-                fence_glyph(x, ydep(Xfirst), C_ICE, 0.7, CW * 0.62)
+                fence_glyph(x, ydep(Xfirst), C_ICE, 1.6, CW * 0.62)
+                star(buf, x, ydep(Xfirst), C_ICE, amp=1.0, rad=1.7 * rs)
         # cold mouth glow at shoreline exit
         ysm = np.linspace(YSHORE, YBOT, int(120 * rs))
-        _splat_points(buf, np.full_like(ysm, x), ysm, 0.055 * rs, C_ICE, 1)
+        _splat_points(buf, np.full_like(ysm, x), ysm, 0.085 * rs, C_ICE, 1)
 
 for e in range(3, 11):
     ye = ydep(10 ** e)
@@ -153,15 +162,21 @@ texts = [
      int(12.5 * fs), (0.60, 0.64, 0.76), False, "la"),
     (0.040 * S, 0.076 * S, "members with equal gaps g, to depth 3.2x10^10.  header bars: singular series R(g).  ice = the 2-adic tower forbids;  gold = fences found;",
      int(12.5 * fs), (0.60, 0.64, 0.76), False, "la"),
-    (0.040 * S, 0.096 * S, "cold shafts = OPEN but silent: R(14) = R(2) and R(17) = R(1) exactly - the door is wide; the country is too crowded for solitude.",
+    (0.040 * S, 0.096 * S, "cold shafts = OPEN but silent.  R(14) = R(2) and R(17) = R(1) exactly (gap-scaling theorem) - and this census HEARD channel 14:",
      int(12.5 * fs), (0.60, 0.64, 0.76), False, "la"),
+    (0.040 * S, 0.116 * S, "first fence at n = 5,341,738,436 (amber gate; 20 runs follow).  Channel 17 keeps its silence - its ghost fence stands where the model waits.",
+     int(12.5 * fs), (0.85, 0.62, 0.40), False, "la"),
 ]
+texts.append((xg(17) / R_ * S, (YSHORE + 26 * rs) / R_ * S, "model: ~5-6 fences by 3.2e10", int(9.5 * fs), (0.60, 0.82, 0.95), False, "mm"))
+texts.append((xg(17) / R_ * S, (YSHORE + 40 * rs) / R_ * S, "heard: NONE  (P < 1%)", int(9.5 * fs), (0.60, 0.82, 0.95), False, "mm"))
+if 14 in deep and deep[14]["first"] > 4e9:
+    texts.append((xg(14) / R_ * S, (ydep(deep[14]["first"]) - 16 * rs) / R_ * S, "5.34e9", int(10 * fs), (1.0, 0.72, 0.45), False, "mm"))
 for e in (3, 5, 7, 9, 10):
     texts.append(((XL - 30 * rs) / R_ * S, ydep(10 ** e) / R_ * S, f"1e{e}", int(10 * fs), (0.48, 0.54, 0.66), False, "rm"))
 texts.append(((XL - 30 * rs) / R_ * S, YSHORE / R_ * S, "3.2e10", int(10 * fs), (0.60, 0.66, 0.78), False, "rm"))
 for g in range(1, GMAX + 1):
-    col = (0.65, 0.85, 0.95) if g in SILENT else ((0.75, 0.70, 0.58) if g in ADM else (0.45, 0.55, 0.68))
-    texts.append((xg(g) / R_ * S, 0.152 * S, str(g), int(11 * fs), col, g in SILENT, "mm"))
+    col = (0.65, 0.85, 0.95) if g in SILENT else ((1.0, 0.72, 0.45) if g in OPENED else ((0.75, 0.70, 0.58) if g in ADM else (0.45, 0.55, 0.68)))
+    texts.append((xg(g) / R_ * S, 0.152 * S, str(g), int(11 * fs), col, g in SILENT or g in OPENED, "mm"))
 img = bake_text(img, texts, S)
 out = "piece3_preview.png" if PREVIEW else "channels_2560.png"
 save(img, out, dither=True)
