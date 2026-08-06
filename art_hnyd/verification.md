@@ -30,14 +30,22 @@ asks for asymptotics of μ_n.
 seeds 20260806 / 77000513971): μ_n measured to n = 8192; e.g.
 μ₂₅₆ = 4.936 ± 0.019, μ₁₀₂₄ ≈ 5.11, μ₄₀₉₆ ≈ 5.3 (pooled), μ₈₁₉₂ ≈ 5.1–5.3.
 
-**Law fit** (`analyze_sorting.py`, weighted LS on n ≥ 16): among
+**Law fit** (`analyze_sorting.py`, weighted LS on n ≥ 16, pooled data): among
 {lnln, (ln)^{1/2}, (ln)^{1/3}, ln, (lnln)²}, the iterated-log law wins by a
-factor ≥ 2 in χ²/dof:
+factor ≥ 1.8 in χ²/dof:
 
-    μ_n ≈ 2.00 + 1.71 · ln ln n
+    μ_n ≈ 2.04 + 1.68 · ln ln n     (chi2/dof 30.5 vs 55-131 for rivals)
 
-**CONJECTURE (stated for the record).** T(A_n) / ln ln n → c in probability,
-c ≈ 1.7–2; equivalently μ_n = a + b ln ln n + o(1)-corrections. Mechanism observations (n = 4096 hero trace; `tie_depth.py`):
+**Honest caveat from the top decade:** between n = 1024 and n = 8192 the
+observed growth is +0.14-0.19 (μ 5.11 → 5.25-5.30) where the lnln law
+predicts +0.44 — the largest-n points fall below the lnln extrapolation.
+The data therefore support "μ_n grows at most like ln ln n" but cannot
+distinguish Θ(log log n) from still-slower growth (log* n is flat on this
+whole range) or even from ultimate boundedness of T in probability.
+
+**CONJECTURE (stated for the record).** μ_n = O(log log n), with the best
+simple fit μ_n ≈ 2.0 + 1.7 ln ln n on n ≤ 8192; whether T(A_n) diverges at
+all in probability is genuinely open on this data — deciding needs n ≫ 10⁴. Mechanism observations (n = 4096 hero trace; `tie_depth.py`):
 - per-pass permutation displacement collapses super-exponentially:
   5.65M → 5.60M → 36028 → 1640 → 44 → 0;
 - the common-prefix depth of swapped adjacent pairs does NOT deepen — it stays

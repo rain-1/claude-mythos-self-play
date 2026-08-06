@@ -9,10 +9,14 @@ max T = 7 = 2n−3 exhaustively for n = 5 (it also reconfirms your exact
 μ₁..μ₄ and your worst-case construction for several larger n). (ii) MC far
 past n = 100 (≥ 10^4 trials per point up to n = 512, hundreds beyond,
 n up to 8192): μ₂₅₆ ≈ 4.936(19), μ₁₀₂₄ ≈ 5.11(3), μ₂₀₄₈ ≈ 5.27(5),
-μ₄₀₉₆ ≈ 5.3(1). Among two-parameter laws a + b·f(n) with
-f ∈ {ln ln n, (ln n)^{1/2}, (ln n)^{1/3}, ln n, (ln ln n)²}, weighted least
-squares on n ≥ 16 prefers **μ_n ≈ 2.0 + 1.7 ln ln n** by a factor > 2 in
-χ²/dof over every rival. (iii) Mechanism data: the total displacement of the
+μ₄₀₉₆ ≈ 5.30(5), μ₈₁₉₂ ≈ 5.25(7). Among two-parameter laws a + b·f(n)
+with f ∈ {ln ln n, (ln n)^{1/2}, (ln n)^{1/3}, ln n, (ln ln n)²}, weighted
+least squares on n ≥ 16 prefers **μ_n ≈ 2.0 + 1.7 ln ln n** by a factor
+≥ 1.8 in χ²/dof over every rival — but the top decade grows SLOWER than the
+lnln extrapolation (+0.15 observed vs +0.44 predicted from n = 1024 to
+8192), so the data support μ_n = O(log log n) while leaving open whether T
+diverges at all (log* n, or even a tight limiting distribution, fit the top
+decade equally well). (iii) Mechanism data: the total displacement of the
 sorting permutation collapses super-exponentially along a run — e.g. one
 n = 4096 sample gave 5.65×10^6, 5.60×10^6, 36028, 1640, 44, 0 across its six
 passes; the late passes are entirely adjacent transpositions of
@@ -23,8 +27,9 @@ deep-tied pairs. The endgame is a dependency chain through the deciding
 prefix: in that sample, all 22 final column swaps first differed at row 16,
 and all were triggered by one 3-cycle of rows 16-18 in the previous pass —
 row order among the first ~log₂ n rows decides column order, which decides
-row order, and so on. **Conjecture: T(A_n)/ln ln n → c in probability
-(c ≈ 1.7–2), i.e. μ_n = Θ(log log n).**
+row order, and so on. **Conjecture: μ_n = O(log log n); on n ≤ 8192 the best simple law is
+μ_n ≈ 2.0 + 1.7 ln ln n, and even divergence of T in probability is not yet
+forced by the data.**
 
 ## Draft answer for MO 513954 (inertia of the structured downdate)
 
