@@ -37,15 +37,23 @@ factor ≥ 2 in χ²/dof:
     μ_n ≈ 2.00 + 1.71 · ln ln n
 
 **CONJECTURE (stated for the record).** T(A_n) / ln ln n → c in probability,
-c ≈ 1.7–2; equivalently μ_n = a + b ln ln n + o(1)-corrections. Mechanism
-(supported by the per-pass displacement cascade, e.g. n = 4096 hero trace:
-row/col permutation displacement 5.65M → 5.60M → 36028 → 1640 → 44 → 0):
-after the first two sorts, disorder survives only inside blocks of rows
-(columns) that agree on the prefix of columns (rows) already effectively
-frozen; each further alternation roughly SQUARES the rarity of surviving ties,
-and a doubly-exponential contraction of the disorder scale needs Θ(log log n)
-rounds. The final acts are adjacent swaps of near-identical lines: at n = 4096
-the last sort performed exactly 22 adjacent column swaps (displacement 44).
+c ≈ 1.7–2; equivalently μ_n = a + b ln ln n + o(1)-corrections. Mechanism observations (n = 4096 hero trace; `tie_depth.py`):
+- per-pass permutation displacement collapses super-exponentially:
+  5.65M → 5.60M → 36028 → 1640 → 44 → 0;
+- the common-prefix depth of swapped adjacent pairs does NOT deepen — it stays
+  ≈ log₂ n at every pass (medians 12/13/11/16 across passes 3-6; baseline
+  tie depth of adjacent sorted rows ≈ 11). What shrinks is the POPULATION of
+  unstable deep-tied pairs, not the tie scale;
+- the process ends in a dependency chain through the deciding prefix: the
+  final sort was 22 adjacent column swaps, every one of them first differing
+  at ROW 16, and all 22 were triggered by a single 3-cycle of rows at
+  positions 16-17-18 in pass 5 (verified: p₅ = (16 18 17) there, and each
+  flipped pair's deciding row is exactly 16). One rotation of three rows in
+  the deciding prefix re-dealt the verdicts of all 22 column pairs — the
+  last domino.
+The Θ(log log n) conjecture is empirical (the lnln fit above); the chain
+structure suggests T tracks the depth of the row-order/column-order
+dependency recursion in the ~log₂ n deciding prefix.
 
 Hero facts (seed rng 513971): T = 6; last-change strata populations
 1.52M / 3.01M / 5.48M / 2.26M / 2.89M / 90462; 1423 rows still moving at pass

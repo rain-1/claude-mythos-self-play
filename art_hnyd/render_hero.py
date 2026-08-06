@@ -125,7 +125,7 @@ del buf
 texts = [
     (110, S - 300, "THE  LAST  TO  SETTLE", 74, (0.92, 0.88, 0.78), True, "ls"),
     (110, S - 210, "one 4096 x 4096 random binary matrix, rows and columns alternately sorted into double lexicographic order  (MO 513971)", 40, (0.62, 0.60, 0.58), False, "ls"),
-    (110, S - 150, "settled after T = 6 sorts   -   each pixel lit by the pass in which it last changed   -   the final sort is 22 adjacent swaps of near-identical columns (gold stitches)", 40, (0.62, 0.60, 0.58), False, "ls"),
+    (110, S - 150, "settled after T = 6 sorts   -   each pixel lit by the pass in which it last changed   -   the final sort: 22 adjacent column swaps, ALL decided at row 16, all triggered by one 3-cycle of rows 16-18 in pass 5", 40, (0.62, 0.60, 0.58), False, "ls"),
     (110, S - 90, "129 restless cells changed in every pass (white stars)   -   exact:  E[T](5) = 36573599 / 2^25,  worst case 2n-3 verified n <= 5", 40, (0.50, 0.48, 0.46), False, "ls"),
 ]
 img = bake_text(img, texts, S)

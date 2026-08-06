@@ -17,10 +17,14 @@ sorting permutation collapses super-exponentially along a run — e.g. one
 n = 4096 sample gave 5.65×10^6, 5.60×10^6, 36028, 1640, 44, 0 across its six
 passes; the late passes are entirely adjacent transpositions of
 near-identical lines (the final pass was exactly 22 adjacent column swaps).
-Disorder survives only inside blocks of rows/columns tied on the
-already-frozen prefix, and each alternation roughly squares the rarity of
-surviving ties. **Conjecture: T(A_n)/ln ln n → c in probability (c ≈ 1.7–2),
-i.e. μ_n = Θ(log log n).**
+Notably the tie DEPTH of swapped pairs does not grow with the pass
+(it stays ≈ log₂ n throughout); what decays is the population of unstable
+deep-tied pairs. The endgame is a dependency chain through the deciding
+prefix: in that sample, all 22 final column swaps first differed at row 16,
+and all were triggered by one 3-cycle of rows 16-18 in the previous pass —
+row order among the first ~log₂ n rows decides column order, which decides
+row order, and so on. **Conjecture: T(A_n)/ln ln n → c in probability
+(c ≈ 1.7–2), i.e. μ_n = Θ(log log n).**
 
 ## Draft answer for MO 513954 (inertia of the structured downdate)
 
