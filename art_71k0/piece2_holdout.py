@@ -178,9 +178,9 @@ polyline(buf, [(rx0, rym(1.0)), (rx1, rym(1.0))], SILV*0.35, amp=0.22*rs)
 # bonus: far channel 24 (from alarms)
 try:
     for line in open("hunt_alarms_20000000000_160000000000.txt"):
-        m = re.match(r'FIRST l=5 g=24 start=(\d+)', line)
+        m = re.match(r'FIRST l=5 g=(23|24) start=(\d+)', line)
         if m:
-            X24 = int(m.group(1)); xt = rxm(X24)
+            xt = rxm(int(m.group(2)))
             star(buf, xt, ry, GOLD*0.85, amp=1.0, rad=3.0*rs)
 except FileNotFoundError:
     pass
@@ -199,7 +199,7 @@ buf = bloom(buf, sigmas=(2*rs, 8*rs, 26*rs), weights=(1.0, 0.30, 0.14), thresh=0
 img = tonemap(buf, k=1.30, gamma=0.90)
 
 fs = int(14*rs); fs2 = int(12*rs)
-verdict_txt = (f"VERDICT: channel 17 speaks — first fence at n = {VERDICT_FENCES[0]:,}"
+verdict_txt = (f"VERDICT: channel 17 speaks — first fence at n = {VERDICT_FENCES[0]:,} · thirteen fences below 1.6×10¹¹"
                if VERDICT_FENCES else
                "VERDICT: silence to 1.6×10¹¹ — the corrected model itself now refuted (P < 0.4%)")
 texts = [
@@ -211,12 +211,12 @@ texts = [
   "S = {n: v_p(n) even for all p ≡ 3,5 mod 8} — five consecutive members, equal gap 17: expected ≈5 by 3.2×10¹⁰, found 0",
   fs2, (0.65, 0.68, 0.78), False, "la"),
  (0.083*S, 0.098*S, "the five posts", fs2, (0.95, 0.8, 0.45), False, "la"),
- (0.07*S, 0.352*S, "64 window slots — candle = P(occupied | posts ∈ S), census of all 40,647 patterns at 4×10⁹",
+ (0.07*S, 0.366*S, "64 window slots — candle = P(occupied | posts ∈ S), census of all 40,647 patterns at 4×10⁹",
   fs2, (0.75, 0.60, 0.45), False, "la"),
- (0.07*S, 0.352*S+int(18*rs),
+ (0.07*S, 0.366*S+int(18*rs),
   "ice stubs = frozen slots (q = 0 exactly) · ONE rigid 2-adic family: n ≡ 14 mod 48, n ≡ 2 mod 9 — no mixture to blame",
   fs2, (0.62, 0.75, 0.85), False, "la"),
- (0.07*S, 0.352*S+int(36*rs), "twin dot-rows: the two neighbourhood versions (n ≡ 14 / 30 mod 32) · arcs: the camps — ice rivals {14,54}↔{6,30,38,62}, ember allies",
+ (0.07*S, 0.366*S+int(36*rs), "twin dot-rows: the two neighbourhood versions (n ≡ 14 / 30 mod 32) · arcs: the camps — ice rivals {14,54}↔{6,30,38,62}, ember allies",
   fs2, (0.55, 0.58, 0.68), False, "la"),
  (0.10*S, 0.408*S, "THE CONSPIRACY — how often k of the 64 slots are occupied",
   fs, (1, 0.85, 0.5), False, "la"),
@@ -227,9 +227,9 @@ texts = [
  (0.745*S, 0.452*S, "g=15: found 104 of 542 expected  (×5.2)", fs2, (0.85, 0.6, 0.4), False, "la"),
  (0.745*S, 0.500*S, "g=16: found 13 of 65  (×5.0)", fs2, (0.85, 0.6, 0.4), False, "la"),
  (0.745*S, 0.548*S, "g=18: found 1 of 2.6", fs2, (0.85, 0.6, 0.4), False, "la"),
- (0.62*S, 0.575*S, "emptiness is ~5× harder than independence claims —",
+ (0.62*S, 0.575*S, "emptiness is ~5× harder than independence claims, for every wide channel —",
   fs2, (0.65, 0.68, 0.78), False, "la"),
- (0.62*S, 0.575*S+int(17*rs), "for EVERY wide channel; the anomaly dissolves: corrected E(3.2×10¹⁰) ≈ 1.4, P(silence) ≈ 25%",
+ (0.62*S, 0.575*S+int(17*rs), "the anomaly dissolves: corrected E(3.2×10¹⁰) ≈ 1.4, P(silence) ≈ 25%",
   fs2, (0.65, 0.68, 0.78), False, "la"),
  (0.08*S, 0.665*S, "THE RAIL — expected fences vs depth", fs, (1, 0.85, 0.5), False, "la"),
  (0.08*S, 0.665*S+int(19*rs),
@@ -242,7 +242,7 @@ texts = [
   "witness: 33,099,743,774 = 2·16549871887 ·· +17 prime ·· +34 = 2⁶·3²·23·103·127·191 ·· +51 = 5²·41·71·454823 ·· +68 = 2·11²·8999·15199 — sympy-certified, all 64 windows empty",
   fs2, (0.7,0.72,0.8), False, "la") if VERDICT_FENCES else (0,0,"",1,(0,0,0),False,"la"),
  (0.08*S, 0.94*S+int(42*rs),
-  "bonus: far channel 24 also opened — first fence 52,909,727,729, its first three posts all prime",
+  "and the far channels fell too: 24 at 52,909,727,729 (its first three posts all prime), 23 at 158,783,559,650 — 99.2% of the horizon; only 25 keeps its silence · l=6: still zero everywhere",
   fs2, (0.75,0.68,0.5), False, "la") if VERDICT_FENCES else (0,0,"",1,(0,0,0),False,"la"),
  (0.92*S, 0.885*S, "depth 1.6×10¹¹", fs2, (0.55, 0.58, 0.68), False, "ra"),
  (0.08*S, 0.885*S, "4×10⁹", fs2, (0.55, 0.58, 0.68), False, "la"),

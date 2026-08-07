@@ -122,13 +122,23 @@ below 3.2×10¹⁰ under its model, observed 0, P < 1%.
    n ≡ 14 (mod 16), n ≡ 2 (mod 9), and sits in the mod-32 class 30 (camp
    {6,30,38,62} alive). The atlas's second predicted-then-heard channel —
    this time the prediction needed the conspiracy correction to be right.
-7. **Bonus: far channel 24 opened too.** First gap-24 fence at
-   n = 52 909 727 729 (5.29×10¹⁰), sympy-certified — and its first three
-   posts 52909727729, 52909727753, 52909727777 are all PRIME (a prime
-   3-term AP with gap 24 heading the fence); remaining posts 7·7558532543,
-   5²·2116389113. Channel 24 was one of piece 40's "far silent channels"
-   (23, 24, 25); 23 and 25 remain open below 1.6×10¹¹ (final tables at end
-   of hunt).
+7. **Final hunt tables ([2×10¹⁰, 1.6×10¹¹], `hunt_rungap_*.txt`).**
+   Fence counts: g=14: 132 · g=15: 7590 · g=16: 689 · **g=17: 13** ·
+   g=18: 20 · g=23: 1 · g=24: 10 · g=25: 0. **l = 6: ZERO at every gap**
+   (the 24|g theorem and the >10¹³ first-fence estimate stand).
+   THREE silent channels opened this run, all sympy-certified:
+   - **17** at 33 099 743 774 (the riddle resolved);
+   - **24** at 52 909 727 729 — its first three posts 52909727729,
+     52909727753, 52909727777 are all PRIME (a prime 3-AP heads the fence);
+   - **23** at 158 783 559 650 (99.2% of the way to the horizon — posts
+     2·5²·3175671193, prime, 2⁴·3²·6703·164503, prime, 2·79391779871).
+   Only channel 25 of piece 40's five silent channels remains silent.
+   Count-vs-model honesty: with the depth drift of P0 priced (q_j fall as
+   density thins ⇒ P0 rises ≈ ×1.7/decade), the in-range counts give
+   gap-dependent deficit factors: ~1 (g=14), ~3–4 (g=17), ~5 (g=15, 16, 18).
+   The qualitative resolution stands — channel 17 was never specially
+   obstructed — and the gap-dependence of the conspiracy factor plus the
+   drift-aware Poisson-binomial model is piece 42's opening question.
 
 ## Piece 3 — THE ROADS HOME (MO 513995, trinomial root roads)
 
