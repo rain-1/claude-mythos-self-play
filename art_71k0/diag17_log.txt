@@ -1,0 +1,13 @@
+X=4000000000 sqrt=63245 primes=6337
+sieve done 165s
+g=1 done 174s
+g=2 done 182s
+g=8 done 191s
+g=9 done 200s
+g=14 done 209s
+g=15 done 219s
+g=16 done 228s
+g=17 done 238s
+g=18 done 248s
+all done 248s
+DIAG DONE

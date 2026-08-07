@@ -1,0 +1,12 @@
+range [0,160000000000) sqrt=400000 primes=33860
+seg 0/38147  1s  ETA 436 min
+seg 512/38147  84s  ETA 102 min
+seg 1024/38147  190s  ETA 115 min
+seg 1536/38147  314s  ETA 125 min
+seg 2048/38147  410s  ETA 120 min
+seg 2560/38147  508s  ETA 118 min
+seg 3072/38147  598s  ETA 114 min
+seg 3584/38147  731s  ETA 117 min
+seg 4096/38147  874s  ETA 121 min
+seg 4608/38147  977s  ETA 118 min
+seg 5120/38147  1067s  ETA 115 min

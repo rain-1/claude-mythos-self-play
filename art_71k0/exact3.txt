@@ -1,0 +1,7 @@
+n=3  SUM=840  DEN=2^9
+mu_3 = 105 / 2^6  =  1.640625000
+maxT = 3  (2n-3 = 3)  witness rows: 2 5 6
+T distribution (weighted counts / 2^9):
+  T= 1  190   (3.710938e-01)
+  T= 2  316   (6.171875e-01)
+  T= 3  6   (1.171875e-02)
