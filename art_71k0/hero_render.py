@@ -77,7 +77,7 @@ print(f"law fit: mu = {a_fit:.3f} + {b_fit:.3f} ln ln n")
 # ---------------- chart mapping ----------------
 X0, X1 = 0.075, 0.945
 Y_BOT, Y_TOP = 0.775, 0.115
-LMIN, LMAX = 1.0, 14.1
+LMIN, LMAX = 1.0, 12.75
 TMAX = 13.0
 def xm(n):  return (X0 + (np.log2(n) - LMIN)/(LMAX - LMIN)*(X1 - X0)) * S
 def ym(T):  return (Y_BOT + (T - 1.0)/(TMAX - 1.0)*(Y_TOP - Y_BOT)) * S
@@ -97,7 +97,7 @@ buf = canvas(S)
 
 # ---------------- aurora strata ----------------
 lg = np.log2(ns)
-xg = np.linspace(LMIN, LMAX, 900)          # dense grid in log2 n
+xg = np.linspace(LMIN, LMAX, int(900*S/1024))   # dense grid, scales with canvas
 cols = (X0 + (xg - LMIN)/(LMAX - LMIN)*(X1 - X0)) * S
 for k in range(1, 14):
     P = np.array([a[1].get(k, 0.0) for a in anchors])
@@ -201,7 +201,7 @@ img = tonemap(buf, k=1.35, gamma=0.92)
 fs = int(12.5*rs); fs2 = int(11*rs)
 mu_strs = " · ".join(f"μ{n}={frac_labels[n]}" for n in sorted(exact) if frac_labels.get(n))
 # axis ticks
-for ntick in [4, 16, 64, 256, 1024, 4096, 16384]:
+for ntick in [4, 16, 64, 256, 1024, 4096]:
     polyline(buf, [(xm(ntick), 0.782*S), (xm(ntick), 0.792*S)], WHT*0.5, amp=0.3*rs)
 buf_ticks_done = True
 texts = [
@@ -221,15 +221,15 @@ texts = [
  (0.075*S, 0.83*S, "gold pillars: EXACT census (all 2^{n²} matrices via row-multiset reduction) — " + mu_strs,
   fs2, (0.95, 0.80, 0.45), False, "la"),
  (0.075*S, 0.83*S+int(18*rs),
-  "μ7 exact; worst case T = 2n−3 (ice wall) attained at every n ≤ 7 — the crafted quarrel outlives every random one",
+  f"worst case T = 2n−3 (ice wall) attained at every n ≤ {max(exact)} (exhaustive) — the crafted quarrel outlives every random one",
   fs2, (0.70, 0.85, 0.95), False, "la"),
  (0.075*S, 0.83*S+int(36*rs),
-  "average argument: five sentences at n = 8192 — and thesis-first vs antithesis-first agree in law, differ on 60% of matrices (corr ≈ 0)",
+  "average argument: five sentences at n = 6144 — and thesis-first vs antithesis-first agree in law, differ on 60% of matrices (corr ≈ 0)",
   fs2, (0.62, 0.65, 0.75), False, "la"),
  (0.263*S, 0.155*S, f"the crafted matrix, n={max(exact)}: T = {2*max(exact)-3}",
   fs2, (0.70, 0.85, 0.95), False, "la"),
 ]
-for ntick in [4, 16, 64, 256, 1024, 4096, 16384]:
+for ntick in [4, 16, 64, 256, 1024, 4096]:
     texts.append((xm(ntick), 0.797*S, f"{ntick}", fs2, (0.55,0.58,0.68), False, "ma"))
 texts.append((0.068*S, 0.80*S, "n", fs2, (0.55,0.58,0.68), False, "ra"))
 for kt in [2, 4, 6, 8, 10, 12]:

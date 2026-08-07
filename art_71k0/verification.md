@@ -1,7 +1,7 @@
 # Verification ledger — run 2026-08-07 (`art_71k0/`)
 
 Everything drawn is computed from scratch in this directory; every claim below
-names its certificate. (Numbers marked ⏳ are finalized at the end of the run.)
+names its certificate.
 
 ## Piece 1 — THE SYNTHESIS (MO 513971, alternating lexicographic sorting)
 
@@ -12,7 +12,7 @@ A⁽ᵗ⁾ row- and column-sorted}. μ_n = E[T] under iid Bernoulli(1/2).
 **Reduction (new, trivial but load-bearing).** A⁽¹⁾ = R(A) depends only on the
 *multiset* of rows, hence so does T. So the exact μ_n needs
 C(2ⁿ+n−1, n) multiset evaluations instead of 2^{n²}:
-n=6: 1.2×10⁸ (5 s), n=7: 9.36×10¹⁰ (~1 core-day, ran here in ~2 h wall).
+n=6: 1.2×10⁸ (5 s), n=7: 9.36×10¹⁰ (~10 core-hours; unfinished at close).
 
 **Certificates.**
 - `sort_brute.py` (straight from the definition, all 2^{n²} matrices, n ≤ 4)
@@ -20,14 +20,16 @@ n=6: 1.2×10⁸ (5 s), n=7: 9.36×10¹⁰ (~1 core-day, ran here in ~2 h wall).
   μ₄=125387/65536 — and `sort_exact.c` (multiset path) matches it exactly for
   n = 2, 3, 4. Two independent implementations agree with each other and with
   MO 513971.
-- Worst case: max T = 2n−3 attained at every n ∈ {3,…,7} by exhaustive census
+- Worst case: max T = 2n−3 attained at every n ∈ {3,…,6} by exhaustive census
   (witness row-multisets printed in `exact*.txt`), matching the poster's
   theorem max T = 2n−3.
 - **New exact values** (`exact5.txt`, `exact6.txt`, `exact7.txt`):
   - μ₅ = 36 573 599 / 2²⁴ ≈ 2.179 956 377
   - μ₆ = 168 401 367 693 / 2³⁶ ≈ 2.450 562 427
-  - μ₇ = ⏳ (n=7 census, 93 594 900 020 multisets)
-  with the full exact distribution of T at each n.
+  - μ₇: the 93 594 900 020-multiset census was still running when the run
+    closed (~7 of ~10 core-hours in; `sort_exact 7` reproduces it) — the
+    next routine run inherits it as an open chore.
+  with the full exact distribution of T at each n (n ≤ 6).
 - MC (`sortmc.py`, `mc_mu.json` + `mc_mu2.json`): ~390k matrices across
   n = 8 … 16384. At overlapping n the MC brackets the exact values
   (e.g. exact μ₅ = 2.17996 vs poster's MC 2.18).
