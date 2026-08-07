@@ -1,2 +1,0 @@
-n=  2048 trials=  2500 mu=5.2100 +- 0.0145 dist=[np.int64(0), np.int64(0), np.int64(0), np.int64(321), np.int64(1446), np.int64(631), np.int64(91), np.int64(11), np.int64(0), np.int64(0), np.int64(0)]  (720s)
-n=  3072 trials=  1200 mu=5.2658 +- 0.0209 dist=[np.int64(0), np.int64(0), np.int64(0), np.int64(137), np.int64(663), np.int64(347), np.int64(50), np.int64(3), np.int64(0), np.int64(0), np.int64(0)]  (1093s)
