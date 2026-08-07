@@ -1,0 +1,32 @@
+anchors: [np.int64(8), np.int64(12), np.int64(16), np.int64(24), np.int64(32), np.int64(48), np.int64(64), np.int64(96), np.int64(128), np.int64(192), np.int64(256), np.int64(384), np.int64(512), np.int64(768), np.int64(1024), np.int64(1536), np.int64(2048), np.int64(3072), np.int64(4096), np.int64(6144)]
+
+local slope d mu / d lnln n:
+       8 ->     12: slope  2.894 +- 0.024
+      12 ->     16: slope  2.397 +- 0.038
+      16 ->     24: slope  2.217 +- 0.034
+      24 ->     32: slope  1.878 +- 0.059
+      32 ->     48: slope  1.839 +- 0.049
+      48 ->     64: slope  1.508 +- 0.081
+      64 ->     96: slope  1.471 +- 0.070
+      96 ->    128: slope  1.459 +- 0.118
+     128 ->    192: slope  1.210 +- 0.104
+     192 ->    256: slope  1.428 +- 0.176
+     256 ->    384: slope  1.045 +- 0.150
+     384 ->    512: slope  1.128 +- 0.246
+     512 ->    768: slope  1.224 +- 0.212
+     768 ->   1024: slope  0.934 +- 0.348
+    1024 ->   1536: slope  1.611 +- 0.320
+    1536 ->   2048: slope -0.104 +- 0.540
+    2048 ->   3072: slope  1.078 +- 0.490
+    3072 ->   4096: slope  1.312 +- 0.895
+    4096 ->   6144: slope  1.345 +- 0.822
+fit n>=   32: mu = 2.495 + 1.379 lnln n   chi2/dof=26.14
+fit n>=  128: mu = 2.887 + 1.156 lnln n   chi2/dof=1.46
+fit n>=  512: mu = 3.048 + 1.072 lnln n   chi2/dof=1.05
+fit n>= 2048: mu = 2.763 + 1.204 lnln n   chi2/dof=0.05
+reference slopes: 1/ln2 = 1.4427   2.0
+
+holdout fit (64<=n<=2048): a=2.686 b=1.269
+  n=  3072: predicted 5.330  observed 5.266 +- 0.021   pull -3.1 sigma
+  n=  4096: predicted 5.374  observed 5.312 +- 0.024   pull -2.6 sigma
+  n=  6144: predicted 5.435  observed 5.376 +- 0.031   pull -1.9 sigma
