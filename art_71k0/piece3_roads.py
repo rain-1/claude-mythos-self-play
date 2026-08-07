@@ -121,6 +121,7 @@ for i, n in enumerate(ns):
     cx = (0.09 + 0.164*i)*S
     draw_panel(buf, n, cx, 0.875*S, 0.030*S, 0.5, main=False)
 
+buf *= (1.0 if PREVIEW else 1.8)   # FINAL_BOOST: thin-line loss at LANCZOS downscale
 buf = bloom(buf, sigmas=(2*rs, 8*rs, 26*rs), weights=(1.0, 0.32, 0.15),
             thresh=0.6)
 img = tonemap(buf, k=1.05, gamma=0.90)

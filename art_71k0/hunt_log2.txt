@@ -9,3 +9,7 @@ seg 3424/33379  658s  ETA 96 min
 seg 3936/33379  752s  ETA 94 min
 seg 4448/33379  848s  ETA 92 min
 seg 4960/33379  952s  ETA 91 min
+seg 5472/33379  1052s  ETA 89 min
+seg 5984/33379  1149s  ETA 88 min
+seg 6496/33379  1256s  ETA 87 min
+seg 7008/33379  1364s  ETA 86 min

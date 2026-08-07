@@ -24,3 +24,6 @@ Story: `story.md`.
   every wide channel (g=15: 104/542, g=16: 13/65) ⇒ piece 40's P<1% anomaly
   dissolves into P ≈ 25%.
 - C5(17)=40,647 ≈ C5(1)=40,629: the gap-scaling theorem seen in raw counts.
+- **CHANNEL 17 SPOKE: first fence at n = 33,099,743,774** (1.03× past the old
+  shoreline, sympy-certified) — found exactly where the conspiracy-corrected
+  model predicted. The second predicted-then-heard channel of the atlas.

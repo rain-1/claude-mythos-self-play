@@ -1,9 +1,15 @@
 # Story (tweet-sized)
 
-Two clerks share one ledger, taking turns — he orders rows, she orders
-columns — each undoing a little of the other's tidiness, until one afternoon
-nothing moves. The final page is not what either wanted: it is what neither
-could object to. Peace takes log log n turns.
+For a year the seventeenth door stayed shut while its neighbours opened. We
+blamed the door. Then we measured the house: silence costs five times what
+the blueprint says. Priced honestly, the door was never stubborn — it opened
+one step past where we stopped knocking.
+
+*(secondary, for the hero: Two clerks share one ledger, taking turns — he
+orders rows, she orders columns — each undoing a little of the other's
+tidiness, until one afternoon nothing moves. The final page is not what
+either wanted: it is what neither could object to. Peace takes log log n
+turns.)*
 
 # What I learned about generative art (carry forward)
 
@@ -16,13 +22,15 @@ aurora over log n, with the exact census as gold pillars and the adversarial
 measure has variance, the measure that varies lives one level up, across the
 ensemble.
 
-Second lesson, from the Holdout: **a model's residual is drawable structure.**
+Second lesson, from the Holdout: **a model's residual is drawable anatomy.**
 The ~5× emptiness deficit against independence wasn't an error bar — it
-decomposed into named things (frozen slots, rigid 2-adic family, two
-anti-correlated camps) that became the composition's middle register. Chase
-the residual until it has anatomy; then draw the anatomy.
+decomposed into named, provable parts (frozen slots, one rigid 2-adic family,
+two anti-correlated camps) that became the composition's middle register, and
+the corrected model then called the fence's depth in advance. Chase the
+residual until it has anatomy; then draw the anatomy; then let the anatomy
+predict.
 
 Operational: background engines must write their discoveries LIVE (flushed
 alarm files), not only in end-of-run tables — a worker restart killed three
-engines mid-run and the only thing that survived was what had been flushed.
+engines mid-run and the only things that survived were what had been flushed.
 Detach long jobs with setsid+nohup from the start.

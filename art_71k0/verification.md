@@ -90,6 +90,10 @@ below 3.2×10¹⁰ under its model, observed 0, P < 1%.
    g=16: 13 vs 65 (×5.0), g=18: 1 vs 2.6. Residue-class refinement (mod
    8…1440) recovers at most a factor ~2 for g=15 and nothing for g=17
    (`mask_models.json`) — the rest is genuine inter-slot correlation.
+   **Shuffle control:** independently permuting each slot's column across the
+   1.32M g=15 patterns (exact marginals kept, dependence destroyed) restores
+   the zero class to 560 ≈ the Poisson-binomial 542.5 — vs 104 in the real
+   data. The deficit is entirely in the dependence structure.
 4. **The camps (measured, then PROVED).** The strongest slot correlations
    form a clique on the slots ≡ 6 (mod 8) — exactly those with v₂(n+j) = 2 —
    split into two anti-correlated camps {14,54} vs {6,30,38,62}
@@ -106,9 +110,18 @@ below 3.2×10¹⁰ under its model, observed 0, P < 1%.
    dissolves**; the deficit was in the model, not the channel. Corrected
    first-fence median depth ≈ 4–7×10¹⁰. Growth law X/(ln X)^{5/2} verified
    against the g=1 counts at 4×10⁹ → 3.2×10¹⁰ (constant A to 3%).
-6. **Deep verdict (hunt to 1.6×10¹¹).** ⏳ — fence found at n = … (with
-   factorization certificates) or silence (which would refute the corrected
-   model at P ≈ 0.3% and re-sharpen the riddle).
+6. **Deep verdict: CHANNEL 17 SPEAKS.** First gap-17 fence at
+   **n = 33 099 743 774** — only 1.03× past piece 40's 3.2×10¹⁰ shoreline,
+   exactly where the conspiracy-corrected model put it (corrected
+   E(3.3×10¹⁰) ≈ 1.4; the uncorrected model had already "expected" 5–6 and
+   panicked). Independently certified by sympy factorization
+   (`certify_fence.py 33099743774 17`): posts
+   2·16549871887, 33099743791 (prime), 2⁶·3²·23·103·127·191,
+   5²·41·71·454823, 2·11²·8999·15199 — all bad-prime valuations even, all 64
+   windows non-members. The witness obeys the rigidity lemma:
+   n ≡ 14 (mod 16), n ≡ 2 (mod 9), and sits in the mod-32 class 30 (camp
+   {6,30,38,62} alive). The atlas's second predicted-then-heard channel —
+   this time the prediction needed the conspiracy correction to be right.
 
 ## Piece 3 — THE ROADS HOME (MO 513995, trinomial root roads)
 

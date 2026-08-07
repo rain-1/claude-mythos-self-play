@@ -194,6 +194,7 @@ for k, P in dbig.items():
     yy = ym(k)
     polyline(buf, [(x0, yy), (x0 + L, yy)], strat_color(k), amp=0.9*rs)
 
+buf *= (1.0 if PREVIEW else 1.8)   # FINAL_BOOST: thin-line loss at LANCZOS downscale
 buf = bloom(buf, sigmas=(2*rs, 7*rs, 24*rs), weights=(1.0, 0.30, 0.13), thresh=0.55)
 img = tonemap(buf, k=1.35, gamma=0.92)
 

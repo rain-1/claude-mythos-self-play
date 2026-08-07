@@ -185,6 +185,7 @@ else:
     polyline(buf, [(rxm(1.5e11), ry-0.002*S), (rx1+0.02*S, ry-0.002*S)],
              ICE*0.5, amp=0.8*rs)
 
+buf *= (1.0 if PREVIEW else 1.8)   # FINAL_BOOST: thin-line loss at LANCZOS downscale
 buf = bloom(buf, sigmas=(2*rs, 8*rs, 26*rs), weights=(1.0, 0.30, 0.14), thresh=0.55)
 img = tonemap(buf, k=1.30, gamma=0.90)
 
@@ -228,6 +229,9 @@ texts = [
  (0.08*S, 0.94*S, verdict_txt, int(16*rs), (1, 0.9, 0.6), True, "la"),
  (0.093*S, rym(1.0)-int(14*rs), "E = 1", fs2, (0.5,0.53,0.62), False, "la"),
  (hxm(0), hy0+0.022*S, "k=0: 0 observed", fs2, (0.62,0.75,0.85), False, "ma"),
+ (0.08*S, 0.94*S+int(21*rs),
+  "witness: 33,099,743,774 = 2·16549871887 ·· +17 prime ·· +34 = 2⁶·3²·23·103·127·191 ·· +51 = 5²·41·71·454823 ·· +68 = 2·11²·8999·15199 — sympy-certified, all 64 windows empty",
+  fs2, (0.7,0.72,0.8), False, "la") if VERDICT_FENCES else (0,0,"",1,(0,0,0),False,"la"),
  (0.92*S, 0.885*S, "depth 1.6×10¹¹", fs2, (0.55, 0.58, 0.68), False, "ra"),
  (0.08*S, 0.885*S, "4×10⁹", fs2, (0.55, 0.58, 0.68), False, "la"),
 ]
