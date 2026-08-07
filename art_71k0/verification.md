@@ -122,6 +122,13 @@ below 3.2×10¹⁰ under its model, observed 0, P < 1%.
    n ≡ 14 (mod 16), n ≡ 2 (mod 9), and sits in the mod-32 class 30 (camp
    {6,30,38,62} alive). The atlas's second predicted-then-heard channel —
    this time the prediction needed the conspiracy correction to be right.
+7. **Bonus: far channel 24 opened too.** First gap-24 fence at
+   n = 52 909 727 729 (5.29×10¹⁰), sympy-certified — and its first three
+   posts 52909727729, 52909727753, 52909727777 are all PRIME (a prime
+   3-term AP with gap 24 heading the fence); remaining posts 7·7558532543,
+   5²·2116389113. Channel 24 was one of piece 40's "far silent channels"
+   (23, 24, 25); 23 and 25 remain open below 1.6×10¹¹ (final tables at end
+   of hunt).
 
 ## Piece 3 — THE ROADS HOME (MO 513995, trinomial root roads)
 

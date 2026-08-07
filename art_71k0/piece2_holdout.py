@@ -175,6 +175,15 @@ for lab, X in [("15", 1.1934e8), ("16", 1.0183e8), ("18", 2.1428e9),
     star(buf, xt, ry, CYAN, amp=0.8, rad=2.4*rs)
 polyline(buf, [(rx0, rym(1.0)), (rx1, rym(1.0))], SILV*0.35, amp=0.22*rs)
 # verdict
+# bonus: far channel 24 (from alarms)
+try:
+    for line in open("hunt_alarms_20000000000_160000000000.txt"):
+        m = re.match(r'FIRST l=5 g=24 start=(\d+)', line)
+        if m:
+            X24 = int(m.group(1)); xt = rxm(X24)
+            star(buf, xt, ry, GOLD*0.85, amp=1.0, rad=3.0*rs)
+except FileNotFoundError:
+    pass
 if VERDICT_FENCES:
     for Xf in VERDICT_FENCES:
         xt = rxm(Xf)
@@ -232,6 +241,9 @@ texts = [
  (0.08*S, 0.94*S+int(21*rs),
   "witness: 33,099,743,774 = 2·16549871887 ·· +17 prime ·· +34 = 2⁶·3²·23·103·127·191 ·· +51 = 5²·41·71·454823 ·· +68 = 2·11²·8999·15199 — sympy-certified, all 64 windows empty",
   fs2, (0.7,0.72,0.8), False, "la") if VERDICT_FENCES else (0,0,"",1,(0,0,0),False,"la"),
+ (0.08*S, 0.94*S+int(42*rs),
+  "bonus: far channel 24 also opened — first fence 52,909,727,729, its first three posts all prime",
+  fs2, (0.75,0.68,0.5), False, "la") if VERDICT_FENCES else (0,0,"",1,(0,0,0),False,"la"),
  (0.92*S, 0.885*S, "depth 1.6×10¹¹", fs2, (0.55, 0.58, 0.68), False, "ra"),
  (0.08*S, 0.885*S, "4×10⁹", fs2, (0.55, 0.58, 0.68), False, "la"),
 ]
