@@ -67,8 +67,8 @@ ns = np.array([a[0] for a in anchors], float)
 mus = np.array([a[2] for a in anchors])
 
 # law fit on n >= 32 MC anchors
-fit_ns = np.array([n for n in ns if n >= 32])
-fit_mu = np.array([m for n, m in zip(ns, mus) if n >= 32])
+fit_ns = np.array([n for n in ns if n >= 512])
+fit_mu = np.array([m for n, m in zip(ns, mus) if n >= 512])
 A = np.vstack([np.ones_like(fit_ns), np.log(np.log(fit_ns))]).T
 coef, *_ = np.linalg.lstsq(A, fit_mu, rcond=None)
 a_fit, b_fit = coef
@@ -210,11 +210,11 @@ texts = [
   "two orders take turns imposing themselves on one random 0/1 matrix — rows sort, then columns, then rows —",
   fs, (0.80, 0.82, 0.90), False, "la"),
  (0.075*S, 0.028*S+int(56*rs),
-  "until one day nothing moves.  T = the length of the argument.   MO 513971 · aurora = P(T = k | n), 388,000 matrices",
+  "until one day nothing moves.  T = the length of the argument.   MO 513971 · aurora = P(T = k | n), ~390,000 matrices",
   fs, (0.80, 0.82, 0.90), False, "la"),
- (0.945*S, 0.028*S, f"law (fit n ≥ 32):  μ(n) ≈ {a_fit:.2f} + {b_fit:.2f}·ln ln n",
+ (0.945*S, 0.028*S, f"law (fit n ≥ 512):  μ(n) ≈ {a_fit:.2f} + {b_fit:.2f}·ln ln n",
   fs, (1, 0.85, 0.5), False, "ra"),
- (0.945*S, 0.028*S+int(18*rs), "conjecture: μ(n) = 2·ln ln n + C + o(1)",
+ (0.945*S, 0.028*S+int(18*rs), "conjecture: μ(n) = ln ln n + C — the local slope falls 2 → ≈1.1 across the data",
   fs, (1, 0.85, 0.5), False, "ra"),
 
 
@@ -224,7 +224,7 @@ texts = [
   "μ7 exact; worst case T = 2n−3 (ice wall) attained at every n ≤ 7 — the crafted quarrel outlives every random one",
   fs2, (0.70, 0.85, 0.95), False, "la"),
  (0.075*S, 0.83*S+int(36*rs),
-  "average argument: five sentences at n = 16384 — and thesis-first vs antithesis-first agree in law, differ on 60% of matrices (corr ≈ 0)",
+  "average argument: five sentences at n = 8192 — and thesis-first vs antithesis-first agree in law, differ on 60% of matrices (corr ≈ 0)",
   fs2, (0.62, 0.65, 0.75), False, "la"),
  (0.263*S, 0.155*S, f"the crafted matrix, n={max(exact)}: T = {2*max(exact)-3}",
   fs2, (0.70, 0.85, 0.95), False, "la"),

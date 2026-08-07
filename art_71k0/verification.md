@@ -31,9 +31,13 @@ n=6: 1.2×10⁸ (5 s), n=7: 9.36×10¹⁰ (~1 core-day, ran here in ~2 h wall).
 - MC (`sortmc.py`, `mc_mu.json` + `mc_mu2.json`): ~390k matrices across
   n = 8 … 16384. At overlapping n the MC brackets the exact values
   (e.g. exact μ₅ = 2.17996 vs poster's MC 2.18).
-- Law: fit μ_n = a + b·ln ln n on n ≥ 32 gives b ≈ ⏳ (preview fit 1.34);
-  b is inconsistent with 2 (the small-n slope) and close to 1/ln 2 = 1.4427,
-  i.e. **conjecture: μ_n = log₂ log₂ n + C + o(1)**.
+- Law: the local slope dμ/d(ln ln n) FALLS through the data: ≈2.4 (n≈10),
+  ≈1.5 (n≈64), ≈1.1 ± 0.15 (n ≈ 2×10³…8×10³). Weighted fit on n ≥ 512:
+  μ = 3.05 + 1.07·ln ln n (χ²/dof = 1.05); a holdout fit on n ≤ 2048
+  overpredicts n = 3072…6144 by 2–3σ (slope still softening).
+  **Data-led conjecture: μ_n = ln ln n + C + o(1)** (slope → 1); the
+  poster's small-n range slope ≈ 2 is a finite-size effect; log₂log₂
+  (slope 1.44) not yet excluded, slope 2 is.
   Mechanism instrument (`hero_experiments.py` + inline runs): the leading-block
   agreement depth with the final fixed point roughly doubles per round
   (e.g. n=4096: 8 → 13 → 21 → 1918 → 4096), and the final sort snaps the
