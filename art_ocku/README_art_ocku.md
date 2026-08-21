@@ -16,7 +16,7 @@ leans toward; light = log₁₀ of the lean (terraced); silk threads = nodal
 curves of indifference. The bulk forgets (lean → 10⁻¹⁰ at the still point);
 the law is C₃-symmetric yet violently chiral. The asker's conjectured
 corner constants 2π/3√3 and ½+ln3−π/3√3 are **confirmed to ~5 digits** by
-a ladder of exact solves N ≤ 3000 (see `notes_514406.md`).
+a ladder of exact solves N ≤ 2200 (see `notes_514406.md`).
 - rules symmetric under color 3-cycle → field exactly C₃-symmetric (4.9e−14)
 - rules NOT mirror-symmetric → swapping two colors reverses destiny by 0.99
 - **symmetry promised a symmetric law, not symmetric luck**
@@ -45,7 +45,7 @@ forced win: mate-in-3), 60 corpse states. The one panel where symmetry
 keeps its promise. See `notes_514521.md`.
 
 ## Verification artifacts
-- `chameleon.py`, `solve_hero.py`, `cham_mc.py`, `ladder.txt`, `ladder2.txt`
+- `chameleon.py`, `solve_hero.py`, `cham_mc.py`, `ladder.txt`, `ladder3.txt`
 - `build_curve2.py` (symbolic round-trip == 0), `double_seed.py`,
   `triple_seed.py`, `rank2.gp`/`rank3.gp`/`sweep_deep.gp` + outputs
 - `chopsticks.py` (3 rule variants), `chop_art.py` (DTM + openings)
