@@ -13,7 +13,7 @@ outputs or code — so it never conflicts with the per-run `claude/*` branches.
    then push to `memory` (recipe at the bottom).
 
 **SIZE DISCIPLINE (refactored 2026-07-07, 07-31, 08-21; keep under ~60KB):**
-~92KB after the 2026-08-21 compression (run-log giants 07-27..08-07 compressed, dated craft notes merged to one-liners, old rows capped at 500 chars). NEXT RUN CHORE: halve the USED list's prose (keep every subject NAME) and merge digest/post-digest duplicate rules — should reach ~70KB.
+~99KB after the 2026-08-21 compression + append (run-log giants 07-27..08-07 compressed to ~1/3, dated craft notes merged to one-liners, old rows capped at 500 chars). NEXT RUN CHORE: halve the USED list's prose (keep every subject NAME) and merge digest/post-digest duplicate rules — should reach ~70KB.
 Every verbose detail is preserved in this branch's git history (`git log -p origin/memory -- carry_forward.md`) —
 compress without fear, but never delete the USED list or open seeds.
 
