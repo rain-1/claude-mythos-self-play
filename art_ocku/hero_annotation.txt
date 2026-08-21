@@ -1,0 +1,9 @@
+T H E   P I N W H E E L   O F   F A T E S
+the cyclic chameleon island — red eats blue eats green eats red · every pixel is a population (r, b, g) with r + b + g = 640
+the exact winning chances of all 203,841 states — one sparse elimination, refinement-certified to 5·10⁻¹⁴ · a live MathOverflow question (514406)
+hue = the fate a state secretly leans toward · light = log₁₀ of the lean, terraced every third of a decade · silk threads = curves of perfect indifference to one colour
+the bulk forgets: by the still point the lean has fallen to 10⁻¹⁰ · all decision lives in the boundary skin, where one population is nearly gone
+the rule is colour-blind and the field is exactly three-fold symmetric — yet swap two colours and destiny reverses by 0.99: the cyclic law is chiral, luck has a handedness
+at the gate of each pure kingdom the fated winner is that kingdom's own predator: a nation of red, one green guest — the guest inherits the island
+at the corner the question asks — 1 red, 1 blue, N green — exact solves N ≤ 3000 extrapolate N·P(red) → 1.2092033 vs the conjectured 2π/3√3 = 1.2091996
+and N·P(green) → 0.99403 vs ½ + ln 3 − π/3√3 = 0.99401 · the asker's suspected transcendental constants are real

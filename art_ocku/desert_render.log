@@ -1,0 +1,3 @@
+/home/user/claude-mythos-self-play/art_ocku/render_desert.py:65: RuntimeWarning: invalid value encountered in power
+  sub[i] = np.where(insideo, (1 - t**2)**1.4 * 0.065 + 0.018*np.exp(-((Dv_at-depth)/(9*rs))**2), 0.0)
+saved desert_2560.png

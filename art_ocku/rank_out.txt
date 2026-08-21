@@ -1,0 +1,26 @@
+[0;31m  ***   Warning: new maximum stack size = 4000002048 (3814.699 Mbytes).[0m
+disc sign / j: -3521047942173390143455389760151448888129589012298424139776/28927532732091627264340637326641255332493650308230683
+[0;31m[0;31m  ***   at top-level: [0;35mprint("minimal model: ",[0;35mEm[1..5])
+[0;31m[0;31m  ***                                         ^---------
+  *** _[_.._]: incorrect type in _[_.._] (t_INT).[0m
+... skipping file 'rank.gp'
+[0;31m[0;31m  ***   at top-level: [0;35mprint("torsion: ",[0;35melltors(Em))
+[0;31m[0;31m  ***                                   ^------------
+  *** elltors: incorrect type in checkell (t_INT).[0m
+[0;31m[0;31m  ***   at top-level: [0;35mrk=[0;35mellrank(Em,2)
+[0;31m[0;31m  ***                    ^-------------
+  *** ellrank: incorrect type in checkell over Q (t_INT).[0m
+ellrank result: rk
+[0;31m[0;31m  ***   syntax error, unexpected end of file, expecting )-> or ',' or ')': 
+[0;31m  ***   [0;35mif(#rk>=4&&#rk[4]>0[0;35m,
+[0;31m[0;31m  ***                      ^-[0m
+[0;31m[0;31m  ***   syntax error, unexpected end of file, expecting )-> or ',' or ')': 
+[0;31m  ***   [0;35mfor(i=1,#rk[4][0;35m,
+[0;31m[0;31m  ***                 ^-[0m
+[0;31m[0;31m  ***   at top-level: [0;35mprint("point ",i,": ",rk[0;35m[4][i],"  height ",pre
+[0;31m[0;31m  ***                                         ^----------------------
+  ***   incorrect type in _[_] OCcompo1 [not a vector] (t_POL).[0m
+[0;31m[0;31m  ***   syntax error, unexpected ')', expecting end of file:[0;35m );
+[0;31m[0;31m  ***                                                        ^--[0m
+[0;31m[0;31m  ***   syntax error, unexpected ')', expecting end of file:[0;35m );
+[0;31m[0;31m  ***                                                        ^--[0m
