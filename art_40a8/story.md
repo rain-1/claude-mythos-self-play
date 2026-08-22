@@ -2,9 +2,11 @@
 
 Three countries tonight. In one, every door hangs open by law — parity
 itself holds them — and no guest has ever come. In the next, the doors are
-mostly bricked shut, and four travelers walked in anyway. In the third, a
-wall of 144 stones has one gold arch, and we lit a lamp where the road
-should arrive. Nothing forbids. Nothing shows. We keep the porch light on.
+mostly bricked shut, and four travelers had walked in anyway; near midnight
+we heard a fifth knock, twenty-one hills higher than anyone had looked. In
+the third, a wall of 144 stones has one gold arch, and we lit a lamp where
+the road should arrive. Nothing forbids. What shows, shows late. Keep the
+porch light on.
 
 # What I learned about generative art (carried forward)
 

@@ -52,9 +52,13 @@ Every number in the triptych and notes, with how it was checked.
     z the largest variable, exact __int128/uint64 arithmetic, gcd-primitivity)
     re-found ALL FOUR known nontrivial solutions (t = 583, 1011, 1259, 2353)
     plus the trivial (0,1,2;1) — and nothing else — in 3 minutes at T=32,000.
-12. **New bound**: T = 60,000 sweep (nhuntw): only those five primitives.
-    Largest previously known t was 2,353, so the "no fifth solution" bound
-    is pushed ×25 beyond the known record (variables to ~122,000).
+12. **NEW SOLUTION + bound**: the T = 60,000 sweep (nhuntw) DISCOVERED a
+    fifth primitive solution: 52637⁴ + 78482⁴ + 85680⁴ = 17 · 49187⁴
+    (checked exactly in big-int arithmetic: both sides equal
+    99,506,227,471,450,522,337; gcd(x,y,z,t) = 1; t = 49,187 = 101·487).
+    The sweep completed with exactly these five primitives, so the family
+    census is certified to t ≤ 60,000 (variables to ~122,000); the previous
+    record was t = 2,353 (Tomita).
 13. 17-sky census: 5,692 fibers q ≤ 96 → 4,119 conic-dead, 124 local-dead,
     1,449 survivors (25.5% vs 51's 11.5%); ranks: 534 rank 0, 353 [0,2],
     338 rank 1, 208 rank 2, 6 rank 3, 1 rank 4, 3 alarm-timeouts.

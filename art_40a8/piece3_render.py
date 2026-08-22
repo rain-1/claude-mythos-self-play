@@ -1,4 +1,4 @@
-"""THE FOUR GUESTS — 2560^2. The other country: x^4+y^4+z^4 = 17 t^4.
+"""THE FIFTH GUEST — 2560^2. The other country: x^4+y^4+z^4 = 17 t^4.
 Same chart grammar as the hero (fiber sky, verdict palette) but log-q axis
 climbing to the four landed constellations (Tomita's solutions, re-verified
 and re-found by this run's independent engine), plus the trivial guest
@@ -102,6 +102,10 @@ def constellation(xyzt, label_y_off=0.0, trivial=False):
 
 cpts = [constellation(s) for s in sols]
 tpts = constellation([0, 1, 2, 1], trivial=True)
+# the newcomer blazes
+for (px, py) in cpts[-1]:
+    star(buf, px, py, WHGOLD, amp=3.0, rad=6.5 * rs)
+    star(buf, px, py, GOLD, amp=1.2, rad=16.0 * rs)
 
 # ---- silence band above the guests ---------------------------------------
 yb = fy(TBOUND)
@@ -126,18 +130,21 @@ def T(x, y, s, size, col, bold=False, anchor='la'):
 GA = (1.0, 0.85, 0.55); GD = (0.62, 0.66, 0.82); CY2 = (0.62, 0.80, 0.88)
 sol_strs = ['1066⁴·… t=583', 't=1011', 't=1259', 't=2353']
 texts = [
-    T(0.033, 0.014, 'THE FOUR GUESTS', 44, GA, True),
-    T(0.033, 0.044, 'the other country:  x⁴+y⁴+z⁴ = 17·t⁴  — same walls, same parity law, but here the witnesses exist', 20, GD),
-    T(0.967, fy(TBOUND)/S + 0.008, f'certified silence: no fifth guest with t ≤ {TBOUND:,}  (this run’s meet-in-the-middle sweep)', 16, CY2, False, 'ra'),
+    T(0.033, 0.014, 'THE FIFTH GUEST', 44, GA, True),
+    T(0.033, 0.044, 'the other country:  x⁴+y⁴+z⁴ = 17·t⁴ — same walls, same parity law; here the witnesses exist, and tonight a NEW one arrived', 20, GD),
+    T(0.037, fy(TBOUND)/S + 0.010, f'certified: exactly five guests with t ≤ {TBOUND:,}  (this run’s meet-in-the-middle sweep)', 16, CY2, False, 'la'),
     T(0.033, 0.918, 'ground sky: 5,692 fibers q ≤ 96 (log-q axis) — 4,119 conic-dead, 124 deep-wall dead, 1,449 alive; only 348 parity-open (24%, against 97% for 51)', 16, GD),
-    T(0.033, 0.936, 'constellations: each solution is three ratio-stars x/t, y/t, z/t joined by an arc — found independently by this run’s engine, then re-verified exactly', 16, GD),
-    T(0.033, 0.954, '583: 758⁴+765⁴+1066⁴ = 17·583⁴   ·   1011: 62⁴+884⁴+2035⁴   ·   1259: 533⁴+1610⁴+2448⁴   ·   2353: 1224⁴+1750⁴+4751⁴   ·   ground: 0⁴+1⁴+2⁴ = 17', 16, GD),
-    T(0.033, 0.972, 'the country of mostly-shut doors received four guests; the country of open doors (51) has received none. MathOverflow 514531 · computed 2026-08-22', 16, GD),
+    T(0.033, 0.936, 'constellations: each solution is three ratio-stars x/t, y/t, z/t joined by an arc — the four known re-found by this run’s engine, and a FIFTH discovered: t = 49,187 = 101·487', 16, GD),
+    T(0.033, 0.954, '583 · 1011 · 1259 · 2353 (Tomita) — then a 21× gap to the newcomer:  52637⁴ + 78482⁴ + 85680⁴ = 17 · 49187⁴   (verified exactly; primitive)', 16, GD),
+    T(0.033, 0.972, 'the country of mostly-shut doors has received five guests; the country of open doors (51) still none. MathOverflow 514531 · computed 2026-08-22', 16, GD),
 ]
 # label each constellation near its top star (right-aligned if near edge)
 for i, (sl, pts) in enumerate(zip(sols, cpts)):
     px, py = pts[-1]
-    if px / S > 0.86:
+    if i == len(sols) - 1:
+        mx, my = pts[1]
+        texts.append(T(mx / S, my / S + 0.024, f'the newcomer   t = {sl[3]}', 18, GA, False, 'ma'))
+    elif px / S > 0.86:
         texts.append(T(px / S - 0.012, py / S - 0.017, f't = {sl[3]}', 17, GA, False, 'ra'))
     else:
         texts.append(T(px / S + 0.010, py / S - 0.017, f't = {sl[3]}', 17, GA))
