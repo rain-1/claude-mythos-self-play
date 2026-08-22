@@ -1,0 +1,28 @@
+passA 50/863 t=8454
+passA 100/863 t=16798
+passA 150/863 t=25105
+passA 200/863 t=33795
+passA 250/863 t=42253
+passA 300/863 t=51111
+passA 350/863 t=59819
+passA 400/863 t=68584
+passA 450/863 t=76975
+passA 500/863 t=85447
+passA 550/863 t=93910
+passA 600/863 t=102703
+passA 650/863 t=111385
+passA 700/863 t=119767
+passA 750/863 t=128323
+passA 800/863 t=137499
+passA 850/863 t=146323
+PASS_A_DONE 148609
+passB 1/36 p=1 q=1 npts=8 t=240994
+passB 2/36 p=7 q=3 npts=4 t=342292
+passB 3/36 p=13 q=7 npts=4 t=470664
+passB 4/36 p=17 q=7 npts=4 t=574460
+passB 5/36 p=29 q=21 npts=4 t=698499
+passB 6/36 p=59 q=25 npts=4 t=800865
+passB 7/36 p=7 q=27 npts=4 t=923938
+passB 8/36 p=41 q=27 npts=4 t=1034889
+passB 9/36 p=19 q=29 npts=4 t=1130226
+passB 10/36 p=19 q=33 npts=4 t=1245816

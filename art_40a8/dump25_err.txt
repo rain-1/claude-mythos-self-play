@@ -1,0 +1,6 @@
+range [0,8000000000) sqrt=89442 primes=8660
+seg 0/1908  0s  ETA 8 min
+seg 512/1908  118s  ETA 5 min
+seg 1024/1908  227s  ETA 3 min
+seg 1536/1908  346s  ETA 1 min
+ALLDONE 424s |S|=1183316617

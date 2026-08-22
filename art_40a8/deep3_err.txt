@@ -1,0 +1,1 @@
+[0;31m  ***   Warning: new stack size = 800000000 (762.939 Mbytes).[0m
