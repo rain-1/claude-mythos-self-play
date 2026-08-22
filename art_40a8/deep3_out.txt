@@ -26,3 +26,7 @@ passB 7/36 p=7 q=27 npts=4 t=923938
 passB 8/36 p=41 q=27 npts=4 t=1034889
 passB 9/36 p=19 q=29 npts=4 t=1130226
 passB 10/36 p=19 q=33 npts=4 t=1245816
+passB 11/36 p=61 q=33 npts=4 t=1364461
+passB 12/36 p=71 q=33 npts=4 t=1472561
+passB 13/36 p=73 q=33 npts=0 t=1566385
+passB 14/36 p=85 q=33 npts=4 t=1683734

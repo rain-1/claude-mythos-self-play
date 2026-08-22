@@ -28,8 +28,9 @@ Every number in the triptych and notes, with how it was checked.
    verdicts {(0,0),(0,2),(2,2)}. For N=17: 348/1449 have w = −1. (BSD parity
    used only as commentary; ranks above are unconditional descent bounds.)
 7. **Point sweeps** (deep3.gp): hyperellratpoints on every survivor to
-   x-height 2·10⁵; favorites (rank ≥ 2 or with visible points, 36 fibers) to
-   5·10⁶; fiber (1,1) (M=50) to 4·10⁷. Square-a test on every point found:
+   x-height 2·10⁵; the 14 highest-priority favorites (all 7 rank-3, the
+   rank-2s, and the lowest near-miss rank-1s) to 5·10⁶; fiber (1,1) (M=50)
+   separately to 4·10⁷. Square-a test on every point found:
    **zero squares** → no solution of 51 arises on any of these fibers at
    these heights. Near-miss anatomy of M=50: points (±1,±7),
    (±7199/2797, ±19345207/2797²) — 19345207 is not a square (4398²=19342404,
@@ -42,7 +43,7 @@ Every number in the triptych and notes, with how it was checked.
    N = u⁴+v⁴, u≤v≤9, searched to C = 200,000 with double residue masks +
    exact 4th-root: **0 hits** (so no solution of 51 has two variables in
    ratio u:v with u,v ≤ 9 below that height).
-10. **Direct sweep sanity** (nhunt.cpp): N=51, T=40,000 meet-in-the-middle:
+10. **Direct sweep sanity** (nhunt.cpp): N=51, T=24,000 meet-in-the-middle:
     0 primitive hits (consistent with the poster's reported 1.6·10⁷ search).
 
 ## Piece 3: THE FOUR GUESTS (x⁴+y⁴+z⁴ = 17 t⁴)
@@ -89,3 +90,16 @@ Every number in the triptych and notes, with how it was checked.
     ordered consumption, O(1) run state; in-window "FIRST" alarms for
     channels 14/17/23/24 fired at 1.604e11/1.624e11/1.722e11/2.176e11,
     confirming live coverage of the new window.
+
+## Addendum (found while waiting for the hunts)
+
+19. **Parity law, exact**: on all 2,312 survivor curves of both surfaces,
+    w(y²=x³+4Mx) = ε(v₂(M), M′ mod 16)·(−1)^k with
+    k = #{p≡3 (4): v_p(M)≡2 (4)} and ε the finite table in
+    notes_514531.md — **0 mismatches** (hypothesis tested after the ε-free
+    version already gave 863/863 on the 51-surface). The 51-walls force the
+    ε=−1 cell {(1,1),(1,9)}; the 22 even-parity fibers are exactly those
+    with k odd.
+20. Pass C run standalone: hyperellratpoints(50−x⁴, 4·10⁷) — see
+    passC log in the repo (points unchanged from H=10⁵: the (1,7) and
+    (7199/2797, …) rungs only; no square).

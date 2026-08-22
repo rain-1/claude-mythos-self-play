@@ -59,10 +59,19 @@ int main(int argc, char** argv){
         vector<Ent> tab;
         for (uint64_t t=1;t<=T;t++){
             val_t s = (val_t)N * p4(t);
-            // z largest: z^4 >= s/3  and z^4 <= s - 1 (need x,y >= 0, v2>=1)
+            // z largest: z^4 >= s/3 and z^4 <= s-1; window: v2 = s-z^4 in [A,B)
             uint64_t zlo = iroot4((s + 2)/3);
             while (3*p4(zlo) < s) zlo++;
             uint64_t zhi = iroot4(s-1);
+            // v2 < B  => z^4 > s-B ; v2 >= A => z^4 <= s-A
+            if (s > A){
+                uint64_t z2 = iroot4(s - A);
+                if (z2 < zhi) zhi = z2;
+            } else continue;
+            if (s >= B){
+                uint64_t z1 = iroot4(s - B);   // z must be > z1
+                if (z1 + 1 > zlo) zlo = z1 + 1;
+            }
             for (uint64_t z=zlo; z<=zhi; z++){
                 val_t v2 = s - p4(z);
                 if (v2 >= A && v2 < B) tab.push_back({v2,(uint32_t)t});
