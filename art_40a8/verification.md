@@ -104,6 +104,8 @@ Every number in the triptych and notes, with how it was checked.
     version already gave 863/863 on the 51-surface). The 51-walls force the
     ε=−1 cell {(1,1),(1,9)}; the 22 even-parity fibers are exactly those
     with k odd.
-20. Pass C run standalone: hyperellratpoints(50−x⁴, 4·10⁷) — see
-    passC log in the repo (points unchanged from H=10⁵: the (1,7) and
-    (7199/2797, …) rungs only; no square).
+20. Primal fiber bound: fiber (1,1) was the FIRST favorite in pass B, so it
+    is certified to H = 5·10⁶ (8 points, no square); an independent H = 4·10⁶
+    re-run confirms (same 8 points, 57s). A 4·10⁷ attempt was abandoned —
+    hyperellratpoints scales superlinearly past ~10⁶ (3.2s @ 1e6,
+    57s @ 4e6) — and all 4·10⁷ claims were reduced to the certified 5·10⁶.

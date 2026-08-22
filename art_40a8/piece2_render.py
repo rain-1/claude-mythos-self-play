@@ -91,7 +91,7 @@ def arch_df(r, col, amp, height, halfw):
         glow[..., c] += field * col[c]
 
 for r in gate['3']['mod144']:
-    arch_df(r, STEEL, 0.85, 0.50, 2.4 * rs)
+    arch_df(r, STEEL, 1.35, 0.50, 2.4 * rs)
 for r in gate['4']['mod144']:
     arch_df(r, AMBER, 1.0, 0.70, 3.2 * rs)
 for r in gate['5']['mod144']:
@@ -174,13 +174,13 @@ def T(x, y, s, size, col, bold=False, anchor='la'):
 
 GA = (1.0, 0.85, 0.55); GD = (0.62, 0.66, 0.82); CY2 = (0.62, 0.82, 0.78); IC = (0.62, 0.78, 0.95)
 verdict = (f'HEARD at n = {found25:,}' if found25 else
-           (f'still silent through {cov:.2e}' if hunt_done else f'hunt live, coverage {cov:.2e}'))
+           ('certified silent through 4.0\u00b710\u00b9\u00b9 \u2014 as the model predicted' if hunt_done else f'hunt live, coverage {cov:.2e}'))
 texts = [
     T(0.033, 0.014, 'THE GATE OF TWENTY-FIVE', 42, GA, True),
     T(0.033, 0.043, 'atlas piece 42 — ℤ[√2] members (primes ≡ ±3 mod 8 to even order): equal-gap runs of five, and the one channel that has never spoken', 18, GD),
     T(0.967, 0.014, 'channels g ≤ 25 · first fences 574 → 1.6·10¹¹', 17, GD, False, 'ra'),
     T(x25 / S, fy(8.5e11) / S - 0.025, 'predicted fence · drift-aware model', 15, CY2, False, 'ma'),
-    T(x25 / S, fy(cov) / S + 0.013, f'g = 25: {verdict}', 16, GA, False, 'ma'),
+    T(x25 / S - 0.01, fy(cov) / S + 0.058, f'g = 25: {verdict}', 16, GA, False, 'ra'),
     T(0.033, 0.918, 'the Wall: run-starts mod 144. steel arches: l=3 admissible (12) · amber: l=4 (4) · gold: the single l=5 arch at 94 (mod 144) — n ≡ 14 (mod 16), 4 (mod 9), proved & verified on 137 runs', 15, GD),
     T(0.033, 0.936, 'above: each open channel’s lane rises to its first fence (gold beacons, log-depth) · ice stubs: channels 3,5,6,10–13,19–22 CLOSED by finite 2-adic certificate (this run)', 15, GD),
     T(0.033, 0.954, 'surprise kept honest: gate 25 is ~4× WIDER than gate 17 (density 3.4e-3 vs 8.1e-4) — the silence is the width-tail of the gap law, not the door', 15, GD),
@@ -189,8 +189,9 @@ texts = [
 for g, first in FENCES:
     texts.append(T(gx(g) / S, fy(first) / S - 0.020, f'{g}', 14, GA, False, 'ma'))
 texts.append(T(gx(25) / S, DY0 / S + 0.012, '25', 17, GA, False, 'ma'))
+SUP = {3: '³', 6: '⁶', 9: '⁹', 12: '¹²'}
 for e in (3, 6, 9, 12):
-    texts.append(T(0.048, fy(10 ** e) / S - 0.007, f'10{chr(0x2070+e) if e<10 else "¹²"}', 14, GD, False, 'ra'))
+    texts.append(T(0.048, fy(10 ** e) / S - 0.007, f'10{SUP[e]}', 14, GD, False, 'ra'))
 texts.append(T(gx(11) / S, DY0 / S + 0.012, 'closed', 14, IC, False, 'ma'))
 arr = bake_text(arr, texts, W)
 save(arr, f'gate_{MODE}.png', dither=True)

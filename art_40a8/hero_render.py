@@ -169,7 +169,7 @@ texts = [
     T(0.033, 0.930, 'every fiber z/t = p/q of  x⁴+y⁴+z⁴ = 51·t⁴  (7,495 fibers, q ≤ 96)   ·   fog: killed by the two-squares wall at a prime ≡ 3 (mod 4) — indigo 3, blue 7, violet tail', 17, GD),
     T(0.033, 0.948, 'cyan: killed by the deeper 2-adic / quartic-residue wall (25 fibers)   ·   gold: locally alive, Jacobian y² = x³+4Mx of rank ≥ 1 — 806 doors parity-forced open, ember rank 2, white rank 3', 17, GD),
     T(0.033, 0.966, 'ice: rank 0, sealed (9)   ·   violet: undecided [0,2] (10)   ·   root number w = −1 on 841 of 863 alive fibers: the walls that let a fiber live force its parity odd', 17, GD),
-    T(0.033, 0.984, 'threads: real points of a² = M − v⁴ climbing each open door — every rung asks whether a is a square; every rung found (2·10⁵ all doors, 5·10⁶ brightest, 4·10⁷ primal) answers no  ·  2026-08-22', 17, GD),
+    T(0.033, 0.984, 'threads: real points of a² = M − v⁴ climbing each open door — every rung asks whether a is a square; every rung found (2·10⁵ all doors, 5·10⁶ on the brightest and the primal) answers no  ·  2026-08-22', 17, GD),
     T(fx(1.0)/S*1.0 + 0.012, 0.9195, 'the primal door  z = t :  50 = 1⁴ + 7² — but 7 is not a square', 15, GA, False, 'ma'),
 ]
 arr = bake_text(arr, texts, W)
