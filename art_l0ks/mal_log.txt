@@ -1,0 +1,2 @@
+field cells solved: 44850 gap range 0.014544975409435557 0.9906949754744239
+saved malfatti_final.png
