@@ -14,9 +14,10 @@ planar full topologies, Weiszfeld iteration + BFGS polish (gtol 1e-12).
 Certificates:
 - n=3: DP = 3.000000000 = exact Fermat value 3 (circumradius 1). ✓
 - n=4: DP = 3.8637033052 = √2(1+√3) exactly (3.863703305156...). ✓
-- Independent check `steiner.py validate`: brute-force enumeration over ALL
-  unrooted binary topologies on all leaf labelings ((2n−5)!! = 15/105/945 for
-  n=5/6/7), each optimized: matches DP to ≤2e-9 for n=5,6,7. ✓
+- Independent check `steiner.py validate` + `val8.py`: brute-force enumeration
+  over ALL unrooted binary topologies on all leaf labelings ((2n−5)!! =
+  15/105/945/10395 for n=5/6/7/8), each optimized: matches DP to ≤2e-9 for
+  n=5,6,7, and for n=8 full-enum = DP = rim = 5.3575680531 exactly. ✓
 - n=6: DP = 5.000000000 = perimeter − edge exactly; full-topology optima
   degenerate to the same value from above (5.0000000019). ✓
 
