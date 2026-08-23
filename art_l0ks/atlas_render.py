@@ -67,8 +67,14 @@ def main():
         A.polyline(bar, np.array([[xd, y_top+2], [xd, y_bot-2]]), GOLD_HI, amp=3.2*rs**0.85*0.5)
         A.star(bar, xd, (y_top+y_bot)/2, GOLD_HI, amp=3.4*rs*rs*0.25, rad=4.2*rs*0.5)
         img += A.bloom(bar, sigmas=(1.6*rs*0.5, 7*rs*0.5), weights=(1.0, 0.4))
-        # lane 25 extras: ice gate at 4e11 + prediction nebula
+        # lane 25 extras: ice gate at 4e11 + prediction nebula + later fences
         if g == 25:
+            for nf in (615709112638, 830595732286):
+                xf = xof(nf)
+                fb = A.canvas(S)
+                A.polyline(fb, np.array([[xf, y_top+laneh*0.18], [xf, y_bot-laneh*0.10]]), GOLD, amp=2.0*rs**0.85*0.5)
+                A.star(fb, xf, (y_top+y_bot)/2, GOLD, amp=1.8*rs*rs*0.25, rad=3.0*rs*0.5)
+                img += A.bloom(fb, sigmas=(1.5*rs*0.5, 6*rs*0.5), weights=(1.0, 0.35))
             xg = xof(GATE42)
             gate = A.canvas(S)
             A.polyline(gate, np.array([[xg, y_top-0.012*S], [xg, y_bot+0.012*S]]), ICE, amp=2.2*rs**0.85*0.5)
@@ -117,8 +123,8 @@ def main():
       (0.030*F, 0.040*F, "five channels = five gaps g: the first maximal quintuple n, n+g, ..., n+4g all norms of Z[sqrt2] - each lane dark until its door opens", int(0.0090*F), GREY, False, 'ls'),
       (0.030*F, 0.054*F, "piece 40 heard 14 - piece 41 heard 17, 24, 23 and certified 25 silent to 1.6e11 - piece 42 built the gate (l=5 gap-25 forces start = 94 mod 144), certified silence to 4.0e11, and COMMITTED the prediction", int(0.0088*F), GREY, False, 'ls'),
       (0.030*F, 0.068*F, "P(silent through 4e11) = 65-80% (it was) - median first fence 6e11..1.2e12 - 10% quantile 1.2e11..2.4e11", int(0.0088*F), CYANt, False, 'ls'),
-      (0.055*F, 0.105*F, "this run's relay [4.0e11 -> 8.8e11) heard it almost at once:", int(0.0100*F), GOLDt, False, 'ls'),
-      (0.055*F, 0.122*F, "n = 458,171,603,806 = 94 (mod 144) - exactly the residue the gate theorem demanded", int(0.0100*F), GOLDt, True, 'ls'),
+      (0.055*F, 0.105*F, "this run's relay [4.0e11 -> 8.8e11) heard it almost at once - and then the channel kept talking:", int(0.0100*F), GOLDt, False, 'ls'),
+      (0.055*F, 0.122*F, "n = 458,171,603,806 = 94 (mod 144), exactly as the gate demanded - then 615,709,112,638 and 830,595,732,286 (both = 94 mod 144), and a fourth beyond 8.3e11", int(0.0100*F), GOLDt, True, 'ls'),
       # candle labels
       (0.315*F, 0.330*F, "n\n2 - 7^2 - 41\n- 114029767", int(0.0068*F), GREY, False, 'ms'),
       (0.3525*F, 0.330*F, "n+25\nprime", int(0.0068*F), GREY, False, 'ms'),
@@ -140,7 +146,7 @@ def main():
       (0.72*F, 0.935*F, "1e11", int(0.0082*F), GREY, False, 'ms'),
       (0.955*F, 0.935*F, "1e12", int(0.0082*F), GREY, False, 'rs'),
       (0.030*F, 0.958*F, "ice wall: piece 42's certified frontier (4.0e11) - cyan haze: the committed prediction bands - dashes: the still-unscanned dark - drift confirmed again: l4/l3 for gap 25 rose 1.78e-3, 1.98e-3, 2.49e-3, now 2.53e-3 in [4e11, 5.6e11)", int(0.0084*F), GREY, False, 'ls'),
-      (0.030*F, 0.9715*F, "in [4.0e11, 5.6e11): 21,283,123,095 members - 127,085 triples, 321 quadruples, ONE quintuple at gap 25 - the silence was never an anomaly, only the width-tail's price", int(0.0084*F), GREY, False, 'ls'),
+      (0.030*F, 0.9715*F, "the whole relay [4.0e11, 8.8e11): 63,534,246,948 members - gap-25 runs: 395,647 triples, 1,036 quadruples, FOUR quintuples - every verified start = 94 (mod 144); drift r34 rose 2.53, 2.59, 2.73 e-3 across the chunks", int(0.0084*F), GREY, False, 'ls'),
     ]
     outb = A.bake_text(small, texts, F)
     A.save(outb, 'atlas43_final.png', final=None, dither=False)

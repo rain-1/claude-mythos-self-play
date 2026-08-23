@@ -106,5 +106,12 @@ Scripts: `tri_science.py` (mechanism tests), `tri_precise.py` (M̄, C to depth),
   r34(gap 25) = 321/127085 = 2.53e-3 in [4,5.6e11) (was 1.78/1.98/2.49e-3).
 - Census chunk 1: |S ∩ [4.0e11, 5.6e11)| = 21,283,123,095;
   gap-25 maximal runs: l=3: 127,085 · l=4: 321 · l=5: 1.
-- Relay continues: chunks [5.6e11, 7.2e11) and [7.2e11, 8.8e11) (see
-  hunt_rungap_*.txt when finished).
+- RELAY COMPLETE [4.0e11, 8.8e11), 63,534,246,948 members: after the first
+  fence the channel kept talking — SECOND quintuple at 615,709,112,638
+  (chunk 2) and THIRD at 830,595,732,286 (chunk 3), both verified by full
+  factorization + flank maximality, both ≡ 94 (mod 144) — the gate theorem
+  is 3-for-3 on real fences. Chunk 3's table records maximal_runs=2, so a
+  FOURTH quintuple lies in (8.31e11, 8.8e11) (start not logged by the
+  first-only alarm; left for piece 44). Totals for gap 25 over the relay:
+  395,647 triples, 1,036 quadruples, 4 quintuples; r34 by chunk
+  2.53e-3 / 2.59e-3 / 2.73e-3 — the depth-drift law rises again.
