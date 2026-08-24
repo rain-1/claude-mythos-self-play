@@ -3,3 +3,29 @@ range [830000000000,880000000000) sqrt=938083 primes=74057
 seg 257/11922  19s  ETA 14 min
 seg 769/11922  56s  ETA 14 min
 seg 1281/11922  92s  ETA 13 min
+seg 1793/11922  130s  ETA 12 min
+seg 2305/11922  166s  ETA 12 min
+seg 2817/11922  202s  ETA 11 min
+seg 3329/11922  238s  ETA 10 min
+seg 3841/11922  274s  ETA 10 min
+seg 4353/11922  310s  ETA 9 min
+seg 4865/11922  346s  ETA 8 min
+seg 5377/11922  382s  ETA 8 min
+seg 5889/11922  419s  ETA 7 min
+seg 6401/11922  457s  ETA 7 min
+seg 6913/11922  495s  ETA 6 min
+seg 7425/11922  531s  ETA 5 min
+seg 7937/11922  567s  ETA 5 min
+seg 8449/11922  604s  ETA 4 min
+seg 8961/11922  641s  ETA 4 min
+seg 9473/11922  679s  ETA 3 min
+seg 9985/11922  718s  ETA 2 min
+seg 10497/11922  756s  ETA 2 min
+seg 11009/11922  793s  ETA 1 min
+seg 11521/11922  831s  ETA 0 min
+ALLDONE 861s |S|=6579955884
+recovery done Mon Aug 24 01:50:46 UTC 2026
+continuation [8.8e11, 1.2e12) start Mon Aug 24 01:50:46 UTC 2026
+range [880000000000,1200000000000) sqrt=1095445 primes=85395
+seg 112/76295  9s  ETA 96 min
+seg 624/76295  47s  ETA 95 min
