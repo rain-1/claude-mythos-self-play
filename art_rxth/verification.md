@@ -1,0 +1,54 @@
+# Verification ledger — run 2026-08-24 (branch claude/serene-fermi-rxthfo)
+
+## Piece: The Dynasty of Champions (MO 514605)
+- `collatz.c` census: full-map delay records to 1e9 match A006877/Roosendaal
+  b-file EXACTLY (66 records incl. n=1); poster's shortcut R_59 = 63,728,127,
+  T=592 reproduced exactly; full vs shortcut record sets identical on range.
+- Extended census to 1e11: see `collatz_records.txt` (merged, both
+  conventions) — checked against b-file below 1e11.
+- Dynasty analysis on all 148 known records: `links.json`, `merges.json`
+  (types: 33 four-thirds, 16 double, 9 desc@j, 89 founder; ratio median
+  1.333333; share medians by thirds 0.467/0.980/0.992).
+- Mechanism identity: (4n−1)/3 → 4n → 2n → n gives delay+3, checked exactly
+  in code for all four-thirds links (max ratio deviation from 4/3 is 1/(3n)).
+
+## Piece: One Curve Beneath Every Ladder (MO 514552 family)
+- Reduction theorem verified on 300 random members: max residual 3.0e−11.
+- Anchor: M̄(1,1) direct 0.0654503310928 vs 08-23 accelerated value
+  0.0654503304268973 (difference 6.7e−10 ≈ our convergence error) and vs
+  √2·m(1/√2) = 0.0654503311226 (3e−11 from direct).
+- m′(1) = −1/2: exact in the derivative triangle (row sums exactly 1, −2
+  alternating — machine check at every n ≤ 20000); nonlinear central
+  difference −0.5000004 at h=1e−4.
+- Boundary tower ratio: measured w_{k+1}/w_k = −0.333333… (6 ratios shown).
+- e* = 0.6119453567467 by bisection at nrows=20000 (Richardson-stable to
+  ~1e−11); hump (0.7880085061, +0.0569117299).
+
+## Piece: The Sixth Rung (Atlas 44)
+- The overlooked l=6: previous relay's own alarm file (branch
+  claude/serene-fermi-l0ks3b, art_l0ks/hunt_alarms_400000000000_560000000000.txt)
+  contains "L6+! l=6 gap=24 start=536462850079"; never mentioned in the
+  memory ledger or the 08-23 run log — found by reading the ledger today.
+- Independent certification (sympy full factorization of every integer in
+  [n₀−60, n₀+204]): members exactly at offsets {−54,−48,…,−1, 0, 24, 48, 72,
+  96, 120, 133, 144, …}; the six posts are consecutive members with equal
+  gap 24; flanks: gap 1 before (member at −1), gap 13 after (member at +133)
+  ⇒ maximal l=6. Post factorizations:
+    536462850079 = 13²·3174336391
+    536462850103 = 281²·6794023
+    536462850127 = 3943·136054489
+    536462850151 = prime
+    536462850175 = 5²·7·521·5883881
+    536462850199 = 17·13001·2427247
+  (in every post the bad primes p ≡ 3,5 mod 8 — here 13 and 5 — appear
+  to even powers; 7, 17, 3943, … are ≡ ±1 mod 8; every factor checked in
+  code, not by eye.)
+- Theorem check: l=6 ⇒ 24|gap (piece 39): gap = 24 ✓.
+- NEW gate (this run, numeric certificate to 2-adic depth 17 and 3-adic
+  depth 9): an l=6 gap-24 sextet must start ≡ ±1 (mod 8) and ≢ 0 (mod 3);
+  no even start survives. n₀ ≡ 15 (mod 16) ✓, ≡ 1 (mod 9) ✓.
+- Hazard model pre-committed in atlas44_model.md BEFORE the scans; results
+  appended below after completion.
+
+## Scan results (appended after completion)
+- (pending at time of writing; see atlas44_results.md)

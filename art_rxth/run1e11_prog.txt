@@ -1,0 +1,19 @@
+# tables built 14.3s
+# low records done 15.2s
+chunk 0/1475 16s ETA 399 min
+chunk 64/1475 56s ETA 20 min
+chunk 128/1475 124s ETA 22 min
+chunk 192/1475 212s ETA 24 min
+chunk 256/1475 322s ETA 25 min
+chunk 320/1475 437s ETA 26 min
+chunk 384/1475 548s ETA 26 min
+chunk 448/1475 660s ETA 25 min
+chunk 512/1475 774s ETA 24 min
+chunk 576/1475 890s ETA 23 min
+chunk 640/1475 1009s ETA 22 min
+chunk 704/1475 1159s ETA 21 min
+chunk 768/1475 1295s ETA 20 min
+chunk 832/1475 1452s ETA 19 min
+chunk 896/1475 1638s ETA 18 min
+chunk 960/1475 1774s ETA 16 min
+chunk 1024/1475 1906s ETA 14 min
