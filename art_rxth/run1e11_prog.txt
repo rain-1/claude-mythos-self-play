@@ -17,3 +17,6 @@ chunk 832/1475 1452s ETA 19 min
 chunk 896/1475 1638s ETA 18 min
 chunk 960/1475 1774s ETA 16 min
 chunk 1024/1475 1906s ETA 14 min
+chunk 1088/1475 2053s ETA 12 min
+chunk 1152/1475 2264s ETA 11 min
+chunk 1216/1475 2433s ETA 9 min

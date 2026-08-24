@@ -192,9 +192,9 @@ caps = [
  '93–99% of its length: if n≡1 (mod 3) the heir (4n−1)/3 → 4n → 2n → n buys 3 delay for a 4/3 climb — the crown’s cheapest move.',
  'White blazes: revolutions (new rivers, <50% shared). Gold beads: exact heirs — 33/147 links, the atom at 4/3 in the inset ladder.',
  'Records recomputed from scratch, verified to 1e11 (exact A006877 match, both conventions).  MO 514605 · 2026-08-24.']
-ytxt = bandy+int(0.040*FINAL)
+ytxt = bandy+int(0.036*FINAL)
 for c in caps:
-    d2.text((mx0, ytxt), c, font=font(fs), fill=(158,168,190)); ytxt += int(fs*1.42)
+    d2.text((mx0, ytxt), c, font=font(fs), fill=(158,168,190)); ytxt += int(fs*1.36)
 d2.text((int(0.045*FINAL)+5, int(0.045*FINAL/1.0)//SS*2+5), 'R(k+1)/R(k)  — lines at 4/3 and 2', font=font(fs), fill=(130,160,200))
 
 out.save('hero_%d.png' % FINAL)
