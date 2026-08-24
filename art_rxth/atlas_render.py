@@ -17,9 +17,12 @@ X0, X1 = 4.0e11, 1.205e12
 FRONT1, FRONT2 = 8.8e11, 1.2e12   # old relay end, new relay end
 
 # ---- data ----
-# old relay window counts (from 08-23 rungap ledgers), per 1.6e11 window
-oldw = [(4.0e11,5.6e11),(5.6e11,7.2e11),(7.2e11,8.8e11)]
-g24 = {3:[847480,879019,903152], 4:[5835,6080,6314], 5:[19,27,27], 6:[1,0,0]}
+# old relay window counts (from 08-23 rungap ledgers), per 1.6e11 window;
+# window 3 capped at 8.3e11 (counts scaled 11/16) — the re-scan owns [8.3e11,+)
+oldw = [(4.0e11,5.6e11),(5.6e11,7.2e11),(7.2e11,8.3e11)]
+sc = 11/16
+g24 = {3:[847480,879019,int(903152*sc)], 4:[5835,6080,int(6314*sc)],
+       5:[19,27,int(27*sc)], 6:[1,0,0]}
 fences25_old = [458171603806, 615709112638, 830595732286]
 L6 = 536462850079
 # new scans: parse rungap + occ files if present
