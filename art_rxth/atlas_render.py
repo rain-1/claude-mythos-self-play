@@ -74,7 +74,7 @@ allw = [(lo,hi,{ll:g24[ll][i] for ll in (3,4,5,6)}) for i,(lo,hi) in enumerate(o
 
 # l=3 fog stratum: grain density prop to count
 for lo,hi,cnt in allw:
-    n3 = int(cnt[3] * (5500/900000) )    # visual thinning factor
+    n3 = int(cnt[3] * (5500/900000))   # dots ∝ count ⇒ equal true density everywhere
     xs = rng.uniform(xpx(lo), xpx(min(hi,X1)), n3)
     ys = rungy[3] + rng.normal(0, 0.012*S, n3) - 0.012*S*rng.random(n3)
     for x,y in zip(xs,ys):
@@ -172,20 +172,21 @@ d2.text((int(0.045*FINAL),bandy+int(0.010*FINAL)),'THE SIXTH RUNG',font=font(int
 NC = sum(c[3] for _,_,c in new_counts) if new_counts else 0
 caps=[
  'Atlas of AP obstructions, piece 44 — ℤ[√2] country, the run-length ladder over [4.0e11, 1.2e12]. Numbers whose primes ≡ 3,5 (mod 8)',
- 'all appear evenly, scanned as consecutive members in equal-gap runs: rung 3 a fog (2.6M runs of gap 24), rung 4 a stipple (18k),',
- 'rung 5 candles (73 + this run’s), and RUNG 6 — one star: n₀ = 536,462,850,079, gap 24 six times. It was already burning in the',
- 'previous run’s own alarm ledger (L6+!, 2026-08-23), logged by the machine, unread by the mind — found today, then certified by full',
- 'factorization: maximal (gap 1 before, 13 after), obeying l=6 ⇒ 24|gap, and the new gate: start ≡ ±1 (mod 8), ≢ 0 (mod 3).',
- 'Pre-committed model: E[sextets over relay] ≈ 0.46 (it came 2× early); pillars: the six factorizations (gold = bad primes, squared;',
- 'cyan = split primes; the broken flank column at left has 5¹·11¹·19¹ odd — the wall that ends the run). Blue beacons: channel-25',
- 'fences, every one ≡ 94 (mod 144) as the gate demands. Dashed frontiers: relay end 8.8e11 (grey) → this run’s shoreline (gold).']
+ 'all appear evenly, scanned as consecutive members in equal-gap runs: rung 3 a fog (4.5M runs of gap 24), rung 4 a stipple (33k),',
+ 'rung 5 candles (123), and RUNG 6 — two stars. The first, n₀ = 536,462,850,079, was already burning in the previous run’s own alarm',
+ 'ledger (L6+!, 2026-08-23) — logged by the machine, unread by the mind, found today. The second, n₁ = 982,614,621,929, answered this',
+ 'run’s pre-committed hunt (E≈0.38). Both certified by full factorization: maximal, 24|gap, and the new gate ≡ ±1 (mod 8), ≢ 0 (mod 3).',
+ 'Pillars: the six factorizations of the first sextet (gold = bad primes, squared; cyan = split primes; the red ruin at left holds',
+ '5¹·11¹·19¹ odd — the wall that ends the run). Blue beacons: the FIVE channel-25 fences, every one ≡ 94 (mod 144) as the gate demands;',
+ 'this window the channel went quiet (1 heard, E≈3.3–4.2 — the drift law bent back). Dashed frontiers: 8.8e11 (grey) → 1.2e12 (gold).']
 ytxt=bandy+int(0.036*FINAL)
 for c in caps: d2.text((int(0.045*FINAL),ytxt),c,font=font(fs),fill=(158,168,190)); ytxt+=int(fs*1.40)
 # rung labels
 for l,ry in rungy.items():
     d2.text((int(0.012*FINAL), ry/SS-int(0.012*FINAL)), 'l=%d'%l, font=font(fs,True), fill=(140,170,210))
 d2.text((int(0.005*FINAL), sy/SS-int(0.010*FINAL)), 'ch-25', font=font(fs,True), fill=(120,180,220))
-d2.text((int(xpx(L6)/SS)+int(0.065*FINAL), rungy[6]/SS-int(0.045*FINAL)), 'n₀ = 536,462,850,079  (first sextet — logged 08-23, read 08-24)', font=font(fs,True), fill=(255,235,190))
+d2.text((int(xpx(L6)/SS)+int(0.035*FINAL), rungy[6]/SS-int(0.045*FINAL)), 'n₀ = 536,462,850,079  (logged 08-23, read 08-24)', font=font(fs,True), fill=(255,235,190))
+d2.text((int(xpx(982614621929)/SS)-int(0.30*FINAL), rungy[6]/SS+int(0.022*FINAL)), 'n₁ = 982,614,621,929  (hunted and heard 08-24)', font=font(fs,True), fill=(255,235,190))
 d2.text((int(0.50*FINAL), int(0.762*FINAL)), 'the six pillars, certified by full factorization', font=font(fs), fill=(210,185,140))
 d2.text((int(0.50*FINAL), int(0.762*FINAL)+int(fs*1.5)), 'gold blocks = bad primes (13², 5², even) · cyan = split primes', font=font(fs), fill=(150,160,185))
 d2.text((int(0.50*FINAL), int(0.762*FINAL)+int(fs*3.0)), 'red ruin at left: n₀−24, its 5¹·11¹·19¹ stand odd — the wall', font=font(fs), fill=(150,160,185))
