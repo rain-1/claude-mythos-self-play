@@ -54,8 +54,11 @@ for n in sextets + new_sextets:
 
 # climate labels
 d.text((xp(4.2e11), 190), "the climate: r₃₄ = quartets per triplet, per window", font=F["sub"], fill=(200, 200, 214))
-d.text((xp(4.1e11), 560), f"channel 24 (ref)  → {r34_24*1e3:.2f}e-3", font=F["mono_s"], fill=(120, 132, 152))
-d.text((xp(4.1e11), 700), f"channel 25        → {r34_25*1e3:.2f}e-3", font=F["mono_s"], fill=GOLD)
+YLO, YHI = 1.2e-3, 8.2e-3
+SKY_Y0, SKY_Y1 = 150, 760
+def yv(v): return SKY_Y1 - (v - YLO)/(YHI - YLO) * (SKY_Y1 - SKY_Y0)
+d.text((xp(1.24e12), yv(r34_24)+16), f"channel 24 (ref) → {r34_24*1e3:.2f}e-3", font=F["mono_s"], fill=(120, 132, 152))
+d.text((xp(1.24e12), yv(r34_25)+16), f"channel 25 → {r34_25*1e3:.2f}e-3", font=F["mono_s"], fill=GOLD)
 # era labels
 d.text((xp(1.7e11), HOR+40), "certified silent era (atlas 42) —", font=F["mono_s"], fill=DIM)
 d.text((xp(1.7e11), HOR+64), "the model said no fence lives here", font=F["mono_s"], fill=DIM)
@@ -63,13 +66,15 @@ d.text((xp(8.35e11), HOR+40), "← every-occurrence logging online (atlas 44)", 
 d.text((W-410, HOR-24), "n →  (0.16 → 1.6 trillion)", font=F["mono_s"], fill=DIM)
 
 # ledger labels
-d.text((80, 2150), "the ledger: gold = observed ch-25 fences per window;  amber band = the model's pre-committed expectation",
+d.text((80, 1700), "the ledger: gold = observed ch-25 fences per window;  amber band = the model's pre-committed expectation",
        font=F["mono_s"], fill=GREY)
 obs45 = l525
 verdict = ("WEATHER — the channel talks again" if obs45 >= 3 else
            ("cooling — below expectation again" if obs45 <= 1 else "within the band"))
-d.text((xp(1.22e12), 2190), f"window 45: {obs45} heard vs E≈2.5–4.5 → {verdict}", font=F["mono_s"], fill=GOLD)
-d.text((xp(8.9e11), 2190), "window 44: 1 vs E≈3.3–4.2 (quiet)", font=F["mono_s"], fill=DIM)
+verdict_short = "still cooling" if obs45 <= 1 else ("weather again" if obs45 >= 3 else "in band")
+d.text((xp(1.21e12), 1736), f"45: {obs45} vs E≈2.5–4.5 → {verdict_short}", font=F["mono_s"], fill=GOLD)
+d.text((xp(8.9e11), 1736), "44: 1 vs E≈3.3–4.2 (quiet)", font=F["mono_s"], fill=DIM)
+d.text((xp(4.05e11), 1736), "two quiet windows: 2 vs E≈6–9, Poisson P≈2.6% — the channel is cooling", font=F["mono_s"], fill=(200, 180, 140))
 
 sex_txt = f"+{len(new_sextets)} new" if new_sextets else "none new (E≈0.5–0.9, P≈40–60%)"
 annotate(img,
