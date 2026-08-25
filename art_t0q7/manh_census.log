@@ -1,0 +1,8 @@
+n=2: min=4 target=4 viol=0 sign_bad=0 eig_bad=0 #argmin=2 max=4 bottom=[4] (0.0s)
+n=3: min=32 target=32 viol=0 sign_bad=0 eig_bad=0 #argmin=2 max=36 bottom=[32, 36] (0.0s)
+n=4: min=192 target=192 viol=0 sign_bad=0 eig_bad=0 #argmin=2 max=320 bottom=[192, 224, 240, 256, 284, 288] (0.0s)
+n=5: min=1024 target=1024 viol=0 sign_bad=0 eig_bad=0 #argmin=2 max=2592 bottom=[1024, 1216, 1408, 1440, 1472, 1536] (0.0s)
+n=6: min=5120 target=5120 viol=0 sign_bad=0 eig_bad=0 #argmin=2 max=18960 bottom=[5120, 6144, 7168, 7360, 7680, 7872] (0.0s)
+n=7: min=24576 target=24576 viol=0 sign_bad=0 eig_bad=0 #argmin=2 max=147456 bottom=[24576, 29696, 34816, 35840, 36864, 38144] (0.0s)
+n=8: min=114688 target=114688 viol=0 sign_bad=0 eig_bad=0 #argmin=2 max=1064960 bottom=[114688, 139264, 163840, 168960, 172032, 179200] (0.2s)
+n=9: min=524288 target=524288 viol=0 sign_bad=0 eig_bad=0 #argmin=2 max=7569408 bottom=[524288, 638976, 753664, 778240, 786432, 823296] (2.6s)

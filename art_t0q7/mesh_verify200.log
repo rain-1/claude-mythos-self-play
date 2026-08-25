@@ -1,0 +1,4 @@
+N=200 solved in 24.4s, max g = 298
+N=200: formula == DP grundy: True  (26.3s)
+lemma(ii) exhaustive to 30: PASS
+lemma(i) random moves: PASS
