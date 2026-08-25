@@ -72,8 +72,8 @@ def to_pil(imgf, size):
 
 if __name__ == "__main__":
     # ---- data ----
-    champ_file = "cloth_anneal_512b.json" if os.path.exists("cloth_anneal_512b.json") \
-                 else "cloth_anneal_512.json"
+    champ_file = next(f for f in ("cloth_anneal_512c.json", "cloth_anneal_512b.json",
+                 "cloth_anneal_512.json") if os.path.exists(f))
     champ = json.load(open(champ_file))
     s512 = np.array(champ["sigma"]); a512 = champ["area"]
     print("champion:", champ_file, a512)

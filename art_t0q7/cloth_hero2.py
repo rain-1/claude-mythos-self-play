@@ -1,8 +1,11 @@
 #!/usr/bin/env python3
 """Hero stage 2: descent chart + annotation onto hero_stage1.png -> cloth_hero_4096.png"""
-import numpy as np, json
+import numpy as np, json, os
 from PIL import Image, ImageDraw
 from annot import fonts
+champ_file = next(f for f in ("cloth_anneal_512c.json", "cloth_anneal_512b.json",
+             "cloth_anneal_512.json") if os.path.exists(f))
+A512 = json.load(open(champ_file))["area"]
 
 img = Image.open("hero_stage1.png").convert("RGB")
 W, H = img.size
@@ -21,7 +24,7 @@ d.rectangle([cx, cy, cx+cw, cy+ch], fill=(9, 8, 12), outline=(80, 76, 92), width
 # data
 cross = json.load(open("cloth_crossover.json"))
 champs = {int(n): cross[n]["best"] for n in cross}
-champs.update({64: 0.434037, 128: 0.421497, 256: 0.407789, 512: 0.416089})
+champs.update({64: 0.434037, 128: 0.421497, 256: 0.407789, 512: A512})
 exact = {n: (n+1)/(2*n) for n in range(2, 10)}
 n10 = 329/600
 XL, XRr = 1.0, 9.4      # log2 n
@@ -107,7 +110,7 @@ lines = [
  ("  of heights, not one pinch — area 0.408", F["mono_s"], GREY),
  ("  at n = 256 (reversal: 0.502)", F["mono_s"], GREY),
  ("", F["mono_s"], GREY),
- ("MAIN: champion σ at n = 512, area 0.4161.", F["mono_s"], (200, 180, 150)),
+ (f"MAIN: champion σ at n = 512, area {A512:.4f}.", F["mono_s"], (200, 180, 150)),
  ("Brightness = number of overlapping panes:", F["mono_s"], (200, 180, 150)),
  ("all cloths below carry the SAME total light.", F["mono_s"], (200, 180, 150)),
 ]
