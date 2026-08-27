@@ -1,0 +1,73 @@
+=== event counts (distinct starts) ===
+l=4 g=23: 1451
+l=4 g=24: 18939
+l=4 g=25: 1002
+l=5 g=14: 1
+l=5 g=17: 1
+l=5 g=23: 15
+l=5 g=24: 82
+l=5 g=25: 2
+l=6 g=24: 2
+
+=== 4->5 hazard per hot channel ===
+g=23: 4-runs=1451  5-runs=15  r45=1.03e-02
+g=24: 4-runs=18939  5-runs=82  r45=4.33e-03
+g=25: 4-runs=1002  5-runs=2  r45=2.00e-03
+
+=== ch-25 quintets (fences) ===
+  start=1890086207422  mod144=94  mod5=2  mod25=22
+  start=1987781143486  mod144=94  mod5=1  mod25=11
+
+=== sextets (l>=6) ===
+  l=6 g=24 start=1666103585801  mod8=1 mod3=2
+  l=6 g=24 start=1851647369129  mod8=1 mod3=2
+
+=== 5-adic mix of ch-25 4-run starts ===
+  start ≡ 0 (mod 5): 8
+  start ≡ 1 (mod 5): 268
+  start ≡ 2 (mod 5): 261
+  start ≡ 3 (mod 5): 240
+  start ≡ 4 (mod 5): 225
+  of the ≡0 class, ≡0 mod 25: 8 / 8
+  (a 5-adic throttle at the 5th post can only act on the ≡0-mod-25 class)
+
+=== height quarters: ch-25 4-run count + hazard ===
+  [1600000000000,1700000000000): 4-runs=242 5-runs=0 r45=0.00e+00
+  [1700000000000,1800000000000): 4-runs=241 5-runs=0 r45=0.00e+00
+  [1800000000000,1900000000000): 4-runs=261 5-runs=1 r45=3.83e-03
+  [1900000000000,2000000000000): 4-runs=258 5-runs=1 r45=3.88e-03
+
+=== ch-24 control, quarters ===
+  [1600000000000,1700000000000): 4-runs=4658 5-runs=21 r45=4.51e-03
+  [1700000000000,1800000000000): 4-runs=4776 5-runs=19 r45=3.98e-03
+  [1800000000000,1900000000000): 4-runs=4807 5-runs=25 r45=5.20e-03
+  [1900000000000,2000000000000): 4-runs=4698 5-runs=17 r45=3.62e-03
+
+=== ch-25 4-run starts mod 144 (top classes) ===
+  ≡ 103 (mod 144): 328
+  ≡ 110 (mod 144): 325
+  ≡ 119 (mod 144): 180
+  ≡  94 (mod 144): 169
+
+|S ∩ [X0, 1999311470592)| = 51851575484
+saved atlas46_occ.json
+
+=== fertile/sterile anatomy of ch-25 4-runs ===
+fertile (94): 169  sterile (103,110,119): 833  other: 0
+quintets: 2  -> conditional hazard r45|fertile = 1.18e-02  (vs raw 2.00e-03)
+  quarter 1: fertile=46 sterile=196 fertile_frac=0.190
+  quarter 2: fertile=39 sterile=202 fertile_frac=0.162
+  quarter 3: fertile=41 sterile=220 fertile_frac=0.157
+  quarter 4: fertile=43 sterile=215 fertile_frac=0.167
+
+=== ch-24 4-run starts mod 144 (top classes) ===
+  ≡  55 (mod 144): 1284
+  ≡  65 (mod 144): 1263
+  ≡   7 (mod 144): 1245
+  ≡  17 (mod 144): 1213
+  ≡  47 (mod 144): 1102
+  ≡  25 (mod 144): 1051
+  ≡  23 (mod 144): 907
+  ≡  49 (mod 144): 864
+  ≡   1 (mod 144): 733
+  ≡ 113 (mod 144): 729
