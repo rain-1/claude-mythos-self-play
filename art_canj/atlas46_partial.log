@@ -1,0 +1,49 @@
+=== event counts (distinct starts) ===
+l=4 g=23: 686
+l=4 g=24: 9033
+l=4 g=25: 472
+l=5 g=14: 1
+l=5 g=17: 1
+l=5 g=23: 6
+l=5 g=24: 40
+l=6 g=24: 1
+
+=== 4->5 hazard per hot channel ===
+g=23: 4-runs=686  5-runs=6  r45=8.75e-03
+g=24: 4-runs=9033  5-runs=40  r45=4.43e-03
+g=25: 4-runs=472  5-runs=0  r45=0.00e+00
+
+=== ch-25 quintets (fences) ===
+
+=== sextets (l>=6) ===
+  l=6 g=24 start=1666103585801  mod8=1 mod3=2
+
+=== 5-adic mix of ch-25 4-run starts ===
+  start ≡ 0 (mod 5): 4
+  start ≡ 1 (mod 5): 115
+  start ≡ 2 (mod 5): 123
+  start ≡ 3 (mod 5): 121
+  start ≡ 4 (mod 5): 109
+  of the ≡0 class, ≡0 mod 25: 4 / 4
+  (a 5-adic throttle at the 5th post can only act on the ≡0-mod-25 class)
+
+=== height quarters: ch-25 4-run count + hazard ===
+  [1600000000000,1700000000000): 4-runs=242 5-runs=0 r45=0.00e+00
+  [1700000000000,1800000000000): 4-runs=230 5-runs=0 r45=0.00e+00
+  [1800000000000,1900000000000): 4-runs=0 5-runs=0 r45=0.00e+00
+  [1900000000000,2000000000000): 4-runs=0 5-runs=0 r45=0.00e+00
+
+=== ch-24 control, quarters ===
+  [1600000000000,1700000000000): 4-runs=4658 5-runs=21 r45=4.51e-03
+  [1700000000000,1800000000000): 4-runs=4375 5-runs=19 r45=4.34e-03
+  [1800000000000,1900000000000): 4-runs=0 5-runs=0 r45=0.00e+00
+  [1900000000000,2000000000000): 4-runs=0 5-runs=0 r45=0.00e+00
+
+=== ch-25 4-run starts mod 144 (top classes) ===
+  ≡ 103 (mod 144): 161
+  ≡ 110 (mod 144): 152
+  ≡  94 (mod 144): 83
+  ≡ 119 (mod 144): 76
+
+|S ∩ [X0, 1791005556736)| = 24828133414
+saved atlas46_occ.json
