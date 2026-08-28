@@ -1,0 +1,59 @@
+N=3 ok restarts=1 0.00s
+N=4 ok restarts=1 0.00s
+N=5 ok restarts=4 0.00s
+N=6 ok restarts=13 0.00s
+N=7 ok restarts=2 0.00s
+N=8 ok restarts=8 0.00s
+N=9 ok restarts=10 0.00s
+N=10 ok restarts=8 0.00s
+N=11 ok restarts=32 0.00s
+N=12 ok restarts=18 0.00s
+N=13 ok restarts=5 0.00s
+N=14 ok restarts=4 0.00s
+N=15 ok restarts=4 0.00s
+N=16 ok restarts=5 0.00s
+N=17 ok restarts=2 0.00s
+N=18 ok restarts=1 0.00s
+N=19 ok restarts=2 0.00s
+N=20 ok restarts=3 0.00s
+N=21 ok restarts=7 0.01s
+N=22 ok restarts=3 0.00s
+N=23 ok restarts=1 0.00s
+N=24 ok restarts=3 0.00s
+N=25 ok restarts=2 0.00s
+N=26 ok restarts=10 0.03s
+N=27 ok restarts=1 0.00s
+N=28 ok restarts=21 0.20s
+N=29 ok restarts=26 0.30s
+N=30 ok restarts=19 0.18s
+N=31 ok restarts=18 0.17s
+N=32 ok restarts=35 0.67s
+N=33 ok restarts=24 0.35s
+N=34 ok restarts=57 1.74s
+N=35 ok restarts=72 3.05s
+N=36 ok restarts=34 0.76s
+N=37 ok restarts=43 1.30s
+N=38 ok restarts=91 5.81s
+N=39 ok restarts=56 2.14s
+N=40 ok restarts=83 4.88s
+N=41 ok restarts=118 10.64s
+N=42 ok restarts=115 10.67s
+N=43 ok restarts=249 51.12s
+N=44 ok restarts=247 51.62s
+N=45 ok restarts=150 19.41s
+N=46 ok restarts=290 76.13s
+N=47 ok restarts=286 80.58s
+N=48 ok restarts=334 108.67s
+N=49 **FAILED** 161.13s
+N=50 **FAILED** 164.64s
+N=51 **FAILED** 171.21s
+N=52 **FAILED** 176.88s
+N=53 **FAILED** 185.11s
+N=54 **FAILED** 188.12s
+N=55 ok restarts=196 44.98s
+N=56 **FAILED** 195.75s
+N=57 **FAILED** 198.27s
+N=58 **FAILED** 206.70s
+N=59 **FAILED** 214.91s
+N=60 **FAILED** 215.02s
+N=61 **FAILED** 227.06s

@@ -1,0 +1,2 @@
+N=10 MIRROR restarts=5 time=0.00s
+FULL VERIFIED L=21: 10 -3 -7 -2 9 -4 -5 -1 6 -8 0 8 -6 1 5 4 -9 2 7 3 -10

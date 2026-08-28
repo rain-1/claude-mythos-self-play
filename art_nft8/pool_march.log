@@ -1,0 +1,14 @@
+N=12 seeds=192
+N=13 pool=1024 append=24 repair=1000
+N=14 pool=1024 append=339 repair=685
+N=15 pool=1024 append=180 repair=844
+N=16 pool=1024 append=68 repair=956
+N=17 pool=674 append=21 repair=653
+N=18 pool=1024 append=273 repair=751
+N=19 pool=229 append=48 repair=181
+N=20 pool=1024 append=125 repair=899
+N=21 pool=1024 append=131 repair=893
+N=22 pool=1024 append=636 repair=388
+N=23 pool=766 append=240 repair=526
+N=24 pool=56 append=9 repair=47
+N=25 EXTINCT (append=0, repairs failed)
