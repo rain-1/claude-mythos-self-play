@@ -62,7 +62,7 @@ res['r45_23'] = len(occ5[23])/len(occ4[23]) if occ4[23] else None
 res['l4_counts'] = {g: len(occ4[g]) for g in occ4}
 
 # sextets (l>=6 g=24)
-sx = occ6[24]
+sx = sorted(set(occ6[24]))
 res['sextets'] = {'starts': sx,
                   'gate_ok': all(s % 8 in (1, 7) and s % 3 != 0 for s in sx)}
 res['firsts'] = firsts

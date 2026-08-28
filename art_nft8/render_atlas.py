@@ -47,30 +47,39 @@ gate = {94: ('fertile', GOLD, 1.0), 103: ('sterile', AMBER, 0.45),
         110: ('sterile', AMBER, 0.45), 119: ('sterile', AMBER, 0.45)}
 cls_counts = {int(k): v for k, v in R['l4g25']['classes'].items()}
 maxc = max(cls_counts.values()) if cls_counts else 1
+line(X0, wall_y+wall_h, X1, wall_y+wall_h, 1.2*rs, 0.25, BLUE)
 for c in range(144):
     xa = X0 + (X1-X0)*(c+0.5)/144
     if c in gate:
         _, col, ampf = gate[c]
-        # tall lit arch
-        hh = wall_h
-        tt = np.linspace(0, 1, 300)
-        xs = xa + 0.0*tt
-        line(xa, wall_y+wall_h, xa, wall_y+wall_h-hh, 3.2*rs, 1.3*ampf, col)
-        gauss_patch(xa, wall_y+wall_h-hh, 4.5*rs, 1.2*ampf, col)
-        # observed population bar under the arch
+        # a true arch: two legs + half-ellipse top
+        aw = 0.010*S; hh = wall_h*0.92
+        th = np.linspace(0, math.pi, 240)
+        ax = xa + aw*np.cos(th); ay = wall_y+wall_h-hh + 0  - 0.30*hh*np.sin(th)
+        for i2 in range(len(th)-1):
+            line(ax[i2], ay[i2], ax[i2+1], ay[i2+1], 2.6*rs, 0.10*ampf*2.6, col)
+        line(xa-aw, wall_y+wall_h, xa-aw, wall_y+wall_h-hh, 2.6*rs, 1.1*ampf, col)
+        line(xa+aw, wall_y+wall_h, xa+aw, wall_y+wall_h-hh, 2.6*rs, 1.1*ampf, col)
+        gauss_patch(xa, wall_y+wall_h-hh*0.55, 8.5*rs, 0.45*ampf, col)
         cnt = cls_counts.get(c, 0)
-        bh = 0.055*S * cnt/maxc
-        line(xa, wall_y+wall_h+0.018*S+bh, xa, wall_y+wall_h+0.018*S, 5.0*rs,
-             0.8, col*0.9)
+        bh = 0.050*S * cnt/maxc
+        line(xa, wall_y+wall_h+0.016*S+bh, xa, wall_y+wall_h+0.016*S, 5.0*rs,
+             0.85, col*0.9)
     else:
-        line(xa, wall_y+wall_h, xa, wall_y+wall_h-0.14*wall_h, 1.6*rs, 0.16, BLUE)
+        line(xa, wall_y+wall_h, xa, wall_y+wall_h-0.22*wall_h, 1.6*rs, 0.22, BLUE)
 
 # ---------------- (2) the fence road ----------------
 road_y = 0.560*S
 D0, D1 = 3.5e11, 2.45e12
 def dx_(d): return X0 + (X1-X0)*(d-D0)/(D1-D0)
 # base road
-line(X0, road_y, X1, road_y, 1.4*rs, 0.30, BLUE*1.2)
+line(X0, road_y, X1, road_y, 1.4*rs, 0.55, BLUE*1.3)
+# gold dust: every l=4 g=25 occurrence of this window, under the road
+import random as _rd
+_rd.seed(4)
+for s4 in [int(x) for x in R.get('l4g25_starts', [])]:
+    gauss_patch(dx_(s4), road_y + 0.016*S + 0.018*S*_rd.random(), 1.3*rs,
+                0.55, GOLD*0.85)
 fences = [458171603806, 615709112638, 830595732286, 862954027582,
           1158245890366, 1378555660606, 1890086207422, 1987781143486]
 for f in fences:
@@ -79,12 +88,13 @@ for f in fences:
 for f in R['fences25']['starts']:
     gauss_patch(dx_(f), road_y, 5.0*rs, 1.5, WHITE)
     line(dx_(f), road_y-0.010*S, dx_(f), road_y-0.038*S, 1.5*rs, 0.8, WHITE)
-# window shading
+# window tint: soft-edged
 xw0, xw1 = dx_(2.0e12), dx_(R['scanned_to'])
-yy, xx = np.mgrid[int(road_y-0.052*S):int(road_y+0.052*S), 0:S]
-m = (xx >= xw0) & (xx <= xw1)
-acc[int(road_y-0.052*S):int(road_y+0.052*S), :, :] += \
-    (m[..., None]*0.045*np.array([0.5, 0.65, 0.95]))
+xxr = np.arange(S, dtype=np.float32)
+tint = 1/(1+np.exp(-(xxr-xw0)/(3*rs))) * 1/(1+np.exp((xxr-xw1)/(3*rs)))
+yyr = np.arange(S, dtype=np.float32)
+vert = np.exp(-0.5*((yyr-road_y)/(0.030*S))**2)
+acc += (tint[None,:]*vert[:,None])[...,None]*0.055*np.array([0.45,0.60,0.95],np.float32)
 # ghost fence at expected position if none seen: E spacing ~ 2e11
 if not R['fences25']['starts']:
     gx = dx_(2.0e12 + 2.0e11*0.5)
@@ -108,7 +118,7 @@ for si, sx_ in enumerate(sext):
                     1.0 if new else 0.55, CYAN if not new else WHITE)
 
 # ---------------- (3) hazard ladder r45|94 ----------------
-lad_y0, lad_y1 = 0.720*S, 0.870*S
+lad_y0, lad_y1 = 0.700*S, 0.850*S
 lx0 = 0.10*S
 windows = [('1.6-2.0e12', 2, 169), (f"2.0-{R['scanned_to']/1e12:.2f}e12",
             len(R['fences25']['starts']), R['l4g25']['fertile'])]
@@ -179,15 +189,25 @@ frac = R['l4g25']['fertile_frac']
 dr.text((xt, int(0.030*FINAL)+int(58*rs)),
         f"observed {R['l4g25']['count']} four-runs, gate violations: {len(R['l4g25']['violations'])}; only class 94 is fertile — share {frac:.3f}",
         font=ft, fill=cC)
-dr.text((xt, int(0.418*FINAL)),
+dr.text((xt, int(0.452*FINAL)),
         "the fence road: all known l=5 g=25 fences (gold), every one ≡ 94 (mod 144) — the silence of 511·10⁹ bracketed in cyan; sextets of gap 24 beneath",
         font=ft, fill=cC)
-dr.text((xt, int(0.640*FINAL)),
+dr.text((xt, int(0.660*FINAL)),
         "the hazard ladder: fence rate conditional on the fertile class, window by window — and the 5.9× dilution the sterile classes hide (amber: raw, gold: fertile)",
         font=ft, fill=cC)
 verd = open('atlas47_verdict.txt').read().strip() if __import__('os').path.exists('atlas47_verdict.txt') else ''
-ytx = int(0.905*FINAL)
-for i, ln in enumerate(verd.split('\n')[:5]):
-    dr.text((xt, ytx+i*int(13*rs)), ln, font=ft, fill=(170, 182, 205))
+ytx = int(0.910*FINAL)
+import textwrap
+vls = []
+for ln in verd.split('\n'):
+    vls += textwrap.wrap(ln, 150) or ['']
+for i, ln in enumerate(vls[:7]):
+    dr.text((xt, ytx+i*int(11.5*rs)), ln, font=ft, fill=(170, 182, 205))
+lly = int(lad_y1/S*FINAL)+int(6*rs)
+dr.text((int((0.10*S)/S*FINAL)-int(10*rs), lly), "2/169", font=ft, fill=(190,160,100))
+dr.text((int((0.10*S)/S*FINAL)-int(16*rs), lly+int(11*rs)), "window 46", font=ft, fill=(114,126,150))
+dr.text((int((0.26*S)/S*FINAL)-int(8*rs), lly), "1/41", font=ft, fill=(230,200,140))
+dr.text((int((0.26*S)/S*FINAL)-int(26*rs), lly+int(11*rs)), "window 47 (quarter)", font=ft, fill=(114,126,150))
+dr.text((int((0.50*S)/S*FINAL)-int(30*rs), lly), "raw r45 vs fertile: the 5.9x dilution", font=ft, fill=(114,126,150))
 im.save('atlas47_2560.png')
 print("saved atlas")

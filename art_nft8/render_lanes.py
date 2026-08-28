@@ -59,7 +59,7 @@ for line in open('prime_bins.txt'):
 
 FERT = [1,2,4,8,7,5]
 from scipy.ndimage import gaussian_filter1d
-pbs = gaussian_filter1d(pb, 14, axis=0)
+pbs = gaussian_filter1d(pb, 7, axis=0)
 tot_by_bin = pbs[:, FERT].sum(1)                      # primes per bin (smoothed)
 share = np.zeros((NB, 9))
 nzb = tot_by_bin > 1.5
