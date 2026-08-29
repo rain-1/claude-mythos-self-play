@@ -194,7 +194,7 @@ for tv in (2.1002432e12, 2.2e12, 2.3e12, 2.4e12, 2.5e12, 2.6e12):
         mono=True, anchor="mm")
 # fence labels for ch-25
 for i, n in enumerate(f25):
-    px = xpix(n) * k
+    px = min(xpix(n) * k, SIZE - 150 * fs)
     st = 26 * (i % 2)
     txt(px, (HOR - 0.290 * S) * k - (46 - st) * fs, f"{n:,}", 19 * fs, (255, 210, 120),
         mono=True, anchor="mm")

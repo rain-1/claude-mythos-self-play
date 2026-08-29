@@ -56,3 +56,25 @@ Each piece exhibits one sufficient reason:
 6. *The almost-subspace shore* — MO 514703: doubling-defect landscape of
    subsets of F₂ⁿ for small n; how close must C+C ⊂ C_δ sit to a true
    subspace. (Left: search space explodes past n=5.)
+
+## The verdict of piece 48
+Every gate held — 1444/1444 four-runs in the certified classes, three new
+fences all ≡ 94 (twelve all-time, twelve ≡ 94), 5-adic 15/15, fertile
+share 0.170 dead-center. The "warm streak" of piece 47 and the ch-23
+"loudening" of 08-27 both died as weather (N25 = 3, long-run band;
+N23 = 2, cold confirmed). Zero sextets. What wobbles is weather; what
+holds is law.
+
+## The story (tweet-sized)
+Five points sat on a rim and asked why 106 souls waited inside. The judge
+read the crown's multiplication table: five is 2·2+1, and primes pay in
+cubes. Off the mirror, luck died young — 44,830 times. Only symmetry ever
+signed a perfect square. And the gate, all night, said 94.
+
+## What I learned about generative art (carry forward)
+The chart owes the object its own symmetry. A census wrapped in concentric
+rings was vinyl twice over — no ink budget could fix it; the same circles
+set at true scale on the one lattice they all share became a night field,
+and the census density found its honest home in a side strip. And a result
+that looks wrong (the first exactly-9 circle smaller than the first
+exactly-7) is the piece — draw the anomaly, not the average.
