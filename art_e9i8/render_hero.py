@@ -203,9 +203,9 @@ if LABELS:
     # feature labels inside the three story courts
     court_tag(7, -21, 12, "k = 7   first at r = \u221a276250/22 \u2248 23.891",
               "1793 within \u2014 a prime count demands a cube", (255, 120, 100))
-    court_tag(5, 14.6, 23.5, "k = 5   r = \u221a625/\u221a18",
+    court_tag(5, 14.6, 23.5, "k = 5   r = 25/\u221a18",
               "106 within \u2014 proved minimal", (255, 200, 110))
-    court_tag(9, 8.5, -9.5, "k = 9   r = \u221a65\u00b2/\u221a18 < \u03c1(7)",
+    court_tag(9, 8.5, -9.5, "k = 9   r = 65/\u221a18 < \u03c1(7)",
               "9 = 3\u00d73 comes cheaper than prime 7", (255, 200, 110))
     # small id tags for the rest
     import fractions
