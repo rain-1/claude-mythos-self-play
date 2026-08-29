@@ -1,0 +1,4 @@
+n=98: T(n,n) is a perfect square, sqrt has 2395 digits, T has 4789 digits
+n=121: T(n,n) is a perfect square, sqrt has 3662 digits, T has 7323 digits
+n=128: T(n,n) is a perfect square, sqrt has 4100 digits, T has 8200 digits
+CERT121 DONE
