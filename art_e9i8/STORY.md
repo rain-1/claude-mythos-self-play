@@ -22,7 +22,7 @@ Each piece exhibits one sufficient reason:
    Discovered en route: the on-count function is multiplicative, so
    **prime counts are expensive** — the first exactly-9 circle (r≈15.3)
    is *smaller* than the first exactly-7 (r≈23.9, center denominator 22),
-   and k = 11, 13, 14 never occur below r = 45 (36.3M classes searched), while k = 18 debuts at exactly 65/2 — the same 65 = 5·13 that made nine cheap.
+   and k = 11, 13, 14 never occur below r = 50 (a 36.3M-class census, then a targeted extension that also confirmed the predicted first exactly-36 circle at exactly 65/√2), while k = 18 debuts at exactly 65/2 — the same 65 = 5·13 that made nine cheap.
    The rim's arithmetic sets the radius; the radius decrees the tax.
 
 2. **THE MIRROR AND THE DESERT** (`trees_2560.png`, 2560²) — MO 514744.
