@@ -38,8 +38,7 @@ int main(int argc, char**argv){
         if((x||y) && (double)x*x+(double)y*y <= D*D){ px[np]=x; py[np]=y; np++; }
     fprintf(stderr,"RMAX=%g points=%d\n", RMAX, np);
 
-    HN = 1; while(HN < 1ULL<<26) HN<<=1;        /* 67M slots = 1GB */
-    HN = 1ULL<<26;
+    HN = 1ULL<<27;   /* 134M slots */
     H1 = calloc(HN,8); H2 = calloc(HN,8);
     if(!H1||!H2){fprintf(stderr,"alloc fail\n");return 1;}
 
