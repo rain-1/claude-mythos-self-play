@@ -97,6 +97,17 @@ def beacon(n, col, h, w, amp, star=False):
     splat(px, HOR - h, 3.2 * rs * (1.6 if star else 1.0), WHITE if star else col,
           1.2 if star else 0.55)
 
+# rare-channel fences (ch-14, ch-17) from FIRST lines — ember, starred
+rare = []
+for line in open(AL):
+    p = line.split()
+    if p and p[0] == "FIRST":
+        l_ = int(p[1][2:]); g_ = int(p[2][2:]); s_ = int(p[3][6:])
+        if l_ == 5 and g_ in (14, 17):
+            rare.append((g_, s_))
+for g_, n in rare:
+    beacon(n, EMBER, 0.170 * S, 1.3, 0.9, star=True)
+
 for n in f24: beacon(n, ICE, 0.135 * S, 1.1, 0.5)
 for n in f23: beacon(n, VIOL, 0.205 * S, 1.4, 0.85)
 for n in f25: beacon(n, GOLD, 0.290 * S, 1.8, 1.0, star=True)
@@ -200,6 +211,10 @@ for i, n in enumerate(f25):
         mono=True, anchor="mm")
     txt(px, (HOR - 0.290 * S) * k - (26 - st) * fs, "≡ 94", 17 * fs, (200, 170, 100),
         mono=True, anchor="mm")
+for i_, (g_, n) in enumerate(sorted(rare)):
+    px = xpix(n) * k
+    txt(max(px, 90 * fs) + i_ * 8 * fs, (HOR - 0.170 * S) * k - (26 + 24 * i_) * fs,
+        f"ch-{g_} fence", 17 * fs, (255, 150, 120), mono=True, anchor="mm")
 for n in sext:
     px = xpix(n) * k
     txt(px, (HOR - 0.235 * S) * k - 8 * fs, "sextet", 17 * fs, (230, 235, 245),
