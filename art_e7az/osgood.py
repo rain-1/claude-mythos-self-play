@@ -202,7 +202,7 @@ for sg in (3, 12, 48, 192):
         ds = max(int(sig / 6), 1)
         small = dn[::ds, ::ds]
         b = ndi.gaussian_filter(small, sig / ds)
-        b = np.asarray(Image.fromarray(b).resize((S, S), Image.BILINEAR))
+        b = np.array(Image.fromarray(b).resize((S, S), Image.BILINEAR))
     b /= max(b.max(), 1e-9)
     ao *= (0.42 + 0.58 * b).astype(np.float32)
 ao /= max(np.percentile(ao[inside], 97), 1e-9)
