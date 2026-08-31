@@ -1,0 +1,6 @@
+k=2 size=27 far2=137 far=(4,11) censored=0
+k=4 size=183 far2=2053 far=(17,42) censored=0
+k=8 size=759 far2=8737 far=(41,84) censored=0
+k=16 size=695275 far2=18598609 far=(2780,3297) censored=0
+k=26 size=32422439 far2=624999989 far=(5833,24310) censored=1
+k=36 size=32553341 far2=624999989 far=(5833,24310) censored=1

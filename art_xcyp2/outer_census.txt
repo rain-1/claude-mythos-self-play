@@ -1,0 +1,305 @@
+seed=(-20+0r5)/16,(2+0r5)/16 fate=periodic p=8 max|P|=2.909
+seed=(-20+0r5)/16,(4+0r5)/16 fate=singular max|P|=0.000
+seed=(-20+0r5)/16,(6+0r5)/16 fate=periodic p=3284 max|P|=39.457
+seed=(-20+0r5)/16,(8+0r5)/16 fate=periodic p=2934 max|P|=39.560
+seed=(-20+0r5)/16,(10+0r5)/16 fate=wandering max|P|=199.521
+seed=(-20+0r5)/16,(12+0r5)/16 fate=periodic p=140 max|P|=11.847
+seed=(-20+0r5)/16,(14+0r5)/16 fate=periodic p=140 max|P|=11.939
+seed=(-20+0r5)/16,(16+0r5)/16 fate=periodic p=78 max|P|=9.210
+seed=(-20+0r5)/16,(18+0r5)/16 fate=periodic p=136 max|P|=11.954
+seed=(-20+0r5)/16,(20+0r5)/16 fate=periodic p=136 max|P|=12.050
+seed=(-20+0r5)/16,(22+0r5)/16 fate=periodic p=210 max|P|=14.644
+seed=(-18+0r5)/16,(2+0r5)/16 fate=singular max|P|=0.000
+seed=(-18+0r5)/16,(4+0r5)/16 fate=periodic p=506 max|P|=20.817
+seed=(-18+0r5)/16,(6+0r5)/16 fate=periodic p=82 max|P|=9.006
+seed=(-18+0r5)/16,(8+0r5)/16 fate=periodic p=82 max|P|=9.095
+seed=(-18+0r5)/16,(10+0r5)/16 fate=periodic p=82 max|P|=9.184
+seed=(-18+0r5)/16,(12+0r5)/16 fate=periodic p=640 max|P|=23.467
+seed=(-18+0r5)/16,(14+0r5)/16 fate=periodic p=640 max|P|=23.567
+seed=(-18+0r5)/16,(16+0r5)/16 fate=wandering max|P|=209.450
+seed=(-18+0r5)/16,(18+0r5)/16 fate=periodic p=5414 max|P|=61.275
+seed=(-18+0r5)/16,(20+0r5)/16 fate=periodic p=136 max|P|=11.970
+seed=(-18+0r5)/16,(22+0r5)/16 fate=periodic p=136 max|P|=12.067
+seed=(-16+0r5)/16,(2+0r5)/16 fate=periodic p=10138 max|P|=88.888
+seed=(-16+0r5)/16,(4+0r5)/16 fate=periodic p=82 max|P|=8.832
+seed=(-16+0r5)/16,(6+0r5)/16 fate=periodic p=82 max|P|=8.918
+seed=(-16+0r5)/16,(8+0r5)/16 fate=periodic p=82 max|P|=9.008
+seed=(-16+0r5)/16,(10+0r5)/16 fate=periodic p=82 max|P|=9.098
+seed=(-16+0r5)/16,(12+0r5)/16 fate=periodic p=82 max|P|=9.190
+seed=(-16+0r5)/16,(14+0r5)/16 fate=periodic p=2354 max|P|=37.277
+seed=(-16+0r5)/16,(16+0r5)/16 fate=wandering max|P|=209.457
+seed=(-16+0r5)/16,(18+0r5)/16 fate=periodic p=214 max|P|=14.611
+seed=(-16+0r5)/16,(20+0r5)/16 fate=periodic p=214 max|P|=14.707
+seed=(-16+0r5)/16,(22+0r5)/16 fate=periodic p=214 max|P|=14.802
+seed=(-14+0r5)/16,(2+0r5)/16 fate=singular max|P|=0.000
+seed=(-14+0r5)/16,(4+0r5)/16 fate=periodic p=506 max|P|=20.817
+seed=(-14+0r5)/16,(6+0r5)/16 fate=periodic p=82 max|P|=9.006
+seed=(-14+0r5)/16,(8+0r5)/16 fate=periodic p=82 max|P|=9.095
+seed=(-14+0r5)/16,(10+0r5)/16 fate=periodic p=82 max|P|=9.184
+seed=(-14+0r5)/16,(12+0r5)/16 fate=periodic p=640 max|P|=23.467
+seed=(-14+0r5)/16,(14+0r5)/16 fate=periodic p=640 max|P|=23.567
+seed=(-14+0r5)/16,(16+0r5)/16 fate=wandering max|P|=228.199
+seed=(-14+0r5)/16,(18+0r5)/16 fate=periodic p=5414 max|P|=61.275
+seed=(-14+0r5)/16,(20+0r5)/16 fate=periodic p=136 max|P|=11.970
+seed=(-14+0r5)/16,(22+0r5)/16 fate=periodic p=136 max|P|=12.067
+seed=(-12+0r5)/16,(2+0r5)/16 fate=singular max|P|=0.000
+seed=(-12+0r5)/16,(4+0r5)/16 fate=singular max|P|=0.000
+seed=(-12+0r5)/16,(6+0r5)/16 fate=periodic p=3284 max|P|=39.457
+seed=(-12+0r5)/16,(8+0r5)/16 fate=periodic p=2934 max|P|=39.560
+seed=(-12+0r5)/16,(10+0r5)/16 fate=wandering max|P|=199.521
+seed=(-12+0r5)/16,(12+0r5)/16 fate=periodic p=140 max|P|=11.847
+seed=(-12+0r5)/16,(14+0r5)/16 fate=periodic p=140 max|P|=11.939
+seed=(-12+0r5)/16,(16+0r5)/16 fate=periodic p=78 max|P|=9.210
+seed=(-12+0r5)/16,(18+0r5)/16 fate=periodic p=136 max|P|=11.954
+seed=(-12+0r5)/16,(20+0r5)/16 fate=periodic p=136 max|P|=12.050
+seed=(-12+0r5)/16,(22+0r5)/16 fate=periodic p=210 max|P|=14.644
+seed=(-12+2r5)/16,(6+0r5)/16 fate=singular max|P|=0.000
+seed=(-11+1r5)/16,(5+1r5)/16 fate=singular max|P|=0.000
+seed=(-10+0r5)/16,(2+0r5)/16 fate=singular max|P|=0.000
+seed=(-10+0r5)/16,(4+0r5)/16 fate=singular max|P|=0.000
+seed=(-10+0r5)/16,(6+0r5)/16 fate=singular max|P|=0.000
+seed=(-10+0r5)/16,(8+0r5)/16 fate=periodic p=1054 max|P|=23.329
+seed=(-10+0r5)/16,(10+0r5)/16 fate=wandering max|P|=199.522
+seed=(-10+0r5)/16,(12+0r5)/16 fate=wandering max|P|=162.641
+seed=(-10+0r5)/16,(14+0r5)/16 fate=periodic p=78 max|P|=9.034
+seed=(-10+0r5)/16,(16+0r5)/16 fate=periodic p=78 max|P|=9.130
+seed=(-10+0r5)/16,(18+0r5)/16 fate=periodic p=78 max|P|=9.226
+seed=(-10+0r5)/16,(20+0r5)/16 fate=periodic p=210 max|P|=14.468
+seed=(-10+0r5)/16,(22+0r5)/16 fate=periodic p=210 max|P|=14.565
+seed=(-10+2r5)/16,(6+0r5)/16 fate=singular max|P|=0.000
+seed=(-9+1r5)/16,(5+1r5)/16 fate=singular max|P|=0.000
+seed=(-8+0r5)/16,(2+0r5)/16 fate=singular max|P|=0.000
+seed=(-8+0r5)/16,(4+0r5)/16 fate=singular max|P|=0.000
+seed=(-8+0r5)/16,(6+0r5)/16 fate=singular max|P|=0.000
+seed=(-8+0r5)/16,(8+0r5)/16 fate=singular max|P|=0.000
+seed=(-8+0r5)/16,(10+0r5)/16 fate=wandering max|P|=208.120
+seed=(-8+0r5)/16,(12+0r5)/16 fate=periodic p=140 max|P|=11.837
+seed=(-8+0r5)/16,(14+0r5)/16 fate=periodic p=140 max|P|=11.930
+seed=(-8+0r5)/16,(16+0r5)/16 fate=periodic p=78 max|P|=9.201
+seed=(-8+0r5)/16,(18+0r5)/16 fate=periodic p=136 max|P|=11.963
+seed=(-8+0r5)/16,(20+0r5)/16 fate=periodic p=136 max|P|=12.059
+seed=(-8+0r5)/16,(22+0r5)/16 fate=periodic p=210 max|P|=14.635
+seed=(-8+2r5)/16,(6+0r5)/16 fate=singular max|P|=0.000
+seed=(-7+1r5)/16,(5+1r5)/16 fate=singular max|P|=0.000
+seed=(-6+0r5)/16,(2+0r5)/16 fate=singular max|P|=0.000
+seed=(-6+0r5)/16,(4+0r5)/16 fate=singular max|P|=0.000
+seed=(-6+0r5)/16,(6+0r5)/16 fate=singular max|P|=0.000
+seed=(-6+0r5)/16,(8+0r5)/16 fate=singular max|P|=0.000
+seed=(-6+0r5)/16,(10+0r5)/16 fate=singular max|P|=0.000
+seed=(-6+0r5)/16,(12+0r5)/16 fate=periodic p=640 max|P|=23.458
+seed=(-6+0r5)/16,(14+0r5)/16 fate=periodic p=140 max|P|=12.014
+seed=(-6+0r5)/16,(16+0r5)/16 fate=wandering max|P|=209.458
+seed=(-6+0r5)/16,(18+0r5)/16 fate=periodic p=5414 max|P|=61.283
+seed=(-6+0r5)/16,(20+0r5)/16 fate=periodic p=136 max|P|=11.979
+seed=(-6+0r5)/16,(22+0r5)/16 fate=periodic p=136 max|P|=12.076
+seed=(-6+2r5)/16,(6+0r5)/16 fate=singular max|P|=0.000
+seed=(-5+1r5)/16,(5+1r5)/16 fate=singular max|P|=0.000
+seed=(-4+0r5)/16,(2+0r5)/16 fate=singular max|P|=0.000
+seed=(-4+0r5)/16,(4+0r5)/16 fate=singular max|P|=0.000
+seed=(-4+0r5)/16,(6+0r5)/16 fate=singular max|P|=0.000
+seed=(-4+0r5)/16,(8+0r5)/16 fate=singular max|P|=0.000
+seed=(-4+0r5)/16,(10+0r5)/16 fate=singular max|P|=0.000
+seed=(-4+0r5)/16,(12+0r5)/16 fate=singular max|P|=0.000
+seed=(-4+0r5)/16,(14+0r5)/16 fate=periodic p=2354 max|P|=37.285
+seed=(-4+0r5)/16,(16+0r5)/16 fate=periodic p=51674 max|P|=160.065
+seed=(-4+0r5)/16,(18+0r5)/16 fate=periodic p=214 max|P|=14.620
+seed=(-4+0r5)/16,(20+0r5)/16 fate=periodic p=214 max|P|=14.716
+seed=(-4+0r5)/16,(22+0r5)/16 fate=periodic p=136 max|P|=11.997
+seed=(-4+2r5)/16,(6+0r5)/16 fate=singular max|P|=0.000
+seed=(-3+1r5)/16,(5+1r5)/16 fate=singular max|P|=0.000
+seed=(-2+0r5)/16,(2+0r5)/16 fate=singular max|P|=0.000
+seed=(-2+0r5)/16,(4+0r5)/16 fate=singular max|P|=0.000
+seed=(-2+0r5)/16,(6+0r5)/16 fate=singular max|P|=0.000
+seed=(-2+0r5)/16,(8+0r5)/16 fate=singular max|P|=0.000
+seed=(-2+0r5)/16,(10+0r5)/16 fate=singular max|P|=0.000
+seed=(-2+0r5)/16,(12+0r5)/16 fate=singular max|P|=0.000
+seed=(-2+0r5)/16,(14+0r5)/16 fate=singular max|P|=0.000
+seed=(-2+0r5)/16,(16+0r5)/16 fate=periodic p=1738 max|P|=37.342
+seed=(-2+0r5)/16,(18+0r5)/16 fate=periodic p=5414 max|P|=61.268
+seed=(-2+0r5)/16,(20+0r5)/16 fate=periodic p=140 max|P|=11.772
+seed=(-2+0r5)/16,(22+0r5)/16 fate=periodic p=53622 max|P|=150.233
+seed=(-2+2r5)/16,(6+0r5)/16 fate=singular max|P|=0.000
+seed=(-1+1r5)/16,(5+1r5)/16 fate=singular max|P|=0.000
+seed=(0+0r5)/16,(2+0r5)/16 fate=singular max|P|=0.000
+seed=(0+0r5)/16,(4+0r5)/16 fate=singular max|P|=0.000
+seed=(0+0r5)/16,(6+0r5)/16 fate=singular max|P|=0.000
+seed=(0+0r5)/16,(8+0r5)/16 fate=singular max|P|=0.000
+seed=(0+0r5)/16,(10+0r5)/16 fate=singular max|P|=0.000
+seed=(0+0r5)/16,(12+0r5)/16 fate=singular max|P|=0.000
+seed=(0+0r5)/16,(14+0r5)/16 fate=singular max|P|=0.000
+seed=(0+0r5)/16,(16+0r5)/16 fate=singular max|P|=0.000
+seed=(0+0r5)/16,(18+0r5)/16 fate=singular max|P|=0.000
+seed=(0+0r5)/16,(20+0r5)/16 fate=singular max|P|=0.000
+seed=(0+0r5)/16,(22+0r5)/16 fate=singular max|P|=0.000
+seed=(0+2r5)/16,(6+0r5)/16 fate=singular max|P|=0.000
+seed=(1+1r5)/16,(5+1r5)/16 fate=singular max|P|=0.000
+seed=(2+0r5)/16,(2+0r5)/16 fate=singular max|P|=0.000
+seed=(2+0r5)/16,(4+0r5)/16 fate=singular max|P|=0.000
+seed=(2+0r5)/16,(6+0r5)/16 fate=singular max|P|=0.000
+seed=(2+0r5)/16,(8+0r5)/16 fate=singular max|P|=0.000
+seed=(2+0r5)/16,(10+0r5)/16 fate=singular max|P|=0.000
+seed=(2+0r5)/16,(12+0r5)/16 fate=singular max|P|=0.000
+seed=(2+0r5)/16,(14+0r5)/16 fate=periodic p=5414 max|P|=61.268
+seed=(2+0r5)/16,(16+0r5)/16 fate=periodic p=1738 max|P|=37.342
+seed=(2+0r5)/16,(18+0r5)/16 fate=singular max|P|=0.000
+seed=(2+0r5)/16,(20+0r5)/16 fate=periodic p=640 max|P|=23.475
+seed=(2+0r5)/16,(22+0r5)/16 fate=periodic p=82 max|P|=9.175
+seed=(2+2r5)/16,(6+0r5)/16 fate=periodic p=210 max|P|=14.890
+seed=(3+1r5)/16,(5+1r5)/16 fate=singular max|P|=0.000
+seed=(4+0r5)/16,(2+0r5)/16 fate=singular max|P|=0.000
+seed=(4+0r5)/16,(4+0r5)/16 fate=singular max|P|=0.000
+seed=(4+0r5)/16,(6+0r5)/16 fate=singular max|P|=0.000
+seed=(4+0r5)/16,(8+0r5)/16 fate=singular max|P|=0.000
+seed=(4+0r5)/16,(10+0r5)/16 fate=periodic p=136 max|P|=11.997
+seed=(4+0r5)/16,(12+0r5)/16 fate=periodic p=214 max|P|=14.716
+seed=(4+0r5)/16,(14+0r5)/16 fate=periodic p=214 max|P|=14.620
+seed=(4+0r5)/16,(16+0r5)/16 fate=periodic p=51674 max|P|=160.065
+seed=(4+0r5)/16,(18+0r5)/16 fate=periodic p=2354 max|P|=37.285
+seed=(4+0r5)/16,(20+0r5)/16 fate=singular max|P|=0.000
+seed=(4+0r5)/16,(22+0r5)/16 fate=periodic p=82 max|P|=9.108
+seed=(4+2r5)/16,(6+0r5)/16 fate=periodic p=210 max|P|=14.812
+seed=(5+1r5)/16,(5+1r5)/16 fate=periodic p=210 max|P|=14.799
+seed=(6+0r5)/16,(2+0r5)/16 fate=singular max|P|=0.000
+seed=(6+0r5)/16,(4+0r5)/16 fate=singular max|P|=0.000
+seed=(6+0r5)/16,(6+0r5)/16 fate=singular max|P|=0.000
+seed=(6+0r5)/16,(8+0r5)/16 fate=periodic p=210 max|P|=14.811
+seed=(6+0r5)/16,(10+0r5)/16 fate=periodic p=136 max|P|=12.076
+seed=(6+0r5)/16,(12+0r5)/16 fate=periodic p=136 max|P|=11.979
+seed=(6+0r5)/16,(14+0r5)/16 fate=periodic p=5414 max|P|=61.283
+seed=(6+0r5)/16,(16+0r5)/16 fate=wandering max|P|=209.458
+seed=(6+0r5)/16,(18+0r5)/16 fate=periodic p=140 max|P|=12.014
+seed=(6+0r5)/16,(20+0r5)/16 fate=periodic p=640 max|P|=23.458
+seed=(6+0r5)/16,(22+0r5)/16 fate=singular max|P|=0.000
+seed=(6+2r5)/16,(6+0r5)/16 fate=periodic p=210 max|P|=14.780
+seed=(7+1r5)/16,(5+1r5)/16 fate=periodic p=210 max|P|=14.722
+seed=(8+0r5)/16,(2+0r5)/16 fate=singular max|P|=0.000
+seed=(8+0r5)/16,(4+0r5)/16 fate=periodic p=210 max|P|=14.928
+seed=(8+0r5)/16,(6+0r5)/16 fate=periodic p=210 max|P|=14.830
+seed=(8+0r5)/16,(8+0r5)/16 fate=periodic p=210 max|P|=14.732
+seed=(8+0r5)/16,(10+0r5)/16 fate=periodic p=210 max|P|=14.635
+seed=(8+0r5)/16,(12+0r5)/16 fate=periodic p=136 max|P|=12.059
+seed=(8+0r5)/16,(14+0r5)/16 fate=periodic p=136 max|P|=11.963
+seed=(8+0r5)/16,(16+0r5)/16 fate=periodic p=78 max|P|=9.201
+seed=(8+0r5)/16,(18+0r5)/16 fate=periodic p=140 max|P|=11.930
+seed=(8+0r5)/16,(20+0r5)/16 fate=periodic p=140 max|P|=11.837
+seed=(8+0r5)/16,(22+0r5)/16 fate=wandering max|P|=208.120
+seed=(8+2r5)/16,(6+0r5)/16 fate=periodic p=210 max|P|=14.857
+seed=(9+1r5)/16,(5+1r5)/16 fate=periodic p=210 max|P|=14.749
+seed=(10+0r5)/16,(2+0r5)/16 fate=periodic p=210 max|P|=14.959
+seed=(10+0r5)/16,(4+0r5)/16 fate=periodic p=210 max|P|=14.860
+seed=(10+0r5)/16,(6+0r5)/16 fate=periodic p=210 max|P|=14.761
+seed=(10+0r5)/16,(8+0r5)/16 fate=periodic p=210 max|P|=14.663
+seed=(10+0r5)/16,(10+0r5)/16 fate=periodic p=210 max|P|=14.565
+seed=(10+0r5)/16,(12+0r5)/16 fate=periodic p=210 max|P|=14.468
+seed=(10+0r5)/16,(14+0r5)/16 fate=periodic p=78 max|P|=9.226
+seed=(10+0r5)/16,(16+0r5)/16 fate=periodic p=78 max|P|=9.130
+seed=(10+0r5)/16,(18+0r5)/16 fate=periodic p=78 max|P|=9.034
+seed=(10+0r5)/16,(20+0r5)/16 fate=wandering max|P|=162.641
+seed=(10+0r5)/16,(22+0r5)/16 fate=wandering max|P|=199.522
+seed=(10+2r5)/16,(6+0r5)/16 fate=periodic p=6 max|P|=2.615
+seed=(11+1r5)/16,(5+1r5)/16 fate=periodic p=210 max|P|=14.827
+seed=(12+0r5)/16,(2+0r5)/16 fate=periodic p=6 max|P|=2.465
+seed=(12+0r5)/16,(4+0r5)/16 fate=periodic p=210 max|P|=14.937
+seed=(12+0r5)/16,(6+0r5)/16 fate=periodic p=210 max|P|=14.839
+seed=(12+0r5)/16,(8+0r5)/16 fate=periodic p=210 max|P|=14.741
+seed=(12+0r5)/16,(10+0r5)/16 fate=periodic p=210 max|P|=14.644
+seed=(12+0r5)/16,(12+0r5)/16 fate=periodic p=136 max|P|=12.050
+seed=(12+0r5)/16,(14+0r5)/16 fate=periodic p=136 max|P|=11.954
+seed=(12+0r5)/16,(16+0r5)/16 fate=periodic p=78 max|P|=9.210
+seed=(12+0r5)/16,(18+0r5)/16 fate=periodic p=140 max|P|=11.939
+seed=(12+0r5)/16,(20+0r5)/16 fate=periodic p=140 max|P|=11.847
+seed=(12+0r5)/16,(22+0r5)/16 fate=wandering max|P|=199.521
+seed=(12+2r5)/16,(6+0r5)/16 fate=periodic p=6 max|P|=2.589
+seed=(13+1r5)/16,(5+1r5)/16 fate=periodic p=6 max|P|=2.667
+seed=(14+0r5)/16,(2+0r5)/16 fate=periodic p=6 max|P|=2.404
+seed=(14+0r5)/16,(4+0r5)/16 fate=periodic p=6 max|P|=2.516
+seed=(14+0r5)/16,(6+0r5)/16 fate=periodic p=6 max|P|=2.628
+seed=(14+0r5)/16,(8+0r5)/16 fate=periodic p=210 max|P|=14.820
+seed=(14+0r5)/16,(10+0r5)/16 fate=periodic p=136 max|P|=12.067
+seed=(14+0r5)/16,(12+0r5)/16 fate=periodic p=136 max|P|=11.970
+seed=(14+0r5)/16,(14+0r5)/16 fate=periodic p=5414 max|P|=61.275
+seed=(14+0r5)/16,(16+0r5)/16 fate=wandering max|P|=228.199
+seed=(14+0r5)/16,(18+0r5)/16 fate=periodic p=640 max|P|=23.567
+seed=(14+0r5)/16,(20+0r5)/16 fate=periodic p=640 max|P|=23.467
+seed=(14+0r5)/16,(22+0r5)/16 fate=periodic p=82 max|P|=9.184
+seed=(14+2r5)/16,(6+0r5)/16 fate=periodic p=210 max|P|=14.898
+seed=(15+1r5)/16,(5+1r5)/16 fate=periodic p=6 max|P|=2.678
+seed=(16+0r5)/16,(2+0r5)/16 fate=periodic p=6 max|P|=2.349
+seed=(16+0r5)/16,(4+0r5)/16 fate=periodic p=6 max|P|=2.462
+seed=(16+0r5)/16,(6+0r5)/16 fate=periodic p=6 max|P|=2.577
+seed=(16+0r5)/16,(8+0r5)/16 fate=periodic p=6 max|P|=2.693
+seed=(16+0r5)/16,(10+0r5)/16 fate=periodic p=214 max|P|=14.802
+seed=(16+0r5)/16,(12+0r5)/16 fate=periodic p=214 max|P|=14.707
+seed=(16+0r5)/16,(14+0r5)/16 fate=periodic p=214 max|P|=14.611
+seed=(16+0r5)/16,(16+0r5)/16 fate=wandering max|P|=209.457
+seed=(16+0r5)/16,(18+0r5)/16 fate=periodic p=2354 max|P|=37.277
+seed=(16+0r5)/16,(20+0r5)/16 fate=periodic p=82 max|P|=9.190
+seed=(16+0r5)/16,(22+0r5)/16 fate=periodic p=82 max|P|=9.098
+seed=(16+2r5)/16,(6+0r5)/16 fate=periodic p=210 max|P|=14.820
+seed=(17+1r5)/16,(5+1r5)/16 fate=periodic p=210 max|P|=14.808
+seed=(18+0r5)/16,(2+0r5)/16 fate=periodic p=6 max|P|=2.404
+seed=(18+0r5)/16,(4+0r5)/16 fate=periodic p=6 max|P|=2.516
+seed=(18+0r5)/16,(6+0r5)/16 fate=periodic p=6 max|P|=2.628
+seed=(18+0r5)/16,(8+0r5)/16 fate=periodic p=210 max|P|=14.820
+seed=(18+0r5)/16,(10+0r5)/16 fate=periodic p=136 max|P|=12.067
+seed=(18+0r5)/16,(12+0r5)/16 fate=periodic p=136 max|P|=11.970
+seed=(18+0r5)/16,(14+0r5)/16 fate=periodic p=5414 max|P|=61.275
+seed=(18+0r5)/16,(16+0r5)/16 fate=wandering max|P|=209.450
+seed=(18+0r5)/16,(18+0r5)/16 fate=periodic p=640 max|P|=23.567
+seed=(18+0r5)/16,(20+0r5)/16 fate=periodic p=640 max|P|=23.467
+seed=(18+0r5)/16,(22+0r5)/16 fate=periodic p=82 max|P|=9.184
+seed=(20+0r5)/16,(2+0r5)/16 fate=periodic p=6 max|P|=2.465
+seed=(20+0r5)/16,(4+0r5)/16 fate=periodic p=210 max|P|=14.937
+seed=(20+0r5)/16,(6+0r5)/16 fate=periodic p=210 max|P|=14.839
+seed=(20+0r5)/16,(8+0r5)/16 fate=periodic p=210 max|P|=14.741
+seed=(20+0r5)/16,(10+0r5)/16 fate=periodic p=210 max|P|=14.644
+seed=(20+0r5)/16,(12+0r5)/16 fate=periodic p=136 max|P|=12.050
+seed=(20+0r5)/16,(14+0r5)/16 fate=periodic p=136 max|P|=11.954
+seed=(20+0r5)/16,(16+0r5)/16 fate=periodic p=78 max|P|=9.210
+seed=(20+0r5)/16,(18+0r5)/16 fate=periodic p=140 max|P|=11.939
+seed=(20+0r5)/16,(20+0r5)/16 fate=periodic p=140 max|P|=11.847
+seed=(20+0r5)/16,(22+0r5)/16 fate=wandering max|P|=199.521
+seed=(22+0r5)/16,(2+0r5)/16 fate=periodic p=210 max|P|=14.959
+seed=(22+0r5)/16,(4+0r5)/16 fate=periodic p=210 max|P|=14.860
+seed=(22+0r5)/16,(6+0r5)/16 fate=periodic p=210 max|P|=14.761
+seed=(22+0r5)/16,(8+0r5)/16 fate=periodic p=210 max|P|=14.663
+seed=(22+0r5)/16,(10+0r5)/16 fate=periodic p=210 max|P|=14.565
+seed=(22+0r5)/16,(12+0r5)/16 fate=periodic p=210 max|P|=14.468
+seed=(22+0r5)/16,(14+0r5)/16 fate=periodic p=78 max|P|=9.226
+seed=(22+0r5)/16,(16+0r5)/16 fate=periodic p=78 max|P|=9.130
+seed=(22+0r5)/16,(18+0r5)/16 fate=periodic p=78 max|P|=9.034
+seed=(22+0r5)/16,(20+0r5)/16 fate=wandering max|P|=162.633
+seed=(22+0r5)/16,(22+0r5)/16 fate=wandering max|P|=199.522
+seed=(24+0r5)/16,(2+0r5)/16 fate=periodic p=8 max|P|=2.744
+seed=(24+0r5)/16,(4+0r5)/16 fate=periodic p=210 max|P|=14.928
+seed=(24+0r5)/16,(6+0r5)/16 fate=periodic p=210 max|P|=14.830
+seed=(24+0r5)/16,(8+0r5)/16 fate=periodic p=210 max|P|=14.732
+seed=(24+0r5)/16,(10+0r5)/16 fate=periodic p=210 max|P|=14.635
+seed=(24+0r5)/16,(12+0r5)/16 fate=periodic p=136 max|P|=12.059
+seed=(24+0r5)/16,(14+0r5)/16 fate=periodic p=136 max|P|=11.963
+seed=(24+0r5)/16,(16+0r5)/16 fate=periodic p=78 max|P|=9.201
+seed=(24+0r5)/16,(18+0r5)/16 fate=periodic p=140 max|P|=11.930
+seed=(24+0r5)/16,(20+0r5)/16 fate=periodic p=140 max|P|=11.837
+seed=(24+0r5)/16,(22+0r5)/16 fate=wandering max|P|=239.148
+seed=(26+0r5)/16,(2+0r5)/16 fate=periodic p=8 max|P|=2.675
+seed=(26+0r5)/16,(4+0r5)/16 fate=periodic p=8 max|P|=2.775
+seed=(26+0r5)/16,(6+0r5)/16 fate=periodic p=8 max|P|=2.878
+seed=(26+0r5)/16,(8+0r5)/16 fate=periodic p=210 max|P|=14.811
+seed=(26+0r5)/16,(10+0r5)/16 fate=periodic p=136 max|P|=12.076
+seed=(26+0r5)/16,(12+0r5)/16 fate=periodic p=136 max|P|=11.979
+seed=(26+0r5)/16,(14+0r5)/16 fate=periodic p=5414 max|P|=61.283
+seed=(26+0r5)/16,(16+0r5)/16 fate=wandering max|P|=209.457
+seed=(26+0r5)/16,(18+0r5)/16 fate=periodic p=140 max|P|=12.014
+seed=(26+0r5)/16,(20+0r5)/16 fate=periodic p=640 max|P|=23.458
+seed=(26+0r5)/16,(22+0r5)/16 fate=singular max|P|=1.741
+seed=(28+0r5)/16,(2+0r5)/16 fate=periodic p=8 max|P|=2.753
+seed=(28+0r5)/16,(4+0r5)/16 fate=periodic p=8 max|P|=2.850
+seed=(28+0r5)/16,(6+0r5)/16 fate=periodic p=8 max|P|=2.950
+seed=(28+0r5)/16,(8+0r5)/16 fate=wandering max|P|=226.500
+seed=(28+0r5)/16,(10+0r5)/16 fate=periodic p=136 max|P|=11.997
+seed=(28+0r5)/16,(12+0r5)/16 fate=periodic p=214 max|P|=14.716
+seed=(28+0r5)/16,(14+0r5)/16 fate=periodic p=214 max|P|=14.620
+seed=(28+0r5)/16,(16+0r5)/16 fate=periodic p=51674 max|P|=160.065
+seed=(28+0r5)/16,(18+0r5)/16 fate=periodic p=2354 max|P|=37.285
+seed=(28+0r5)/16,(20+0r5)/16 fate=singular max|P|=1.904
+seed=(28+0r5)/16,(22+0r5)/16 fate=periodic p=210 max|P|=14.626

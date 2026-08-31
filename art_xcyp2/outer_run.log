@@ -1,0 +1,11 @@
+[outer] 305 seeds, 100000 steps, exact lattice (1/16)Z[sqrt5]
+  step 0 alive 281 0s
+  step 20000 alive 279 28s
+  step 40000 alive 279 46s
+  step 60000 alive 279 58s
+  step 80000 alive 279 69s
+Traceback (most recent call last):
+  File "/home/user/claude-mythos-self-play/art_xcyp2/outer.py", line 169, in <module>
+    assert per and periods[s] % per == 0, (s, per, periods[s])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: (np.int64(17), 0, np.int64(3))

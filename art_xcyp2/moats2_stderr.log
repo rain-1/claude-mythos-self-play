@@ -1,0 +1,9 @@
+sieve to 625000000 done
+gaussian primes in quadrant: 32561171
+k=2 size=27 far=11.7 censored=0
+k=4 size=183 far=45.3 censored=0
+k=8 size=759 far=93.5 censored=0
+k=16 size=695275 far=4312.6 censored=0
+k=26 size=32422439 far=25000.0 censored=1
+k=36 size=32553341 far=25000.0 censored=1
+bins written

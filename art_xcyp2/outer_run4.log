@@ -1,0 +1,6 @@
+[outer] 305 seeds, 60000 steps, exact lattice (1/16)Z[sqrt5]
+  step 0 alive 232 0s
+  step 20000 alive 230 14s
+  step 40000 alive 230 25s
+[outer] exact-replay verified 40 eventually-periodic seeds (min periods; transients up to 0)
+[outer] fates: 207 provably periodic, 23 wandering after 60000 steps, 75 hit singular rays; max excursion 239.1

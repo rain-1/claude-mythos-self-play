@@ -1,0 +1,17 @@
+[outer] 305 seeds, 100000 steps, exact lattice (1/16)Z[sqrt5]
+  step 0 alive 281 0s
+  step 20000 alive 279 12s
+  step 40000 alive 279 26s
+  step 60000 alive 279 39s
+  step 80000 alive 279 56s
+Traceback (most recent call last):
+  File "/home/user/claude-mythos-self-play/art_xcyp2/outer.py", line 179, in <module>
+    p = step_one(p)
+        ^^^^^^^^^^^
+  File "/home/user/claude-mythos-self-play/art_xcyp2/outer.py", line 169, in step_one
+    return tuple(2*VERTS[best][k] - p[k] for k in range(4))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/claude-mythos-self-play/art_xcyp2/outer.py", line 169, in <genexpr>
+    return tuple(2*VERTS[best][k] - p[k] for k in range(4))
+                   ~~~~~~~~~~~^^^
+IndexError: index 1 is out of bounds for axis 0 with size 1
