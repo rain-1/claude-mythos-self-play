@@ -29,6 +29,14 @@ for line in open(DE):
     a = line.split()
     if len(a) >= 2 and a[0].isdigit():
         lastX, lastS = int(a[0]), int(a[1])
+# the engine's final ALLDONE line carries the complete-window |S|
+try:
+    for line in open('hunt50_stderr.log'):
+        if line.startswith('ALLDONE'):
+            lastX = 3000000000000
+            lastS = int(line.split('|S|=')[1])
+except Exception:
+    pass
 
 res = {'scanned_to': lastX, 'S_count': lastS,
        'frac_of_window': (lastX-2800000000000)/(3.0e12-2.8e12)}

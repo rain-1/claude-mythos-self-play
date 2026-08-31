@@ -41,12 +41,16 @@ hour owns its 4.2%. Certificates: bit-exact chain, binomial estate law to
 
 ## 3. THE WEATHER AND THE WORD — `atlas50_2560.png` (2560², Atlas piece 50)
 
-The ℤ[√2] two-squares relay walks [2.8, 3.0]×10¹², judged against
-`atlas50_precommit.md`, written before the engine started. (Verdict ledger
-baked into the piece; see `atlas50_verdict.txt`.) Fifty pieces in, the
-atlas's word — the certified gate theorem — keeps forcing every fence to
-≡ 94 (mod 144), while the weather (ch-23's moods, the sextet drought)
-remains weather.
+The ℤ[√2] two-squares relay completed [2.8, 3.0]×10¹² (74 min, 3 threads,
+|S∩window| = 25,752,272,469 — precommit band 25.7±0.4e9), judged against
+`atlas50_precommit.md`, written before the engine started. Every gate held:
+590/590 four-runs in {94,103,110,119} (mod 144), fences #14–16 all ≡ 94
+(16/16 all-time), sextet and 5-adic gates clean. The weather: a ch-25 WARM
+STREAK (3 fences in one window vs E≈0.93, two of them 1.2e9 apart), ch-23
+swinging warm again (N23 = 6 — the "cold shift" chapter is formally noise),
+the sextet drought at 3 windows (P≈0.26, a note not a shift), and 3rd-ever
+ch-14 and ch-17 fences landing within the window's first 0.3%. The word
+holds; the weather does as it pleases.
 
 ## The story (tweet-sized)
 
