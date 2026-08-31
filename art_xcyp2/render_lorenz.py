@@ -167,11 +167,13 @@ d.text((int(0.033 * SIZE), int(0.028 * SIZE)), "WHAT THE STORM KEEPS TIED",
        font=loadfont(FB, int(31 * rs)), fill=(238, 216, 165))
 y = int(0.078 * SIZE)
 for line in [
-    "the Lorenz flow's periodic skeleton: every certified closed orbit of symbol length <= 8",
-    f"{NO} orbits, close-return hunt + Newton shooting, residual < {resids.max():.0e}",
-    "hue = L/R balance (ember L-heavy, gold balanced, ice R-heavy); slate fog = one generic trajectory",
-    "mirror words have EXACTLY equal periods — the flow's (x,y,z)->(-x,-y,z) symmetry, as data",
-    f"inset: pairwise linking numbers by signed crossings — min = {int(round(off.min()))} > 0:",
+    f"the Lorenz flow's periodic skeleton: {NO} certified closed orbits, symbol length <= 8",
+    f"close-return hunt + Newton shooting, residual < {resids.max():.0e}; complete through length 5",
+    "T(LR) = 1.558652, T(LLR) = 2.305907 — Viswanath's published periods, to the digit",
+    "no one-lobe loop exists: L and R died in the subcritical Hopf at rho = 24.74",
+    "hue = L/R balance (ember L-heavy, gold balanced, ice R-heavy); slate fog = one generic path",
+    "mirror words have EXACTLY equal periods — the (x,y,z)->(-x,-y,z) symmetry, as data",
+    f"inset: pairwise linking numbers, signed crossings, 2-projection agreement — min = {int(round(off.min()))} > 0:",
     "the storm only ever braids one way (Birman-Williams: Lorenz links are positive)",
 ]:
     d.text((int(0.033 * SIZE), y), line, font=loadfont(FR, int(15.5 * rs)), fill=(168, 173, 185))

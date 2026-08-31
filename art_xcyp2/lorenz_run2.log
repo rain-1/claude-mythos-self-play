@@ -49,3 +49,71 @@
   UPO LLRRLRRR   T=6.1223 resid=7.3e-12
   UPO LLRRRLRR   T=6.1215 resid=4.0e-11
   UPO LLRRRRLR   T=6.0824 resid=7.2e-13
+  UPO LLRRRRRR   T=5.9250 resid=2.0e-12
+  UPO LRLRLRRR   T=6.1547 resid=8.7e-11
+  UPO LRLRRRRR   T=5.9973 resid=9.3e-13
+  UPO LRRRRRRR   T=5.7834 resid=2.9e-13
+[lorenz] certified orbits: 53 in 7217s
+  length 1: found 0 / 2 primitive necklaces
+  length 2: found 1 / 1 primitive necklaces
+  length 3: found 2 / 2 primitive necklaces
+  length 4: found 3 / 3 primitive necklaces
+  length 5: found 6 / 6 primitive necklaces
+  length 6: found 8 / 9 primitive necklaces
+  length 7: found 13 / 18 primitive necklaces
+  length 8: found 20 / 30 primitive necklaces
+  linking row 0/53 0s
+  linking row 1/53 0s
+  linking row 2/53 0s
+  linking row 3/53 1s
+  linking row 4/53 1s
+  linking row 5/53 1s
+  linking row 6/53 2s
+  linking row 7/53 2s
+  linking row 8/53 2s
+  linking row 9/53 2s
+  linking row 10/53 3s
+  linking row 11/53 3s
+  linking row 12/53 4s
+  linking row 13/53 4s
+  linking row 14/53 4s
+  linking row 15/53 5s
+  linking row 16/53 5s
+  linking row 17/53 5s
+  linking row 18/53 5s
+  linking row 19/53 6s
+  linking row 20/53 6s
+  linking row 21/53 6s
+  linking row 22/53 7s
+  linking row 23/53 7s
+  linking row 24/53 7s
+  linking row 25/53 8s
+  linking row 26/53 8s
+  linking row 27/53 8s
+  linking row 28/53 8s
+  linking row 29/53 9s
+  linking row 30/53 9s
+  linking row 31/53 9s
+  linking row 32/53 9s
+  linking row 33/53 10s
+  linking row 34/53 10s
+  linking row 35/53 10s
+  linking row 36/53 10s
+  linking row 37/53 10s
+  linking row 38/53 11s
+  linking row 39/53 11s
+  linking row 40/53 11s
+  linking row 41/53 11s
+  linking row 42/53 11s
+  linking row 43/53 11s
+  linking row 44/53 12s
+  linking row 45/53 12s
+  linking row 46/53 12s
+  linking row 47/53 12s
+  linking row 48/53 12s
+  linking row 49/53 12s
+  linking row 50/53 12s
+  linking row 51/53 12s
+  linking row 52/53 12s
+[lorenz] linking ints max dev 0.500; min lk = 1.0; all positive: True
+[lorenz] saved.
