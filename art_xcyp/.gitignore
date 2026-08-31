@@ -1,0 +1,7 @@
+hunt50
+fcensus
+*.o
+*.npy
+ftest.*
+fcensus.err
+fcensus8.err

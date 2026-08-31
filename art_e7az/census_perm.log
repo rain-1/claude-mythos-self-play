@@ -1,0 +1,33 @@
+[census] sieve to 1e7: 664579 primes  0s
+[census] n=1: 9 orbits, 4 perfect  0s
+[census] n=2: 54 orbits, 5 perfect  0s
+[census] n=3: 219 orbits, 3 perfect  0s
+[census] n=4: 714 orbits, 0 perfect  0s
+[census] n=5: 2001 orbits, 0 perfect  0s
+[census] n=6: 5004 orbits, 0 perfect  1s
+[census] n=7: 11439 orbits, 0 perfect  6s
+[census] perfect orbits (n<=7): ['1:2', '1:3', '1:5', '1:7', '2:11', '2:13', '2:17', '2:37', '2:79', '3:113', '3:199', '3:337']
+[census] phase-1 verdict: perfect orbits are EXACTLY the 12 known ones
+[census] n=8: 109 orbits killed, max tries 3, survivors so far []  6s
+[census] n=9: 144 orbits killed, max tries 4, survivors so far []  6s
+[census] n=10: 186 orbits killed, max tries 3, survivors so far []  6s
+[census] n=11: 242 orbits killed, max tries 4, survivors so far []  6s
+[census] n=12: 300 orbits killed, max tries 4, survivors so far []  6s
+[census] n=13: 368 orbits killed, max tries 4, survivors so far []  6s
+[census] n=14: 453 orbits killed, max tries 4, survivors so far []  6s
+[census] n=15: 540 orbits killed, max tries 3, survivors so far []  6s
+[census] n=16: 640 orbits killed, max tries 4, survivors so far []  6s
+[census] n=17: 760 orbits killed, max tries 4, survivors so far []  6s
+[census] n=18: 882 orbits killed, max tries 4, survivors so far []  6s
+[census] n=19: 1020 orbits killed, max tries 3, survivors so far ['19:19.0.0.0']  6s
+[census] n=20: 1181 orbits killed, max tries 4, survivors so far ['19:19.0.0.0']  6s
+[census] n=21: 1344 orbits killed, max tries 4, survivors so far ['19:19.0.0.0']  6s
+[census] n=22: 1526 orbits killed, max tries 3, survivors so far ['19:19.0.0.0']  6s
+[census] n=23: 1734 orbits killed, max tries 4, survivors so far ['19:19.0.0.0', '23:23.0.0.0']  6s
+[census] n=24: 1944 orbits killed, max tries 4, survivors so far ['19:19.0.0.0', '23:23.0.0.0']  6s
+[census] n=25: 2176 orbits killed, max tries 5, survivors so far ['19:19.0.0.0', '23:23.0.0.0']  7s
+[census] phase-2 survivors: ['19:19.0.0.0', '23:23.0.0.0']
+[census] VERDICT: the only permutable primes with 8..25 digits are R19 and R23
+[census] empirical prime density {1379}^n: {8: 0.1365, 10: 0.119, 12: 0.0975}
+[census] expectation ledger E[perfect non-repunit orbits]: {4: '4.39e-02', 5: '6.46e-03', 6: '3.98e-04', 7: '1.95e-05', 8: '1.83e-06', 9: '7.30e-08', 10: '2.44e-09', 11: '1.64e-10'}
+[census] wrote perm_census.json  7s
