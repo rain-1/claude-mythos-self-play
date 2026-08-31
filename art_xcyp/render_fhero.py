@@ -55,6 +55,7 @@ def Y(k):  return (y_sky0 + (y_sky1 - y_sky0) * k / KMAX) * S
 SHORE_X = X(NMAX + 0.5)
 
 img = np.zeros((S, S, 3), dtype=np.float32)
+AMPF = rs ** 0.9
 
 def splat_pts(xs_, ys_, amp, sig, col, buf=None):
     """Gaussian splats via bincount at quarter res then upsample (craft)."""
@@ -73,7 +74,7 @@ def draw_line(p0, p1, w, col, amp=1.0):
     t = np.linspace(0, 1, n)
     xs_ = p0[0] + (p1[0]-p0[0]) * t
     ys_ = p0[1] + (p1[1]-p0[1]) * t
-    splat_pts(xs_, ys_, np.full(n, amp * 1.5 / n * max(abs(p1[0]-p0[0]), abs(p1[1]-p0[1])) / 40), w, col)
+    splat_pts(xs_, ys_, np.full(n, AMPF * amp * 1.5 / n * max(abs(p1[0]-p0[0]), abs(p1[1]-p0[1])) / 40), w, col)
 
 def star(x, y, amp, sig, col):
     yy, xx = np.ogrid[max(0,int(y-6*sig)):min(S,int(y+6*sig)),
@@ -99,7 +100,7 @@ del FOG
 # ---------------- 2. achieved f(n): warm dust on the frontier
 ns_ = np.array([n for n in sorted(best) if best[n] >= 4], float)
 ks_ = np.array([best[n] for n in sorted(best) if best[n] >= 4], float)
-splat_pts(Xv(ns_), Y(ks_), np.full(len(ns_), 0.030), 1.5 * SS * rs, (1.0, 0.72, 0.38))
+splat_pts(Xv(ns_), Y(ks_), np.full(len(ns_), 0.030 * AMPF), 1.5 * SS * rs, (1.0, 0.72, 0.38))
 
 # running-max staircase (thin gold thread)
 runmax = []
@@ -107,13 +108,13 @@ run = 0
 for n in range(NMAX + 1):
     run = max(run, best[n]); runmax.append(run)
 pts_x = Xv(np.arange(NMAX + 1).astype(float)); pts_y = Y(np.array(runmax, float))
-splat_pts(pts_x, pts_y, np.full(len(pts_x), 0.012), 1.1 * SS * rs, (1.0, 0.85, 0.45))
+splat_pts(pts_x, pts_y, np.full(len(pts_x), 0.012 * AMPF), 1.1 * SS * rs, (1.0, 0.85, 0.45))
 
 # ---------------- 3. the parity ceiling: a line that leaves the frame
 nn_ = np.concatenate([np.linspace(0, 8, 400), np.geomspace(8, 400, 2600)])
 ky = 2 + np.sqrt(8 * nn_ + 4)
 m = ky <= KMAX + 2
-splat_pts(Xv(nn_[m]), Y(ky[m]), np.full(m.sum(), 0.030), 1.3 * SS * rs, (0.95, 0.80, 0.42))
+splat_pts(Xv(nn_[m]), Y(ky[m]), np.full(m.sum(), 0.030 * AMPF), 1.3 * SS * rs, (0.95, 0.80, 0.42))
 # tight points blaze ON the line
 for n, k in [(0, 4), (4, 8)]:
     star(X(n), Y(k), 2.2, 3.6 * SS * rs, (1.15, 0.95, 0.55))
@@ -126,7 +127,7 @@ for n, k in RECS:
 # ---------------- 5. the void n=6: ice needle
 xv = X(VOID)
 vv = np.linspace(Y(1.0), Y(14.0), 500)
-splat_pts(np.full(500, xv), vv, np.full(500, 0.050), 1.5 * SS * rs, (0.45, 0.85, 1.05))
+splat_pts(np.full(500, xv), vv, np.full(500, 0.050 * AMPF), 1.5 * SS * rs, (0.45, 0.85, 1.05))
 star(xv, Y(1.0), 1.5, 2.8 * SS * rs, (0.5, 0.9, 1.15))
 
 # ---------------- 6. stragglers f=3: crimson embers
@@ -136,11 +137,13 @@ for n in STRAG:
 # ---------------- 7. shoreline + the dark sea + beacon
 xs_line = np.full(500, SHORE_X)
 ys_line = np.linspace(Y(KMAX), Y(0), 500)
-splat_pts(xs_line, ys_line, np.full(500, 0.008), 2.2 * SS * rs, (0.55, 0.65, 0.75))
+splat_pts(xs_line, ys_line, np.full(500, 0.008 * AMPF), 2.2 * SS * rs, (0.55, 0.65, 0.75))
 # sea shading: subtle cold gradient right of shore
 gx = np.arange(S, dtype=np.float32)[None, :]
 sea = np.clip((gx - SHORE_X) / (S - SHORE_X), 0, 1) ** 1.5
-img[..., 2] += sea * 0.028; img[..., 1] += sea * 0.012
+gyv = np.arange(S, dtype=np.float32)[:, None]
+seamask = np.clip((0.74 * S - gyv) / (0.04 * S), 0, 1)
+img[..., 2] += sea * seamask * 0.028; img[..., 1] += sea * seamask * 0.012
 star(X(8660), Y(48), 1.6, 3.6 * SS * rs, (0.8, 1.0, 1.1))
 star(X(8660), Y(48), 0.7, 1.5 * SS * rs, (1.0, 1.15, 1.2))
 # the f>=64 beacon leaves the frame at the top: half-cropped star at the edge
@@ -185,13 +188,13 @@ for n, k in RECS:
     ax = dx + r * UPX * np.cos(th)
     ay = BASE_Y - r * UPX * np.sin(th)
     mvis = ay > 0.70 * S
-    splat_pts(ax[mvis], ay[mvis], np.full(mvis.sum(), 0.035), 1.4 * SS * rs, (0.75, 0.78, 0.85))
+    splat_pts(ax[mvis], ay[mvis], np.full(mvis.sum(), 0.030 * AMPF), 1.4 * SS * rs, (0.75, 0.78, 0.85))
     # interior lattice points (visible upper half only): soft slate dots
     ix = np.array([dx + p[0] * UPX for p in inside])
     iy = np.array([BASE_Y + p[1] * UPX for p in inside])
     mm = iy <= BASE_Y  # upper half (y grows downward)
     if mm.any():
-        splat_pts(ix[mm], iy[mm], np.full(mm.sum(), 0.11), 1.0 * SS * rs, (0.48, 0.55, 0.68))
+        splat_pts(ix[mm], iy[mm], np.full(mm.sum(), 0.09 * AMPF), 1.0 * SS * rs, (0.48, 0.55, 0.68))
     # rim beads: gold
     for p in on:
         by = BASE_Y + p[1] * UPX
@@ -204,7 +207,7 @@ for n, k in RECS:
 
 # baseline
 splat_pts(np.linspace(0.02 * S, 0.98 * S, 2000), np.full(2000, BASE_Y),
-          np.full(2000, 0.010), 1.5 * SS * rs, (0.5, 0.52, 0.6))
+          np.full(2000, 0.010 * AMPF), 1.5 * SS * rs, (0.5, 0.52, 0.6))
 
 # ---------------- tone map + bloom
 hot = np.clip(img.sum(2) - 2.2, 0, None)
@@ -226,32 +229,35 @@ def loadfont(path, sz):
 FB = "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"
 FR = "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf"
 d = ImageDraw.Draw(im)
-tx = int(0.315 * SIZE); ty = int(0.050 * SIZE)
-d.text((tx, ty), "THE CEILING TOUCHED TWICE", font=loadfont(FB, int(33 * rs)),
-       fill=(238, 216, 165)); ty += int(56 * rs)
+tx = int(0.050 * SIZE); ty = int(0.048 * SIZE)
+d.text((tx, ty), "THE CEILING TOUCHED TWICE", font=loadfont(FB, int(31 * rs)),
+       fill=(238, 216, 165)); ty += int(52 * rs)
 for line in [
-    "f(n) = the most lattice points a circle can hold on its rim with exactly n inside",
-    "every circle through >= 3 lattice points, exact census to n = 8192  (MO 514772)",
-    "the parity ceiling  f <= 2 + sqrt(8n+4)  is met at n = 0 and n = 4 — then never again",
-    "records ride the split-prime tower 4r^2 = 2, 10, 50, 130, 650, 2210, 8450",
-    "f = 4, 8, 12, 16, 24, 32, 36 — every record center is half-integer",
-    "the true growth is n^(O(1)/loglog n), far beneath the permission",
-    "n = 6 is the unique void: no circle through 3 lattice points holds exactly 6 inside",
-    "14 stragglers make do with f = 3; the last is n = 883",
-    "beyond the shore: f(8660) >= 48 and f(50304) >= 64 — known, not certain",
+    "f(n) = the most lattice points on a circle's rim",
+    "with exactly n lattice points inside  (MO 514772)",
+    "exact census of every >= 3-point circle to n = 8192",
+    "the ceiling f <= 2 + sqrt(8n+4) is met at n = 0 and 4,",
+    "then never again: records ride the split-prime tower",
+    "4r^2 = 2, 10, 50, 130, 650, 2210, 8450 — all centers",
+    "half-integer; truth grows as n^(O(1)/loglog n)",
+    "n = 6: the unique void (no 3-point circle holds it)",
+    "f = 3 serves 14 stragglers; the last is n = 883",
+    "past the shore: f(8660) >= 48, f(50304) >= 64 —",
+    "known, not yet certain",
 ]:
-    d.text((tx, ty), line, font=loadfont(FR, int(15.5 * rs)), fill=(165, 170, 182))
-    ty += int(27.5 * rs)
+    d.text((tx, ty), line, font=loadfont(FR, int(15 * rs)), fill=(168, 173, 185))
+    ty += int(26 * rs)
 
 fm = loadfont(FR, int(14.5 * rs))
+fmL = loadfont(FR, int(13.0 * rs))
+d.text((int(0.012 * SIZE), int(0.9865 * SIZE)),
+       "n=0 f=4 · n=4 f=8 · n=32 f=12 · n=96 f=16",
+       font=fmL, fill=(130, 136, 150))
 for i, (dx, n, k) in enumerate(dome_font_pts):
+    if i < 4: continue
     lab = f"n={n}  f={k}"
-    w = d.textlength(lab, font=fm)
-    if i < 4:
-        xx = (0.012 + i * 0.093) * SIZE
-    else:
-        xx = dx / SS - w / 2
-    d.text((xx, int(0.9855 * SIZE)), lab, font=fm, fill=(130, 136, 150))
+    w = d.textlength(lab, font=fmL)
+    d.text((dx / SS - w / 2, int(0.9865 * SIZE)), lab, font=fmL, fill=(130, 136, 150))
 # axis hints
 d.text((int(0.012 * SIZE), Y(KMAX) / SS / (S / SIZE)), "", font=fm)
 for kk in (8, 16, 24, 32, 48):
@@ -260,7 +266,7 @@ for nn in (10, 100, 1000, 8192, 50000):
     xx = int(X(nn) / SS)
     d.text((xx - int(10 * rs), int(0.712 * SIZE)), f"{nn}", font=fm, fill=(95, 100, 112))
 d.text((int(0.008 * SIZE), int(0.712 * SIZE)), "n (log) ->", font=fm, fill=(95, 100, 112))
-d.text((int(X(8660) / SS) - int(46 * rs), int(Y(48) / SS) - int(26 * rs)),
+d.text((int(X(8660) / SS) + int(14 * rs), int(Y(48) / SS) - int(8 * rs)),
        "f >= 48", font=fm, fill=(150, 185, 200))
 d.text((int(X(0) / SS) + int(14 * rs), int(Y(4) / SS) - int(30 * rs)), "n=0", font=fm, fill=(190, 175, 130))
 d.text((int(X(4) / SS) + int(14 * rs), int(Y(8) / SS) - int(30 * rs)), "n=4", font=fm, fill=(190, 175, 130))

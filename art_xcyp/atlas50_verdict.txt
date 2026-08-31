@@ -1,0 +1,5 @@
+VERDICT (52.8% of window scanned, judged vs atlas50_precommit.md): every gate held — 4-run classes 312/312 in {94,103,110,119}, fences 3/3 ≡ 94, sextet gate ✓, 5-adic 1/1 all ≡ 0 (mod 25).
+ch-25: N25 = 3: warm streak (≥3σ over E≈0.93) — noted for piece 51.  r45|94 5th point = 5.00e-02 (series 1.18e-2 / 2.4e-2 / 1.22e-2 / 1.04e-2; scatter, no trend).
+ch-23: N23 = 4: base weather CONFIRMED; the cold-shift chapter is closed.   ch-24: N24 = 18 (band 34–56).
+fertile share 0.192 (band 0.17±0.04)  ·  |S∩window| = 13,594,577,837  ·  sextets: 0 — drought now 3 windows (9e11); Poisson P(0)≈0.26 at E≈0.45/window: a note, not a shift.
+rare-channel firsts in-window: ch-14 fence 2802188708036 · ch-17 fence 2805531406958
