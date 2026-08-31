@@ -1,3 +1,0 @@
-pairs=499500  gcd=x pairs (both odd)=124750  violations=0
-CERTIFIED: for all 1<=m<n<=1000, gcd(H_m,H_n) = x^[m,n both odd].
-No nonzero algebraic number is a root of two distinct H_k, k<=1000.
