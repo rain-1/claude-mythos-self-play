@@ -13,3 +13,18 @@
   UPO LRLRR      T=3.8695 resid=1.8e-12
   UPO LRRRR      T=3.7256 resid=1.3e-13
   UPO LLLLLR     T=4.4178 resid=2.3e-13
+  UPO LLLLRR     T=4.5341 resid=5.4e-13
+  UPO LLLRLR     T=4.5938 resid=5.2e-13
+  UPO LLLRRR     T=4.5663 resid=6.6e-13
+  UPO LLRLRR     T=4.6371 resid=7.8e-12
+  UPO LLRRRR     T=4.5341 resid=8.3e-12
+  UPO LRLRRR     T=4.5938 resid=3.4e-13
+  UPO LRRRRR     T=4.4178 resid=4.9e-13
+  UPO LLLLLRR    T=5.2342 resid=7.1e-11
+  UPO LLLLRLR    T=5.3012 resid=4.6e-13
+  UPO LLLLRRR    T=5.2863 resid=6.2e-13
+  UPO LLLRLLR    T=5.3309 resid=7.1e-11
+  UPO LLLRRRR    T=5.2863 resid=7.4e-11
+  UPO LLRLLRR    T=5.3942 resid=2.6e-12
+  UPO LLRLRLR    T=5.4291 resid=9.2e-13
+  UPO LLRRLRR    T=5.3942 resid=3.5e-12
