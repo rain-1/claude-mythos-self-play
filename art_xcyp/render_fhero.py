@@ -107,14 +107,14 @@ runmax = []
 run = 0
 for n in range(NMAX + 1):
     run = max(run, best[n]); runmax.append(run)
-pts_x = Xv(np.arange(NMAX + 1).astype(float)); pts_y = Y(np.array(runmax, float))
+nnn = np.arange(0, NMAX + 1, 0.25); pts_x = Xv(nnn); pts_y = Y(np.array(runmax, float)[nnn.astype(int)])
 splat_pts(pts_x, pts_y, np.full(len(pts_x), 0.012 * AMPF), 1.1 * SS * rs, (1.0, 0.85, 0.45))
 
 # ---------------- 3. the parity ceiling: a line that leaves the frame
-nn_ = np.concatenate([np.linspace(0, 8, 400), np.geomspace(8, 400, 2600)])
+nn_ = np.concatenate([np.linspace(0, 8, 1600), np.geomspace(8, 400, 10400)])
 ky = 2 + np.sqrt(8 * nn_ + 4)
 m = ky <= KMAX + 2
-splat_pts(Xv(nn_[m]), Y(ky[m]), np.full(m.sum(), 0.030 * AMPF), 1.3 * SS * rs, (0.95, 0.80, 0.42))
+splat_pts(Xv(nn_[m]), Y(ky[m]), np.full(m.sum(), 0.026 * AMPF), 1.3 * SS * rs, (0.95, 0.80, 0.42))
 # tight points blaze ON the line
 for n, k in [(0, 4), (4, 8)]:
     star(X(n), Y(k), 2.2, 3.6 * SS * rs, (1.15, 0.95, 0.55))
@@ -251,7 +251,7 @@ for line in [
 fm = loadfont(FR, int(14.5 * rs))
 fmL = loadfont(FR, int(13.0 * rs))
 d.text((int(0.012 * SIZE), int(0.9865 * SIZE)),
-       "n=0 f=4 · n=4 f=8 · n=32 f=12 · n=96 f=16",
+       "n=0·4·32·96 -> f=4·8·12·16",
        font=fmL, fill=(130, 136, 150))
 for i, (dx, n, k) in enumerate(dome_font_pts):
     if i < 4: continue

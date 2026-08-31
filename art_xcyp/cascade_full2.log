@@ -1,0 +1,16 @@
+[cascade] richest hour t=0.927 owns 11.68%  |  poorest t=0.032 owns 0.6446%  (width 4.2%)
+  p=0.3 level 8: frontier 256 splat 0 0s
+  p=0.3 level 16: frontier 63,019 splat 2,381 1s
+  p=0.3 level 24: frontier 1,271,626 splat 2,823,411 5s
+  p=0.3 level 32: frontier 41,449 splat 9,810,355 10s
+  p=0.3 level 40: frontier 41 splat 10,010,316 10s
+[cascade] p=0.3 window 'rich' t=0.927: measured estate 11.6672% (predicted 11.6813%)
+[cascade] p=0.3 window 'poor' t=0.032: measured estate 0.6479% (predicted 0.6446%)
+  p=0.5 level 8: frontier 256 splat 0 10s
+  p=0.5 level 16: frontier 65,536 splat 0 10s
+[cascade] p=0.5 window 'rich' t=0.927: measured estate 4.2000% (predicted 4.2000%)
+[cascade] p=0.5 window 'poor' t=0.032: measured estate 4.2001% (predicted 4.2000%)
+[tone] spread=8.46 whe=0.72
+[tone] spread=1.99 whe=0.25
+[cascade] wrote cascade_2560.png in 59s
+[cascade] report: {'cert_p0.3': 'binomial law depth 13 max rel err 2.46e-13', 'share_0.3_rich': (np.float64(0.11667236144995322), 0.11681337892402188), 'share_0.3_poor': (np.float64(0.006478664796594699), 0.006445962760848488), 'cert_p0.5': 'binomial law depth 13 max rel err 1.01e-13', 'share_0.5_rich': (np.float64(0.04199981689453067), 0.042), 'share_0.5_poor': (np.float64(0.042000770568847386), 0.042)}
