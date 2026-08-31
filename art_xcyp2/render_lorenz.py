@@ -35,7 +35,7 @@ e1 = np.cross(up, v); e1 /= np.linalg.norm(e1)
 e2 = np.cross(v, e1)
 CENTER = np.array([0.0, 0.0, 25.5])
 SC = 0.0205 * S
-CX, CY = 0.5 * S, 0.520 * S
+CX, CY = 0.5 * S, 0.545 * S
 
 def project(P):
     Q = P - CENTER[None, :]
@@ -92,8 +92,8 @@ del Hf, Cf
 def word_color(w):
     fR = w.count('R') / len(w)
     # ember (fR=0) -> gold (0.5) -> ice (1)
-    ember = np.array([1.10, 0.34, 0.20]); gold = np.array([1.25, 0.98, 0.42])
-    ice = np.array([0.42, 0.80, 1.20])
+    ember = np.array([1.15, 0.30, 0.14]); gold = np.array([1.10, 0.74, 0.26])
+    ice = np.array([0.30, 0.65, 1.25])
     if fR <= 0.5:
         t = fR * 2
         return ember * (1 - t) + gold * t
@@ -102,18 +102,26 @@ def word_color(w):
 
 Hs = np.zeros((S, S), np.float32)
 Cs = [np.zeros((S, S), np.float32) for _ in range(3)]
+Hmax = np.zeros((S, S), np.float32)
+Cwin = np.zeros((S, S, 3), np.float32)
 for i, (w, P) in enumerate(zip(words, paths)):
     col = word_color(w).astype(np.float32)
     H, C = splat_path(P, lambda R, dn, c=col: np.broadcast_to(c[None, :], (len(R), 3)),
                       0.55, 1.0 * SS * rs)
+    win = H > Hmax
+    Hmax = np.where(win, H, Hmax)
+    for ch in range(3):
+        Cwin[..., ch] = np.where(win, col[ch], Cwin[..., ch])
     Hs += H
     for ch in range(3):
         Cs[ch] += C[ch]
 Hn = Hs / max(np.percentile(Hs[Hs > 0], 98.0), 1e-9)
-tone = 1 - np.exp(-2.6 * np.power(Hn, 0.60))
+tone = 1 - np.exp(-1.9 * np.power(Hn, 0.66))
 dsafe = np.maximum(Hs, 1e-9)
+meanC = np.stack([Cs[ch] / dsafe for ch in range(3)], axis=-1)
+huemix = 0.62 * Cwin + 0.38 * meanC          # winner-take-most keeps knot identity
 for ch in range(3):
-    img[..., ch] += tone * (Cs[ch] / dsafe) * 1.25
+    img[..., ch] += tone * huemix[..., ch] * 1.25
 
 # fixed points C+- as stars
 for sx in (1, -1):
@@ -137,8 +145,8 @@ for i in range(NO):
         if i == j:
             col = (0.10, 0.11, 0.14)
         else:
-            t = val / max(mx, 1)
-            col = (0.25 + 1.0 * t, 0.18 + 0.62 * t, 0.10 + 0.20 * t)
+            t = (math.log2(1 + val) / math.log2(1 + mx)) ** 1.5
+            col = (0.05 + 1.35 * t, 0.03 + 0.85 * t, 0.02 + 0.28 * t)
         img[y0:y0 + TS - 1, x0:x0 + TS - 1, 0] += col[0] * 0.85
         img[y0:y0 + TS - 1, x0:x0 + TS - 1, 1] += col[1] * 0.85
         img[y0:y0 + TS - 1, x0:x0 + TS - 1, 2] += col[2] * 0.85

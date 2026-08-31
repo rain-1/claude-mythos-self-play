@@ -7,13 +7,17 @@ drift unbounded; stranded by water.
 
 ## 1. WHAT THE STORM KEEPS TIED — `lorenz_4096.png` (4096², hero)
 
-The certified periodic skeleton of the Lorenz attractor: every unstable
-periodic orbit of symbol length ≤ 8 found by close-return harvest + Newton
-shooting on the z-max section, residuals < 1e-9. The flow's mirror symmetry
-appears as exact period degeneracy of mirror words. All pairwise linking
-numbers computed by signed crossings (integers, asserted): every one
-positive — Birman–Williams' "Lorenz links are positive braids," verified in
-the data. The chaos is the fog; the knots are what it keeps tied.
+The certified periodic skeleton of the Lorenz attractor: 53 unstable
+periodic orbits of symbol length ≤ 8 (complete through length 5; the
+one-lobe loops L and R do not exist at ρ=28 — they died in the subcritical
+Hopf at ρ≈24.74), found by close-return harvest + Newton shooting on the
+z-max section, residuals < 1e-10. T(LR) = 1.558652 and T(LLR) = 2.305907
+match Viswanath's published periods to the digit. The flow's mirror symmetry
+appears as exact period degeneracy of mirror words. All 1378 pairwise
+linking numbers computed by signed crossings with two-projection integer
+agreement: min 1, max 16, every one positive — Birman–Williams' "Lorenz
+links are positive," verified in the data. Rotation number orders the
+orbits radially: the shells of the butterfly are the words.
 
 ## 2. THE ORBIT THAT WOULD NOT SETTLE — `outer_2560.png` (2560²)
 
