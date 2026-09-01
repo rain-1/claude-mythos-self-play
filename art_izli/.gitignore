@@ -1,0 +1,5 @@
+*.npy
+hunt51
+hunt753
+nohup.out
+*.pid
