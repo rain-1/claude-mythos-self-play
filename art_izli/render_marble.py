@@ -94,6 +94,14 @@ for bi, pig in enumerate(BANDS):
     # stretching-based darkening: pigment thins where the flow stretched it
     wc.wash(dens, pig, granulate=0.10)
 
+# thin accent pinstripes (finer period): the roll-up winds these into the
+# classic tightly-layered marbled curl near the core
+for period, pig, amp2, phase in ((0.115, 'rose', 0.30, 0.02),
+                                 (0.157, 'periwinkle', 0.22, 0.06)):
+    fr = np.mod(y + phase, period) / period
+    stripe = np.clip(1 - np.abs(fr - 0.5) / 0.10, 0, 1).astype(np.float32)
+    wc.wash(amp2 * stripe, pig, granulate=0.08)
+
 # ---- the sheet itself, faint graphite filament ------------------------------
 sx, sy = sheets[-1]
 keep = np.abs(sy) < YV * 0.98

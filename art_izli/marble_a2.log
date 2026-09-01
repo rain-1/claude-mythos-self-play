@@ -1,1 +1,10 @@
   step 0/496 ymax=0.050 [1s]
+  step 60/496 ymax=0.070 [66s]
+  step 120/496 ymax=0.097 [127s]
+  step 180/496 ymax=0.136 [188s]
+  step 240/496 ymax=0.189 [249s]
+  step 300/496 ymax=0.263 [310s]
+  step 360/496 ymax=0.361 [371s]
+  step 420/496 ymax=0.477 [432s]
+  step 480/496 ymax=0.593 [491s]
+meta: {'N': 2200, 'delta': 0.1, 'dt': 0.0125, 'T': 6.2, 'amp': 0.05, 'grid': 320, 'yspan': 2.4, 'ksave': 8, 'centroid_y_drift': 0.0, 'ymax': 0.6221316340799061}
