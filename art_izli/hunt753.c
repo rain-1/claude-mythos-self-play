@@ -76,7 +76,6 @@ int main(int argc, char **argv){
         int xm2 = (int)(x & (M2-1));
         int k1 = (int)(((1 - 2LL*xm1*xm1*xm1) % M1 + 5LL*M1) % M1);
         int k2 = (int)((1 - 2LL*xm2*xm2*xm2) & (M2-1));
-        int c1 = (int)((xm1 * (long long)((x % M1 + M1) % M1)) % M1); /* placeholder */
         for (long long y = x; y <= B; y++){
             int ym1 = (int)((y % M1 + M1) % M1);
             int ym2 = (int)(y & (M2-1));
@@ -90,7 +89,6 @@ int main(int argc, char **argv){
             if (check_exact(x, y)) hits++;
         }
     }
-    (void)c1;
     printf("DONE B=%lld survivors=%lld solutions=%lld\n", B, survivors, hits);
     return 0;
 }

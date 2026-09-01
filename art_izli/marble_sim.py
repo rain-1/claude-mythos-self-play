@@ -32,8 +32,8 @@ def velocity(z_eval_x, z_eval_y, xv, yv, gam, delta2):
         u[e0:e0 + EB] = uu; v[e0:e0 + EB] = vv
     return u, v
 
-def run(N=2200, delta=0.10, dt=0.0125, T=3.6, amp=0.02, grid=320,
-        yspan=2.4, ksave=5, tag='a'):
+def run(N=2200, delta=0.10, dt=0.0125, T=5.0, amp=0.05, grid=320,
+        yspan=2.4, ksave=7, tag='a'):
     t0 = time.time()
     s = np.linspace(0, 2 * np.pi, N, endpoint=False)
     xv = s + amp * np.sin(s)      # slight clustering with the perturbation
@@ -48,7 +48,14 @@ def run(N=2200, delta=0.10, dt=0.0125, T=3.6, amp=0.02, grid=320,
     sheet_snaps = []
     for k in range(nst + 1):
         if k % ksave == 0:
-            u, v = velocity(GX.ravel(), GY.ravel(), xv, yv, gam, delta2)
+            # grid frames: every-3rd vortex at 3x circulation (blob-smoothed
+            # far field; error negligible on the grid), float32
+            u, v = velocity(GX.ravel().astype(np.float32),
+                            GY.ravel().astype(np.float32),
+                            xv[::3].astype(np.float32),
+                            yv[::3].astype(np.float32),
+                            (3 * gam[::3]).astype(np.float32),
+                            np.float32(delta2))
             frames.append(np.stack([u.reshape(grid, grid),
                                     v.reshape(grid, grid)]).astype(np.float32))
             sheet_snaps.append(np.stack([xv, yv]).astype(np.float32))

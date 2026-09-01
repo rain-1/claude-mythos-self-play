@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
-"""Atlas 50 verdict per atlas50_precommit.md (rules written BEFORE the scan).
-Reads atlas50_results.json; writes atlas50_verdict.json / .txt"""
+"""Atlas 50 verdict per atlas51_precommit.md (rules written BEFORE the scan).
+Reads atlas51_results.json; writes atlas51_verdict.json / .txt"""
 import json
 
-R = json.load(open("atlas50_results.json"))
+R = json.load(open("atlas51_results.json"))
 frac = R["frac_of_window"]
 led = []
 
@@ -16,13 +16,13 @@ gate_line = (f"every gate held — 4-run classes {g['count']-viol}/{g['count']} 
              f"5-adic {g['mod25_zero']}/{g['mod5_zero']} all ≡ 0 (mod 25).")
 if viol or not R["fences25"]["all_94"] or not R["sextets"]["gate_ok"]:
     gate_line = "GATE VIOLATION — see results json; treat as engine bug until proven (precommit rule)."
-led.append(f"VERDICT ({frac*100:.1f}% of window scanned, judged vs atlas50_precommit.md): {gate_line}")
+led.append(f"VERDICT ({frac*100:.1f}% of window scanned, judged vs atlas51_precommit.md): {gate_line}")
 
 n25 = len(R["fences25"]["starts"])
 if n25 <= 2:
     s25 = f"ch-25: N25 = {n25}: long-run band (E≈0.93·{frac:.2f}); the count is the report."
 else:
-    s25 = f"ch-25: N25 = {n25}: warm streak (≥3σ over E≈0.93) — noted for piece 51."
+    s25 = f"ch-25: N25 = {n25}: warm streak (≥3σ over E≈0.93) — noted for piece 52."
 r45f = R["r45_25_fertile"]
 series = "1.18e-2 / 2.4e-2 / 1.22e-2 / 1.04e-2"
 if r45f is not None:
@@ -55,6 +55,6 @@ if rare:
                " · ".join(f.replace("FIRST l=5 ", "ch-").replace(" start=", " fence ")
                           .replace("g=", "") for f in rare))
 
-json.dump({"ledger": led}, open("atlas50_verdict.json", "w"))
-open("atlas50_verdict.txt", "w").write("\n".join(led) + "\n")
+json.dump({"ledger": led}, open("atlas51_verdict.json", "w"))
+open("atlas51_verdict.txt", "w").write("\n".join(led) + "\n")
 print("\n".join(led))
