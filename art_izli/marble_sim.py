@@ -32,8 +32,8 @@ def velocity(z_eval_x, z_eval_y, xv, yv, gam, delta2):
         u[e0:e0 + EB] = uu; v[e0:e0 + EB] = vv
     return u, v
 
-def run(N=2200, delta=0.10, dt=0.0125, T=5.0, amp=0.05, grid=320,
-        yspan=2.4, ksave=7, tag='a'):
+def run(N=2200, delta=0.10, dt=0.0125, T=6.2, amp=0.05, grid=320,
+        yspan=2.4, ksave=8, tag='a'):
     t0 = time.time()
     s = np.linspace(0, 2 * np.pi, N, endpoint=False)
     xv = s + amp * np.sin(s)      # slight clustering with the perturbation

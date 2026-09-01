@@ -16,6 +16,7 @@ SS = 2
 FINAL = int(sys.argv[1]) if len(sys.argv) > 1 else 900
 W = H = FINAL * SS
 data = json.load(open('poncelet_data.json'))
+AMPSC = (FINAL / 900) ** 0.6   # overlap-fog compensation at size jumps
 
 wc = Watercolor(H, W, seed=21)
 
@@ -47,7 +48,7 @@ hero_c = (0.5 * W, 0.375 * H)
 hero_R = 0.315 * W
 draw_family(hero_c[0], hero_c[1], hero_R, data['hero'],
             ['periwinkle', 'lilac', 'rose', 'lilac'],
-            2.2 * SS, 0.085, 0.35)
+            2.2 * SS, 0.085 * AMPSC, 0.35 * AMPSC)
 # warm underwash of the TRUE annulus (outside the offset inner circle)
 yy_, xx_ = np.mgrid[0:H, 0:W]
 rr_ = np.hypot(xx_ - hero_c[0], yy_ - hero_c[1]) / hero_R
@@ -63,7 +64,7 @@ med_R = 0.085 * W
 pigsets = [['sky', 'seafoam'], ['peach', 'butter'], ['sage', 'seafoam'], ['lilac', 'rose']]
 for entry, (fx, fy), pigs in zip(data['medallions'], med_pos, pigsets):
     entry = dict(entry, orbits=entry['orbits'][::2])
-    draw_family(fx * W, fy * H, med_R, entry, pigs, 1.5 * SS, 0.16, 0.3)
+    draw_family(fx * W, fy * H, med_R, entry, pigs, 1.5 * SS, 0.16 * AMPSC, 0.3 * AMPSC)
 
 # ---- parameter-triangle wash ------------------------------------------------
 G = np.load('poncelet_rho.npy')

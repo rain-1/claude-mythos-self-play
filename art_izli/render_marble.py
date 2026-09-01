@@ -67,8 +67,13 @@ def uncomb(x, y, teeth, A, lam):
         y = y - A * lam * lam / (lam * lam + dx * dx)
     return y
 
-y = uncomb(x, y, np.linspace(0, 2 * np.pi, 9, endpoint=False), 0.22, 0.24)
-y = uncomb(x, y, np.linspace(0.35, 2 * np.pi + 0.35, 27, endpoint=False), -0.06, 0.07)
+rngc = np.random.default_rng(5)
+teeth1 = np.linspace(0, 2 * np.pi, 9, endpoint=False) + rngc.normal(0, 0.05, 9)
+y = uncomb(x, y, teeth1, 0.22, 0.24)
+teeth2 = np.linspace(0.35, 2 * np.pi + 0.35, 27, endpoint=False) + rngc.normal(0, 0.03, 27)
+amps2 = -0.06 * (1 + 0.35 * rngc.standard_normal(27))
+for c, a2 in zip(teeth2, amps2):
+    y = uncomb(x, y, [c], a2, 0.09)
 
 # ---- pigment bands ----------------------------------------------------------
 BANDS = ['sky', 'rose', 'butter', 'seafoam', 'lilac', 'peach', 'periwinkle']
