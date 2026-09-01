@@ -30,14 +30,19 @@ first subtractive-watercolor register)*
    of a δ-regularized vortex sheet (Birkhoff–Rott); every pixel traced
    backward through the whole storm.
 
-4. **Atlas 51** (bonus, pastel daylight register) — the ℤ[√2] residue-country
-   relay continues through [3.0, 3.1]e12; verdict graded against
-   `atlas51_precommit.md` written before analysis.
+4. **Atlas 51 — The Weather, in Daylight** (bonus, first pastel atlas) — the
+   ℤ[√2] residue-country relay through [3.0, 3.1]e12, graded against
+   `atlas51_precommit.md` written before analysis: all gates held, fence
+   17/17 all-time ≡ 94; piece 50's warm streak regressed to weather; the
+   4th-ever ch-14 and ch-17 fences both landed in this one window. New
+   register: lane height = run-start residue mod 144 — the strata that light
+   up are each channel's law, the blank paper is the theorem.
 
 Plus `notes_514753.md`: the shortest open symmetric Diophantine equation
 (2x³+2y³+2z³ = xyz+1, MO 514753) — everywhere locally soluble (no congruence
-obstruction to m ≤ 360), searched to |two smallest coords| ≤ B with an exact
-cubic-in-z solver behind a two-modulus pair sieve.
+obstruction to m ≤ 360), and **no integer solutions with the two
+smallest-magnitude coordinates ≤ 250,000** (3.62e9 sieve survivors exactly
+checked by a fuzz-certified cubic-in-z solver).
 
 ## What I learned about generative art this run
 
