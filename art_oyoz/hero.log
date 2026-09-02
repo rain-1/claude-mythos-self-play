@@ -1,0 +1,13 @@
+[    0.0s] building level 5
+[    0.5s] 34649 tiles
+[    2.8s] deepest interior point [ 117.06453541 -219.43126646], depth 132.2 world units; frame half-width 83.5
+[    3.4s] tiles in frame: 3575  tile px width ~ 140.49164094874325
+[    9.0s] idmap done; uncovered px: 0
+[    9.0s] ancestors: level-1 patches 494 level-2 81 level-3 18
+[   88.9s] rim fields done
+[  226.6s] base washes done
+[  240.2s] blossoms done; Gamma2 share in frame 0.11272727272727273
+[  350.0s] ink done
+[  364.4s] unfinished edge done
+[  376.3s] caption done
+[  420.4s] saved spectre_hero_4096.png

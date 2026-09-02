@@ -1,0 +1,5 @@
+octagon_test*.json
+__pycache__/
+*_proto.png
+hero_view.png
+hero_crop.png
