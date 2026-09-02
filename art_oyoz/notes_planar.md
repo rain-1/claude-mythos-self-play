@@ -38,7 +38,8 @@ sieve at N = 100, 10³, 5·10³, 2·10⁴, 10⁵: exact agreement.
 | 10⁸ | 48,107,702 | 0.481 |
 | 10⁹ | 451,844,526 | 0.452 |
 | 10¹⁰ | 4,266,430,301 | 0.427 |
-| 10¹¹ | (tide_data.json) | 0.40 |
+| 10¹¹ | 40,464,658,067 | 0.405 |
+| 10¹² | 385,246,757,558 | 0.385 |
 
 ## The crossing, integer by integer
 D(N) = #planar − #non-planar steps by ±1 per integer.  A segmented signature sieve over
@@ -52,20 +53,20 @@ D(N) = #planar − #non-planar steps by ±1 per integer.  A segmented signature 
 
 ## Certificate that the lead never returns (up to the bound reached)
 Because |D(N+1) − D(N)| = 1, if D(N_k) < 0 and N_{k+1} − N_k < |D(N_k)| then D < 0 on
-[N_k, N_{k+1}].  Chained Lucy checkpoints (each step 0.9·|D|) from the window's end:
-see `planar_window.log` / `planar_window.json` for the bound reached (target 10¹²).
-So: **non-planar is strictly ahead at every N from 26,855,492 up to the certified bound.**
+[N_k, N_{k+1}].  Chained Lucy checkpoints (each step 0.9·|D|) from the window's end: **121 checkpoints reach
+10¹²** (`planar_window.json`, last D(10¹²) ≈ −2.3·10¹¹).
+So: **non-planar is strictly ahead at every N from 26,855,492 up to 10¹².**
 
 ## Asymptotics and a conjecture
 Landau: #{n ≤ N : ω(n) ≤ 3} ~ N (log log N)² / (2 log N) → share → 0, extremely slowly
-(0.40 at 10¹¹; the formula's leading term alone is far too small at these heights — the
+(0.385 at 10¹²; the formula's leading term alone is far too small at these heights — the
 secondary terms of the Sathe–Selberg expansion dominate for many more decades).
 
 **Conjecture.** D(N) < 0 for every N ≥ 26,855,492; equivalently, 26,855,491 is the last
 integer at which planar-divisor numbers are in the majority.  Certified computationally to
-the bound above; a full proof needs explicit (effective) upper bounds for π₂, π₃ and the
+10¹²; a full proof needs explicit (effective) upper bounds for π₂, π₃ and the
 p²q, p³q counts beyond 10¹² — the explicit Landau-type bounds in the literature should close
-it, since the share is already 0.40 and decreasing.
+it, since the share is already 0.385 and decreasing.
 
 Files: `planar_sig.py` (classification), `planar_race.py` (exact counts), `planar_window.py`
 (crossing + certificate), `tide_data.py` (strata for the chart), `render_tide.py`.

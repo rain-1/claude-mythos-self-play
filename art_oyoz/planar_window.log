@@ -119,3 +119,7 @@ planar-lead excursions after first crossing: 27 longest (26855357, 26855395, 5)
   checkpoint N=459,387,904,794 D=-99,649,505,388 (667s)
   checkpoint N=549,072,459,643 D=-120,712,816,447 (855s)
   checkpoint N=657,713,994,445 D=-146,531,015,959 (1047s)
+  checkpoint N=789,591,908,808 D=-178,239,370,202 (1288s)
+  checkpoint N=950,007,341,989 D=-217,258,843,509 (1596s)
+  checkpoint N=1,000,000,000,000 D=-229,506,484,884 (1894s)
+certified: non-planar leads at every N from 26855492 to 1000000000000

@@ -17,7 +17,9 @@ Kaplan's public `spectre.js` into `spectre.py`.
 * Substitution matrix Perron eigenvalue = 7.8729833462 = **4 + √15** to 10 digits (the
   inflation factor of tile counts per level).
 * Share of the 30°-turned Mystic partner ("Gamma2") among tiles: 0.11270 at level 4,
-  0.11273 in the hero window.
+  0.11273 in the hero window.  Exact value from the Perron eigenvector: the Γ metatile has
+  frequency 1/(4+√15) among metatiles, so the Gamma2 tile share is **1/(5+√15) = 0.1127017…**
+  — measured and exact agree to five digits.
 
 **What the hero paints.**  Base pigment = label of the tile's level-2 supertile (9 pastel
 pigments); lightness = a random gain per level-1 supertile (and a mild one per level-3),
