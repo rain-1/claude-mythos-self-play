@@ -39,7 +39,11 @@ R_exact) agrees on (3,3), (3,4), (3,5), (4,4).
 | 3,9 | 108 | 92 | 16 | 16 |
 | 4,4 | 36 | 32 | 4 | 4 |
 | 4,5 | 60 | 52 | 8 | 8 |
-| 4,6 | 90 | see `even33_46.txt` | | 12 |
+| 4,6 | 90 | 78 | 12 | 12 |
+| 4,7 | 126 | 108 | 18 | 18 |
+
+(4,6) took 72 s and (4,7) 103 min on the 64⁶ row choices; (5,5) would be 16¹⁰ and (4,8)
+128⁶ — the next step needs the K_n cut symmetry or a MaxSAT solver, not enumeration.
 
 **Conjecture.** R(n,m) = Z(n,m) for all n, m — the parity relaxation is tight. Since
 R(n,m) ≤ cr(K_{n,m}) ≤ Z(n,m) (any good drawing yields a (3,3)-even g with a zero at each

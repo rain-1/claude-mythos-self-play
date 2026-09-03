@@ -21,7 +21,7 @@ Protos at 1024 kept: `proto_sun_1024.png`, `proto_ust_1024.png`.
 
 | piece | file | seed | what got verified / found |
 |---|---|---|---|
-| **The Brick Factory** (2560²) | `brickfactory_2560.png` | MO 514851, Turán's brick factory | Zarankiewicz drawing of K(16,16): 3136 crossings counted exactly = Z(16,16). The (3,3)-even relaxation R(n,m) computed exactly via the code's product structure (`even33.py`): **R = Z in every case (3,3)…(3,9), (4,4), (4,5), (4,6)** — conjecture R(n,m) = Z(n,m), which is stronger than Zarankiewicz's conjecture since R ≤ cr ≤ Z |
+| **The Brick Factory** (2560²) | `brickfactory_2560.png` | MO 514851, Turán's brick factory | Zarankiewicz drawing of K(16,16): 3136 crossings counted exactly = Z(16,16). The (3,3)-even relaxation R(n,m) computed exactly via the code's product structure (`even33.py`): **R = Z in every case (3,3)…(3,9), (4,4), (4,5), (4,6), (4,7)** — conjecture R(n,m) = Z(n,m), which is stronger than Zarankiewicz's conjecture since R ≤ cr ≤ Z |
 | **The Snake That Sees Every Room** (2560²) | `snake_2560.png` | MO 514865, unanswered | a snake (induced path) with covering radius 1 exists in Q_n for all n ≤ 8 (exhaustive n ≤ 5, local search above); the drawn Q₈ snake has 59 rooms and every other room is next door; conjecture D = 1 for all n |
 | **Every Cell Remembers Its Grandmother** (2560²) | `tissue_2560.png` | the "organic" picture, done as lineage | 2579 cells from one by Errera-rule division + partial relaxation; mean sides 5.968, Lewis's law increasing (slope 0.12), Aboav–Weaire a = 1.30; colour = clone at generation 3, shade = generation 6 |
 
