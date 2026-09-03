@@ -17,12 +17,17 @@ Engines: `pastel.py` (Beer–Lambert watercolor stack: paper, pigment box, ink, 
 `sunflower.py`, `kleinian.py`, `ust.py`, `census_extra.py`, `ust_extra.py`.
 Protos at 1024 kept: `proto_sun_1024.png`, `proto_ust_1024.png`.
 
-## Also-rans (ideas 4–6)
-- Zarankiewicz drawing of K_{n,m} with the exact minimum of (3,3)-even zero counts by coding
-  theory (MO 514851: the code is ker(T_n ⊗ T_m), dim = C(n,2)C(m,2) − (C(n,2)−n+1)(C(m,2)−m+1)) — string art.
-- Snake-in-the-box with bounded covering radius on a Gray-code map (MO 514865) — plain.
-- Cell-division tissue with a lineage palette and Lewis / Aboav–Weaire laws — too close to
-  the Voronoi registers already used.
+## The other three (built on request — "I want to see the other 3 as well")
+
+| piece | file | seed | what got verified / found |
+|---|---|---|---|
+| **The Brick Factory** (2560²) | `brickfactory_2560.png` | MO 514851, Turán's brick factory | Zarankiewicz drawing of K(16,16): 3136 crossings counted exactly = Z(16,16). The (3,3)-even relaxation R(n,m) computed exactly via the code's product structure (`even33.py`): **R = Z in every case (3,3)…(3,9), (4,4), (4,5), (4,6)** — conjecture R(n,m) = Z(n,m), which is stronger than Zarankiewicz's conjecture since R ≤ cr ≤ Z |
+| **The Snake That Sees Every Room** (2560²) | `snake_2560.png` | MO 514865, unanswered | a snake (induced path) with covering radius 1 exists in Q_n for all n ≤ 8 (exhaustive n ≤ 5, local search above); the drawn Q₈ snake has 59 rooms and every other room is next door; conjecture D = 1 for all n |
+| **Every Cell Remembers Its Grandmother** (2560²) | `tissue_2560.png` | the "organic" picture, done as lineage | 2579 cells from one by Errera-rule division + partial relaxation; mean sides 5.968, Lewis's law increasing (slope 0.12), Aboav–Weaire a = 1.30; colour = clone at generation 3, shade = generation 6 |
+
+Notes: `notes_brickfactory.md`, `notes_snake.md`, `notes_tissue.md`; certificates
+`brickfactory_2560_cert.json`, `even33_table.txt`, `even33_46.txt`, `snake_2560_cert.json`,
+`tissue_2560_cert.json`. Engines: `brickfactory.py`, `even33.py`, `snake.py`, `tissue.py`.
 
 ## Tweet-sized story
 *The sunflower was tuning itself. Every seed a fifth higher than the last, it counted its own
@@ -41,3 +46,11 @@ someone had once built by hand, believing they had invented it.*
   branch-to-radius-r length. Twice a "failed" check was a wrong question.
 - Pastel wants density gradients, not flat washes: florets dense at the heart and thinning to
   the rim gave the sunflower a body; a uniform bead density read as an archery target.
+- **The "also-rans" were not worse ideas, they were unfinished ones.** Asked to build them,
+  the brick factory produced the run's sharpest conjecture, the tissue its prettiest surface,
+  and the snake an answer-shaped table. The ranking at idea time measures confidence, not value.
+- Growth is a similarity: dilate the whole tissue when cells divide, never let a fixed domain
+  do the growing (crowded centre, ballooning rim). Full Lloyd relaxation erases history;
+  a tissue keeps its young cells small.
+- A hypercube on paper: Q_{2k} as a k-fold nested 4×4 torus grid in Gray order makes every
+  edge a short step; the 16×16 Karnaugh map made half the steps into cross-page arcs.

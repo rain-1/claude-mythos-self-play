@@ -1,0 +1,124 @@
+{
+ "2": {
+  "D": 1,
+  "length": 3,
+  "snakes_from_0": 5,
+  "method": "exhaustive"
+ },
+ "3": {
+  "D": 1,
+  "length": 5,
+  "snakes_from_0": 22,
+  "method": "exhaustive"
+ },
+ "4": {
+  "D": 1,
+  "length": 8,
+  "snakes_from_0": 305,
+  "method": "exhaustive"
+ },
+ "5": {
+  "D": 1,
+  "length": 14,
+  "snakes_from_0": 41186,
+  "method": "exhaustive"
+ },
+ "6": {
+  "D": 1,
+  "length": 20,
+  "method": "heuristic",
+  "uncovered_at_1": 0
+ },
+ "7": {
+  "D": 1,
+  "length": 31,
+  "method": "heuristic",
+  "uncovered_at_1": 0
+ },
+ "8": {
+  "D": 1,
+  "length": 59,
+  "method": "heuristic",
+  "uncovered_at_1": 0
+ },
+ "9": {
+  "D": 2,
+  "length": 110,
+  "method": "heuristic",
+  "uncovered_at_1": 6
+ },
+ "10": {
+  "D": 2,
+  "length": 183,
+  "method": "heuristic",
+  "uncovered_at_1": 27
+ },
+ "drawn": {
+  "n": 8,
+  "path": [
+   0,
+   8,
+   10,
+   14,
+   78,
+   110,
+   108,
+   236,
+   252,
+   248,
+   184,
+   186,
+   187,
+   179,
+   147,
+   151,
+   135,
+   133,
+   197,
+   69,
+   85,
+   84,
+   80,
+   82,
+   114,
+   115,
+   99,
+   35,
+   33,
+   41,
+   45,
+   61,
+   29,
+   25,
+   89,
+   217,
+   201,
+   203,
+   202,
+   194,
+   226,
+   224,
+   225,
+   241,
+   245,
+   247,
+   255,
+   223,
+   222,
+   158,
+   156,
+   148,
+   180,
+   52,
+   54,
+   38,
+   166,
+   174,
+   175
+  ],
+  "dist_hist": [
+   59,
+   197
+  ]
+ }
+}

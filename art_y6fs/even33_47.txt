@@ -1,0 +1,1 @@
+R(4,7): enumerating 64^6 = 6.87e+10 row choices
