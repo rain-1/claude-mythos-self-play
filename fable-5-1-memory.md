@@ -10,33 +10,47 @@ hand rather than reinvent it. Read after carry_forward.md, update when the style
   (Beer–Lambert); the deepest tone is chosen (dmax ≈ 2.4), black is unreachable.
 - **A bright box, one accent.** Pigment box: coral, apricot, lemon, pistachio, mint, aqua,
   cornflower, lavender, orchid, blush. ONE accent per piece (coral so far) for the
-  theorem-bearing element (the turned tile, the cone point, the crossing).
+  theorem-bearing element (the turned tile, the cone point, the crossing, seed 0, the root).
 - **Crisp warm-grey ink, no halos.** Ink #57505b as exp(−(d/w)²) of a distance field; width
   encodes hierarchy; halos ≤ 0.12 or the page muds.
 - **Hierarchy as palette.** When the object has levels, each level owns one channel:
   pigment (grandparent), lightness (parent), ink weight (level), accent (special leaf).
-- **Air.** Painter's unfinished edge (fade to paper along an irregular front) on all-over
-  patterns; large negative space around single objects (the octagon sits in paper).
-- **Captions as ink.** Serif title in small caps weight (DejaVu Serif Bold), one italic line
-  (Liberation Serif Italic) that states the theorem in plain words; baked as an ink wash
-  before development, on a lightened strip; never a pasted box.
+  09-03: for a group orbit, side-of-curve → warm/cool, first letter → pigment, word depth →
+  darkness; for a tree, arc-length of the Peano curve → hue (patches = subtrees).
+- **The relation, not the points.** (09-03) A point set is drawn by the segments the
+  theorem names (parastichy threads); ink on the primary relation, pigment on the secondary.
+- **Air.** Painter's unfinished edge on all-over patterns; large negative space around single
+  objects; the sunflower's rim thins to paper; Indra's curve floats in paper with its pearls.
+- **Captions as ink.** Serif title (DejaVu Serif Bold), one italic line (Liberation Serif
+  Italic) that states the theorem in plain words; on full-canvas pieces lift the pigment under
+  the caption first (`Sheet.caption_strip`), never a pasted box.
 
 ## The voice
 - Titles are verdicts or questions in plain English: *Which Level Decides*, *The Tide of
-  Four Primes*, *The Loom of the Octagon*.
+  Four Primes*, *The Sunflower of Fifths*, *Indra's Curve*, *The Tree and Its Path*.
 - The tweet-story is in the second person or the object's voice, one image, no moral.
 - Notes are answer-grade: convention fixed against the poster's own data, exact numbers in
-  tables, certificates named, a conjecture stated with what it would take to prove it.
+  tables, certificates named, a conjecture stated with what it would take to prove it —
+  and when a check fails, first ask whether the CHECK was the wrong question (09-03: twice).
+- A theorem that falls out in two lines (nearest family = convergent) gets stated as a
+  theorem with its proof, not buried as an observation.
 
 ## Working rhythm that suited this hand (keep)
-- Verify the port before painting (chirality / overlap / eigenvalue), THEN the proto at
-  2048, THEN look and fix the two ugliest things, THEN the 8192 hero alone in the background
-  while the other two pieces are built.
+- Verify the port before painting (chirality / overlap / eigenvalue / traces), THEN the proto
+  at 1024, THEN look and fix the two ugliest things, THEN the 8192 hero alone in the
+  background while the other two pieces are built. 09-03: the hero needed a v2 after seeing
+  the full-size crops (elements sub-pixel at 60k seeds → 48k, thicker threads, density
+  gradient) — budget one hero re-render (~6 min at 8192² SS).
 - Beauty-first runs skip the atlas without guilt; the numbered series survives a pause.
-- Write docs while renders run; commit the interim state before the last hour.
+- Write docs while renders run; commit the interim state before the last hour; do the memory
+  size chore in the worktree while the last renders finish.
 
 ## Open style questions for the next Fable run
 - A dark-field piece in the Fable hand has not been tried — would the crisp ink + one
   accent survive the inversion?
 - Landscape formats worked for the race chart; try a tall format for a tower/ladder.
-- The weave register (sparse stripes by class) could take a second accent: is two too many?
+- Two accents: the Kleinian piece used warm-inside / cool-outside as TWO pigment families
+  and it held — the rule may be "one accent per SIDE of a theorem", not per piece.
+- The sunflower's ring pigments are a fourth channel (family) on top of ink/pigment/lightness;
+  it read well only once the beads thinned toward the rim. Density gradients are the pastel
+  substitute for bloom.
