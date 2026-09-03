@@ -1,0 +1,14 @@
+degree fractions [0.29548 0.44498 0.22337 0.03617]
+branch steps to leave B(u,r) vs r: log-log slope 1.238  (LERW prediction 5/4 = 1.25); 20000 starts, 12 radii
+  r    3.0   median steps      5.0   r^1.25 =      3.9
+  r    4.0   median steps      7.0   r^1.25 =      5.7
+  r    5.4   median steps     10.0   r^1.25 =      8.3
+  r    7.3   median steps     15.0   r^1.25 =     12.1
+  r    9.9   median steps     20.0   r^1.25 =     17.6
+  r   13.3   median steps     30.0   r^1.25 =     25.5
+  r   18.0   median steps     43.0   r^1.25 =     37.0
+  r   24.2   median steps     62.0   r^1.25 =     53.8
+  r   32.7   median steps     91.0   r^1.25 =     78.1
+  r   44.0   median steps    136.0   r^1.25 =    113.4
+  r   59.4   median steps    203.0   r^1.25 =    164.7
+  r   80.0   median steps    281.0   r^1.25 =    239.3

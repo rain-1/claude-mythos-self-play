@@ -135,7 +135,7 @@ def render(SIZE, N, seed, out):
     dep_img = dep_img / dep_img.max()
     dep_field = np.asarray(Image.fromarray((dep_img * 255).astype(np.uint8)).resize((W, H), Image.BILINEAR), np.float32) / 255
     dep_field = gaussian_filter(dep_field, cell)
-    dens = 0.78 * (0.55 + 0.45 * (1 - dep_field))
+    dens = 0.92 * (0.42 + 0.58 * (1 - dep_field))
     i0, i1, t = hue_to_pigments(hue)
     for p in range(len(CYCLE)):
         w = np.where(i0 == p, 1 - t, 0) + np.where(i1 == p, t, 0)
@@ -162,8 +162,8 @@ def render(SIZE, N, seed, out):
         sx = 0.5 * sx + 0.25 * pxp + 0.25 * mx
         sy = 0.5 * sy + 0.25 * pyp + 0.25 * my
     vx, vy = sx, sy
-    wid = 0.08 * cell + 1.0 * cell * (lm / lm.max()) ** 1.6
-    ink = 0.10 + 0.90 * (lm / lm.max()) ** 1.1
+    wid = 0.08 * cell + 1.5 * cell * (lm / lm.max()) ** 1.7
+    ink = 0.10 + 1.05 * (lm / lm.max()) ** 1.0
     # draw in width classes into an 'F' image (max-composite via separate layers is overkill: additive then clip)
     tree_f = Image.new('F', (W, H), 0.0); dr = ImageDraw.Draw(tree_f)
     for u in ch:
@@ -173,16 +173,19 @@ def render(SIZE, N, seed, out):
         if w >= 3:
             dr.ellipse([vx[u] - w / 2, vy[u] - w / 2, vx[u] + w / 2, vy[u] + w / 2], fill=float(ink[u]))
     Tk = gaussian_filter(np.asarray(tree_f, np.float32), 0.45 * SS)
-    Tk = np.clip(Tk, 0, 1)
-    sheet.wash(Tk * 0.80, 'ink')
+    Tk = np.clip(Tk, 0, 1.1)
+    sheet.wash(Tk * 0.85, 'ink')
     # the Peano curve itself as a pale thread (the path)
     im = Image.new('F', (W, H), 0.0); dr = ImageDraw.Draw(im)
     dr.line(list(zip(px.tolist(), py.tolist())), fill=1.0, width=max(1, int(round(0.08 * cell))))
     Pk = gaussian_filter(np.asarray(im, np.float32), 0.4 * SS)
     sheet.wash(Pk / (Pk.max() + 1e-9) * 0.16, 'sepia')
     # root star
-    S = discs_density(W, H, [vx[root]], [vy[root]], [cell * 0.9], [1.0], sigma=cell * 0.4)
+    S = discs_density(W, H, [vx[root]], [vy[root]], [cell * 2.2], [1.0], sigma=cell * 1.2)
     sheet.wash(S / (S.max() + 1e-9) * 0.9, 'coral')
+    S = discs_density(W, H, [vx[root]], [vy[root]], [cell * 0.7], [1.0], sigma=cell * 0.3)
+    sheet.wash(S / (S.max() + 1e-9) * 0.8, 'ink')
+    sheet.caption_strip(0.905, 0.985)
     items = [("The Tree and Its Path", 0.05 * W, 0.935 * H, 0.030 * W, 'serif_bold', 'ls'),
              ("one tree grown by loop-erased wandering, uniform among all %d^%d; leaves %.4f of it (Burton–Pemantle: 0.2945)" % (
                  N, N, counts[0]), 0.05 * W, 0.962 * H, 0.0135 * W, 'italic', 'ls')]

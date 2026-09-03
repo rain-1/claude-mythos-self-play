@@ -116,16 +116,17 @@ def render(SIZE, N, out):
     sheet = Sheet(W, H, seed=3)
     # family palette: nearest-neighbour family -> pigment (the temperament ladder)
     fam_pig = {1: 'blush', 2: 'blush', 3: 'blush', 5: 'orchid', 7: 'orchid', 12: 'coral', 17: 'coral', 29: 'apricot', 41: 'apricot',
-               53: 'lemon', 94: 'pistachio', 147: 'pistachio', 200: 'mint', 253: 'mint', 306: 'aqua', 359: 'cornflower', 665: 'lavender', 971: 'orchid'}
+               53: 'apricot', 94: 'pistachio', 147: 'pistachio', 200: 'mint', 253: 'mint', 306: 'aqua', 359: 'cornflower', 665: 'cornflower', 971: 'orchid'}
     # pigment index per bead from nearest family; second family lightens/darkens
     pig_names = sorted(set(fam_pig.values()), key=CYCLE.index)
     fam1 = np.array([fam_pig.get(int(v), 'blush') for v in dk1])
-    bead_r = 0.55 * c * np.ones(N)   # bead radius in px (spacing ~ c units)
+    bead_r = 0.40 * c * np.ones(N)   # bead radius in px (spacing ~ c units)
     # slight size modulation: the pitch's distance from its 12-TET note (comma drift) as a breathing
     pc = np.mod(k * ALPHA, 1.0)
     dev = np.abs(pc * 12 - np.round(pc * 12))  # 0..0.5 in semitone units
-    bead_r *= (0.78 + 0.5 * (1 - 2 * dev))
-    dens = 0.85 * np.ones(N)
+    bead_r *= (0.80 + 0.45 * (1 - 2 * dev))
+    # florets: dense at the heart, lighter toward the rim
+    dens = 1.0 * (1.0 - 0.42 * (rr / rr.max()) ** 1.3)
     # rim: the flower head ends on an irregular front (painter's unfinished edge)
     rim = 1.0 - 0.025 * (1 + np.sin(5 * th + 1.0)) * 0.5 - 0.02 * (1 + np.sin(13 * th + 2.0)) * 0.5
     edge_t = np.clip((rr / rr.max() - 0.90 * rim) / (0.10 * rim + 1e-9), 0, 1)
@@ -154,7 +155,7 @@ def render(SIZE, N, out):
         if not m.any():
             continue
         D = discs_density(W, H, xs[m], ys[m], bead_r[m], (dens * w)[m], sigma=0.35 * c)
-        D = D / (D.max() + 1e-9) * 0.75
+        D = D / (D.max() + 1e-9) * 0.95
         sheet.wash(D, name, granulate=0.25, seed=11 + CYCLE.index(name))
     # --- the parastichy threads: nearest family in ink, opposed family in the ring pigment
     segs1, segs2, w2 = [], [], []
@@ -167,9 +168,9 @@ def render(SIZE, N, out):
     tgt2 = kk + d2
     ok2 = (tgt2 < N) & (d2 % np.maximum(dk1, 1) != 0)
     segs2 = np.c_[xs[ok2], ys[ok2], xs[tgt2[ok2]], ys[tgt2[ok2]]]
-    Dthread = draw_lines_density(W, H, segs1, 0.11 * c, weights=dens[ok], sigma=0.10 * c)
+    Dthread = draw_lines_density(W, H, segs1, 0.18 * c, weights=dens[ok], sigma=0.10 * c)
     Dthread = Dthread / (Dthread.max() + 1e-9)
-    sheet.wash(Dthread * 0.85, 'ink')
+    sheet.wash(Dthread * 1.25, 'ink')
     # opposed-family threads, coloured by the ring they cross (use the bead's dominant pigment)
     dom = np.array([max(shares, key=lambda nm: shares[nm][i]) for i in range(N)]) if N <= 200000 else fam1
     for name in pig_names:
@@ -177,13 +178,18 @@ def render(SIZE, N, out):
         if mm.sum() < 5:
             continue
         S = np.c_[xs[mm], ys[mm], xs[tgt2[mm]], ys[tgt2[mm]]]
-        Dt = draw_lines_density(W, H, S, 0.16 * c, weights=dens[mm], sigma=0.14 * c)
+        Dt = draw_lines_density(W, H, S, 0.22 * c, weights=dens[mm], sigma=0.14 * c)
         Dt = Dt / (Dt.max() + 1e-9)
-        sheet.wash(Dt * 1.0, name)
+        sheet.wash(Dt * 1.1, name)
     # ink: a tiny centre dot per bead (the seed)
     Dk = discs_density(W, H, xs, ys, 0.17 * c * np.ones(N), 0.55 * dens, sigma=0.12 * c)
-    Dk = Dk / (Dk.max() + 1e-9) * 0.5
+    Dk = Dk / (Dk.max() + 1e-9) * 0.75
     sheet.wash(Dk, 'ink')
+    # the founding gesture: seed 0 (the fundamental) as a coral bloom at the heart
+    Sb = discs_density(W, H, [cx], [cy], [2.2 * c], [1.0], sigma=1.3 * c)
+    sheet.wash(Sb / (Sb.max() + 1e-9) * 0.9, 'coral')
+    Sb2 = discs_density(W, H, [cx], [cy], [0.6 * c], [1.0], sigma=0.3 * c)
+    sheet.wash(Sb2 / (Sb2.max() + 1e-9) * 0.8, 'ink')
     # ring annotations: the temperament at each hand-over, along one spoke (angle -100deg)
     items = []
     ang = math.radians(-100)

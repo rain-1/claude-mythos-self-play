@@ -73,6 +73,16 @@ class Sheet:
         d = np.clip(d, 0, None)
         self.A += d[..., None] * absorb(tint)[None, None, :]
 
+    def lighten(self, mask, f=0.6):
+        """lift pigment under a mask (a caption strip): absorbance *= (1 - f*mask)"""
+        self.A *= (1 - f * np.asarray(mask, np.float32))[..., None]
+
+    def caption_strip(self, y0, y1, f=0.62):
+        """soft lightened band between rows y0..y1 (fractions of H)"""
+        yy = np.arange(self.H, dtype=np.float32) / self.H
+        band = np.clip((yy - y0) / 0.012, 0, 1) * np.clip((y1 - yy) / 0.012, 0, 1)
+        self.lighten(np.repeat(band[:, None], self.W, axis=1), f)
+
     def develop(self, dmax=2.4):
         A = dmax * (1 - np.exp(-self.A / dmax))
         lin = self.paper * np.exp(-A)

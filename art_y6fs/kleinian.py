@@ -152,6 +152,7 @@ def render(SIZE, ta, tb, out, eps_px=0.5, rho_frac=0.92):
             rho *= 0.88
         return rho
     rho_p = shrink(n, rho_p); rho_m = shrink(-n, rho_m)
+    print('precisely-invariant radii', rho_p, rho_m)
     print('horoball radii', rho_p, rho_m, 'span', span)
     t0 = time.time()
     pts, letters, depths, nodeM, nodeL, nodeD = explore(gens, P, eps, maxdepth=200)
@@ -174,6 +175,7 @@ def render(SIZE, ta, tb, out, eps_px=0.5, rho_frac=0.92):
         ball_in, ball_out = (cp, rho_p), (cm, rho_m)
     else:
         ball_in, ball_out = (cm, rho_m), (cp, rho_p)
+    ball_out = (P0 + (ball_out[0] - P0) * 0.55, ball_out[1] * 0.55)   # outside pearls kept subtle
     print('inside ball', ball_in, 'outside ball', ball_out)
     sheet = Sheet(W, H, seed=5)
     dist_in = distance_transform_edt(inside > 0.5)
@@ -229,6 +231,7 @@ def render(SIZE, ta, tb, out, eps_px=0.5, rho_frac=0.92):
     Dl = gaussian_filter(np.asarray(im, np.float32), 0.5 * SS)
     Dl = Dl / (Dl.max() + 1e-9)
     sheet.wash(Dl * 0.75, 'ink')
+    sheet.caption_strip(0.905, 0.985)
     items = [("Indra's Curve", 0.05 * W, 0.935 * H, 0.030 * W, 'serif_bold', 'ls'),
              ("one point, two maps, every word: tr a = %s, tr b = %s, tr[a,b] = -2 — the pearls are the cusp seen from every address" % (
                  fmt(ta), fmt(tb)), 0.05 * W, 0.962 * H, 0.0135 * W, 'italic', 'ls')]
