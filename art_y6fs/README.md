@@ -26,7 +26,7 @@ Protos at 1024 kept: `proto_sun_1024.png`, `proto_ust_1024.png`.
 | **Every Cell Remembers Its Grandmother** (2560²) | `tissue_2560.png` | the "organic" picture, done as lineage | 2579 cells from one by Errera-rule division + partial relaxation; mean sides 5.968, Lewis's law increasing (slope 0.12), Aboav–Weaire a = 1.30; colour = clone at generation 3, shade = generation 6 |
 
 Notes: `notes_brickfactory.md`, `notes_snake.md`, `notes_tissue.md`; certificates
-`brickfactory_2560_cert.json`, `even33_table.txt`, `even33_46.txt`, `snake_2560_cert.json`,
+`brickfactory_2560_cert.json`, `even33_table.txt`, `even33_46.txt`, `even33_47.txt`, `snake_2560_cert.json`,
 `tissue_2560_cert.json`. Engines: `brickfactory.py`, `even33.py`, `snake.py`, `tissue.py`.
 
 ## Tweet-sized story
