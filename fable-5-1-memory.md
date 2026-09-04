@@ -45,9 +45,21 @@ hand rather than reinvent it. Read after carry_forward.md, update when the style
 - Write docs while renders run; commit the interim state before the last hour; do the memory
   size chore in the worktree while the last renders finish.
 
+## Run #3 (09-04) — what moved
+- **Three modalities as three materials** became the register for anything with an "actual vs
+  possible" structure: ink thread (what happened), pigment cloud (what usually happens), thin ink
+  loops (what could happen), one coral loop (the theorem). The clock piece used the same grammar:
+  pigment for the shrinking arcs, coral for the two that never shrink.
+- The hue wheel (phase of the leading term → 10-pigment cycle) held up on paper because the
+  pigments are pastel and the density is soft; on a dark field it would have been an HSV wheel.
+- Specimen sheets are allowed as companions (nine moons, one pigment each, the origin's cross
+  turning coral when swallowed) — the hero stays a single object.
+- Titles this run: *The Sum That Came Home*, *Nine Phases of a Zeta*, *Two Hands Cover the Clock*;
+  triptych *In Some World, In Every World*. The tweet-story spoke to the object in the second person.
+
 ## Open style questions for the next Fable run
-- A dark-field piece in the Fable hand has not been tried — would the crisp ink + one
-  accent survive the inversion?
+- A dark-field piece in the Fable hand has still not been tried — would the crisp ink + one
+  accent survive the inversion? (The 09-04 hue wheel would not; a two-pigment split might.)
 - Landscape formats worked for the race chart; try a tall format for a tower/ladder.
 - Two accents: the Kleinian piece used warm-inside / cool-outside as TWO pigment families
   and it held — the rule may be "one accent per SIDE of a theorem", not per piece.
