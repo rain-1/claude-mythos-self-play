@@ -75,8 +75,9 @@ if os.path.exists(RIMS):
     for li, sg in enumerate(sigs):
         key = [k for k in R if abs(float(k) - sg) < 1e-9][0]
         pts = np.array(R[key]); z = pts[:, 0] + 1j * pts[:, 1]
-        # circular smoothing (3-tap) then close
-        z = (np.roll(z, 1) + 2 * z + np.roll(z, -1)) / 4
+        # circular smoothing (3-tap, several passes) then close
+        for _ in range(6):
+            z = (np.roll(z, 1) + 2 * z + np.roll(z, -1)) / 4
         z = np.concatenate([z, z[:1]])
         px, py = to_px(z)
         frontier = abs(sg - SSTAR) < 1e-6
@@ -129,7 +130,8 @@ if tz is not None:
     star = np.exp(-(np.hypot(xx - zx, yy - zy) / (5.5 * rs)) ** 2)
     sheet.wash(star * 1.8, 'coral')
     lab = text_density(W, H, [(f'Z({SIGX:.4f} + {tz:.3f}i) = 0', zx + 30 * rs, zy + 34 * rs, int(15 * rs), 'italic', 'lm')])
-    sheet.wash(lab * 0.95, 'coral')
+    sheet.wash(lab * 0.9, 'ink')
+    sheet.wash(lab * 0.5, 'coral')
     del xx, yy
 # t = 0 mark
 lab = text_density(W, H, [('t = 0', px[0] + 12 * rs, py[0], int(15 * rs), 'italic', 'lm')])

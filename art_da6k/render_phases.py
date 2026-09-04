@@ -56,7 +56,7 @@ for ci, (sg, pig) in enumerate(zip(SIGS, PIGS)):
     key = [k for k in RIMS if abs(float(k) - sg) < 1e-6]
     if key:
         pts = np.array(RIMS[key[0]]); z = pts[:, 0] + 1j * pts[:, 1]
-        for _ in range(3):
+        for _ in range(3 if sg >= 0.9 else 12):
             z = (np.roll(z, 1) + 2 * z + np.roll(z, -1)) / 4
         z = np.concatenate([z, z[:1]])
         px, py = cell_px(ci, z)
@@ -94,7 +94,7 @@ items = [(title, W * 0.5, H * 0.922, int(38 * rs), 'serif_bold', 'mm')]
 words = sub.split(); lines = []; cur = ''
 for w_ in words:
     trial = (cur + ' ' + w_).strip()
-    if text_width(trial, int(15 * rs), 'italic') > W * 0.86:
+    if text_width(trial, int(15 * rs), 'italic') > W * 0.78:
         lines.append(cur); cur = w_
     else:
         cur = trial

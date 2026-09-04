@@ -1,9 +1,12 @@
 __pycache__/
 art_da6k/*.log
-art_da6k/zeros_test.txt
+art_da6k/frontier_N120.json
+art_da6k/hero.log
+art_da6k/hero2.log
+art_da6k/phases.log
 art_da6k/proto_cloud_0905.png
 art_da6k/proto_cloud_v2.png
 art_da6k/proto_twohands_1024.png
 art_da6k/proto_twohands_v2.png
 art_da6k/proto_twohands_v3.png
-art_da6k/frontier_N120.json
+art_da6k/zeros_test.txt
