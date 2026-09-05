@@ -1,0 +1,14 @@
+{
+ "h": 0.05,
+ "V": 1520,
+ "boundary": 174,
+ "euler": 1,
+ "iters": 1482,
+ "max_angle_err": 9.379164112033322e-13,
+ "max_tangency_rel": 3.5743800979457353e-07,
+ "horocycle_spread": 3.6607533794712517e-07,
+ "mfs_boundary_resid": 3.714879515115399e-10,
+ "map_err_mean": 0.021985714509111427,
+ "map_err_max": 0.09507217212993349,
+ "map_err_median": 0.02101378511471477
+}

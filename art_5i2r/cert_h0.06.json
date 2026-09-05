@@ -1,0 +1,26 @@
+{
+ "V": 1089,
+ "interior": 967,
+ "boundary": 122,
+ "faces": 2054,
+ "euler": 1,
+ "h": 0.06,
+ "max_angle_err": 9.938716516444401e-13,
+ "max_tangency_rel": 1.3552195627635817e-08,
+ "mean_tangency_rel": 9.371440959793501e-11,
+ "map_err_max": 0.05210489138697542,
+ "map_err_mean": 0.013056884183124368,
+ "map_err_rms": 0.016163393596845616,
+ "deriv_ratio_median": 1.006331992039596,
+ "deriv_rel_err_max": 0.17395775903315247,
+ "deriv_rel_err_mean": 0.025063761985974927,
+ "nan_inverse": 0,
+ "horocycle_spread": 1.8524124864870224e-08,
+ "iters": 1620,
+ "coef": [
+  "0.15",
+  "0.06",
+  "0.05j",
+  "0.08"
+ ]
+}

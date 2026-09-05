@@ -1,0 +1,34 @@
+closed form vs poster table k=1..64: ALL 64 AGREE
+  rounding mismatch 58 (89478486+89478486j) (89478485+89478486j) 16012798734747421
+  rounding mismatch 59 178956971j None 32025597469494841
+  rounding mismatch 60 (-178956971+178956971j) None 64051194938989682
+  rounding mismatch 61 (-357913942+0j) None 128102389877979364
+  rounding mismatch 62 (-357913942-357913942j) (-357913941-357913942j) 256204779040130845
+  rounding mismatch 63 -715827883j None 512409558080261689
+  rounding mismatch 64 (715827883-715827883j) None 1024819116160523378
+outward-rounding statement: FAILS
+k= 1 |D_k|=        2 s_enum=        1 at -1+0i  formula=        1  c=0.333+0.000j  0.0s
+k= 2 |D_k|=        4 s_enum=        1 at -1+0i  formula=        1  c=0.333+0.333j  0.0s
+k= 3 |D_k|=        8 s_enum=        1 at -1+0i  formula=        1  c=0.000+0.667j  0.0s
+k= 4 |D_k|=       16 s_enum=        2 at -1-1i  formula=        2  c=-0.667+0.667j  0.0s
+k= 5 |D_k|=       32 s_enum=        4 at +0-2i  formula=        4  c=-1.333+0.000j  0.0s
+k= 6 |D_k|=       64 s_enum=        5 at -1+2i  formula=        5  c=-1.333-1.333j  0.0s
+k= 7 |D_k|=      128 s_enum=        9 at -3+0i  formula=        9  c=-0.000-2.667j  0.0s
+k= 8 |D_k|=      256 s_enum=       18 at -3-3i  formula=       18  c=2.667-2.667j  0.0s
+k= 9 |D_k|=      512 s_enum=       36 at +0-6i  formula=       36  c=5.333+0.000j  0.0s
+k=10 |D_k|=     1024 s_enum=       61 at -5+6i  formula=       61  c=5.333+5.333j  0.0s
+k=11 |D_k|=     2048 s_enum=      121 at -11+0i  formula=      121  c=0.000+10.667j  0.0s
+k=12 |D_k|=     4096 s_enum=      242 at -11-11i  formula=      242  c=-10.667+10.667j  0.0s
+k=13 |D_k|=     8192 s_enum=      484 at +0-22i  formula=      484  c=-21.333+0.000j  0.0s
+k=14 |D_k|=    16384 s_enum=      925 at -21+22i  formula=      925  c=-21.333-21.333j  0.0s
+k=15 |D_k|=    32768 s_enum=     1849 at -43+0i  formula=     1849  c=-0.000-42.667j  0.1s
+k=16 |D_k|=    65536 s_enum=     3698 at -43-43i  formula=     3698  c=42.667-42.667j  0.1s
+k=17 |D_k|=   131072 s_enum=     7396 at +0-86i  formula=     7396  c=85.333+0.000j  0.2s
+k=18 |D_k|=   262144 s_enum=    14621 at -85+86i  formula=    14621  c=85.333+85.333j  0.5s
+k=19 |D_k|=   524288 s_enum=    29241 at -171+0i  formula=    29241  c=0.000+170.667j  1.0s
+k=20 |D_k|=  1048576 s_enum=    58482 at -171-171i  formula=    58482  c=-170.667+170.667j  2.4s
+k=21 |D_k|=  2097152 s_enum=   116964 at +0-342i  formula=   116964  c=-341.333+0.000j  4.7s
+k=22 |D_k|=  4194304 s_enum=   233245 at -341+342i  formula=   233245  c=-341.333-341.333j  10.7s
+k=23 |D_k|=  8388608 s_enum=   466489 at -683+0i  formula=   466489  c=-0.000-682.667j  25.5s
+k=24 |D_k|= 16777216 s_enum=   932978 at -683-683i  formula=   932978  c=682.667-682.667j  79.8s
+exhaustive k<=24: formula holds; |D_k| = 2^k (all distinct): True

@@ -1,0 +1,35 @@
+{
+ "V": 9566,
+ "boundary": 446,
+ "faces": 18684,
+ "euler": 1,
+ "h": 0.02,
+ "iters": 5711,
+ "max_angle_err": 9.992007221626409e-13,
+ "max_tangency_rel": 4.84200458713273e-09,
+ "L1": 228.2578427987248,
+ "L2": 193.99019129726014,
+ "modulus_discrete": 1.1766463101680988,
+ "boundary_off_rectangle_max": 2.0710693008202528e-07,
+ "corners": [
+  9165,
+  3971,
+  2006,
+  7156
+ ],
+ "corner_projection_dist": 0.011317249492111844,
+ "mfs_boundary_resid": 6.264366803065968e-10,
+ "k": 0.2638118294811258,
+ "modulus_exact": 1.163164579672481,
+ "corner_vertex_off_boundary": 0.035784975898122795,
+ "cross_ratio_check": -1.3322676295501878e-15,
+ "map_err_max": 0.05764286400761933,
+ "map_err_mean": 0.013729488667019675,
+ "map_symmetry": [
+  false,
+  false,
+  false
+ ],
+ "map_err_relative_to_width": 0.018021826384038302,
+ "modulus_rel_err": 0.011590561414287546
+}

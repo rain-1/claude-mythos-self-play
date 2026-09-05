@@ -1,0 +1,3 @@
+{"h": 0.03, "V": 4235, "boundary": 297, "euler": 1, "iters": 3979, "max_angle_err": 9.983125437429408e-13, "max_tangency_rel": 4.09291339089389e-05, "horocycle_spread": 3.120083866232352e-05, "mfs_boundary_resid": 4.3451831022167653e-10, "map_err_mean": 0.013906752561937373, "map_err_max": 0.04718698745143565, "map_err_median": 0.013479772336528795}
+saved circle_2560.png (2560, 2560)
+render circle_2560.png rows=25 41s
