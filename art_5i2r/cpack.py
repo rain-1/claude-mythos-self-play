@@ -135,16 +135,18 @@ def angles(rv, ru, rw, inf_u, inf_w):
     onlyu = inf_u & ~inf_w
     onlyw = inf_w & ~inf_u
     fin = ~inf_u & ~inf_w
-    # finite
-    a = rv[fin] + ru[fin]; b = rv[fin] + rw[fin]; c = ru[fin] + rw[fin]
-    ca = (np.cosh(a) * np.cosh(b) - np.cosh(c)) / (np.sinh(a) * np.sinh(b))
-    out[fin] = np.arccos(np.clip(ca, -1, 1))
-    # u horocycle
-    b = rv[onlyu] + rw[onlyu]
-    ca = (np.cosh(b) - np.exp(rw[onlyu] - rv[onlyu])) / np.sinh(b)
+    # finite — cancellation-free form: cosh a cosh b − cosh c = sinh(s) sinh(r_v) − sinh(r_u) sinh(r_w),
+    # s = r_v + r_u + r_w  (the naive form loses everything when the radii are ~1e-6)
+    rv_, ru_, rw_ = rv[fin], ru[fin], rw[fin]
+    num = np.sinh(rv_ + ru_ + rw_) * np.sinh(rv_) - np.sinh(ru_) * np.sinh(rw_)
+    den = np.sinh(rv_ + ru_) * np.sinh(rv_ + rw_)
+    out[fin] = np.arccos(np.clip(num / den, -1, 1))
+    # u horocycle: cosh(r_v+r_w) − e^{r_w−r_v} = e^{r_w}[sinh r_v − e^{−r_v−r_w} sinh r_w]
+    rv_, rw_ = rv[onlyu], rw[onlyu]
+    ca = np.exp(rw_) * (np.sinh(rv_) - np.exp(-rv_ - rw_) * np.sinh(rw_)) / np.sinh(rv_ + rw_)
     out[onlyu] = np.arccos(np.clip(ca, -1, 1))
-    b = rv[onlyw] + ru[onlyw]
-    ca = (np.cosh(b) - np.exp(ru[onlyw] - rv[onlyw])) / np.sinh(b)
+    rv_, ru_ = rv[onlyw], ru[onlyw]
+    ca = np.exp(ru_) * (np.sinh(rv_) - np.exp(-rv_ - ru_) * np.sinh(ru_)) / np.sinh(rv_ + ru_)
     out[onlyw] = np.arccos(np.clip(ca, -1, 1))
     out[both] = np.arccos(np.clip(1 - 2 * np.exp(-2 * rv[both]), -1, 1))
     return out
@@ -183,7 +185,7 @@ def pack(mesh, tol=1e-12, maxit=20000, verbose=True):
         step[interior] = -(th[interior] - target) / np.minimum(dth[interior], -1e-9)
         step = np.clip(step, -0.7, 0.7)
         r[interior] = r[interior] * np.exp(0.9 * step[interior])
-        r[interior] = np.clip(r[interior], 1e-6, 30.0)
+        r[interior] = np.clip(r[interior], 1e-14, 40.0)
     return r, th, it
 
 
@@ -289,7 +291,38 @@ def layout(mesh, r, v0, v1):
                 placed[w] = True; prog = True
                 break
         if not prog:
-            break
+            # last resort: an unplaced vertex all of whose placed neighbours are ideal points — its
+            # position is fixed by the angles it must see between consecutive ideal neighbours
+            # (2 unknowns, >= 2 faces): solve by least squares in the Poincaré disc.
+            from scipy.optimize import least_squares
+            for w in todo:
+                if placed[w] or bd[w]:
+                    continue
+                fs = [faces[fi] for fi in vf[w] if placed[[x for x in faces[fi] if x != w]].all()]
+                if len(fs) < 2:
+                    continue
+                trips = []
+                for f in fs:
+                    iw = int(np.where(f == w)[0][0]); u = f[(iw + 1) % 3]; v = f[(iw + 2) % 3]   # CCW: u then v
+                    al = float(angles(np.array([rr[w]]), np.array([rr[u]]), np.array([rr[v]]), np.array([bd[u]]), np.array([bd[v]]))[0])
+                    trips.append((u, v, al))
+                def resid(p):
+                    zz = np.tanh(np.hypot(*p) / 2) * (p[0] + 1j * p[1]) / max(np.hypot(*p), 1e-12)
+                    out = []
+                    for u, v, al in trips:
+                        a1 = np.angle(mob(z[u], zz)); a2 = np.angle(mob(z[v], zz))
+                        out.append(np.mod(a2 - a1, 2 * np.pi) - al)
+                    return out
+                zs = np.mean([z[u] for u, v, al in trips] + [z[v] for u, v, al in trips])
+                zs = zs * 0.6
+                p0 = np.array([zs.real, zs.imag]) * 2
+                sol = least_squares(resid, p0, xtol=1e-15, ftol=1e-15, gtol=1e-15)
+                if np.abs(sol.fun).max() < 1e-7:
+                    p = sol.x
+                    z[w] = np.tanh(np.hypot(*p) / 2) * (p[0] + 1j * p[1]) / max(np.hypot(*p), 1e-12)
+                    placed[w] = True; prog = True
+            if not prog:
+                break
     return z, placed
 
 
@@ -382,3 +415,78 @@ if __name__ == '__main__':
     np.savez(f'pack_h{h}.npz', W=P['mesh']['W'], faces=P['mesh']['faces'], boundary=P['mesh']['boundary'],
              edges=P['mesh']['edges'], r=P['r'], z=P['z'], C=P['C'], R=P['R'])
     json.dump(P['cert'], open(f'cert_h{h}.json', 'w'), indent=1)
+
+
+def pack_fast(mesh, tol=1e-11, verbose=True, bd_radius=None):
+    """Newton–Krylov for the hyperbolic packing (interior radii; boundary = horocycles, or finite
+    hyperbolic radius bd_radius if given).
+    No gauge freedom in hyperbolic geometry, so the system is square. Falls back to sweeps."""
+    from scipy.optimize import root
+    faces, bd = mesh['faces'], mesh['boundary']
+    V = len(bd)
+    corners = np.concatenate([faces[:, [0, 1, 2]], faces[:, [1, 2, 0]], faces[:, [2, 0, 1]]])
+    cv, cu, cw = corners[:, 0], corners[:, 1], corners[:, 2]
+    interior = ~bd
+    keep = interior[cv]
+    cv, cu, cw = cv[keep], cu[keep], cw[keep]
+    infu, infw = bd[cu], bd[cw]
+    if bd_radius is not None:
+        infu = np.zeros_like(infu); infw = np.zeros_like(infw)
+    iidx = np.where(interior)[0]
+    pos = -np.ones(V, int); pos[iidx] = np.arange(len(iidx))
+    t0 = time.time()
+
+    def theta(x):
+        rr = np.full(V, 1.0 if bd_radius is None else float(bd_radius)); rr[iidx] = np.exp(x)
+        return np.bincount(cv, angles(rr[cv], rr[cu], rr[cw], infu, infw), minlength=V)[iidx]
+
+    def F(x):
+        return theta(x) - 2 * np.pi
+    x = np.full(len(iidx), np.log(0.5))
+    for rnd in range(6):
+        sol = root(F, x, method='krylov', options=dict(fatol=tol, maxiter=300, disp=False,
+                                                       jac_options=dict(method='lgmres', inner_maxiter=100, outer_k=10)))
+        x = sol.x
+        if np.abs(F(x)).max() < 1e-10:
+            break
+    err = np.abs(F(x)).max()
+    if verbose:
+        print(f'   hyperbolic krylov: max|theta-2pi|={err:.2e} {time.time()-t0:.1f}s', flush=True)
+    r = np.full(V, np.inf if bd_radius is None else float(bd_radius)); r[iidx] = np.exp(x)
+    th = np.full(V, 0.0); th[iidx] = theta(x)
+    if err > 1e-10 and bd_radius is None:
+        if verbose:
+            print('   polishing with sweeps', flush=True)
+        r2, th2, it = pack_from(mesh, r, tol=1e-12, maxit=20000, verbose=verbose)
+        return r2, th2, it
+    return r, th, int(sol.nit)
+
+
+def pack_from(mesh, r0, tol=1e-12, maxit=20000, verbose=True):
+    """the sweep iteration of pack(), started from given radii."""
+    faces, bd = mesh['faces'], mesh['boundary']
+    V = len(bd)
+    corners = np.concatenate([faces[:, [0, 1, 2]], faces[:, [1, 2, 0]], faces[:, [2, 0, 1]]])
+    cv, cu, cw = corners[:, 0], corners[:, 1], corners[:, 2]
+    interior = ~bd
+    r = r0.copy(); r[bd] = np.inf
+    infu, infw = bd[cu], bd[cw]
+    keep = interior[cv]
+    cv, cu, cw, infu, infw = cv[keep], cu[keep], cw[keep], infu[keep], infw[keep]
+    for it in range(maxit):
+        rr = r.copy(); rr[bd] = 1.0
+        th = np.bincount(cv, angles(rr[cv], rr[cu], rr[cw], infu, infw), minlength=V)
+        err = np.abs(th[interior] - 2 * np.pi).max()
+        if err < tol:
+            break
+        eps = 1e-6
+        rr2 = rr.copy(); rr2[interior] *= (1 + eps)
+        th2 = np.bincount(cv, angles(rr2[cv], rr[cu], rr[cw], infu, infw), minlength=V)
+        dth = (th2 - th) / eps
+        step = np.zeros(V)
+        step[interior] = -(th[interior] - 2 * np.pi) / np.minimum(dth[interior], -1e-9)
+        step = np.clip(step, -0.3, 0.3)
+        r[interior] = np.clip(r[interior] * np.exp(0.7 * step[interior]), 1e-14, 40.0)
+    if verbose:
+        print(f'   sweeps: it {it} max|theta-2pi|={err:.2e}', flush=True)
+    return r, th, it

@@ -1,0 +1,25 @@
+k= 1 |D_k ∩ window|=       2 newly born=       1 0.0s
+k= 2 |D_k ∩ window|=       4 newly born=       2 0.0s
+k= 3 |D_k ∩ window|=       8 newly born=       4 0.0s
+k= 4 |D_k ∩ window|=      16 newly born=       8 0.0s
+k= 5 |D_k ∩ window|=      32 newly born=      16 0.0s
+k= 6 |D_k ∩ window|=      64 newly born=      32 0.0s
+k= 7 |D_k ∩ window|=     128 newly born=      64 0.0s
+k= 8 |D_k ∩ window|=     256 newly born=     128 0.0s
+k= 9 |D_k ∩ window|=     512 newly born=     256 0.0s
+k=10 |D_k ∩ window|=    1024 newly born=     512 0.0s
+k=11 |D_k ∩ window|=    2048 newly born=    1024 0.0s
+k=12 |D_k ∩ window|=    4096 newly born=    2048 0.0s
+k=13 |D_k ∩ window|=    8192 newly born=    4096 0.0s
+k=14 |D_k ∩ window|=   16384 newly born=    8192 0.0s
+k=15 |D_k ∩ window|=   32768 newly born=   16384 0.0s
+k=16 |D_k ∩ window|=   65536 newly born=   32768 0.1s
+k=17 |D_k ∩ window|=  131072 newly born=   65536 0.1s
+k=18 |D_k ∩ window|=  262144 newly born=  131072 0.3s
+k=19 |D_k ∩ window|=  516224 newly born=  254080 0.8s
+k=20 |D_k ∩ window|=  905088 newly born=  388864 1.9s
+k=21 |D_k ∩ window|= 1290752 newly born=  385664 4.0s
+k=22 |D_k ∩ window|= 1506279 newly born=  215527 6.5s
+closed form vs field, k=6..22: True
+saved dragon_2560.png (2560, 2560)
+render dragon_2560.png 17s
