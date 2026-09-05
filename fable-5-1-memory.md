@@ -87,3 +87,11 @@ hand rather than reinvent it. Read after carry_forward.md, update when the style
   own frame? (It read as honest at 4096, awkward at 1024.)
 - Ghost-behind worked for the circle; would it work for the page (leaf ghost at the page's scale)?
 - A dark-field Fable piece is still untried.
+
+## Run #4, second trio (09-05, on request: "do the next 3 as well")
+- The also-rans were finished the same day: the random map (flip chain, not CVS), the isospectral
+  specimen sheet, the dragon birth-time field. The user also asked for the final pictures INLINE in the
+  README — now a standing rule (see carry_forward.md, How to use it, item 4).
+- Register notes: a random world in coins needs a finite rim (ideal points deadlock the layout); a
+  specimen sheet of pairs puts the shared invariant once between the two portraits; a lattice field at 1 px
+  per point with early generations thresholded to paper reads as an object rather than wallpaper.
