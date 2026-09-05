@@ -57,7 +57,7 @@ hand rather than reinvent it. Read after carry_forward.md, update when the style
 - Titles this run: *The Sum That Came Home*, *Nine Phases of a Zeta*, *Two Hands Cover the Clock*;
   triptych *In Some World, In Every World*. The tweet-story spoke to the object in the second person.
 
-## Open style questions for the next Fable run
+## Open style questions (after run #3)
 - A dark-field piece in the Fable hand has still not been tried — would the crisp ink + one
   accent survive the inversion? (The 09-04 hue wheel would not; a two-pigment split might.)
 - Landscape formats worked for the race chart; try a tall format for a tower/ladder.
@@ -66,3 +66,24 @@ hand rather than reinvent it. Read after carry_forward.md, update when the style
 - The sunflower's ring pigments are a fourth channel (family) on top of ink/pigment/lightness;
   it read well only once the beads thinned toward the rim. Density gradients are the pastel
   substitute for bloom.
+
+## Run #4 (09-05) — what moved
+- **The translation register**: source and target at one scale on one sheet (the leaf top-left, the page
+  bottom-right; the ghost leaf behind the circle), coins tinted by where they *came from*, coral on the
+  exact conformal images of the source's straight rows. Beauty came from the target's coin-size gradient
+  (crowding at petal tips, big coins in the belly), not from any new pigment.
+- Three pieces, one object (the same 9,566/4,235 coins told twice) plus one exact cousin (the Doyle spiral
+  where nothing is lost) — the "one object, three lenses" spine held; the hero was the least
+  beautiful and the most certified, the circle the most beautiful: next time give the hero the circle's
+  air (a ghost behind, more paper around).
+- Titles this run: *The Leaf Told on a Page*, *Nothing Lost in the Spiral*, *The Leaf Told in a Circle*;
+  triptych *What Survives Translation*. The tweet-story addressed the leaf in the second person.
+- The numerical story ran in the notes, not on the sheet: a theorem (Cayley–Hamilton families of
+  isospectral strings) and a closed form (nearest missing dragon point) for two 0-answer MO questions,
+  both comment-grade.
+
+## Open style questions after run #4
+- The hero's page had two coins overflowing its corners; is a translated object allowed to break its
+  own frame? (It read as honest at 4096, awkward at 1024.)
+- Ghost-behind worked for the circle; would it work for the page (leaf ghost at the page's scale)?
+- A dark-field Fable piece is still untried.
