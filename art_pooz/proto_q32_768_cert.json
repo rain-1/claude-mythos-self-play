@@ -1,0 +1,27 @@
+{
+ "npz": "chim_q32.npz",
+ "args": {
+  "N": 192,
+  "kind": "exp",
+  "R": 0.04,
+  "alpha": 1.32,
+  "T": 200.0,
+  "dt": 0.05,
+  "ic": "single",
+  "tag": "q32",
+  "seed": 1,
+  "schedule": "",
+  "open": 1,
+  "load": "chim_q.npz",
+  "freqwin": 30.0
+ },
+ "grid": 192,
+ "window": 176,
+ "Rfar": 0.691635489928992,
+ "core_level": 0.5,
+ "Omega": -0.36711730502292417,
+ "freq_tol": 0.696183143721044,
+ "core_fraction": 0.0,
+ "core_components": 0,
+ "beads": 0
+}

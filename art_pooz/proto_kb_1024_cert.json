@@ -1,0 +1,13 @@
+{
+ "npz": "kb1d_512.npz",
+ "N": 512,
+ "Omega_plateau": -0.7692597510885302,
+ "locked_fraction": 0.259765625,
+ "drifting_fraction": 0.708984375,
+ "freq_min": -0.7698470733257629,
+ "freq_max": -0.2999892835395813,
+ "kappa": 4.0,
+ "alpha": 1.457,
+ "window": 60.0,
+ "freq_window": 800.0
+}

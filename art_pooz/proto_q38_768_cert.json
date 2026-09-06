@@ -1,0 +1,27 @@
+{
+ "npz": "chim_q38.npz",
+ "args": {
+  "N": 192,
+  "kind": "exp",
+  "R": 0.04,
+  "alpha": 1.38,
+  "T": 200.0,
+  "dt": 0.05,
+  "ic": "single",
+  "tag": "q38",
+  "seed": 1,
+  "schedule": "",
+  "open": 1,
+  "load": "chim_q.npz",
+  "freqwin": 30.0
+ },
+ "grid": 192,
+ "window": 176,
+ "Rfar": 0.6709515847926815,
+ "core_level": 0.5,
+ "Omega": -0.19426026421941417,
+ "freq_tol": 0.5165823356363303,
+ "core_fraction": 0.08742252066115702,
+ "core_components": 3,
+ "beads": 2708
+}
