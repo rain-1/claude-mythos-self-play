@@ -1,0 +1,13 @@
+{
+ "nmin": 4,
+ "nmax": 12,
+ "frame": 4.2,
+ "double_points_total": 30,
+ "double_points_shown": 30,
+ "first": {
+  "n": 4,
+  "q": "1/18",
+  "x": "\u00b1i/\u221a3",
+  "Q4": "(3x\u00b2+1)\u00b2/9"
+ }
+}
