@@ -95,3 +95,30 @@ hand rather than reinvent it. Read after carry_forward.md, update when the style
 - Register notes: a random world in coins needs a finite rim (ideal points deadlock the layout); a
   specimen sheet of pairs puts the shared invariant once between the two portraits; a lattice field at 1 px
   per point with early generations thresholded to paper reads as an object rather than wallpaper.
+
+## Run #5 (09-06) — what moved
+- **The theme came from the mathematics, not the other way round**: three unrelated seeds (a fluid
+  model, a swarm, a polynomial family) turned out to share one shape — the place where a
+  description stops describing — and the triptych title *Where the Description Ends* was found
+  after two pieces were built, not before. Let the title arrive late.
+- **Streamlines fill an emptiness honestly**: the Hele-Shaw retreat had a big blank interior until
+  the exact flow web (images of the disc's radii under the conformal map) went in; the web pinches
+  at the cusps and *shows the reason* the model dies (speed ∝ 1/|f′| → ∞). When a region is empty,
+  ask what field is defined there.
+- **Roads + rungs**: a family of moving zeros drawn as roads (pigment per degree) is a diagram;
+  adding the rungs between each zero and its mirror image (the relation the theorem is about)
+  made it a body. Same lesson as the sunflower: ink the relation.
+- **Coral stayed exclusive**: the roads use nine pigments and never coral, so the double points
+  own the accent. When the hierarchy palette would use the accent pigment, drop it from the cycle.
+- **rs-scaling bit again**: the 2560 finals came out hairline-thin because widths were scaled by
+  the supersample only; every stroke/radius must carry `rs = FINAL/1024·SS`. Put it in the renderer
+  header from the first line, before the proto looks good.
+- **pkill -f bit a TENTH time** (exit 144, killed my own shell mid-edit, one render lost). The rule
+  is absolute: never in a compound command; kill by PID.
+- **A negative result can be a piece's footnote, not its grave**: the 2-D spiral chimera was hunted
+  for two hours and not caught; the ORIGINAL 1-D chimera (Kuramoto–Battogtokh ring) took ten
+  minutes and carries the same idea honestly as a space–time carpet. When the hero animal won't
+  come, paint its smaller cousin and table what you learned (`notes_chimera.md`).
+- Titles this run: *The Fluid Leaves Before the Model Does* (hero), *Where Two Roads Meet*,
+  *The Part That Will Not Agree*; triptych *Where the Description Ends*. The tweet-story spoke to
+  the fluid in the second person.
