@@ -82,6 +82,16 @@ def run(N=256, L=1.0, kind='exp', R=0.04, alpha=1.45, K=1.0, dt=0.05, T=400.0,
             theta += s * np.angle((X - cx * L) + 1j * (Y - cy * L))
     elif ic == 'random':
         theta = rng.uniform(-np.pi, np.pi, (N, N))
+    elif ic.startswith('plane'):
+        m = int(ic[5:] or 2)
+        theta = 2 * np.pi * m * X / L
+    elif ic.startswith('archi'):
+        # Archimedean spiral seed with wavelength lam (fraction of L): θ = arg z − 2π|z|/lam, core randomised
+        lam = float(ic[5:] or 0.4) * L
+        z = (X - 0.5 * L) + 1j * (Y - 0.5 * L)
+        theta = np.angle(z) - 2 * np.pi * np.abs(z) / lam
+        core = np.abs(z) < 1.5 * R
+        theta = np.where(core, rng.uniform(-np.pi, np.pi, (N, N)), theta)
     elif ic == 'single':
         theta = np.angle((X - 0.5 * L) + 1j * (Y - 0.5 * L))
         core = np.hypot(X - 0.5 * L, Y - 0.5 * L) < 1.5 * R

@@ -71,10 +71,12 @@ def render(npz, FINAL=1024, SS=2, tag='proto_chimera', caption=True, title='The 
     if len(ii):
         im = {name: Image.new('F', (W, H), 0.0) for name in CYCLE}
         dr = {name: ImageDraw.Draw(im[name]) for name in CYCLE}
-        rad = 0.42 * f
+        rad = 0.40 * f
         hue_s = (th + np.pi) / (2 * np.pi)
-        for a, b in zip(ii, jj):
-            x = (b + 0.5) * f; y = (a + 0.5) * f
+        rng = np.random.default_rng(seed)
+        jit = rng.uniform(-0.28, 0.28, (len(ii), 2)) * f
+        for (a, b), (jx, jy) in zip(zip(ii, jj), jit):
+            x = (b + 0.5) * f + jx; y = (a + 0.5) * f + jy
             k = int(np.floor(np.mod(hue_s[a, b], 1.0) * len(CYCLE))) % len(CYCLE)
             dr[CYCLE[k]].ellipse([x - rad, y - rad, x + rad, y + rad], fill=1.0)
         for name in CYCLE:
