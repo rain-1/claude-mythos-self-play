@@ -1,0 +1,7 @@
+__pycache__/
+crop_*.png
+*.npz
+*.log
+chim_*.png
+proto_*.png
+frsweep.log
