@@ -83,7 +83,7 @@ def render(FINAL=1024, SS=2, N=720, M=37, kind='random', seed=3, tag='kac', capt
     Y = y1 - (y1 - y0) * (G + 1) / 2
     ch = polyline_density(W, H, np.stack([X, Y], 1), 1.3 * rs, weight=1.0)
     axis = polyline_density(W, H, np.array([[x0, y1 - (y1 - y0) / 2], [x1, y1 - (y1 - y0) / 2]]), 0.8 * rs, weight=0.5)
-    axis += polyline_density(W, H, np.array([[xb - 3 * rs, y1 + 4 * rs], [xb + 3 * rs, y0 - 4 * rs]]), 0.8 * rs, weight=0.5)
+    axis = axis + polyline_density(W, H, np.array([[xb - 3 * rs, y1 + 4 * rs], [xb + 3 * rs, y0 - 4 * rs]]), 0.8 * rs, weight=0.5)
     sheet.wash(np.clip(gaussian_filter(ch + axis, 0.4 * rs), 0, 1) * 0.95, 'ink')
     Yk = y1 - (y1 - y0) * ((1 - 2 * mu) ** ts + 1) / 2
     ck = polyline_density(W, H, np.stack([X[:T1 + 1], Yk[:T1 + 1]], 1), 1.6 * rs, weight=1.0)

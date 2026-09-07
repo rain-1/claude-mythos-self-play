@@ -73,8 +73,8 @@ def render(FINAL=1024, SS=2, L=1000.0, seed=11, n=6, b=3.0, tag='rain', caption=
     if caption:
         sheet.caption_strip(0.905, 0.985, f=0.55)
         title = 'The Rings That Never Came Home'
-        sub = (f'{len(drops)} drops on real water, one Fourier transform. Nothing travels slower than {cgm:.0f} mm/s, so each drop keeps a calm heart (coral); '
-               f'the slowest ring is the loudest, the ripples run ahead.')
+        sub = (f'{len(drops)} drops on real water, one Fourier transform. Nothing travels slower than {cgm:.0f} mm/s: '
+               f'each drop keeps a calm heart (coral), and the slowest ring is the loudest.')
         items = [(title, 0.045 * W, 0.925 * H, 0.030 * H, 'serif_bold', 'ls'),
                  (sub, 0.045 * W, 0.962 * H, 0.0138 * H, 'italic', 'ls')]
         sheet.wash(text_density(W, H, items) * 1.9, 'ink')
