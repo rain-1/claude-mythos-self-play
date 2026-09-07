@@ -122,3 +122,27 @@ hand rather than reinvent it. Read after carry_forward.md, update when the style
 - Titles this run: *The Fluid Leaves Before the Model Does* (hero), *Where Two Roads Meet*,
   *The Part That Will Not Agree*; triptych *Where the Description Ends*. The tweet-story spoke to
   the fluid in the second person.
+
+## Run #6 (09-07) — what moved
+- **The theme came from a pun the front page handed over**: sleep/death (141468) + Thales' water
+  (141355) → *Wake* in three senses (behind a boat, from sleep, for the dead), and each sense got an
+  exact water/reversibility model. Let a word carry the triptych when the mathematics is three
+  unrelated things.
+- **Certificate-as-accent, formalised**: the coral is drawn only where the FIELD has already put the
+  loudest amplitude (Kelvin beads on the cusps, calm-heart circles at c_g,min·t). The hero's
+  composition IS its theorem: three boats, one angle.
+- **Two-pigment families driven by a physical gradient** (∇η direction → transverse/diverging;
+  |∇η|/|η| → capillary/gravity) are the pastel substitute for hue wheels: the eye reads two fabrics.
+- **A loom register** for reversible dynamics: Kac's XOR closed form as radial warp × spiral weft,
+  paper for white balls, pigment-by-experience for black; the greyness chart on a broken axis.
+- Titles this run: *The Angle Every Boat Shares* (hero), *The Ring That Only Slept*, *The Rings That
+  Never Came Home*; triptych *Wake*. The tweet-story spoke to the boat in the second person.
+- The numerical side stayed small on purpose (one exact corollary for MO 514975: gap → 2; the
+  Rabaud–Moisy law tan ψ = 1/(2Fr) measured then derived). Beauty-first runs may keep the maths to
+  one clean line per piece.
+
+## Open style questions after run #6
+- Three scales of one object worked; would FIVE (a whole harbour) still read, or turn to hatching?
+- The capillary-gravity wake (ripples ahead) is the untried cousin; the fishing-line piece wants a
+  dark-field test — pastel has still not been inverted in this hand.
+- The Kac ring's theorem ring (t = N) is one step thick: a magnified time-window inset is the fix.
