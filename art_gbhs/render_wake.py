@@ -159,7 +159,7 @@ def render(FINAL=1024, SS=2, a=1.0, mu=0.012, L=230.0, alpha_deg=27.0, src=(0.10
         sheet.caption_strip(0.905, 0.985, f=0.55)
         title = 'The Angle Every Boat Shares'
         sub = (f'Three boats, three speeds, one wedge: arcsin(1/3) = 19.47°. Linear deep-water theory, one Fourier transform; '
-               f'the wedge is measured from the field ({edge:.1f}° at half amplitude), never drawn.')
+               f'the wedge is measured from the field, never drawn.')
         items = [(title, 0.045 * W, 0.925 * H, 0.030 * H, 'serif_bold', 'ls'),
                  (sub, 0.045 * W, 0.962 * H, 0.0135 * H, 'italic', 'ls')]
         sheet.wash(text_density(W, H, items) * 1.9, 'ink')
