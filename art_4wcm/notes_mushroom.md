@@ -44,7 +44,14 @@ the theorem's circle ρ = r is exactly the caustic of the inscribed equilateral 
 orbit of the disc, so near ρ = r the rotation number is 1/3 and the foot returns near the same three
 places — the escape is governed by the slow drift of a nearly period-3 orbit, not by a generic rotation.
 A control run with r/R = 0.45 (`survival_r045.json`, same budget) tests whether the exponent moves.
-*(Result appended below when the run finishes.)*
+
+**Control result (r/R = 0.45, 83.1 M sojourns, same 4.8·10⁸ chords):** the tail is far lighter —
+longest sojourn 1,627 (vs 12,920), P(τ > 43) = 2.0·10⁻⁴ (vs 5.1·10⁻⁴ at t = 47), P(τ > 193) = 1.6·10⁻⁶
+(vs 1.5·10⁻⁵ at t = 323), local slopes −2.6 … −3.4 over 10 < t < 400 (vs −1.7 … −2.0). So moving the
+mouth off the period-3 caustic makes the free orbits' imitation of trapped ones roughly one power of t
+shorter-lived: **the trap's edge is stickiest when it coincides with a periodic caustic.** The
+hypothesis above stands as a hypothesis (two points, r/R = 1/2 and 0.45); the next runs are
+r/R = cos(π/4) = 0.7071, cos(π/5) = 0.8090 and a generic 0.6.
 
 **Hypothesis to play with:** for r/R = cos(π/q) (q = 3, 4, 5, …) the mouth radius coincides with the
 caustic of a period-q disc orbit; the survival exponent of cap sojourns then differs from the generic
