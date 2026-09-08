@@ -146,3 +146,15 @@ hand rather than reinvent it. Read after carry_forward.md, update when the style
 - The capillary-gravity wake (ripples ahead) is the untried cousin; the fishing-line piece wants a
   dark-field test — pastel has still not been inverted in this hand.
 - The Kac ring's theorem ring (t = N) is one step thick: a magnified time-window inset is the fix.
+
+## Run #7 (09-08) — what moved
+- **Two philosophy questions answered by two exact models**: 'Is happiness a trap?' → the mushroom's trapped orbits ARE the happy ones (integrable, forever), and the free ones spend ages imitating them; 'Can freedom contain its own destruction?' → a lattice of cooperators that permits one defector. The MO front page (AI proofs, certifying without publishing) became the *method*, not a subject: certificates in every JSON, hypotheses stated as hypotheses.
+- **String art is the pastel register for billiards**: individual chords as threads, envelopes as rings, two families by invariant (cool by ρ) and by closeness to the theorem (warm by ε), coral for the circle the theorem names. Fewer, longer, crisper.
+- **A designed demonstration, declared**: the sticky orbits' launch phases were searched (64 tries) for the longest first sojourn; the caption says 'they circle for ages, then fall' and the notes say the phases were chosen. Honest curation beats a random sample that shows nothing.
+- **The flat register is allowed for a companion when the object is flat**: the kaleidoscope's four transition colours are the piece; my two attempts to make it 'painterly' by persistence killed it.
+- Titles: *Is Happiness a Trap?* (hero), *The Seed It Permits*, *One Defector, Ten Futures*; triptych *What Freedom Permits*. The tweet-story spoke to the orbit in the second person.
+
+## Open style questions after run #7
+- The mushroom silhouette is iconic (a T); would a rotated or cropped composition (cap only, mouth at the bottom edge) give more air?
+- The dark-field Fable piece is STILL untried (string art on a dark field is the natural test).
+- The futures sheet's bottom third was empty until the tile rows were spread; a 12-cell grid wants 3 rows that END near 0.93H.
