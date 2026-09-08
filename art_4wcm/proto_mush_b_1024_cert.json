@@ -1,0 +1,15 @@
+{
+ "n_trapped": 48,
+ "bounces_trapped": 1500,
+ "rho_drift_max": 1.2212453270876722e-13,
+ "all_trapped_stayed": true,
+ "n_free": 16,
+ "bounces_free": 25000,
+ "sojourns": 72607,
+ "sojourn_max": 355.6007792170425,
+ "sojourn_mean": 2.8006043802002276,
+ "P_gt_10": 0.0072720261131846795,
+ "P_gt_100": 0.00015150054402468082,
+ "norm_tr": 0.00010610911704134196,
+ "norm_fr": 1.4785382518311962e-05
+}
