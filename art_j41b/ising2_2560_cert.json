@@ -1,0 +1,25 @@
+{
+ "lattice": [
+  2400,
+  3300
+ ],
+ "window_rows": 425,
+ "window_cols": 581,
+ "px_per_site": 7,
+ "origin": [
+  1921,
+  241
+ ],
+ "max_depth": 4,
+ "n_clusters": 266449,
+ "bond_corr": 0.6637786790051338,
+ "magnetisation": -0.10416767676767677,
+ "mean_depth_window": 0.16771489318619015,
+ "depth_histogram": [
+  206259,
+  39921,
+  743,
+  2
+ ],
+ "n_sites_at_or_over_coral_depth": 745
+}
