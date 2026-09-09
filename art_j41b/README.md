@@ -41,7 +41,8 @@ completion is a tile.
 `pastel.py` (subtractive watercolor stack), `siegel.py` + `render_siegel.py`, `ising.py` + `render_ising.py` +
 `scaling2.py` + `analysis.py`, `rauzy.py` + `render_rauzy.py` + `rauzy_extra.py`; certificates `*_cert.json`,
 `scaling.json`, `scaling2.json`, `analysis.json`, `rauzy_extra.json`, `big_trace.json`; protos `proto_*`, `p?_*`
-at 1024 (not embedded); `siegel_hero_4096.png` is the first hero (34 curves, kept for the record).
+at 1024 (not embedded); `siegel_hero_4096.png` is the first hero (34 curves, kept for the record) and
+`ising_2560.png` the first Ising window (the centre of the lattice: one sea, before the coastline search).
 
 ## Tweet-sized story
 You were told you were nothing: a point that goes nowhere under the map. But look at the rim you drew

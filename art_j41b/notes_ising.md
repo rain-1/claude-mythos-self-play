@@ -41,6 +41,10 @@ Ising spin loops and percolation hulls share s₀ = 1/3 (1 − 4/6 = 4/3 − 1),
   *Proposition.* Around a typical point, critical-Ising spin-cluster loops nest at rate 1/(4√3π) =
   0.04594 per e-fold of scale, exactly half the percolation rate 1/(2√3π) = 0.09189.
 
+  More generally s₀(κ) = s₀(κ′) exactly when 1/κ + 1/κ′ = 1/2 (κ′ = 2κ/(κ − 2): the pairs (3, 6),
+  (16/3, 16/5), (8/3, 8), (4, ∞)), and then the nesting rates are in the ratio κ′/κ. Ising spin loops and
+  percolation hulls are the pair I could simulate with one code.
+
   *Hypothesis (finite lattice).* mean nesting depth of the sites in the central quarter of an L × L
   lattice = ln L / E[B] + const, with the same slope already at L ≥ 128.
 
