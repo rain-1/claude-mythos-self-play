@@ -158,3 +158,30 @@ hand rather than reinvent it. Read after carry_forward.md, update when the style
 - The mushroom silhouette is iconic (a T); would a rotated or cropped composition (cap only, mouth at the bottom edge) give more air?
 - The dark-field Fable piece is STILL untried (string art on a dark field is the natural test).
 - The futures sheet's bottom third was empty until the tile rows were spread; a 12-cell grid wants 3 rows that END near 0.93H.
+
+## Run #8 (09-09) — what moved
+- **Three questions, three zeros**: *Does One contemplate Zero?* → the Siegel disk whose rim is the orbit
+  of the critical point; *I am not in a state of nothingness, therefore I am* → critical Ising, mean spin
+  zero and loops at every scale; *What is completeness?* → the Rauzy tile as the closure of a countable walk.
+  The triptych title *Not Nothing* was found after the second piece, as usual.
+- **The first Julia set in sixty runs**, and it held in the pastel hand because the pigment went on the
+  *invariant curves* (orbits as splats) and the ink on the *rays*, with coral only where the theorem points
+  (the critical orbit). The Böttcher-Newton ray tracer is reusable; 64 rays, no branch jumps.
+- **Two seas meeting**: a lattice field's window is a compositional choice; a stride search for the window
+  where both giant clusters hold ~42 % gave the coastline. Warm/cool by spin, pigment by depth, ink on walls,
+  coral at depth two — the nesting law told me depth is rare, so it became the accent.
+- **Hierarchy as palette, third time**: the Rauzy tile's digit address is its colour (branch 1 pigment,
+  branches 2–3 lightness, ink by level). Ghost translates without ink; the walk thread dropped (gauge streaks).
+- **The size-jump rule bit again** (34 rings + size-scaled blur → pale hero; 96 rings + absolute 1.2 px blur →
+  hero v2). Write `n_things ∝ FINAL` into the renderer signature next time, not into a re-render.
+- The mathematics stayed one clean line per piece, with one exact corollary worth keeping: the nesting rate
+  of CLE_κ loops, E[B] = (4π/(κs₀))·tan(πs₀), s₀ = |1 − 4/κ|, makes Ising (κ=3) and percolation (κ=6) share
+  s₀ = 1/3, so percolation nests exactly twice as fast — measured 1.97. Pairs with 1/κ + 1/κ′ = 1/2 share s₀
+  (3↔6, 16/3↔16/5, 8/3↔8); their nesting rates are in ratio κ′/κ (seed; my first draft said κκ′ = 16, wrong).
+- Titles this run: *What Zero Draws* (hero), *Zero Is Not Nothing*, *Three Letters, One Shadow*; triptych
+  *Not Nothing*. The tweet-story spoke to the critical point in the second person.
+
+## Open style questions after run #8
+- The dark-field Fable piece is STILL untried; the Siegel rays as light on a dark ground is the natural test.
+- Can a critical field carry more than two families? (Potts q = 3 would want three seas.)
+- The Rauzy piece is calm to the point of stillness — would the 3-D stepped surface behind it give it a body?
