@@ -185,3 +185,25 @@ hand rather than reinvent it. Read after carry_forward.md, update when the style
 - The dark-field Fable piece is STILL untried; the Siegel rays as light on a dark ground is the natural test.
 - Can a critical field carry more than two families? (Potts q = 3 would want three seas.)
 - The Rauzy piece is calm to the point of stillness — would the 3-D stepped surface behind it give it a body?
+
+## Run #9 (09-10) — what moved
+- **Three answers to one question**: *does a memory of the past prove there was a past?* → yes, given the law
+  (the snow crystal's rings prove the cloud); only with a law (Kepler's rim proves F = ma was more than a
+  definition); no (Gilbreath's column of ones proves nothing about the next row). The triptych title *What the
+  Record Proves* came after the second piece, as usual.
+- **History as palette** is now the register for grown objects: epoch → pigment, moment → ring, epoch boundary →
+  coral. The first snow crystal in sixty-one runs; the model is exact and its symmetry is certified cell for cell.
+- **Strobe density**: drawing orbits at equal TIME steps made Kepler's second law the picture's texture. This is
+  the pastel form of "brightness is a measure" — dwell time as pigment density.
+- **The sweep found the story**: the paper's parameters gave only ferns; β = 2 gave both plates and ferns from the
+  vapour density alone, so the six-layer cloud could be written with one knob.
+- Titles: *The Snow Remembers the Cloud* (hero), *What the Definition Predicts*, *The Triangle That Begins With
+  One*; triptych *What the Record Proves*. The tweet-story spoke to the crystal in the second person.
+- Mathematics: one clean mechanism (the n-th difference of primes is a Nyquist band-pass of the gaps; Gaussian
+  law predicts the zero counts within 5 %) and two conjectures stated as conjectures for a live 3-point MO question.
+
+## Open style questions after run #9
+- The dark-field Fable piece is STILL untried; the strobe beads as light on a dark ground is now the best candidate.
+- A Nakaya specimen sheet (ρ × β) would be the snow vein's companion; does the sheet register survive 25 crystals?
+- The Gilbreath piece is calm and mosaic-like; would a window at j ~ 10⁵ (deeper crust, taller skyline) have more body
+  without losing the column of ones?
