@@ -14,7 +14,11 @@ b += (1−κ)d, c += κd; (iii) attachment: n ≤ 2 crystal neighbours and b ≥
 the neighbourhood < θ and b ≥ α)); or n ≥ 4; (iv) melting: b −= μb, c −= γc back to vapour.  Parameters used
 for every run of this piece: β = 2.0, α = 0.1, θ = 0.05, κ = 0.02, μ = 0.05, γ = 0.0005.  The vapour density
 ρ is the cloud: ρ(t) is piecewise constant, switched when the crystal radius reaches given values; at a switch
-the whole vapour field is rescaled by ρ_new/ρ_old (depletion profile kept, far field set to the new cloud).
+the crystal enters a fresh air mass but carries its boundary layer: d ← ρ_new − (ρ_old − d)(ρ_new/ρ_old)·exp(−dist/λ),
+dist = hex distance to the crystal (BFS), λ = 40 cells.  Two wrong models first: rescaling the whole old field kept a
+depletion zone hundreds of cells deep (after a 170,000-step plate layer it reached the reservoir and the next layer grew
+at ~1,000 steps per cell — that hero was killed at step 253,000, radius 494), and a full reset to fresh air grew broad
+plates with cavities at every density, because branching needs the depleted layer (Mullins–Sekerka).
 
 **Exact symmetry.**  Every neighbour sum is computed as a sorted sum (order-independent), so the deterministic
 dynamics respects all 12 lattice symmetries to the last bit.  Certificate: the attachment-time field of the
@@ -35,9 +39,9 @@ plate regime the steps per cell of radius grow with the radius (~110 steps/cell 
 
 ## The cloud of the hero
 
-Six layers by radius: ρ = 0.66 (plate core) to r = 100 → 0.95 (fern) to 330 → 0.62 (plate) to 470 →
-0.88 (dendrite) to 620 → 0.62 (plate) to 720 → 0.95 (fern) to the stop.  Array 1601² (radius 800), domain
-radius 760, stop at 730.  The exact steps and radii of each change are in the certificate.
+Six layers by radius: ρ = 0.66 (plate core) to r = 90 → 0.95 (fern) to 260 → 0.66 (plate) to 340 →
+0.90 (dendrite) to 470 → 0.66 (plate) to 520 → 0.95 (fern) to the stop.  Array 1281² (radius 640), domain
+radius 600, stop at 570.  The exact steps and radii of each change are in the certificate.
 
 ## What the picture encodes
 

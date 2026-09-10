@@ -3,3 +3,5 @@
 *.d
 hero1.c
 nohup.out
+__pycache__/
+snow

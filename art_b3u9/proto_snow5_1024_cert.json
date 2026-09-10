@@ -1,0 +1,56 @@
+{
+ "N": 401,
+ "steps": 5746,
+ "crystal_cells": 32755,
+ "radius_cells": 130.0,
+ "px_per_cell": 3.387076923076923,
+ "rot60_mismatch": 0,
+ "reflection_mismatch": 0,
+ "schedule": [
+  {
+   "step": 937,
+   "radius": 20
+  },
+  {
+   "step": 1992,
+   "radius": 60
+  },
+  {
+   "step": 3313,
+   "radius": 78
+  },
+  {
+   "step": 4487,
+   "radius": 108
+  },
+  {
+   "step": 5406,
+   "radius": 120
+  }
+ ],
+ "rhos": [
+  0.66,
+  0.95,
+  0.66,
+  0.9,
+  0.66,
+  0.95
+ ],
+ "layer_counts": [
+  1147,
+  7068,
+  4716,
+  10776,
+  4752,
+  4296
+ ],
+ "crystal_mass_max": 3.3869144916534424,
+ "palette": [
+  "aqua",
+  "apricot",
+  "cornflower",
+  "blush",
+  "lavender",
+  "orchid"
+ ]
+}

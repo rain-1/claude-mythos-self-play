@@ -34,11 +34,13 @@ n = 1 has no zero at all (consecutive primes differ), so the question starts at 
 | 22 | 25,340,978 | 5 | 2.6 |
 | 23 | 50,574,254 | 2 | 2.6 |
 | 24 | 7,510,843 | 5 | −1.2 |
-| 25 | none yet (j ≤ 9.8·10⁷) | 0 | > 1.5 |
+| 25 | 328,813,105 (p = 7,113,569,867; next 357,924,195) | 2 (j ≤ 4.55·10⁸) | 3.3 |
 | 26 | 67,248,861 | 2 | 0.0 |
-| 27–40 | none yet | 0 | |
+| 27, 28, 29 | none below j = 4.55·10⁸ (primes < 10¹⁰) | 0 | > 1.8, > 0.8, > −0.2 |
+| 30 | 452,499,644 (p = 9,941,224,877) | 1 (j ≤ 4.55·10⁸) | −1.2 |
+| 31–40 | none yet (j ≤ 9.8·10⁷) | 0 | |
 
-(Rows n ≤ 15 list the counts from the first run, primes < 2·10⁸; rows n ≥ 16 from the second, primes < 2·10⁹.)
+(Rows n ≤ 15 list the counts from the first run, primes < 2·10⁸; rows n ≥ 16 from the second, primes < 2·10⁹; n = 25, 27–30 from the streaming segmented sieve `primediff_seg.py` over all 455,052,511 primes below 10¹⁰, 139 s.)
 
 ## Why 2ⁿ: the mechanism
 
@@ -54,8 +56,9 @@ So the differencing acts as a narrow band-pass filter at ω = π with gain 2ⁿ,
 D_n is always even (all primes odd for j ≥ 2), so a Gaussian local law gives P(D_n(j) = 0) ≈ 2/(σ_n √(2π)).
 Check: predicted zero counts up to J = 9.8·10⁷: n = 16: 447 (measured 411); n = 20: 29.4 (measured 28);
 n = 22: 7.3 (5); n = 24: 1.8 (5).  Predicted least zero E[j_min] ≈ 1.25 σ_n ≈ 8.6 · 2ⁿ · (πn)^{−1/4}:
-n = 24: 4.9·10⁷ (observed 7.5·10⁶), n = 25: 9.7·10⁷ (nothing yet below 9.8·10⁷ — consistent), n = 26: 1.9·10⁸
-(observed 6.7·10⁷, an early one).
+n = 24: 4.9·10⁷ (observed 7.5·10⁶), n = 25: 9.7·10⁷ (observed 3.3·10⁸, a late one), n = 26: 1.9·10⁸
+(observed 6.7·10⁷, an early one), n = 30: 2.9·10⁹ (observed 4.5·10⁸, early); n = 27, 28, 29: predicted 3.8·10⁸, 7.6·10⁸,
+1.5·10⁹ — none below 4.55·10⁸, consistent.
 
 ## Conjectures (stated as such)
 
@@ -63,8 +66,8 @@ n = 24: 4.9·10⁷ (observed 7.5·10⁶), n = 25: 9.7·10⁷ (nothing yet below 
    N_n(J) ≈ (2/√(2π)) Σ_{j≤J} 1/σ_n(j) ≍ J / (2ⁿ log J) → ∞.  (For n prime this gives the poster's corollary:
    infinitely many j with n | p_{n+j} − p_j.)  n = 1 is the only exception (no zeros).
 2. **j_min(n) = 2^{n + O(1)}: the variable log₂ j_min(n) − n has a limiting distribution** (the log of a geometric
-   waiting time, centred near 1.5 with an exponential left tail).  Measured over n = 2..26: mean −0.67,
-   standard deviation 2.5, range [−6.1, 2.6].  The lucky early zeros (n = 8: j = 9; n = 17: 2,697; n = 21:
+   waiting time, centred near 1.5 with an exponential left tail).  Measured over n = 2..26 and 30: mean −0.5,
+   standard deviation 2.5, range [−6.1, 3.3].  The lucky early zeros (n = 8: j = 9; n = 17: 2,697; n = 21:
    29,811) are the left tail, not a second law.
 3. What it would take to prove 1: nothing known — even D_2(j) = 0 (balanced primes, p_{j+1} = (p_j + p_{j+2})/2)
    is not known to happen infinitely often; it follows from prime k-tuples.  The 2ⁿ law is a statement about

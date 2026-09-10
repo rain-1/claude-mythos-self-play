@@ -1,0 +1,4 @@
+crystal cells 497329, radius 570.0 cells, 3.09 final px per cell, steps 60187
+{'N': 1281, 'steps': 60187, 'crystal_cells': 497329, 'radius_cells': 570.0, 'px_per_cell': 3.089964912280702, 'rot60_mismatch': 0, 'reflection_mismatch': 0, 'schedule': [{'step': 18739, 'radius': 90}, {'step': 25526, 'radius': 260}, {'step': 42082, 'radius': 340}, {'step': 50035, 'radius': 470}, {'step': 57874, 'radius': 520}], 'rhos': [0.66, 0.95, 0.66, 0.9, 0.66, 0.95], 'layer_counts': [24037, 67866, 73512, 165900, 70116, 95898], 'crystal_mass_max': 5.850011348724365}
+saved snow_hero_4096.png (4096, 4096)
+done 320s

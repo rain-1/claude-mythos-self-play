@@ -17,6 +17,7 @@
 #include <omp.h>
 
 static int N, R;
+#define LAMBDA 40.0
 static unsigned char *a;   /* crystal indicator */
 static double *b, *c, *d, *dn;
 static int *tat;
@@ -59,8 +60,17 @@ int main(int argc, char **argv) {
     for (long t = 1; t <= steps; t++) {
         while (sk + 1 < nsched && ((ts[sk + 1] >= 0 && t >= ts[sk + 1]) || (ts[sk + 1] < 0 && rad >= -ts[sk + 1]))) {
             printf("cloud change at step %ld radius %d\n", t, rad); double old = rho; sk++; rho = rhos[sk];
-            /* the cloud changes: the whole vapour field rescales (depletion profile kept, far field = new rho) */
-            for (size_t k = 0; k < M; k++) if (!a[k]) d[k] *= rho / old; }
+            /* the cloud changes: the crystal enters a fresh air mass but carries its boundary layer (thickness LAMBDA cells):
+               d_new = rho_new - (rho_old - d_old) * (rho_new/rho_old) * exp(-dist/LAMBDA), dist = hex distance to the crystal.
+               (Rescaling the whole old field kept a depletion zone hundreds of cells deep and stalled growth; a full reset
+               grew broad plates at every density because branching needs the depleted layer.) */
+            int *dist = malloc(M * sizeof(int)); int *q = malloc(M * sizeof(int)); size_t qh = 0, qt = 0;
+            for (size_t k = 0; k < M; k++) { dist[k] = a[k] ? 0 : -1; if (a[k]) q[qt++] = (int)k; }
+            while (qh < qt) { int k = q[qh++]; int i = k / N, j = k % N;
+                for (int qq = 0; qq < 6; qq++) { int ii = i + oi[qq], jj = j + oj[qq]; if (ii < 0 || jj < 0 || ii >= N || jj >= N) continue;
+                    int kk = idx(ii, jj); if (dist[kk] < 0) { dist[kk] = dist[k] + 1; q[qt++] = kk; } } }
+            for (size_t k = 0; k < M; k++) if (!a[k]) d[k] = rho - (old - d[k]) * (rho / old) * exp(-dist[k] / LAMBDA);
+            free(dist); free(q); }
         /* the disturbed region spreads at most one cell per step */
         lo--; hi++; if (lo < 1) lo = 1; if (hi > N - 2) hi = N - 2;
         int L0 = lo > 1 ? lo : 1, L1 = hi < N - 2 ? hi : N - 2;

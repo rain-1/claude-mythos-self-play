@@ -1,0 +1,8 @@
+0 {'rho': 0.55, 'cells': 50317, 'steps': 58204, 'radius': 130.0} 15s
+1 {'rho': 0.65, 'cells': 49813, 'steps': 29507, 'radius': 130.0} 19s
+2 {'rho': 0.75, 'cells': 37375, 'steps': 12524, 'radius': 130.0} 25s
+3 {'rho': 0.85, 'cells': 30283, 'steps': 4790, 'radius': 130.0} 29s
+4 {'rho': 0.95, 'cells': 30211, 'steps': 2320, 'radius': 130.0} 34s
+5 {'rho': 1.05, 'cells': 45649, 'steps': 1396, 'radius': 130.0} 39s
+saved snow_sheet_2560.png (2560, 2560)
+done 59s

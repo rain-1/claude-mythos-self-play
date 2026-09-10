@@ -1,0 +1,17 @@
+  up to 1.000e+09, 50847534 primes, 16s
+  up to 2.000e+09, 98222287 primes, 31s
+  up to 3.000e+09, 144449537 primes, 44s
+  up to 4.000e+09, 189961812 primes, 58s
+n=25 zero at j=210829337 (prime 4462552643)
+n=27 zero at j=224076286 (prime 4757283367)
+  up to 5.000e+09, 234954223 primes, 72s
+  up to 6.000e+09, 279545369 primes, 86s
+n=25 zero at j=305534154 (prime 6586374659)
+  up to 7.000e+09, 323804353 primes, 99s
+n=25 zero at j=328813105 (prime 7113569867)
+n=25 zero at j=357924195 (prime 7775340533)
+  up to 8.000e+09, 367783654 primes, 112s
+  up to 9.000e+09, 411523196 primes, 126s
+n=30 zero at j=452499644 (prime 9941224877)
+  up to 1.000e+10, 455052511 primes, 139s
+done 455052511 139s
