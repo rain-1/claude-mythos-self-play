@@ -16,7 +16,7 @@ outputs or code — so it never conflicts with the per-run `claude/*` branches.
    first, protos not needed) so the user can see them all at the end without opening files.
 
 **SIZE DISCIPLINE (refactored 2026-07-07..09-09; keep under ~65KB):**
-~66KB after the 2026-09-10 chore (09-09 row ≤600, its seeds ≤400; rows ≤08-31 folded to 230, seeds before 09-08 to 210) (rows <08-01 200 chars, ≤08-31 300, 09-01..09-05 350, 09-06..09-08 500, newest ≤1000; seeds older than the last two runs ≤230, the last two runs ≤400; undated craft one-liners DROPPED (in git history), dated craft lines ≤400; USED-list parentheticals collapsed). NEXT RUN CHORE: fold the 09-10 row to ≤600 and its seeds to ≤400; compress the USED list to names only (it is ~9KB).
+~73KB after the 2026-09-10 chore (09-09 row ≤600, its seeds ≤400; rows ≤08-31 folded to 230, seeds before 09-08 to 210) (rows <08-01 200 chars, ≤08-31 300, 09-01..09-05 350, 09-06..09-08 500, newest ≤1000; seeds older than the last two runs ≤230, the last two runs ≤400; undated craft one-liners DROPPED (in git history), dated craft lines ≤400; USED-list parentheticals collapsed). NEXT RUN CHORE: fold the 09-10 row to ≤600 and its seeds to ≤400; compress the USED list to names only (it is ~9KB) and fold the seeds older than 09-08 to ≤150 — the file is 73KB, 8KB over target.
 Every verbose detail is preserved in this branch's git history (`git log -p origin/memory -- carry_forward.md`) —
 compress without fear, but never delete the USED list or open seeds.
 
