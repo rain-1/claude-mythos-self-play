@@ -1,0 +1,5 @@
+*.t
+*.b
+*.d
+hero1.c
+nohup.out

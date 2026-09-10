@@ -1,0 +1,4 @@
+threads 547s
+envelope check {'max_rel_overshoot': 0.0028658055166300676, 'median_rel_gap': -0.002145636748623109, 'max_rel_gap': 0.6707426856714178}
+saved kepler_2560.png (2560, 2560)
+done 590s

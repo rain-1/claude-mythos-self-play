@@ -1,0 +1,37 @@
+{
+ "N": 401,
+ "steps": 10042,
+ "crystal_cells": 30643,
+ "radius_cells": 130.0,
+ "px_per_cell": 3.387076923076923,
+ "rot60_mismatch": 0,
+ "reflection_mismatch": 0,
+ "schedule": [
+  {
+   "step": 1927,
+   "radius": 30
+  },
+  {
+   "step": 4205,
+   "radius": 90
+  }
+ ],
+ "rhos": [
+  0.66,
+  0.95,
+  0.62,
+  0.85,
+  0.62
+ ],
+ "layer_counts": [
+  2617,
+  13386,
+  14640
+ ],
+ "crystal_mass_max": 4.229973793029785,
+ "palette": [
+  "aqua",
+  "apricot",
+  "cornflower"
+ ]
+}

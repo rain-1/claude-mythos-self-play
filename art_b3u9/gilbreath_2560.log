@@ -1,0 +1,7 @@
+/home/user/claude-mythos-self-play/art_b3u9/gilbreath.py:56: RuntimeWarning: Mean of empty slice
+  n_signed_zeros=len(zeros), sea_fraction_2=float((tri[100:] == 2).mean()), sea_fraction_0=float((tri[100:] == 0).mean()))
+/usr/local/lib/python3.11/dist-packages/numpy/_core/_methods.py:142: RuntimeWarning: invalid value encountered in scalar divide
+  ret = ret.dtype.type(ret / rcount)
+{'cols': 517, 'rows': 95, 'all_firsts_one': True, 'crust_depth': 22, 'max_entry': 34, 'n_signed_zeros': 135, 'sea_fraction_2': nan, 'sea_fraction_0': nan}
+saved gilbreath_2560.png (2560, 2560)
+done 63s
