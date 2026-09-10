@@ -46,6 +46,12 @@ nothing about the next row.
   7,113,569,867; streaming sieve over all 455 M primes below 10¹⁰), j_min(26) = 67,248,861, j_min(30) = 452,499,644;
   n = 27, 28, 29 have no zero below j = 4.55·10⁸, as the 2ⁿ law predicts. Gilbreath: the first entry is 1 in each of the first 3000 rows.
 
+## The app
+`snowfall.html` — *Letters From the Sky*, a single-page web app: draw the cloud (vapour density against altitude) as a
+curve of draggable points, release a cohort of crystals that grow live in the browser with the same Gravner–Griffeath
+model (β = 2 set, exact twelvefold symmetry at zero turbulence), then collect them on a sill and inspect each one up
+close with its growth rings and its own record of the cloud.
+
 ## Files
 `pastel.py` (subtractive watercolor stack), `snow.c` (engine, OpenMP, exact symmetry) + `snowio.py` +
 `snow_view.py` + `render_snow.py` + `snow_sheet.py`, `kepler.py`, `gilbreath.py`, `primediff.py` (+ `primediff.json`, the
