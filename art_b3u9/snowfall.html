@@ -44,10 +44,10 @@ button.primary{background:var(--coral);border-color:var(--coral);color:#fff}
 button.primary:hover{background:#e47b6d}
 button.quiet{border-color:var(--hair);font-weight:400;font-size:15px;padding:6px 14px}
 .hint{font-size:14.5px;color:var(--ink2);margin:10px 0 0}
-.fallwrap{position:relative;border:1px solid var(--hair);border-radius:4px;overflow:hidden;background:var(--paper)}
+.fallwrap{position:relative;border:1px solid #2a2740;border-radius:4px;overflow:hidden;background:#1d1b2e}
 .fallbar{display:flex;flex-wrap:wrap;gap:10px 22px;align-items:center;justify-content:space-between;margin-top:12px;font-family:var(--mono);font-size:13px;color:var(--ink2)}
 .fallbar b{color:var(--ink);font-weight:500;font-variant-numeric:tabular-nums}
-.tray .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:16px;margin-top:12px}
+.tray .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:18px;margin-top:12px}
 .card{background:#fff;border:1px solid var(--hair);border-radius:3px;padding:10px 10px 8px;cursor:pointer;text-align:left;font:inherit;color:inherit;box-shadow:0 1px 0 rgba(87,80,91,.08)}
 .card:hover{border-color:var(--ink2)}
 .card canvas{display:block;width:100%;height:auto;aspect-ratio:1}
@@ -90,19 +90,20 @@ button.quiet{border-color:var(--hair);font-weight:400;font-size:15px;padding:6px
         <li><i style="background:var(--apri)"></i><b>1.00–1.10</b>broad petals</li>
       </ul>
       <div class="ctl">
-        <label><span>Turbulence <output id="sigOut">0.00</output></span><input type="range" id="sig" min="0" max="0.12" step="0.005" value="0"></label>
+        <label><span>Own path <output id="sprOut">0.06</output></span><input type="range" id="spr" min="0" max="0.16" step="0.01" value="0.06"></label>
+        <label><span>Turbulence <output id="sigOut">0.02</output></span><input type="range" id="sig" min="0" max="0.12" step="0.005" value="0.02"></label>
         <label><span>Cohort</span><select id="cohort"><option value="6">6 crystals</option><option value="9" selected>9 crystals</option><option value="12">12 crystals</option></select></label>
-        <label><span>Length of the fall</span><select id="steps"><option value="2600">short · 2 600 steps</option><option value="4200" selected>medium · 4 200 steps</option><option value="6500">long · 6 500 steps</option></select></label>
+        <label><span>Length of the fall</span><select id="steps"><option value="9000">short · 9 000 steps</option><option value="18000" selected>medium · 18 000 steps</option><option value="32000">long · 32 000 steps</option></select></label>
       </div>
       <div class="row"><button class="primary" id="release">Release the snow</button><button class="quiet" id="preset">Try the six-layer cloud</button></div>
-      <p class="hint">Turbulence adds noise to the vapour, which breaks the sixfold symmetry the way real weather does. At zero the crystals are exactly twelvefold, to the last bit.</p>
+      <p class="hint">Own path lets each crystal drift through a slightly different column of air than the curve you drew; turbulence adds noise to the vapour so the arms branch irregularly. Every crystal is grown exactly twelvefold, cell by cell, in the browser.</p>
     </aside>
   </div>
 </section>
 
 <section class="stage" id="stage2">
-  <p class="lede">The cohort falls. Each crystal is grown cell by cell by the Gravner–Griffeath model while it drops, reading the vapour from your cloud at its own altitude. <i>Watch the arms change as they cross a band.</i></p>
-  <div class="fallwrap"><canvas id="fall" class="stagecanvas" width="1180" height="820" aria-label="snow falling through the cloud"></canvas></div>
+  <p class="lede">The cohort falls through the dusk. Each crystal is grown cell by cell by the Gravner–Griffeath model while it drops, reading the vapour from your cloud at its own altitude. <i>Watch the arms change as they cross a band; the slow ones are still growing plates.</i></p>
+  <div class="fallwrap"><canvas id="fall" class="stagecanvas" width="1180" height="900" aria-label="snow falling through the cloud"></canvas></div>
   <div class="fallbar"><span>growth <b id="prog">0 %</b></span><span>landed <b id="landed">0</b></span><span>cells grown <b id="cells">0</b></span><button class="quiet" id="collect" disabled>Collect the snow</button></div>
 </section>
 
@@ -115,7 +116,7 @@ button.quiet{border-color:var(--hair);font-weight:400;font-size:15px;padding:6px
 
 <div class="overlay" id="overlay" role="dialog" aria-modal="true" aria-label="crystal inspector">
   <div class="inspect">
-    <div class="viewwrap"><canvas id="view" width="1100" height="1100"></canvas><span class="tag" id="viewtag">scroll to zoom · drag to pan</span></div>
+    <div class="viewwrap"><canvas id="view" width="1400" height="1400"></canvas><span class="tag" id="viewtag">scroll to zoom · drag to pan</span></div>
     <aside class="panel">
       <h2 id="ptitle">Crystal</h2>
       <p id="pstory"></p>
@@ -141,15 +142,16 @@ function tint(rho){
 }
 const rgb=(c,a=1)=>`rgba(${c[0]},${c[1]},${c[2]},${a})`;
 const INK='#57505B', CORAL='#EE8A7C', PAPER='#F8F4EC';
-// pigment on paper at a given density (multiplicative, like the watercolour stack)
-function pigment(c,dens){ const p=[248,244,236]; return [0,1,2].map(i=>Math.round(p[i]*Math.pow(c[i]/255,dens))); }
+const PAPER3=[248,244,236];
+// tint lookup tables for the rasteriser: 256 bins over the vapour range
+const TINT=new Uint8ClampedArray(256*3);
+for(let b=0;b<256;b++){ const c=tint(RHO_MIN+(RHO_MAX-RHO_MIN)*b/255); TINT[b*3]=c[0]; TINT[b*3+1]=c[1]; TINT[b*3+2]=c[2]; }
+const rhoBin=r=>Math.max(0,Math.min(255,Math.round((r-RHO_MIN)/(RHO_MAX-RHO_MIN)*255)));
 
 // ---------- the cloud: a spline through draggable points, altitude 1 = top ----------
-// points: {a: altitude 0..1, r: vapour density}
 let pts = [{a:1,r:0.66},{a:0.84,r:0.66},{a:0.62,r:0.96},{a:0.43,r:0.68},{a:0.27,r:0.90},{a:0.12,r:0.66},{a:0,r:0.96}];
 const PRESET = JSON.parse(JSON.stringify(pts));
 function sortPts(){ pts.sort((p,q)=>q.a-p.a); }
-// Catmull-Rom through the points (parameter = index), converted to cubic Beziers for drawing
 function bezierSegs(){
   const n=pts.length, segs=[];
   for(let i=0;i<n-1;i++){
@@ -158,7 +160,6 @@ function bezierSegs(){
   }
   return segs;
 }
-// LUT: vapour density as a function of altitude, 512 bins
 let LUT = new Float32Array(512);
 function buildLUT(){
   const segs=bezierSegs(); const acc=new Float32Array(512), cnt=new Float32Array(512);
@@ -179,11 +180,9 @@ const ex=r=>EM.l+(r-RHO_MIN)/(RHO_MAX-RHO_MIN)*(ed.width-EM.l-EM.r), ey=a=>EM.t+
 const rInv=x=>RHO_MIN+(x-EM.l)/(ed.width-EM.l-EM.r)*(RHO_MAX-RHO_MIN), aInv=y=>1-(y-EM.t)/(ed.height-EM.t-EM.b);
 function drawEditor(){
   const W=ed.width,H=ed.height,c=ectx; c.clearRect(0,0,W,H);
-  // alphabet bands behind the curve
   const bands=[[0.45,0.68,PIG.aqua,'plate'],[0.68,0.72,PIG.corn,''],[0.72,0.80,PIG.lav,'petals'],[0.80,0.90,PIG.orch,'dendrite'],[0.90,1.00,PIG.blush,'fern'],[1.00,1.12,PIG.apri,'broad']];
   for(const [r0,r1,col,name] of bands){ c.fillStyle=rgb(col,.28); c.fillRect(ex(r0),EM.t,ex(r1)-ex(r0),H-EM.t-EM.b);
     if(name){ c.fillStyle='#8A8189'; c.font='500 12px "IBM Plex Mono",monospace'; c.textAlign='center'; c.fillText(name.toUpperCase(),(ex(r0)+ex(r1))/2,H-EM.b+18);} }
-  // grid + axes
   c.strokeStyle='rgba(87,80,91,.18)'; c.lineWidth=1;
   for(let a=0;a<=1.0001;a+=0.25){ c.beginPath(); c.moveTo(EM.l,ey(a)); c.lineTo(W-EM.r,ey(a)); c.stroke(); }
   c.fillStyle='#8A8189'; c.font='12px "IBM Plex Mono",monospace'; c.textAlign='right';
@@ -191,17 +190,15 @@ function drawEditor(){
   c.textAlign='center'; for(const v of [0.5,0.6,0.7,0.8,0.9,1.0,1.1]) c.fillText(v.toFixed(1),ex(v),H-EM.b+36);
   c.save(); c.translate(16,H/2); c.rotate(-Math.PI/2); c.textAlign='center'; c.font='500 12px "IBM Plex Mono",monospace'; c.fillText('ALTITUDE',0,0); c.restore();
   c.fillText('VAPOUR DENSITY  ρ',(EM.l+W-EM.r)/2,H-8);
-  // the curve
   const segs=bezierSegs(); c.strokeStyle=INK; c.lineWidth=2.4; c.beginPath(); c.moveTo(ex(segs[0][0].r),ey(segs[0][0].a));
   for(const [,p1,p2,p3] of segs) c.bezierCurveTo(ex(p1.r),ey(p1.a),ex(p2.r),ey(p2.a),ex(p3.r),ey(p3.a)); c.stroke();
-  // points
   for(let i=0;i<pts.length;i++){ const p=pts[i]; c.beginPath(); c.arc(ex(p.r),ey(p.a),i===drag?9:7,0,7); c.fillStyle=PAPER; c.fill(); c.lineWidth=2; c.strokeStyle=i===drag?CORAL:INK; c.stroke(); }
 }
 let drag=-1;
 const edPos=e=>{ const b=ed.getBoundingClientRect(); return [ (e.clientX-b.left)*ed.width/b.width, (e.clientY-b.top)*ed.height/b.height ]; };
 const hit=(x,y)=>{ for(let i=0;i<pts.length;i++){ if(Math.hypot(ex(pts[i].r)-x,ey(pts[i].a)-y)<16) return i; } return -1; };
 ed.addEventListener('pointerdown',e=>{ const [x,y]=edPos(e); let i=hit(x,y);
-  if(i<0){ if(x<EM.l||x>ed.width-EM.r||y<EM.t||y>ed.height-EM.b) return; pts.push({a:aInv(y),r:rInv(x)}); sortPts(); i=pts.findIndex(p=>p.a===aInv(y)); }
+  if(i<0){ if(x<EM.l||x>ed.width-EM.r||y<EM.t||y>ed.height-EM.b) return; const na=aInv(y); pts.push({a:na,r:rInv(x)}); sortPts(); i=pts.findIndex(p=>p.a===na); }
   drag=i; ed.setPointerCapture(e.pointerId); drawEditor(); });
 ed.addEventListener('pointermove',e=>{ if(drag<0) return; const [x,y]=edPos(e); const p=pts[drag];
   p.r=Math.max(RHO_MIN,Math.min(RHO_MAX,rInv(x)));
@@ -210,141 +207,157 @@ ed.addEventListener('pointermove',e=>{ if(drag<0) return; const [x,y]=edPos(e); 
 ed.addEventListener('pointerup',()=>{ drag=-1; buildLUT(); drawEditor(); });
 ed.addEventListener('dblclick',e=>{ const [x,y]=edPos(e); const i=hit(x,y); if(i>0&&i<pts.length-1&&pts.length>3){ pts.splice(i,1); buildLUT(); drawEditor(); } });
 document.getElementById('preset').addEventListener('click',()=>{ pts=JSON.parse(JSON.stringify(PRESET)); buildLUT(); drawEditor(); });
-const sig=document.getElementById('sig'), sigOut=document.getElementById('sigOut');
-sig.addEventListener('input',()=>sigOut.value=(+sig.value).toFixed(3));
+const sig=document.getElementById('sig'), sigOut=document.getElementById('sigOut'), spr=document.getElementById('spr'), sprOut=document.getElementById('sprOut');
+sig.addEventListener('input',()=>sigOut.value=(+sig.value).toFixed(3)); spr.addEventListener('input',()=>sprOut.value=(+spr.value).toFixed(2));
 buildLUT(); drawEditor();
 
-// ---------- the crystal: Gravner–Griffeath on the hexagonal lattice ----------
-const P={beta:2.0,alpha:0.1,theta:0.05,kappa:0.02,mu:0.05,gamma:0.0005};
+// ---------- the crystal: Gravner–Griffeath on a 1/12 wedge of the hexagonal lattice ----------
+// The growth is exactly twelvefold, so only the wedge {0 <= j <= i, i + j <= R} is simulated; a neighbour that
+// leaves the wedge is mapped back by the lattice symmetries.  Twelve times cheaper than the full lattice.
 function mulberry(seed){ return ()=>{ seed|=0; seed=seed+0x6D2B79F5|0; let t=Math.imul(seed^seed>>>15,1|seed); t=t+Math.imul(t^t>>>7,61|t)^t; return ((t^t>>>14)>>>0)/4294967296; }; }
+function canon(i,j){ for(let q=0;q<24;q++){ if(j<0){ const t=i+j; i=t; j=-j; } else if(j>i){ const t=i; i=j; j=t; } else return [i,j]; } return [i,j]; }
+const WEDGE={};  // cached geometry per radius
+function wedge(R){
+  if(WEDGE[R]) return WEDGE[R];
+  const idx=new Int32Array((R+1)*(R+1)).fill(-1); const I=[],J=[];
+  for(let i=0;i<=R;i++)for(let j=0;j<=i;j++){ if(i+j>R) continue; idx[i*(R+1)+j]=I.length; I.push(i); J.push(j); }
+  const n=I.length, nb=new Int32Array(n*6); const off=[[1,0],[0,1],[-1,1],[-1,0],[0,-1],[1,-1]];
+  for(let k=0;k<n;k++)for(let q=0;q<6;q++){ const [ci,cj]=canon(I[k]+off[q][0],J[k]+off[q][1]); nb[k*6+q]=(ci+cj>R)?-1:idx[ci*(R+1)+cj]; }
+  return WEDGE[R]={R,n,I:Int32Array.from(I),J:Int32Array.from(J),nb,idx};
+}
+const PBASE={beta:2.0,alpha:0.1,theta:0.05,kappa:0.02,mu:0.05,gamma:0.0005};
 class Flake{
-  constructor(R,seed,steps){
-    this.R=R; this.N=2*R+1; const N=this.N, M=N*N;
-    this.a=new Uint8Array(M); this.b=new Float64Array(M); this.c=new Float64Array(M); this.d=new Float64Array(M); this.dn=new Float64Array(M);
-    this.tat=new Int32Array(M).fill(-1); this.rat=new Float32Array(M); this.dom=new Uint8Array(M); this.newa=new Int32Array(M);
-    this.Rd=R-3; for(let i=0;i<N;i++)for(let j=0;j<N;j++){ const di=i-R,dj=j-R; this.dom[i*N+j]=(Math.abs(di)<=this.Rd&&Math.abs(dj)<=this.Rd&&Math.abs(di+dj)<=this.Rd)?1:0; }
-    this.rng=mulberry(seed); this.steps=0; this.total=steps; this.rad=0; this.cells=1; this.lo=R-3; this.hi=R+3; this.rho=NaN; this.done=false;
-    this.radHist=new Float32Array(steps+1); this.rhoHist=new Float32Array(steps+1);
-    const k=R*N+R; this.a[k]=1; this.c[k]=1; this.tat[k]=0;
+  constructor(R,seed,steps,P){
+    this.g=wedge(R); const n=this.g.n; this.R=R; this.P=P;
+    this.a=new Uint8Array(n); this.b=new Float64Array(n); this.c=new Float64Array(n); this.d=new Float64Array(n); this.dn=new Float64Array(n);
+    this.tat=new Int32Array(n).fill(-1); this.rat=new Float32Array(n); this.newa=new Int32Array(n); this.hd=new Int32Array(n);
+    for(let k=0;k<n;k++) this.hd[k]=this.g.I[k]+this.g.J[k];
+    this.Rd=R-3; this.rng=mulberry(seed); this.steps=0; this.total=steps; this.rad=0; this.cells=1; this.rho=NaN; this.done=false;
+    this.radHist=new Float32Array(steps+2); this.rhoHist=new Float32Array(steps+2);
+    this.a[0]=1; this.c[0]=1; this.tat[0]=0;
   }
-  init(rho){ this.rho=rho; this.d.fill(rho); this.d[this.R*this.N+this.R]=0; this.rat[this.R*this.N+this.R]=rho; }
+  init(rho){ this.rho=rho; this.d.fill(rho); this.d[0]=0; this.rat[0]=rho; }
   step(rho,sigma){
-    const N=this.N,a=this.a,b=this.b,c=this.c,d=this.d,dn=this.dn,dom=this.dom,tat=this.tat,rat=this.rat;
-    if(this.lo>1) this.lo--; if(this.hi<N-2) this.hi++;
-    const L0=this.lo,L1=this.hi;
-    // the cloud changed: keep the relative depletion, move the far field to the new density
-    if(rho!==this.rho){ const f=rho/this.rho, M=N*N; for(let k=0;k<M;k++){ if(!a[k]) d[k]*=f; } this.rho=rho; }   // whole array: a cell at the box edge reads neighbours outside it
-    // cells that just entered the box hold the far-field value
-    for(let i=L0;i<=L1;i++){ d[i*N+L0]=a[i*N+L0]?0:rho; d[i*N+L1]=a[i*N+L1]?0:rho; }
-    for(let j=L0;j<=L1;j++){ d[L0*N+j]=a[L0*N+j]?0:rho; d[L1*N+j]=a[L1*N+j]?0:rho; }
-    // (i) diffusion, order-independent sums (opposite pairs, then the three pair sums sorted)
-    for(let i=L0;i<=L1;i++){ const o=i*N; for(let j=L0;j<=L1;j++){ const k=o+j;
-      if(!dom[k]){ dn[k]=rho; continue; } if(a[k]){ dn[k]=0; continue; }
-      const dk=d[k];
-      let p0=(a[k+N]?dk:d[k+N])+(a[k-N]?dk:d[k-N]), p1=(a[k+1]?dk:d[k+1])+(a[k-1]?dk:d[k-1]), p2=(a[k+N-1]?dk:d[k+N-1])+(a[k-N+1]?dk:d[k-N+1]);
-      let t; if(p0>p1){t=p0;p0=p1;p1=t;} if(p1>p2){t=p1;p1=p2;p2=t;} if(p0>p1){t=p0;p0=p1;p1=t;}
-      dn[k]=(dk+((p0+p1)+p2))/7;
-    } }
-    // (ii)-(iv) freezing, attachment, melting on boundary cells
+    const g=this.g,n=g.n,nb=g.nb,hd=this.hd,a=this.a,b=this.b,c=this.c,d=this.d,dn=this.dn,tat=this.tat,rat=this.rat,Rd=this.Rd,P=this.P;
+    if(rho!==this.rho){ const f=rho/this.rho; for(let k=0;k<n;k++) if(!a[k]) d[k]*=f; this.rho=rho; }
+    // (i) diffusion: 7-cell average, crystal neighbours reflect, beyond the domain a reservoir at rho
+    for(let k=0;k<n;k++){
+      if(hd[k]>Rd){ dn[k]=rho; continue; } if(a[k]){ dn[k]=0; continue; }
+      const dk=d[k]; let s=dk; const o=k*6;
+      for(let q=0;q<6;q++){ const m=nb[o+q]; s+= m<0?rho:(a[m]?dk:d[m]); }
+      dn[k]=s/7;
+    }
+    // (ii)-(iv) freezing, attachment, melting
     let nn=0; const rng=this.rng, B=P.beta, AL=P.alpha, TH=P.theta, KA=P.kappa, MU=P.mu, GA=P.gamma;
-    for(let i=L0;i<=L1;i++){ const o=i*N; for(let j=L0;j<=L1;j++){ const k=o+j;
-      if(!dom[k]||a[k]){ d[k]=dn[k]; continue; }
-      const n=a[k+N]+a[k-N]+a[k+1]+a[k-1]+a[k+N-1]+a[k-N+1];
-      if(n===0){ let v=dn[k]; if(sigma>0) v*=1+sigma*(2*rng()-1); d[k]=v; continue; }
+    for(let k=0;k<n;k++){
+      if(hd[k]>Rd||a[k]){ d[k]=dn[k]; continue; }
+      const o=k*6; let cnt=0; for(let q=0;q<6;q++){ const m=nb[o+q]; if(m>=0&&a[m]) cnt++; }
+      if(cnt===0){ let v=dn[k]; if(sigma>0) v*=1+sigma*(2*rng()-1); d[k]=v; continue; }
       let dk=dn[k]; b[k]+=(1-KA)*dk; c[k]+=KA*dk; dk=0;
       let att=false;
-      if(n<=2){ att=b[k]>=B; }
-      else if(n===3){ if(b[k]>=1) att=true; else { let p0=dn[k+N]+dn[k-N],p1=dn[k+1]+dn[k-1],p2=dn[k+N-1]+dn[k-N+1],t; if(p0>p1){t=p0;p0=p1;p1=t;} if(p1>p2){t=p1;p1=p2;p2=t;} if(p0>p1){t=p0;p0=p1;p1=t;} const s=((p0+p1)+p2)+dn[k]; att=(s<TH&&b[k]>=AL); } }
+      if(cnt<=2){ att=b[k]>=B; }
+      else if(cnt===3){ if(b[k]>=1) att=true; else { let s=dn[k]; for(let q=0;q<6;q++){ const m=nb[o+q]; s+= m<0?rho:dn[m]; } att=(s<TH&&b[k]>=AL); } }
       else att=true;
       if(att){ this.newa[nn++]=k; d[k]=0; continue; }
       const mb=MU*b[k], mc=GA*c[k]; b[k]-=mb; c[k]-=mc; dk+=mb+mc; if(sigma>0) dk*=1+sigma*(2*rng()-1); d[k]=dk;
-    } }
-    for(let q=0;q<nn;q++){ const k=this.newa[q]; a[k]=1; c[k]+=b[k]; b[k]=0; d[k]=0; tat[k]=this.steps+1; rat[k]=rho;
-      const i=(k/N)|0, j=k-i*N; const r=Math.max(Math.abs(i-this.R),Math.abs(j-this.R),Math.abs(i+j-2*this.R)); if(r>this.rad) this.rad=r;
-      if(i-4<this.lo) this.lo=Math.max(1,i-4); if(i+4>this.hi) this.hi=Math.min(N-2,i+4); if(j-4<this.lo) this.lo=Math.max(1,j-4); if(j+4>this.hi) this.hi=Math.min(N-2,j+4); }
-    this.cells+=nn; this.steps++; this.radHist[this.steps]=this.rad; this.rhoHist[this.steps]=rho;
-    if(this.rad>=this.Rd-3) this.done=true;   // the crystal has filled its sky; it keeps falling
-  }
-  symmetry(){ // cells where the attachment time differs from its 60° rotation (i,j)->(-j,i+j)
-    const N=this.N,R=this.R,t=this.tat; let mism=0;
-    for(let i=0;i<N;i++)for(let j=0;j<N;j++){ const di=i-R,dj=j-R, i2=-dj, j2=di+dj; if(Math.abs(i2)>R||Math.abs(j2)>R) continue; if(t[i*N+j]!==t[(i2+R)*N+(j2+R)]) mism++; }
-    return mism;
+    }
+    for(let q=0;q<nn;q++){ const k=this.newa[q]; a[k]=1; c[k]+=b[k]; b[k]=0; d[k]=0; tat[k]=this.steps+1; rat[k]=rho; if(hd[k]>this.rad) this.rad=hd[k]; }
+    // twelve images of the wedge, minus the cells on the two mirror axes counted once
+    this.cells=0; for(let k=0;k<n;k++){ if(!a[k]) continue; const i=g.I[k],j=g.J[k]; this.cells+= (i===0&&j===0)?1:(j===0||j===i)?6:12; }
+    this.steps++; this.radHist[this.steps]=this.rad; this.rhoHist[this.steps]=rho;
+    if(this.rad>=Rd-2) this.done=true;   // the crystal has filled its sky; it keeps falling
   }
 }
 
-// ---------- rendering a crystal: cells as hexagons, pigment by the vapour it grew in ----------
+// ---------- rasteriser: pixels -> hex cell -> wedge cell; pigment by the vapour the cell grew in ----------
 const SQ3=Math.sqrt(3);
-function drawCrystal(ctx,f,cx,cy,scale,opts={}){
-  const N=f.N,R=f.R,a=f.a,tat=f.tat,rat=f.rat, rings=opts.rings, edges=opts.edges, tmax=Math.max(1,f.steps), dt=tmax/(opts.nrings||28);
-  const hr=scale/SQ3; // circumradius of a cell hexagon
-  const hex=(x,y)=>{ ctx.beginPath(); for(let k=0;k<6;k++){ const ang=Math.PI/6+k*Math.PI/3; const px=x+hr*Math.cos(ang), py=y+hr*Math.sin(ang); k?ctx.lineTo(px,py):ctx.moveTo(px,py);} ctx.closePath(); };
-  const pos=(i,j)=>[cx+((i-R)+(j-R)/2)*scale, cy-((j-R)*SQ3/2)*scale];
-  ctx.lineWidth=Math.max(0.5,scale*0.12);
-  for(let i=0;i<N;i++){ const o=i*N; for(let j=0;j<N;j++){ const k=o+j; if(!a[k]) continue; const [x,y]=pos(i,j);
-    const dens=opts.flat?0.8:0.55+0.5*(tat[k]/tmax);   // younger cells a touch denser: the rim carries the ink
-    const col=pigment(tint(rat[k]),Math.min(1.1,dens)); hex(x,y); ctx.fillStyle=rgb(col); ctx.fill();
-    if(edges){ ctx.strokeStyle=rgb(col,.9); ctx.stroke(); }
-  } }
-  if(rings||edges){
-    ctx.lineCap='round';
-    const nb=[[1,0],[0,1],[-1,1],[-1,0],[0,-1],[1,-1]];   // neighbour k sits across the edge between vertices k+? (see below)
-    for(let i=1;i<N-1;i++){ const o=i*N; for(let j=1;j<N-1;j++){ const k=o+j; if(!a[k]) continue; const [x,y]=pos(i,j); const band=Math.floor(tat[k]/dt);
-      for(let q=0;q<6;q++){ const [di,dj]=nb[q]; const kk=k+di*N+dj; const outside=!a[kk];
-        if(!outside && (!rings || Math.floor(tat[kk]/dt)===band)) continue;
-        if(!outside && kk<k) continue; // draw each interior edge once
-        // edge between the two cells: perpendicular to the neighbour direction
-        const nx=(di+dj/2)*scale, ny=-(dj*SQ3/2)*scale; const mx=x+nx/2, my=y+ny/2; const ex_=-ny/(2*SQ3), ey_=nx/(2*SQ3); // half-edge vector, length hr/2
-        ctx.beginPath(); ctx.moveTo(mx-ex_,my-ey_); ctx.lineTo(mx+ex_,my+ey_);
-        ctx.strokeStyle=outside?INK:'rgba(87,80,91,.55)'; ctx.lineWidth=outside?Math.max(0.8,scale*0.22):Math.max(0.5,scale*0.10); ctx.stroke();
-      } } }
-  }
+// style 'paper': pigment on white with ink rings and outline;  'dark': pale crystal on the dusk sky, no rings
+function raster(f,size,scale,style,nrings){
+  const g=f.g,R=f.R,idx=g.idx,a=f.a,tat=f.tat,rat=f.rat; const img=new ImageData(size,size), px=img.data;
+  const cx=size/2, cy=size/2, tmax=Math.max(1,f.steps), dt=tmax/(nrings||30);
+  const prevBand=new Int32Array(size).fill(-2), prevIn=new Uint8Array(size);
+  const paper=style==='paper';
+  for(let py=0;py<size;py++){ let leftBand=-2, leftIn=0;
+    const y=-(py+0.5-cy)/scale; const jf=y/(SQ3/2);
+    for(let pxi=0;pxi<size;pxi++){
+      const x=(pxi+0.5-cx)/scale; const qf=x-jf/2;   // axial fractional coords (i = qf, j = jf)
+      // cube rounding to the nearest hex cell
+      let ri=Math.round(qf), rj=Math.round(jf), rs=Math.round(-qf-jf); const dq=Math.abs(ri-qf), dr=Math.abs(rj-jf), ds=Math.abs(rs+qf+jf);
+      if(dq>dr&&dq>ds) ri=-rj-rs; else if(dr>ds) rj=-ri-rs;
+      let i=ri,j=rj; for(let q=0;q<24;q++){ if(j<0){ const t=i+j; i=t; j=-j; } else if(j>i){ const t=i; i=j; j=t; } else break; }
+      const o=(pxi+py*size)*4; let inside=0, band=-2;
+      if(i+j<=R){ const k=idx[i*(R+1)+j]; if(k>=0&&a[k]){ inside=1; band=Math.floor(tat[k]/dt);
+        const tb=rhoBin(rat[k])*3, age=tat[k]/tmax;
+        if(paper){ const dens=0.5+0.45*age; px[o]=PAPER3[0]*Math.pow(TINT[tb]/255,dens); px[o+1]=PAPER3[1]*Math.pow(TINT[tb+1]/255,dens); px[o+2]=PAPER3[2]*Math.pow(TINT[tb+2]/255,dens); px[o+3]=255; }
+        else { const m=0.45+0.25*age; px[o]=255-(255-TINT[tb])*m; px[o+1]=255-(255-TINT[tb+1])*m; px[o+2]=255-(255-TINT[tb+2])*m; px[o+3]=255; }
+      } }
+      if(paper){
+        // ink: outline where crystal meets air, thin rings where the time band changes
+        const edgeL=inside!==leftIn, edgeU=inside!==prevIn[pxi];
+        const ringL=inside&&leftIn&&band!==leftBand, ringU=inside&&prevIn[pxi]&&band!==prevBand[pxi];
+        if(edgeL||edgeU){ px[o]=87; px[o+1]=80; px[o+2]=91; px[o+3]=255; }
+        else if(ringL||ringU){ px[o]=Math.round(px[o]*0.72); px[o+1]=Math.round(px[o+1]*0.7); px[o+2]=Math.round(px[o+2]*0.74); }
+      } else if(inside){ const edgeL=!leftIn, edgeU=!prevIn[pxi]; if(edgeL||edgeU){ px[o]=255; px[o+1]=255; px[o+2]=255; } }
+      leftBand=band; leftIn=inside; prevBand[pxi]=band; prevIn[pxi]=inside;
+    } }
+  return img;
 }
+function drawTo(canvas,f,scale,style,nrings){ const s=canvas.width; const c=canvas.getContext('2d'); c.putImageData(raster(f,s,scale,style,nrings),0,0); }
 
 // ---------- the fall ----------
 const fall=document.getElementById('fall'), fctx=fall.getContext('2d');
-let cohort=[], falling=false, raf=0, sigma=0, cloudImg=null;
+let cohort=[], falling=false, raf=0, sigma=0, cloudImg=null, TOP=20, BOT=0;
 function stage(n){ for(let i=1;i<=3;i++){ document.getElementById('stage'+i).classList.toggle('on',i===n); const s=document.getElementById('s'+i); s.classList.toggle('on',i===n); s.classList.toggle('done',i<n); } window.scrollTo({top:0}); }
+const skyColor=r=>{ const c=tint(r); return [Math.round(c[0]*0.30+10),Math.round(c[1]*0.30+12),Math.round(c[2]*0.34+30)]; };
 function paintCloud(){
-  const W=fall.width,H=fall.height, top=20, bot=H-110; const img=document.createElement('canvas'); img.width=W; img.height=H; const c=img.getContext('2d');
-  c.fillStyle=PAPER; c.fillRect(0,0,W,H);
-  for(let y=top;y<bot;y++){ const alt=1-(y-top)/(bot-top); const col=tint(rhoAt(alt)); c.fillStyle=rgb(col,0.22+0.18*(rhoAt(alt)-RHO_MIN)/(RHO_MAX-RHO_MIN)); c.fillRect(0,y,W,1.2); }
-  // faint drift lines in the bands, the curve itself along the left as a thread
-  c.strokeStyle='rgba(87,80,91,.35)'; c.lineWidth=1.2; c.beginPath();
-  for(let y=top;y<=bot;y++){ const alt=1-(y-top)/(bot-top); const x=40+(rhoAt(alt)-RHO_MIN)/(RHO_MAX-RHO_MIN)*120; y===top?c.moveTo(x,y):c.lineTo(x,y); } c.stroke();
-  c.fillStyle='#8A8189'; c.font='11px "IBM Plex Mono",monospace'; c.fillText('ρ',40,bot+14); c.fillText('1.1',150,bot+14);
+  const W=fall.width,H=fall.height; TOP=18; BOT=H-130; const img=document.createElement('canvas'); img.width=W; img.height=H; const c=img.getContext('2d');
+  c.fillStyle='#1d1b2e'; c.fillRect(0,0,W,H);
+  for(let y=TOP;y<BOT;y++){ const alt=1-(y-TOP)/(BOT-TOP); c.fillStyle=rgb(skyColor(rhoAt(alt))); c.fillRect(0,y,W,1.2); }
+  // the cloud's own thread, pale, along the left
+  c.strokeStyle='rgba(248,244,236,.45)'; c.lineWidth=1.2; c.beginPath();
+  for(let y=TOP;y<=BOT;y++){ const alt=1-(y-TOP)/(BOT-TOP); const x=44+(rhoAt(alt)-RHO_MIN)/(RHO_MAX-RHO_MIN)*120; y===TOP?c.moveTo(x,y):c.lineTo(x,y); } c.stroke();
+  c.fillStyle='rgba(248,244,236,.55)'; c.font='11px "IBM Plex Mono",monospace'; c.fillText('ρ 0.45',36,BOT+16); c.fillText('1.1',158,BOT+16);
   // the sill
-  c.fillStyle='rgba(87,80,91,.08)'; c.fillRect(0,bot+2,W,H-bot-2); c.strokeStyle='rgba(87,80,91,.4)'; c.beginPath(); c.moveTo(0,bot+2.5); c.lineTo(W,bot+2.5); c.stroke();
-  cloudImg=img; return {top,bot};
+  c.fillStyle='rgba(248,244,236,.10)'; c.fillRect(0,BOT+2,W,H-BOT-2); c.strokeStyle='rgba(248,244,236,.5)'; c.beginPath(); c.moveTo(0,BOT+2.5); c.lineTo(W,BOT+2.5); c.stroke();
+  cloudImg=img;
 }
 document.getElementById('release').addEventListener('click',startFall);
+let clock=0;
 function startFall(){
-  buildLUT(); sigma=+sig.value; const n=+document.getElementById('cohort').value, total=+document.getElementById('steps').value;
-  const {top,bot}=paintCloud(); const W=fall.width;
-  cohort=[]; const R=62; const seedBase=(Date.now()&0xffff)|1;
-  for(let k=0;k<n;k++){ const f=new Flake(R,seedBase*7919+k*104729,total); f.init(rhoAt(1));
-    f.x0=W*0.22+ (W*0.72)*((k+0.5)/n) + (k%2?18:-18); f.phase=k*1.7; f.delay=k*Math.floor(total*0.035); f.sway=14+8*((k*37)%5)/4; f.spin=(k%2?1:-1)*(0.15+0.1*((k*13)%3));
-    f.thumb=document.createElement('canvas'); f.thumb.width=f.thumb.height=200; f.thumbAt=-1; f.top=top; f.bot=bot; f.idx=k; cohort.push(f); }
-  document.getElementById('collect').disabled=true; document.getElementById('landed').textContent='0';
+  buildLUT(); sigma=+sig.value; const spread=+spr.value; const n=+document.getElementById('cohort').value, total=+document.getElementById('steps').value;
+  paintCloud(); const W=fall.width;
+  cohort=[]; const R=240; const seedBase=(Date.now()&0xffff)|1; const rng=mulberry(seedBase);
+  for(let k=0;k<n;k++){
+    // every crystal is its own individual: its own path through the cloud, its own threshold, its own pace
+    const P=Object.assign({},PBASE); P.beta=PBASE.beta*(0.9+0.2*rng()); P.mu=PBASE.mu*(0.8+0.4*rng());
+    const tot=Math.round(total*(0.8+0.4*rng()));
+    const f=new Flake(R,seedBase*7919+k*104729,tot,P);
+    const ph=[rng()*6.28,rng()*6.28,rng()*6.28], am=spread;
+    f.path=alt=>Math.max(RHO_MIN,Math.min(RHO_MAX, rhoAt(alt)+am*(0.55*Math.sin(6.283*(1.1*alt)+ph[0])+0.35*Math.sin(6.283*(2.7*alt)+ph[1])+0.2*Math.sin(6.283*(5.3*alt)+ph[2]))));
+    f.init(f.path(1));
+    f.x0=W*0.2+(W*0.75)*((k+0.5)/n)+(k%2?22:-22); f.phase=k*1.7; f.delay=k*Math.floor(total*0.02); f.sway=16+10*((k*37)%5)/4; f.spin=(k%2?1:-1)*(0.12+0.1*((k*13)%3));
+    f.thumb=document.createElement('canvas'); f.thumb.width=f.thumb.height=300; f.thumbAt=-1; f.idx=k; cohort.push(f); }
+  document.getElementById('collect').disabled=true; document.getElementById('landed').textContent='0'; clock=0;
   stage(2); falling=true; cancelAnimationFrame(raf); raf=requestAnimationFrame(tick);
 }
-let clock=0;
 function tick(){
-  // grow: a time budget shared round-robin across the cohort
   const t0=performance.now(); let any=false;
-  while(performance.now()-t0<13){ let progressed=false;
+  while(performance.now()-t0<14){ let progressed=false;
     for(const f of cohort){ if(f.steps>=f.total) continue; any=true; progressed=true;
-      if(clock<f.delay){ continue; } if(f.done){ f.steps++; f.radHist[f.steps]=f.rad; f.rhoHist[f.steps]=rhoAt(1-f.steps/f.total); continue; }
-      for(let s=0;s<6&&f.steps<f.total;s++) f.step(rhoAt(1-f.steps/f.total),sigma);
+      if(clock<f.delay) continue;
+      if(f.done){ f.steps++; f.radHist[f.steps]=f.rad; f.rhoHist[f.steps]=f.path(1-f.steps/f.total); continue; }
+      for(let s=0;s<4&&f.steps<f.total;s++) f.step(f.path(1-f.steps/f.total),sigma);
     }
     clock++; if(!progressed) break; }
-  // draw
   const c=fctx, W=fall.width, H=fall.height; c.drawImage(cloudImg,0,0);
   let landed=0, cells=0, prog=0;
   for(const f of cohort){ const p=f.steps/f.total; prog+=p; cells+=f.cells;
-    if(f.steps-f.thumbAt>=40||f.steps>=f.total&&f.thumbAt<f.steps){ const tc=f.thumb.getContext('2d'); tc.clearRect(0,0,200,200); const sc=Math.min(1.9,92/Math.max(20,f.rad)); drawCrystal(tc,f,100,100,sc,{flat:true}); f.thumbAt=f.steps; }
-    const y=f.top+(f.bot-f.top)*p, x=f.x0+Math.sin(clock*0.004+f.phase)*f.sway*(1-p*0.6);
-    const size=Math.max(28,Math.min(150,(f.rad*2+14)*1.05)); if(p>=1) landed++;
-    c.save(); c.translate(x,Math.min(y,f.bot-size*0.5+4)); c.rotate(Math.sin(clock*0.003+f.phase)*f.spin*(p<1?1:0)); c.drawImage(f.thumb,-size/2,-size/2,size,size); c.restore();
+    const size=Math.max(30,Math.min(300,f.rad*2*1.25+16));
+    if(f.steps-f.thumbAt>=80||(f.steps>=f.total&&f.thumbAt<f.steps)){ drawTo(f.thumb,f,300/(2*Math.max(12,f.rad)+8),'dark'); f.thumbAt=f.steps; }
+    const y=TOP+(BOT-TOP)*p, x=f.x0+Math.sin(clock*0.003+f.phase)*f.sway*(1-p*0.6);
+    if(p>=1) landed++;
+    c.save(); c.translate(x,Math.min(y,BOT-size*0.5+6)); c.rotate(Math.sin(clock*0.002+f.phase)*f.spin*(p<1?1:0));
+    c.shadowColor='rgba(255,255,255,.35)'; c.shadowBlur=18; c.drawImage(f.thumb,-size/2,-size/2,size,size); c.restore();
   }
   document.getElementById('prog').textContent=Math.round(100*prog/cohort.length)+' %';
   document.getElementById('landed').textContent=landed+' / '+cohort.length; document.getElementById('cells').textContent=cells.toLocaleString();
@@ -355,16 +368,15 @@ document.getElementById('again').addEventListener('click',()=>stage(1));
 
 // ---------- the tray ----------
 const NAMES=['plate','sectored plate','six petals','dendrite','fern','broad petals'];
-function describe(f){ // which letters the crystal is written in, by cells
-  const counts=[0,0,0,0,0,0], edges=[0.68,0.72,0.80,0.90,1.00,9]; const N=f.N; for(let k=0;k<N*N;k++){ if(!f.a[k]) continue; const r=f.rat[k]; let q=0; while(r>edges[q]) q++; counts[q]++; }
-  const order=counts.map((v,i)=>[v,i]).sort((p,q)=>q[0]-p[0]).filter(p=>p[0]>f.cells*0.06).map(p=>NAMES[p[1]]);
-  return order;
+function describe(f){ const counts=[0,0,0,0,0,0], edges=[0.68,0.72,0.80,0.90,1.00,9]; const g=f.g;
+  for(let k=0;k<g.n;k++){ if(!f.a[k]) continue; const r=f.rat[k]; let q=0; while(r>edges[q]) q++; const i=g.I[k],j=g.J[k]; counts[q]+= (i===0&&j===0)?1:(j===0||j===i)?6:12; }
+  return counts.map((v,i)=>[v,i]).sort((p,q)=>q[0]-p[0]).filter(p=>p[0]>f.cells*0.06).map(p=>NAMES[p[1]]);
 }
 function buildTray(){
   const g=document.getElementById('grid'); g.innerHTML='';
-  cohort.forEach((f,k)=>{ const card=document.createElement('button'); card.className='card'; const cv=document.createElement('canvas'); cv.width=cv.height=360;
-    const cc=cv.getContext('2d'); cc.fillStyle='#fff'; cc.fillRect(0,0,360,360); drawCrystal(cc,f,180,180,Math.min(3.2,160/Math.max(24,f.rad)),{edges:false,rings:true,nrings:18});
-    const s=document.createElement('small'); s.innerHTML=`<b>crystal ${k+1}</b> · ${f.cells.toLocaleString()} cells<br>${describe(f).join(' → ')||'seed'}`;
+  cohort.forEach((f,k)=>{ const card=document.createElement('button'); card.className='card'; const cv=document.createElement('canvas'); cv.width=cv.height=520;
+    drawTo(cv,f,520/(2*Math.max(12,f.rad)+10),'paper',20);
+    const s=document.createElement('small'); s.innerHTML=`<b>crystal ${k+1}</b> · ${f.cells.toLocaleString()} cells · r ${f.rad}<br>${describe(f).join(' → ')||'seed'}`;
     card.append(cv,s); card.addEventListener('click',()=>openInspect(k)); g.append(card); });
 }
 
@@ -372,39 +384,37 @@ function buildTray(){
 const ov=document.getElementById('overlay'), view=document.getElementById('view'), vctx=view.getContext('2d');
 let cur=0, big=null, zoom=1, panx=0, pany=0, dragging=null;
 function openInspect(k){ cur=k; const f=cohort[k];
-  big=document.createElement('canvas'); big.width=big.height=2200; const bc=big.getContext('2d'); bc.fillStyle='#fff'; bc.fillRect(0,0,2200,2200);
-  drawCrystal(bc,f,1100,1100,Math.min(14,1000/Math.max(24,f.rad)),{rings:true,nrings:28,edges:true});
+  big=document.createElement('canvas'); big.width=big.height=2800; drawTo(big,f,2800/(2*Math.max(12,f.rad)+10),'paper',36);
   zoom=1; panx=pany=0; drawView();
-  const letters=describe(f); const mism=f.symmetry();
+  const letters=describe(f);
   document.getElementById('ptitle').textContent=`Crystal ${k+1}: ${letters.slice(0,3).join(', ')||'a seed'}`;
-  document.getElementById('pstory').textContent= mism===0
-    ? 'Grown exactly twelvefold: every cell attached at the same step as its five rotations and six reflections. What you see in one arm is true of all six.'
-    : `Turbulence in the cloud: ${mism.toLocaleString()} cells attached out of step with their rotated twins, so the arms are siblings rather than copies.`;
+  document.getElementById('pstory').textContent= sigma>0
+    ? 'Grown twelvefold with noise in the vapour: the arms branch irregularly, but each arm is the exact image of the others.'
+    : 'Grown exactly twelvefold, cell by cell: what you see in one arm is true of all six, and of their mirror images.';
   const st=document.getElementById('pstats'); st.innerHTML='';
-  const rows=[['cells',f.cells.toLocaleString()],['steps grown',f.steps.toLocaleString()],['radius',f.rad+' cells'],['symmetry',mism===0?'exact (12-fold)':mism+' cells off'],['letters',letters.join(' → ')||'—'],['turbulence',sigma.toFixed(3)]];
+  const rows=[['cells',f.cells.toLocaleString()],['steps grown',f.steps.toLocaleString()],['radius',f.rad+' cells'],['threshold β',f.P.beta.toFixed(2)],['letters',letters.join(' → ')||'—'],['turbulence',sigma.toFixed(3)]];
   for(const [a,b] of rows){ const dt=document.createElement('dt'); dt.textContent=a; const dd=document.createElement('dd'); dd.textContent=b; st.append(dt,dd); }
   drawRecord(f); ov.classList.add('on'); document.getElementById('close').focus();
 }
-function drawView(){ const c=vctx, W=view.width; c.fillStyle='#fff'; c.fillRect(0,0,W,W); c.save(); c.translate(W/2+panx,W/2+pany); c.scale(zoom,zoom); c.drawImage(big,-W/2,-W/2,W,W); c.restore();
+function drawView(){ const c=vctx, W=view.width; c.fillStyle='#fff'; c.fillRect(0,0,W,W); c.save(); c.translate(W/2+panx,W/2+pany); c.scale(zoom,zoom); c.imageSmoothingEnabled=zoom<2; c.drawImage(big,-W/2,-W/2,W,W); c.restore();
   document.getElementById('viewtag').textContent=`×${zoom.toFixed(1)} · scroll to zoom · drag to pan`; }
-view.addEventListener('wheel',e=>{ e.preventDefault(); const z=Math.max(0.6,Math.min(12,zoom*(e.deltaY<0?1.15:1/1.15)));
+view.addEventListener('wheel',e=>{ e.preventDefault(); const z=Math.max(0.6,Math.min(16,zoom*(e.deltaY<0?1.15:1/1.15)));
   const b=view.getBoundingClientRect(), mx=(e.clientX-b.left)*view.width/b.width-view.width/2, my=(e.clientY-b.top)*view.height/b.height-view.height/2;
   panx=mx-(mx-panx)*z/zoom; pany=my-(my-pany)*z/zoom; zoom=z; drawView(); },{passive:false});
 view.addEventListener('pointerdown',e=>{ dragging=[e.clientX,e.clientY,panx,pany]; view.setPointerCapture(e.pointerId); });
 view.addEventListener('pointermove',e=>{ if(!dragging) return; const b=view.getBoundingClientRect(), k=view.width/b.width; panx=dragging[2]+(e.clientX-dragging[0])*k; pany=dragging[3]+(e.clientY-dragging[1])*k; drawView(); });
 view.addEventListener('pointerup',()=>dragging=null);
-function drawRecord(f){ // radius against altitude, over the cloud's bands
+function drawRecord(f){ // radius against altitude, over the crystal's OWN air (its path through the cloud)
   const cv=document.getElementById('record'), c=cv.getContext('2d'), W=cv.width, H=cv.height, m={l:54,r:16,t:14,b:40};
   c.fillStyle=PAPER; c.fillRect(0,0,W,H);
-  for(let y=m.t;y<H-m.b;y++){ const alt=1-(y-m.t)/(H-m.t-m.b); c.fillStyle=rgb(tint(rhoAt(alt)),.35); c.fillRect(m.l,y,W-m.l-m.r,1.2); }
+  for(let y=m.t;y<H-m.b;y++){ const alt=1-(y-m.t)/(H-m.t-m.b); c.fillStyle=rgb(tint(f.path(alt)),.4); c.fillRect(m.l,y,W-m.l-m.r,1.2); }
   const rmax=Math.max(8,f.rad); c.strokeStyle=INK; c.lineWidth=2.2; c.beginPath();
-  for(let s=0;s<=f.steps;s++){ const alt=1-s/f.total, x=m.l+(f.radHist[s]/rmax)*(W-m.l-m.r), y=m.t+(1-alt)*(H-m.t-m.b); s?c.lineTo(x,y):c.moveTo(x,y); } c.stroke();
-  // the layer boundaries the crystal remembers: where the cloud band changed while it grew
+  for(let s=0;s<=f.steps;s+=4){ const alt=1-s/f.total, x=m.l+(f.radHist[s]/rmax)*(W-m.l-m.r), y=m.t+(1-alt)*(H-m.t-m.b); s?c.lineTo(x,y):c.moveTo(x,y); } c.stroke();
   const edges=[0.68,0.72,0.80,0.90,1.00]; let last=-1;
   for(let s=1;s<=f.steps;s++){ const r=f.rhoHist[s]; let q=0; while(q<5&&r>edges[q]) q++; if(last>=0&&q!==last){ const x=m.l+(f.radHist[s]/rmax)*(W-m.l-m.r), y=m.t+(s/f.total)*(H-m.t-m.b); c.beginPath(); c.arc(x,y,5,0,7); c.fillStyle=CORAL; c.fill(); } last=q; }
   c.fillStyle='#8A8189'; c.font='11px "IBM Plex Mono",monospace'; c.textAlign='right'; c.fillText('top',m.l-8,m.t+10); c.fillText('ground',m.l-8,H-m.b);
   c.textAlign='center'; c.fillText('RADIUS 0',m.l+22,H-m.b+16); c.fillText(rmax+' CELLS',W-m.r-30,H-m.b+16);
-  c.fillStyle=CORAL; c.fillText('● the moments the weather changed',W/2,H-6);
+  c.fillStyle=CORAL; c.fillText('● the moments its weather changed',W/2,H-6);
 }
 document.getElementById('close').addEventListener('click',()=>ov.classList.remove('on'));
 document.getElementById('prev').addEventListener('click',()=>openInspect((cur-1+cohort.length)%cohort.length));
