@@ -1,0 +1,38 @@
+  epoch 0 t=0.120 free 0.955  (21.7s)
+  epoch 1 t=0.138 free 0.907  (19.3s)
+  epoch 2 t=0.159 free 0.839  (19.5s)
+  epoch 3 t=0.183 free 0.755  (15.5s)
+  epoch 4 t=0.211 free 0.662  (13.4s)
+  epoch 5 t=0.243 free 0.566  (10.9s)
+  epoch 6 t=0.280 free 0.473  (9.2s)
+  epoch 7 t=0.323 free 0.389  (8.1s)
+  epoch 8 t=0.372 free 0.315  (6.7s)
+  epoch 9 t=0.428 free 0.252  (5.5s)
+  epoch 10 t=0.493 free 0.200  (4.6s)
+  epoch 11 t=0.568 free 0.157  (3.9s)
+  epoch 12 t=0.654 free 0.123  (3.6s)
+  epoch 13 t=0.754 free 0.096  (2.9s)
+  epoch 14 t=0.868 free 0.074  (2.4s)
+  epoch 15 t=1.000 free 0.057  (2.2s)
+saved web_sky_2048.png (2048, 2048)
+{
+ "N": 1024,
+ "seed": 1,
+ "T": 1.0,
+ "n_index": -1.0,
+ "k_cut": 170.66666666666666,
+ "amp": 0.08,
+ "mode": "epoch",
+ "nfacets": 217167,
+ "free_fraction": 0.0572052001953125,
+ "mass_in_structures": 0.9577412477008713,
+ "heaviest_cells": 12218.0,
+ "window": [
+  0,
+  0,
+  1
+ ],
+ "n_edges_drawn": 68642,
+ "scale": 2.237441301345825,
+ "secs": 231.07402086257935
+}

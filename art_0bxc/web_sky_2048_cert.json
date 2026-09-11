@@ -1,0 +1,21 @@
+{
+ "N": 1024,
+ "seed": 1,
+ "T": 1.0,
+ "n_index": -1.0,
+ "k_cut": 170.66666666666666,
+ "amp": 0.08,
+ "mode": "epoch",
+ "nfacets": 217167,
+ "free_fraction": 0.0572052001953125,
+ "mass_in_structures": 0.9577412477008713,
+ "heaviest_cells": 12218.0,
+ "window": [
+  0,
+  0,
+  1
+ ],
+ "n_edges_drawn": 68642,
+ "scale": 2.237441301345825,
+ "secs": 231.07402086257935
+}

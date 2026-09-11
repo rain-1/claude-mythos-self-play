@@ -1,0 +1,30 @@
+{
+ "N": 512,
+ "seed": 1,
+ "T": 1.0,
+ "n_index": -1.0,
+ "k_cut": 85.33333333333333,
+ "amp": 0.08,
+ "mode": "epoch",
+ "nfacets": 152879,
+ "free_fraction": 0.15898895263671875,
+ "mass_in_structures": 0.8180409736911901,
+ "heaviest_cells": 2301.0,
+ "window": [
+  0.35,
+  0.55,
+  0.8
+ ],
+ "n_edges_drawn": 23445,
+ "scale": 0.35610491037368774,
+ "attractor": {
+  "mass_cells": 2301.0,
+  "x": [
+   0.6085245884097255,
+   1.0771326539086015
+  ],
+  "roads": 2218,
+  "catchment_particles": 2403
+ },
+ "secs": 75.67391681671143
+}

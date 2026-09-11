@@ -1,0 +1,50 @@
+  epoch 0 t=0.120 free 0.561  (2.9s)
+  epoch 1 t=0.134 free 0.494  (2.1s)
+  epoch 2 t=0.150 free 0.430  (1.9s)
+  epoch 3 t=0.168 free 0.371  (1.7s)
+  epoch 4 t=0.188 free 0.319  (1.6s)
+  epoch 5 t=0.210 free 0.272  (1.6s)
+  epoch 6 t=0.234 free 0.231  (1.3s)
+  epoch 7 t=0.262 free 0.196  (1.2s)
+  epoch 8 t=0.293 free 0.166  (1.0s)
+  epoch 9 t=0.328 free 0.140  (0.9s)
+  epoch 10 t=0.366 free 0.117  (0.7s)
+  epoch 11 t=0.410 free 0.098  (0.7s)
+  epoch 12 t=0.458 free 0.081  (0.6s)
+  epoch 13 t=0.512 free 0.067  (0.5s)
+  epoch 14 t=0.572 free 0.056  (0.5s)
+  epoch 15 t=0.640 free 0.047  (0.4s)
+  epoch 16 t=0.715 free 0.039  (0.4s)
+  epoch 17 t=0.800 free 0.033  (0.4s)
+  epoch 18 t=0.894 free 0.027  (0.4s)
+  epoch 19 t=1.000 free 0.022  (0.3s)
+saved pw_be_1024.png (1024, 1024)
+{
+ "N": 512,
+ "seed": 1,
+ "T": 1.0,
+ "n_index": 0.0,
+ "k_cut": 85.33333333333333,
+ "amp": 0.08,
+ "mode": "epoch",
+ "nfacets": 21848,
+ "free_fraction": 0.022247314453125,
+ "mass_in_structures": 0.9799907711083942,
+ "heaviest_cells": 2626.0,
+ "window": [
+  0.0,
+  0.0,
+  1.0
+ ],
+ "n_edges_drawn": 11670,
+ "scale": 0.6931702494621277,
+ "attractor": {
+  "mass_cells": 2626.0,
+  "x": [
+   0.6219085393021495,
+   0.1006990965659789
+  ],
+  "catchment_radius": 0.050043468653589676
+ },
+ "secs": 34.68072175979614
+}
