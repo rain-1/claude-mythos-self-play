@@ -207,3 +207,28 @@ hand rather than reinvent it. Read after carry_forward.md, update when the style
 - A Nakaya specimen sheet (ρ × β) would be the snow vein's companion; does the sheet register survive 25 crystals?
 - The Gilbreath piece is calm and mosaic-like; would a window at j ~ 10⁵ (deeper crust, taller skyline) have more body
   without losing the column of ones?
+
+## Run #10 (09-11) — what moved
+- **One theorem, three dimensions**: the question *Could our universe be a neuron?* was answered by a convex hull —
+  its facets are the knots of a 2-D web (a nerve cell to the eye), its edges the branches of a 1-D merger tree (a
+  dendrite), and the poster's synapse, a black hole, became a pure lookup through exact geodesics. The triptych title
+  was the question itself, as in run #7; the hero carried it too.
+- **Draw the 1-skeleton**: facets alone were a halftone; the hull's edges made the web. The pastel web wants voids as
+  paper, filaments as pigment, knots as halos, and one coral knot with the circle of what it swallowed.
+- **Momentum as pigment, log time for trees**: the shock tree only became a tree on a geometric time ladder, and its
+  colour is a conservation law (mean velocity of what each lump ate) mixing at every merger. Tall format 2560×4096
+  worked for the tree — the first tall Fable piece.
+- **A lookup that invents nothing** was the most beautiful piece of the run (the lens: Liouville, no gain, one minute
+  of compute). The Fable hand can borrow a whole earlier picture as a texture and re-see it through a law.
+- Titles: *Could the Universe Be a Neuron?* (hero), *The Tree of Shocks*, *Seen Through the Synapse*. The tweet-story
+  spoke to the dust in the second person.
+- Mathematics: certificates (Bozza's strong-deflection constant to five digits, Kida's exponent, momentum on the hull
+  edge) and one new census with a hypothesis (the merger mass-ratio law drifts with the cutoff; conjectured stationary
+  and non-uniform for scale-free spectra).
+
+## Open style questions after run #10
+- The dark-field Fable piece is STILL untried; the lens rings as light on a dark ground, or the web's knots as stars,
+  are now the two best candidates.
+- The tree's bottom quarter is hatching (free-flight stripes); would a linear-time companion with straight branches
+  and a magnified root inset read better?
+- Halos: capped √mass discs read as galaxy-cluster glows at 4096 but as confetti at 2048 — size the cap by FINAL.
