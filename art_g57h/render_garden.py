@@ -93,7 +93,7 @@ def label_periodic(mask):
 LAYERS = [
     ('O2u',   4, 1.00, 'cornflower', 'aqua',      None,         1.0),
     ('P4op',  1, 1.00, 'mint',       'pistachio', None,         1.0),
-    ('3U4lv', 1, 1.00, 'blush',      'lavender',  None,         0.7),
+    ('3U4lv', 1, 1.00, 'blush',      'lavender',  None,         0.5),
     ('3P3sp', 1, 1.00, 'lemon',      'apricot',   None,         1.0),
     ('3P3sp', 1, 0.60, 'apricot',    'lemon',     (0.72, 0.30), 1.0),
     ('K4v',   2, 0.50, 'lavender',   'orchid',    (0.30, 0.68), 1.0),
@@ -177,7 +177,7 @@ for (code, ncopy, frac, pigA, pigB, win, wgt) in LAYERS:
                 else:
                     cur.append((next_id, cy, cx, m)); tracks[next_id] = [(L.t, cy, cx, m)]; next_id += 1
             for (pid, py, px, pm) in prev:
-                if pid not in used and len(tracks[pid]) >= 8:      # a real creature, not a wobble
+                if pid not in used and len(tracks[pid]) >= 8 and pm > 0.7 * mass1:   # a whole creature, not debris
                     near = [c for c in cur if td((py, px), (c[1], c[2])) < 2.5 * R]
                     events.append((L.t, py, px, 'merge' if near else 'death'))
         prev = cur

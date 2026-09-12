@@ -31,8 +31,9 @@ species onto one sheet every 8 steps in its own pigment pair, fainter when older
 The four conditions of the philosophy question are all on the sheet. *Continuous dynamics*: every ribbon.
 *Stimulus and differentiated response*: Orbia that meet head-on die, Orbia that graze pass; a clamped obstacle
 kills any of them (tested: even a 6-cell stone). *Self-continuation*: Orbium's mass stays at 71.2 ± 0.3 for
-thousands of steps, and its speed is exactly proportional to its size (0.0473 R cells per step at R = 13, 26, 52) —
-a scale-invariance certificate for a creature that is only a rule.
+thousands of steps, and the creature is scale-free — rescaled through evolved fields its speed is
+0.04729, 0.04734, 0.04734, 0.04734 R cells per step at R = 13, 26, 52, 104 and its mass 71.4, 284.2, 1137.5, 4550.4
+(ratios 3.98, 4.00, 4.00), `orbium_scale.json`: a certificate for a creature that is only a rule.
 
 | species | motion on paper | pigment |
 |---|---|---|
