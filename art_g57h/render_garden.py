@@ -177,9 +177,9 @@ for (code, ncopy, frac, pigA, pigB, win, wgt) in LAYERS:
                 else:
                     cur.append((next_id, cy, cx, m)); tracks[next_id] = [(L.t, cy, cx, m)]; next_id += 1
             for (pid, py, px, pm) in prev:
-                if pid not in used and len(tracks[pid]) >= 8 and pm > 0.7 * mass1:   # a whole creature, not debris
+                if pid not in used and len(tracks[pid]) >= 40 and pm > 0.7 * mass1:  # a creature that LIVED (≥320 steps), not collision debris
                     near = [c for c in cur if td((py, px), (c[1], c[2])) < 2.5 * R]
-                    events.append((L.t, py, px, 'merge' if near else 'death'))
+                    events.append((L.t, py, px, 'merge' if near else 'death', len(tracks[pid]) * STRIDE, float(pm / mass1)))
         prev = cur
         if s % max(1, nstrobe // 5) == 0:
             print(f'  {code} strobe {s}/{nstrobe} alive={len(cur)} events={len(events)} mass={L.mass():.0f} [{time.time()-t_start:.0f}s]', flush=True)
@@ -200,8 +200,8 @@ for (code, ncopy, frac, pigA, pigB, win, wgt) in LAYERS:
     sheet.A[ys:ye, xs_:xe] += (Aup * fade)[ys - y0:ye - y0, xs_ - x0:xe - x0]
     now_mask[ys:ye, xs_:xe] |= (Anow > 0.18)[ys - y0:ye - y0, xs_ - x0:xe - x0]
     birth_mask[ys:ye, xs_:xe] |= (Ab > 0.18)[ys - y0:ye - y0, xs_ - x0:xe - x0]
-    for (t, cy, cx, kind) in events:
-        events_all.append((code, int(t), float(cy * UP + y0), float(cx * UP + x0), kind))
+    for (t, cy, cx, kind, age, mfrac) in events:
+        events_all.append((code, int(t), float(cy * UP + y0), float(cx * UP + x0), kind, int(age), round(mfrac, 3)))
     sp = []
     for tid, tr in tracks.items():
         if len(tr) > 6:
@@ -221,14 +221,14 @@ d_b = np.where(birth_mask, distance_transform_edt(birth_mask), distance_transfor
 sheet.wash(0.30 * P.ink_from_distance(d_b, 0.8 * rs), 'ink')
 # coral rings at deaths and merges
 ring = np.zeros((H, W), np.float32)
-for (code, t, cy, cx, kind) in events_all:
+for (code, t, cy, cx, kind, age, mfrac) in events_all:
     if kind != 'death':
         continue
     R_ = [l for l in cert_layers if l['code'] == code][0]['R'] * UP
-    r0 = 1.5 * R_
+    r0 = 1.35 * R_
     dd = np.hypot(yy - cy, xx - cx)
     ring += np.exp(-((dd - r0) / (1.4 * rs)) ** 2)
-sheet.wash(np.clip(ring, 0, 1) * 1.3, 'coral')
+sheet.wash(np.clip(ring, 0, 1) * 1.2, 'coral')
 n_alive = sum(l['alive_end'] for l in cert_layers)
 n_death = sum(l['deaths'] for l in cert_layers); n_merge = sum(l['merges'] for l in cert_layers)
 title = 'What Counts as Alive'
