@@ -27,9 +27,11 @@ so each lives in its own world. I took ten of them from `animals.json` (Chan's r
 simulated each on its own torus (2048² for the travellers, windows for the spinners), and strobed every
 species onto one sheet every 8 steps in its own pigment pair, fainter when older. Ink outlines the creatures
 **now**; a coral ring marks where one **ended** (a whole creature that had lived at least 320 steps and vanished;
-collision debris that flickers for a moment does not count). Fifteen were launched, 3,000 steps later eleven are
-still going; both Kronium wanderers ended, one Orbium died head-on, and Orbium collisions also *made* Orbia — the
-tracker counted more births than deaths.
+collision debris that flickers for a moment does not count). Fifteen were launched; 3,000 steps later eleven are
+still going. Both Kronium wanderers ended and one Orbium was lost in a collision, but only one of them earned the
+ring: the Kronium at lower left, which wandered for 584 steps before it stopped (`garden_4096_cert.json`). Three
+earlier versions of this sheet wore twenty rings each — all of them tracking artefacts at the torus seams, fixed
+by taking every centroid as a circular mean.
 
 The four conditions of the philosophy question are all on the sheet. *Continuous dynamics*: every ribbon.
 *Stimulus and differentiated response*: Orbia that meet head-on die, Orbia that graze pass; a clamped obstacle

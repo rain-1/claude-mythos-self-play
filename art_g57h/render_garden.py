@@ -138,6 +138,9 @@ for (code, ncopy, frac, pigA, pigB, win, wgt) in LAYERS:
     absA, absB = P.absorb(P.PIG[pigA]), P.absorb(P.PIG[pigB])
     Aabs = np.zeros((N, N, 3), np.float32)
     nstrobe = STEPS // STRIDE
+    ang = 2 * np.pi * np.arange(N) / N
+    cosY = np.repeat(np.cos(ang), N); sinY = np.repeat(np.sin(ang), N)
+    cosX = np.tile(np.cos(ang), N); sinX = np.tile(np.sin(ang), N)
     # strobe weight: a moving creature overlaps itself 2R/(speed*stride) times along its ribbon;
     # a stationary one overlaps nstrobe times — floor the total so a rosette is a mid-tone, not a hole
     overlap = (2.0 * R) / (max(spd, 1e-3) * STRIDE)
@@ -153,9 +156,13 @@ for (code, ncopy, frac, pigA, pigB, win, wgt) in LAYERS:
         lab, n = label_periodic(L.A > 0.12)
         cur = []
         if n:
-            ms = np.bincount(lab.ravel(), weights=L.A.ravel(), minlength=n + 1)[1:]
-            cms = center_of_mass(L.A, lab, range(1, n + 1))
-            comps = [(cms[k][0], cms[k][1], ms[k]) for k in range(n) if ms[k] > 0.45 * mass1]
+            lr = lab.ravel(); wr = L.A.ravel()
+            ms = np.bincount(lr, weights=wr, minlength=n + 1)[1:]
+            # torus-aware centroid per component (circular mean per axis) — a body straddling the seam
+            # has its arithmetic centroid in the middle of the field, which broke the tracking (v1-v3)
+            cy_ = np.angle(np.bincount(lr, weights=wr * cosY, minlength=n + 1)[1:] + 1j * np.bincount(lr, weights=wr * sinY, minlength=n + 1)[1:]) / (2 * np.pi) * N % N
+            cx_ = np.angle(np.bincount(lr, weights=wr * cosX, minlength=n + 1)[1:] + 1j * np.bincount(lr, weights=wr * sinX, minlength=n + 1)[1:]) / (2 * np.pi) * N % N
+            comps = [(cy_[k], cx_[k], ms[k]) for k in range(n) if ms[k] > 0.45 * mass1]
         else:
             comps = []
         def td(a_, b_):
