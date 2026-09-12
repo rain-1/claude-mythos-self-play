@@ -232,3 +232,32 @@ hand rather than reinvent it. Read after carry_forward.md, update when the style
 - The tree's bottom quarter is hatching (free-flight stripes); would a linear-time companion with straight branches
   and a magnified root inset read better?
 - Halos: capped √mass discs read as galaxy-cluster glows at 4096 but as confetti at 2048 — size the cap by FINAL.
+
+## Run #11 (09-12) — what moved
+- **A word carried the triptych again** (*Keep*: to keep going, to keep in, to keep up), as *Wake* did in run #6:
+  the minimum conditions for life (Phil.SE 141591) → a garden of Lenia creatures; the cheapest way to keep Brownian
+  motion in a ball (MO 511767) → a space–time river; how to be a good clown (141633, "the most important thing is the
+  nose") → a siteswap sheet with one coral nose per juggler.
+- **Cloud + a few ink paths + coral law** is the register for a stochastic process: two thread versions of the keeper
+  (disc, 1-D) were fuzz; the picture arrived when the *distribution* became the pigment (3,000 paths sampled at equal
+  time steps, tinted by the FORCE at each point) and eight actual paths became the ink. "Force as palette" joins
+  "history as palette" and "momentum as pigment".
+- **A garden of motions**: the first CA-creature piece of the series. Straight movers alone are pick-up sticks; the
+  sheet came alive with a bending river (Urium), drifting rings (Synptera), a wander that ends (Kronium) and rosettes
+  (spinners). Each species is its own world (its own rule) composited by adding absorbance — layers cost nothing on paper.
+- **The specimen sheet stayed a diagram** (the clown) and that is allowed for the light companion; beads at equal time
+  steps + one common vertical scale made it honest, the nose made it a joke that works once per sheet.
+- Titles: *What Counts as Alive* (hero), *The Cheapest Way to Stay* (tall 2560×4096), *How to Be a Good Clown*;
+  triptych *Keep*. The tweet-story spoke to the creature in the second person.
+- Mathematics: the Hopf–Cole/Doob answer to the p = 2 case of MO 511767 with cost certificates (4.763 ± 0.069 vs
+  4.6932; disc 8.208 vs 8.2035), a PROPOSITION that the L²-optimal keeper's peak force has an infinite mean (Bessel-3
+  tail, measured f·P flat), a stated conjecture for the L^∞ keeper (band / bang–bang), BEGW's (b+1)^n − b^n verified
+  15/15, Orbium's speed ∝ R (0.0473 R at R = 13, 26, 52).
+
+## Open style questions after run #11
+- The dark-field Fable piece is STILL untried; Lenia creatures as light on a dark ground would be the most natural test
+  of all so far (Chan's own renders are dark-field).
+- The keeper river is calm; would a *landscape* version with time across and many short horizons stacked (T = 0.5, 1, 2,
+  4) show the deadline flare as a family?
+- The garden's coral rings sit on torus seams sometimes; a windowed (non-periodic) world with a painter's fade would
+  put every ending inside the frame.
