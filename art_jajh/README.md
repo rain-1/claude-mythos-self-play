@@ -31,12 +31,12 @@ Certificate: `law_2560_cert.json`; decay-rate-vs-κ sweep in `sweeps.json`.
 ## The Pattern Is in the Distance
 ![The Pattern Is in the Distance](far_4096x2816.png)
 
-5,000 points in a 4:1 periodic box, optimised (L-BFGS on collective coordinates, χ = 0.40) until Φ/N ≈ 10⁻²⁴:
+5,000 points in a 4:1 periodic box, optimised (L-BFGS on collective coordinates, χ = 0.40) until Φ/N = 5 × 10⁻²³ (2,321 L-BFGS iterations):
 no density wave longer than 2π/K fits. Left: coins tinted by Voronoi degree (≤5 / 6 / ≥7) with the Voronoi web in
 ink; toward the right the density is Gaussian-smoothed at a growing width (0.16 → 3.2 spacings) with the same
 constant contrast gain for both bands — the hyperuniform band goes paper-flat, the Poisson band stays weather.
 Number variance ∝ R (upper) vs πR² (lower); insets: S(k) with its coral circle |k| = K. Certificates:
-`far_cert.json` (optimisation), `far_4096x2816_cert.json` (render), `sweeps.json` (variance coefficient vs χ).
+`far_cert.json` (optimisation), `far_4096x2816_cert.json` (render), `sweeps.json` (variance coefficient vs χ: c·K ≈ 2.2 constant — a stated hypothesis, see the notes).
 
 ## Files
 - `pastel.py` — the subtractive watercolor stack (unchanged from run #11).

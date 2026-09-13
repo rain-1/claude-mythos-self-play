@@ -53,10 +53,22 @@ for the stripes, 0.9992 for the blob — a faint slower-converging component rem
 hence 45 blocks for the final. The decay per block is nearly κ-independent (0.522 → 0.589 as κ falls 16×;
 see the sweep table below).
 
-Decay rate vs κ (`sweeps.json`, same protocol, n ∝ κ^{-1/2}): see the table appended below once the sweep
-finishes. *Hypothesis to test:* the per-period decay rate tends to a κ-independent limit as κ → 0 (the
-"global" strange-eigenmode regime of Haynes–Vanneste 2005), i.e. the pattern's lifetime is a property of
-the stirring alone.
+Decay rate vs κ (`sweeps.json`, same protocol, n ∝ κ^(-1/2), 40 blocks from the stripes):
+
+| n | κ | ratio per block | rate per period |
+|---|---|---|---|
+| 256 | 1.00e-03 | 0.4818 | 0.2434 |
+| 512 | 2.50e-04 | 0.5219 | 0.2167 |
+| 1024 | 6.25e-05 | 0.5569 | 0.1951 |
+| 2048 | 1.56e-05 | 0.5891 | 0.1764 |
+
+The rate falls by a nearly constant 0.022 per halving of κ^(1/2) (0.243 → 0.217 → 0.195 → 0.176): on this
+range it looks like rate ≈ a + b·log κ rather than a plateau. **Hypothesis (stated, not proven):** the decay
+rate of this protocol keeps falling logarithmically in κ down to the resolution tested and has *not* reached
+the κ-independent "global" strange-eigenmode limit of Haynes–Vanneste; either the limit lies at much smaller
+κ, or the block protocol sits in the "local" regime where the decay is set by the slowest stretching region
+and depends on κ through the diffusive cutoff. A test would be n = 4096, 8192 at κ ∝ 1/n² (memory: fine;
+time: ~1 h each) and a fit of rate against log κ versus rate against κ^(1/2).
 
 Reading of 141658: the ink is the observation, the flow is the system; after a few blocks the observation
 shows only the system. The shape is deterministic and belongs to the law — not to the scale, not to what
@@ -71,11 +83,34 @@ Then S(k) = 0 exactly for every |k| < K: no density wave longer than 2π/K ≈ 1
 Facts: Poisson number variance σ²(R) = πR²; a stealthy pattern's σ²(R) grows like the perimeter, ∝ R.
 Measured (N = 1,500, χ = 0.40, square box, 4,000 windows): σ² = 0.50, 0.95, 1.43, 1.88, 2.91, 3.78 at
 R = 1, 2, 3, 4, 6, 8 (≈ 0.47 R) against Poisson 3.2, 13.4, 31.8, 58.0, 119, 172 (≈ πR²).
-Coefficient c(χ) in σ² ≈ cR from the sweep: table below. A Gaussian smoothing of width σ leaves variance
+Coefficient c(χ) in σ² ≈ cR from the sweep (N = 1,500, six radii 1…8, 6,000 windows each; intercepts ≈ 0):
+
+| χ | K | c |
+|---|---|---|
+| 0.100 | 2.254 | 0.964 |
+| 0.200 | 3.150 | 0.726 |
+| 0.300 | 3.897 | 0.578 |
+| 0.401 | 4.487 | 0.490 |
+| 0.450 | 4.738 | 0.477 |
+
+c·K is 2.17, 2.29, 2.25, 2.20, 2.26 — constant to ±3 %. **Hypothesis:** for 2-D stealthy ground states
+σ²(R) ≈ (c₀/K)·R with c₀ ≈ 2.2 independent of χ in the disordered range χ ≤ 0.45, i.e. the perimeter
+coefficient is set only by the radius of the stealthy hole (the smallest wavelength the pattern still
+carries), not by how many degrees of freedom were constrained. For a surface-area-scaling pattern the
+coefficient is ∝ ∫ S(k)/k · dk near the hole edge; with S jumping from 0 to O(1) at K this gives ∝ 1/K,
+consistent with the measurement; the numerical prefactor is the thing to derive.
+
+Hero-size ground state (`far_cert.json`): N = 5,000, 4:1 box, χ = 0.40, K = 6.074, L-BFGS 2,321 iterations,
+Φ/N = 4.7e-23 (99 min under CPU contention). Number variance at R = 0.5…8:
+stealthy 0.35, 0.54, 0.88, 1.20, 1.71, 2.31, 2.93, 3.43, 4.62 vs Poisson
+0.8, 3.1, 7.1, 12.5, 28.0, 49.2, 77.8, 114.5, 209.3 — stealthy σ²/R ≈ 0.58 (c·K = 3.5 here; the 4:1 box
+and χ = 0.40 at this N sit close to the wavy-crystalline threshold: the pattern shows stripe domains, and its
+Voronoi degrees are 5: 1,290, 6: 2,297, 7: 1,074 vs Poisson 5: 1,236, 6: 1,505, 7: 978 — narrower, as
+hyperuniformity demands, but the stripe order raises c·K above the square-box value; worth a check). A Gaussian smoothing of width σ leaves variance
 ∝ ∫S(k)e^{−k²σ²}d²k: for the stealthy pattern this is ≲ e^{−K²σ²} — already 10⁻⁴ at σ = 0.5 — while for
 Poisson it is 1/(4πσ²). That is the whole picture: at the left both bands are disorder, at the right one is
 paper-flat and the other is weather. The coral circles (R = 2.5, expected count 19.6) are the certificate:
-the upper band's counts differ by ±1–2, the lower band's by ±7.
+the upper band's counts on the sheet are 20, 19, 19, 18, 19; the lower band's 14 … 27.
 
 Reading of 141658: here the pattern really IS a property of the observation scale — but of the scale of the
 WINDOW, and the system chooses at which scale the observer will find it (2π/K).
