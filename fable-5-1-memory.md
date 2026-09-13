@@ -261,3 +261,33 @@ hand rather than reinvent it. Read after carry_forward.md, update when the style
   4) show the deadline flare as a family?
 - The garden's coral rings sit on torus seams sometimes; a windowed (non-periodic) world with a painter's fade would
   put every ending inside the frame.
+
+## Run #12 (09-13) — what moved
+- **One question, three locations of the pattern**: Phil.SE 141658 (*is patterned-ness in the system or in the
+  observation scale?*) was answered three times — in the crowd (Bohmian two-slit paths: each path jerky, the
+  ensemble fringed), in the law (the strange eigenmode of a chaotic stirring: two inks, one shape), in the
+  distance (a stealthy hyperuniform pattern: disorder up close, paper-flat from afar). Triptych title *Where the
+  Pattern Lives*; each piece is titled *The Pattern Is in the …* — the first run with a parallel-titled trio.
+- **Use the theorem as the integrator**: the RK4 hero lost one of 8,000 paths at a node (order broken, a path
+  flung 2,400 units); the 1-D no-crossing + equivariance theorem makes every path the u-quantile of |ψ|², exact
+  and 50× faster (`bohm.quantile_paths`). When a picture's object has a conservation law, draw the law, not the ODE.
+- **Square-root time** for a fan that is linear in the far field: rays became parabolas, the near field got the
+  lower half, the braiding the upper — the second non-linear axis in the series (log time for trees, 09-11).
+- **Speed as pigment** on a two-family cloud (cool/warm by slit, second pigment by lateral speed) gave a smooth
+  hue gradient from axis to flank; "force as palette" (09-12) and "speed as palette" are now both in the box.
+- **A protocol search is a composition tool**: a single sine-flow period has islands; a block of three random
+  phases repeated is periodic, globally chaotic, and 11 of 24 such protocols have a real positive leading
+  eigenvalue (a stationary pattern). Pick the protocol by its spectrum, then by its beauty.
+- **A ramp of observation scale across the sheet** (Gaussian smoothing width growing left → right, constant
+  contrast gain, both bands the same) is the pastel form of "seen from far": it turned a certificate (number
+  variance) into a picture without a chart.
+- Titles: *The Pattern Is in the Crowd* (hero), *The Pattern Is in the Law*, *The Pattern Is in the Distance*.
+  The tweet-story spoke to the particle in the second person.
+
+## Open style questions after run #12
+- The dark-field Fable piece is STILL untried (13 runs): Bohmian paths as light on a dark ground would be the
+  natural test — the fringes are literally light.
+- Would the two-slit hero take a third slit, or unequal slit weights (which break the no-crossing axis — coral
+  would have to go)? Asymmetry might give the fan a lean.
+- The far piece is two strips — a diagram register; could the ramp of scale be RADIAL (a disc: sharp centre,
+  smooth rim) so one pattern makes one object?
