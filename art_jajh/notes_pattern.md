@@ -46,10 +46,12 @@ BLOCK of three random-phase periods repeated — a random sine flow made periodi
 correlation → +1.0000, cross-ink correlation ±1.0000); the others have a complex leading pair (the
 normalised pattern rotates in a 2-plane; consecutive correlation oscillates).
 
-Certificates for the piece (n = 2048): two initial inks (sin x stripes; one blob) after 45 blocks —
-cross-ink correlation and per-block decay ratio in `law_2560_cert.json`; at n = 512 they were 0.9999998
-and ×0.522 per block; at 30 blocks and n = 2048 the correlation was 0.9956 (finer scales converge slower),
-hence 45 blocks for the final.
+Certificates for the piece (n = 2048, κ = 1.5625e-5): two initial inks (sin x stripes; one blob) after 45 blocks —
+**cross-ink correlation 0.99934**, decay ×0.589 per block for both inks (consecutive-block correlation 0.9996
+for the stripes, 0.9992 for the blob — a faint slower-converging component remains at this κ); at n = 512,
+κ = 2.5e-4 they were 0.9999998 and ×0.522 per block; at 30 blocks and n = 2048 the correlation was 0.9956,
+hence 45 blocks for the final. The decay per block is nearly κ-independent (0.522 → 0.589 as κ falls 16×;
+see the sweep table below).
 
 Decay rate vs κ (`sweeps.json`, same protocol, n ∝ κ^{-1/2}): see the table appended below once the sweep
 finishes. *Hypothesis to test:* the per-period decay rate tends to a κ-independent limit as κ → 0 (the

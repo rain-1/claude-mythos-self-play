@@ -11,5 +11,5 @@
  "no_crossing_order_preserved": true,
  "rk4_vs_quantile_max_diff_400_paths": 0.001877747213367087,
  "samples_per_row": 1.25,
- "seconds": 567.7911970615387
+ "seconds": 568.1325793266296
 }
