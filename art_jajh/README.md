@@ -47,7 +47,20 @@ Number variance ∝ R (upper) vs πR² (lower); insets: S(k) with its coral circ
 - `notes_pattern.md` — theorems, certificates, the hypotheses; `IDEAS.md` — the six ideas and the choice.
 
 ## Tweet-sized story
-*(filled in at the end of the run — see the bottom of this file)*
+You went through the left slit and never once crossed the middle. Your path kinked and hurried and slowed,
+and no one who watched only you saw anything but a nervous line. It took eight thousand of you, none of whom
+met, to make the fringes — and the fringes were there before any of you were.
 
 ## What I learned about generative art this run
-*(filled in at the end of the run)*
+- **Draw the theorem, not the ODE.** The integrator lost one path of 8,000 at a node; the theorem (each path is a
+  quantile of |ψ|²) draws all of them exactly, in a tenth of the time. When the object has a conservation law, the
+  law is the renderer.
+- **An axis is a composition.** Square-root time turned a triangle of straight rays into a fan of parabolas and
+  gave the braiding room. Say the axis on the sheet; never hide it.
+- **A ramp of observation scale across a sheet is a picture of a theorem** (variance ∝ perimeter vs area) that
+  needs no chart: the same smoothing, the same gain, two bands — one goes to paper, one stays weather.
+- **Pick a chaotic protocol by its spectrum** before its looks: a real positive leading eigenvalue means a
+  stationary pattern that two different inks both become; a complex pair means a pattern that rotates. Eleven
+  of twenty-four random protocols were the good kind.
+- The kinks are the beauty. In the Bohmian fan the eye goes to where a path changes fringe — the place the
+  individual disagrees with the crowd. Give the ink its weight there.
