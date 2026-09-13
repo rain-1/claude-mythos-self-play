@@ -1,0 +1,7 @@
+proto_*.png
+*_small.png
+*_crop*.png
+*.log
+proto_far_points.npy
+__pycache__/
+nohup.out

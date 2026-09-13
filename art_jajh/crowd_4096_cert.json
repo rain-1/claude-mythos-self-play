@@ -1,0 +1,15 @@
+{
+ "ncloud": 8000,
+ "nink": 56,
+ "T": 200.0,
+ "a": 25.0,
+ "sigma": 1.0,
+ "time_axis": "sqrt",
+ "frame_halfwidth": 235.01174970626468,
+ "s_T": 100.00499987500625,
+ "fringe_spacing_farfield": 25.132741228718345,
+ "no_crossing_order_preserved": true,
+ "rk4_vs_quantile_max_diff_400_paths": 0.001877747213367087,
+ "samples_per_row": 1.25,
+ "seconds": 567.7911970615387
+}

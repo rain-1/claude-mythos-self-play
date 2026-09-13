@@ -1,0 +1,14 @@
+{
+ "ncloud": 3000,
+ "nink": 40,
+ "T": 200.0,
+ "a": 25.0,
+ "sigma": 1.0,
+ "dt": 0.025,
+ "frame_halfwidth": 235.01174970626468,
+ "s_T": 100.00499987500625,
+ "fringe_spacing_farfield": 25.132741228718345,
+ "no_crossing_order_preserved": true,
+ "equivariance_max_quantile_mismatch": 0.09118031820185024,
+ "seconds": 40.03820538520813
+}
