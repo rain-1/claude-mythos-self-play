@@ -1,0 +1,28 @@
+{
+ "n": 18,
+ "regions_raster": 2487,
+ "regions_exact": 2484,
+ "interior_points": 1837,
+ "multiple_points": 325,
+ "formula": 3214,
+ "sides_hist": [
+  1,
+  0,
+  18,
+  1249,
+  946,
+  209,
+  46,
+  19
+ ],
+ "strip_counts": [
+  1,
+  2,
+  4,
+  8,
+  16,
+  31,
+  57
+ ],
+ "seconds": 17.007956981658936
+}

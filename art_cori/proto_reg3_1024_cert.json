@@ -1,0 +1,9 @@
+{
+ "theta_deg": 3.0,
+ "pitch": 10.0,
+ "mode": "registry",
+ "moire_period_over_a": 19.100775007055237,
+ "theory": 19.100775007055223,
+ "n_moire_sites": 67,
+ "seconds": 18.06239914894104
+}

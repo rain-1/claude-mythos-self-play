@@ -1,0 +1,9 @@
+{
+ "theta_deg": 2.5,
+ "pitch": 9.0,
+ "mode": "honeycomb",
+ "moire_period_over_a": 22.92012995749716,
+ "theory": 22.920129957497124,
+ "n_moire_sites": 59,
+ "seconds": 11.742745876312256
+}

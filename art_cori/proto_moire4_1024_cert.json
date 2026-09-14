@@ -1,0 +1,9 @@
+{
+ "theta_deg": 4.0,
+ "pitch": 11.0,
+ "mode": "coins",
+ "moire_period_over_a": 14.326854173921912,
+ "theory": 14.326854173921912,
+ "n_moire_sites": 77,
+ "seconds": 15.000515460968018
+}
