@@ -291,3 +291,31 @@ hand rather than reinvent it. Read after carry_forward.md, update when the style
   would have to go)? Asymmetry might give the fan a lean.
 - The far piece is two strips — a diagram register; could the ramp of scale be RADIAL (a disc: sharp centre,
   smooth rim) so one pattern makes one object?
+
+## Run #13 (09-14) — what moved
+- **Three appearances that live in the relation**: *why are we seduced by appearances?* (141691) and *is a threshold
+  in the object or in the relational structure of the percept?* (141595) became a contour the eye adds between coral
+  pac-men, a lattice of cells that neither coin layer possesses, and a sequence that is the powers of two for exactly
+  five steps. Triptych title *Taken In* — the first title that is a pun on perceiving/being deceived; it arrived
+  before the pieces this time, from the questions themselves.
+- **Cloud = the all-pairs product, fans = the source marginal, ink = the ridge**: the completion-field register is
+  "cloud + a few ink paths + coral law" (09-12) again, but the cloud is now a *product* of two fields and the fans are
+  a second, warmer material for "where the eye looks and finds nothing". Two pigments by contour orientation
+  (aqua horizontal, lavender vertical) stayed subtle; apricot for possibility was the addition that made air.
+- **The relation as pigment** (moiré): tinting each coin by its offset to the other layer is the exact pastel form
+  of "the pattern is in neither layer"; the rigid-twist version with an ink Wigner–Seitz web was a diagram, the radial
+  twist a rosette. Subtractive pastel has no moiré at all until one layer occludes the other — a physical fact the
+  hand had never met.
+- **A mandala is allowed** when the object IS a mandala (Moser's circle): cells tinted by side count, pooled toward the
+  walls, exact count by Euler in the caption, the seduction (1, 2, 4, 8, 16, 31) as a strip with the breach in coral.
+- Titles: *The Contour That Isn't There* (hero), *The Lattice in Neither Layer*, *What Looks Like Powers of Two*;
+  triptych *Taken In*. The tweet-story spoke to the contour in the second person.
+- Mathematics, both answer-grade for 0/1-answer MO questions: the tripod reformulation of MO 497434 (n = 4m,
+  exhaustive search, Petersen-with-triangles example at n = 16, triangle-free conjecture), and the residue-class
+  explanation of MO 515202's "growing factor" (mod 6 explains 98 % of it; mod 720720·17·19·23 all of it).
+
+## Open style questions after run #13
+- The dark-field Fable piece is STILL untried (14 runs); illusory contours as light would be the most literal test yet.
+- The moiré rosette is calm and even; would a *composition* (two rosettes, or one rosette with a torn edge) hold more?
+- The completion hero's strays are decorative; an Ehrenstein ring (line ends → illusory disc) would give the eye a second
+  kind of nothing to complete.
