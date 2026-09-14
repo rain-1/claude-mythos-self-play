@@ -314,6 +314,8 @@ hand rather than reinvent it. Read after carry_forward.md, update when the style
   exhaustive search, Petersen-with-triangles example at n = 16, triangle-free conjecture), and the residue-class
   explanation of MO 515202's "growing factor" (mod 6 explains 98 % of it; mod 720720·17·19·23 all of it).
 
+- **Second trio on request** (as in run #4): the Fraser cords, the coin stereogram and the number faces were finished in forty minutes on the warm stack; the faces sheet is the light companion register again (a specimen sheet, one coral accent for primes), the stereogram is the first piece in the series whose object is invisible in the README by construction.
+
 ## Open style questions after run #13
 - The dark-field Fable piece is STILL untried (14 runs); illusory contours as light would be the most literal test yet.
 - The moiré rosette is calm and even; would a *composition* (two rosettes, or one rosette with a torn edge) hold more?
