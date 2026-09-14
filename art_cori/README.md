@@ -62,6 +62,49 @@ it was 1 + C(n,2) + C(n,4), which happens to agree with 2ⁿ⁻¹ for n ≤ 5. T
 the formula (10,903) because many chords meet three or more at a time; the exact count is by Euler's formula over the
 clustered crossing points.
 
+
+## The second trio — the other three ideas, built on request
+
+| piece | file | what it is | what is exact |
+|---|---|---|---|
+| **Circles You Read as a Spiral** | `circles_2560.png` | the Fraser twisted-cord illusion generated: 14 concentric circles drawn as barber-pole cords whose strands lean 18° off the tangent, on a checkerboard of arcs | the coral curve is the logarithmic spiral r = r₀e^(θ tan 18°) that a constant lean integrates to; every cord closes |
+| **The Depth That Isn't on the Page** | `depth_2560.png` | a single-image stereogram (Thimbleby–Inglis–Witten) whose texture is a strip of pastel coins periodic with the far-plane separation; a seven-sided plateau and a dome are hidden in it | depth key in `depth_2560_depth_key_512.png`; local shifts on flat patches match the depth map (or exactly twice it) |
+| **The Faces of Numbers** | `faces_2560.png` | Chernoff faces for 1…100, every feature an arithmetic fact | features per number in `faces_2560_cert.json` |
+
+### Circles You Read as a Spiral
+
+![Circles You Read as a Spiral](circles_2560.png)
+
+Fourteen concentric circles, each an annulus filled with diagonal stripes — a rope whose two strands lean 18° off the
+circle — on a checkerboard of arcs offset by half a cell per ring. The eye adds the leans up and reads a spiral;
+follow any cord with a finger and it closes. The faint coral curve is the certificate: the curve whose tangent is
+everywhere tilted by 18° from the circle through it is the logarithmic spiral r = r₀e^(θ tan 18°), which needs 1.1
+turns to cross the rings the cords close in one. First proto drew the strands as separate dashes (`proto_fraser`,
+`proto_fraser2`) and read as dotted circles; the illusion needs the two strands to overlap into a rope.
+
+### The Depth That Isn't on the Page
+
+![The Depth That Isn't on the Page](depth_2560.png)
+
+A field of pastel coins that repeats, almost, every 179 pixels. Let the eyes drift apart (or cross) until two
+neighbouring coins fuse, and the hero's seven-sided plateau rises from the paper with a dome beside it. Neither eye's
+image contains the shape; it lives in the relation between the two. Construction: the texture is a strip of dense small
+coins drawn periodic with the far-plane separation E/2, tiled; then per row the standard union-find links every pixel
+pair whose separation is set by the depth there, and each pixel takes the absorbance of its root's texture pixel. The
+first proto used a random texture across the whole sheet and showed only the coins of the leftmost strip, in rows —
+with a flat background every root lies in that strip, so the texture must be made periodic on purpose.
+
+### The Faces of Numbers
+
+![The Faces of Numbers](faces_2560.png)
+
+One to a hundred as faces (Philosophy.SE 141581 asked whether numbers can have faces; here every feature is a fact):
+width is the number of divisors, height the number of distinct prime factors, pigment the smallest prime factor
+(2 aqua, 3 mint, 5 lemon, 7 apricot, 11 and up lavender; primes blush with a coral ring), big round eyes for perfect
+squares, eye separation n mod 5, eyebrows by the Möbius function (raised, flat, frowning), nose by digit sum, and the
+mouth by σ(n)/n: abundant numbers smile, deficient ones frown, and the perfect numbers 6 and 28 keep a straight face.
+One, with no prime factor, is paper.
+
 ## Mathematics (see `notes_taken.md`)
 
 - **MO 497434** (snarks with a chordless cycle whose complement is independent): the condition forces n = 4m and
@@ -76,7 +119,7 @@ clustered crossing points.
 
 - `pastel.py` — the subtractive watercolour stack (+ `wrap`).
 - `completion.py` — Green's function of Mumford's direction process (spectral), placement by rotation, all-pairs product, ridge tracer.
-- `render_contour.py`, `render_moire.py`, `render_moser.py` — the three pieces; `proto_*` are the 1024 studies.
+- `render_contour.py`, `render_moire.py`, `render_moser.py` — the first trio; `render_fraser.py`, `render_stereo.py`, `render_faces.py` — the second; `proto_*` are the 1024 studies.
 - `tripod.c`, `heuristic32.py`, `notes_taken.md`, `heuristic32.json` — the two MO threads.
 - `IDEAS.md` — the six ideas and why three were built.
 
@@ -103,5 +146,10 @@ clustered crossing points.
 - **A ridge search must be lens-shaped**, 2 px at the ends and wide in the middle, or it jumps lobes and draws loops.
 - **Raster regions need an exact count beside them**: drop the 3-px slivers at chord crossings into the walls, paint the
   raster, caption the Euler count over clustered crossing points.
+- **A stereogram's texture must be periodic on purpose**: with a flat background every root of the pixel-linking is in the
+  leftmost strip, so a random field shows only that strip, repeated. Make the strip itself the texture, periodic with the
+  far-plane separation, and coins survive; and verify the encoding by cross-correlating row shifts against the depth map.
+- **An illusion is a construction, not a drawing**: separate tilted dashes read as dotted circles; the Fraser effect needs
+  the two strands to overlap into a rope (stripes inside an annulus), and the checkerboard behind it at full contrast.
 - **Let the title come from the questions** when three unrelated objects answer one front page: *Taken In* was there
   before any piece was built, and it held.

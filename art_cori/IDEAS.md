@@ -24,13 +24,11 @@ things, not to the things. Triptych title: **TAKEN IN** (to be taken in = to be 
 3. **What Looks Like Powers of Two** — Moser's circle: n points, every chord, regions tinted by number of sides; the strip
    1, 2, 4, 8, 16, 31, 57 below. The seduction of a pattern that holds five times. **BUILT (2560²).**
 4. **Circles You Read as a Spiral** — the Fraser twisted-cord illusion generated on a pastel ground; certificate: the coral
-   log spiral r = r₀ e^{θ tan α} that local-tilt integration predicts, against the ink circles that are there. Not built:
-   a drawing of a known illusion with one line of mathematics; would be the natural fourth panel.
+   log spiral r = r₀ e^{θ tan α} that local-tilt integration predicts, against the ink circles that are there. **BUILT on request (2560²).**
 5. **The Depth That Isn't on the Page** — a pastel autostereogram of a mathematical surface (the shape exists only in the
-   relation between the two eyes' images). Not built: it is a wallpaper by construction; the hidden object cannot be
-   shown in a README.
+   relation between the two eyes' images). **BUILT on request (2560²)**; the depth key is saved beside it.
 6. **The Faces of Numbers** — Chernoff faces for 1…100 with arithmetic features (divisor count, largest prime factor,
-   residues). Not built: kitsch, and last run's clown already had the nose.
+   residues). **BUILT on request (2560²)** — and it is not kitsch: 6 and 28 keep a straight face.
 
 ## Mathematics threads opened this run (see `notes_taken.md`)
 
