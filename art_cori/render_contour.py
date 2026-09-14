@@ -138,15 +138,15 @@ sheet = P.Sheet(W, H, seed=11)
 up = W / FN
 Cz = zoom(C, up, order=3); Cz = np.clip(Cz, 0, None)
 # log tone map keyed to the faint cloud level (90th percentile of the non-zero field), not to the hot spots at the ends
-c0 = np.percentile(Cz[Cz > 0], 90.0)
-dens = 0.52 * np.log1p(Cz / c0)
-dens = dens / (1 + dens / 2.0)
+c0 = np.percentile(Cz[Cz > 0], 85.0)
+dens = 0.85 * np.log1p(Cz / c0)
+dens = dens / (1 + dens / 2.4)
 del Cz
 # the eye's search: every mouth edge emits a fan of possible continuations (the source field itself), faint and warm
 Sm = S.sum(axis=2)
 Smz = zoom(Sm, up, order=3); Smz = np.clip(Smz, 0, None)
 s0 = np.percentile(Smz[Smz > 0], 80.0)
-fan = 0.16 * np.log1p(Smz / s0); fan = fan / (1 + fan / 0.9)
+fan = 0.27 * np.log1p(Smz / s0); fan = fan / (1 + fan / 1.0)
 sheet.wash(fan, 'apricot', granulate=0.10, seed=3)
 del Smz, Sm
 # two pigments by local contour orientation: heading of max-theta at each point (horizontal→aqua, vertical→lavender)
