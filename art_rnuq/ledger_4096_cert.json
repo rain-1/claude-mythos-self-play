@@ -1,0 +1,10 @@
+{
+ "N": 1160,
+ "C": 2,
+ "D": 190,
+ "mode": "rose",
+ "seq_file": "cache/erdos_1160_s3.json",
+ "solver": "cadical195",
+ "sat_seconds": 77.92249536514282,
+ "max_abs_ledger": 2
+}

@@ -1,0 +1,6 @@
+art_cori/cache/
+art_cori/logs/
+art_rnuq/cache/
+*.npy
+art_cori/tripod
+__pycache__/
