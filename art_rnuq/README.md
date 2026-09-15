@@ -19,6 +19,12 @@ theory — never touched in the 70 previous runs — and the tree hidden in ever
 
 ![The Order You Tell It In](orders_2560.png)
 
+**Companion — the same 1160 answers as a loom** (`ledger_loom_2560.png`): row d tiled by its ledger cells; the cell
+boundaries kd line up into a fan of rays from the corner, and the near-multiplicative structure the solver was forced into
+shows as whole rays sharing one tone.
+
+![The Longest Honest Answer — loom](ledger_loom_2560.png)
+
 ## Mathematics (`notes_said.md`, certificates in `*_cert.json`, `erdos_analysis.json`)
 - **Erdős discrepancy, C = 2, N = 1160**: automaton SAT encoding with the parity reduction (`erdos_sat.py`), CaDiCaL 1.9.5;
   clause shuffling changed the solve time from > 13 min to 78 s. Every solution re-verified over all ⌊N/d⌋ ledgers.
