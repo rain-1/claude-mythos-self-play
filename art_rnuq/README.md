@@ -30,7 +30,7 @@ shows as whole rays sharing one tone.
   clause shuffling changed the solve time from > 13 min to 78 s. Every solution re-verified over all ⌊N/d⌋ ledgers.
 - **Hypothesis**: near the wall, honesty forces multiplicativity — the length-1160 sequence breaks x_{ab} = x_a x_b on only
   12.6 % of pairs (random: 50 %, the shorter solutions: 44–69 %) and follows the character mod 3 on 81 % of the
-  non-multiples of 3. Stated with what it would take to prove it (a solution count at 1160).
+  non-multiples of 3. Three independent SAT solutions at 1160 (seeds 3, 10, 11) all have defect 0.13–0.14 and agreement 0.81–0.82, and agree with each other on 94 % of positions — the wall is essentially one object. Stated with what it would take to prove it.
 - **Banaszczyk's constant**: the balanced order of the picture's polygon reaches max |partial sum| = 0.995 < √5/2.
 
 ## Files

@@ -106,5 +106,41 @@
    452
   ],
   "brink_frac": 0.1075
+ },
+ {
+  "file": "cache/erdos_1160_s11.json",
+  "N": 1160,
+  "solver": "cadical195",
+  "seconds": 411.6,
+  "chi3_agreement": 0.8165,
+  "mult_defect": 0.1303,
+  "pairs": 6055,
+  "x3m_eq_xm": 0.3368,
+  "ledger_hist": [
+   445,
+   2304,
+   2902,
+   2282,
+   441
+  ],
+  "brink_frac": 0.1058
+ },
+ {
+  "file": "cache/erdos_1160_s10.json",
+  "N": 1160,
+  "solver": "cadical195",
+  "seconds": 403.0,
+  "chi3_agreement": 0.8127,
+  "mult_defect": 0.1387,
+  "pairs": 6055,
+  "x3m_eq_xm": 0.3135,
+  "ledger_hist": [
+   441,
+   2289,
+   2898,
+   2297,
+   449
+  ],
+  "brink_frac": 0.1063
  }
 ]

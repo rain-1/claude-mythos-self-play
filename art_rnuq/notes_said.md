@@ -38,11 +38,24 @@ the character mod 3 on four fifths of the non-multiples of 3.  (A completely mul
 sequence has maximal length 246; the length-1160 record is bought exactly by the freedom to break
 multiplicativity in one place in eight.)
 
-**HYPOTHESIS (stated, tested on the seeds that finished — see the table appended below).**  *Every* ±1 sequence
+**Three independent solutions at N = 1160** (clause-shuffle seeds 3, 10, 11; 78 s, 403 s, 412 s):
+
+| seed | mult. defect | χ₃ agreement | x_{3m} = x_m | cells at ±2 |
+|---|---|---|---|---|
+| 3 | 0.126 | 0.806 | 0.337 | 0.107 |
+| 10 | 0.139 | 0.813 | 0.313 | 0.106 |
+| 11 | 0.130 | 0.817 | 0.337 | 0.106 |
+
+The three sequences agree with one another on 93.6–94.7 % of positions: the solver, started three different ways,
+lands on essentially one object.
+
+**HYPOTHESIS (holds on 3 of 3 solutions found).**  *Every* ±1 sequence
 of length 1160 with discrepancy 2 has multiplicativity defect below 0.2 and agrees with χ₃ (up to sign) on more
 than 70 % of its non-multiples of 3 — i.e. near the wall, honesty forces near-multiplicativity.  What it would
-take to prove: Konev–Lisitsa's UNSAT certificate for 1161 plus a count of the solutions at 1160 (they are
-few; a #SAT run on this instance is feasible with a modern model counter).
+take to prove: enumerate the solutions at 1160 (blocking clauses, or a #SAT run — the 94 % pairwise agreement
+says the solution set is a small cluster) and check the two statistics on each; then the statement is a finite fact,
+and the interesting question becomes *why* the wall is multiplicative (Tao's proof goes through the
+Elliott conjecture for multiplicative functions — the hypothesis says the extremal sequences already know that).
 
 ## 2. The Meaning of a Number Is a Tree — Matula–Goebel
 
