@@ -67,8 +67,8 @@ assert maxS['balanced'] <= 5 ** 0.5 / 2 + 1e-9
 
 # ---- page: origin at the centre, the m = 1 circle (radius r1 = n/2π) reaching the top
 r1 = n / (2 * np.pi)
-cx, cy = W / 2, 0.47 * H
-scale = 0.42 * H / (2 * r1)    # the m=1 circle spans 2 r1 : from the origin up to the top margin
+cx, cy = W / 2, 0.535 * H
+scale = 0.50 * H / (2 * r1)    # the m=1 circle spans 2 r1 : from the origin up to the top margin
 def to_px(p):
     return cx + scale * p[:, 0], cy - scale * p[:, 1]
 
@@ -102,7 +102,7 @@ circ = P.polyline_density(W, H, [(cx + rc * np.cos(a), cy + rc * np.sin(a)) for 
 sheet.wash(np.clip(circ, 0, 1) * 1.2, 'coral')
 
 # ---- inset: the knot magnified, bottom-left corner
-ix0, iy0 = 0.70 * W, 0.615 * H; iw = 0.255 * W
+ix0, iy0 = 0.705 * W, 0.60 * H; iw = 0.26 * W
 sc2 = iw * 0.40 / 1.25; icx, icy = ix0 + iw / 2, iy0 + iw / 2
 box = np.zeros((H, W), np.float32); box[int(iy0):int(iy0 + iw), int(ix0):int(ix0 + iw)] = 1
 sheet.lighten(gaussian_filter(box, 2 * rs), 0.85)
