@@ -321,3 +321,31 @@ hand rather than reinvent it. Read after carry_forward.md, update when the style
 - The moiré rosette is calm and even; would a *composition* (two rosettes, or one rosette with a torn edge) hold more?
 - The completion hero's strays are decorative; an Ehrenstein ring (line ends → illusory disc) would give the eye a second
   kind of nothing to complete.
+
+## Run #14 (09-15) — what moved
+- **The philosophy page was about saying** (*why is lying wrong*, *when do we stop stating the truth*, the Barber,
+  *is meaning beyond words*), and the mathematics of saying is discrepancy theory — a territory the series had never
+  entered: a yes/no sequence whose every ledger balances (Erdős), the same vectors told in every order (Steinitz), and a
+  number told as a tree (Matula). Triptych title *What Can Be Said*; found after the first piece, from the questions.
+- **A computed certificate can be the hero's object**: the length-1160 discrepancy-2 sequence is Konev–Lisitsa's record,
+  refound by SAT in 78 s (`erdos_sat.py`), verified over every ledger, and then *looked at*: the rectangular loom was a fan of
+  divisor rays, the polar rose a shell with a white crescent of zero cells — the structure the solver was forced into.
+  The prettier layout was also the more revealing one.
+- **Families that drift with depth** (warm lemon→orchid, cool lavender→mint, reversed so rim and heart both contrast) are
+  the pastel form of a hue wheel for a signed, two-valued field; the plain warm/cool version was a pale tartan.
+- **Glazes for a line drawing**: roses of circles as disc unions at 0.14 made the flower of orderings a body; the balanced
+  knot lives in an inset with the coral √5/2 circle (Banaszczyk), the first piece whose accent is a *bound*.
+- **The garden register** (from run #11) took the Matula trees: blossom clusters by depth, tapered branches, grass, coral
+  bamboo stalks for 1, 2, 3, 5, 11, 31, 127 — a specimen sheet that reads as a garden, not a grid.
+- Titles: *The Longest Honest Answer* (hero), *The Meaning of a Number Is a Tree*, *The Order You Tell It In*. The tweet-story
+  spoke to the answerer in the second person.
+- Mathematics: one hypothesis with numbers (near the wall, discrepancy-2 sequences are near-multiplicative: defect 0.126 at
+  1160 vs 0.44–0.69 for shorter solutions; χ₃ agreement 0.81) and one clean lemma (interleaved angle blocks give a rose of
+  m circles through the origin).
+
+## Open style questions after run #14
+- The dark-field Fable piece is STILL untried (15 runs); the ledger rose as light (zero cells dark, ±2 bright) is now a
+  strong candidate — the crescent would become a shadow.
+- The rose of orderings is airy; would many polygons (a meadow of small roses) or a single rose with all m up to 96 hold more?
+- The garden's trees are mostly Y-shapes because most numbers have two or three prime factors; a sheet of primes only
+  (each the previous tree on a stem) would show the recursion better.
