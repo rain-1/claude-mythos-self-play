@@ -13,7 +13,7 @@ cells on either side.
 |---|---|---|
 | **Where One World Becomes Two** (hero, 4096²) | `neck_4096.png` | Ricci flow on a dumbbell S³, solved in the Angenent–Knopf warping equation (linear in ψ² for S³). Every recorded moment is a solid of revolution drawn as glass — pigment density = chord length through the solid, a physically honest x-ray — laid over one another at equal time steps, so the tone is dwell time. The parent drifts lemon → apricot → blush → orchid up to the pinch; the two children orchid → lavender → cornflower → aqua until each ends at a coral point inside its lobe. The coral bowtie is the neck that is cut away. Hairlines are every profile; the film strip beneath is nine moments with their times. Neck law d(ψ²_min)/dt → −2 (measured −1.15 → −1.55 as the window shrinks, the theorem's logarithmic approach); each child a round sphere with d(r²)/dt = −4 to 3 %. |
 | **The Last Light** (4096 × 3522) | `sky_4096.png` | The microwave sky at 380,000 years: the Planck-2018 spectrum from CAMB, one Gaussian realisation on 50 million HEALPix pixels, Mollweide. Warm family above the mean, cool below, density by |ΔT|. Below, a 14° window (its footprint is the hairline circle on the ellipse); the coral circle in it is the first acoustic peak, ℓ = 220, 0.82° across — the loudest note of the plasma's last moment. |
-| **Every Crack Ends on an Older One** (2560²) | `craquelure_2560.png` | A drying film on an elastic bed: a jittered triangular spring lattice whose rest length shrinks, every node tied to its substrate, bonds breaking past a random threshold, one bond at a time from the crack tip. New cracks run until they meet an older crack, at right angles. Cells are drawn in their deformed positions (the gaps are the real openings, wider on older cracks), each tinted by the age of its walls; ink width by crack age; coral for the first crack. |
+| **Every Crack Ends on an Older One** (2560²) | `craquelure_2560.png` | A drying film on an elastic bed: a jittered 320 × 320 triangular spring lattice whose rest length shrinks, every node tied to its substrate, 30,780 bonds breaking past their random thresholds one at a time from the crack tips (30 minutes in C). New cracks run until they meet an older crack, at right angles; 413 cells. The model's cracks are damage bands a few cells wide, so the ink follows their medial axis; cells are drawn in their deformed positions and tinted by the mean breaking strain of their walls (the smooth threshold field shows as warm and cool provinces); the coral dots are the first 120 breaks. |
 
 ![Where One World Becomes Two](neck_4096.png)
 
@@ -56,4 +56,5 @@ neck.
   distrust; test Newton's third law and convergence before believing a pattern.
 - **Cells of a crack network need a raster, not the graph**: unstrained ligament bonds across every crack never break, so
   graph components leak; a raster of the cracks with a morphological closing gives the cells, and the film's own rim closes
-  the edge ones.
+  the edge ones. The cracks themselves are damage bands: filling them with ink gave cobblestones, the medial axis of the
+  distance transform gave craquelure.

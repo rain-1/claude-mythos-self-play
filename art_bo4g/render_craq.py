@@ -159,31 +159,49 @@ for name in fam:
     a = np.asarray(layers[name], np.float32)
     if a.max() > 0:
         sheet.wash(a, name, granulate=0.10, edge=0.30, seed=5)
-# crack lines in ink: the dual edge of every broken bond (centroid to centroid across the bond)
-first = []
-ink = np.zeros((Hp, Wp), np.float32)
-ages = {}
-for b, ks in bond_tris.items():
-    if brk_flat[b] < 0 or len(ks) < 2:
+# crack lines in ink: the CORE of the closed crack raster (rest frame, mapped with the picture's scale; the
+# deformation is < 0.6 cells so the line sits in the middle of the real opening), width by local band width
+from scipy.ndimage import zoom as nd_zoom
+dcore = distance_transform_edt(crack)                 # px (q per cell) to the outside of the band
+from scipy.ndimage import maximum_filter
+# the crack line = the medial axis of the damage band (ridge of the distance transform), 1-2 px at q per cell
+ridge = (dcore > 1.0) & (dcore >= maximum_filter(dcore, size=5) - 0.75)
+core = gaussian_filter(ridge.astype(np.float32), 0.8)
+core = np.clip(core / max(core.max(), 1e-6) * 1.6, 0, 1)
+# age of the band: rasterise the break strain onto the band (older = wider ink)
+age_im = Image.new('F', (RW, RH), 0.0)
+ad = ImageDraw.Draw(age_im)
+for b_, ks in bond_tris.items():
+    if brk_flat[b_] < 0 or len(ks) < 2:
         continue
-    seg = (cent[ks[0], 0], cent[ks[0], 1], cent[ks[1], 0], cent[ks[1], 1])
-    age = (eps_end - eps_flat[b]) / eps_end          # 1 = the oldest crack
-    band = min(3, int(age * 4))
-    ages.setdefault(band, []).append(seg)
-    if brk_flat[b] < nbroken * 0.02:
-        first.append(seg)
-for band, segs in ages.items():
-    wdt = (0.9 + 0.9 * band) * rs
-    ink += draw_lines_density(Wp, Hp, segs, max(1.0, wdt), sigma=0.6 * rs)
+    age = (eps_end - eps_flat[b_]) / eps_end
+    ad.line([(cent0[ks[0], 0] * q + 4, cent0[ks[0], 1] * q + 4), (cent0[ks[1], 0] * q + 4, cent0[ks[1], 1] * q + 4)],
+            fill=float(0.3 + 0.7 * age), width=int(1.3 * q))
+age_r = np.asarray(age_im, np.float32)
+inkr = core * (0.55 + 0.6 * age_r)
+# map raster (rest frame) -> picture: picture x = X0*sc + offx, raster x = X0*q + 4
+zf = sc / q
+ink_pic = nd_zoom(inkr, zf, order=1)
+ink = np.zeros((Hp, Wp), np.float32)
+oy_ = int(round(offy - 4 * zf)); ox_ = int(round(offx - 4 * zf))
+h_ = min(ink_pic.shape[0], Hp - oy_); w_ = min(ink_pic.shape[1], Wp - ox_)
+ink[oy_:oy_ + h_, ox_:ox_ + w_] = ink_pic[:h_, :w_]
+ink = gaussian_filter(ink, 0.7 * rs)
+ink = np.clip(ink / max(np.percentile(ink[ink > 0.01], 95), 1e-6), 0, 1) if np.any(ink > 0.01) else ink
+# coral: the first crack = the earliest 120 breaks, drawn as their dual segments in the deformed frame
+first = []
+for b_, ks in bond_tris.items():
+    if 0 <= brk_flat[b_] < 120 and len(ks) == 2:
+        first.append((cent[ks[0], 0], cent[ks[0], 1], cent[ks[1], 0], cent[ks[1], 1]))
 if first:
-    co = draw_lines_density(Wp, Hp, first, max(1.0, 3.5 * rs), sigma=0.9 * rs)
+    co = draw_lines_density(Wp, Hp, first, max(1.0, 3.0 * rs), sigma=0.9 * rs)
     ink = ink * (1 - 0.85 * np.clip(co, 0, 1))
     sheet.wash(np.clip(co, 0, 1) * 1.4, 'coral')
-sheet.wash(np.clip(ink, 0, 1) * 0.8, 'ink')
-sheet.caption_strip(0.90, 0.985, f=0.55)
+sheet.wash(np.clip(ink, 0, 1) * 0.85, 'ink')
+sheet.caption_strip(0.905, 0.99, f=0.55)
 title = 'Every Crack Ends on an Older One'
-sub = ('A drying film on an elastic bed, %d cells: each new crack runs until it meets an earlier one, and meets it '
-       'at a right angle; the tint is the strain at which each cell was born, the coral is the first crack.' % ncell)
+sub = ('A drying film on an elastic bed, %d cells: each new crack runs until it meets an older one, at a right angle. '
+       'Cells are tinted by the age of their walls; the coral is the first crack.' % ncell)
 size_t = int(44 * rs); size_s = int(23 * rs)
 items = [(title, Wp / 2, Hp * 0.925, size_t, 'serif_bold', 'mm')]
 for i, ln in enumerate(wrap(sub, size_s, 'italic', 0.84 * Wp)):
