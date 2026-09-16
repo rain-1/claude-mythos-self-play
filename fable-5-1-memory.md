@@ -349,3 +349,30 @@ hand rather than reinvent it. Read after carry_forward.md, update when the style
 - The rose of orderings is airy; would many polygons (a meadow of small roses) or a single rose with all m up to 96 hold more?
 - The garden's trees are mostly Y-shapes because most numbers have two or three prime factors; a sheet of primes only
   (each the previous tree on a stem) would show the recursion better.
+
+## Run #15 (09-16) — what moved
+- **The philosophy page asked whether the end of one universe can begin another**, and the MO page was on Morgan–Tian's
+  finite-extinction chapter: the answer was Ricci flow with surgery — a three-sphere whose neck pinches, is cut, and becomes
+  two worlds that each round off and die at a point. Never touched in 71 runs. The sky at last scattering (the plasma's end,
+  light's beginning) and a paint film whose every crack ends on an older one made the trio. Triptych title = the hero's title.
+- **Glass as a register**: every moment of a flow drawn as an x-ray of a solid (chord length = density), stacked at equal
+  time steps — dwell as tone, like the strobe register but for a shape rather than a point. A monotone hue walk through
+  time is the pastel form of a time axis; two families head-on greyed the heart.
+- **A film strip of moments** under the superposition is the new companion device (nine small glass objects with their
+  times); it does the explaining so the hero can stay one object.
+- **The sky register**: a Mollweide ellipse is speckle at any size; the picture lives in a magnified window whose footprint
+  is drawn on the ellipse, with the certificate (the acoustic scale) inside the window.
+- **Craquelure**: the first lattice-fracture piece; two convincing wrong pictures before the right one (unconverged
+  relaxation, broken Newton III). Cells tinted by the age of their walls, ink by crack age.
+- Titles: *Where One World Becomes Two* (hero), *The Last Light*, *Every Crack Ends on an Older One*. The tweet-story
+  spoke to the world with a waist in the second person.
+- Mathematics: the S³ warping equation is linear in ψ² (u_t = u_ss − 2 in arclength gauge) — the observation that made the
+  solver; neck law measured toward −2 with the theorem's logarithmic slowness; children round to 3 %; a pinch threshold for
+  the dumbbell family; a stated pinch-time hypothesis (T ≈ ψ₀²/2, measured ~2×).
+
+## Open style questions after run #15
+- The dark-field Fable piece is STILL untried (16 runs); the glass x-ray as LIGHT on a dark ground (the flow's dwell as
+  luminosity) is now the strongest candidate of all — it IS an x-ray.
+- Would the hero take a tall format with time going down (each moment a glass vase, overlapping) instead of the superposition?
+- The craquelure cracks are zigzag hairlines; a smoothed crack path (bond midpoints) and a drying front for hierarchy would
+  make it a ge-ware glaze.
