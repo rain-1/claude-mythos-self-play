@@ -1,0 +1,10 @@
+{
+ "A": 10,
+ "counts": {
+  "slide": 68,
+  "none": 1035,
+  "mirror": 66,
+  "turn": 42
+ },
+ "specials": []
+}

@@ -47,6 +47,36 @@ one Galton and Watson asked for in 1875: how surnames die.
 `census_names.py` · `rr.py` (the fraction on a polar grid), `render_rr.py` · `gauss.py` (the map + certificates),
 `render_gauss.py` · `notes_inherit.md`. Records and protos live in `cache/` (not committed).
 
+---
+
+## Second trio (same day, on request: "please do the next 3")
+
+| piece | file | what it is |
+|---|---|---|
+| **Five Drawers** (4096²) | `drawers_4096.png` | All 1,575 partitions of 24 as Ferrers diagrams, shelf-packed into five drawers by Dyson's rank (largest part minus number of parts) modulo 5 — exactly 315 in each, the fact Dyson guessed in 1944 to explain Ramanujan's p(5n+4) ≡ 0 (mod 5) and Atkin–Swinnerton-Dyer proved in 1954. One pigment per drawer; conjugation negates the rank, so the apricot and aqua drawers are mirrors of each other, as are blush and lavender, and the lemon drawer is its own mirror: its 11 self-conjugate partitions are outlined in coral. |
+| **Whose Gap Comes Next** (2560 × 4096) | `gaps_2560.png` | Every pair of consecutive prime gaps below 10⁹ (50.8 million pairs) as a loom: a knot at (this gap, next gap) sized by how often the pair occurs, warm where it occurs more than independence predicts, cool where less (the Lemke Oliver–Soundararajan residue bias, a checkerboard in the knots). The coral thread is the mean next gap given this one, which leans left as this gap grows — the negative lag-one correlation, r = −0.028, that MO 515297 asks about. The poster's bound was checked for every integer x ≤ 10⁹: it holds, with slack ≥ 3. |
+| **Two Halves, One Shape** (4096²) | `halves_4096.png` | All 1,211 convex polyominoes of area 10 — the polyomino version of MO 515286 raised in its comments. The 176 that can be cut into two congruent halves are filled (lavender: the halves are related by a half-turn; mint: by a mirror; apricot: by a slide or quarter-turn) with the cut in coral; the 1,035 that cannot are left whole as outlines. The inset shows the exceptions found by the exhaustive census: at area 12 one shape of 7,274, at area 14 six of 41,645, that can be halved into congruent pieces only if both pieces are non-convex. |
+
+![Five Drawers](drawers_4096.png)
+
+![Whose Gap Comes Next](gaps_2560.png)
+
+![Two Halves, One Shape](halves_4096.png)
+
+**Mathematics of the second trio** (`notes_inherit.md`, `cert_drawers.json`, `cert_gaps.json`, `cert_halves_10.json`, `cert_halves_12.json`):
+five drawers of 315 verified; lag-one gap correlation −0.0275 at 10⁹ with E[next | this] falling from 21.3 to 18.3;
+the MO 515297 bound holds for all integers to 10⁹ (min slack 3 at x = 9); the convex-polyomino halving census to
+area 14 with the hypothesis that the halvable fraction halves with every two cells of area, and the first polyomino
+instances of "congruent halves only if non-convex" (1 at area 12, 6 at area 14).
+
+**What moved in the second trio.** The specimen-sheet register held for all three (drawers, loom, field of shapes),
+which is right for companions built in an afternoon. The gap loom only stopped being a chart when the knots at small
+gaps were allowed to grow into overlapping pools (size ∝ (log count)^1.3 of the column spacing) and the lean pigment
+was weighted by its statistical significance — the confetti of insignificant leans at large gaps was the first
+version's noise. The halving sheet became a picture once the cuttable shapes were mixed among the uncuttable in
+size order instead of sorted to the top: the eye then reads the *rarity*, which is the theorem. And the census found
+something the question's comment asked for: convex polyominoes whose congruent halves cannot both be convex.
+
 ## Tweet-sized story
 You were one of a thousand names, and by the tenth generation half of you were gone. Nobody chose. The children simply picked their parents at random, and yours were not picked. But look at the one name that reaches the bottom of the page: it was no better than yours. It only had somewhere to stand.
 
