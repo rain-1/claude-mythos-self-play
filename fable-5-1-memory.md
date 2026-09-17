@@ -402,3 +402,12 @@ hand rather than reinvent it. Read after carry_forward.md, update when the style
   (fate as palette) give it a body without breaking "one name = one pigment"?
 - The ellipse sheet has too much paper between rows; a single needle ellipse at full width with a magnified tip inset may
   say the same thing with more presence.
+
+## Run #16, second trio (09-17, on request: "please do the next 3")
+- The three also-rans were built in ~2 hours on the warm stack: a partition drawer-sheet, a prime-gap knot loom
+  (tall format), and a complete census field of convex polyominoes with an inset of the exceptions. All three are
+  specimen-sheet register — allowed for companions built the same afternoon — and each carried an answer-grade
+  number for its MO question (bound verified for all x ≤ 10⁹; seven convex polyominoes whose congruent halves must
+  be non-convex, the first of their kind).
+- The user's reaction to the first trio was "gorgeous. I loved it." — keep the hand: names dealt as pigments,
+  sunburst warp, tips fading to paper.
