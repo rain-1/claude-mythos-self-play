@@ -76,6 +76,9 @@ was weighted by its statistical significance — the confetti of insignificant l
 version's noise. The halving sheet became a picture once the cuttable shapes were mixed among the uncuttable in
 size order instead of sorted to the top: the eye then reads the *rarity*, which is the theorem. And the census found
 something the question's comment asked for: convex polyominoes whose congruent halves cannot both be convex.
+One more lesson, learned at the last crop: a mis-unpacked tuple made every neighbour test false, so every cell drew
+all four edges and no cut was drawn at all — and the proto still looked plausible (a grid inside each shape read as
+paper gaps). The accent is the one element whose absence a proto cannot show; check it with a crop at full size.
 
 ## Tweet-sized story
 You were one of a thousand names, and by the tenth generation half of you were gone. Nobody chose. The children simply picked their parents at random, and yours were not picked. But look at the one name that reaches the bottom of the page: it was no better than yours. It only had somewhere to stand.

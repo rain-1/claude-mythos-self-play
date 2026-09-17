@@ -65,9 +65,9 @@ def draw_poly(i, x0, y0, u, inset=False):
     def edges(cs):
         E = []
         for (cy, cx) in cs:
-            for (ny, nx, e) in (((cy - 1, cx), 0, ((cx, cy), (cx + 1, cy))), ((cy + 1, cx), 0, ((cx, cy + 1), (cx + 1, cy + 1))),
-                                ((cy, cx - 1), 0, ((cx, cy), (cx, cy + 1))), ((cy, cx + 1), 0, ((cx + 1, cy), (cx + 1, cy + 1)))):
-                if (ny, nx) not in cs:
+            for (nb, e) in (((cy - 1, cx), ((cx, cy), (cx + 1, cy))), ((cy + 1, cx), ((cx, cy + 1), (cx + 1, cy + 1))),
+                            ((cy, cx - 1), ((cx, cy), (cx, cy + 1))), ((cy, cx + 1), ((cx + 1, cy), (cx + 1, cy + 1)))):
+                if nb not in cs:
                     E.append(e)
         return E
     if k != 'none':
@@ -78,9 +78,9 @@ def draw_poly(i, x0, y0, u, inset=False):
         # the cut: unit edges between S and its complement
         wd = max(1, int(round((3.0 if inset else 1.6) * rs)))
         for (cy, cx) in S:
-            for (ny, nx, e) in (((cy - 1, cx), 0, ((cx, cy), (cx + 1, cy))), ((cy + 1, cx), 0, ((cx, cy + 1), (cx + 1, cy + 1))),
-                                ((cy, cx - 1), 0, ((cx, cy), (cx, cy + 1))), ((cy, cx + 1), 0, ((cx + 1, cy), (cx + 1, cy + 1)))):
-                if (ny, nx) in cells and (ny, nx) not in S:
+            for (nb, e) in (((cy - 1, cx), ((cx, cy), (cx + 1, cy))), ((cy + 1, cx), ((cx, cy + 1), (cx + 1, cy + 1))),
+                            ((cy, cx - 1), ((cx, cy), (cx, cy + 1))), ((cy, cx + 1), ((cx + 1, cy), (cx + 1, cy + 1)))):
+                if nb in cells and nb not in S:
                     cdr.line([(x0 + e[0][0] * u, y0 + e[0][1] * u), (x0 + e[1][0] * u, y0 + e[1][1] * u)], fill=1.0, width=wd)
 y = top * H
 for line, hm in zip(lines, hmax):
