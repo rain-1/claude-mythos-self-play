@@ -1,0 +1,85 @@
+{
+ "N": 1000,
+ "runs": 300,
+ "fixation_mean": 1974.7033333333334,
+ "fixation_sd": 1003.4294936145516,
+ "theory_2N": 1998.0,
+ "two_names_share_mean": 0.4124428712892874,
+ "two_names_share_median": 0.41460677794765116,
+ "last_two_duration_mean": 976.7533333333333,
+ "theory_last_two": 1000,
+ "alive": [
+  {
+   "t": 1,
+   "mean": 632.68,
+   "kingman": 666.901299471301,
+   "asymptotic_2N_over_t": 2000.0
+  },
+  {
+   "t": 2,
+   "mean": 469.2366666666667,
+   "kingman": 500.29178546552515,
+   "asymptotic_2N_over_t": 1000.0
+  },
+  {
+   "t": 3,
+   "mean": 374.24,
+   "kingman": 400.3121599194533,
+   "asymptotic_2N_over_t": 666.6666666666666
+  },
+  {
+   "t": 5,
+   "mean": 268.7633333333333,
+   "kingman": 286.0400759679165,
+   "asymptotic_2N_over_t": 400.0
+  },
+  {
+   "t": 10,
+   "mean": 158.93333333333334,
+   "kingman": 166.9988569823996,
+   "asymptotic_2N_over_t": 200.0
+  },
+  {
+   "t": 20,
+   "mean": 87.52333333333333,
+   "kingman": 91.24290865303142,
+   "asymptotic_2N_over_t": 100.0
+  },
+  {
+   "t": 50,
+   "mean": 38.06333333333333,
+   "kingman": 38.7965948025598,
+   "asymptotic_2N_over_t": 40.0
+  },
+  {
+   "t": 100,
+   "mean": 19.883333333333333,
+   "kingman": 19.94460741536343,
+   "asymptotic_2N_over_t": 20.0
+  },
+  {
+   "t": 200,
+   "mean": 10.19,
+   "kingman": 10.241189375905767,
+   "asymptotic_2N_over_t": 10.0
+  },
+  {
+   "t": 500,
+   "mean": 4.32,
+   "kingman": 4.3349858548804825,
+   "asymptotic_2N_over_t": 4.0
+  },
+  {
+   "t": 1000,
+   "mean": 2.3433333333333333,
+   "kingman": 2.366427529551384,
+   "asymptotic_2N_over_t": 2.0
+  },
+  {
+   "t": 2000,
+   "mean": 1.43,
+   "kingman": 1.4175567847372277,
+   "asymptotic_2N_over_t": 1.0
+  }
+ ]
+}
