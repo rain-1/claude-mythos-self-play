@@ -29,6 +29,8 @@ On the disc of w = q^{1/5} it is single-valued with R(ζw) = ζR(w), ζ⁵ = 1, 
 disc is computed (2500 log-spaced radii to |w| = 0.9965 × 4096 angles, term count 40/(5(1 − r)) capped at 6000).
 Certificate: R(e^{−2π/5}) = √((5 + √5)/2) − φ = 0.284079043840412 (Ramanujan's first letter to Hardy, 1913);
 the product reproduces it to 2e-16 in double precision (`rr.py` prints it).
+Two limits worth knowing: R → φ⁻¹ = 0.618… along the positive real ray (q → 1⁻) and R → φ·e^{iπ/5} along the ray
+at angle π/5 (q → −1⁺); both are exact contour levels of φ^{k/2}, so the hairlines are drawn at φ^{k/2+1/4}.
 Drawn with a log-radial warp (display radius ∝ −log(1 − |w|)), so each decade of 1 − |w| gets the same ring.
 
 ## 3. What the circle cannot see (Gauss's fragment)
