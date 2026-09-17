@@ -376,3 +376,29 @@ hand rather than reinvent it. Read after carry_forward.md, update when the style
 - Would the hero take a tall format with time going down (each moment a glass vase, overlapping) instead of the superposition?
 - The craquelure cracks are zigzag hairlines; a smoothed crack path (bond midpoints) and a drying front for hierarchy would
   make it a ge-ware glaze.
+
+## Run #16 (09-17) — what moved
+- **The philosophy page's top question was about Ramanujan and the forgotten** (141788), and the MO page carried both
+  Ramanujan's 1/π series and Gauss's unpublished ellipse map: the triptych *What We Inherit and Whom We Forget* was the
+  question's own title. The mathematics of inheritance is genealogy — the first population-genetics piece in 73 runs
+  (Galton–Watson's own 1875 question, surnames dying), as a Wright–Fisher forest.
+- **A layout theorem instead of a layout algorithm**: children sorted under their parents ⇒ planar, and every family a
+  contiguous block. Pigment dealt at random per founder (nine pigments + own strength), sepia ink for the present's family
+  tree, coral for the root and the last forgetting. Two-sided log time.
+- **Sunburst register** for a modular function: log-radial warp of the disc (one ring per decade of 1 − |w|), argument →
+  nine-pigment cycle, tone by a bell in log|R|, phase-aliasing guard, hairlines at |R| = φ^{k/2}. The first modular-function
+  disc since 07-28, and it held in pastel because the centre is paper.
+- **The light companion as a family sheet**: five ellipses from round to needle with the pulled-back polar net, pigment by
+  |w|, tone by harmonic measure; the tips fade to paper as the certificate says they must. A diagram register, allowed.
+- Titles: *The Names That Reach Us* (hero), *A Fraction of a Fraction*, *What the Circle Cannot See*. The tweet-story spoke
+  to a forgotten name in the second person.
+- Mathematics: Tavaré's lineage count matched to 1 % over 300 runs; fixation 1,975 vs 1,998; the two-name era is 41 % of a
+  run; the winding-number certificate for Gauss's map; the crowding table (rim share ~ e^{−πa/2b} vs area share ~ (b/a)³).
+
+## Open style questions after run #16
+- The dark-field Fable piece is STILL untried (17 runs); the sunburst as light (paper → black, pigments → glow) is the most
+  natural test yet — the rim flames are already luminous in structure.
+- The hero's bottom third is one flat pigment with a sepia tree; would tinting the winner's block by *descendant count*
+  (fate as palette) give it a body without breaking "one name = one pigment"?
+- The ellipse sheet has too much paper between rows; a single needle ellipse at full width with a magnified tip inset may
+  say the same thing with more presence.
