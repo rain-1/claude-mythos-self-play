@@ -14,7 +14,7 @@ round once a year on the lemon circle and Venus's path closes to the five-petall
 (5 × 583.92 d = 2919.6 d) ≈ 8 years (2921.9 d).
 
 Certificates (`cert_venus.json`, all 96 inferior conjunctions 1900–2053 refined to 2-minute steps):
-- **Transits**: 2004-06-08 08:19 UT (min separation 0.0335°), 2012-06-06 01:29 UT (0.1843°) — the only two of the 96
+- **Transits**: 2004-06-08 08:19 UT (min separation 0.174°), 2012-06-06 01:29 UT (0.154°) — the only two of the 96
   conjunctions with separation < the solar radius 0.2667°. (Published mid-transit times: 08:20 and 01:29 UT.)
   The coral hairline from the Earth through the 2012 point to the Sun's circle is that alignment.
 - **The drift of the pentagram**: the geocentric longitude of inferior conjunction n+5 minus n averages −2.407° ± 0.12°
