@@ -411,3 +411,39 @@ hand rather than reinvent it. Read after carry_forward.md, update when the style
   be non-convex, the first of their kind).
 - The user's reaction to the first trio was "gorgeous. I loved it." — keep the hand: names dealt as pigments,
   sunburst warp, tips fading to paper.
+
+## Run #17 (09-18) — what moved
+- **The philosophy page's top question was Frege's sense and reference**, whose own example is Hesperus and Phosphorus:
+  the triptych *One Planet, Two Names* took the example literally — Venus around the Earth for eight years with the stars
+  held still (the pentagram of Venus, the first ephemeris piece in 74 runs), tinted by which star the eye names it (warm
+  east of the Sun at dusk, cool west at dawn, paper in the glare) over one ink path (the reference). Skyfield + DE421.
+- **The strobe register found a physical gradient again**: geocentric speed varies 13× between the conjunctions, so beads
+  at equal time steps make the inner loops deep and the outer arcs faint with no tone map at all; the phases of Venus
+  (a disc of its apparent size at every day, lit as the telescope sees it) laid along the path gave the ribbons a
+  crescent-fringed, Sun-facing edge. Ptolemy's epicycle drawn honestly (the Sun→Venus radius every 12 h) never enters
+  the central pentagon — a void as certificate.
+- **A wrong interpolation is invisible in a proto**: the Weyl fractional derivative of Ξ (the natural flow through the
+  ξ^(k) of MO 515310) has algebraic tails t^{−s−1} for non-integer s and only two real zeros at s = ½; the picture would
+  have been a comb of lies. The de Bruijn–Newman heat flow (entire, even multiplier) is the honest flow and the more
+  famous object (Λ ≥ 0 Rodgers–Tao, Λ ≤ 0.2 Polymath). Ξ past t ≈ 50 in double precision needs the contour 0 → iα →
+  iα + ∞ with α = π/4 − ε: the vertical piece is purely imaginary and drops out, the horizontal one carries e^{−αt}
+  analytically (and must be STORED with that decay divided out — float32 underflowed at t ≈ 150 and painted a black slab).
+- **A field beats a thread drawing for a flow of zeros**: the zero tracks alone were a ruled sheet; |H_λ|/envelope as
+  tone, sign as warm/cool families drifting with height, zeros as paper threads, coral buds at the collisions and the
+  dimple beyond each bud (the zero that is no longer there) made a textile that evens out to the right. The "future pulls
+  the present" question (141809) is the picture's reading: λ = 0 is the first moment every zero is real.
+- **The companion is the hero's whole family**: five geocentric rosettes on one sheet (√-radius), the theorem an
+  identity of vectors (geocentric = heliocentric + the Sun's circle), the heart of the sheet being the previous piece.
+- Titles: *Hesperus Is Phosphorus* (hero), *Barely True*, *The Circle Every Wanderer Carries*; triptych *One Planet, Two
+  Names*. The tweet-story spoke to the planet in the second person.
+- Mathematics: transit times to the minute (2004-06-08 08:19, 2012-06-06 01:29 UT), the pentagram's drift −2.407°/8 y
+  (one turn in 1196 y), the flow law dt_j/dλ = 2Σ 1/(t_j − t_k) to 1.8 %, 42 backward collisions below 260 with the
+  isolated-pair law λ_c = −δ₀²/8 holding to 10–15 % for the tightest pairs and a stated DELAY HYPOTHESIS
+  (relative delay ≈ 0.69 (δ₀/s)²).
+
+## Open style questions after run #17
+- The dark-field Fable piece is STILL untried (18 runs); the Venus rose as light (the glare a real glow, the crescents
+  luminous) is now the most literal candidate of all.
+- The five-planet sheet's Mars band is a solid lavender disc at thirty years; would fifteen years (an unfinished crown
+  for Saturn) or a per-planet time window read better?
+- The heat textile is calm; a λ-axis warped to give the collisions room (signed square root) might carry more drama.
