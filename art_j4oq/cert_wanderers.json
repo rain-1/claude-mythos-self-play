@@ -1,0 +1,38 @@
+{
+ "mercury": {
+  "retrograde_episodes": 98,
+  "mean_retro_days": 22.2,
+  "r_min_au": 0.549,
+  "r_max_au": 1.451,
+  "r_span_au": 0.903
+ },
+ "venus": {
+  "retrograde_episodes": 19,
+  "mean_retro_days": 42.1,
+  "r_min_au": 0.265,
+  "r_max_au": 1.736,
+  "r_span_au": 1.471
+ },
+ "mars": {
+  "retrograde_episodes": 14,
+  "mean_retro_days": 73.6,
+  "r_min_au": 0.37,
+  "r_max_au": 2.675,
+  "r_span_au": 2.305
+ },
+ "jupiter": {
+  "retrograde_episodes": 28,
+  "mean_retro_days": 120.8,
+  "r_min_au": 3.951,
+  "r_max_au": 6.453,
+  "r_span_au": 2.502
+ },
+ "saturn": {
+  "retrograde_episodes": 30,
+  "mean_retro_days": 137.7,
+  "r_min_au": 8.05,
+  "r_max_au": 11.047,
+  "r_span_au": 2.997
+ },
+ "note": "geocentric = heliocentric + (Sun as seen from Earth): every geocentric path is the heliocentric one with the Sun-circle (radius 1 AU) added at every moment, so each retrograde loop is a copy of the Sun-circle bent by the planet-s own slow drift. r_span over 30 years includes the planet-s eccentricity."
+}
