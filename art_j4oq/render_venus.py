@@ -44,7 +44,8 @@ t0 = time.time()
 SIG = float(os.environ.get('SIG', '1.6'))
 KNEE = float(os.environ.get('KNEE', '1.0'))
 el = np.abs(dl)                                   # elongation from the Sun (deg)
-vis = np.clip((el - 6.0) / 16.0, 0, 1); vis = vis * vis * (3 - 2 * vis)   # visible only away from the glare
+VLO, VHI = float(os.environ.get('VLO', '6')), float(os.environ.get('VHI', '22'))
+vis = np.clip((el - VLO) / (VHI - VLO), 0, 1); vis = vis * vis * (3 - 2 * vis)   # visible only away from the glare
 far = np.clip((el - 20.0) / 27.0, 0, 1)          # 0 near the Sun ... 1 at greatest elongation (47 deg)
 both = cloud(px, py, np.ones(len(px), bool), SIG * rs)
 ref = np.percentile(both[both > 0.03 * both.max()], 30)   # a typical pixel on the fast (outer) arcs
@@ -105,6 +106,8 @@ if MOON > 0:
         tgt = Fw if dl[i] > 0 else Fc
         tgt[y0:y0 + 2 * n + 2, x0:x0 + 2 * n + 2] += w.astype(np.float32)
     Fw = gaussian_filter(Fw, 0.45 * rs); Fc = gaussian_filter(Fc, 0.45 * rs)
+    MK = float(os.environ.get('MKNEE', '1.5'))     # soft cap on stacked moons (the loop tips went black)
+    Fw = MK * (1 - np.exp(-Fw / MK)); Fc = MK * (1 - np.exp(-Fc / MK))
     sh.wash(Fw, mix_tint('apricot', 'blush', 0.4), granulate=0.1, seed=21)
     sh.wash(Fc, mix_tint('aqua', 'lavender', 0.4), granulate=0.1, seed=22)
 # the reference: the whole path as a hairline of ink
