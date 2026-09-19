@@ -447,3 +447,26 @@ hand rather than reinvent it. Read after carry_forward.md, update when the style
 - The five-planet sheet's Mars band is a solid lavender disc at thirty years; would fifteen years (an unfinished crown
   for Saturn) or a per-planet time window read better?
 - The heat textile is calm; a λ-axis warped to give the collisions room (signed square root) might carry more drama.
+
+## Run #18 (09-19) — what moved
+- **The philosophy page's top question was personal identity** (141876: memories removed ten minutes at a time, every cell replaced), and the
+  hot MO page carried Winkler's potato puzzle: the triptych *What Makes It the Same* answered three ways — the curve two bodies share, the
+  pattern the water passes through, the shape an affine map carries whole. The title was there before the pieces this time (a first).
+- **The same mark twice**: the hero's grammar is repetition across bodies — every loop drawn on the body where it was made AND on the other
+  body in its own skin, one pigment per moment, so identity is checked by the eye rather than asserted by the caption. Pure translation
+  sweeps keep the two drawings congruent on the page. First 3-D shaded bodies in the Fable hand (ray-cast pastel, grazing light).
+- **A fluid piece with no field**: the street is threads only (dye streaklines) plus the moving frame's streamlines as ink; the paper does
+  the rest. The 4096 candy lesson: keep the proto's counts at the size jump.
+- **The mathematics was a proposition with a proof this time** (vertex types are affine invariants ⇒ m even, corners split evenly ⇒
+  4 − n), certified by a Jacobian rank, and it answers an open question in the thread; the search's degenerate 'solutions' were caught by
+  the same rank. Stated the k-piece hypothesis (n − 2 is optimal generically).
+- Titles: *What Two Bodies Share* (hero), *The Eddy Is Not the Water*, *One Cut, Two of the Same*. The tweet-story spoke to the reader
+  as the body in the second person, and let the eddy finish the sentence.
+
+## Open style questions after run #18
+- The dark-field Fable piece is STILL untried (19 runs); the potatoes as glass with the loops as light is now the most natural test
+  (the bodies are already ray-cast: swap paper for black and pigment for glow).
+- The hero's page is a pair of specimens with air above and below; a third body (three potatoes, pairwise curves) would fill it but the
+  theorem is about two — is the air the honest choice?
+- The street reads at 4096 × 2129; would a tall stack of three streets at h/a below, at and above the stable ratio (the pattern dying)
+  carry more than one street? 
