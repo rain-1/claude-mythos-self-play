@@ -102,3 +102,23 @@ affine-congruent pieces is n − 2 (the triangulation is optimal) — the same c
 each gives 6(k − 1) + (cut parameters) − 2v(k − 1) freedoms, which is negative for every k < n − 2 in the
 few types I counted (e.g. a hexagon into three quadrilaterals from an interior point: 14 − 16 = −2).
 What it would take: enumerate the combinatorial types of k-piece dissections and check the count for each.
+
+## 4. The sorites as Morse theory — `render_sorites.py`
+
+The straight push (direction −(1, 0.35, 0.55)/|·|, 3.4 units, 72 moments). The shared loop is one loop at every moment before
+t = 0.4407 and after t = 0.5627 (bisection to 1e-12 on 'the chart field changes sign'), and no loop between: the smaller body is
+entirely inside the larger. The death point is where the smaller body's trailing surface is tangent to the larger from inside
+(argmin |g| at the tangency moment): (0.99, 0.17, 0.25), on the visible face; the rebirth point (−0.86, −0.45, −0.13) is on the far
+side. Between two tangencies the loop's isotopy class never changes (a regular value of a smooth family), so 'the same curve' has a
+precise meaning and a precise end.
+
+## 5. The mirage as a fold — `mirage.py`, `render_mirage.py`, `mirage_cert.json`
+
+Index n(z) = 1 + ε(1 − e^{−z/h}), ε = 0.05, h = 0.30 (a real inferior mirage has ε ~ 10⁻⁴ over a few metres; the geometry is
+identical after rescaling x by ε^{−1/2}). Rays by RK4 on dr/ds = p, dp/ds = n∇n (|p| = n), ds = 0.01, absorbed at the ground.
+From the tower's top (height 1.62) 260 rays with launch angles in [−0.40, 0.16]: 51 turn, 23 strike the ground. The envelope of
+the turned family is the fold; its first point (first crossing of neighbouring rays) is at x = 7.13, and the eye at (12, 1.1)
+lies inside the fold. The view: for every tower height, all rays arriving at the eye (sign changes of z(L) − z_eye across the
+launch angle, 1400 angles): tower points above 0.771 arrive twice (erect and inverted), below it never — the fold height by
+bisection. The two images join at the fold line, where the images pile up (a fold caustic is bright), and beneath the inverted
+top there is only sky.
