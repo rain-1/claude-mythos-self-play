@@ -12,7 +12,7 @@ curves.* Solution: push one potato through the other; the two skins cross in a c
 
 **The two potatoes.** Star-shaped bodies |Mx| < ρ(Mx/|Mx|) with M = diag(1/a, 1/b, 1/c) and
 ρ(u) = 1 + Σ ε_k exp(−(1 − u·d_k)/w_k) (four bumps for A, three for B; `make_bodies`). Convexity certificates
-(`cache/convexity.json`): every one of 40 000 Fibonacci-sphere surface samples is a vertex of its own convex hull
+(`convexity.json`): every one of 40 000 Fibonacci-sphere surface samples is a vertex of its own convex hull
 (hull deviation 0), and the Gaussian curvature on a 181×360 chart is positive everywhere
 (A: K ∈ [0.195, 2.22]; B: K ∈ [0.258, 5.03]).
 
@@ -24,7 +24,7 @@ so every shared curve is a translate of itself: drawn on A and again on B in the
 are exact translates on the page (orthographic camera). The coral loop is the pictured moment; B's silhouette
 at that moment is the dashed ghost inside A. The film strip shows seven moments of the same passage.
 
-**Census** (`cache/potato_census.json`). 800 random placements (uniform rotation, |τ| uniform in [0.15, 1.9]):
+**Census** (`potato_census.json`). 800 random placements (uniform rotation, |τ| uniform in [0.15, 1.9]):
 669 cross; **668 of them share exactly one closed curve, one shares two.** Along the hero's arc the count is
 1 at all 720 fine steps (no tangency: the loop stays one loop for the whole circuit — it is always "the same
 curve"). Along a straight push (direction (1, 0.35, 0.55), 3.4 units) the count is 1 → 0 → 1: B is entirely
@@ -73,7 +73,7 @@ the thread's "I don't know if there can be convex n-gons for which n − 2 is th
 generic pentagon. The exceptions are the polygons with an affine symmetry (mirror-symmetric, centrally
 symmetric, and their affine images — a family of codimension 2 among pentagons).
 
-**Transversality certificate** (`cache/affine_cert.json`). At the regular pentagon's axis cut (m = 0, four-gons)
+**Transversality certificate** (`affine_cert.json`). At the regular pentagon's axis cut (m = 0, four-gons)
 the residual map R(Q, cut, φ) ∈ ℝ⁸ over the 17 unknowns (10 polygon coordinates + 1 + 6) has Jacobian rank 8
 (smallest singular value 0.89): the incidence variety is a smooth 9-manifold there, and its projection to the
 10-dimensional space of pentagons has measure zero. (The m = 2, 4 "solutions" the search reported for the
@@ -83,11 +83,19 @@ What is proved: the count and the type constraints; what is certified numericall
 known solutions; what remains a HYPOTHESIS: that no component of the incidence variety is everywhere
 rank-deficient in a way that projects onto an open set of pentagons — the search below is the evidence.
 
-**Search** (`affine.py`, `cache/affine_search*.json`): all placements of p, q (corners or edges), m = 0…4,
+**Search** (`affine.py`, `affine_search.json`): all placements of p, q (corners or edges), m = 0…4,
 all 2·n_v cyclic vertex correspondences, least-squares φ, Nelder–Mead over the cut with random restarts, then a
 validity check (cut simple and interior). Residuals normalised by the polygon's diameter²:
 
-RESULTS_TABLE
+| polygon | m = 0 | m = 2 | m = 4 |
+|---|---|---|---|
+| regular pentagon | 2.8e-32 (0.00 %) | 4.3e-22 (0.00 %) | 9.1e-21 (0.00 %) |
+| affine regular pentagon | 2.6e-32 (0.00 %) | 4.2e-22 (0.00 %) | 1.4e-22 (0.00 %) |
+| random pentagon | 1.6e-06 (0.13 %) | 3.0e-05 (0.55 %) | 2.5e-04 (1.57 %) |
+| random pentagon 2 | 1.2e-05 (0.35 %) | 2.6e-04 (1.62 %) | 2.7e-04 (1.63 %) |
+| random hexagon | 5.2e-03 (7.21 %) | 4.6e-03 (6.76 %) | 6.1e-03 (7.84 %) |
+
+(cells: least residual / diameter², and √ of it as a percentage of the diameter — the r.m.s. vertex miss. Odd m were also run for the regular pentagons and gave 10⁻²⁵: a straight-angle breakpoint, i.e. the m = 0 cut.) For the generic pentagons the m = 0 problem is one-dimensional (the position of q on the edge opposite the chosen corner), so the floor was **certified by an exact scan**: a 999-point grid and a bounded refinement agree to three digits for every corner (random pentagon: 2.8e-6, 3.9e-5, 2.2e-4, 2.0e-3, 2.9e-3 for its five corners; the second: 1.2e-5 … 4.0e-3). The misses are small because the affine group is large (six parameters against eight equations leaves one scalar condition), but they are positive minima, not unconverged zeros. As area: the symmetric difference between the image of piece 1 and piece 2 at the best cut is 0.13 % and 0.29 % of the pentagon’s area (the two generic pentagons) and 4.6 % for the generic hexagon (count 4 − n = −2: two conditions short instead of one).
 
 **HYPOTHESIS (least number of pieces).** For a generic convex n-gon the least number of mutually
 affine-congruent pieces is n − 2 (the triangulation is optimal) — the same count for k pieces of v vertices

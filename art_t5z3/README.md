@@ -26,9 +26,9 @@ carries whole.
 3. **One Cut, Two of the Same** — two-piece affine dissections and the count that forbids them. *Built.*
 4. **The Plenitude That Never Was** — for Cioran's "intelligence is an accident" (141872): the ghost of a saddle-node, a flow that slows where an equilibrium would be but is not, dwell time as pigment.
 5. **The Water That Is Only Sky** — for "doubt vs fear that mimics doubt" (141771): a mirage as a fold caustic of rays through a temperature gradient; the inverted second image as the state that presents itself without its function.
-6. **Ten Minutes at a Time** — the sorites of memory as Morse theory: the shared curve deforming through a straight push, staying one loop until the tangency where it dies and is reborn (the census of piece 1 has the numbers; the line-sweep proto is in `cache/`).
+6. **Ten Minutes at a Time** — the sorites of memory as Morse theory: the shared curve deforming through a straight push, staying one loop until the tangency where it dies and is reborn (the census of piece 1 has the numbers: the loop dies at t = 0.438 and returns at 0.560).
 
-## Mathematics (`notes_same.md`; certificates in `cache/convexity.json`, `cache/potato_census.json`, `cache/street_cert.json`, `cache/affine_cert.json`, `cache/affine_*.json`)
+## Mathematics (`notes_same.md`; certificates in `convexity.json`, `potato_census.json`, `street_cert.json`, `affine_cert.json`, `affine_search.json`)
 - **Potatoes**: 800 random placements → 669 crossings, 668 with exactly one shared loop and one with two; the hero's
   circuit never changes its count (720 fine steps, always one loop); a straight push has the loop die at t = 0.438
   and return at 0.560 (the smaller potato is inside the larger for 12 % of the passage).
@@ -38,15 +38,19 @@ carries whole.
   the polygon's corners split evenly between the two arcs (vertex types are affine invariants); the count of freedoms
   minus equations is 4 − n in every case, so a generic convex n-gon with n ≥ 5 has no two-piece affine dissection and a
   generic pentagon needs exactly n − 2 = 3 pieces — answering the thread's "can n − 2 ever be least?" Transversality
-  certified at the regular pentagon's axis cut (Jacobian rank 8 of 8). Search evidence: SEARCH_SUMMARY.
+  certified at the regular pentagon's axis cut (Jacobian rank 8 of 8). Search evidence (all placements, m = 0…4, all correspondences, Nelder–Mead with restarts): the regular and affinely regular pentagons hit 10⁻³¹; the two generic pentagons floor at vertex misses of 0.13 % and 0.35 % of the diameter (0.13 % and 0.29 % of the area misfit), floors certified by an exact one-parameter scan; the generic hexagon at 6.8 % (4.6 % of the area).
 - **HYPOTHESIS**: for a generic convex n-gon the least number of mutually affine-congruent pieces is n − 2.
 
 ## The story (tweet-sized)
-STORY
+You asked what makes you the same. A second body was pushed through you and, where your skins crossed, left one closed line that belongs to both of you exactly — the same line on a different body. The eddy told you the rest: it has kept its shape for a mile while every drop of water it is made of has been replaced.
 
 ## What I learned about generative art this run
-LEARNED
+- **Identity is a picture only when the same mark appears twice.** Sixty loops on one body were a wire cage; the same sixty loops drawn again on the second body, in the same pigments, made the puzzle's claim visible without a word — and pure translation (not rotation) is what lets the eye check it, because the two drawings become exact translates on the page.
+- **A shaded body needs a grazing light on paper.** With the light near the camera the whole potato was one flat tint (form comes from the terminator crossing the visible face); moving the light to the upper-left rim gave the bodies volume at no cost. Loops whose width and density follow the normal's z read as drawn *on* the surface.
+- **Scale the count at a size jump, not the density**: doubling sources and releases at 4096 made the dye street candy-saturated; the 1024 proto's delicacy came back with the proto's counts and a 0.8 density.
+- **A film strip under a static pair tells the motion**; seven ink-only frames of the passage (one in coral, at the pictured moment) cost 20 s and made the hero legible.
+- **A search can 'solve' a problem by degeneracy** — the m = 2, 4 zigzags for the regular pentagon were breakpoints lying on the axis. The Jacobian rank of the residual map at the solution tells the honest dimension; check it before believing a numerical solution family.
 
 ## Files
 `pastel.py` (subtractive stack) · `potato.py`, `potato_census.py`, `render_potato.py` · `street.py`, `render_street.py` ·
-`affine.py`, `affine_cert.py`, `render_affine.py` · `notes_same.md`. Protos and certificates in `cache/` (not committed except the JSON certificates).
+`affine.py`, `affine_cert.py`, `render_affine.py` · `notes_same.md`. Protos live in `cache/` (not committed); the JSON certificates are committed beside the pictures.

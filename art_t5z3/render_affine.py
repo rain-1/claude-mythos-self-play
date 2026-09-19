@@ -33,23 +33,38 @@ for fn in glob.glob('cache/affine_*.json'):
 sh = Sheet(W, H, seed=33)
 
 
-def poly_density(pts, w=None):
-    im = Image.new('F', (W, H), 0.0)
-    ImageDraw.Draw(im).polygon([tuple(map(float, p)) for p in pts], fill=1.0)
-    return np.asarray(im, np.float32)
+def _bbox(pts, pad):
+    x0 = int(max(0, pts[:, 0].min() - pad)); x1 = int(min(W, pts[:, 0].max() + pad))
+    y0 = int(max(0, pts[:, 1].min() - pad)); y1 = int(min(H, pts[:, 1].max() + pad))
+    return x0, x1, y0, y1
 
 
-def line_density(pts, width, closed=False):
-    im = Image.new('F', (W, H), 0.0)
-    p = [tuple(map(float, q)) for q in pts]
+def add_poly(pts, dens, tint, blur=0.8):
+    """fill a polygon (screen px) into the sheet's absorbance within its bbox"""
+    pts = np.asarray(pts, float)
+    x0, x1, y0, y1 = _bbox(pts, 6)
+    if x1 - x0 < 2 or y1 - y0 < 2:
+        return
+    im = Image.new('F', (x1 - x0, y1 - y0), 0.0)
+    ImageDraw.Draw(im).polygon([(float(x - x0), float(y - y0)) for x, y in pts], fill=1.0)
+    a = gaussian_filter(np.asarray(im, np.float32), blur) if blur else np.asarray(im, np.float32)
+    sh.A[y0:y1, x0:x1] += (dens * a)[..., None] * absorb(PIG[tint])[None, None, :]
+
+
+def add_line(pts, width, dens, tint, closed=False):
+    pts = np.asarray(pts, float)
+    if len(pts) < 2:
+        return
+    x0, x1, y0, y1 = _bbox(pts, int(width * 3 + 4))
+    if x1 - x0 < 2 or y1 - y0 < 2:
+        return
+    im = Image.new('F', (x1 - x0, y1 - y0), 0.0)
+    p = [(float(x - x0), float(y - y0)) for x, y in pts]
     if closed:
         p.append(p[0])
     ImageDraw.Draw(im).line(p, fill=1.0, width=int(max(1, round(width))), joint='curve')
-    return gaussian_filter(np.asarray(im, np.float32), 0.5)
-
-
-def add(dens, tint, scale=1.0):
-    sh.A += (scale * dens)[..., None] * absorb(PIG[tint] if isinstance(tint, str) else tint)[None, None, :]
+    a = gaussian_filter(np.asarray(im, np.float32), 0.5)
+    sh.A[y0:y1, x0:x1] += (dens * a)[..., None] * absorb(PIG[tint])[None, None, :]
 
 
 # ---- the nine cells ----
@@ -59,8 +74,8 @@ order = [('triangle', 'a triangle: any cevian — two triangles are always affin
          ('affine_regular_pentagon', 'an affinely regular pentagon: the axis went with the map'),
          ('affine_mirror_pentagon', 'a mirror-symmetric pentagon, squashed: still cut by its (affine) axis'),
          ('regular_hexagon', 'the regular hexagon: any zigzag through the centre, turned by a half-turn'),
-         ('random_pentagon', 'a generic pentagon: the best two-piece cut misses'),
-         ('random_pentagon_2', 'another generic pentagon: misses'),
+         ('random_pentagon', 'a generic pentagon: the best of all two-piece cuts (m ≤ 4) misses — ink: the image of the warm piece'),
+         ('random_pentagon_2', 'another generic pentagon: misses; the residual floor is a certified minimum, not a search failure'),
          ('random_hexagon', 'a generic hexagon: misses (count 4 − n = −2)')]
 
 # a triangle case (not in the search: a cevian from vertex 0 to the midpoint of the opposite edge)
@@ -123,8 +138,7 @@ for idx, (name, blurb) in enumerate(order):
         return np.stack([cx + s * (pts[:, 0] - cen[0]), cy - s * (pts[:, 1] - cen[1])], 1)
 
     # washes: piece 1 warm, piece 2 cool
-    m1 = poly_density(T(P1)); m2 = poly_density(T(P2))
-    add(gaussian_filter(m1, 0.8) * 0.38, 'apricot'); add(gaussian_filter(m2, 0.8) * 0.38, 'aqua')
+    add_poly(T(P1), 0.38, 'apricot'); add_poly(T(P2), 0.38, 'aqua')
     # rings in piece 1 about its centroid, and their affine images in piece 2
     c1 = Polygon(P1).centroid; c1 = np.array([c1.x, c1.y])
     rmax = max(np.linalg.norm(P1 - c1, axis=1))
@@ -145,38 +159,40 @@ for idx, (name, blurb) in enumerate(order):
             if st_ is not None: runs.append((st_, len(inside)))
             for a, b in runs:
                 if b - a > 1:
-                    add(line_density(T(pts[a:b]), 1.5 * rs) * 0.95, 'orchid')
+                    add_line(T(pts[a:b]), 1.5 * rs, 0.95, 'orchid')
     # for the misses: the image of piece 1 over piece 2 as ink, and the misfit as coral wash
     miss = res > 1e-10
+    area_misfit = 0.0
     if miss:
         img1 = P1 @ A_.T + b_
         pim = Polygon(img1)
         if pim.is_valid and poly2.is_valid:
             diff = pim.symmetric_difference(poly2)
+            area_misfit = diff.area / Polygon(Q).area
             polys = [diff] if diff.geom_type == 'Polygon' else list(getattr(diff, 'geoms', []))
             for g in polys:
                 if g.geom_type == 'Polygon' and g.area > 1e-9:
-                    add(gaussian_filter(poly_density(T(np.array(g.exterior.coords))), 0.8) * 0.75, 'coral')
-        add(line_density(T(img1), 1.3 * rs, closed=True) * 0.8, 'ink')
+                    add_poly(T(np.array(g.exterior.coords)), 0.75, 'coral')
+        add_line(T(img1), 1.3 * rs, 0.8, 'ink', closed=True)
     # outlines: polygon in ink, cut in coral
-    add(line_density(T(Q), 2.0 * rs, closed=True) * 0.95, 'ink')
+    add_line(T(Q), 2.0 * rs, 0.95, 'ink', closed=True)
     cutpts = np.vstack([p[None], bps, q[None]])
-    add(line_density(T(cutpts), 3.2 * rs) * 1.1, 'coral')
-    add(line_density(T(cutpts), 1.0 * rs) * 0.5, 'ink')
+    add_line(T(cutpts), 3.2 * rs, 1.1, 'coral')
+    add_line(T(cutpts), 1.0 * rs, 0.5, 'ink')
     # label
     mism = np.sqrt(res)   # relative to the diameter (res already normalised by diam² in the search? no: raw)
     diam = max(np.linalg.norm(a - b) for a in Q for b in Q)
     mism = np.sqrt(res) / diam
-    tag = ('exact' if not miss else f'best cut misses by {100 * mism:.1f} % of the diameter')
+    tag = ('exact' if not miss else f'misses: {100 * mism:.2f} % of diameter, {100 * area_misfit:.2f} % of area')
     lab = f'{blurb}'
     lines = wrap(lab, 10.5 * rs, 'italic', cell - 1.2 * pad)
     items = []
     y0 = cy + 0.5 * (cell - 2 * pad) * 0.92 + 6 * rs
     for i2, ln in enumerate(lines):
         items.append((ln, cx, y0 + i2 * 12.5 * rs, 10.5 * rs, 'italic', 'mm'))
-    items.append((tag + f'   (m = {m_pick}, {len(P1)}-gons)', cx, y0 + len(lines) * 12.5 * rs + 1 * rs, 9.5 * rs, 'mono', 'mm'))
+    items.append((tag + (f'   (m = {m_pick}, {len(P1)}-gons)' if not miss else ''), cx, y0 + len(lines) * 12.5 * rs + 1 * rs, 9.5 * rs, 'mono', 'mm'))
     sh.wash(text_density(W, H, items) * 0.9, 'ink')
-    print(name, 'm', m_pick, 'res', res, 'miss', mism, round(time.time() - t0, 1))
+    print(name, 'm', m_pick, 'res', res, 'miss', mism, 'area_misfit', area_misfit, round(time.time() - t0, 1))
 
 # ---- caption ----
 sh.caption_strip(0.905, 0.985, 0.62)
