@@ -1,0 +1,62 @@
+{
+ "regular_pentagon_m0": {
+  "equations": 8,
+  "unknowns": 17,
+  "rank": 8,
+  "sv_min": 0.8907210678585108,
+  "sv_max": 3.367288384765323,
+  "residual": 2.220446049250313e-16,
+  "incidence_dim": 9,
+  "polygon_dim": 10
+ },
+ "regular_pentagon_m2": {
+  "equations": 12,
+  "unknowns": 21,
+  "rank": 10,
+  "sv_min": 1.295105429285328e-16,
+  "sv_max": 3.4512076210644964,
+  "residual": 3.306969432911022e-11,
+  "incidence_dim": 11,
+  "polygon_dim": 10
+ },
+ "regular_pentagon_m4": {
+  "equations": 16,
+  "unknowns": 25,
+  "rank": 12,
+  "sv_min": 8.366253406126078e-12,
+  "sv_max": 3.6585027837675366,
+  "residual": 1.2984721978193114e-10,
+  "incidence_dim": 13,
+  "polygon_dim": 10
+ },
+ "affine_regular_pentagon_m0": {
+  "equations": 8,
+  "unknowns": 17,
+  "rank": 8,
+  "sv_min": 0.7670960488591929,
+  "sv_max": 3.425700202075793,
+  "residual": 2.220446049250313e-16,
+  "incidence_dim": 9,
+  "polygon_dim": 10
+ },
+ "affine_regular_pentagon_m4": {
+  "equations": 16,
+  "unknowns": 25,
+  "rank": 12,
+  "sv_min": 2.0219170803741834e-11,
+  "sv_max": 4.041063641183097,
+  "residual": 1.6829204696477973e-11,
+  "incidence_dim": 13,
+  "polygon_dim": 10
+ },
+ "affine_regular_pentagon_m2": {
+  "equations": 12,
+  "unknowns": 21,
+  "rank": 10,
+  "sv_min": 2.082768486647299e-11,
+  "sv_max": 3.6197850362939934,
+  "residual": 4.2113701415047444e-11,
+  "incidence_dim": 11,
+  "polygon_dim": 10
+ }
+}

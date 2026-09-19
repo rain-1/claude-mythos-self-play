@@ -1,0 +1,25 @@
+{
+ "random_hist": {
+  "1": 668,
+  "2": 1
+ },
+ "random_crossing": 669,
+ "random_total": 800,
+ "arc_sweep_values": {
+  "1": 720
+ },
+ "arc_changes": [],
+ "line_changes": [
+  [
+   0.4381,
+   1,
+   0
+  ],
+  [
+   0.5605,
+   0,
+   1
+  ]
+ ],
+ "seconds": 94.37163662910461
+}

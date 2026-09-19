@@ -1,0 +1,16 @@
+{
+ "A": {
+  "hull_deviation_rel": 0.0,
+  "hull_vertices": 40000,
+  "samples": 40000,
+  "K_min": 0.1947755035064692,
+  "K_max": 2.2219397805670176
+ },
+ "B": {
+  "hull_deviation_rel": 0.0,
+  "hull_vertices": 40000,
+  "samples": 40000,
+  "K_min": 0.2581354777071322,
+  "K_max": 5.027299379313867
+ }
+}
