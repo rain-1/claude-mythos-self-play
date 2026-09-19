@@ -463,6 +463,14 @@ hand rather than reinvent it. Read after carry_forward.md, update when the style
 - Titles: *What Two Bodies Share* (hero), *The Eddy Is Not the Water*, *One Cut, Two of the Same*. The tweet-story spoke to the reader
   as the body in the second person, and let the eddy finish the sentence.
 
+## Run #18, second batch (09-19, on request: pieces 4 and 5 of the six)
+- *Ten Minutes at a Time* took the hero's engine with one body and a straight push: the families warm (entry) and cool (exit),
+  the two tangencies as coral points with a soft glow, both ghosts dashed, nine frames. The visible face carries the death; the
+  rebirth is on the far side and lives in the strip — the air on the left is the 'far side' the caption names.
+- *The Water That Is Only Sky*: the first optics piece in the Fable hand — a side-view ray fan tinted by fate (warm direct, cool
+  turned, sepia absorbed), the fold as one ink envelope, a hot-ground band, and a tall inset of what the eye sees with the coral
+  fold line where the erect and inverted images join. The inset's pile-up of bars at the fold is the caustic's brightness for free.
+
 ## Open style questions after run #18
 - The dark-field Fable piece is STILL untried (19 runs); the potatoes as glass with the loops as light is now the most natural test
   (the bodies are already ray-cast: swap paper for black and pigment for glow).
