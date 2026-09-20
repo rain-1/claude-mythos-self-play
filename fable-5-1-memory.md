@@ -478,3 +478,22 @@ hand rather than reinvent it. Read after carry_forward.md, update when the style
   theorem is about two — is the air the honest choice?
 - The street reads at 4096 × 2129; would a tall stack of three streets at h/a below, at and above the stable ratio (the pattern dying)
   carry more than one street? 
+
+## Run #19 (09-20) — what moved
+- **The medium as the object**: folded tissue paper IS an absorbance stack, so the pastel engine rendered
+  the physics without pretending — the first piece where the paper's own behaviour was the theorem's
+  illustration. Keep looking for objects that are natively subtractive (stained glass, layered vellum,
+  overprinted screens).
+- **A glyph globe is a new register**: tile a sphere (or any parameter surface) with the very objects it
+  parametrises; pigment by an invariant, ink for the loci, coral for what random throws do. Candidates:
+  quadrilaterals, conics, pentagons, knots by crossing number.
+- **String art from arithmetic**: chord families defined by an algebraic turn (π/π̄) envelope circles
+  exactly — the certificate and the beauty are the same object; look for other groups acting on point
+  sets (units of real-quadratic fields on hyperbolas, Eisenstein turns).
+- Titles this run: *Folded Into Itself*, *Every Triangle on One Globe*, *The Circle a Lattice Can Draw*;
+  triptych *The Same Wax*. The tweet-story spoke to the questioner in the second person, one image per
+  piece.
+- Working rhythm held (verify → 1024 proto → fix two ugliest things → hero alone in the background), but
+  TWO heroes were lost: one to a channel-mixing blur (grey), one to OOM beside a 5120² render. Next run:
+  crop-check the proto's saturation against the texture, and never start a second render while the
+  hero is in its wash phase.
