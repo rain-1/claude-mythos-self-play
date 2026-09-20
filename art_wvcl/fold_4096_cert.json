@@ -1,0 +1,9 @@
+{
+ "seed": 7,
+ "folds": 12,
+ "layers": 67,
+ "area_over_pi": 0.9999968269048974,
+ "max_dist_from_centre_image": 0.5766230393239751,
+ "lipschitz_excess": 1.8041124150158794e-16,
+ "count_max": 32.0
+}

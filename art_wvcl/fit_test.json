@@ -1,0 +1,34 @@
+{
+ "disc": {
+  "worst_misfit_over_diameter": 4.398626460289101e-07,
+  "trials": 30
+ },
+ "ellipse 0.97": {
+  "worst_misfit_over_diameter": 2.0699895560971626e-06,
+  "trials": 30
+ },
+ "ellipse 0.85": {
+  "worst_misfit_over_diameter": 1.7035070642434924e-06,
+  "trials": 30
+ },
+ "square": {
+  "worst_misfit_over_diameter": 0.026728876072931188,
+  "trials": 30
+ },
+ "hexagon": {
+  "worst_misfit_over_diameter": 0.014906784768286885,
+  "trials": 30
+ },
+ "stadium": {
+  "worst_misfit_over_diameter": 0.02061256632386138,
+  "trials": 30
+ },
+ "reuleaux": {
+  "worst_misfit_over_diameter": 0.3208141998731541,
+  "trials": 30
+ },
+ "lens 1.99": {
+  "worst_misfit_over_diameter": 4.673378649844295e-06,
+  "trials": 30
+ }
+}
