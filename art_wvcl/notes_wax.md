@@ -42,7 +42,7 @@ never poke out; ellipse 0.97 in 2 of 200 (worst 0.3 % of the diameter), ellipse 
 (6 %), ellipse 0.6 in 101 (17 %), square 109 (14 %), stadium 108 (23 %). So a folded ellipse does
 leave itself — but a rigid motion always brought the folded figure back inside in every trial, also
 after three and four random folds of arbitrary direction (`fit_test2.json`: ellipse 0.85 at k = 2, 3, 4
-and ellipse 0.7 at k = 2 all 0.0). Ellipse 0.7 at k = 3: 0.0 as well (further rows in `fit_test2.json` as the search completes).
+and ellipse 0.7 at k = 2 all 0.0). Ellipse 0.7 at k = 3, 4: 0.0 as well. Ellipse 0.97 at k = 2, 3, 4: 4·10⁻⁵, 1·10⁻⁴, 0.0 — above the disc's solver floor (4·10⁻⁷) but with only 10 Nelder–Mead starts per trial these two are within the optimiser's noise, not a certified misfit; worth a proper re-run with more starts (seed).
 
 The disc always fits; the polygons, the stadium and the Reuleaux triangle have random two-parallel-fold
 images that fit in no congruent copy — but the near-round figures (ellipses, the lens the thread says is
