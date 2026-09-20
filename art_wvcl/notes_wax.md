@@ -26,12 +26,33 @@ thread: fold along two parallel lines. For each figure, 30 random such fold pair
 smallest over rigid motions (Nelder–Mead, 12 starts) of the largest distance of a folded vertex
 outside F, as a fraction of the diameter:
 
-FITTABLE
+| figure | worst misfit / diameter (30 random pairs) |
+|---|---|
+| disc | 4·10⁻⁷ (solver floor: fits) |
+| ellipse b/a = 0.97 | 2·10⁻⁶ (fits) |
+| ellipse b/a = 0.85 | 2·10⁻⁶ (fits) |
+| lens (unit disc ∩ disc 1.99 at (0,1)) | 5·10⁻⁶ (fits) |
+| square | 0.027 |
+| hexagon | 0.015 |
+| stadium | 0.021 |
+| Reuleaux triangle | 0.023 |
 
-The disc always fits (misfit 0 to solver precision); every other figure tried has fold pairs whose
-image fits in no congruent copy. Consistent with the thread's conjecture that the disc is the only
-good figure — and with its remark that a good figure must be C²-close-to-round in the sense that
-dist_x restricted to ∂F has no local minimum other than x.
+Single folds without any re-placement (200 random folds, identity motion): the disc and the lens
+never poke out; ellipse 0.97 in 2 of 200 (worst 0.3 % of the diameter), ellipse 0.85 in 35 of 200
+(6 %), ellipse 0.6 in 101 (17 %), square 109 (14 %), stadium 108 (23 %). So a folded ellipse does
+leave itself — but a rigid motion always brought the folded figure back inside in every trial, also
+after three and four random folds of arbitrary direction (`fit_test2.json`: ellipse 0.85 at k = 2, 3, 4
+and ellipse 0.7 at k = 2 all 0.0). Ellipse 0.7 at k = 3: 0.0 as well (further rows in `fit_test2.json` as the search completes).
+
+The disc always fits; the polygons, the stadium and the Reuleaux triangle have random two-parallel-fold
+images that fit in no congruent copy — but the near-round figures (ellipses, the lens the thread says is
+killed by two parallel folds) survive random pairs: the folds that kill them, if they exist, are special
+ones (in the thread's construction the two lines are chosen, not drawn at random). Consistent with the
+thread's remark that a good figure must be close to round in the sense that dist_x restricted to ∂F has
+no local minimum other than x — a condition the ellipses pass.
+
+**Open (a seed)**: is the ellipse b/a = 0.85 good? A targeted search (folds through the ends of the major
+axis, non-parallel pairs, or the two-lines construction with both lines tuned) rather than random pairs.
 
 ## 2. Every Triangle on One Globe — Kendall's shape sphere (Philosophy.SE 141880, the wax)
 
