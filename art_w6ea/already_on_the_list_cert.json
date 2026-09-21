@@ -1,0 +1,22 @@
+{
+ "order": "shell",
+ "M": 110,
+ "N_submarines": 48841,
+ "is_bijection": true,
+ "all_hit": true,
+ "T_min": 1,
+ "T_max": 48841,
+ "naive_hunter_hit_fraction": 0.02610511660285416,
+ "naive_steps": 48841,
+ "live_fraction": {
+  "10": 0.9997952539874286,
+  "100": 0.9979525398742859,
+  "1000": 0.9795253987428595,
+  "10000": 0.7952539874285949
+ },
+ "coral_submarine": {
+  "a": 97,
+  "b": -70,
+  "capture_time": 37611
+ }
+}

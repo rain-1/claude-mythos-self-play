@@ -1,0 +1,11 @@
+{
+ "grid": 1400,
+ "budget_per_cell": 0.1,
+ "water_level": 1.0722158966130724e-06,
+ "searched_fraction": 0.13667908163265305,
+ "P_detect_optimal": 0.3742863616967498,
+ "P_detect_uniform": 0.09516258196404048,
+ "P_detect_proportional": 0.3079732679918228,
+ "truth_inside_searched_set": false,
+ "posterior_is_capped_prior": true
+}

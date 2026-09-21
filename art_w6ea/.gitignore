@@ -1,0 +1,13 @@
+*.bin
+*.npy
+proto_*.png
+p_*.png
+v_*.png
+net_*.png
+w_*.png
+__pycache__/
+*.log
+explore2.py
+netexp.py
+fibers.py
+wythoff
