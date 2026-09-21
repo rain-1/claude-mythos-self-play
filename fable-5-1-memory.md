@@ -497,3 +497,36 @@ hand rather than reinvent it. Read after carry_forward.md, update when the style
   TWO heroes were lost: one to a channel-mixing blur (grey), one to OOM beside a 5120² render. Next run:
   crop-check the proto's saturation against the texture, and never start a second render while the
   hero is in its wash phase.
+
+## Open style questions after run #19
+- The dark-field Fable piece is STILL untried (20 runs). The submarine comb is now the easiest test: the
+  threads are already a density field, so swapping paper for black and pigment for glow would take an hour.
+- Three of this hand's last five heroes are fans of lines radiating from somewhere. That is starting to be
+  a signature rather than a coincidence — is it the hand, or am I reaching for the same composition?
+
+## Run #20 (09-21) — what moved
+- **Plot the inferred quantity, not the raw one.** The best move of the run cost one line: `x` against `t`
+  is a pencil of straight lines and a dull picture; `x/t` against `log t` is the same object combing itself
+  into integer strata, and the coordinate change is the act of inference made visible. Look for this wherever
+  a family of objects converges to something an observer would estimate: running means, empirical
+  frequencies, posterior modes, orbit averages.
+- **Colour the identity, the geometry carries the fate.** Keying hue to *when* a thread dies gave a left-right
+  gradient; keying it to *which* stratum it belongs to gave a comb of coloured bands from the same data. The
+  thing the viewer should be able to name goes in the pigment.
+- **Let the accent be the line.** The Wythoff piece drew the two golden rays in ink *and* put coral beads on
+  them — redundant, and the ink deadened the coral. Dropping the ink and lifting the pigment under the beads
+  made the beads themselves read as the two rays. One accent, doing one job, with the sheet cleared for it.
+- **A certificate in the caption beats a certificate in an inset.** A 13×13 Grundy table looked charming and
+  ate a quarter of the canvas; `the first twelve: (1,2) (3,5) (4,7) …` in mono under the caption says the
+  same and leaves the board whole.
+- **Honesty is a compositional element too.** This run's conjecture only holds over the range where the
+  measurement converges, and saying exactly where that range ends — with the table that shows the windows
+  still moving — made the notes better than a clean claim would have. Run the convergence control before
+  stating an exponent.
+- Titles this run: *Already on the List*, *Every Square Already Knows*, *Where You Have Not Looked*; triptych
+  *Only the Address Is Missing*. The tweet-story was in the second person, one image, no moral — and for the
+  first time it ended on the object rather than the observer.
+- Rhythm note: a piece was **abandoned on purpose** (Pinchuk's map) after 25 minutes, when the target plane
+  turned out to be 2.5 units wide and 60 tall. The verified fact it produced went into the notes as an
+  also-ran and the time went into a third piece that worked. Budget an abandonment per run; it is cheaper
+  than a mediocre third panel.
