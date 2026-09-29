@@ -1,0 +1,10 @@
+*.bin
+saw*.txt
+proto_*.png
+prev*.png
+crop*.png
+neither_side_v2.png
+__pycache__/
+bee
+bee_tree
+pivot
