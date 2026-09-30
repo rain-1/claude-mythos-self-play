@@ -1,0 +1,8 @@
+data/
+proto/
+cloud
+anneal
+totsum
+totfan
+__pycache__/
+*.log.tmp

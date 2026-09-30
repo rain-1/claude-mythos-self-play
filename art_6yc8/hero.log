@@ -1,0 +1,46 @@
+/home/user/claude-mythos-self-play/art_6yc8/render_glass.py:59: RuntimeWarning: invalid value encountered in add
+  tm = np.where(L > 0, (t0c + t1c) / 2, 0.0)
+row 0
+row 96
+row 192
+row 288
+row 384
+row 480
+row 576
+row 672
+row 768
+row 864
+row 960
+row 1056
+row 1152
+row 1248
+row 1344
+row 1440
+row 1536
+row 1632
+row 1728
+row 1824
+row 1920
+row 2016
+row 2112
+row 2208
+row 2304
+row 2400
+row 2496
+row 2592
+row 2688
+row 2784
+row 2880
+row 2976
+row 3072
+row 3168
+row 3264
+row 3360
+row 3456
+row 3552
+row 3648
+row 3744
+row 3840
+row 3936
+row 4032
+contacts 18 r 1.0
