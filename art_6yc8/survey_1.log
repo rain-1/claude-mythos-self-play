@@ -7,3 +7,14 @@ N 10000000 k values [30, 42, 60, 66, 70, 78, 84, 90, 102, 105, 110, 120, 126, 13
 !! 907200 210 TIMEOUT timeout
 3900 959760 {'trace': 3565, 'cp_none': 335, 'TIMEOUT': 1} 3236s
 4000 985104 {'trace': 3659, 'cp_none': 341, 'TIMEOUT': 1} 3287s
+4500 1105200 {'trace': 4118, 'cp_none': 382, 'TIMEOUT': 1} 3667s
+5000 1226016 {'trace': 4576, 'cp_none': 424, 'TIMEOUT': 1} 3965s
+6000 1465776 {'trace': 5495, 'cp_none': 505, 'TIMEOUT': 1} 4528s
+!! 1684800 210 TIMEOUT timeout
+7000 1707500 {'trace': 6412, 'cp_none': 587, 'TIMEOUT': 2} 6182s
+7500 1825740 {'trace': 6866, 'cp_none': 633, 'TIMEOUT': 2} 6564s
+8000 1945200 {'trace': 7320, 'cp_none': 679, 'TIMEOUT': 2} 6946s
+!! 2041200 210 TIMEOUT timeout
+8400 2041200 {'trace': 7684, 'cp_none': 714, 'TIMEOUT': 3} 8098s
+9000 2183440 {'trace': 8227, 'cp_none': 771, 'TIMEOUT': 3} 8602s
+9200 2232720 {'trace': 8411, 'cp_none': 787, 'TIMEOUT': 3} 8775s

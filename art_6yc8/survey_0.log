@@ -8,3 +8,11 @@ N 10000000 k values [30, 42, 60, 66, 70, 78, 84, 90, 102, 105, 110, 120, 126, 13
 4000 984912 {'trace': 3652, 'cp_none': 349} 2386s
 4900 1201680 {'trace': 4479, 'cp_none': 422} 3202s
 5000 1225872 {'trace': 4570, 'cp_none': 431} 3282s
+!! 1270080 210 TIMEOUT timeout
+5600 1370160 {'trace': 5117, 'cp_none': 483, 'TIMEOUT': 1} 4740s
+!! 1425600 210 TIMEOUT timeout
+6000 1465552 {'trace': 5484, 'cp_none': 515, 'TIMEOUT': 2} 5947s
+6600 1610640 {'trace': 6043, 'cp_none': 556, 'TIMEOUT': 2} 6269s
+7000 1707408 {'trace': 6405, 'cp_none': 594, 'TIMEOUT': 2} 6574s
+!! 1940400 270 TIMEOUT timeout
+8000 1945152 {'trace': 7330, 'cp_none': 668, 'TIMEOUT': 3} 8312s

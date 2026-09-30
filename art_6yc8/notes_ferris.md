@@ -33,7 +33,9 @@ n + c(s₁+s₂) + c(s₁+s₃) + c(s₂+s₃) = c(s₁) + c(s₂) + c(s₃) + c
 * Filter 2 (exact): CP-SAT model — position values c_j with domain = the divisors, AllDifferent, n pinned at 0, and the
   φ(k) integer equations from Φ_k. INFEASIBLE is a proof. Validated on planted solutions (k = 6 and k = 30 sets built
   as f₂ + f₃ + f₅ are found). Proves infeasibility for 720 720 (k = 240) in 45 s.
-* Result: see `survey_*.log` and the README for the range completed this run.
+* **Result:** all 16 001 candidates n ≤ 1 945 152 with ω(τ(n)) ≥ 3 are proved not Ferris, except five undecided
+  (900 s each): 907 200, 1 270 080, 1 425 600, 1 684 800 (τ = 210) and 1 940 400 (τ = 270); 907 200 also survived 90 min
+  with 2 workers. Also proved: 720 720 (τ = 240) and 55 440 (τ = 120). Beyond: 2 041 200, 9 937 200, 9 979 200 undecided.
 
 ## Near misses (`anneal.c`)
 Best hangings found by annealing miss the hub by |Σ c_j ζ^j| ≈ 0.0006 (n = 720, relative 8·10⁻⁷), 0.0022 (n = 5040),

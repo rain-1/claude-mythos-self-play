@@ -53,7 +53,9 @@ line are the sums no pair reaches; they stop, and the single coral line is **413
   0, k/p, k/q, k/p + k/q satisfy **n + c(s+t) = c(s) + c(t)** — impossible, since two distinct proper divisors sum to at
   most n/2 + n/3 < n. (Prime-power k: c is periodic, so two divisors would be equal.) The first open case is τ(n) = 30.
 * **Exact search:** CP-SAT with divisor domains + AllDifferent + the φ(k) cyclotomic equations (INFEASIBLE = proof;
-  validated on planted solutions), after Tao's trace inequality (kills ≈ 92 %). SURVEY_RESULT
+  validated on planted solutions), after Tao's trace inequality (kills ≈ 92 %). **All 16 001 open-case candidates n ≤ 1 945 152 (τ(n) with ≥ 3 prime factors) are proved non-Ferris, except five
+  undecided after 900 s each: 907 200, 1 270 080, 1 425 600, 1 684 800 (τ = 210) and 1 940 400 (τ = 270)** — 907 200 also
+  survived a 90-minute run. Four-prime τ is where CP-SAT stalls; redundant trace rows did not help.
 * **Near misses do not shrink with n** (≈ 10⁻³ at k = 30, 60, 120): the obstruction is arithmetic, not scarcity.
   *Conjecture:* there are no Ferris wheel numbers.
 * **Equal-totient sums:** exactly **435** N ≤ 10⁸ have R(N) = 0, the largest **413 759**; min R over [10⁶,10⁷) is 3 and
@@ -74,10 +76,25 @@ line are the sums no pair reaches; they stop, and the single coral line is **413
    Also tried: a dark-field (neon glass on indigo) version of the hero — milky and off-brief (the brief is bright pastel).
 
 ## Tweet-sized story
-TWEET
+> Six glass rods came to touch a pearl, each careful not to crowd the others. A seventh waited thirty years at the door;
+> this July a computer told him, kindly, no. Next door at the fair every wheel leaned by a hair, and every number found a
+> twin — except 435, who came too early.
 
 ## What I learned about generative art (this run)
-LEARNED
+* **Glass is the glaze in three dimensions.** Chord length through a transparent solid × a pigment's absorbance is exactly
+  the Beer–Lambert stack, now in space: opaque sorbet solids went muddy under occlusion, glass rods stayed luminous and
+  their overlaps mixed like washes.
+* **Perspective sells solids; orthographic makes bands.** At camera distance 26 the rods were flat stripes; at 9 with a
+  wider lens they recede. A paper wall catching *tinted* shadows adds depth for free.
+* **Light the protagonist in camera space** when the view is chosen for symmetry — a world-up light behind fat rods left
+  the pearl slate-grey.
+* **Keep accents as an invertible last layer.** Glints drawn behind the opaque ball were removed in post by inverting the
+  blend exactly, instead of a 70-minute re-render.
+* **When a population grows exponentially, normalise each row by its own total**: the log-N curtain then shows the
+  *shape* of every row, and families rise as threads (lifted by a local-baseline ratio, gated by support or the edges
+  sprout false threads).
+* **Search before you claim.** My "record" six-cylinder radius was the known conjectured optimum, and matching a
+  published digit string (r = 0.846934 for seven) turned out to be the best test that the optimiser works.
 
 ## Files
 `render_glass.py` (glass ray tracer), `render_cyl.py` (opaque tracer + contacts), `cylopt.py`, `fix_glints.py`,

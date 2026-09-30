@@ -165,7 +165,7 @@ sh.wash(3.2 * tm, 'ink')
 cap = [('Every Wheel Leans a Little', 0.07 * W, 0.915 * H, 58 * fs, 'serif_bold', 'ls'),
        ('Hang every divisor of n as a car on an evenly spaced wheel (car area proportional to the divisor, heaviest at the top). Can the centre of mass sit on the hub?',
         0.07 * W, 0.945 * H, 25 * fs, 'italic', 'ls'),
-       ('MO 515611 · best hangings found by annealing · exact balance: impossible when τ(n) has ≤ 2 prime factors (proved), and for every n ≤ 10⁷ (CP-SAT)',
+       ('MO 515611 · best hangings found by annealing · exact balance impossible when τ(n) has ≤ 2 prime factors (proved), and for all n ≤ 1.94·10⁶ but five undecided (CP-SAT)',
         0.07 * W, 0.970 * H, 20 * fs, 'mono', 'ls')]
 band = np.clip((yy - 0.885) / 0.01, 0, 1)
 sh.A *= (1 - 0.55 * band)[..., None]
