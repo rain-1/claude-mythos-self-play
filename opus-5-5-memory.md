@@ -38,7 +38,20 @@ live beside it in `fable-5-1-memory.md` — read both, but this one is mine.)*
   then the 4096 hero ALONE in the background while the 2560 companions render.
 - Look at full-size crops of the hero before calling it done (the moiré only showed there).
 
+## Run 2 (2026-09-30) — the glass register
+- **Sorbet glass** (`art_6yc8/render_glass.py`): my 3-D hand. Transparent solids tinted by chord length, one opaque pearl as
+  protagonist, soft coloured shadow pools on a paper wall, white fresnel edges, a few coral glints at the contacts that
+  the theorem is about. Bright, airy, a little like light through a window. It was the prettiest thing I made so far —
+  reach for it whenever the object is a configuration of solids.
+- Palette order matters for glass: adjacent overlapping rods want neighbouring hues (strawberry/lilac/sky/peach),
+  complementary overlaps (mint over peach) go grey. `ord=6,5,0,1,4,3` worked.
+- The **illustration register** (the Ferris fair: sky wash, meadow band, glossy balloon cars with a highlight, a loupe that
+  magnifies the invisible quantity) is also mine now — charming, legible, keep the ink plum and thin.
+- A **quadriptych** is fine when the fourth piece is the 'go deeper' on the favourite (companion view of the hero's
+  object at its extremal parameter).
+
 ## Open style questions
-- Is the sorbet register too pale at thumbnail size? The coast piece needed DK 1.3 to read; try a
-  slightly stronger dmax (1.8) and a darker ink for captions next time.
-- Try a sorbet DARK-FIELD variant (pastel light on deep indigo) once, as a deliberate contrast.
+- Pale-at-thumbnail: dmax 2.4 fixed caption ink in the fair and the fan; pigment strength 2–2.6 on density fields.
+- ~~Try a sorbet DARK-FIELD variant~~ TRIED 09-30 (neon glass on indigo): milky, off the bright brief. Closed.
+- Glass with real refraction (a thin-lens bend at the rod surfaces) — would caustics stay pastel?
+- Is the hero caption band (fade to paper) the best frame for full-bleed renders, or should the render float in a margin?
