@@ -66,7 +66,7 @@ inequality γ_m² ≥ γ_{m−1}γ_{m+1} fails for r < 1, since (m!)^{2(1−r)}[
   boundary sampling artefact — a 12 000-point axis scan gives 46 real sign changes for r = 2.5).
 * **Conjecture B'' (replaces B):** TN ⇔ r ∈ {0, 1} ∪ [2, ∞); equivalently Σ z^m/(m!)^r is real-rooted
   ⇔ r = 1 or r ≥ 2.  FitzGerald–Horn shape with threshold 2.
-* **Conjecture B (revised, evidence on (1, 1.72] only).** A^{∘r} is totally nonnegative iff r ∈ {0, 1, 2, 3, …}.
+* (superseded) **Conjecture B (evidence on (1, 1.72] only).** A^{∘r} is totally nonnegative iff r ∈ {0, 1, 2, 3, …}.
   Equivalently: Σ z^m/(m!)^r has only real zeros iff r is a positive integer.
   (The exact analogue of Schoenberg/FitzGerald–Horn: the Hadamard powers that preserve positivity in
   every dimension are the integers.)  What would decide it: show that for n < r < n+1 the zeros of
