@@ -1,0 +1,4 @@
+r=1.71 R=200 zeros in disc 11.0, real sign changes 9
+r=1.72 R=200 zeros in disc 11.0, real sign changes 11
+r=1.73 R=200 zeros in disc 11.0, real sign changes 11
+r=1.74 R=200 zeros in disc 11.0, real sign changes 11

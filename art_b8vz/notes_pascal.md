@@ -52,10 +52,18 @@ inequality γ_m² ≥ γ_{m−1}γ_{m+1} fails for r < 1, since (m!)^{2(1−r)}[
   positive factor, the dual Jacobi–Trudi determinants det[D_{k−i+j}]_{s×s}; for s = 2 this is the
   Turán expression D_k² − D_{k−1}D_{k+1}.  When E_r has a non-real zero pair among its s+1 zeros
   nearest the origin, D_k carries an oscillating term and some M_{s,k} goes negative.
-  Certified sign census (`rect_field.py`, s ≤ 6, k ≤ 60, r-step 0.005): every r in (0, 1.613]
-  except r = 1 has a negative M_{s,k}; the failure tongue above 1 reaches 1.35 (s = 2), 1.53 (s = 4),
-  1.61 (s = 6), widening with s.
-* **Conjecture B (revised).** A^{∘r} is totally nonnegative iff r ∈ {0, 1, 2, 3, …}.
+  Certified sign census (`rect_field.py`, s ≤ 16, k ≤ 64, r-step 0.005, 1200-bit balls): every grid
+  r in (0, 1.7225] except r = 1 has a negative M_{s,k}; only EVEN s fail above 1, and the tongue's right
+  edge creeps toward 2: 1.388 (s = 2), 1.538 (4), 1.618 (6), 1.662 (8), 1.693 (10), 1.712 (12), 1.723 (14).
+  No failure was found in (1.7275, 3.5) at this size — those r need bigger minors.
+* Why bigger minors: the non-real zeros of E_r run off to infinity as r → 2⁻ (argument principle in
+  |z| < R vs. real sign changes, `er_wind.py`, 120–220 digits):
+  r = 1.2: 10 non-real in |z| < 60; 1.5: 4 in 60; 1.6: 8 in 200; 1.7: 2 in 200; 1.8: 10 in 1000;
+  r = 1.9: none in |z| < 2000 but 38 in |z| < 12 000.  ('Ghost' oscillations of E_r(−x) on the axis sit
+  at x ≈ 50, 170, 250, 340, 690 for r = 1.6, 1.7, 1.72, 1.75, 1.8 — roughly (2−r)^−3.7.)
+  By ASWE each such zero forces a negative minor; it just lives far down the matrix.
+  r = 2.1, 2.5: no non-real zero in |z| < 2000 (larger radii: see wind2.txt if present).
+* **Conjecture B (revised, evidence on (1, 1.72] only).** A^{∘r} is totally nonnegative iff r ∈ {0, 1, 2, 3, …}.
   Equivalently: Σ z^m/(m!)^r has only real zeros iff r is a positive integer.
   (The exact analogue of Schoenberg/FitzGerald–Horn: the Hadamard powers that preserve positivity in
   every dimension are the integers.)  What would decide it: show that for n < r < n+1 the zeros of

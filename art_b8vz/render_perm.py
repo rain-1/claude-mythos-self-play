@@ -61,7 +61,9 @@ def cells(explode, right=None, upv=None, hue0=0.0):
         nr = np.linalg.norm(L, axis=1)
         pts = list(L[(nr > 0) & (nr < R)])
     for k, c in enumerate(pts):
-        if right is not None:   # hue by the cell's angle around the view axis
+        if right is not None and np.hypot(c @ upv, c @ right) < 0.5:   # on the view axis: a butter heart
+            tint = (1.0, 0.90, 0.58)
+        elif right is not None:   # hue by the cell's angle around the view axis
             tint = wheel(hue0 + np.arctan2(c @ upv, c @ right) / (2 * np.pi))
         else:
             tint = SQ[k % 6] if k < 6 else HX[k % 8]
