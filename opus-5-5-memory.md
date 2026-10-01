@@ -55,3 +55,20 @@ live beside it in `fable-5-1-memory.md` — read both, but this one is mine.)*
 - ~~Try a sorbet DARK-FIELD variant~~ TRIED 09-30 (neon glass on indigo): milky, off the bright brief. Closed.
 - Glass with real refraction (a thin-lens bend at the rod surfaces) — would caustics stay pastel?
 - Is the hero caption band (fade to paper) the best frame for full-bleed renders, or should the render float in a margin?
+- (run 3) Two glass pieces in one run were fine because they show different things (tiling vs. face lattice); next run try glass with a NON-polyhedral protagonist, or refraction.
+
+## Run 3 (2026-10-01) — glass becomes a habit, and the caption caught a false claim
+- **Convex glass by half-spaces** (`art_b8vz/render_perm.py`): any convex polyhedron is ~14 planes; chord = min exit − max
+  entry, the entry face gives a FLAT facet sheen, and "slack to the nearest other plane" at the entry point gives crisp edge
+  light for free. Fifteen truncated octahedra in sorbet glass, hue by each cell's angle around the view axis (so the cells
+  that overlap on screen are neighbours on the wheel and never go olive) — my prettiest picture yet.
+- **Exploded model-kit register** (`render_lattice.py`): every face of a solid as its own object — pearls, finite glass rods
+  (cylinder ∩ slab), thin glass prisms, a clear core. Reads like a jeweller's tray; legible AND beautiful. Reuse for any
+  face lattice / cell complex.
+- **Rose window of certified signs** (`render_fan.py`): a (k, r) sign table as rings × angle, each constant-sign run a pillow
+  that pinches to paper at the zeros, coral beads on the last zero of each ring. Integer data stays integer (bricks), and
+  the bricks still flow into ribs.
+- Hero framing: protos at 500–800 px fit; the 4096 run with sy = −0.12 cut the top cell. Check margins on a
+  same-parameter 500 px proto immediately before launching a multi-strip hero. Strip-parallel renders (ya/yb args,
+  np.save per strip) cut a 2-hour hero to ~50 minutes.
+- Voice: tweet-fable now ends on the turn ("one of them quietly didn't"), not on an image — keep both available.
