@@ -62,7 +62,10 @@ inequality γ_m² ≥ γ_{m−1}γ_{m+1} fails for r < 1, since (m!)^{2(1−r)}[
   r = 1.9: none in |z| < 2000 but 38 in |z| < 12 000.  ('Ghost' oscillations of E_r(−x) on the axis sit
   at x ≈ 50, 170, 250, 340, 690 for r = 1.6, 1.7, 1.72, 1.75, 1.8 — roughly (2−r)^−3.7.)
   By ASWE each such zero forces a negative minor; it just lives far down the matrix.
-  r = 2.1, 2.5: no non-real zero in |z| < 2000 (larger radii: see wind2.txt if present).
+  r = 2.1, 2.5: every zero in |z| < 30 000 is real (90 and 46 zeros; the 'non-real 1' in wind2.txt is a
+  boundary sampling artefact — a 12 000-point axis scan gives 46 real sign changes for r = 2.5).
+* **Conjecture B'' (replaces B):** TN ⇔ r ∈ {0, 1} ∪ [2, ∞); equivalently Σ z^m/(m!)^r is real-rooted
+  ⇔ r = 1 or r ≥ 2.  FitzGerald–Horn shape with threshold 2.
 * **Conjecture B (revised, evidence on (1, 1.72] only).** A^{∘r} is totally nonnegative iff r ∈ {0, 1, 2, 3, …}.
   Equivalently: Σ z^m/(m!)^r has only real zeros iff r is a positive integer.
   (The exact analogue of Schoenberg/FitzGerald–Horn: the Hadamard powers that preserve positivity in

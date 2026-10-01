@@ -1,0 +1,2 @@
+r=2.5 R=30000.0 zeros in disc 46.0 (max arg step 0.400), real sign changes 45 -> non-real 1.0
+r=2.1 R=30000.0 zeros in disc 90.0 (max arg step 0.106), real sign changes 89 -> non-real 1.0

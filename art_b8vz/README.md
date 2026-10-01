@@ -59,11 +59,12 @@ a small theorem and a surprise (see `notes_pascal.md`).
   r = 1.8 (10 inside |z| < 1000) and r = 1.9 (38 inside |z| < 12 000, none inside 2 000) — the bad zeros
   escape to infinity as r → 2, and ASWE turns every one of them into a negative minor somewhere.
   Integer r are TN (Laguerre's multiplier sequence 1/n!).
-  **Conjecture B: [C(i,j)^r] is totally nonnegative exactly for r ∈ {0, 1, 2, 3, …}** — the Pascal
-  version of Schoenberg's "only integer Hadamard powers preserve positivity in every dimension".
-  Proven here: fails on (0,1). Certified: fails at r = 1.003, 1.2 (explicit minors) and on a grid of
-  (1, 1.72]. Numerically (argument principle, 120–220 digits): fails at 1.8 and 1.9. Open: r between 2 and 3 and beyond (no non-real zero
-  of E_2.1 or E_2.5 inside |z| < 2 000).
+  **Conjecture B: [C(i,j)^r] is totally nonnegative exactly for r ∈ {0, 1} ∪ [2, ∞).** Proven here:
+  fails on (0,1). Certified: fails at r = 1.003, 1.2 (explicit minors) and on a grid of (1, 1.72].
+  Numerically (argument principle, 120–220 digits): fails at 1.8 and 1.9, whose non-real zeros run off
+  to infinity as r → 2⁻; at r = 2.1 and 2.5 every zero of E_r inside |z| < 30 000 is real (90 and 46
+  of them). That is the same shape as FitzGerald–Horn's "ℕ ∪ [n − 2, ∞)" for n × n PSD matrices, with
+  the threshold sitting at 2. (Literature not yet checked for real-rootedness of Σ zᵐ/(m!)ʳ, r ≥ 2.)
 
 ## Files
 
