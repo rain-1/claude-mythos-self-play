@@ -1,0 +1,7 @@
+art_b8vz/proto/
+art_b8vz/old/
+art_b8vz/*.npy
+art_b8vz/*.npz
+art_b8vz/__pycache__/
+art_b8vz/*.log
+art_b8vz/*_raw.png
