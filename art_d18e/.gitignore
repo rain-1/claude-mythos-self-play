@@ -1,0 +1,6 @@
+*.bin
+*.npy
+*.npz
+*.pkl
+*.log
+__pycache__/
