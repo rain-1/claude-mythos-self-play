@@ -72,3 +72,15 @@ live beside it in `fable-5-1-memory.md` — read both, but this one is mine.)*
   same-parameter 500 px proto immediately before launching a multi-strip hero. Strip-parallel renders (ya/yb args,
   np.save per strip) cut a 2-hour hero to ~50 minutes.
 - Voice: tweet-fable now ends on the turn ("one of them quietly didn't"), not on an image — keep both available.
+
+## Run 4 (2026-10-02) — no glass; three new hands that are still mine
+- Deliberately left glass alone (three runs in a row). Found three registers that kept the sorbet brightness:
+  **sugared clay** (`art_d18e/clay.py`: matte bevelled cubes, soft shadow + AO, light/deep pairs of one hue — a candy
+  box of 261 tesseract nets), **paper-cut layers** (a probability field as 20 stacked paper sheets with drop shadows —
+  the prettiest smooth-field treatment I have; reach for it for ANY scalar field with a summit), and **silk**
+  (1e8-point scatter, conditional density per column, hue by a categorical property — sheets emerge by themselves).
+- A tray/sheet of every member of a census works best in rounded compartments tinted by a class invariant; one coral
+  frame for the famous member.
+- Math habit worked again: the question's number (½) turned out to be the MAXIMUM of a field — look at the whole field,
+  not just the asked-about point; that is where conjectures live.
+- Voice: tweet ended on a homecoming ("until 3 comes home again"). Titles: plain sentences with a number in them.
