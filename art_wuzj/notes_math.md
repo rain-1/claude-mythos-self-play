@@ -13,7 +13,7 @@ d ≡ w²/d (mod 2), x = (w²/d − d)/2, z = (w²/d + d)/2 — so only the divi
 Reproduces the OP's whole table for n ≤ 64, a(192) = 457 with exactly the 52 listed extra
 elements, a(9 624 384) = 136 979 809 and a(95 703 552) = 2 231 317 337.
 *Bug caught mid-run:* w² overflows u64 once members pass 2³² (n ≈ 1.6·10⁸); the first run
-(`rec_3e8.txt`) is only trusted while a(n) < 2³²; `beanstalk2` (= current `beanstalk.c`, 128-bit
+(truncated to `rec_1p6e8.txt`, all n ≤ 1.699·10⁸ with a(n) < 2³²) is valid; `beanstalk2` (= current `beanstalk.c`, 128-bit
 w²) re-runs to 2.1·10⁸ (`rec_2e8_fixed.txt`).
 
 ### Lemma (scaling by a Pythagorean triple)
