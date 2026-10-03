@@ -1,0 +1,6 @@
+*.pkl
+beanstalk
+beanstalk2
+__pycache__/
+*.log
+*.err
