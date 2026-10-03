@@ -50,8 +50,9 @@ the sign flips make every coral tie a 2×2 window that cancels. 0 sits in the co
 - **Lemma.** For a primitive triple p² + q² = r²: a(qm) ≥ r·a(m). With (3,4,5): a(4m) ≥ 5a(m),
   so the exponent along ×4 chains is ≥ log 5/log 4 = 1.16096. For m < 2·10⁶ equality holds 56 %
   of the time; a(192·4ᵏ) = 457·5ᵏ exactly for k ≤ 4.
-- **Conjecture.** a(n) = n^{log₄5 + o(1)}; the running max of a(n)/n^{log₄5} creeps 1.02 → 1.04 →
-  1.07 → 1.21 over 10⁴…10⁸ — slow enough for a sub-polynomial correction.
+- **Conjecture (weakened by the data).** a(n) = n^{log₄5 + o(1)}? The running max of a(n)/n^{log₄5}
+  goes 1.02 → 1.04 → 1.07 → 1.21 → 1.32 over 10⁴…2·10⁸; the last jump hints the exponent may be larger.
+  The corrected census confirms the OP's a(201 719 808) = 5 764 576 925 (exponent 1.1753).
 
 ## Files
 `beanstalk.c` (census), `bs.py` (exact B_n with all derivations), `render_rose.py`,

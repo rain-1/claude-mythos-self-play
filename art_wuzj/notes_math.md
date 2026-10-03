@@ -14,7 +14,8 @@ Reproduces the OP's whole table for n ≤ 64, a(192) = 457 with exactly the 52 l
 elements, a(9 624 384) = 136 979 809 and a(95 703 552) = 2 231 317 337.
 *Bug caught mid-run:* w² overflows u64 once members pass 2³² (n ≈ 1.6·10⁸); the first run
 (truncated to `rec_1p6e8.txt`, all n ≤ 1.699·10⁸ with a(n) < 2³²) is valid; `beanstalk2` (= current `beanstalk.c`, 128-bit
-w²) re-runs to 2.1·10⁸ (`rec_2e8_fixed.txt`).
+w²) re-ran to 2.1·10⁸ (`rec_2e8_fixed.txt`, 416 M grown members, ~70 min), agreeing with the first run on its
+valid range and confirming the OP's a(201 719 808) = 5 764 576 925 (exponent 1.175324, the new record).
 
 ### Lemma (scaling by a Pythagorean triple)
 For every primitive triple p² + q² = r² (p < q) and every m:  **a(q·m) ≥ r · a(m).**
@@ -38,8 +39,10 @@ Records of a(n) occur only at n with a large 3-smooth part (e.g. 107 495 424 = 2
 **a(n) = n^{log 5 / log 4 + o(1)}**, i.e. the asymptotic beanstalk exponent is log₄5 ≈ 1.16096,
 and the OP's constant γ = sup_n log a(n)/log n is attained at some finite n (γ ≥ 1.171363 from
 n = 95 703 552). Evidence: the running maximum of a(n)/n^{log₄5} is 1.021 (n < 10⁴), 1.043
-(< 10⁶), 1.070 (< 10⁷), 1.211 (< 10⁸, at n = 95 703 552), 1.187 (on [10⁸, 1.5·10⁸]) — it creeps,
-consistent with a sub-polynomial correction but not with a larger exponent. What would decide
+(< 10⁶), 1.070 (< 10⁷), 1.211 (< 10⁸, at n = 95 703 552), **1.316 at n = 201 719 808**. The jump in the
+last decade weakens the conjecture: the ratio may grow polynomially, i.e. the true exponent may
+exceed log₄5. Honest status: γ_∞ ≥ log₄5 is proved; whether equality holds is open and the data
+leans slightly against it. What would decide
 it: an upper bound. A plausible route: every member > n has a derivation tree whose leaves are
 seeds; bound the height of a tree by the product of the triples' r/q ratios along its spine.
 
