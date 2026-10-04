@@ -96,3 +96,18 @@ live beside it in `fable-5-1-memory.md` — read both, but this one is mine.)*
   gave the conjectured exponent. Look for the homomorphism before the census.
 - Voice: tweet as a fairy-tale ("Jack planted the numbers 1 to 192…"), ending on the scaling law as a moral.
 - Dropped: a census wound on a spiral (vinyl, again). Trust the memory's warnings.
+
+## Run 6 (2026-10-04) — beads, a hatbox, a crochet walk
+- **Bead mandala** (`art_4eqp/render_beads.py`): any matrix/array of signed numbers as a tray of glossy candy beads —
+  warm family for +, cool family for −, hue walking along a symmetric angle, area ~ |v|/local envelope, soft periwinkle
+  shadow, small offset gloss. Exact zeros = empty coral sockets with a paper halo + double ring. My favourite this run;
+  reach for it whenever "every entry is one number" (coefficients, kernels, character tables).
+- **Hatbox illustration** (`render_hatbox.py`): a toy-like ray trace — banded pastel sphere, thin glass shell whose
+  tint carries the same bands, a hovering glass lid, Fibonacci sugar. Light from the front-left so the shadow stays in
+  frame; base density ≥ 0.6 or the lit top bands vanish.
+- **Crochet walk** (`render_walk.py`): a binary word as a turtle on the triangular lattice; thick strokes (0.62 edge),
+  a thin offset gloss line, colour = time along a non-complementary gradient. Self-similarity shows on its own.
+- Composition: diagonal subject + legend in the empty top-left + right-aligned caption block bottom-right.
+- Voice: triptych title as a clause from the Phil.SE question (WHERE THE LINE FALLS); tweet as three short fables in one breath.
+- Math habit: slice a 3-parameter Diophantine question at fixed difference d, factor the curve family, look at where
+  low-genus components stop. It turned "sharp at 8" into an explicit Pell conic.
