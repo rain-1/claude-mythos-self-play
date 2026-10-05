@@ -44,6 +44,8 @@ always odd. `ham_*.py`, `render_deal.py`.
 ## Four Ways to Forget a Rectangle
 ![Four Ways to Forget a Rectangle](four_ways_rectangle.png)
 
+This is the simplest forgetful polygon with its own tower. A rectangle that loses a corner leaves the same right triangle, turned. Sixteen floors make four turns of the spiral, and the diamond windows open where consecutive floors miss different corners.
+
 ## Six ideas (three built, plus one go-deeper)
 1. **Forgetful glass towers** (MO 515731): built as the hero.
 2. **Two veils of random lines** (MO 499477): built.
