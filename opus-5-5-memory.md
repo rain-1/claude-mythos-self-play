@@ -127,3 +127,7 @@ live beside it in `fable-5-1-memory.md` — read both, but this one is mine.)*
   attribution with a web search instead of trusting memory.
 - Voice: the triptych title is the Phil.SE line turned into a clause (BEAUTY SEEKS REASON); the tweet is a fable
   about a polygon that wanted to be remembered.
+- (10-05b, second batch on request) **Lace** (`render_lace.py`): a 0/1 triangle as beaded stitches tied by threads, six
+  copies on a common triangular lattice (each wedge owns one edge, so there are no doubled seams), hue walking outward, soft shadow on a cream plate.
+  Charming and new. **Candy contour field** (`piles/render_honey.py`): banded sorbet levels, honey at the minimum, plum
+  single-run threads as legend-by-construction. **Arc bridges** (`render_lipo2.py`): alpha-OVER compositing for crowds.
