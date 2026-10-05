@@ -58,3 +58,26 @@ t_red·t_black swaps red ↔ black and fixes green.
 
 OP's identity f(2^m + k) = f(k)(1 + t^{2^m}) verified for all n ≤ 512. The parity triangle is a Sierpiński
 variant (density 0.125 at n ≤ 512). Not drawn (too familiar a picture).
+
+## Second batch (same day, on request): ideas 4–6
+
+### MO 499431 — piles and the last pile (`piles/piles.py`, `piles/field.py`)
+Exact expected size of the last pile by memoised recursion over sorted pile tuples. **The balanced split is optimal in
+every case checked:** K = 3 for N ≤ 500, K = 4 for N ≤ 200, K = 5 for N ≤ 60, K = 6 for N ≤ 40 (no violations).
+- **Runner-up pattern (new observation):** the second-best split is always the balanced one with ONE rock moved between
+  two equal piles. Examples: (166,167,167) → (166,166,168), and (50,50,50,50) → (49,50,50,51). Holds in all 254 cases checked
+  (K = 3 to N = 150, K = 4 to 80, K = 5 to 45).
+- Balanced E grows like c_K √N (K = 4: E(80) = 3.624, E(90) = 3.852, ratio ≈ √(90/80)).
+- The K = 3 field E(a,b,c) over the simplex: the minimum is at the centre, and a Y-shaped low valley runs toward the three
+  edge midpoints (two equal piles, one empty). Note: bilinear interpolation on the (a,b) square grid is
+  anisotropic, so symmetrise over the 6 permutations before contouring.
+
+### MO 515601 — the lipogram map d (`render_lipo2.py`)
+No proof. **Conjecture: d ∉ G.** Heuristic: an f ∈ G uses a fixed finite set of floors and constants, so it can
+read only boundedly many "digit scales" of n. d must act on all decimal places at once: its zero set
+{0, 7, 77, 777, …} is infinite but exponentially sparse, and d(n·10 + 7) = d(n) at every scale. A proof would need a structure theorem for
+the zero sets (or the growth regimes) of functions in G restricted to ℕ.
+
+### MO 515413 — Narayana parity (`narayana.py`, `render_lace.py`)
+Identity checked for all n ≤ 512, as before. Drawn after all, as a doily, because the hexagonal six-copy layout
+makes the familiar Sierpiński structure look new.

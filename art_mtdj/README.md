@@ -46,13 +46,40 @@ always odd. `ham_*.py`, `render_deal.py`.
 
 This is the simplest forgetful polygon with its own tower. A rectangle that loses a corner leaves the same right triangle, turned. Sixteen floors make four turns of the spiral, and the diamond windows open where consecutive floors miss different corners.
 
-## Six ideas (three built, plus one go-deeper)
-1. **Forgetful glass towers** (MO 515731): built as the hero.
-2. **Two veils of random lines** (MO 499477): built.
-3. **Every deal has a twin** (MO 515726): built.
-4. Narayana parity lace (MO 515413): the identity was verified to n = 512, but the triangle is a Sierpiński variant, so it was dropped as too familiar.
-5. The fly and the honey pot (MO 499431): random piles drawn as a river delta on the simplex. Not built.
-6. Lipogram staircase (MO 515601): the delete-every-7 map as a devil's staircase. Not built.
+## Second batch (on request): ideas 4, 5 and 6
+
+### Six Copies of an Odd Triangle
+![Six Copies of an Odd Triangle](six_copies_of_an_odd_triangle.png)
+
+This is MO 515413, the Narayana polynomials mod 2. The parity triangle for n ≤ 128 is laid on a triangular lattice with its apex at the
+centre, and six copies make a hexagonal doily. Each odd coefficient is a beaded stitch, and neighbouring stitches are tied by
+thread. The hue walks outward with n, and the doily sits on a cream plate. The OP's identity
+f(2^m + k) = f(k)(1 + t^(2^m)) holds for all n ≤ 512. It is the reason every band of rows is two copies of the ones before it. `render_lace.py`.
+
+### Where the Fly Should Start
+![Where the Fly Should Start](where_the_fly_should_start.png)
+
+This is MO 499431, rocks in piles. Each point of the triangle is a way to split 300 rocks into three piles, and the colour is the exact
+expected size of the last pile. Honey marks the smallest values, at the balanced split, and a golden Y-shaped valley runs toward the edge midpoints.
+The plum threads are single games, the fly's flights, and each ends on a honey spoke when only one pile is left. Exact checks found
+**no counterexample** to "balanced is best": K = 3 to N = 500, K = 4 to 200, K = 5 to 60, K = 6 to 40. A new observation: the
+runner-up is always the balanced split with one rock moved between two equal piles (254/254 cases). `piles/`.
+
+### The Book Without Sevens
+![The Book Without Sevens](the_book_without_sevens.png)
+
+This is MO 515601, the lipogram map. Every n ≤ 10,000 that contains a 7 sends an arc down to the number left when its sevens are
+crossed out. The arcs are coloured by the place of the leading seven, and the nested families of bridges show the map acting
+on every scale at once. That is also why I conjecture that no fixed formula built from + × − 1/g and the floor function can produce it.
+`render_lipo2.py`.
+
+## Six ideas: all six built
+1. **Forgetful glass towers** (MO 515731): hero, plus the rectangle go-deeper.
+2. **Two veils of random lines** (MO 499477).
+3. **Every deal has a twin** (MO 515726).
+4. **Narayana parity lace** (MO 515413): second batch.
+5. **The fly and the honey pot** (MO 499431): second batch.
+6. **The book without sevens** (MO 515601): second batch.
 
 ## Tweet
 > A polygon wanted to be remembered no matter which corner it lost. Reason told it the price: every corner
