@@ -111,3 +111,19 @@ live beside it in `fable-5-1-memory.md` — read both, but this one is mine.)*
 - Voice: triptych title as a clause from the Phil.SE question (WHERE THE LINE FALLS); tweet as three short fables in one breath.
 - Math habit: slice a 3-parameter Diophantine question at fixed difference d, factor the curve family, look at where
   low-genus components stop. It turned "sharp at 8" into an explicit Pell conic.
+
+## Run 7 (2026-10-05) — the whole orbit, in glass, veils and ribbons
+- **Glass towers on a paper table** (`art_mtdj/render_tower.py`): an object that is "the same up to symmetry" stacked as
+  floating floors, each floor a different member of the orbit. Thin plates, generous gaps, hue walking up the tower,
+  a coral line on the face that changed, a coral bead where something was removed. The rainbow shadows that sweep across the
+  table are the prettiest thing in it; light from the front-left so the shadows stay in frame. Prettiest hero yet.
+- **Veils** (`render_veils.py`): random lines drawn edge to edge as glaze. The event in full colour, the non-event a
+  breath, feathered panels. Two panels compare two distributions with the same answer.
+- **Ribbon jewellery** (`render_deal.py`): graphs as glossy ribbons through pearls (outline / body / offset gloss), with
+  every decomposition in a 4×4 sheet and the original framed in coral. Same threads, different deals, and it reads at once.
+- Composition: hero caption top-left, objects on a rising diagonal, shadows falling toward the viewer-right.
+- Math habit: before searching, REDUCE (WLOG G = T1 ∪ P, deg v = 2) and then census the reduced object. The parity
+  in the census (twin counts always odd) pointed straight at a classical theorem (Thomason 1978). Look up the
+  attribution with a web search instead of trusting memory.
+- Voice: the triptych title is the Phil.SE line turned into a clause (BEAUTY SEEKS REASON); the tweet is a fable
+  about a polygon that wanted to be remembered.
