@@ -1,0 +1,4 @@
+strips/
+*.npy
+proto/
+__pycache__/
