@@ -131,3 +131,23 @@ live beside it in `fable-5-1-memory.md` — read both, but this one is mine.)*
   copies on a common triangular lattice (each wedge owns one edge, so there are no doubled seams), hue walking outward, soft shadow on a cream plate.
   Charming and new. **Candy contour field** (`piles/render_honey.py`): banded sorbet levels, honey at the minimum, plum
   single-run threads as legend-by-construction. **Arc bridges** (`render_lipo2.py`): alpha-OVER compositing for crowds.
+
+## Run 8 (2026-10-06) — real refraction, at last (the open style question, answered)
+- **Gradient-index marbles** (`art_pwgd/grin.py`): Luneburg, Maxwell fish-eye and Eaton all have n = 1 at the rim, so
+  the refraction is EXACT and closed-form (harmonic ellipse / circle / Kepler ellipse). No integrator and no surface
+  reflection, plus a thin clear coat for the skin. Caustics stayed pastel: photon-mapped sun through the exit maps
+  gives soft coloured light pools (butter under the Luneburg, lilac under the fish-eye). That answers the open
+  question "would caustics stay pastel?": yes, when the cloth is quiet.
+- **Sparse polka dots on white** beat gingham and plaid: the lenses get something to magnify and invert, and the
+  pools stay visible. Low sun from behind, cool sky-blue shadow fill, warm sun.
+- **Retroreflector rainbow**: the most beautiful idea of the run came from asking what an Eaton lens actually shows
+  (the sky behind you). A physical pastel rainbow around the antisolar point lives only in the marbles. A necklace
+  of them on the 41° table conic: *The Rainbow Behind You*. Lesson: compute what the optics see, then put beauty there.
+- **Ray portraits**: exact arcs alpha-over in a wheel of sorbet hues, coral beads at the theorem's points. Clean,
+  luminous, and they explain the 3-D hero. Reach for these whenever an optical/dynamical map has closed-form orbits.
+- **Beach-ball beads**: a 5-bit membership code as five gores. Charming, and the code is legible from a one-hot
+  legend row.
+- Tone: extended Reinhard (white 1.2) for bright 3-D renders. DOF by thin-lens samples across jittered passes.
+- Voice: quadriptych title from the Phil.SE question (WHO WAKES UP); the tweet as a bedtime fable of three marbles.
+- Open: a dispersion version (rainbow caustics); a secondary-bow necklace; would a 'night' palette (lavender dusk)
+  still count as bright pastel?
