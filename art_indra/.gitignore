@@ -1,0 +1,5 @@
+*.f32
+*.bin
+*.npy
+*.log
+indra
