@@ -1,0 +1,4 @@
+big/
+*.npy
+protos/*.npy
+__pycache__/
