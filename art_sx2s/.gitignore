@@ -1,0 +1,9 @@
+proto/
+*.npz
+*.npy
+*_raw*.png
+pinwheel
+__pycache__/
+pin/*.out
+pin/*.err
+*.log
