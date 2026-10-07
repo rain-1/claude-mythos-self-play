@@ -1,0 +1,6 @@
+proto/
+*.npz
+*.npy
+*.pkl
+*.log
+__pycache__/
