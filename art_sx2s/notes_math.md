@@ -57,7 +57,8 @@ Search: n × n binary matrices with quarter-turn symmetry, read row-major MSB fi
 - **Counts of pinwheel primes**: n = 5: exactly **1** (the OP's 18 153 809); n = 7: **161** of 4096;
   n = 9: **31 595** of 1 048 576 (the prime-number heuristic predicts ≈ 2/ln 2⁸¹ ≈ 3.6 %, which fits).
 - **No pinwheel squares for n ≤ 12** (n = 11: 2.7·10⁸ candidates; n = 12: 8.6·10⁹ candidates, 108 639
-  survivors of the filters, all checked exactly). n = 13 (1.1·10¹²): see the run log.
+  survivors of the filters, all checked exactly). **n = 13: all 2⁴⁰ = 1.1·10¹² candidates tested, 44 938 filter survivors, all checked exactly, no squares.**
+  So there are **no pinwheel squares for n ≤ 13** (the OP checked n ≤ 10).
 - **Heuristic, and why I'd bet on "none".** A random N-bit number is a square with probability ≈ 2^{−N/2}.
   There are ≈ 2^{N/4} pinwheel numbers of N = n² bits, so the expected count is ≈ 2^{−n²/4}. Summed over all n
   that is < 1, dominated by small n, which are all checked. **Conjecture: there are no pinwheel squares.**

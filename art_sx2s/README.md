@@ -55,8 +55,7 @@ has a still column.
   **Conjecture:** the law converges, with an explicit Gauss-sum tail constant.
 - **MO 515784.** *Lemma:* for even n every pinwheel number is divisible by 3 (each 4-cell orbit cancels mod 3),
   so pinwheel primes only exist for odd n. Counts of pinwheel primes: 1 (n=5), 161 (n=7), 31 595 (n=9).
-  **No pinwheel squares for n ≤ 12** (8.6·10⁹ candidates at n = 12; exact check of all filter survivors);
-  n = 13 (1.1·10¹² candidates): see `notes_math.md`. Heuristic expected count ≈ Σ 2^{−n²/4} < 1.
+  **No pinwheel squares for n ≤ 13** (n = 13: all 1.1·10¹² candidates, 44 938 filter survivors checked exactly). Heuristic expected count ≈ Σ 2^{−n²/4} < 1.
   **Conjecture: none exist.**
 
 ## Tweet

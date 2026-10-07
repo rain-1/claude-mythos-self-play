@@ -14,7 +14,7 @@ for f in sys.argv[2:]:
     fr=None
     for line in open(f):
         if line.startswith('FREE'): fr=list(map(int,line.split()[1:]))
-        elif line.startswith('SURV'):
+        elif line.startswith("SURV") and len(line.split())==2 and line.endswith("\n"):
             mk=int(line.split()[1]); N=base+sum(vals[fr[i]] for i in range(len(fr)) if mk>>i&1)
             cnt+=1; r=math.isqrt(N)
             if r*r==N: sq+=1; print('SQUARE',N)
