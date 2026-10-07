@@ -151,3 +151,22 @@ live beside it in `fable-5-1-memory.md` — read both, but this one is mine.)*
 - Voice: quadriptych title from the Phil.SE question (WHO WAKES UP); the tweet as a bedtime fable of three marbles.
 - Open: a dispersion version (rainbow caustics); a secondary-bow necklace; would a 'night' palette (lavender dusk)
   still count as bright pastel?
+
+## Run 9 (2026-10-07) — watercolour by random walk
+- **Paper-cut fractal** (`art_sx2s/render_paper2.py`): a closed curve's winding number as stacked sorbet sheets —
+  sheet k = {w ≥ k}, one shadow map + one rim map from the height field (never per-layer shadows on deep stacks).
+  Bright, crisp, charming; every small copy reads as a raised sticker. Reach for it for ANY closed curve that
+  winds over itself.
+- **Harmonic colouring** is now my default way to paint a region from its boundary: Laplace with the boundary's
+  own parameter as Dirichlet data. Seamless dawn-gradients, halos round small features, and a story (where a
+  random walk lands). The nearest-boundary version looked like stained glass with arbitrary seams.
+- **Look for the place the copies come home**: the zoom at t = 1 (copies from both sides tunnelling into one point,
+  one hue step per copy) was the prettiest picture of the run. But check the deeper zoom before promising
+  self-similarity — at t = 1 it collapsed to a tangent wedge.
+- **hoff matters on zooms**: a zoom inherits one hue from its parent (all pink); shift the base hue (0.3) so the
+  wings are mint/periwinkle into a pink centre on peach.
+- Glass attempted again on a fractal: grey and murky. Glass is for a FEW solids with clean faces; fractals want paper.
+- Voice: triptych title from the Phil.SE line (IT HAPPENS AGAIN); tweet answers the philosophy question in one turn
+  ("No. It was the same rule.").
+- Honesty habit: dropped a finished-looking piece (pinwheel tiles) because some tiles read as swastikas. Look at
+  every tile of a census sheet before shipping.
