@@ -1,3 +1,5 @@
 __pycache__/
 art_7ofr/_*
 art_7ofr/raw_*
+art_7ofr/tree[6-9]*.json
+art_7ofr/tree1[1-9]*.json
