@@ -14,6 +14,14 @@ def look(eye,target,up=(0,0,1)):
     r=np.cross(fwd,up); r/=np.linalg.norm(r); u=np.cross(r,fwd); return fwd,r,u
 
 def hit(o,d,maxit=None):
+    sh=d.shape[:-1]; o=np.broadcast_to(o,d.shape).reshape(-1,3); d=d.reshape(-1,3)
+    b=(o*d).sum(-1); c=(o*o).sum(-1)-1.25**2; mm=(b*b-c)>0
+    F=np.zeros(len(d),bool); S=np.zeros(len(d)); Pp=np.zeros((len(d),3))
+    if mm.any():
+        f_,s_,p_=_hit(o[mm],d[mm]); F[mm]=f_; S[mm]=s_; Pp[mm]=p_
+    return F.reshape(sh),S.reshape(sh),Pp.reshape(sh+(3,))
+
+def _hit(o,d):
     # convex body inside sphere radius 1.25: march to the first sign change, then bisect
     b=(o*d).sum(-1); c=(o*o).sum(-1)-1.25**2; disc=b*b-c
     m=disc>0; sq=np.sqrt(np.clip(disc,0,None)); s0=-b-sq; s1=-b+sq
@@ -55,12 +63,18 @@ def render(W=1024,out='_quartic.png',eye=(2.6,-3.4,2.2),nb=40,pts=None,t0=None,f
     zg=-(0.5**0.25)-0.02
     tg=(zg-eye[2])/d[...,2]; g=(tg>0)&~ok
     pg=eye+tg[...,None]*d
-    sh=np.zeros(g.shape)
     rng=np.random.default_rng(0)
-    for j in range(10):
+    Wl=min(W,512); yl,xl=np.mgrid[0:Wl,0:Wl]
+    sxl=(xl+0.5-Wl/2)/(Wl/2)*fov; syl=-(yl+0.5-Wl/2)/(Wl/2)*fov
+    dl=fwd+sxl[...,None]*r+syl[...,None]*u; dl/=np.linalg.norm(dl,axis=-1,keepdims=True)
+    tl=(zg-eye[2])/dl[...,2]; gl=tl>0; pl=eye+tl[...,None]*dl
+    shl=np.zeros(gl.shape)
+    for j in range(16):
         Lj=L+0.10*rng.normal(size=3); Lj/=np.linalg.norm(Lj)
-        okj,_,_=hit(pg[g]+1e-3*Lj,np.broadcast_to(Lj,pg[g].shape),maxit=30)
-        sh[g]+=okj/10
+        okj,_,_=hit(pl[gl]+1e-3*Lj,np.broadcast_to(Lj,pl[gl].shape))
+        shl[gl]+=okj/16
+    from PIL import Image as _I
+    sh=np.asarray(_I.fromarray(shl.astype(np.float32)).resize((W,W),_I.BICUBIC))
     shade=np.array([0.62,0.62,0.86])
     img[g]=img[g]*(1-0.30*sh[g][:,None]*(1-shade))
     # surface

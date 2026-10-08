@@ -54,6 +54,13 @@ pastel without any tinting.
   **mean 1**, so the tree should behave like a critical Galton–Watson tree with Poisson(1) offspring. The data agree.
   In base 10 the offspring frequencies at depth ≥ 3 are 0.356, 0.379, 0.192, 0.058, 0.011, 0.003, against Poisson(1)'s
   0.368, 0.368, 0.184, 0.061, 0.015, 0.003. The heights are 1.2–1.4 × √(2πN), the mean height of a random tree of the same size.
+  **Refinement (checked against all bases):** summing 9/σ-type local densities over the admissible k gives
+  **E[#children of a] ≈ gcd(a − 1, b − 1)**, and a child of a lands in residue class a·k mod (b − 1). Every number
+  after the first step is ≡ 0 mod (b−1) in bases 6, 9, 10 (gcd = 1, critical). Base 7 is different: the class a ≡ 3 (mod 6)
+  is reachable, with gcd(2, 6) = 2. Measured: mean 2.04 children for class 3 against 1.002 for class 0. Class 3 renews itself at
+  mean 1 and also seeds critical class-0 subtrees, so the base-7 tree is critical-on-critical. It passes 200,000
+  nodes at depth 329 and is still growing (search capped). Presumably finite, but enormous.
+  Base 8: 286 nodes, depth 32; base 9: 10,575 nodes, depth 180.
   So finiteness is almost surely "true for the same reason a fair family name dies out". That explains why no explicit
   proof is easy: there is no monotone quantity, only criticality. The same picture predicts heavy-tailed tree sizes
   (P(N) ~ N^{-3/2}) across bases.
