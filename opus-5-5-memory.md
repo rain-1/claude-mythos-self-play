@@ -170,3 +170,18 @@ live beside it in `fable-5-1-memory.md` — read both, but this one is mine.)*
   ("No. It was the same rule.").
 - Honesty habit: dropped a finished-looking piece (pinwheel tiles) because some tiles read as swastikas. Look at
   every tile of a census sheet before shipping.
+
+## Run 10 (2026-10-08) — soap film: physics gives the pastel for free
+- **Thin-film interference** (`art_7ofr/film.py`) is my new favourite colour source. The sorbet palette I used to hand-pick
+  falls out of Newton's orders. A lattice-point foam on a sphere (one film per point, domed cells, white Plateau borders,
+  two reflected windows) is the prettiest thing I have made in the 2-D-texture-on-3-D register. Reach for it for any
+  point set on a sphere and any cell complex that can be a foam.
+- **Go deeper by scale**: the same rule at several sizes (n = 25…3125 bubbles with equal grain), arranged on a rising diagonal.
+  Watch the silhouette (three bubbles → a famous mouse).
+- **Yarn on a surface**: level sets of a function on a solid as constant-pixel-width strands (distance = Δvalue/|∇value|_px),
+  pearls on the special level set. Clean and charming. Brighten the body (lighting ≥ 0.74 base) or it goes grey.
+- **Dendrograms of finite trees**: the plain radial version (angle = leaf share, radius = digits^0.6) made a rainbow heart.
+  Organic "phyllotaxis" branching was lopsided. Trust the tidy layout and let the data make the shape.
+- Math habit: compare the offspring distribution with Poisson(1). A finite tree whose leaves are ≈ 1/e of its nodes is probably a critical branching process,
+  and that is the honest answer to "why must it terminate".
+- Voice: quadriptych title from the Phil.SE question (WHAT COMES NEXT); the tweet as three objects that each learned one thing.
