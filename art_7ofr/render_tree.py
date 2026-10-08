@@ -7,6 +7,9 @@ WHEEL=np.array([[0.98,0.60,0.66],[1.0,0.74,0.58],[1.0,0.88,0.55],[0.78,0.92,0.58
 def wheel(u):
     u=(u%1.0)*(len(WHEEL)-1); i=int(min(u,len(WHEEL)-2)); fr=u-i
     return WHEEL[i]**(1-fr)*WHEEL[i+1]**fr
+EASE=0
+CX=0.5; CY=0.5; RR=0.44
+WK=0.8
 CORAL=np.array([0.95,0.40,0.38])
 
 def load(b):
@@ -17,6 +20,8 @@ def load(b):
     lg=[float(gmpy2.log(v))/math.log(b) if v>1 else 0.0 for v in val]
     return val,par,dep,lg
 
+LW=0.0
+ORG=0
 def layout(par,lg):
     n=len(par); ch=[[] for _ in range(n)]
     for i,p in enumerate(par):
@@ -24,7 +29,7 @@ def layout(par,lg):
     # leaf counts weighted toward long chains so deep tendrils get room
     w=[0.0]*n
     for i in range(n-1,-1,-1):
-        w[i]=1.0 if not ch[i] else sum(w[c] for c in ch[i])
+        w[i]=(1.0+lg[i]/max(lg)*LW) if not ch[i] else sum(w[c] for c in ch[i])
     ang=[0.0]*n; lo=[0.0]*n; hi=[0.0]*n
     lo[0],hi[0]=0.0,1.0
     order=[0]
@@ -37,13 +42,28 @@ def layout(par,lg):
         for c in cs:
             lo[c]=a; hi[c]=a+(hi[i]-lo[i])*w[c]/tot; a=hi[c]; order.append(c)
         ang[i]=(lo[i]+hi[i])/2
+    if ORG:
+        sub=[1]*n
+        for i in range(n-1,0,-1): sub[par[i]]+=sub[i]
+        ang=[0.0]*n; st=[0]
+        Lm=max(lg)
+        while st:
+            i=st.pop()
+            cs=sorted(ch[i],key=lambda c:-sub[c])
+            for j,c in enumerate(cs):
+                if i==0: ang[c]=j/len(cs)
+                else:
+                    k=(j+1)//2*(1 if j%2 else -1)
+                    rr=max(lg[c]/Lm,0.02)**0.6
+                    ang[c]=ang[i]+k*ORG*(0.6+0.4*math.log1p(sub[c]))/(rr*400)
+                st.append(c)
     return ch,w,ang
 
 def render(b=3,W=2048,out='_tree.png',ss=3,rmax=None,gamma=0.75,ang0=0.0,title=None):
     val,par,dep,lg=load(b)
     ch,w,ang=layout(par,lg)
     n=len(par); Lmax=max(lg) if rmax is None else rmax
-    S=W*ss; cx=cy=S/2; R=0.44*S
+    S=W*ss; cx=S*CX; cy=S*CY; R=RR*S
     def pos(i,a=None):
         r=R*(lg[i]/Lmax)**gamma if lg[i]>0 else 0
         t=2*math.pi*((ang[i] if a is None else a)+ang0)
@@ -62,10 +82,10 @@ def render(b=3,W=2048,out='_tree.png',ss=3,rmax=None,gamma=0.75,ang0=0.0,title=N
     # edges: polar curve from parent radius/angle to child radius/angle (angle eases in first)
     for i in range(1,n):
         p=par[i]
-        wd=max(1.2*ss,ss*(1.0+1.35*math.log1p(sub[i])))*W/2048
+        wd=max(1.0*ss,ss*(0.6+WK*math.log1p(sub[i])))*W/2048
         pts=[]
         for s in np.linspace(0,1,24):
-            a=ang[p]+(ang[i]-ang[p])*min(1,s*2.2)**0.8
+            a=ang[p]+(ang[i]-ang[p])*(min(1,s*EASE)**0.8 if EASE else s)
             r=lg[p]+(lg[i]-lg[p])*s
             rr=R*(r/Lmax)**gamma if r>0 else 0
             t=2*math.pi*(a+ang0); pts.append((cx+rr*math.sin(t),cy-rr*math.cos(t)))
@@ -91,4 +111,6 @@ def render(b=3,W=2048,out='_tree.png',ss=3,rmax=None,gamma=0.75,ang0=0.0,title=N
     img.save(out); print(out,n,'nodes','leaves',sum(1 for i in range(n) if not ch[i]),'max digits',Lmax)
 
 if __name__=="__main__":
-    render(int(sys.argv[1]),W=int(sys.argv[2]),out=sys.argv[3])
+    import render_tree as M
+    M.LW=float(sys.argv[4]); M.EASE=float(sys.argv[5]); M.ORG=float(sys.argv[7]) if len(sys.argv)>7 else 0
+    M.render(int(sys.argv[1]),W=int(sys.argv[2]),out=sys.argv[3],gamma=float(sys.argv[6]))

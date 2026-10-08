@@ -8,6 +8,7 @@ def gradf(p): return np.stack([4*p[...,0]**3,4*p[...,1]**3,8*p[...,2]**3],-1)
 def tfun(p):
     x,y,z=p[...,0],p[...,1],p[...,2]; return 2*(x*y+z*z)/(x*x+y*y+1)
 
+TARGET=(0,0,-0.08)
 def look(eye,target,up=(0,0,1)):
     fwd=np.array(target,float)-eye; fwd/=np.linalg.norm(fwd)
     r=np.cross(fwd,up); r/=np.linalg.norm(r); u=np.cross(r,fwd); return fwd,r,u
@@ -42,7 +43,7 @@ def wheel(u):
     return WHEEL[i]**(1-fr)*WHEEL[i+1]**fr
 
 def render(W=1024,out='_quartic.png',eye=(2.6,-3.4,2.2),nb=40,pts=None,t0=None,fov=0.42,yarn=0.004):
-    eye=np.array(eye,float); fwd,r,u=look(eye,(0,0,-0.08))
+    eye=np.array(eye,float); fwd,r,u=look(eye,TARGET)
     yy,xx=np.mgrid[0:W,0:W]
     sx=(xx+0.5-W/2)/(W/2)*fov; sy=-(yy+0.5-W/2)/(W/2)*fov
     d=fwd+sx[...,None]*r+sy[...,None]*u; d/=np.linalg.norm(d,axis=-1,keepdims=True)

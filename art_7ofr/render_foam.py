@@ -51,13 +51,13 @@ def shade(x,y,U,area,tree,R,P):
         cc,eps=P['cap']
         ang=np.arccos(np.clip(Ns@cc,-1,1))
         site_in=np.arccos(np.clip(c1@cc,-1,1))<eps
-        e=np.abs(ang-eps)/(px*1.0)
-        ring=np.clip(2.2-e,0,1)
+        e=np.abs(ang-eps)/px
+        ring=np.clip(2.2*P['sc']-e,0,1)
         col=np.where((site_in&(rim>0.3))[:,None],col*(1-0.8*rim[:,None])+0.8*rim[:,None]*CORAL,col)
         col=col*(1-ring[:,None])+ring[:,None]*CORAL
     if P.get('dots'):
         dpx=dd[:,0]/px
-        dot=np.clip(4.0-dpx,0,1)
+        dot=np.clip(4.0*P['sc']-dpx,0,1)
         col=col*(1-dot[:,None])+dot[:,None]*np.where((P.get('cap') is not None and True) and site_in[:,None],CORAL,np.array([0.55,0.5,0.7]))
     # reflected windows on the domed cells and on the whole sphere
     V=np.array([0,0,1.0])
@@ -87,7 +87,7 @@ def render(n=1001, W=1024, out='_foam.png', ss=2, tilt=(0.42,0.63,0.17), strip=2
             K=np.array([[0,-k[2],k[1]],[k[2],0,-k[0]],[-k[1],k[0],0]])
             R=(np.eye(3)+sn*K+(1-cs)*K@K)@R
     Ws=W*ss; Rp=lay[2]*Ws; cxy=lay[0]*Ws; cyy=lay[1]*Ws
-    P['px']=1.0/(lay[2]*W)
+    P['px']=1.0/(lay[2]*W); P['sc']=W/1024; P['bw']=P['bw']*P['sc']**0.5
     img=np.empty((Ws,Ws,3),np.float32)
     xx=np.arange(Ws)
     for y0 in range(0,Ws,strip):
@@ -111,7 +111,7 @@ def render(n=1001, W=1024, out='_foam.png', ss=2, tilt=(0.42,0.63,0.17), strip=2
             dv=px1-px0; L=np.linalg.norm(dv); dv/=L
             tq=np.clip((X-px0[0])*dv[0]+(Y-px0[1])*dv[1],0,L)
             dist=np.hypot(X-px0[0]-tq*dv[0],Y-px0[1]-tq*dv[1])
-            th=np.clip(1.6*ss-dist,0,1)*(tq>P['cap'][1]*Rp*1.05)*(dl>1)*(r2>1)
+            th=np.clip(1.6*ss*P['sc']-dist,0,1)*(tq>P['cap'][1]*Rp*1.05)*(dl>1)*(r2>1)
             bg=bg*(1-0.8*th[...,None])+0.8*th[...,None]*CORAL
             il=dl<1
             if il.any():
@@ -120,7 +120,7 @@ def render(n=1001, W=1024, out='_foam.png', ss=2, tilt=(0.42,0.63,0.17), strip=2
                 Pl['bw']=P['bw']*1.6
                 bg[il]=shade(lxs,lys,U,area,tree,R,Pl)
                 # glass rim of the loupe
-                rr=np.clip(1-np.abs(dl-1)*lr*Ws/(3.0*ss),0,1)
+                rr=np.clip(1-np.abs(dl-1)*lr*Ws/(3.0*ss*P['sc']),0,1)
                 bg=bg*(1-0.9*rr[...,None])+0.9*rr[...,None]*np.array([0.97,0.55,0.52])
                 gl=np.clip((dl-0.93)/0.07,0,1)*(dl<1)
                 bg=bg+0.25*gl[...,None]*(1-bg)
