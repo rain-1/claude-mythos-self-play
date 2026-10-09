@@ -3,7 +3,7 @@
 **Setting.** A thin radial needle of length R spins about its hub at k turns per frame. A rolling shutter reads
 row y (measured from the hub row) at a time proportional to y, so row y sees the needle at angle
 θ(y) = M + c·y, where c = 2πk/H and M is the phase. Scale so that R = 1 and put **e = c·R** (the "eccentricity"
-at the tip). Row y meets the needle segment {(r cos θ, r sin θ) : 0 ≤ r ≤ 1} iff r = y / sin θ(y) ∈ [0, 1].
+at the tip; it is Kepler's e, not Euler's number, which never appears). Row y meets the needle segment {(r cos θ, r sin θ) : 0 ≤ r ≤ 1} iff r = y / sin θ(y) ∈ [0, 1].
 So the rows that show the needle form the set
 
   S = { y ∈ [−1, 1] : 0 ≤ y / sin(M + e y) ≤ 1 },  with y = 0 (the hub) always in S.
@@ -32,9 +32,9 @@ from 0; if sin M < 0 it is the other way round. So exactly one side merges with 
 where A± counts the components of S± that do not reach y = 0.
 
 **2. One positive hump, at most one piece.** Put θ = M + e y. The positive humps of the sine are the intervals
-H_m = [2πm, 2πm + π]. Points of S₊ need sin θ ≥ y > 0, so they lie inside humps, and two humps are separated by
+J_m = [2πm, 2πm + π]. Points of S₊ need sin θ ≥ y > 0, so they lie inside humps, and two humps are separated by
 rows where sin θ ≤ 0 < y. On one hump, h(y) = sin(M + e y) − y is concave (a concave function of an affine
-argument, minus a linear term). So {h ≥ 0} ∩ H_m is an interval. **Each hump contributes at most one component of S₊.**
+argument, minus a linear term). So {h ≥ 0} ∩ J_m is an interval. **Each hump contributes at most one component of S₊.**
 
 **3. Which humps contribute.**
 - *A hump whose peak θ = π/2 + 2πm lies in (M, M + e]* contributes exactly one component: at the peak,
@@ -42,8 +42,8 @@ argument, minus a linear term). So {h ≥ 0} ∩ H_m is an interval. **Each hump
   Its peak lies in (M, M + e] exactly when M mod 2π ∈ [0, π/2); this needs e ≥ π/2.
 - *A hump with no peak in (M, M + e]* is either the hub hump with M mod 2π ∈ (π/2, π), or the last, partial
   hump at the top end y = 1. Its peak lies just beyond, at θ = M + e + δ with δ ∈ (0, π/2).
-  It contributes iff some x ∈ [δ, π/2] has cos x ≥ 1 − (x − δ)/e. This is the inequality sin θ ≥ y rewritten
-  with x = peak − θ and u = 1 − y = (x − δ)/e. Call this event the **end bonus**.
+  It contributes iff some t ∈ [δ, π/2] has cos t ≥ 1 − (t − δ)/e. This is the inequality sin θ ≥ y rewritten
+  with t = peak − θ and u = 1 − y = (t − δ)/e. Call this event the **end bonus**.
 
 So, with P₊ the number of peaks π/2 + 2πm in (M, M + e],
 
@@ -60,15 +60,15 @@ E[P±] = e/2π exactly. Also P(cos M > 0) = ½. Therefore
   E[pieces] = 1 + e/π − ½ + B(e) = e/π + ½ + B(e),  B(e) = P(bonus₊) + P(bonus₋) ≥ 0.
 
 **5. The bonus is O(1/e).** δ is uniform on an interval of length 2π, independent of everything that matters here.
-- *Upper bound.* On |x| ≤ π/2, 1 − cos x = 2 sin²(x/2) ≥ 2x²/π². So a bonus needs 2x²/π² − x/e + δ/e ≤ 0
-  for some x. Such an x exists only if the discriminant is ≥ 0, i.e. δ ≤ π²/(8e). Hence P(bonus±) ≤ π/(16e).
-- *Lower bound.* 1 − cos x ≤ x²/2. If δ ≤ 1/(2e), then x = 1/e satisfies x²/2 ≤ (x − δ)/e (the discriminant of
-  x²/2 − x/e + δ/e is 1/e² − 2δ/e ≥ 0), and x ∈ [δ, π/2] for e ≥ π. Hence P(bonus±) ≥ 1/(4πe).
+- *Upper bound.* On |t| ≤ π/2, 1 − cos t = 2 sin²(t/2) ≥ 2t²/π². So a bonus needs 2t²/π² − t/e + δ/e ≤ 0
+  for some t. Such a t exists only if the discriminant is ≥ 0, i.e. δ ≤ π²/(8e). Hence P(bonus±) ≤ π/(16e).
+- *Lower bound.* 1 − cos t ≤ t²/2. If δ ≤ 1/(2e), then t = 1/e satisfies t²/2 ≤ (t − δ)/e (the discriminant of
+  t²/2 − t/e + δ/e is 1/e² − 2δ/e ≥ 0), and t ∈ [δ, π/2] for e ≥ π. Hence P(bonus±) ≥ 1/(4πe).
 
 Adding the two sides gives 1/(2πe) ≤ B(e) ≤ π/(8e). ∎
 
 **Remark (sharp constant).** The lower-bound argument is asymptotically tight, because near the peak
-1 − cos x = x²/2 + O(x⁴). So B(e) = 1/(2πe) + O(e⁻²).
+1 − cos t = t²/2 + O(t⁴). So B(e) = 1/(2πe) + O(e⁻²).
 
 ## Numerical check (`pieces_proof_check.py`)
 The proof's per-hump count agrees with direct pixel counting, which also double-checks the identity in step 3.
