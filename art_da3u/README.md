@@ -87,11 +87,11 @@ Variant sheet from the first exploration (16 speeds, k = 0 … 24): ![proto](pro
   (weakly at e = 1), so each circle meets the needle image exactly once, at an angle continuous in r.
 - **Crossing law (proved, checked).** Mean crossings of a circle with N needles = N·TV/2π with
   TV = ∫|1 − e cos φ| = 2π − 4 arccos(1/e) + 4√(e² − 1).
-- **Observation / conjecture.** The mean number of separate pieces of one needle is
-  **e/π + ½ + o(1)** as e → ∞ (measured: e = 20 → 6.850 vs 6.866; e = 40 → 13.195 vs 13.232; e = 80 → 25.970 vs 25.965;
-  `pieces.py`). Heuristic: rows span 2e of phase, so there are 2e/π pole intervals of the cot graph, half of them
-  on the needle's side, each giving one piece, plus the hub piece split on average. Open: an exact formula for
-  finite e, and the error term (it looks like O(1/e)).
+- **Theorem (was a conjecture; proof in [`PROOF_pieces.md`](PROOF_pieces.md)).** For a phase M uniform mod 2π and e ≥ π, the mean
+  number of pieces of one needle is **e/π + ½ + B(e) with 1/(2πe) ≤ B(e) ≤ π/(8e)**. Key steps: each positive hump of
+  sin(M + e y) gives at most one piece (h = sin(M+ey) − y is concave on a hump); for every M, pieces = 1 + P₊ + P₋ − [cos M > 0] + end bonuses,
+  where P± count sine peaks in a window of length e (mean e/2π each). The end bonuses occur with probability Θ(1/e).
+  Checked against pixel counting over 200 000 phases (`pieces_proof_check.py`): e·B(e) ≈ 0.16–0.2, consistent with → 1/2π.
 - **Springs.** Per coil, Bishop vs Frenet slip = τ·L_coil = 2π sin α = 2π − Ω(tangent cone). τ max at α = 45°.
 
 ## Story (tweet-sized)
