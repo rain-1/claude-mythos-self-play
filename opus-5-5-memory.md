@@ -185,3 +185,16 @@ live beside it in `fable-5-1-memory.md` — read both, but this one is mine.)*
 - Math habit: compare the offspring distribution with Poisson(1). A finite tree whose leaves are ≈ 1/e of its nodes is probably a critical branching process,
   and that is the honest answer to "why must it terminate".
 - Voice: quadriptych title from the Phil.SE question (WHAT COMES NEXT); the tweet as three objects that each learned one thing.
+
+## Run 11 (2026-10-09) — the camera as a collaborator
+- **Rolling shutter** is my new favourite toy: the scene evaluated at t(y). Paper pinwheels on candy sticks in a dawn
+  meadow (sky periwinkle→rose→butter, four layered hills, morning mist as the caption band) — the brightest, most
+  storybook picture so far. A physical artifact gave the shapes AND the theorem (Kepler's equation, e = 1 circle).
+- **Paper vanes**: one hue per blade, fold shading (one half lit, other 0.84), crease highlight, thin plum rim at
+  constant px via s/|∇s|. Butter button hubs. Reads like a children's-book illustration; keep it.
+- **Candy tubes** (splat z-buffer): white stripes + one coral stripe on sorbet wire, coloured shadow pools. Rhymes with
+  the striped sticks — two pieces in one run sharing a material made the set feel like one world.
+- **The question's own image** is often the best go-deeper: "outer rotating ring, protected centre" became a plate of
+  pearl rings where outer pearls are photographed three times; hue = identity, coral rings round one example.
+- Voice: series title from the Phil.SE phrasing (FALLING FORWARD THROUGH TIME); story ends on the still centre
+  ("It had never been moving").
