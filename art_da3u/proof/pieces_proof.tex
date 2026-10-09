@@ -1,0 +1,70 @@
+\documentclass[10pt]{article}
+\usepackage[a4paper,margin=1.6cm]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{mathptmx}
+\usepackage{booktabs}
+\pagestyle{empty}
+\setlength{\parskip}{3pt}\setlength{\parindent}{0pt}
+\newtheorem*{theorem}{Theorem}
+\newtheorem*{remark}{Remark}
+\begin{document}
+\begin{center}
+{\Large\bfseries How many pieces does a rolling-shutter needle break into?}\\[2pt]
+{\small Companion to \emph{Falling Forward Through Time} (\texttt{art\_da3u})}
+\end{center}
+\vspace{-4pt}
+\textbf{Setting.} A thin radial needle of length $R=1$ spins about its hub; a rolling shutter reads row $y$ (measured from the hub row) at a time proportional to $y$, so row $y$ sees the needle at angle $\theta(y)=M+ey$, where $e=2\pi kR/H$ ($k$ turns per frame, frame height $H$). Row $y$ meets the needle iff $r=y/\sin\theta(y)\in[0,1]$, so the visible rows are
+\[
+S=\{\,y\in[-1,1]:\ 0\le y/\sin(M+ey)\le 1\,\}\cup\{0\}.
+\]
+On $S$ the image point $x=y\cot\theta(y)$ is continuous, and distinct components of $S$ occupy separated bands of rows; hence \emph{pieces} $=$ number of connected components of $S$.
+
+\begin{theorem}
+Let $M$ be uniform mod $2\pi$ and $e\ge\pi$. Then
+\[
+\mathbb{E}[\text{pieces}]=\frac{e}{\pi}+\frac12+B(e),\qquad \frac{1}{2\pi e}\le B(e)\le\frac{\pi}{8e}.
+\]
+\end{theorem}
+
+\begin{proof}
+\textbf{1. Split at the hub.} For $y>0$ the condition is $\sin(M+ey)\ge y$; for $y=-s<0$ it is $\sin(es-M)\ge s$. With $S_+(M)=\{y\in(0,1]:\sin(M+ey)\ge y\}$ we have $S=S_+(-M)^{\text{refl}}\cup\{0\}\cup S_+(M)$. Almost surely $\sin M\ne0$, and exactly one side reaches $y=0$ (the $+$ side iff $\sin M>0$). Hence $\text{pieces}=1+A_++A_-$, where $A_\pm$ counts the components of $S_\pm$ not reaching $0$.
+
+\textbf{2. One hump, at most one piece.} Write $\theta=M+ey$. Points of $S_+$ need $\sin\theta\ge y>0$, so they lie in positive humps $H_m=[2\pi m,2\pi m+\pi]$, and different humps are separated by rows with $\sin\theta\le 0<y$. On a hump $h(y)=\sin(M+ey)-y$ is concave, so $\{h\ge0\}\cap H_m$ is an interval: each hump gives at most one component.
+
+\textbf{3. Exact count.} A hump whose peak $\pi/2+2\pi m$ lies in $(M,M+e]$ gives exactly one component (at the peak $\sin\theta=1\ge y$), except the hump containing $\theta=M$ with $\sin M>0$, which is glued to the hub; its peak lies in $(M,M+e]$ iff $M\bmod 2\pi\in[0,\pi/2)$ (using $e\ge\pi/2$). The only other hump that can contribute is the partial hump at the end $y=1$, whose peak lies at $M+e+\delta$, $\delta\in(0,\pi/2)$; with $x=\text{peak}-\theta$ and $1-y=(x-\delta)/e$ it contributes iff
+\[
+\exists\,x\in[\delta,\pi/2]:\quad 1-\cos x\le (x-\delta)/e \qquad(\text{the \emph{end bonus}}).
+\]
+With $P_\pm$ the number of peaks in the window of length $e$ on each side, and since $[M\bmod2\pi\in[0,\tfrac\pi2)]+[-M\bmod2\pi\in[0,\tfrac\pi2)]=[\cos M>0]$, for every $M$:
+\[
+\text{pieces}=1+P_++P_--[\cos M>0]+\text{bonus}_++\text{bonus}_-.
+\]
+
+\textbf{4. Average.} A lattice $\pi/2+2\pi\mathbb{Z}$ in a window of length $e$ with uniform offset has mean count $e/2\pi$, so $\mathbb{E}P_\pm=e/2\pi$; and $\Pr(\cos M>0)=\tfrac12$. Thus $\mathbb{E}[\text{pieces}]=e/\pi+\tfrac12+B(e)$ with $B(e)=\Pr(\text{bonus}_+)+\Pr(\text{bonus}_-)\ge0$, where $\delta$ is uniform on an interval of length $2\pi$.
+
+\textbf{5. Bounds on the bonus.} \emph{Upper:} for $|x|\le\pi/2$, $1-\cos x=2\sin^2(x/2)\ge 2x^2/\pi^2$, so a bonus requires $\tfrac{2}{\pi^2}x^2-\tfrac{x}{e}+\tfrac{\delta}{e}\le0$ for some $x$, i.e.\ discriminant $\tfrac1{e^2}-\tfrac{8\delta}{\pi^2e}\ge0$, i.e.\ $\delta\le\pi^2/(8e)$. So $\Pr(\text{bonus}_\pm)\le\pi/(16e)$.
+\emph{Lower:} $1-\cos x\le x^2/2$; if $\delta\le 1/(2e)$ then $x=1/e\in[\delta,\pi/2]$ satisfies $x^2/2\le(x-\delta)/e$. So $\Pr(\text{bonus}_\pm)\ge 1/(4\pi e)$. Summing both sides gives $\tfrac1{2\pi e}\le B(e)\le\tfrac{\pi}{8e}$.
+\end{proof}
+
+\begin{remark}
+Since $1-\cos x=x^2/2+O(x^4)$, the lower bound is asymptotically tight: $B(e)=\frac{1}{2\pi e}+O(e^{-2})$ (proof sketched, not written in full).
+\end{remark}
+
+\textbf{Numerical check} (200\,000 random phases per $e$; the per-hump count of step 3 agrees with direct pixel counting):\\[2pt]
+\centerline{\small
+\begin{tabular}{rrrrr}
+\toprule
+$e$ & $\mathbb{E}[\text{pieces}]$ & $e/\pi+\tfrac12$ & $B(e)$ & $e\,B(e)$\\
+\midrule
+3 & 1.5079 & 1.4549 & $+0.0530$ & 0.159\\
+7 & 2.7501 & 2.7282 & $+0.0220$ & 0.154\\
+20 & 6.8754 & 6.8662 & $+0.0092$ & 0.185\\
+40 & 13.2369 & 13.2324 & $+0.0045$ & 0.180\\
+80 & 25.9675 & 25.9648 & $+0.0027$ & 0.217\\
+\bottomrule
+\end{tabular}}
+\vspace{2pt}
+{\small Standard errors $\approx0.001$ in the mean ($\pm0.08$ in $eB$ at $e=80$); values are consistent with $eB(e)\to1/(2\pi)\approx0.159$. The theorem's bounds assume $e\ge\pi$ (the $e=3$ row is outside them).}
+
+\textbf{In words.} Each half-turn of the needle per frame height adds one piece above the hub and one below; the hub keeps one extra piece on the side the needle starts on (the $+1-\tfrac12$); and rarely a sliver catches the top or bottom row just before its peak (the $1/(2\pi e)$).
+\end{document}

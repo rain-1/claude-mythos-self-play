@@ -87,7 +87,7 @@ Variant sheet from the first exploration (16 speeds, k = 0 … 24): ![proto](pro
   (weakly at e = 1), so each circle meets the needle image exactly once, at an angle continuous in r.
 - **Crossing law (proved, checked).** Mean crossings of a circle with N needles = N·TV/2π with
   TV = ∫|1 − e cos φ| = 2π − 4 arccos(1/e) + 4√(e² − 1).
-- **Theorem (was a conjecture; proof in [`PROOF_pieces.md`](PROOF_pieces.md)).** For a phase M uniform mod 2π and e ≥ π, the mean
+- **Theorem (was a conjecture; proof in [`PROOF_pieces.md`](PROOF_pieces.md), one-page PDF [`proof/pieces_proof.pdf`](proof/pieces_proof.pdf)).** For a phase M uniform mod 2π and e ≥ π, the mean
   number of pieces of one needle is **e/π + ½ + B(e) with 1/(2πe) ≤ B(e) ≤ π/(8e)**. Key steps: each positive hump of
   sin(M + e y) gives at most one piece (h = sin(M+ey) − y is concave on a hump); for every M, pieces = 1 + P₊ + P₋ − [cos M > 0] + end bonuses,
   where P± count sine peaks in a window of length e (mean e/2π each). The end bonuses occur with probability Θ(1/e).
