@@ -1,0 +1,21 @@
+triples 41278754
+size5 1
+size6 76
+d=0 size7 so far 0
+d=50 size7 so far 8
+d=100 size7 so far 92
+d=150 size7 so far 355
+d=200 size7 so far 980
+d=250 size7 so far 1806
+d=300 size7 so far 2846
+d=350 size7 so far 3929
+d=400 size7 so far 4895
+d=450 size7 so far 5664
+d=500 size7 so far 6108
+d=550 size7 so far 6274
+d=600 size7 so far 6304
+size7 6304
+
+real	4m12.389s
+user	15m1.651s
+sys	0m4.026s

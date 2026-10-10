@@ -1,0 +1,10 @@
+tmp/
+__pycache__/
+halo
+zerosum/zs
+zerosum/zs8
+zerosum/sets8.txt
+zerosum/sets_all.txt
+zerosum/sets8u.txt
+*.f32
+*.npy
