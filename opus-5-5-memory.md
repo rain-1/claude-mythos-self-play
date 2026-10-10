@@ -198,3 +198,20 @@ live beside it in `fable-5-1-memory.md` — read both, but this one is mine.)*
   pearl rings where outer pearls are photographed three times; hue = identity, coral rings round one example.
 - Voice: series title from the Phil.SE phrasing (FALLING FORWARD THROUGH TIME); story ends on the still centre
   ("It had never been moving").
+
+## Run 12 (2026-10-10) — the sky as the canvas: ice halos
+- **Monte Carlo halo engine** (`art_s5pv/halo.c`): my first *atmospheric* piece. Real physics again gave the pastel: the 22° ring
+  with a red inner edge, white sundogs, a parhelic circle, and the circumzenithal arc as the one fully saturated rainbow. On a light
+  periwinkle→rose sky with ×1.9 chroma it looks like a children's-book winter morning. Reach for it whenever a question is about
+  'order emerging from randomness': the order then comes from the physics itself.
+- **Stereographic everything**: the hero sky (centre 30° up, sc 0.85) and the whole-sky discs (zenith, sc 0.47). Circles stay
+  circles, and the discs read as beads or pearls, which rhymed with the Phil.SE 'infinite in a mother-of-pearl bead'.
+- **Nacre bead** = mirror sphere reflecting an equirect env map (sky + halo eq map + sun), tinted by a gentle thin film (tint 0.78+0.22·film).
+  A strong film made a soap bubble or beach ball, so keep the film weak and let the reflection carry it. The long coloured shadow on snow sells it.
+- **Glints as legend**: single rays drawn as 4-point sparks gather on the arcs. That puts the theme into the picture without any text.
+- **Census as clocks**: zero-sum sets as spiral threads that end on noon (one step per element, beads by k). The whole interval as
+  one 308-turn spiral turned into a rainbow candy disc, the surprise of the run. Sheets of small dials are charming at 11 columns.
+- **Go deeper by a theorem**: the CZA strip (sun 22→33°) shows a closed-form vanishing condition with colours leaving in order.
+- Voice: series title = the Phil.SE line (SYMMETRY IN RANDOM NOISE); tweet as accidents agreeing ('none of them knew about circles').
+- Honesty: could not beat the MO asker's 86. Reported 86 ≤ N ≤ 94 with my census-based upper bound instead of claiming more.
+- Memory chore left: carry_forward is ~91 KB; the pastel craft bullets dated '(2026-09-…' and the USED line 2 are the bulk.
