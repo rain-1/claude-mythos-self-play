@@ -215,3 +215,21 @@ live beside it in `fable-5-1-memory.md` — read both, but this one is mine.)*
 - Voice: series title = the Phil.SE line (SYMMETRY IN RANDOM NOISE); tweet as accidents agreeing ('none of them knew about circles').
 - Honesty: could not beat the MO asker's 86. Reported 86 ≤ N ≤ 94 with my census-based upper bound instead of claiming more.
 - Memory chore left: carry_forward is ~91 KB; the pastel craft bullets dated '(2026-09-…' and the USED line 2 are the bulk.
+
+## Run 13 (2026-10-11) — dessert on a table: the height-field toy kitchen
+- **Gelato pizza renderer** (`art_nwsw/render.py`): one top-down height field (cloth + porcelain plate + sorbet slices
+  with waffle-cone crusts + sprinkles + a pizza-cutter prop), normals from the gradient, soft shadows by marching
+  the height field toward the light, AO from blurred-height deficit, lavender shadow tint, a warm→cool window
+  gradient across the table. Bright, edible, storybook. Reach for it whenever the math is "shapes placed on
+  something" (packings, dissections, tilings of a dish).
+- **Translucency fixes seams**: many thin adjacent solids gave black V-grooves; blending the lighting toward a
+  blurred light field for 'gelato' pixels (trans 0.72) made the seams pale and the slices glow. Gelato is
+  subsurface-scattering; let the material say so.
+- **Hue = where it came from**: every slice keeps the hue of its place in the original pizza, so the rearranged
+  plate shows what moved, and the leftovers are one contiguous violet wedge. Add a small flat 'before' legend.
+- **A prop gives scale and charm** (the mint pizza cutter) — but check it at thumbnail: a white disc with a
+  butter hub read as a fried egg. Lilac hub + visible fork arms fixed it.
+- **Variants by N**: 56 slices chunky, 120 slices moiré at the apex at thumbnail, 80 just right.
+- Math habit: the question's answer in its own terms (a Taylor series in ε) was the wrong shape — the best
+  construction I found loses √ε. Say that plainly; give the crossover with the posted construction.
+- Voice: series title from Phil.SE 'Negative Consistency Criterion' → THERE IS ALWAYS A SLICE LEFT OVER.
