@@ -65,7 +65,21 @@ of the right half-disc beating π/3.
 
 `search2.py`: squared penetration of sampled boundary + interior points, L-BFGS from random
 starts, each hit re-checked (shapely area + sampled depth + exact radius). "Best found", not proved.
-(Table filled in from `s2_M*.json`, see README.)
+
+| M | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| slices that fit | 1 | 1 | 3 | **4** | 5 | 6 | 6 | 6 | 7 | 7 | 8 | 10 |
+
+* **M = 6: four of six fit**, so P(3) ≥ 2/3, not the 1/2 the question guessed (verified: shapely overlap area 0
+  at 4000 arc points, sampled penetration depth ≤ 2·10⁻⁸ at 40 000 samples per piece, every sector's farthest
+  point ≤ 0.99880 < 0.999). The four 60° slices point in four directions; their tips sit within 0.37 of the centre
+  and are nudged apart, each one pulled back opposite its own direction. M = 4 (quarters): one, matching the question.
+* M = 8: six of eight (3/4).
+* Lesson for the limit: several fans whose apexes sit *near* the centre can coexist when each apex is offset
+  backwards from its own leaves; "one big fan" is not a law. A seeded optimiser starting from the M = 6 pinwheel
+  plus extra thin fans reached ≈ 0.82 with small residual overlaps and nothing valid above 5/6, so the conjecture
+  above stands, with that caveat.
+
 
 Also: there is always at least one slice left over, since the slices' total area π exceeds the
 plate's π(1 − ε)². (The Phil.SE question beside this one — "a set is consistent iff there is a

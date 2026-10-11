@@ -49,7 +49,12 @@ plum = tuple(int(255 * x) for x in PLUM); coral = tuple(int(255 * x) for x in CO
 fN = ImageFont.truetype(FONT, int(60 * k)); fS = ImageFont.truetype(FONT_I, int(46 * k))
 for (M, cx, cy) in cells:
     kk = data[M]['best']; fr = Fraction(kk, M)
-    D.text((cx, cy + 1.30 * U + 100 * k), f"{kk} of {M}", font=fN, fill=plum, anchor="ms")
+    hot = (M == 6 and kk > 3) or (M == 4 and kk > 1)
+    D.text((cx, cy + 1.30 * U + 100 * k), f"{kk} of {M}", font=fN, fill=coral if hot else plum, anchor="ms")
+    if hot:
+        R = 1.30 * U + 18 * k
+        for a in np.arange(0, 360, 4):
+            D.arc([cx - R, cy - R, cx + R, cy + R], a, a + 2.2, fill=coral, width=max(1, int(4 * k)))
     D.text((cx, cy + 1.30 * U + 160 * k), f"slices of {360//M if 360 % M == 0 else round(360/M,1)}°", font=fS, fill=plum, anchor="ms")
 fT = ImageFont.truetype(FONT, int(104 * k)); f2 = ImageFont.truetype(FONT_I, int(54 * k)); fM = ImageFont.truetype(FONT_M, int(33 * k))
 x0, y0 = 130 * k, 150 * k
@@ -57,5 +62,6 @@ D.text((x0, y0), "How Many Still Fit", font=fT, fill=plum)
 D.text((x0, y0 + 150 * k), "Cut a pizza into M equal slices and carry them to a plate a hair smaller than the pizza.", font=f2, fill=plum)
 D.text((x0, y0 + 222 * k), "The best packing found for each M; the rest stay in the kitchen.", font=f2, fill=plum)
 D.text((x0, y0 + 312 * k), "MathOverflow 515908 · plate radius 0.999 · L-BFGS from random and from fan-shaped starts · every packing re-checked (overlap area, sampled depth, exact radius) · best found, not proved", font=fM, fill=plum)
+D.text((x0, y0 + 360 * k), "coral: more than the question's posted value (it guessed 3 of 6; four sixty-degree slices fit, their tips nudged apart around the centre)", font=fM, fill=coral)
 im.save(out)
 print("saved")
