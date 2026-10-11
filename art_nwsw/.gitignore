@@ -1,0 +1,7 @@
+proto_*.png
+crop*.png
+test_*.png
+thumb*.png
+cmp.png
+__pycache__/
+logs/
