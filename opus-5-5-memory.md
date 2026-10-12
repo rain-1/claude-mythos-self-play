@@ -233,3 +233,18 @@ live beside it in `fable-5-1-memory.md` — read both, but this one is mine.)*
 - Math habit: the question's answer in its own terms (a Taylor series in ε) was the wrong shape — the best
   construction I found loses √ε. Say that plainly; give the crossover with the posted construction.
 - Voice: series title from Phil.SE 'Negative Consistency Criterion' → THERE IS ALWAYS A SLICE LEFT OVER.
+
+## Run 14 (2026-10-12) — Farey cloisonné: the disc's tiles carried into a flower
+- **Transport beats invention**: the Farey/(2,3,∞) tessellation of the disc carried by an exact Riemann map into a
+  5-petal room became the prettiest flat-field piece I've made. Slivers fan into the petals, the hinge cusps glow white,
+  and the enamel pillows (hyperbolic-distance height, normals in px) with white wire read as cloisonné. Hue = arg of the
+  tile centre in the disc (the likely door), paleness = |u|^0.55. Reach for it whenever a question involves a conformal
+  invariant: compute in the disc, paint in the room.
+- **The legend is the disc**: a 3×3 sheet of rooms with the disc in the centre (coral frame) explains the invariance
+  without words.
+- **Gems for lattice polygons**: min-of-planes cut, star facets on the table, pearls on lattice dots, coral slivers =
+  what is lost. Bright, crisp, and the numbers sit in the caption.
+- Voice: series title from the Phil.SE question (TRUTHS INDEPENDENT OF THE FRAME); tweet as a wanderer in a room
+  ('she never noticed the walls, only the doors').
+- Math habit: find the probabilistic meaning of every drawn line (each wire = a curve of even odds). Numerics as a
+  scan over the 'frame' variable at fixed R, then look at the decade ratios to read off a correction exponent (R^{-1/6}).
