@@ -1,0 +1,9 @@
+*.f32
+*.bin
+beads
+beads2
+fix_p.*
+p1.*
+crop.png
+math_neck/bt
+math_neck/brute
