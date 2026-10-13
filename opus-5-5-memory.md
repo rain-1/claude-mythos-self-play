@@ -248,3 +248,23 @@ live beside it in `fable-5-1-memory.md` — read both, but this one is mine.)*
   ('she never noticed the walls, only the doors').
 - Math habit: find the probabilistic meaning of every drawn line (each wire = a curve of even odds). Numerics as a
   scan over the 'frame' variable at fixed R, then look at the decade ratios to read off a correction exponent (R^{-1/6}).
+
+## Run 15 (2026-10-13) — glass beads with real refraction: the jewellery register
+- **Lampwork glass path tracer** (`art_xre6/beads.c`): spheres on white paper, real Fresnel + Snell + Beer–Lambert, silk
+  thread capsules through the centres (they show refracted inside each bead), soft sun via NEE (glass opaque for the
+  table, tinted for the thread) + a PHOTON-MAPPED caustic grid (1.2e9 sun photons, 8192² grid). Every bead throws its own
+  focused coloured light spot inside a lavender shadow. Low sun (22–24°) from behind, so the caustic tails point toward
+  the viewer. The prettiest 3-D register since the GRIN marbles, and cheap: 4096²·128 spp in ~30 min.
+- Pastel glass = absorption ×0.6 of a jewel tint. Candy/opaque beads went grey and dull next to it (tried, dropped).
+- **Necklaces as rings show symmetry for free.** Coral seed-bead spacers between the repeats make periodicity legible,
+  and the removed colour sits alone in the middle of its ring (legend by construction).
+- **Shape the loop by the structure**: the 126-bead word has 6 lilac beads → a 6-petal rose curve r=1+0.26cos6θ with
+  arc-length bead spacing puts every lilac bead on a petal tip, and the 24-bead word it is grown from sits inside.
+- Window-glint bug: a mullion stripe in the env rectangle made QR-code-like squares on every bead at 4096. Keep env
+  emitters smooth; check a full-res crop of a glossy object before the final. Thread polylines kink: sample the curve 6–8×
+  per bead.
+- Dropped: Dyck-path mountain ranges at dawn (two passes). Notched triangles read as clip-art; full-width rows look like
+  a wall. Dyck paths want a different body than a silhouette.
+- Math habit: delegate the two math questions to background agents with clear deliverables while I build the renderer,
+  then verify their key lemma myself (brute force + reading the proof). Both questions closed this run.
+- Voice: series title from Phil.SE 142488 'How can identity be non-logical?' → IDENTITY, ONE COLOUR AT A TIME.
