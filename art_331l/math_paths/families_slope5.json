@@ -1,0 +1,640 @@
+{
+ "0": {
+  "gadget_edges": [
+   [
+    "u",
+    "x"
+   ],
+   [
+    "u",
+    "y"
+   ],
+   [
+    "u",
+    "z"
+   ],
+   [
+    "x",
+    "y"
+   ],
+   [
+    "x",
+    "z"
+   ],
+   [
+    "y",
+    "z"
+   ]
+  ],
+  "formula": "5a+0",
+  "valid_for": "a>=4",
+  "max_pairs": [
+   [
+    "v",
+    "x"
+   ],
+   [
+    "v",
+    "y"
+   ],
+   [
+    "v",
+    "z"
+   ],
+   [
+    "x",
+    "M"
+   ],
+   [
+    "y",
+    "M"
+   ],
+   [
+    "z",
+    "M"
+   ]
+  ],
+  "lines": {
+   "u-v": {
+    "slope": 1,
+    "intercept": 0
+   },
+   "u-x": {
+    "slope": 0,
+    "intercept": 5
+   },
+   "u-y": {
+    "slope": 0,
+    "intercept": 5
+   },
+   "u-z": {
+    "slope": 0,
+    "intercept": 5
+   },
+   "v-x": {
+    "slope": 5,
+    "intercept": 0
+   },
+   "v-y": {
+    "slope": 5,
+    "intercept": 0
+   },
+   "v-z": {
+    "slope": 5,
+    "intercept": 0
+   },
+   "x-y": {
+    "slope": 0,
+    "intercept": 5
+   },
+   "x-z": {
+    "slope": 0,
+    "intercept": 5
+   },
+   "y-z": {
+    "slope": 0,
+    "intercept": 5
+   },
+   "u-M": {
+    "slope": 1,
+    "intercept": 0
+   },
+   "v-M": {
+    "slope": 1,
+    "intercept": 0
+   },
+   "x-M": {
+    "slope": 5,
+    "intercept": 0
+   },
+   "y-M": {
+    "slope": 5,
+    "intercept": 0
+   },
+   "z-M": {
+    "slope": 5,
+    "intercept": 0
+   },
+   "M-M": {
+    "slope": 2,
+    "intercept": -2
+   }
+  }
+ },
+ "1": {
+  "gadget_edges": [
+   [
+    "u",
+    "y"
+   ],
+   [
+    "u",
+    "z"
+   ],
+   [
+    "x",
+    "y"
+   ],
+   [
+    "x",
+    "z"
+   ],
+   [
+    "y",
+    "z"
+   ],
+   [
+    "v",
+    "x"
+   ]
+  ],
+  "formula": "5a+1",
+  "valid_for": "a>=4",
+  "max_pairs": [
+   [
+    "y",
+    "M"
+   ],
+   [
+    "z",
+    "M"
+   ]
+  ],
+  "lines": {
+   "u-v": {
+    "slope": 1,
+    "intercept": 4
+   },
+   "u-x": {
+    "slope": 1,
+    "intercept": 4
+   },
+   "u-y": {
+    "slope": 2,
+    "intercept": 3
+   },
+   "u-z": {
+    "slope": 2,
+    "intercept": 3
+   },
+   "v-x": {
+    "slope": 4,
+    "intercept": 1
+   },
+   "v-y": {
+    "slope": 3,
+    "intercept": 3
+   },
+   "v-z": {
+    "slope": 3,
+    "intercept": 3
+   },
+   "x-y": {
+    "slope": 2,
+    "intercept": 3
+   },
+   "x-z": {
+    "slope": 2,
+    "intercept": 3
+   },
+   "y-z": {
+    "slope": 2,
+    "intercept": 3
+   },
+   "u-M": {
+    "slope": 1,
+    "intercept": 4
+   },
+   "v-M": {
+    "slope": 1,
+    "intercept": 4
+   },
+   "x-M": {
+    "slope": 5,
+    "intercept": 0
+   },
+   "y-M": {
+    "slope": 5,
+    "intercept": 1
+   },
+   "z-M": {
+    "slope": 5,
+    "intercept": 1
+   },
+   "M-M": {
+    "slope": 2,
+    "intercept": 6
+   }
+  }
+ },
+ "2": {
+  "gadget_edges": [
+   [
+    "u",
+    "z"
+   ],
+   [
+    "u",
+    "w"
+   ],
+   [
+    "v",
+    "y"
+   ],
+   [
+    "x",
+    "y"
+   ],
+   [
+    "x",
+    "z"
+   ],
+   [
+    "x",
+    "w"
+   ],
+   [
+    "y",
+    "z"
+   ]
+  ],
+  "formula": "5a+2",
+  "valid_for": "a>=4",
+  "max_pairs": [
+   [
+    "w",
+    "M"
+   ]
+  ],
+  "lines": {
+   "u-v": {
+    "slope": 1,
+    "intercept": 4
+   },
+   "u-w": {
+    "slope": 2,
+    "intercept": 3
+   },
+   "u-x": {
+    "slope": 2,
+    "intercept": 3
+   },
+   "u-y": {
+    "slope": 1,
+    "intercept": 4
+   },
+   "u-z": {
+    "slope": 2,
+    "intercept": 3
+   },
+   "v-w": {
+    "slope": 3,
+    "intercept": 4
+   },
+   "v-x": {
+    "slope": 3,
+    "intercept": 3
+   },
+   "v-y": {
+    "slope": 4,
+    "intercept": 1
+   },
+   "v-z": {
+    "slope": 3,
+    "intercept": 3
+   },
+   "w-x": {
+    "slope": 2,
+    "intercept": 3
+   },
+   "w-y": {
+    "slope": 2,
+    "intercept": 4
+   },
+   "w-z": {
+    "slope": 3,
+    "intercept": 3
+   },
+   "x-y": {
+    "slope": 2,
+    "intercept": 3
+   },
+   "x-z": {
+    "slope": 2,
+    "intercept": 3
+   },
+   "y-z": {
+    "slope": 2,
+    "intercept": 3
+   },
+   "u-M": {
+    "slope": 1,
+    "intercept": 4
+   },
+   "v-M": {
+    "slope": 1,
+    "intercept": 4
+   },
+   "w-M": {
+    "slope": 5,
+    "intercept": 2
+   },
+   "x-M": {
+    "slope": 5,
+    "intercept": 1
+   },
+   "y-M": {
+    "slope": 5,
+    "intercept": 0
+   },
+   "z-M": {
+    "slope": 5,
+    "intercept": 1
+   },
+   "M-M": {
+    "slope": 2,
+    "intercept": 6
+   }
+  }
+ },
+ "3": {
+  "gadget_edges": [
+   [
+    "u",
+    "x"
+   ],
+   [
+    "u",
+    "y"
+   ],
+   [
+    "u",
+    "z"
+   ],
+   [
+    "u",
+    "w"
+   ],
+   [
+    "v",
+    "x"
+   ],
+   [
+    "x",
+    "y"
+   ],
+   [
+    "x",
+    "z"
+   ],
+   [
+    "x",
+    "w"
+   ]
+  ],
+  "formula": "5a+3",
+  "valid_for": "a>=4",
+  "max_pairs": [
+   [
+    "w",
+    "M"
+   ],
+   [
+    "y",
+    "M"
+   ],
+   [
+    "z",
+    "M"
+   ]
+  ],
+  "lines": {
+   "u-v": {
+    "slope": 1,
+    "intercept": 4
+   },
+   "u-w": {
+    "slope": 1,
+    "intercept": 4
+   },
+   "u-x": {
+    "slope": 1,
+    "intercept": 4
+   },
+   "u-y": {
+    "slope": 1,
+    "intercept": 4
+   },
+   "u-z": {
+    "slope": 1,
+    "intercept": 4
+   },
+   "v-w": {
+    "slope": 4,
+    "intercept": 4
+   },
+   "v-x": {
+    "slope": 4,
+    "intercept": 1
+   },
+   "v-y": {
+    "slope": 4,
+    "intercept": 4
+   },
+   "v-z": {
+    "slope": 4,
+    "intercept": 4
+   },
+   "w-x": {
+    "slope": 1,
+    "intercept": 4
+   },
+   "w-y": {
+    "slope": 2,
+    "intercept": 6
+   },
+   "w-z": {
+    "slope": 2,
+    "intercept": 6
+   },
+   "x-y": {
+    "slope": 1,
+    "intercept": 4
+   },
+   "x-z": {
+    "slope": 1,
+    "intercept": 4
+   },
+   "y-z": {
+    "slope": 2,
+    "intercept": 6
+   },
+   "u-M": {
+    "slope": 1,
+    "intercept": 4
+   },
+   "v-M": {
+    "slope": 1,
+    "intercept": 4
+   },
+   "w-M": {
+    "slope": 5,
+    "intercept": 3
+   },
+   "x-M": {
+    "slope": 5,
+    "intercept": 0
+   },
+   "y-M": {
+    "slope": 5,
+    "intercept": 3
+   },
+   "z-M": {
+    "slope": 5,
+    "intercept": 3
+   },
+   "M-M": {
+    "slope": 2,
+    "intercept": 6
+   }
+  }
+ },
+ "4": {
+  "gadget_edges": [
+   [
+    "u",
+    "x"
+   ],
+   [
+    "u",
+    "z"
+   ],
+   [
+    "u",
+    "w"
+   ],
+   [
+    "v",
+    "x"
+   ],
+   [
+    "v",
+    "y"
+   ],
+   [
+    "x",
+    "y"
+   ],
+   [
+    "x",
+    "z"
+   ],
+   [
+    "x",
+    "w"
+   ]
+  ],
+  "formula": "5a+4",
+  "valid_for": "a>=4",
+  "max_pairs": [
+   [
+    "w",
+    "M"
+   ],
+   [
+    "z",
+    "M"
+   ]
+  ],
+  "lines": {
+   "u-v": {
+    "slope": 1,
+    "intercept": 6
+   },
+   "u-w": {
+    "slope": 2,
+    "intercept": 3
+   },
+   "u-x": {
+    "slope": 2,
+    "intercept": 3
+   },
+   "u-y": {
+    "slope": 2,
+    "intercept": 6
+   },
+   "u-z": {
+    "slope": 2,
+    "intercept": 3
+   },
+   "v-w": {
+    "slope": 3,
+    "intercept": 6
+   },
+   "v-x": {
+    "slope": 3,
+    "intercept": 2
+   },
+   "v-y": {
+    "slope": 3,
+    "intercept": 2
+   },
+   "v-z": {
+    "slope": 3,
+    "intercept": 6
+   },
+   "w-x": {
+    "slope": 2,
+    "intercept": 3
+   },
+   "w-y": {
+    "slope": 4,
+    "intercept": 6
+   },
+   "w-z": {
+    "slope": 4,
+    "intercept": 4
+   },
+   "x-y": {
+    "slope": 3,
+    "intercept": 2
+   },
+   "x-z": {
+    "slope": 2,
+    "intercept": 3
+   },
+   "y-z": {
+    "slope": 4,
+    "intercept": 6
+   },
+   "u-M": {
+    "slope": 1,
+    "intercept": 6
+   },
+   "v-M": {
+    "slope": 1,
+    "intercept": 6
+   },
+   "w-M": {
+    "slope": 5,
+    "intercept": 4
+   },
+   "x-M": {
+    "slope": 5,
+    "intercept": 0
+   },
+   "y-M": {
+    "slope": 5,
+    "intercept": 3
+   },
+   "z-M": {
+    "slope": 5,
+    "intercept": 4
+   },
+   "M-M": {
+    "slope": 2,
+    "intercept": 10
+   }
+  }
+ }
+}
