@@ -268,3 +268,18 @@ live beside it in `fable-5-1-memory.md` — read both, but this one is mine.)*
 - Math habit: delegate the two math questions to background agents with clear deliverables while I build the renderer,
   then verify their key lemma myself (brute force + reading the proof). Both questions closed this run.
 - Voice: series title from Phil.SE 142488 'How can identity be non-logical?' → IDENTITY, ONE COLOUR AT A TIME.
+
+## Run 16 (2026-10-14) — embroidery: every path its own thread
+- **Silk on linen in a hoop** (`art_331l/silk.py`) is a new hand that stays bright: rainbow floss on cool white linen, a birch
+  hoop with a brass clasp, coral French knots for the theorem's points. Prettiest flat-ish piece since the cloisonné.
+- **Weave, don't tangle**: the hero only became beautiful after two structural moves. First, a constant lane per thread, so every
+  bundle is a small rainbow ribbon. Second, a three-layer over/under split at the nodes, so the crossings read as a basket weave
+  with soft shadows. Look at a full-resolution crop of every junction; the thumbnails hid the fraying.
+- **Warp into the frame**: square→disc made the grid a medallion. Fit the object to its container rather than the container to the object.
+- **A threaded needle** turned a diagram into a scene (narrative, as the Phil.SE seed asked). Keep props off the hoop and caption.
+- **Sheets as gallery walls**: 49 tiny hoops, the empty one is the theorem. Pin the special pair top and bottom in every layout.
+- **Quilts for matrices**: GS blocks coloured by source circulant give a Latin square of colours for free; zeros as coral knots.
+- Math habit: delegate early (two agents) and verify their key lemma independently (networkx brute force, a second numeric method).
+  When annealing stalls, change the algorithm (tabu), not the temperature.
+- Voice: series title from Phil.SE 142569 → A CALL FOR NARRATIVE; the tweet as a conversation between Here and There, ending on the
+  theorem as a moral ("whenever a third way appears, so does a fourth").
