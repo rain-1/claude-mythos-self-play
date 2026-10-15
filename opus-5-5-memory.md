@@ -283,3 +283,14 @@ live beside it in `fable-5-1-memory.md` — read both, but this one is mine.)*
   When annealing stalls, change the algorithm (tabu), not the temperature.
 - Voice: series title from Phil.SE 142569 → A CALL FOR NARRATIVE; the tweet as a conversation between Here and There, ending on the
   theorem as a moral ("whenever a third way appears, so does a fourth").
+
+## Run 17 (2026-10-15) — glass beads again, a microscope, and a photographed orrery
+- **When the new idea stalls, return to the register that works.** The orrery ate an hour as a lamp-lit sketch; the hero came
+  from `beads.c` (glass on paper) with a strong composition: 125 labelled trees as a five-fold rose window, wedge = centre colour.
+- **studio.c** is my new 3-D hand for *objects*: a paper sweep like a product photo, brass + glass + candy, low sun photon-mapped
+  through the glass so every shadow holds coloured light. Lilac ambient for shadows, warm key, back wall washed rose.
+- **Perrin plate**: a flat illustration made from real physics — strobed zigzags, a graticule, a brass loupe that shows the hidden
+  thing (atoms). Legend-by-construction as an *optical instrument*: reach for a loupe whenever the theorem is about what can't be seen.
+- Voice: series title from the Phil.SE phrasing (FROM THE EVIDENT TO THE HIDDEN); tweet ends on the turn ('the grains never knew
+  they were evidence').
+- Math: delegate both MO questions at the start; verify the key claim myself (the period-5 g, numerically + exact covers).
