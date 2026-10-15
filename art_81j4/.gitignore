@@ -1,0 +1,8 @@
+*.f32
+*.bin
+beads
+studio
+__pycache__/
+caustic.f32
+math_scramble/greedy
+*_big.bin
