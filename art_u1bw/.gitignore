@@ -1,0 +1,17 @@
+out/
+prev/
+*.f32
+*.bin
+sticks
+sticks2
+__pycache__/
+math_perm/naive
+math_perm/mers
+math_perm/mers2
+math_perm/mers3
+math_perm/mers4
+math_perm/mers5
+math_perm/affine
+math_stick/tetra
+*.pkl
+nohup.out

@@ -1,0 +1,4 @@
+256 0.1000 distinct 1 regrets ['8.7e-05'] res ['9e-03'] 52s
+256 0.6000 distinct 1 regrets ['3.5e-05', '3.5e-05'] res ['9e-10', '9e-10'] 117s
+256 1.5000 distinct 1 regrets ['2.4e-05', '2.4e-05'] res ['5e-10', '3e-10'] 169s
+done

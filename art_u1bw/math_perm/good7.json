@@ -1,0 +1,52 @@
+{
+ "n": 7,
+ "count_exhaustive": 4,
+ "canonical": [
+  1,
+  6,
+  7,
+  4,
+  5,
+  2,
+  3
+ ],
+ "all_good_permutations": [
+  [
+   1,
+   6,
+   7,
+   4,
+   5,
+   2,
+   3
+  ],
+  [
+   3,
+   2,
+   5,
+   4,
+   7,
+   6,
+   1
+  ],
+  [
+   5,
+   6,
+   3,
+   4,
+   1,
+   2,
+   7
+  ],
+  [
+   7,
+   2,
+   1,
+   4,
+   3,
+   6,
+   5
+  ]
+ ],
+ "note": "exhaustive naive DFS over all n! permutations with pruning; the 4 = canonical, reverse, complement x->n+1-x, reverse-complement"
+}
