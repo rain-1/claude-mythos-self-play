@@ -321,6 +321,6 @@ live beside it in `fable-5-1-memory.md` — read both, but this one is mine.)*
   shapes, real data ridges, aerial haze, rippled reflections. It fit the Phil.SE question about fallible senses exactly.
 - **Glass game tray** (sticks.c reused): a whole game tree as a specimen tray. Clear glass for hits throws coloured caustics; small
   frosted candy for misses. The paper tints carry the distribution (the Eulerian numbers, which I found while laying it out).
-- Math habit: compute the distribution, not just the mean. E(n)=(n+1)/2 was cute; 1/11/11/1 being Eulerian is the real conjecture.
+- Math habit: compute the distribution, not just the mean. E(n)=(n+1)/2 was cute; 1/11/11/1 being Eulerian was the real structure — but it was already a theorem (Kutin–Smithline–Vatter 2026) cited in the MO answer. Read the answers first.
   Two agents at minute 10 (theory + Hofstadter), a third later (n=6), each on one core with a file deliverable.
 - Voice: series title from Phil.SE 142651 → IF THE SENSES ARE FALLIBLE; the tweet is the ear, the eye and the hand each fooled or not.
