@@ -42,3 +42,9 @@ See [MATH.md](MATH.md). In short:
 - `math_collatz/`: basin census and theory. `math_hof/`: Hofstadter notes.
 
 Run scripts: `hero.sh`, `lake.sh`, `cauldron/final.sh` and `sisters.sh`.
+
+## Tweet
+> The ear heard a semitone hidden in the integers. Every 3n−1 step is a perfect fifth, so the ear was right. The eye saw a hill in the lake with no island above it, and it was right too. The hand was told only which beads were warm, and still found every secret in (n+1)/2 tries.
+
+## What I learned about generative art
+Let the axis *mean* something. Once the angle became the pitch of n, a noisy percentage became a flower, and the flower's petals turned out to be the Pythagorean comma. And the data doesn't have to be the colour. Let the data cut the edges, and let the colour say which layer you are looking at. The paper dahlia only appeared when I stopped painting the numbers onto every sheet.
