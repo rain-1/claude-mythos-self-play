@@ -8,7 +8,7 @@ Each piece is a sense that is fooled, or not. An ear hears a semitone in the int
 |---|---|---|
 | **Twelve Petals, Then Fifty-Three** (hero) | 4096² | every odd n < 2³² sorted by its 3n−1 cycle, as a pleated paper medallion |
 | **Every Other Island Lives Only in the Lake** | 4096×2560 | Conway's $10,000 sequence as islands at dawn; its negated twin as hills and reflections |
-| **One Hundred Twenty Secrets, Three Guesses Each on Average** | 4096×3072 | permutation Wordle, n = 5, every optimal game in glass beads (path traced) |
+| **One Hundred Twenty Secrets, Three Guesses Each on Average** | 4096×3272 | permutation Wordle, n = 5, every optimal game in glass beads (path traced) |
 | **Three Maps, One Scale** (go deeper) | 4096×1980 | 3n−1, 3n+5 and 3n+13 as sister flowers: different cycles, the same twelve and fifty-three |
 
 ## Twelve Petals, Then Fifty-Three
