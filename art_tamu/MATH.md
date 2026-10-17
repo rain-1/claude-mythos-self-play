@@ -51,4 +51,8 @@ The number of secrets solved in exactly k guesses is the **Eulerian number** A(n
 | 4 | 1, 11, 11, 1 |
 | 5 | 1, 26, 66, 26, 1 |
 
-**Conjecture:** E(n) = (n+1)/2 for all n, and some optimal strategy's guess count is distributed like 1 + des(π). The symmetry of the Eulerian numbers then gives the mean (n+1)/2. (n = 6 and the literature are being checked; see `cauldron/NOTES.md`.)
+**Already a theorem.** This is not new. Kutin, Smithline and Vatter, "Permutation Wordle", arXiv:2609.01874 (cited in the only MO answer):
+- **Strategy (CircularShift):** guess the identity first, keep the correct entries, and rotate the wrong values one step among the wrong positions. It solves w in exc(w)+1 guesses, so the counts are Eulerian and E(n) = (n+1)/2.
+- **Optimality (Thms 10–11):** no deterministic or randomised strategy does better.
+
+Our independent exact computation agrees: E(6) = 2520/720 = 7/2 (`cauldron/exact.c`, 3.5 s). The naive "first consistent guess" strategy is *not* optimal from n = 4 (31/12 against 5/2). See `cauldron/NOTES.md`.

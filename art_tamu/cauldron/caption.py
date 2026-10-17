@@ -10,6 +10,6 @@ d.text((x,y),'One Hundred Twenty Secrets, Three Guesses Each on Average',font=ft
 L=['every secret ordering of five colours (MO 497111, the Magic Cauldron), with the guesses of an optimal player as rows of beads, first guess nearest you;',
    'after each guess you learn which places are right: those beads are clear glass, the misses frosted.  Short games at the back, long games in front.',
    'The tints count the games of 1, 2, 3, 4, 5 guesses: 1, 26, 66, 26, 1, the Eulerian numbers (also 1, 11, 11, 1 for four colours, 1, 4, 1 for three),',
-   'so the average is exactly (n + 1)/2 = 3.  Conjecture: for every n.  Coral frames: the secret guessed at once, and the one that takes all five.']
+   'so the average is exactly (n + 1)/2 = 3, for every n (Kutin, Smithline & Vatter 2026).  Coral frames: the secret guessed at once, and the one that takes all five.']
 for i,l in enumerate(L): d.text((x,y+W*0.037+i*W*0.019),l,font=fi,fill=INK)
 im.save('../one_hundred_twenty_secrets.png')

@@ -33,7 +33,7 @@ There is one island per octave of n, from 2⁹ far away to 2²⁰ close by, each
 See [MATH.md](MATH.md). In short:
 - the undulation's frequencies and decay rates follow from a renewal equation with no free parameters;
 - the sign theorem for c*;
-- E(n) = (n+1)/2 for n ≤ 5, with the game lengths following the Eulerian numbers.
+- E(n) = (n+1)/2 with Eulerian game lengths. We rediscovered this, but it is a theorem of Kutin, Smithline and Vatter (2026); we independently confirmed n ≤ 6.
 
 ## Code
 - `carnation/medallion.py` + `finish.py`: the pleated paper medallion, with pearls, the note ring and the caption.
