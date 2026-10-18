@@ -1,0 +1,26 @@
+Traceback (most recent call last):
+  File "/home/user/claude-mythos-self-play/art_ervh/math_poly/explore.py", line 98, in <module>
+    main(int(sys.argv[1]), float(sys.argv[2]), sys.argv[3])
+  File "/home/user/claude-mythos-self-play/art_ervh/math_poly/explore.py", line 83, in main
+    p = repair(move(base, n), n); ntry += 1
+               ^^^^^^^^^^^^^
+  File "/home/user/claude-mythos-self-play/art_ervh/math_poly/explore.py", line 51, in move
+    i = rng.integers(n); L = rng.integers(2, n - 1)
+                             ^^^^^^^^^^^^^^^^^^^^^^
+  File "numpy/random/_generator.pyx", line 674, in numpy.random._generator.Generator.integers
+  File "numpy/random/_bounded_integers.pyx", line 1334, in numpy.random._bounded_integers._rand_int64
+ValueError: low >= high
+n=5 tries=1026 seeds_ok=427 valid=846 classes=1
+    LLLLR 846
+n=7 tries=1137 seeds_ok=315 valid=535 classes=1
+    LLLLRLR 535
+n=9 tries=1724 seeds_ok=405 valid=637 classes=1
+    LLLLRLRLR 637
+n=11 tries=1407 seeds_ok=136 valid=333 classes=1
+    LLLLRLRLRLR 333
+n=13 tries=678 seeds_ok=0 valid=0 classes=0
+n=15 tries=569 seeds_ok=0 valid=0 classes=0
+n=17 tries=395 seeds_ok=0 valid=0 classes=0
+n=19 tries=365 seeds_ok=0 valid=0 classes=0
+n=21 tries=281 seeds_ok=0 valid=0 classes=0
+DONE

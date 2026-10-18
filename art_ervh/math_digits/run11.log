@@ -1,0 +1,6 @@
+S size 61035155, factor entries 192785909, distinct primes 20759001
+captured 20759001 of 20759001 distinct primes; primes<=PMAX appearing: 148933, captured 148933
+
+real	5m44.296s
+user	4m53.549s
+sys	0m15.548s

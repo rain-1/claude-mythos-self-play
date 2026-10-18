@@ -1,0 +1,1893 @@
+{
+ "1": {
+  "g": 1,
+  "proven": true,
+  "method": "full enumeration of all unlabeled posets (nauty genposetg + plugin), cross-checked in Python",
+  "posets": [
+   {
+    "covers": [],
+    "desc": "point",
+    "e": 1,
+    "aut": 1,
+    "fence_union": true
+   }
+  ],
+  "runners_up": []
+ },
+ "2": {
+  "g": 1,
+  "proven": true,
+  "method": "full enumeration of all unlabeled posets (nauty genposetg + plugin), cross-checked in Python",
+  "posets": [
+   {
+    "covers": [
+     [
+      0,
+      1
+     ]
+    ],
+    "desc": "chain2",
+    "e": 1,
+    "aut": 1,
+    "fence_union": true
+   },
+   {
+    "covers": [],
+    "desc": "point ⊔ point",
+    "e": 2,
+    "aut": 2,
+    "fence_union": true
+   }
+  ],
+  "runners_up": []
+ },
+ "3": {
+  "g": 3,
+  "proven": true,
+  "method": "full enumeration of all unlabeled posets (nauty genposetg + plugin), cross-checked in Python",
+  "posets": [
+   {
+    "covers": [
+     [
+      1,
+      2
+     ]
+    ],
+    "desc": "chain2 ⊔ point",
+    "e": 3,
+    "aut": 1,
+    "fence_union": true
+   }
+  ],
+  "runners_up": [
+   {
+    "f": "1",
+    "posets": [
+     {
+      "covers": [
+       [
+        0,
+        2
+       ],
+       [
+        1,
+        2
+       ]
+      ],
+      "desc": "fence3(W: 2 minima)",
+      "e": 2,
+      "aut": 2,
+      "fence_union": true
+     },
+     {
+      "covers": [
+       [
+        0,
+        1
+       ],
+       [
+        0,
+        2
+       ]
+      ],
+      "desc": "fence3(M: 2 maxima, dual)",
+      "e": 2,
+      "aut": 2,
+      "fence_union": true
+     },
+     {
+      "covers": [
+       [
+        0,
+        1
+       ],
+       [
+        1,
+        2
+       ]
+      ],
+      "desc": "chain3",
+      "e": 1,
+      "aut": 1,
+      "fence_union": false
+     },
+     {
+      "covers": [],
+      "desc": "point ⊔ point ⊔ point",
+      "e": 6,
+      "aut": 6,
+      "fence_union": true
+     }
+    ]
+   }
+  ]
+ },
+ "4": {
+  "g": 6,
+  "proven": true,
+  "method": "full enumeration of all unlabeled posets (nauty genposetg + plugin), cross-checked in Python",
+  "posets": [
+   {
+    "covers": [
+     [
+      2,
+      3
+     ]
+    ],
+    "desc": "chain2 ⊔ point ⊔ point",
+    "e": 12,
+    "aut": 2,
+    "fence_union": true
+   }
+  ],
+  "runners_up": [
+   {
+    "f": "5",
+    "posets": [
+     {
+      "covers": [
+       [
+        0,
+        2
+       ],
+       [
+        0,
+        3
+       ],
+       [
+        1,
+        2
+       ]
+      ],
+      "desc": "fence4",
+      "e": 5,
+      "aut": 1,
+      "fence_union": true
+     }
+    ]
+   },
+   {
+    "f": "4",
+    "posets": [
+     {
+      "covers": [
+       [
+        1,
+        3
+       ],
+       [
+        2,
+        3
+       ]
+      ],
+      "desc": "fence3(W: 2 minima) ⊔ point",
+      "e": 8,
+      "aut": 2,
+      "fence_union": true
+     },
+     {
+      "covers": [
+       [
+        1,
+        2
+       ],
+       [
+        2,
+        3
+       ]
+      ],
+      "desc": "chain3 ⊔ point",
+      "e": 4,
+      "aut": 1,
+      "fence_union": false
+     },
+     {
+      "covers": [
+       [
+        1,
+        2
+       ],
+       [
+        1,
+        3
+       ]
+      ],
+      "desc": "fence3(M: 2 maxima, dual) ⊔ point",
+      "e": 8,
+      "aut": 2,
+      "fence_union": true
+     }
+    ]
+   },
+   {
+    "f": "3",
+    "posets": [
+     {
+      "covers": [
+       [
+        0,
+        3
+       ],
+       [
+        1,
+        2
+       ],
+       [
+        2,
+        3
+       ]
+      ],
+      "desc": "tree-height2[0<3 1<2 2<3]",
+      "e": 3,
+      "aut": 1,
+      "fence_union": false
+     },
+     {
+      "covers": [
+       [
+        0,
+        2
+       ],
+       [
+        1,
+        3
+       ]
+      ],
+      "desc": "chain2 ⊔ chain2",
+      "e": 6,
+      "aut": 2,
+      "fence_union": true
+     },
+     {
+      "covers": [
+       [
+        0,
+        1
+       ],
+       [
+        0,
+        2
+       ],
+       [
+        2,
+        3
+       ]
+      ],
+      "desc": "tree-height2[0<1 0<2 2<3]",
+      "e": 3,
+      "aut": 1,
+      "fence_union": false
+     }
+    ]
+   }
+  ]
+ },
+ "5": {
+  "g": 25,
+  "proven": true,
+  "method": "full enumeration of all unlabeled posets (nauty genposetg + plugin), cross-checked in Python",
+  "posets": [
+   {
+    "covers": [
+     [
+      1,
+      3
+     ],
+     [
+      1,
+      4
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "desc": "fence4 ⊔ point",
+    "e": 25,
+    "aut": 1,
+    "fence_union": true
+   }
+  ],
+  "runners_up": [
+   {
+    "f": "15",
+    "posets": [
+     {
+      "covers": [
+       [
+        1,
+        4
+       ],
+       [
+        2,
+        3
+       ],
+       [
+        3,
+        4
+       ]
+      ],
+      "desc": "tree-height2[1<4 2<3 3<4] ⊔ point",
+      "e": 15,
+      "aut": 1,
+      "fence_union": false
+     },
+     {
+      "covers": [
+       [
+        1,
+        3
+       ],
+       [
+        2,
+        4
+       ]
+      ],
+      "desc": "chain2 ⊔ chain2 ⊔ point",
+      "e": 30,
+      "aut": 2,
+      "fence_union": true
+     },
+     {
+      "covers": [
+       [
+        1,
+        2
+       ],
+       [
+        1,
+        3
+       ],
+       [
+        3,
+        4
+       ]
+      ],
+      "desc": "tree-height2[1<2 1<3 3<4] ⊔ point",
+      "e": 15,
+      "aut": 1,
+      "fence_union": false
+     }
+    ]
+   },
+   {
+    "f": "11",
+    "posets": [
+     {
+      "covers": [
+       [
+        0,
+        4
+       ],
+       [
+        1,
+        2
+       ],
+       [
+        1,
+        3
+       ],
+       [
+        3,
+        4
+       ]
+      ],
+      "desc": "tree-height2[0<4 1<2 1<3 3<4]",
+      "e": 11,
+      "aut": 1,
+      "fence_union": false
+     }
+    ]
+   },
+   {
+    "f": "10",
+    "posets": [
+     {
+      "covers": [
+       [
+        0,
+        3
+       ],
+       [
+        1,
+        4
+       ],
+       [
+        2,
+        3
+       ]
+      ],
+      "desc": "fence3(W: 2 minima) ⊔ chain2",
+      "e": 20,
+      "aut": 2,
+      "fence_union": true
+     },
+     {
+      "covers": [
+       [
+        0,
+        2
+       ],
+       [
+        1,
+        3
+       ],
+       [
+        3,
+        4
+       ]
+      ],
+      "desc": "chain3 ⊔ chain2",
+      "e": 10,
+      "aut": 1,
+      "fence_union": false
+     },
+     {
+      "covers": [
+       [
+        0,
+        2
+       ],
+       [
+        0,
+        3
+       ],
+       [
+        1,
+        4
+       ]
+      ],
+      "desc": "fence3(M: 2 maxima, dual) ⊔ chain2",
+      "e": 20,
+      "aut": 2,
+      "fence_union": true
+     },
+     {
+      "covers": [
+       [
+        2,
+        4
+       ],
+       [
+        3,
+        4
+       ]
+      ],
+      "desc": "fence3(W: 2 minima) ⊔ point ⊔ point",
+      "e": 40,
+      "aut": 4,
+      "fence_union": true
+     },
+     {
+      "covers": [
+       [
+        2,
+        3
+       ],
+       [
+        3,
+        4
+       ]
+      ],
+      "desc": "chain3 ⊔ point ⊔ point",
+      "e": 20,
+      "aut": 2,
+      "fence_union": false
+     },
+     {
+      "covers": [
+       [
+        2,
+        3
+       ],
+       [
+        2,
+        4
+       ]
+      ],
+      "desc": "fence3(M: 2 maxima, dual) ⊔ point ⊔ point",
+      "e": 40,
+      "aut": 4,
+      "fence_union": true
+     },
+     {
+      "covers": [
+       [
+        3,
+        4
+       ]
+      ],
+      "desc": "chain2 ⊔ point ⊔ point ⊔ point",
+      "e": 60,
+      "aut": 6,
+      "fence_union": true
+     }
+    ]
+   }
+  ]
+ },
+ "6": {
+  "g": 75,
+  "proven": true,
+  "method": "full enumeration of all unlabeled posets (nauty genposetg + plugin), cross-checked in Python",
+  "posets": [
+   {
+    "covers": [
+     [
+      0,
+      3
+     ],
+     [
+      0,
+      4
+     ],
+     [
+      1,
+      5
+     ],
+     [
+      2,
+      3
+     ]
+    ],
+    "desc": "fence4 ⊔ chain2",
+    "e": 75,
+    "aut": 1,
+    "fence_union": true
+   },
+   {
+    "covers": [
+     [
+      2,
+      4
+     ],
+     [
+      2,
+      5
+     ],
+     [
+      3,
+      4
+     ]
+    ],
+    "desc": "fence4 ⊔ point ⊔ point",
+    "e": 150,
+    "aut": 2,
+    "fence_union": true
+   }
+  ],
+  "runners_up": [
+   {
+    "f": "66",
+    "posets": [
+     {
+      "covers": [
+       [
+        1,
+        5
+       ],
+       [
+        2,
+        3
+       ],
+       [
+        2,
+        4
+       ],
+       [
+        4,
+        5
+       ]
+      ],
+      "desc": "tree-height2[1<5 2<3 2<4 4<5] ⊔ point",
+      "e": 66,
+      "aut": 1,
+      "fence_union": false
+     }
+    ]
+   },
+   {
+    "f": "61",
+    "posets": [
+     {
+      "covers": [
+       [
+        0,
+        3
+       ],
+       [
+        0,
+        4
+       ],
+       [
+        1,
+        3
+       ],
+       [
+        1,
+        5
+       ],
+       [
+        2,
+        4
+       ]
+      ],
+      "desc": "fence6",
+      "e": 61,
+      "aut": 1,
+      "fence_union": true
+     }
+    ]
+   },
+   {
+    "f": "60",
+    "posets": [
+     {
+      "covers": [
+       [
+        1,
+        3
+       ],
+       [
+        2,
+        4
+       ],
+       [
+        4,
+        5
+       ]
+      ],
+      "desc": "chain3 ⊔ chain2 ⊔ point",
+      "e": 60,
+      "aut": 1,
+      "fence_union": false
+     },
+     {
+      "covers": [
+       [
+        1,
+        4
+       ],
+       [
+        2,
+        5
+       ],
+       [
+        3,
+        4
+       ]
+      ],
+      "desc": "fence3(W: 2 minima) ⊔ chain2 ⊔ point",
+      "e": 120,
+      "aut": 2,
+      "fence_union": true
+     },
+     {
+      "covers": [
+       [
+        1,
+        3
+       ],
+       [
+        1,
+        4
+       ],
+       [
+        2,
+        5
+       ]
+      ],
+      "desc": "fence3(M: 2 maxima, dual) ⊔ chain2 ⊔ point",
+      "e": 120,
+      "aut": 2,
+      "fence_union": true
+     }
+    ]
+   }
+  ]
+ },
+ "7": {
+  "g": 525,
+  "proven": true,
+  "method": "full enumeration of all unlabeled posets (nauty genposetg + plugin), cross-checked in Python",
+  "posets": [
+   {
+    "covers": [
+     [
+      1,
+      4
+     ],
+     [
+      1,
+      5
+     ],
+     [
+      2,
+      6
+     ],
+     [
+      3,
+      4
+     ]
+    ],
+    "desc": "fence4 ⊔ chain2 ⊔ point",
+    "e": 525,
+    "aut": 1,
+    "fence_union": true
+   }
+  ],
+  "runners_up": [
+   {
+    "f": "427",
+    "posets": [
+     {
+      "covers": [
+       [
+        1,
+        4
+       ],
+       [
+        1,
+        5
+       ],
+       [
+        2,
+        4
+       ],
+       [
+        2,
+        6
+       ],
+       [
+        3,
+        5
+       ]
+      ],
+      "desc": "fence6 ⊔ point",
+      "e": 427,
+      "aut": 1,
+      "fence_union": true
+     }
+    ]
+   },
+   {
+    "f": "399",
+    "posets": [
+     {
+      "covers": [
+       [
+        1,
+        4
+       ],
+       [
+        1,
+        5
+       ],
+       [
+        1,
+        6
+       ],
+       [
+        2,
+        4
+       ],
+       [
+        2,
+        5
+       ],
+       [
+        3,
+        4
+       ]
+      ],
+      "desc": "other6[1<4 1<5 1<6 2<4 2<5 3<4] ⊔ point",
+      "e": 399,
+      "aut": 1,
+      "fence_union": false
+     }
+    ]
+   },
+   {
+    "f": "315",
+    "posets": [
+     {
+      "covers": [
+       [
+        1,
+        4
+       ],
+       [
+        2,
+        6
+       ],
+       [
+        3,
+        5
+       ],
+       [
+        5,
+        6
+       ]
+      ],
+      "desc": "tree-height2[2<6 3<5 5<6] ⊔ chain2 ⊔ point",
+      "e": 315,
+      "aut": 1,
+      "fence_union": false
+     },
+     {
+      "covers": [
+       [
+        1,
+        3
+       ],
+       [
+        2,
+        4
+       ],
+       [
+        2,
+        5
+       ],
+       [
+        5,
+        6
+       ]
+      ],
+      "desc": "tree-height2[2<4 2<5 5<6] ⊔ chain2 ⊔ point",
+      "e": 315,
+      "aut": 1,
+      "fence_union": false
+     }
+    ]
+   }
+  ]
+ },
+ "8": {
+  "g": 2384,
+  "proven": true,
+  "method": "full enumeration of all unlabeled posets (nauty genposetg + plugin), cross-checked in Python",
+  "posets": [
+   {
+    "covers": [
+     [
+      1,
+      5
+     ],
+     [
+      1,
+      6
+     ],
+     [
+      2,
+      5
+     ],
+     [
+      2,
+      7
+     ],
+     [
+      3,
+      5
+     ],
+     [
+      4,
+      6
+     ]
+    ],
+    "desc": "zigzag6+leaves@4(pendant min)[1<5 1<6 2<5 2<7 3<5 4<6] ⊔ point",
+    "e": 2384,
+    "aut": 1,
+    "fence_union": false
+   },
+   {
+    "covers": [
+     [
+      1,
+      4
+     ],
+     [
+      1,
+      5
+     ],
+     [
+      1,
+      6
+     ],
+     [
+      2,
+      4
+     ],
+     [
+      2,
+      7
+     ],
+     [
+      3,
+      5
+     ]
+    ],
+    "desc": "zigzag6+leaves@3(pendant max)[1<4 1<5 1<6 2<4 2<7 3<5] ⊔ point",
+    "e": 2384,
+    "aut": 1,
+    "fence_union": false
+   }
+  ],
+  "runners_up": [
+   {
+    "f": "2100",
+    "posets": [
+     {
+      "covers": [
+       [
+        2,
+        5
+       ],
+       [
+        2,
+        6
+       ],
+       [
+        3,
+        7
+       ],
+       [
+        4,
+        5
+       ]
+      ],
+      "desc": "fence4 ⊔ chain2 ⊔ point ⊔ point",
+      "e": 4200,
+      "aut": 2,
+      "fence_union": true
+     }
+    ]
+   },
+   {
+    "f": "2000",
+    "posets": [
+     {
+      "covers": [
+       [
+        1,
+        5
+       ],
+       [
+        1,
+        6
+       ],
+       [
+        1,
+        7
+       ],
+       [
+        2,
+        5
+       ],
+       [
+        2,
+        6
+       ],
+       [
+        3,
+        7
+       ],
+       [
+        4,
+        5
+       ]
+      ],
+      "desc": "other7[1<5 1<6 1<7 2<5 2<6 3<7 4<5] ⊔ point",
+      "e": 2000,
+      "aut": 1,
+      "fence_union": false
+     },
+     {
+      "covers": [
+       [
+        1,
+        4
+       ],
+       [
+        1,
+        5
+       ],
+       [
+        1,
+        6
+       ],
+       [
+        2,
+        4
+       ],
+       [
+        2,
+        5
+       ],
+       [
+        3,
+        4
+       ],
+       [
+        3,
+        7
+       ]
+      ],
+      "desc": "other7[1<4 1<5 1<6 2<4 2<5 3<4 3<7] ⊔ point",
+      "e": 2000,
+      "aut": 1,
+      "fence_union": false
+     }
+    ]
+   },
+   {
+    "f": "1848",
+    "posets": [
+     {
+      "covers": [
+       [
+        1,
+        4
+       ],
+       [
+        2,
+        7
+       ],
+       [
+        3,
+        5
+       ],
+       [
+        3,
+        6
+       ],
+       [
+        6,
+        7
+       ]
+      ],
+      "desc": "tree-height2[2<7 3<5 3<6 6<7] ⊔ chain2 ⊔ point",
+      "e": 1848,
+      "aut": 1,
+      "fence_union": false
+     }
+    ]
+   }
+  ]
+ },
+ "9": {
+  "g": 15372,
+  "proven": true,
+  "method": "full enumeration of all unlabeled posets (nauty genposetg + plugin), cross-checked in Python",
+  "posets": [
+   {
+    "covers": [
+     [
+      1,
+      5
+     ],
+     [
+      1,
+      6
+     ],
+     [
+      2,
+      5
+     ],
+     [
+      2,
+      7
+     ],
+     [
+      3,
+      8
+     ],
+     [
+      4,
+      6
+     ]
+    ],
+    "desc": "fence6 ⊔ chain2 ⊔ point",
+    "e": 15372,
+    "aut": 1,
+    "fence_union": true
+   }
+  ],
+  "runners_up": [
+   {
+    "f": "14517",
+    "posets": [
+     {
+      "covers": [
+       [
+        1,
+        5
+       ],
+       [
+        1,
+        6
+       ],
+       [
+        1,
+        7
+       ],
+       [
+        2,
+        5
+       ],
+       [
+        2,
+        8
+       ],
+       [
+        3,
+        6
+       ],
+       [
+        4,
+        5
+       ]
+      ],
+      "desc": "zigzag6+leaves@3(pendant max),4(pendant min)[1<5 1<6 1<7 2<5 2<8 3<6 4<5] ⊔ point",
+      "e": 14517,
+      "aut": 1,
+      "fence_union": false
+     }
+    ]
+   },
+   {
+    "f": "14364",
+    "posets": [
+     {
+      "covers": [
+       [
+        1,
+        5
+       ],
+       [
+        1,
+        6
+       ],
+       [
+        1,
+        7
+       ],
+       [
+        2,
+        5
+       ],
+       [
+        2,
+        6
+       ],
+       [
+        3,
+        8
+       ],
+       [
+        4,
+        5
+       ]
+      ],
+      "desc": "other6[1<5 1<6 1<7 2<5 2<6 4<5] ⊔ chain2 ⊔ point",
+      "e": 14364,
+      "aut": 1,
+      "fence_union": false
+     }
+    ]
+   },
+   {
+    "f": "13599",
+    "posets": [
+     {
+      "covers": [
+       [
+        1,
+        5
+       ],
+       [
+        1,
+        6
+       ],
+       [
+        1,
+        7
+       ],
+       [
+        2,
+        5
+       ],
+       [
+        2,
+        8
+       ],
+       [
+        3,
+        6
+       ],
+       [
+        4,
+        8
+       ]
+      ],
+      "desc": "zigzag7+leaves@3(pendant max)[1<5 1<6 1<7 2<5 2<8 3<6 4<8] ⊔ point",
+      "e": 13599,
+      "aut": 1,
+      "fence_union": false
+     },
+     {
+      "covers": [
+       [
+        1,
+        5
+       ],
+       [
+        1,
+        6
+       ],
+       [
+        2,
+        7
+       ],
+       [
+        2,
+        8
+       ],
+       [
+        3,
+        5
+       ],
+       [
+        3,
+        7
+       ],
+       [
+        4,
+        5
+       ]
+      ],
+      "desc": "zigzag7+leaves@3(pendant min)[1<5 1<6 2<7 2<8 3<5 3<7 4<5] ⊔ point",
+      "e": 13599,
+      "aut": 1,
+      "fence_union": false
+     }
+    ]
+   }
+  ]
+ },
+ "10": {
+  "g": 107280,
+  "proven": true,
+  "method": "full enumeration of all unlabeled posets (nauty genposetg + plugin), cross-checked in Python",
+  "posets": [
+   {
+    "covers": [
+     [
+      1,
+      6
+     ],
+     [
+      1,
+      7
+     ],
+     [
+      2,
+      6
+     ],
+     [
+      2,
+      8
+     ],
+     [
+      3,
+      9
+     ],
+     [
+      4,
+      6
+     ],
+     [
+      5,
+      7
+     ]
+    ],
+    "desc": "zigzag6+leaves@4(pendant min)[1<6 1<7 2<6 2<8 4<6 5<7] ⊔ chain2 ⊔ point",
+    "e": 107280,
+    "aut": 1,
+    "fence_union": false
+   },
+   {
+    "covers": [
+     [
+      1,
+      5
+     ],
+     [
+      1,
+      6
+     ],
+     [
+      1,
+      7
+     ],
+     [
+      2,
+      5
+     ],
+     [
+      2,
+      8
+     ],
+     [
+      3,
+      9
+     ],
+     [
+      4,
+      6
+     ]
+    ],
+    "desc": "zigzag6+leaves@3(pendant max)[1<5 1<6 1<7 2<5 2<8 4<6] ⊔ chain2 ⊔ point",
+    "e": 107280,
+    "aut": 1,
+    "fence_union": false
+   }
+  ],
+  "runners_up": [
+   {
+    "f": "93480",
+    "posets": [
+     {
+      "covers": [
+       [
+        1,
+        6
+       ],
+       [
+        1,
+        7
+       ],
+       [
+        1,
+        8
+       ],
+       [
+        2,
+        6
+       ],
+       [
+        2,
+        9
+       ],
+       [
+        3,
+        7
+       ],
+       [
+        4,
+        9
+       ],
+       [
+        5,
+        6
+       ]
+      ],
+      "desc": "zigzag7+leaves@3(pendant max),4(pendant min)[1<6 1<7 1<8 2<6 2<9 3<7 4<9 5<6] ⊔ point",
+      "e": 93480,
+      "aut": 1,
+      "fence_union": false
+     },
+     {
+      "covers": [
+       [
+        1,
+        5
+       ],
+       [
+        1,
+        6
+       ],
+       [
+        1,
+        7
+       ],
+       [
+        2,
+        5
+       ],
+       [
+        2,
+        8
+       ],
+       [
+        3,
+        6
+       ],
+       [
+        3,
+        9
+       ],
+       [
+        4,
+        5
+       ]
+      ],
+      "desc": "zigzag7+leaves@3(pendant min),4(pendant max)[1<5 1<6 1<7 2<5 2<8 3<6 3<9 4<5] ⊔ point",
+      "e": 93480,
+      "aut": 1,
+      "fence_union": false
+     }
+    ]
+   },
+   {
+    "f": "90180",
+    "posets": [
+     {
+      "covers": [
+       [
+        1,
+        6
+       ],
+       [
+        1,
+        7
+       ],
+       [
+        1,
+        8
+       ],
+       [
+        2,
+        6
+       ],
+       [
+        2,
+        7
+       ],
+       [
+        3,
+        6
+       ],
+       [
+        3,
+        9
+       ],
+       [
+        4,
+        6
+       ],
+       [
+        5,
+        7
+       ]
+      ],
+      "desc": "other9[1<6 1<7 1<8 2<6 2<7 3<6 3<9 4<6 5<7] ⊔ point",
+      "e": 90180,
+      "aut": 1,
+      "fence_union": false
+     },
+     {
+      "covers": [
+       [
+        1,
+        5
+       ],
+       [
+        1,
+        6
+       ],
+       [
+        1,
+        7
+       ],
+       [
+        1,
+        8
+       ],
+       [
+        2,
+        5
+       ],
+       [
+        2,
+        6
+       ],
+       [
+        2,
+        9
+       ],
+       [
+        3,
+        7
+       ],
+       [
+        4,
+        5
+       ]
+      ],
+      "desc": "other9[1<5 1<6 1<7 1<8 2<5 2<6 2<9 3<7 4<5] ⊔ point",
+      "e": 90180,
+      "aut": 1,
+      "fence_union": false
+     }
+    ]
+   },
+   {
+    "f": "90000",
+    "posets": [
+     {
+      "covers": [
+       [
+        1,
+        6
+       ],
+       [
+        1,
+        7
+       ],
+       [
+        1,
+        8
+       ],
+       [
+        2,
+        6
+       ],
+       [
+        2,
+        7
+       ],
+       [
+        3,
+        9
+       ],
+       [
+        4,
+        8
+       ],
+       [
+        5,
+        6
+       ]
+      ],
+      "desc": "other7[1<6 1<7 1<8 2<6 2<7 4<8 5<6] ⊔ chain2 ⊔ point",
+      "e": 90000,
+      "aut": 1,
+      "fence_union": false
+     },
+     {
+      "covers": [
+       [
+        1,
+        5
+       ],
+       [
+        1,
+        6
+       ],
+       [
+        1,
+        7
+       ],
+       [
+        2,
+        5
+       ],
+       [
+        2,
+        6
+       ],
+       [
+        3,
+        5
+       ],
+       [
+        3,
+        8
+       ],
+       [
+        4,
+        9
+       ]
+      ],
+      "desc": "other7[1<5 1<6 1<7 2<5 2<6 3<5 3<8] ⊔ chain2 ⊔ point",
+      "e": 90000,
+      "aut": 1,
+      "fence_union": false
+     }
+    ]
+   }
+  ]
+ },
+ "11": {
+  "g": 798435,
+  "proven": true,
+  "method": "full enumeration of all unlabeled posets (nauty genposetg + plugin), cross-checked in Python",
+  "posets": [
+   {
+    "covers": [
+     [
+      1,
+      6
+     ],
+     [
+      1,
+      7
+     ],
+     [
+      1,
+      8
+     ],
+     [
+      2,
+      6
+     ],
+     [
+      2,
+      9
+     ],
+     [
+      3,
+      10
+     ],
+     [
+      4,
+      7
+     ],
+     [
+      5,
+      6
+     ]
+    ],
+    "desc": "zigzag6+leaves@3(pendant max),4(pendant min)[1<6 1<7 1<8 2<6 2<9 4<7 5<6] ⊔ chain2 ⊔ point",
+    "e": 798435,
+    "aut": 1,
+    "fence_union": false
+   }
+  ],
+  "runners_up": [
+   {
+    "f": "747945",
+    "posets": [
+     {
+      "covers": [
+       [
+        1,
+        6
+       ],
+       [
+        1,
+        7
+       ],
+       [
+        1,
+        8
+       ],
+       [
+        2,
+        6
+       ],
+       [
+        2,
+        9
+       ],
+       [
+        3,
+        10
+       ],
+       [
+        4,
+        7
+       ],
+       [
+        5,
+        9
+       ]
+      ],
+      "desc": "zigzag7+leaves@3(pendant max)[1<6 1<7 1<8 2<6 2<9 4<7 5<9] ⊔ chain2 ⊔ point",
+      "e": 747945,
+      "aut": 1,
+      "fence_union": false
+     },
+     {
+      "covers": [
+       [
+        1,
+        6
+       ],
+       [
+        1,
+        7
+       ],
+       [
+        2,
+        8
+       ],
+       [
+        2,
+        9
+       ],
+       [
+        3,
+        6
+       ],
+       [
+        3,
+        8
+       ],
+       [
+        4,
+        10
+       ],
+       [
+        5,
+        6
+       ]
+      ],
+      "desc": "zigzag7+leaves@3(pendant min)[1<6 1<7 2<8 2<9 3<6 3<8 5<6] ⊔ chain2 ⊔ point",
+      "e": 747945,
+      "aut": 1,
+      "fence_union": false
+     }
+    ]
+   },
+   {
+    "f": "712305",
+    "posets": [
+     {
+      "covers": [
+       [
+        1,
+        6
+       ],
+       [
+        1,
+        7
+       ],
+       [
+        1,
+        8
+       ],
+       [
+        1,
+        9
+       ],
+       [
+        2,
+        6
+       ],
+       [
+        2,
+        7
+       ],
+       [
+        3,
+        10
+       ],
+       [
+        4,
+        8
+       ],
+       [
+        5,
+        6
+       ]
+      ],
+      "desc": "other8[1<6 1<7 1<8 1<9 2<6 2<7 4<8 5<6] ⊔ chain2 ⊔ point",
+      "e": 712305,
+      "aut": 1,
+      "fence_union": false
+     },
+     {
+      "covers": [
+       [
+        1,
+        6
+       ],
+       [
+        1,
+        7
+       ],
+       [
+        1,
+        8
+       ],
+       [
+        2,
+        6
+       ],
+       [
+        2,
+        7
+       ],
+       [
+        3,
+        6
+       ],
+       [
+        3,
+        9
+       ],
+       [
+        4,
+        10
+       ],
+       [
+        5,
+        6
+       ]
+      ],
+      "desc": "other8[1<6 1<7 1<8 2<6 2<7 3<6 3<9 5<6] ⊔ chain2 ⊔ point",
+      "e": 712305,
+      "aut": 1,
+      "fence_union": false
+     }
+    ]
+   },
+   {
+    "f": "704550",
+    "posets": [
+     {
+      "covers": [
+       [
+        1,
+        6
+       ],
+       [
+        1,
+        7
+       ],
+       [
+        2,
+        6
+       ],
+       [
+        2,
+        8
+       ],
+       [
+        3,
+        9
+       ],
+       [
+        3,
+        10
+       ],
+       [
+        4,
+        7
+       ],
+       [
+        5,
+        9
+       ]
+      ],
+      "desc": "fence6 ⊔ fence4 ⊔ point",
+      "e": 704550,
+      "aut": 1,
+      "fence_union": true
+     }
+    ]
+   }
+  ]
+ }
+}

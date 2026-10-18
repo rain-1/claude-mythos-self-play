@@ -1,0 +1,25 @@
+AUTCALLS 25
+RANK 0 e 12 aut 2 count 1
+POSET 2,3
+RANK 1 e 5 aut 1 count 1
+POSET 0,2 0,3 1,2
+RANK 2 e 8 aut 2 count 3
+POSET 1,3 2,3
+POSET 1,2 2,3
+POSET 1,2 1,3
+RANK 3 e 3 aut 1 count 3
+POSET 0,3 1,2 2,3
+POSET 0,2 1,3
+POSET 0,1 0,2 2,3
+NCONN 10
+CONN e 5 aut 1 : 0,2 0,3 1,2
+CONN e 3 aut 1 : 0,3 1,2 2,3
+CONN e 3 aut 1 : 0,1 0,2 2,3
+CONN e 2 aut 2 : 0,2 1,2 2,3
+CONN e 2 aut 2 : 0,1 0,2 1,3 2,3
+CONN e 4 aut 4 : 0,2 0,3 1,2 1,3
+CONN e 2 aut 2 : 0,1 1,2 1,3
+CONN e 6 aut 6 : 0,3 1,3 2,3
+CONN e 6 aut 6 : 0,1 0,2 0,3
+CONN e 1 aut 1 : 0,1 1,2 2,3
+>Z 16 posets generated, 0 written; 0.00 sec

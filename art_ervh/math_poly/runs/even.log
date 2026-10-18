@@ -1,0 +1,8 @@
+n=3 tries=1098 seeds_ok=672 valid=1095 classes=1
+    LLL 1095
+3 {'valid_found': 1095, 'tries': 1098, 'classes': {'LLL': 1095}, 'reflex_counts': {0: 1095}, 'gallery': 12, 'min_clear': inf}
+5 {'valid_found': 846, 'tries': 1026, 'classes': {'LLLLR': 846}, 'reflex_counts': {1: 846}, 'gallery': 12, 'min_clear': 0.005999999999994954}
+7 {'valid_found': 535, 'tries': 1137, 'classes': {'LLLLRLR': 535}, 'reflex_counts': {2: 535}, 'gallery': 12, 'min_clear': 0.006000000000056772}
+9 {'valid_found': 637, 'tries': 1724, 'classes': {'LLLLRLRLR': 637}, 'reflex_counts': {3: 637}, 'gallery': 12, 'min_clear': 0.0060000155950704626}
+11 {'valid_found': 333, 'tries': 1407, 'classes': {'LLLLRLRLRLR': 333}, 'reflex_counts': {4: 333}, 'gallery': 12, 'min_clear': 0.0059999999128601544}
+n=4 delta=0.005 tries=2058 best viol=4.390e-03 {'viol': 0.004390401083047282, 'closure': 0.004390401083047282, 'box': 0.0014325574736560043, 'fold': 0.0021444079607836034, 'sep': 0.0021444108714920693} turns LRLL

@@ -1,0 +1,6 @@
+AUTCALLS 2
+RANK 0 e 1 aut 1 count 1
+POSET
+NCONN 1
+CONN e 1 aut 1 :
+>Z 1 posets generated, 0 written; 0.00 sec

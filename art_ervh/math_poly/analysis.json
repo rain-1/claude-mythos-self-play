@@ -1,0 +1,362 @@
+{
+ "odd": {
+  "3": {
+   "valid": 1095,
+   "tries": 1098,
+   "patterns": {
+    "LLL": 1095
+   },
+   "all_zigzag_word": true,
+   "reflex_counts": {
+    "0": 1095
+   },
+   "w_winding": {
+    "-0.5": 1095
+   },
+   "max_consecutive_edge_dot": -0.49999999978755977,
+   "max_convex_interior_angle": 60.00000000702747,
+   "min_reflex_interior_angle": 360.0
+  },
+  "5": {
+   "valid": 846,
+   "tries": 1026,
+   "patterns": {
+    "LLLLR": 846
+   },
+   "all_zigzag_word": true,
+   "reflex_counts": {
+    "1": 846
+   },
+   "w_winding": {
+    "-0.5": 846
+   },
+   "max_consecutive_edge_dot": 4.218847493575595e-15,
+   "max_convex_interior_angle": 90.00000000000024,
+   "min_reflex_interior_angle": 300.0003424748399
+  },
+  "7": {
+   "valid": 535,
+   "tries": 1137,
+   "patterns": {
+    "LLLLRLR": 535
+   },
+   "all_zigzag_word": true,
+   "reflex_counts": {
+    "2": 535
+   },
+   "w_winding": {
+    "-0.5": 535
+   },
+   "max_consecutive_edge_dot": 8.55095271402278e-10,
+   "max_convex_interior_angle": 90.00000004899336,
+   "min_reflex_interior_angle": 310.64043429056017
+  },
+  "9": {
+   "valid": 637,
+   "tries": 1724,
+   "patterns": {
+    "LLLLRLRLR": 637
+   },
+   "all_zigzag_word": true,
+   "reflex_counts": {
+    "3": 637
+   },
+   "w_winding": {
+    "-0.5": 637
+   },
+   "max_consecutive_edge_dot": 1.2472566279078405e-10,
+   "max_convex_interior_angle": 90.00000000714626,
+   "min_reflex_interior_angle": 319.069335744126
+  },
+  "11": {
+   "valid": 333,
+   "tries": 1407,
+   "patterns": {
+    "LLLLRLRLRLR": 333
+   },
+   "all_zigzag_word": true,
+   "reflex_counts": {
+    "4": 333
+   },
+   "w_winding": {
+    "-0.5": 333
+   },
+   "max_consecutive_edge_dot": 1.1461727620877003e-09,
+   "max_convex_interior_angle": 90.00000006567086,
+   "min_reflex_interior_angle": 333.7727474015426
+  },
+  "13": {
+   "valid": 428,
+   "tries": 1178,
+   "patterns": {
+    "LLLLRLRLRLRLR": 428
+   },
+   "all_zigzag_word": true,
+   "reflex_counts": {
+    "5": 428
+   },
+   "w_winding": {
+    "-0.5": 428
+   },
+   "max_consecutive_edge_dot": 5.373479439185758e-14,
+   "max_convex_interior_angle": 90.00000000000308,
+   "min_reflex_interior_angle": 335.59691750758043
+  },
+  "15": {
+   "valid": 265,
+   "tries": 1017,
+   "patterns": {
+    "LLLLRLRLRLRLRLR": 265
+   },
+   "all_zigzag_word": true,
+   "reflex_counts": {
+    "6": 265
+   },
+   "w_winding": {
+    "-0.5": 265
+   },
+   "max_consecutive_edge_dot": 8.145201010124966e-12,
+   "max_convex_interior_angle": 90.00000000046668,
+   "min_reflex_interior_angle": 340.24326404918105
+  },
+  "17": {
+   "valid": 275,
+   "tries": 1037,
+   "patterns": {
+    "LLLLRLRLRLRLRLRLR": 275
+   },
+   "all_zigzag_word": true,
+   "reflex_counts": {
+    "7": 275
+   },
+   "w_winding": {
+    "-0.5": 275
+   },
+   "max_consecutive_edge_dot": -2.6227137700861455e-10,
+   "max_convex_interior_angle": 89.99999998497296,
+   "min_reflex_interior_angle": 341.77245448096596
+  },
+  "19": {
+   "valid": 270,
+   "tries": 967,
+   "patterns": {
+    "LLLLRLRLRLRLRLRLRLR": 270
+   },
+   "all_zigzag_word": true,
+   "reflex_counts": {
+    "8": 270
+   },
+   "w_winding": {
+    "-0.5": 270
+   },
+   "max_consecutive_edge_dot": -1.85208577975806e-08,
+   "max_convex_interior_angle": 89.99999893883302,
+   "min_reflex_interior_angle": 341.0996056345899
+  },
+  "21": {
+   "valid": 171,
+   "tries": 816,
+   "patterns": {
+    "LLLLRLRLRLRLRLRLRLRLR": 171
+   },
+   "all_zigzag_word": true,
+   "reflex_counts": {
+    "9": 171
+   },
+   "w_winding": {
+    "-0.5": 171
+   },
+   "max_consecutive_edge_dot": -2.9356463349117166e-07,
+   "max_convex_interior_angle": 89.99998317998549,
+   "min_reflex_interior_angle": 346.15410429764125
+  }
+ },
+ "even": {
+  "4": {
+   "tries": 2058,
+   "delta": 0.005,
+   "best": [
+    {
+     "viol": 0.004390401083047282,
+     "breakdown": {
+      "viol": 0.004390401083047282,
+      "closure": 0.004390401083047282,
+      "box": 0.0014325574736560043,
+      "fold": 0.0021444079607836034,
+      "sep": 0.0021444108714920693
+     },
+     "turns": "LLLR",
+     "w_winding": -0.0
+    }
+   ]
+  },
+  "6": {
+   "tries": 1942,
+   "delta": 0.005,
+   "best": [
+    {
+     "viol": 0.0013871329301763354,
+     "breakdown": {
+      "viol": 0.0013871329301763354,
+      "closure": 0.001101771355168265,
+      "box": 0.0013871329301763354,
+      "fold": 0.0004936172274243736,
+      "sep": 0.0004936286666018244
+     },
+     "turns": "LLLLLR",
+     "w_winding": -1.0
+    }
+   ]
+  },
+  "8": {
+   "tries": 2190,
+   "delta": 0.005,
+   "best": [
+    {
+     "viol": 0.0015786181446927837,
+     "breakdown": {
+      "viol": 0.0015786181446927837,
+      "closure": 5.546511880226234e-09,
+      "box": 0.0015786181446927837,
+      "fold": 0.0005555528953937825,
+      "sep": 0.0005555638693640124
+     },
+     "turns": "LLLRLLLR",
+     "w_winding": -1.0
+    },
+    {
+     "viol": 0.0015792234700915397,
+     "breakdown": {
+      "viol": 0.0015792234700915397,
+      "closure": 5.567643089469215e-09,
+      "box": 0.0015792234700915397,
+      "fold": 0.0005555530483345485,
+      "sep": 0.0005555640223035788
+     },
+     "turns": "LLLRLLLR",
+     "w_winding": -1.0
+    },
+    {
+     "viol": 0.0015799635217086383,
+     "breakdown": {
+      "viol": 0.0015799635217086383,
+      "closure": 6.996825296065777e-09,
+      "box": 0.0015799635217086383,
+      "fold": 0.0005555530385965186,
+      "sep": 0.0005555640125656522
+     },
+     "turns": "LLLRLLLR",
+     "w_winding": -1.0
+    },
+    {
+     "viol": 0.0015803252898332065,
+     "breakdown": {
+      "viol": 0.0015803252898332065,
+      "closure": 0.0005263556768442169,
+      "box": 0.0015803252898332065,
+      "fold": 0.000555511200734167,
+      "sep": 0.0007895345852862966
+     },
+     "turns": "LLLRLLLR",
+     "w_winding": -1.0
+    },
+    {
+     "viol": 0.0015806901048436295,
+     "breakdown": {
+      "viol": 0.0015806901048436295,
+      "closure": 0.0005263558250889185,
+      "box": 0.0015806901048436295,
+      "fold": 0.0005555110759360438,
+      "sep": 0.0007895346257921106
+     },
+     "turns": "LLLRLLLR",
+     "w_winding": -1.0
+    }
+   ]
+  },
+  "10": {
+   "tries": 3263,
+   "delta": 0.005,
+   "best": [
+    {
+     "viol": 0.00219378783566726,
+     "breakdown": {
+      "viol": 0.00219378783566726,
+      "closure": 0.0020937666560393816,
+      "box": 0.00219378783566726,
+      "fold": 0.0007120207707942295,
+      "sep": 0.0007120306260643234
+     },
+     "turns": "LLLRLLLRLR",
+     "w_winding": -1.0
+    },
+    {
+     "viol": 0.0021957760779445223,
+     "breakdown": {
+      "viol": 0.0021957760779445223,
+      "closure": 0.0020872130068293445,
+      "box": 0.0021957760779445223,
+      "fold": 0.0007113635753610388,
+      "sep": 0.0007113734351632461
+     },
+     "turns": "LLLRLLLRLR",
+     "w_winding": -1.0
+    },
+    {
+     "viol": 0.002199859535597204,
+     "breakdown": {
+      "viol": 0.002199859535597204,
+      "closure": 0.002071743358872881,
+      "box": 0.002199859535597204,
+      "fold": 0.000709423032852402,
+      "sep": 0.0007094329060449095
+     },
+     "turns": "LLLRLLLRLR",
+     "w_winding": -1.0
+    },
+    {
+     "viol": 0.002209981761820634,
+     "breakdown": {
+      "viol": 0.002209981761820634,
+      "closure": 0.0020200106475128828,
+      "box": 0.002209981761820634,
+      "fold": 0.00070331148399132,
+      "sep": 0.0007033213994344367
+     },
+     "turns": "LLLRLLLRLR",
+     "w_winding": -1.0
+    },
+    {
+     "viol": 0.0022287202146400453,
+     "breakdown": {
+      "viol": 0.0022287202146400453,
+      "closure": 0.001996779596081456,
+      "box": 0.0022287202146400453,
+      "fold": 0.0006993347530931436,
+      "sep": 0.0006993446960930072
+     },
+     "turns": "LLLRLLLRLR",
+     "w_winding": -1.0
+    }
+   ]
+  },
+  "12": {
+   "tries": 3580,
+   "delta": 0.005,
+   "best": [
+    {
+     "viol": 0.0026475638147256397,
+     "breakdown": {
+      "viol": 0.0026475638147256397,
+      "closure": 0.0026343847963412525,
+      "box": 0.0026475638147256397,
+      "fold": 0.0007530273529848938,
+      "sep": 0.0007530369282078304
+     },
+     "turns": "LLLRLRLLLRLR",
+     "w_winding": -1.0
+    }
+   ]
+  }
+ }
+}
