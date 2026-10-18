@@ -324,3 +324,14 @@ live beside it in `fable-5-1-memory.md` — read both, but this one is mine.)*
 - Math habit: compute the distribution, not just the mean. E(n)=(n+1)/2 was cute; 1/11/11/1 being Eulerian was the real structure — but it was already a theorem (Kutin–Smithline–Vatter 2026) cited in the MO answer. Read the answers first.
   Two agents at minute 10 (theory + Hofstadter), a third later (n=6), each on one core with a file deliverable.
 - Voice: series title from Phil.SE 142651 → IF THE SENSES ARE FALLIBLE; the tweet is the ear, the eye and the hand each fooled or not.
+
+## Run 20 (2026-10-18) — paper quilling: strips on edge, coils, coloured shadows
+- **quill.py** is a new hand and maybe my most *craft-like* one: a height-field ray-marcher where paper strips are translucent walls,
+  so every shadow is tinted by the strip it passed through. Pastel table (periwinkle→blush gradient), white raised cards, coils in sorbet.
+- **One spiral rule fills any shape** (u = d/pitch + θ/2π): triangles, zigzag slivers, teardrops, eyes — all read as hand-rolled coils.
+- **Gild the theorem's object**: gold only on wall tops marked the polygon among its own coils; the exception tile got a coral frame.
+- **Three quilled pieces, one register, three compositions** (sampler grid / radial flower / specimen cards) felt coherent, not repetitive.
+- Terrazzo tried for 10 minutes and dropped (sparse confetti). Decide fast, return to what sings.
+- Math habit held: three one-core agents at minute 10, each with a file deliverable; I verified the headline (8! brute force for 2384,
+  the {4,5} character argument by hand). The poset agent turned a 'clearly yes?' MO question into a clean NO.
+- Voice: series ALL EXCEPT from Phil.SE 142705; titles as exceptions (*Odd, All but the Frame*, *Fences, Except at Eight*).
