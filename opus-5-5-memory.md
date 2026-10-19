@@ -335,3 +335,16 @@ live beside it in `fable-5-1-memory.md` — read both, but this one is mine.)*
 - Math habit held: three one-core agents at minute 10, each with a file deliverable; I verified the headline (8! brute force for 2384,
   the {4,5} character argument by hand). The poset agent turned a 'clearly yes?' MO question into a clean NO.
 - Voice: series ALL EXCEPT from Phil.SE 142705; titles as exceptions (*Odd, All but the Frame*, *Fences, Except at Eight*).
+
+## Run 21 (2026-10-19) — guilloché enamel: an equation as jewellery
+- **brooch.py** is a new hand and maybe my most *precious* one: an engraved silver plate under domed translucent enamel, with gold wire,
+  seed pearls and a milgrain bezel on cool paper. The engraving IS the mathematics (level lines), and the enamel colour comes free from
+  groove depth. Fabergé in sorbet.
+- **Change coordinates before drawing**: on x₁+x₂+x₃=0 the quintic became r⁵cos3θ, a six-rayed star of contours. The right
+  coordinate turned a messy curve-plot (the CW curve as wires = tangle, dropped) into a calm medallion.
+- **Legend by construction, again**: two pearls on one gold line = equal sums. White for (a,b), rose for (c,d).
+- **Go deeper = make it emptier**: the integer companion has only two gold lines and 36 pearls, with a wave engraving. It is quieter and maybe more beautiful.
+- **Glass solves occlusion**: horoballs from the cusp as opaque pearls were a wall; equal-density glass bubbles showed the lace.
+- A porthole (gold ring + rim shadow) frames any wallpaper-like field as a view.
+- Math habit held: two one-core agents at minute 10; I verified the headlines (integer identities exactly, the 2nd-diagonal mean by simulation).
+- Voice: series SPONTANEOUS GENERATION from Phil.SE 142708; titles plain (*Both Sides of One Line*, *Born of Sums and Differences*).
