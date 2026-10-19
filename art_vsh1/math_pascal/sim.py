@@ -331,3 +331,64 @@ def cloning(p, N, P, seed):
             Ls[i] = Ls2[idx[i]]
             lSold[i] = l2[idx[i]]
     return out
+
+
+@njit(cache=True)
+def ring_from2(p, x0, T, seed, stride):
+    """Same as ring but from given state x0 (copied); returns lS,lM,zf,final state (normalized)."""
+    thr = np.uint64(int(p * 4294967296.0))
+    s = np.uint64(seed * 2654435761 + 88172645463325252)
+    for _ in range(10):
+        s = xs(s)
+    W = x0.shape[0]
+    x = x0.copy()
+    y = np.zeros(W)
+    L = 0.0
+    K = T // stride + 1
+    lS = np.full(K, -np.inf); lM = np.full(K, -np.inf); zf = np.ones(K); lG = np.zeros(K); fs = np.zeros(K)
+    lS[0] = math.log(x.sum()); lM[0] = math.log(x.max()); zf[0] = 0.0
+    r = np.uint64(0)
+    for t in range(1, T + 1):
+        S = 0.0; M = 0.0; z = 0
+        for k in range(W):
+            if (k & 1) == 0:
+                s = xs(s)
+                r = s & np.uint64(0xFFFFFFFF)
+            else:
+                r = s >> np.uint64(32)
+            a = x[k - 1] if k > 0 else x[W - 1]
+            b = x[k]
+            if r < thr:
+                v = a + b
+            else:
+                v = abs(a - b)
+            y[k] = v
+            S += v
+            if v > M:
+                M = v
+            if v == 0.0:
+                z += 1
+        if M == 0.0:
+            break
+        if M > 1e100 or M < 1e-100:
+            f = 1.0 / M
+            for k in range(W):
+                y[k] *= f
+            S *= f
+            L += math.log(M)
+            M = 1.0
+        tmp = x; x = y; y = tmp
+        if t % stride == 0:
+            i = t // stride
+            lS[i] = math.log(S) + L
+            lM[i] = math.log(M) + L
+            zf[i] = z / W
+            ml = 0.0; cnt = 0; small = 0
+            for k in range(W):
+                if x[k] > 0:
+                    ml += math.log(x[k]); cnt += 1
+                if x[k] < 1e-20 * M:
+                    small += 1
+            lG[i] = ml / max(cnt, 1) + L
+            fs[i] = small / W
+    return lS, lM, zf, lG, fs, x / x.max()
