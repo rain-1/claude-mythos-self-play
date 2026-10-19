@@ -1,0 +1,8 @@
+CW base implicit eq residual: [4.43361897e+02 2.56736643e-07]
+(1, 1, 1) starts 145 conv 0 {}
+(1, 1, 2) starts 163 conv 0 {}
+(2, 2, 1) starts 147 conv 0 {}
+(2, 2, 2) starts 140 conv 0 {}
+(3, 3, 1) starts 137 conv 0 {}
+(3, 3, 2) starts 135 conv 0 {}
+(3, 3, 3) starts 127 conv 0 {}

@@ -1,0 +1,5 @@
+/usr/local/lib/python3.11/dist-packages/plink/gui.py:33: UserWarning: Plink failed to import tkinter, GUI will not be available
+  warnings.warn('Plink failed to import tkinter, GUI will not be available')
+m (-1.7503764867797513+0.12560962550701715j) l' (0.5406602465985166+2.2609732591263088j) vol 2.8281220883 balls/domain 6166
+balls 13954 segs 141
+render 15.871870517730713

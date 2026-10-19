@@ -1,0 +1,14 @@
+p=0.060 init=ones lnMax every 100k: 0.0 2.8 3.0 3.6 2.9 3.3 2.9 2.8 2.8 3.3 3.3 | slope2nd=-2.95e-07 zf_end=0.425
+p=0.060 init=high lnMax every 100k: 0.0 -26.7 -42.3 -42.8 -43.1 -42.3 -41.1 -42.5 -42.0 -42.7 -42.8 | slope2nd=-4.35e-07 zf_end=0.424
+p=0.080 init=ones lnMax every 100k: 0.0 3.5 4.3 7.8 3.9 4.1 4.1 5.2 4.6 4.4 4.3 | slope2nd=3.99e-07 zf_end=0.390
+p=0.080 init=high lnMax every 100k: 0.0 -8.0 -3.3 -3.6 -11.0 -19.5 -19.1 -18.0 -36.9 -37.3 -36.0 | slope2nd=-4.73e-05 zf_end=0.386
+p=0.085 init=ones lnMax every 100k: 0.0 6.1 5.0 6.4 15.9 34.7 57.2 76.8 96.6 109.2 128.5 | slope2nd=1.86e-04 zf_end=0.000
+p=0.085 init=high lnMax every 100k: 0.0 24.6 52.1 84.0 81.7 112.8 122.3 136.9 164.0 187.9 197.4 | slope2nd=2.03e-04 zf_end=0.000
+p=0.090 init=ones lnMax every 100k: 0.0 34.8 112.6 163.3 217.8 266.9 305.1 344.4 388.5 438.5 503.1 | slope2nd=4.38e-04 zf_end=0.000
+p=0.090 init=high lnMax every 100k: 0.0 51.6 102.1 155.8 203.3 257.2 306.8 359.3 421.0 486.3 536.6 | slope2nd=5.93e-04 zf_end=0.000
+p=0.095 init=ones lnMax every 100k: 0.0 159.6 307.4 448.8 584.3 701.8 858.4 985.6 1146.5 1309.2 1442.4 | slope2nd=1.51e-03 zf_end=0.000
+p=0.095 init=high lnMax every 100k: 0.0 128.4 268.0 413.6 563.0 712.5 846.8 1006.5 1138.8 1286.1 1452.2 | slope2nd=1.47e-03 zf_end=0.000
+p=0.100 init=ones lnMax every 100k: 0.0 314.9 669.0 989.7 | slope2nd=3.26e-03 zf_end=0.000
+p=0.100 init=high lnMax every 100k: 0.0 308.9 610.4 925.5 | slope2nd=3.12e-03 zf_end=0.000
+p=0.110 init=ones lnMax every 100k: 0.0 858.6 1718.0 2602.8 | slope2nd=8.86e-03 zf_end=0.000
+p=0.110 init=high lnMax every 100k: 0.0 857.3 1714.5 2577.1 | slope2nd=8.60e-03 zf_end=0.000
