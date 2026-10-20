@@ -1,0 +1,8 @@
+n=4 squares=14 TT entries=4194304 (101 MB)
+d= 1: no forced X win within d  nodes=1  time=0.00s  (cum 1 nodes, TT stores 0)
+d= 2: no forced X win within d  nodes=1  time=0.00s  (cum 2 nodes, TT stores 0)
+d= 3: no forced X win within d  nodes=1  time=0.00s  (cum 3 nodes, TT stores 0)
+d= 4: no forced X win within d  nodes=81  time=0.00s  (cum 84 nodes, TT stores 15)
+d= 5: no forced X win within d  nodes=149  time=0.00s  (cum 233 nodes, TT stores 45)
+d= 6: NO WIN (absolute: X cannot force win at all)  nodes=64  time=0.00s  (cum 297 nodes, TT stores 47)
+RESULT: first player cannot force a win (draw with best play; second player cannot win by strategy stealing)

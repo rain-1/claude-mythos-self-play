@@ -1,0 +1,8 @@
+n=14 balanced ones=98: SAT in 4.95s
+n=14 rot90 anti-symmetry: SAT in 0.01s
+n=13 balanced ones=84: SAT in 1.11s
+n=13 sym180: SAT in 0.05s
+14 ones = 98 verified True
+14_sym ones = 98 verified True
+13 ones = 84 verified True
+13_sym ones = 89 verified True

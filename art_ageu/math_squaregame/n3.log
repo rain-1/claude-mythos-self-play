@@ -1,0 +1,3 @@
+n=3 squares=5 TT entries=4194304 (101 MB)
+d= 1: NO WIN (absolute: X cannot force win at all)  nodes=1  time=0.00s  (cum 1 nodes, TT stores 0)
+RESULT: first player cannot force a win (draw with best play; second player cannot win by strategy stealing)

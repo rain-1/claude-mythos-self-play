@@ -1,0 +1,37 @@
+n=5 squares=30 TT entries=4194304 (101 MB)
+d= 1: no forced X win within d  nodes=1  time=0.00s  (cum 1 nodes, TT stores 0)
+d= 2: no forced X win within d  nodes=1  time=0.00s  (cum 2 nodes, TT stores 0)
+d= 3: no forced X win within d  nodes=1  time=0.00s  (cum 3 nodes, TT stores 0)
+d= 4: no forced X win within d  nodes=356  time=0.00s  (cum 359 nodes, TT stores 59)
+d= 5: no forced X win within d  nodes=4782  time=0.01s  (cum 5141 nodes, TT stores 1721)
+d= 6: no forced X win within d  nodes=24625  time=0.04s  (cum 29766 nodes, TT stores 10382)
+d= 7: no forced X win within d  nodes=111636  time=0.09s  (cum 141402 nodes, TT stores 47911)
+d= 8: no forced X win within d  nodes=433676  time=0.20s  (cum 575078 nodes, TT stores 195570)
+d= 9: no forced X win within d  nodes=1181543  time=0.46s  (cum 1756621 nodes, TT stores 579612)
+d=10: X WINS  nodes=628679  time=0.25s  (cum 2385300 nodes, TT stores 839187)
+RESULT: first player wins; minimal number of first-player moves = 10
+PV (cells as (row,col)), X fastest win vs O longest resistance:
+   1. X (2,2)  [X needs 10 own moves incl. this]
+   2. O (0,2)  [best resistance: X still needs 9]
+   3. X (2,1)  [X needs 9 own moves incl. this]
+   4. O (1,1)  [best resistance: X still needs 8]
+   5. X (3,1)  [X needs 8 own moves incl. this]
+   6. O (3,2)  [best resistance: X still needs 7]
+   7. X (3,0)  [X needs 7 own moves incl. this]
+   8. O (2,0)  [best resistance: X still needs 6]
+   9. X (2,3)  [X needs 6 own moves incl. this]
+  10. O (1,2)  [best resistance: X still needs 5]
+  11. X (0,1)  [X needs 5 own moves incl. this]
+  12. O (0,3)  [best resistance: X still needs 4]
+  13. X (1,3)  [X needs 4 own moves incl. this]
+  14. O (1,4)  [best resistance: X still needs 3]
+  15. X (3,4)  [X needs 3 own moves incl. this]
+  16. O (0,4)  [best resistance: X still needs 2]
+  17. X (4,1)  [X needs 2 own moves incl. this]
+  18. O (0,0)  [best resistance: X still needs 1]
+  19. X (4,0)  [X needs 1 own moves incl. this]
+OXOOO
+.OOXO
+OXXX.
+XXO.X
+XX...

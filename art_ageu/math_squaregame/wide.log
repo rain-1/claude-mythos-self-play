@@ -1,0 +1,19 @@
+n=9 squares=204 TT=1611 MB
+d= 8: X WINS nodes=2151644 time=3.1s TTstores=282019
+RESULT n=9: first player forces a win within 8 own moves (search returned 8)
+n=10 squares=285 TT=1611 MB
+d= 8: X WINS nodes=11996081 time=14.6s TTstores=1212913
+RESULT n=10: first player forces a win within 8 own moves (search returned 8)
+n=11 squares=385 TT=1611 MB
+d= 8: X WINS nodes=9983940 time=10.7s TTstores=832341
+RESULT n=11: first player forces a win within 8 own moves (search returned 8)
+n=12 squares=506 TT=1611 MB
+d= 8: X WINS nodes=54783750 time=60.8s TTstores=3676611
+RESULT n=12: first player forces a win within 8 own moves (search returned 8)
+n=13 squares=650 TT=1611 MB
+d= 8: X WINS nodes=39547889 time=51.3s TTstores=2390033
+RESULT n=13: first player forces a win within 8 own moves (search returned 8)
+n=14 squares=819 TT=1611 MB
+d= 8: X WINS nodes=211910786 time=320.0s TTstores=10746239
+RESULT n=14: first player forces a win within 8 own moves (search returned 8)
+done

@@ -1,0 +1,4 @@
+verify2 n=4 d=8: no forced win (nodes=170578, 0.1s)
+verify2 n=6 d=8: X forces win (nodes=21275905, 28.1s)
+verify2 n=9 d=8: TIMEOUT (nodes=377487879, 1200.2s)
+verify2 n=7 d=8: X forces win (nodes=42129923, 72.9s)

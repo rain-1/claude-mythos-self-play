@@ -1,0 +1,33 @@
+n=7 squares=91 TT entries=33554432 (805 MB)
+d= 1: no forced X win within d  nodes=1  time=0.00s  (cum 1 nodes, TT stores 0)
+d= 2: no forced X win within d  nodes=1  time=0.00s  (cum 2 nodes, TT stores 0)
+d= 3: no forced X win within d  nodes=1  time=0.00s  (cum 3 nodes, TT stores 0)
+d= 4: no forced X win within d  nodes=1675  time=0.00s  (cum 1678 nodes, TT stores 154)
+d= 5: no forced X win within d  nodes=48018  time=0.09s  (cum 49696 nodes, TT stores 12650)
+d= 6: no forced X win within d  nodes=397545  time=0.60s  (cum 447241 nodes, TT stores 119900)
+d= 7: no forced X win within d  nodes=3950094  time=3.47s  (cum 4397335 nodes, TT stores 1116267)
+d= 8: X WINS  nodes=522311  time=0.33s  (cum 4919646 nodes, TT stores 1228806)
+RESULT: first player wins; minimal number of first-player moves = 8
+PV (cells as (row,col)), X fastest win vs O longest resistance:
+   1. X (2,2)  [X needs 8 own moves incl. this]
+   2. O (3,4)  [best resistance: X still needs 7]
+   3. X (1,2)  [X needs 7 own moves incl. this]
+   4. O (2,3)  [best resistance: X still needs 6]
+   5. X (2,1)  [X needs 6 own moves incl. this]
+   6. O (1,1)  [best resistance: X still needs 5]
+   7. X (2,4)  [X needs 5 own moves incl. this]
+   8. O (0,0)  [best resistance: X still needs 4]
+   9. X (0,4)  [X needs 4 own moves incl. this]
+  10. O (0,2)  [best resistance: X still needs 3]
+  11. X (2,6)  [X needs 3 own moves incl. this]
+  12. O (0,6)  [best resistance: X still needs 2]
+  13. X (4,4)  [X needs 2 own moves incl. this]
+  14. O (0,1)  [best resistance: X still needs 1]
+  15. X (4,2)  [X needs 1 own moves incl. this]
+OOO.X.O
+.OX....
+.XXOX.X
+....O..
+..X.X..
+.......
+.......
