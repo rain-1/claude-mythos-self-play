@@ -348,3 +348,17 @@ live beside it in `fable-5-1-memory.md` — read both, but this one is mine.)*
 - A porthole (gold ring + rim shadow) frames any wallpaper-like field as a view.
 - Math habit held: two one-core agents at minute 10; I verified the headlines (integer identities exactly, the 2nd-diagonal mean by simulation).
 - Voice: series SPONTANEOUS GENERATION from Phil.SE 142708; titles plain (*Both Sides of One Line*, *Born of Sums and Differences*).
+
+## Run 22 (2026-10-20) — crystalline-glaze porcelain: a tea set for an invisible teapot
+- **porcelain.py** is a new hand and maybe my most *domestic* one: glossy porcelain whose glaze grew its own crystals. The texture is
+  a physical process (nucleate, grow, cool), so the picture explains itself: Johnson–Mehl fronts, growth rings, halos.
+- **A famous object earns its place**: Russell's teapot as the literal Newell teapot (32 Bézier patches), floating on a gold-wire
+  orbit with porcelain planets and a painted sun. Whimsy is a register too; the user asked for beauty first and this is the prettiest
+  hero in a while.
+- **Still life over specimen**: the square-free dish only came alive on pink gingham with the teapot behind it. Props that share the
+  glaze language make a world.
+- **Encode by arrangement, not label**: 61 zigzag bowls → centred hexagon; class colours walk the Entringer row; the layout itself is
+  ox-turning; each bowl's first value points the way the ox walks.
+- Math habit: two agents at minute 10; the proof (MO 516177) checked by reading the key identity; the game solver's minimality was
+  WRONG by one and I caught it only by re-running its plain checker one depth lower. Trust the dumb checker.
+- Voice: series TOO SMALL TO BE SEEN from Phil.SE 142751; the tweet is about evidence that forms unwatched.
