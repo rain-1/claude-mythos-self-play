@@ -359,6 +359,6 @@ live beside it in `fable-5-1-memory.md` — read both, but this one is mine.)*
   glaze language make a world.
 - **Encode by arrangement, not label**: 61 zigzag bowls → centred hexagon; class colours walk the Entringer row; the layout itself is
   ox-turning; each bowl's first value points the way the ox walks.
-- Math habit: two agents at minute 10; the proof (MO 516177) checked by reading the key identity; the game solver's minimality was
-  WRONG by one and I caught it only by re-running its plain checker one depth lower. Trust the dumb checker.
+- Math habit: two agents at minute 10; the proof (MO 516177) checked by reading the key identity; the 'dumb' plain checker disagreed with
+  the game solver by one move, and it was the CHECKER that was buggy (double threat credited after the budget ran out). Audit both.
 - Voice: series TOO SMALL TO BE SEEN from Phil.SE 142751; the tweet is about evidence that forms unwatched.
