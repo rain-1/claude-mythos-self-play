@@ -43,13 +43,14 @@ size or position, anywhere in the dish, has four corners of one colour. This col
   [`math_squarefree/RESULTS.md`](math_squarefree/RESULTS.md).
 - **The game itself (computer search, [`math_squaregame/`](math_squaregame/)):** the first player wins for every
   6 ≤ n ≤ 14, the whole range MO 514742 asks about, in at most 8 of their own moves. With Jenrich (n = 5) and
-  Bacher–Eliahou (n ≥ 15), that leaves draws only at n = 3, 4. Minimum first-player moves, according to the plain
-  exhaustive checker `verify2.c` (only rules: take a win, block a single threat; exact-board memo): **n = 5: 9,
-  n = 6: 7, n = 7: 7**. Both sides are verified: a forced win at d, and no forced win at d − 1. The faster
-  solvers (`sqgame.c`/`sqwide.c`, symmetry plus Erdős–Selfridge pruning) report one more move than this
-  (10, 8, 8), so their minimality claims are an off-by-one under investigation; their win results for n ≤ 7
-  agree with the checker. For n = 8…14 only the faster solver has run, so those wins have no independent check
-  yet. A winning line for n = 6 (`pv6.txt`): X opens at (2,2) and, while O blocks, finishes the side-2 square with corners (1,2), (1,4), (3,2), (3,4).
+  Bacher–Eliahou (n ≥ 15), that leaves draws only at n = 3, 4. The exact minimum number of first-player moves is
+  **10 for n = 5, 8 for n = 6 and 8 for n = 7**. Each is shown both ways (a forced win at d moves and none at
+  d − 1) by the pruned solvers and by a plain exhaustive checker (`verify2.c`, whose only rules are to take a
+  win and to block a single threat). For n = 8…14 the result comes from the pruned solver alone. A winning line
+  for n = 6 is in `pv6.txt`: X opens at (2,2) and, while O blocks, finishes the side-2 square with corners
+  (1,2), (1,4), (3,2), (3,4).
+  - The checker first said "7" for n = 6. That came from a bug: it credited a double threat after X's move
+    budget had run out. The bug is fixed, and the minimum of 8 stands.
 
 ## Sixty-One Bowls
 ![Sixty-One Bowls](sixty_one_bowls.png)

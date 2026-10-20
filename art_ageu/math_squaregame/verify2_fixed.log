@@ -1,0 +1,10 @@
+# fixed binaries:
+verify2 n=4 d=8: no forced win (nodes=162850, 0.1s)
+verify2 n=6 d=8: X forces win (nodes=52626264, 29.0s)
+verify2 n=6 d=7: no forced win (nodes=85410877, 55.6s)
+verify2 n=7 d=8: X forces win (nodes=318460781, 172.6s)
+verify2 n=7 d=7: no forced win (nodes=1215425692, 735.6s)
+verify2 n=5 d=10: X forces win (nodes=50069435, 39.3s)
+verify2 n=5 d=9: no forced win (nodes=56936154, 42.9s)
+
+[exited with code 0]

@@ -9,28 +9,37 @@ X = first player.
 | n | value (perfect play) | X moves needed (exact min) | nodes (main solver, all ID iterations) | independent check |
 |---|---|---|---|---|
 | 3 | draw | - | 1 (Erdos-Selfridge at root) | - |
-| 4 | draw | - | 297 | verify2: no win within 8 X moves |
-| 5 | **X wins** | **10** (19 plies) | 2.39M (d=10 iteration: 0.63M) | verify.c: win within 10 (53.8M nodes) |
-| 6 | **X wins** | **8** (15 plies) | 1.30M (d=8 iteration: 0.64M), ~5 s | verify.c: win within 8 (21.0M nodes, 150 s); verify2: win within 8 (21.3M nodes, 28 s) |
-| 7 | **X wins** | **8** | 4.92M (d=8: 0.52M), ~4 s | verify2: win within 8 (42.1M nodes, 73 s) |
+| 4 | draw | - | 297 | verify2: no win within 8 X moves (162.9K nodes) |
+| 5 | **X wins** | **10** (19 plies) | 2.39M (d=10 iteration: 0.63M) | verify2: win within 10 (50.1M nodes, 39 s); **and no win within 9** (56.9M nodes, 43 s) |
+| 6 | **X wins** | **8** (15 plies) | 1.30M (d=8 iteration: 0.64M), ~5 s | verify2: win within 8 (52.6M nodes, 29 s) **and no win within 7** (85.4M nodes, 56 s) |
+| 7 | **X wins** | **8** | 4.92M (d=8: 0.52M), ~4 s | verify2: win within 8 (318.5M nodes, 173 s) **and no win within 7** (1.22G nodes, 736 s) |
 | 8 | **X wins** | **8** | 15.3M (d=8: 1.58M), ~12 s | - |
-| 9 | **X wins** | <= 8 | 2.15M (d=8 only), 3 s | verify2 timed out at 1200 s (377M nodes) |
+| 9 | **X wins** | <= 8 | 2.15M (d=8 only), 3 s | not re-run after the fix (old buggy run timed out) |
 | 10 | **X wins** | <= 8 | 12.0M, 15 s | - |
 | 11 | **X wins** | <= 8 | 10.0M, 11 s | - |
 | 12 | **X wins** | <= 8 | 54.8M, 61 s | - |
 | 13 | **X wins** | <= 8 | 39.5M, 51 s | - |
 | 14 | **X wins** | <= 8 | 211.9M, 320 s | - |
 
-For n = 6, 7, 8 the "no forced win within 7 X moves" part (minimality) comes only from the
-main solvers (sqgame.c / sqwide.c, which agree node-for-node). For n >= 9 only the depth-8
-win was searched, so 8 is an upper bound there.
+**Minimum vs upper bound.** "exactly k" means a win within k AND no win within k-1 X moves.
+n=5, 6 and 7: both halves confirmed independently by verify2 (after the fix below).
+n=8: minimum from the main solvers only. n=9..14: depth 8 searched directly, so 8 is only an
+**upper bound** there (no lower-bound search was run).
+
+**Verifier bug (found and fixed).** The first versions of verify.c/verify2.c returned "X wins"
+at an O-to-move node where X had two open threats, even when X had used up its move budget (d=0).
+So `verify n d` really certified "win within d+1". That's why `verify 6 7` and `verify2 6 7`
+wrongly reported a win (coordinator's discrepancy). Fix: `if (d == 0) return 0;` for either side to
+move. The main solvers always had this right (`if (nt >= 2) return d >= 1 ? WIN(1) : FAIL(0)`), and the
+corrected verifier now agrees with them exactly for n=4,5,6,7. Every verifier number in the
+table comes from the corrected binaries.
 
 **Conclusion:** the first player wins for every 6 <= n <= 14, always within 8 of their own
 moves. Together with Jenrich (n=5) and Bacher-Eliahou (n >= 15: every 2-colouring of
 15x15 has a monochromatic square, so the full board can't be a draw and strategy stealing
 gives X the win), this would settle the question: **draw for n = 3, 4; first-player win for
-every n >= 5.** Caveat: this is computer-search evidence (the independent plain verifier confirms the
-depth-8 win for n = 6, 7, and n=5 within 10; for n = 8..14 only the main solvers have been run,
+every n >= 5.** Caveat: this is computer-search evidence (the corrected independent plain verifier confirms
+n = 6 and 7 exactly (win in 8, not in 7) and n=5 exactly (win in 10, not in 9); for n = 8..14 only the main solvers have been run,
 so those results rest on sqgame.c/sqwide.c; their pruning rules are listed under Method), not a human-checkable proof. n=5 needs 10 moves and n >= 6 need 8,
 because the bigger board gives X room to build double threats sooner.
 
