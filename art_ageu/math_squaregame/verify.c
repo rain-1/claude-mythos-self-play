@@ -32,7 +32,7 @@ static int solve(char *bd, int tomove, int d) {
   int other = 3 - tomove, empt = 0;
   for (int i = 0; i < nc; i++) if (!bd[i]) empt++;
   if (empt == 0) return 0;
-  if (tomove == 1 && d == 0) return 0;
+  if (d == 0) return 0; // X has no moves left (X or O to move): X cannot complete a square any more
   // immediate win for mover
   for (int i = 0; i < nc; i++) if (!bd[i] && completes(bd, tomove, i)) return tomove == 1;
   // memo

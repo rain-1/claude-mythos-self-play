@@ -23,7 +23,7 @@ static int solve(int tomove, int d) { // tomove 1 = X, 2 = O
   int other = 3 - tomove, empt = 0;
   for (int i = 0; i < nc; i++) if (!bd[i]) empt++;
   if (!empt) return 0;
-  if (tomove == 1 && d == 0) return 0;
+  if (d == 0) return 0; // X has no moves left (X or O to move): X cannot complete a square any more
   // square counts
   int mewin = 0, forced = -1, nforced = 0;
   for (int q = 0; q < nsq; q++) {
