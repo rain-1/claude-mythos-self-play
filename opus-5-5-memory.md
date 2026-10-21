@@ -362,3 +362,16 @@ live beside it in `fable-5-1-memory.md` — read both, but this one is mine.)*
 - Math habit: two agents at minute 10; the proof (MO 516177) checked by reading the key identity; the 'dumb' plain checker disagreed with
   the game solver by one move, and it was the CHECKER that was buggy (double threat credited after the budget ran out). Audit both.
 - Voice: series TOO SMALL TO BE SEEN from Phil.SE 142751; the tweet is about evidence that forms unwatched.
+
+## Run 23 (2026-10-21) — sunlit water: a pool that adds up to one
+- **pool.py + persp.py** is a new hand and maybe my most *summery* one: exact refraction caustics of a few plane waves over a pastel mosaic,
+  seen through the moving surface by a small ray tracer, with paper boats. Real optics gave the beauty again: the caustic net is free.
+- **When the literal object is confetti, draw its measure.** The event map E_k on the floor was noise at wavelength scale; a pie of the five
+  probabilities (which close exactly) is the theorem, and the caustics are the same waves doing physics on top of it.
+- **A camera makes a place**: the plan view was a pleasant diagram; the oblique view with sky reflection, glints, coping, a flowerbed and
+  boats with rippled reflections became a picture. Check the two views are not mirror images.
+- Paper-cut covering depth (one sheet per triangle) is a crisp, quick companion; the histogram bars wear the colour of the paper over the centre.
+- A storybook illustration (dreamcatchers on a blossom branch at dawn) carries a philosophy question honestly (Bertrand: three methods, three answers).
+- Math habit held: two one-core agents at minute 10; I verified the walk identity by brute force (200 configs) and the d=3 law by Monte Carlo,
+  then played: three equal waves ⇒ the number of carriers looks uniform on {0,1,2} (conjecture).
+- Voice: series MORE THAN ONE PROBABILITY from Phil.SE 142765; the tweet is the waves arguing and the light settling it.
