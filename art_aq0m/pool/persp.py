@@ -106,6 +106,29 @@ def shade(ex, ey, ez, dx, dy, dz, K, phi, a, A, depth, R, rimw, cope, eta, falb,
             lit = 0.55 + 0.6 * ndl
             return cr * lit * ambr + spec, cg * lit * ambg + spec, cb * lit * ambb + spec, 0.0
         rr = r - (R + rimw)
+        if rr > 0.30 and rr < 0.80:
+            # flowerbed: a bank of pastel blossoms on soft green
+            cx = np.floor(x / 0.02); cy = np.floor(y / 0.02)
+            hh = (np.sin(cx * 12.9898 + cy * 78.233) * 43758.5453) % 1.0
+            h2 = (np.sin(cx * 39.3468 + cy * 11.135) * 24634.6345) % 1.0
+            ox = (cx + 0.3 + 0.4 * hh) * 0.02 - x; oy = (cy + 0.3 + 0.4 * h2) * 0.02 - y
+            rad = 0.0075 + 0.0035 * h2
+            edge = min(rr - 0.30, 0.80 - rr) / 0.04
+            lit = (0.66 + 0.5 * sz)
+            if ox * ox + oy * oy < rad * rad and hh < 0.25 + 0.6 * min(edge, 1.0):
+                q = 1.0 - (ox * ox + oy * oy) / (rad * rad)
+                sh = 0.86 + 0.18 * q
+                k = int(hh * 97.0) % 5
+                if k == 0:
+                    return 1.0 * lit * sh, 0.76 * lit * sh, 0.82 * lit * sh, 0.0
+                elif k == 1:
+                    return 1.0 * lit * sh, 0.92 * lit * sh, 0.66 * lit * sh, 0.0
+                elif k == 2:
+                    return 0.86 * lit * sh, 0.78 * lit * sh, 1.0 * lit * sh, 0.0
+                elif k == 3:
+                    return 1.0 * lit * sh, 0.85 * lit * sh, 0.74 * lit * sh, 0.0
+                return 1.0 * lit * sh, 0.99 * lit * sh, 0.97 * lit * sh, 0.0
+            return 0.58 * lit, 0.80 * lit, 0.62 * lit, 0.0
         if rr > 0.30:
             # lawn: soft mint with a mown stripe and a scatter of tiny daisies
             q = (np.sin(x * 211.0 + np.sin(y * 97.0)) * 43758.5) % 1.0

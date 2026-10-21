@@ -38,6 +38,9 @@ fov = kw.get('fov', 0.80)
 img, wmask = persp.trace(Wd, Hd, eye, fwd, right, up, fov, K, phi, a, A, depth, R, rimw, cope, 1.0 / 1.334,
                          alb, caus, fx0, fpx, sun, ss, 1)
 print('trace', time.time() - t0)
+# the plan view draws world y downward (a mirror of the world seen from above); mirror the photograph
+# too, so both pictures put each sector on the same side for a viewer standing at the plan's lower edge
+img = img[:, ::-1].copy(); wmask = wmask[:, ::-1].copy()
 
 
 def project(p):
@@ -45,7 +48,7 @@ def project(p):
     z = v @ fwd
     x = (v @ right) / z; y = (v @ up) / z
     tanf = np.tan(fov / 2)
-    return ((x / (tanf * Wd / Hd) + 1) * Wd / 2, (1 - y / tanf) * Hd / 2, z)
+    return (Wd - (x / (tanf * Wd / Hd) + 1) * Wd / 2, (1 - y / tanf) * Hd / 2, z)
 
 # boats: storybook sprites standing on the water, each on its own sector, with a soft reflection
 BOATC = [[1.0, 0.62, 0.66], [1.0, 0.84, 0.46], [0.52, 0.88, 0.70], [0.55, 0.74, 1.0], [0.78, 0.64, 1.0]]
@@ -66,7 +69,7 @@ for k in order:
     s2, _, _ = project(np.array([cx + Lb, cy, 0.0]))
     Lp = abs(s2 - sx) * SS
     # facing: show the bow on the side of the screen the heading points to
-    hx = np.cos(hd) * right[0] + np.sin(hd) * right[1]
+    hx = -(np.cos(hd) * right[0] + np.sin(hd) * right[1])
     f = 1.0 if hx >= 0 else -1.0
     X0, Y0 = sx * SS, sy * SS
     h = 0.26
@@ -90,9 +93,13 @@ refl = refl.resize((Wd, Hd), Image.LANCZOS).filter(ImageFilter.GaussianBlur(1.5 
 shad = np.asarray(shad.resize((Wd, Hd), Image.LANCZOS).filter(ImageFilter.GaussianBlur(3 * Wd / 1024)), np.float32) / 255
 # wobble the reflection by the surface slope would be ideal; a soft vertical smear is enough at this size
 ra = np.asarray(refl, np.float32) / 255
+# ripple the reflection: shift each row sideways by a little wave
+rows = np.arange(Hd)
+sh_ = np.round(2.5 * Wd / 1024 * np.sin(rows * 2 * np.pi / (7.0 * Wd / 1024))).astype(int)
+ra = np.stack([np.roll(ra[j], sh_[j], axis=0) for j in range(Hd)])
 la = np.asarray(lay, np.float32) / 255
 img = img * (1 - 0.25 * shad[..., None] * wmask[..., None])
-img = img * (1 - ra[..., 3:] * 0.45 * wmask[..., None]) + scene.lin(ra[..., :3]) * ra[..., 3:] * 0.45 * wmask[..., None] * 0.9
+img = img * (1 - ra[..., 3:] * 0.85 * wmask[..., None]) + scene.lin(ra[..., :3]) * ra[..., 3:] * 0.85 * wmask[..., None] * 0.72
 lin_b = scene.lin(la[..., :3]) * 1.0
 img = img * (1 - la[..., 3:]) + lin_b * la[..., 3:]
 rgb = scene.srgb(scene.tonemap(img * kw.get('expo', 1.0), 1.5))
