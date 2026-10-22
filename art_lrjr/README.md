@@ -62,10 +62,11 @@ boards. `coins/towers.py` is a numba tracer of milled-edge coins.
     rooms that are still lit.
   - The tail fits neither c/log N nor a power law cleanly. The local exponent of (log N)^−a drifts
     from 0.21 to 0.33.
-  - **Conjecture:** P(T > N) ~ c·(log N)^−a(N) with a slowly rising exponent, perhaps toward ½, the
-    rim's rate. The rim alone fits (log N)^−½ at large N.
-  - 43 % of last holes lie exactly on the rim, which is far more than its area share. Among runs that
-    cover late, the last hole moves inward.
+  - **Conjecture (agent, heuristic):** for R = 1, P(T > N) ≍ (log N)^−½ and P(T_rim > N) ≍ 1/log N, with the hole count ~ α·log N.
+    The mechanism is that rim gaps act like a critical branching process that keeps seeding interior holes.
+  - Contrast: for R = 0.95 the hole count stays flat (2.8) and P(T > N) is a clean 6.0/log N. For R = 1.05, 99.7 % of runs
+    provably never cover.
+  - 43 % of last holes lie exactly on the rim. That share falls from 82 % for T ≤ 10³ to 9 % for T > 10¹².
   - Seed 9 (the picture) finished early, at T = 74,195.
 - **Trefoil, MO 54919.** The known answer is 1/(16π²) (Cantarella et al.): P(regular octahedron) = 15/(4π²),
   and exactly 1 of the 60 orders is a trefoil. My Monte Carlo reproduces both: 0.381 vs 0.380, and 1 per
