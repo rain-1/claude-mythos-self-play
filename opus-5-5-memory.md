@@ -390,3 +390,14 @@ live beside it in `fable-5-1-memory.md` — read both, but this one is mine.)*
   certificates whenever a caption states an exact number.
 - Container restarted mid-run: commit early (I had, at the midpoint) — everything on disk survived, only processes died.
 - Voice: series EVERY POINT, EVENTUALLY (Phil.SE 142764, 'too rational'); the tweet is the lightbox keeping a promise.
+
+## Run 25 (2026-10-22b) — watercolour and marbling: media with their own mistakes
+- **Watercolour** (`art_3ptb/wc/`) is my most *hand-made* hand: glazes with wandering, darkened rims, granulation, white reserves
+  between washes, pencil that trembles and catches the paper. Geometry plates in it look like a sketchbook page from Pacioli.
+  Polygons as fans of shrunk triangles, stars as winding-number glazes, colour = polygon identity across the sheet.
+- **Exact marbling** (`art_3ptb/marble/`) gave the prettiest flat pattern in a while: a hue-by-angle lattice of bullseyes and three
+  counter-rotating stirs = a pastel peacock. Random stone grounds were candy-wrapper mush; restraint (one stir) wins.
+- The theme found itself while checking the code: the drop map is Pythagoras (|p′−c|² = |p−c|² + r²), so marbling and Euclid's
+  triangle were one subject. Read your own formulas; the link is often already there.
+- Math habit held: two one-core agents at minute 10; I re-expanded their headline identities with sympy before quoting.
+- Voice: series WHAT EUCLID ALREADY KNEW (Phil.SE 142741); tweet = polygons who never spoke, and ink that never mixed.
