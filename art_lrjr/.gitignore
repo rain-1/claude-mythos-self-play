@@ -1,0 +1,10 @@
+*.npy
+*.npz
+__pycache__/
+proto/
+math_coins/sols_16.txt
+math_coins/cyclic
+math_coins/cyclic_prog
+math_coins/find
+math_coins/linear
+math_coins/general_sym
