@@ -57,10 +57,42 @@ are just neighbouring rings.
 (Bonus built: the zone-plate drop, which fell out of checking the marbling map.)
 
 ## Mathematics
-MATH_PLACEHOLDER
+**MO 153761: chord right triangles, classified.** (`math_chords/`, agent + my checks). Write sin²a+sin²b=sin²c as
+cos X + cos Y − cos Z = 1 (X,Y,Z = 2a,2b,2c), a vanishing sum of 8 roots of unity, and run it through Conway–Jones
+(1976, Thm 7). Result: apart from the **Thales family** (hypotenuse = diameter, r₁+r₂=½), there are **exactly five**
+right triangles whose sides are edges of regular (star) polygons in equal circles:
+{10}²+{6}²={5}² (Euclid) and its Galois twin {6}²+{10/3}²={5/2}² (√5 ↦ −√5); the self-conjugate golden triangle
+{10}²+{10/3}²={3}² (1/φ² + φ² = 3); and the rational pair {6}²+{6}²={4}², {6}²+{4}²={3}². Every non-degenerate
+denominator divides 4, 6 or 10; the π/7, π/15, π/21 relations can never fit. A brute force over all 26,828
+rationals with denominator ≤ 420, every hit certified exactly modulo the cyclotomic polynomial, finds 6,707 Thales
+triangles and the same five (7 near-misses at ~1e-13, all certified non-zero).
+
+**Observation (mine): marbling is Pythagoras.** The exact drop map p ↦ c+(p−c)√(1+r²/|p−c|²) is
+|p′−c|² = |p−c|² + r² — every ink drop adds its radius at a right angle. So N equal drops leave rings at r√m
+(equal areas, a Fresnel zone plate), and the rational chord triangles {6}{6}{4} and {6}{4}{3} are neighbouring
+rings of a bullseye with r = 1. A drop at a *different* centre still preserves area but not this radial law —
+that is where marbling patterns come from.
+
+**MO 516220: is every n a sum of six cubes of non-constant linear polynomials?** (`math_cubes/`, agent; I re-expanded
+the headline identities with sympy). Not settled. Proved: **every n ≡ 63 (mod 126)** is such a sum, by
+Σ(Aᵢx+Bᵢ+wᵢt)³ = 5985 + 126t with A=(247,104,1,−152,−232,−58), B=(−12,15,20,−3,13,−18), w=(−16,−7,0,10,15,4);
+likewise n ≡ 42, 168 (mod 210), 210 (mod 420), 0 (mod 504), 336, 504 (mod 840), 567 (mod 1134), and every even
+n = 2(u³+v³+w³) with p²u+q²v+r²w=0 solvable in non-zero p,q,r. Small n can need large coefficients:
+4 = (21x−11)³ − (21x−28)³ + (27x−29)³ − (27x+20)³ + (28x+19)³ − (28x−17)³ (height 29, exhaustive to 14). No
+representation found yet (paired search to height 52) for n = 5, 14, 23, 25, 31, 32, 38, 40, 41, …; the gaps sit
+in n ≡ 3, 4, 5, 6 (mod 9), hardest for odd n ≡ ±4 (mod 9), where mod-3 conditions force some Aᵢ ≡ 0 (mod 3).
+Literature: Choudhry (arXiv:2311.07325) gets five cubes of *cubic* polynomials; nothing found for linear ones.
+CONJECTURE: every integer is such a sum (already in the asker's paired form), with heights growing fastest on
+odd n ≡ ±4 (mod 9); a proof likely needs families whose Aᵢ depend on the parameter.
 
 ## Tweet
-TWEET_PLACEHOLDER
+Three polygons lived in three equal circles and never spoke. One day each laid down a single edge, and the edges met at a right angle. In the marbling tray next door, every drop of ink did the same thing quietly, pushing the others out at right angles, and nothing ever mixed.
+
+## What I learned about generative art
+A medium is a set of failures you can love. The watercolour only became believable once it got things wrong the
+way paint does: edges that wander, pigment piling up at the dried rim, colour sinking into the paper's valleys,
+white slivers where two washes didn't quite meet. The marbling only became beautiful once I stopped adding drops
+and let one stir carry the whole bath.
 
 ## Reproduce
 `cd wc && python3 plate.py 4096 ../three_polygons_one_right_angle_4096.png 11`,

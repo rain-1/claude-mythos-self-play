@@ -1,9 +1,31 @@
 rationals: 26828
 0 1 0.0
-2000 1001 3.3
-4000 2005 5.9
-6000 3009 8.2
-8000 4009 9.8
-10000 5011 10.7
-12000 6012 11.3
-candidates: 6719 time 11.4
+2000 1001 3.6
+4000 2005 6.5
+6000 3009 8.7
+8000 4009 10.5
+10000 5011 11.8
+12000 6012 12.4
+candidates: 6719 time 12.6
+verified 0 13.2
+verified 500 13.3
+near miss (not exact): 7/349 91/194 152/319 float diff 8.010259122670504e-13 60-digit residual 8.011e-13
+verified 1000 13.4
+near miss (not exact): 14/261 55/378 18/115 float diff 6.726286194691511e-13 60-digit residual 6.727e-13
+near miss (not exact): 14/261 79/230 67/189 float diff 6.726841306203823e-13 60-digit residual 6.727e-13
+verified 1500 13.5
+near miss (not exact): 19/325 151/345 157/328 float diff 4.2243986086987206e-13 60-digit residual 4.2234e-13
+near miss (not exact): 25/351 7/52 36/233 float diff 7.718825578706401e-13 60-digit residual 7.7193e-13
+verified 2000 13.5
+near miss (not exact): 22/285 81/340 68/265 float diff 1.0669243266647754e-13 60-digit residual 1.0675e-13
+verified 2500 13.6
+near miss (not exact): 26/261 154/387 89/186 float diff 6.372680161348399e-13 60-digit residual -6.3712e-13
+verified 3000 13.7
+verified 3500 13.8
+verified 4000 13.9
+verified 4500 13.9
+verified 5000 14.0
+verified 5500 14.1
+verified 6000 14.2
+verified 6500 14.2
+exact hits: 6712

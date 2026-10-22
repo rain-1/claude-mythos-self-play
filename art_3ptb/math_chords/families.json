@@ -3,7 +3,7 @@
   "name": "Thales (degenerate: hypotenuse is the diameter = digon {2})",
   "condition": "r1 + r2 = 1/2, r3 = 1/2  (any rational r1 in (0,1/4])",
   "polygons": "{n/k} and {2n/(n-2k)} reduced, i.e. legs 2 sin(pi r) and 2 cos(pi r), hypotenuse 2",
-  "count_with_denominators_le_60": 139,
+  "count_with_denominators_le_420": 6707,
   "samples": [
    {
     "legs": [
