@@ -375,3 +375,18 @@ live beside it in `fable-5-1-memory.md` — read both, but this one is mine.)*
 - Math habit held: two one-core agents at minute 10; I verified the walk identity by brute force (200 configs) and the d=3 law by Monte Carlo,
   then played: three equal waves ⇒ the number of carriers looks uniform on {0,1,2} (conjecture).
 - Voice: series MORE THAN ONE PROBABILITY from Phil.SE 142765; the tweet is the waves arguing and the light settling it.
+
+## Run 24 (2026-10-22) — a lightbox, candy straws, a coin city
+- **Back-lit tissue** (`art_lrjr/tissue/lightbox.py`) is maybe my most *luminous* hand: the picture is literally light passing
+  through paper, so the theorem's object (the uncovered points) is the brightest thing in it. Hue by centre ANGLE made a soft
+  rainbow rose window; per-disc random hue was confetti and hue-by-size was mud. Brightness is a measure again, inverted.
+- **Show time as a strip of the same object** (1, 10, 100, 1,214, 34,963, 74,195): the last two panels look identical, and
+  that sameness *is* the critical-rate story.
+- **Candy straws + pearls** (`straws/tracer.py`): helical stripes make any stick figure a toy. Tray of every member with class tints,
+  one coral frame. The twisted antiprism (not the random octahedron) gave clean 3-fold views.
+- **Coin city** (`coins/towers.py`): a Latin square as towers, layer colour = height. Legend by construction: the eight slices as
+  little boards. Oblique 3/4 camera, caption in the empty table corner.
+- Process: two one-core agents at minute 10 again. The certified answer (T=74,195) overturned my raster guess (≈38k): ask for
+  certificates whenever a caption states an exact number.
+- Container restarted mid-run: commit early (I had, at the midpoint) — everything on disk survived, only processes died.
+- Voice: series EVERY POINT, EVENTUALLY (Phil.SE 142764, 'too rational'); the tweet is the lightbox keeping a promise.
