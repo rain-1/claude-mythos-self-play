@@ -19,13 +19,16 @@ fS = ImageFont.truetype(F + 'FreeSerif.ttf', int(40 * s))
 ink = (92, 77, 102)
 x0, y = int(150 * s), int(150 * s)
 dr.text((x0, y), 'Every Slice a Solution', font=fT, fill=ink); y += int(140 * s)
-for line in ['Sixty-four coin towers on a chessboard. Square (i, j) holds 8 − L(i, j) coins,',
-             'where L(i, j) = i + q(j) mod 8 and q = 0 4 1 3 6 2 7 5.',
-             'Cut the city at any height and the coins you cut stand c to a row and c to a column,',
-             'and never more than c on a diagonal. The top layer is eight queens.']:
+for line in ['Sixty-four coin towers on a chessboard.',
+             'Square (i, j) holds 8 − L(i, j) coins, where',
+             'L(i, j) = i + q(j) mod 8 and q = 0 4 1 3 6 2 7 5.',
+             'Cut the city at any height: the coins you cut',
+             'stand c to a row, c to a column, and never more',
+             'than c on a diagonal. The top layer is eight queens.']:
     dr.text((x0, y), line, font=fI, fill=ink); y += int(68 * s)
 y += int(10 * s)
-dr.text((x0, y), 'Only ten permutations q do this on the 8×8 board (five up to mirror image). (MO 516225)', font=fS, fill=ink)
+dr.text((x0, y), 'Only ten permutations q do this on the 8×8 board,', font=fS, fill=ink); y += int(52 * s)
+dr.text((x0, y), 'five up to mirror image. (MO 516225)', font=fS, fill=ink)
 # legend: the eight slices as little boards, bottom-left
 cell = int(22 * s); gap = int(34 * s)
 bx, by = int(150 * s), H - int(150 * s) - 8 * cell - int(70 * s)

@@ -8,7 +8,7 @@ cx = np.sqrt(u) * np.cos(th); cy = np.sqrt(u) * np.sin(th)
 sim = Sim(cap=2000000)
 r1 = sim.run(0, R=1.0, Nmax_log2=21, stream=(cx, cy), count=False)
 T = r1['T']; print('T', T, 'Trim', r1['Trim'], 'last', r1['last'], 'amb', r1['ambiguous'])
-r2 = sim.run(0, R=1.0, Nmax_log2=21, stream=(cx, cy), count=False, track_from=max(2, T // 4))
+r2 = sim.run(0, R=1.0, Nmax_log2=21, stream=(cx, cy), count=False, track_from=1024)
 assert r2['T'] == T
 tr = sim.track
 closings = []; prev = None
