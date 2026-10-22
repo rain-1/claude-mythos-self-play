@@ -24,13 +24,21 @@ def render(W,H,out,seed=5,**kw):
     Image.fromarray(to8(S.finish())).save(out)
     return S
 
-def paint_flower(S,legs=((6,1),(10,1)),hyp=(5,1),scale=0.27,center=(0.5,0.47),rot=0.0,pal=None,dens=0.16,tri_dens=0.32,labels=True):
+def paint_flower(S,legs=((6,1),(10,1)),hyp=(5,1),scale=0.27,center=(0.5,0.47),rot=0.0,pal=None,dens=0.16,tri_dens=0.32,labels=True,fit=None,lab_size=None):
     W,H,s=S.W,S.H,S.s
     a=chord(*legs[0]); b=chord(*legs[1]); c=chord(*hyp)
     assert abs(a*a+b*b-c*c)<1e-9,(a,b,c)
     Cc=np.array([0,0.]); B=np.array([a,0.]); A=np.array([0,b])
     tri=np.array([Cc,B,A]); cen=tri.mean(0)
     R=np.array([[np.cos(rot),-np.sin(rot)],[np.sin(rot),np.cos(rot)]])
+    if fit is not None:
+        Os=[side_poly(P,Q,nk[0],nk[1],cen)[0] for nk,P,Q in [(legs[0],Cc,B),(legs[1],A,Cc),(hyp,B,A)]]
+        Oq=(np.array(Os)-cen)@R.T
+        lo=Oq.min(0)-1.0; hi=Oq.max(0)+1.0
+        fx0,fy0,fx1,fy1=fit
+        scale=min((fx1-fx0)*W/(hi[0]-lo[0]),(fy1-fy0)*H/(hi[1]-lo[1]))/W
+        mid=(lo+hi)/2
+        center=((fx0+fx1)/2-mid[0]*scale, (fy0+fy1)/2*H/W*0+((fy0+fy1)/2)+mid[1]*scale*W/H)
     def X(p): # world->px (y up)
         p=(np.asarray(p)-cen)@R.T
         return np.stack([center[0]*W+p[...,0]*scale*W, center[1]*H-p[...,1]*scale*W],-1)
@@ -47,8 +55,13 @@ def paint_flower(S,legs=((6,1),(10,1)),hyp=(5,1),scale=0.27,center=(0.5,0.47),ro
             lab='{%d}'%nk[0] if nk[1]==1 else '{%d/%d}'%nk
             dirv=(O-cen); dirv/=np.linalg.norm(dirv)
             lp=X(O+dirv*1.18)
-            S.text(tuple(lp),lab,0.022*W*scale/0.105,anchor='mm',weight=0.8)
+            S.text(tuple(lp),lab,lab_size or 0.022*W*scale/0.105,anchor='mm',weight=0.8)
         S.circle(*Op,scale*W,0.55,overshoot=0.2)
+        if nk[0]==2:
+            sd,box=disc_sd(*Op,scale*W,S.H,S.W,pad=int(30*s)+8)
+            S.wash(sd,box,K[p1],K2=K[p2],mix=0.5,dens=dens*0.7,edge=0.45,pool=0.3,wobble=4,mottle=0.14,gran=0.35)
+            S.line(X(V[0]),X(V[1]),0.4,over=8*s)
+            continue
         if nk[1]>1:
             Vp=X(V); pad=int(30*s)+8
             box=(int(Vp[:,1].min())-pad,int(Vp[:,1].max())+pad,int(Vp[:,0].min())-pad,int(Vp[:,0].max())+pad)
