@@ -8,7 +8,7 @@ R = 1.0; H = cfg.get('H', 0.82)
 P = np.zeros(24)
 P[0]=R; P[1]=H; P[2]=-0.95; P[4]=0.05; P[5]=cfg.get('spr',0.55); P[6]=0.032; P[7]=0.0065
 P[8]=3.0; P[9]=2.5; P[10]=1.30
-kn=cfg.get('knife',[0.9,-1.95,0.35]); P[11]=kn[0]; P[12]=kn[1]; P[13]=kn[2]
+kn=cfg.get('knife',[0.9,-1.95,0.35]); P[11]=kn[0]; P[12]=kn[1]; P[13]=kn[2]; P[20]=cfg.get('tspr',0.0); P[21]=cfg.get('sspr',0.0)
 pl=cfg.get('plates',[]);
 for i,(x,y) in enumerate(pl): P[14+2*i]=x; P[15+2*i]=y
 r0 = 0.60826003; a0 = 0.66964559

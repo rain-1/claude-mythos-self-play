@@ -1,0 +1,10 @@
+triangle pairs [] cols [0, 1, 2] cuts [2, 2, 2]
+square pairs [] cols [3, 4, 5] cuts [2, 2, 2]
+pentagon pairs [] cols [6, 7, 8] cuts [2, 2, 2]
+ellipse_b0.8 pairs [] cols [0, 1, 2] cuts [2, 2, 2]
+disc pairs [(1, 2)] cols [5, 9, 9] cuts [2, 2, 2]
+hexagon pairs [] cols [6, 7, 8] cuts [2, 2, 2]
+halfdisc pairs [] cols [0, 1, 2] cuts [1, 1, 2]
+reuleaux pairs [] cols [3, 4, 5] cuts [2, 2, 2]
+rect_1.5 pairs [] cols [6, 7, 8] cuts [2, 2, 2]
+render 543.6277787685394

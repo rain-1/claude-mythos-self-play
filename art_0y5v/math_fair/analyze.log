@@ -1,0 +1,80 @@
+disc admits non-congruent: False | unphysical Y curves 0
+    Yfam closed=True len=11.54 convex%=100 maxmargin=0.0000 congruent-pair pts=71
+    Yfam closed=True len=3.62 convex%=100 maxmargin=0.0000 congruent-pair pts=82
+    targeted best convex Y: margin 0.0000 angles [ 48.056 155.972 155.972] pairs [(1, 2)]
+square admits non-congruent: True | unphysical Y curves 0
+    Yfam closed=True len=14.48 convex%=60 maxmargin=0.0964 congruent-pair pts=12
+    Yfam closed=True len=5.36 convex%=100 maxmargin=0.0610 congruent-pair pts=3
+    chords: congruent pairs [(0, 1), (0, 2), (1, 2)] margin 0.0000
+    chords: congruent pairs [(0, 1), (0, 2), (1, 2)] margin 0.0000
+    targeted best convex Y: margin 0.0966 angles [ 39.237 172.288 148.475] pairs []
+rect_1.5 admits non-congruent: True | unphysical Y curves 0
+    Yfam closed=False len=98.42 convex%=0 maxmargin=0.0531 congruent-pair pts=9
+    Yfam closed=False len=98.38 convex%=0 maxmargin=0.0485 congruent-pair pts=11
+    chords: congruent pairs [(0, 1), (0, 2), (1, 2)] margin 0.0000
+    chords: congruent pairs [(0, 1), (0, 2), (1, 2)] margin 0.0000
+    targeted best convex Y: margin 0.0530 angles [179.977  26.463 153.56 ] pairs []
+rect_2 admits non-congruent: True | unphysical Y curves 0
+    Yfam closed=False len=100.13 convex%=0 maxmargin=0.0138 congruent-pair pts=12
+    Yfam closed=False len=51.12 convex%=0 maxmargin=0.0117 congruent-pair pts=11
+    Yfam closed=False len=86.78 convex%=0 maxmargin=0.0117 congruent-pair pts=12
+    Yfam closed=False len=51.37 convex%=0 maxmargin=0.0117 congruent-pair pts=9
+    chords: congruent pairs [(0, 1), (0, 2), (1, 2)] margin 0.0000
+    chords: congruent pairs [(0, 1), (0, 2), (1, 2)] margin 0.0000
+    targeted best convex Y: margin 0.0227 angles [ 19.279 161.342 179.379] pairs []
+rect_3 admits non-congruent: True | unphysical Y curves 0
+    Yfam closed=True len=8.20 convex%=0 maxmargin=-1.0000 congruent-pair pts=4
+    Yfam closed=False len=1.88 convex%=0 maxmargin=-1.0000 congruent-pair pts=0
+    Yfam closed=True len=11.70 convex%=1 maxmargin=0.0042 congruent-pair pts=4
+    Yfam closed=False len=1.88 convex%=0 maxmargin=-1.0000 congruent-pair pts=0
+    Yfam closed=False len=0.04 convex%=0 maxmargin=-1.0000 congruent-pair pts=0
+    Yfam closed=False len=0.04 convex%=0 maxmargin=-1.0000 congruent-pair pts=0
+    Yfam closed=False len=0.04 convex%=0 maxmargin=-1.0000 congruent-pair pts=0
+    chords: congruent pairs [(0, 1), (0, 2), (1, 2)] margin 0.0000
+    chords: congruent pairs [(0, 1), (0, 2), (1, 2)] margin 0.0000
+    targeted best convex Y: margin 0.0021 angles [174.035  12.856 173.109] pairs []
+triangle admits non-congruent: True | unphysical Y curves 0
+    Yfam closed=True len=4.66 convex%=100 maxmargin=0.0000 congruent-pair pts=347
+    Yfam closed=True len=3.30 convex%=20 maxmargin=0.0687 congruent-pair pts=2
+    Yfam closed=True len=3.30 convex%=20 maxmargin=0.0687 congruent-pair pts=2
+    Yfam closed=True len=3.30 convex%=19 maxmargin=0.0683 congruent-pair pts=2
+    chords: congruent pairs [(0, 1)] margin 0.0000
+    chords: congruent pairs [(0, 1)] margin 0.0000
+    chords: congruent pairs [(0, 1)] margin 0.0000
+    targeted best convex Y: margin 0.0692 angles [164.151 147.717  48.132] pairs []
+pentagon admits non-congruent: True | unphysical Y curves 0
+    Yfam closed=True len=13.20 convex%=100 maxmargin=0.0342 congruent-pair pts=5
+    Yfam closed=True len=4.49 convex%=100 maxmargin=0.0292 congruent-pair pts=5
+    targeted best convex Y: margin 0.0342 angles [ 41.477 158.367 160.156] pairs []
+hexagon admits non-congruent: True | unphysical Y curves 0
+    Yfam closed=True len=12.77 convex%=100 maxmargin=0.0676 congruent-pair pts=6
+    Yfam closed=True len=3.80 convex%=100 maxmargin=0.0000 congruent-pair pts=282
+    targeted best convex Y: margin 0.0676 angles [ 45.087 172.224 142.688] pairs []
+ellipse_b0.95 admits non-congruent: True | unphysical Y curves 0
+    Yfam closed=True len=11.54 convex%=100 maxmargin=0.0071 congruent-pair pts=4
+    Yfam closed=True len=3.66 convex%=100 maxmargin=0.0057 congruent-pair pts=4
+    targeted best convex Y: margin 0.0071 angles [148.516  48.046 163.438] pairs []
+ellipse_b0.8 admits non-congruent: True | unphysical Y curves 0
+    Yfam closed=True len=5.52 convex%=52 maxmargin=0.0274 congruent-pair pts=2
+    Yfam closed=True len=5.52 convex%=52 maxmargin=0.0276 congruent-pair pts=2
+    targeted best convex Y: margin 0.0276 angles [179.998 122.71   57.293] pairs []
+ellipse_b0.5 admits non-congruent: True | unphysical Y curves 0
+    Yfam closed=True len=4.40 convex%=7 maxmargin=0.0100 congruent-pair pts=2
+    Yfam closed=False len=7.82 convex%=0 maxmargin=-1.0000 congruent-pair pts=1
+    Yfam closed=False len=7.82 convex%=0 maxmargin=-1.0000 congruent-pair pts=1
+    Yfam closed=True len=4.40 convex%=7 maxmargin=0.0102 congruent-pair pts=2
+    targeted best convex Y: margin 0.0106 angles [179.996  20.724 159.281] pairs []
+stadium admits non-congruent: True | unphysical Y curves 0
+    Yfam closed=True len=18.06 convex%=0 maxmargin=-1.0000 congruent-pair pts=4
+    Yfam closed=True len=4.80 convex%=7 maxmargin=0.0504 congruent-pair pts=2
+    Yfam closed=True len=4.80 convex%=7 maxmargin=0.0504 congruent-pair pts=2
+    targeted best convex Y: margin 0.0551 angles [ 21.747 158.263 179.99 ] pairs []
+reuleaux admits non-congruent: True | unphysical Y curves 0
+    Yfam closed=True len=13.14 convex%=43 maxmargin=0.0786 congruent-pair pts=4
+    Yfam closed=True len=3.82 convex%=100 maxmargin=0.0000 congruent-pair pts=276
+    targeted best convex Y: margin 0.0787 angles [ 35.31 150.41 174.28] pairs []
+halfdisc admits non-congruent: True | unphysical Y curves 0
+    Yfam closed=True len=16.44 convex%=13 maxmargin=0.0611 congruent-pair pts=2
+    chords: congruent pairs [] margin 0.0601
+    chords: congruent pairs [(0, 1)] margin 0.0000
+    targeted best convex Y: margin 0.0611 angles [174.5    99.162  86.337] pairs []

@@ -123,6 +123,40 @@ def sprinkle(px, py, pz, P, want_id):
     return best, bid
 
 @njit
+def strewn(px, py, pz, zb, dens, rmin, rmax, cs, seed, L0, r):
+    # a few sprinkles dropped around (on the stand rim, on the table)
+    if pz > zb + 0.05 or pz < zb - 0.02:
+        return 1.0, -1.0
+    rho = np.sqrt(px*px + py*py)
+    if rho < rmin - 0.1 or rho > rmax + 0.1:
+        return 1.0, -1.0
+    i0 = int(np.floor(px / cs)); j0 = int(np.floor(py / cs))
+    best = 1.0; bid = -1.0
+    for a in range(-1, 2):
+        for b in range(-1, 2):
+            i = i0 + a; j = j0 + b
+            cx = (i + 0.15 + 0.7*h3(i, j, 1, seed)) * cs
+            cy = (j + 0.15 + 0.7*h3(i, j, 2, seed)) * cs
+            rc = np.sqrt(cx*cx + cy*cy)
+            if rc < rmin or rc > rmax:
+                continue
+            # density falls off away from rmin
+            if h3(i, j, 7, seed) > dens * np.exp(-2.0*(rc - rmin)/(rmax - rmin + 1e-9)):
+                continue
+            ang = 6.2831853 * h3(i, j, 3, seed)
+            L = 0.5 * L0 * (0.7 + 0.6*h3(i, j, 4, seed))
+            ux = np.cos(ang); uy = np.sin(ang)
+            qx = px - cx; qy = py - cy; qz = pz - (zb + r + 0.0005)
+            t = qx*ux + qy*uy
+            if t > L: t = L
+            if t < -L: t = -L
+            dx = qx - t*ux; dy = qy - t*uy
+            d = np.sqrt(dx*dx + dy*dy + qz*qz) - r
+            if d < best:
+                best = d; bid = h3(i, j, 5, seed + 3)
+    return best, bid
+
+@njit
 def sd_top_frost(px, py, pz, P):
     # gentle swirl on the top surface (displacement)
     rho = np.sqrt(px*px + py*py); th = np.arctan2(py, px)
@@ -160,6 +194,14 @@ def scene(px, py, pz, P, PC):
     dst = min(dp, min(ds * 0.7, dfoot))
     if dst < d:
         d = dst; m = 1.0
+    if P[20] > 0:
+        dsp, sid = strewn(px, py, pz, tz, P[20], 1.75, 3.2, 0.11, 101, P[6], P[7])
+        if dsp < d:
+            d = dsp; m = 4.0; mid = sid
+    if P[21] > 0:
+        dsp, sid = strewn(px, py, pz, 0.0, P[21], 1.08, 1.27, 0.06, 202, P[6], P[7])
+        if dsp < d:
+            d = dsp; m = 4.0; mid = sid
     # three dessert plates
     for q in range(3):
         cx = P[14 + 2*q]; cy = P[15 + 2*q]

@@ -1,0 +1,8 @@
+[
+ {"name":"octahedron","graph":"octahedron","k":3,"s":1,"xy":[[0,0],[13,13],[-13,13],[0,10],[-2,8],[2,8]]},
+ {"name":"icosahedron (C3-symmetric, Eisenstein lattice)","graph":"icosahedron","k":3,"s":2,"xy":[[-159,-53],[159,-53],[0,106],[-71,-13],[-55,-29],[55,-29],[71,-13],[16,42],[-16,42],[39,-13],[0,26],[-39,-13]]},
+ {"name":"icosahedron (mirror-symmetric, integer coordinates)","graph":"icosahedron","k":1,"s":1,"xy":[[0,224],[63,-56],[-63,-56],[-30,0],[0,0],[30,0],[15,-20],[0,-40],[-15,-20],[15,-8],[0,-28],[-15,-8]]},
+ {"name":"pentagonal bipyramid","graph":"pent_bipyramid","k":1,"s":1,"xy":[[56,105],[-56,105],[-16,63],[0,51],[16,63],[0,63],[0,0]]},
+ {"name":"snub disphenoid","graph":"snub_disphenoid_m","k":1,"s":1,"xy":[[0,0],[0,-63],[-16,-63],[16,-63],[0,-33],[0,-51],[-56,-105],[56,-105]]},
+ {"name":"triakis tetrahedron","graph":"triakis_tetrahedron","k":1,"s":1,"xy":[[80,150],[-80,150],[0,66],[0,111],[0,0],[0,132],[28,111],[-28,111]]}
+]
