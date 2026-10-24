@@ -111,9 +111,9 @@ def sky(d, sun, prm):
         # a pastel sea: pale at the horizon, aqua below, sky-coloured by Fresnel
         g = min(1.0, -e * 4.5)
         fr = 0.25 + 0.75 * np.exp(-(-e) * 14.0)
-        hz[0] = (0.50 * (1 - g) + 0.42 * g) * (1 - fr) + 0.98 * fr
-        hz[1] = (0.86 * (1 - g) + 0.80 * g) * (1 - fr) + 0.95 * fr
-        hz[2] = (0.88 * (1 - g) + 0.86 * g) * (1 - fr) + 0.96 * fr
+        hz[0] = (0.50 * (1 - g) + 0.42 * g) * prm[2] / 1.0 * (1 - fr) + prm[2] * 0.98 * fr
+        hz[1] = (0.86 * (1 - g) + 0.80 * g) * prm[3] / 0.90 * (1 - fr) + prm[3] * 1.055 * fr
+        hz[2] = (0.88 * (1 - g) + 0.86 * g) * prm[4] / 0.88 * (1 - fr) + prm[4] * 1.09 * fr
         # sun glitter: mirror the sun in a rough sea
         az = np.arctan2(d[0], d[1]) - np.arctan2(sun[0], sun[1])
         ew = -e
@@ -130,9 +130,9 @@ def sky(d, sun, prm):
     else:
         s = min(1.0, e / 0.35)
         s = np.sqrt(s)
-        hz[0] = 1.00 * (1 - s) + 0.62 * s
-        hz[1] = 0.90 * (1 - s) + 0.76 * s
-        hz[2] = 0.88 * (1 - s) + 1.00 * s
+        hz[0] = prm[2] * (1 - s) + prm[5] * s
+        hz[1] = prm[3] * (1 - s) + prm[6] * s
+        hz[2] = prm[4] * (1 - s) + prm[7] * s
         # soft pastel cumulus, flattened toward the horizon
         az = np.arctan2(d[0], d[1])
         cl = fbm(az * 5.0 + 3.0, (e + 0.02) * 26.0 / (0.3 + 3.0 * e))
@@ -146,6 +146,9 @@ def sky(d, sun, prm):
     disc = 0.0
     if cs > np.cos(prm[0]):
         disc = prm[1]
+    if prm[11] > 0:
+        cst = d[0] * prm[8] + d[1] * prm[9] + d[2] * prm[10]
+        disc += prm[12] * np.exp((cst - 1) / (prm[11] * prm[11])) + prm[12] * 0.003 * np.exp((cst - 1) / (25 * prm[11] * prm[11]))
     out = np.empty(3)
     out[0] = hz[0] * 1.05 + glow * 1.0 + disc
     out[1] = hz[1] * 1.05 + glow * 0.93 + disc * 0.97
@@ -168,7 +171,7 @@ def wall_hit(o, d, YW, WIN):
 
 @njit(cache=True, fastmath=True)
 def propagate(o, d, thr, PO, PU, PV, PN, FID, LEAD, HW, RG, FT, half, ramp,
-              GN, GD, gc, GF, YW, WIN, TB, TH, for_photon):
+              GN, GD, gc, GF, YW, WIN, TB, TH, EM, sun, SKYP, for_photon):
     """March a ray through glass. Returns (kind, point, dir, thr, extra)
     kind: 0 sky, 1 table, 2 lead(panel), 3 wall, 4 lead(globe), 5 frame-wall-of-window
     extra: (panel index, lead coordinate, halfwidth) for shading."""
@@ -222,6 +225,24 @@ def propagate(o, d, thr, PO, PU, PV, PN, FID, LEAD, HW, RG, FT, half, ramp,
             if ld < 0:
                 ex[0] = kp; ex[1] = ld; ex[2] = HW[kp, ip, jp]
                 return 2, p, d, thr, ex
+            NRM = PN[kp]
+            if not for_photon:
+                cn = abs(d[0] * NRM[0] + d[1] * NRM[1] + d[2] * NRM[2])
+                F = 0.04 + 0.96 * (1 - cn) ** 5
+                rr = np.empty(3)
+                dn2 = d[0] * NRM[0] + d[1] * NRM[1] + d[2] * NRM[2]
+                for c in range(3):
+                    rr[c] = d[c] - 2 * dn2 * NRM[c]
+                if rr[1] > 0.05:
+                    envc = sky(rr, sun, SKYP)
+                    for c in range(3):
+                        envc[c] *= 0.9
+                else:
+                    envc = np.empty(3)
+                    envc[0] = 0.86; envc[1] = 0.82; envc[2] = 0.86
+                for c in range(3):
+                    EM[c] += thr[c] * F * envc[c] * 0.9
+                    thr[c] *= (1 - F)
             f = FID[kp, ip, jp]
             mt = 1.0 + 0.22 * RG[kp, ip, jp]
             for c in range(3):
@@ -247,6 +268,24 @@ def propagate(o, d, thr, PO, PU, PV, PN, FID, LEAD, HW, RG, FT, half, ramp,
         if e < GD[0] * 0.022:
             ex[0] = f; ex[1] = e / (GD[0] * 0.022); ex[2] = kind
             return 4, p, d, thr, ex
+        NRM = GN[f]
+        if not for_photon:
+            cn = abs(d[0] * NRM[0] + d[1] * NRM[1] + d[2] * NRM[2])
+            F = 0.04 + 0.96 * (1 - cn) ** 5
+            rr = np.empty(3)
+            dn2 = d[0] * NRM[0] + d[1] * NRM[1] + d[2] * NRM[2]
+            for c in range(3):
+                rr[c] = d[c] - 2 * dn2 * NRM[c]
+            if rr[1] > 0.05:
+                envc = sky(rr, sun, SKYP)
+                for c in range(3):
+                    envc[c] *= 0.9
+            else:
+                envc = np.empty(3)
+                envc[0] = 0.86; envc[1] = 0.82; envc[2] = 0.86
+            for c in range(3):
+                EM[c] += thr[c] * F * envc[c] * 0.9
+                thr[c] *= (1 - F)
         ff = GF[f]
         for c in range(3):
             thr[c] *= FT[ff, c]
@@ -257,7 +296,7 @@ def propagate(o, d, thr, PO, PU, PV, PN, FID, LEAD, HW, RG, FT, half, ramp,
 
 @njit(parallel=True, cache=True, fastmath=True)
 def photon_map(nphot, sun, cone, PO, PU, PV, PN, FID, LEAD, HW, RG, FT, half, ramp,
-               GN, GD, gc, GF, YW, WIN, TB, TH, LB, LH, LW, seed, nchunk):
+               GN, GD, gc, GF, YW, WIN, TB, TH, LB, LH, LW, seed, nchunk, sp):
     maps = np.zeros((nchunk, 3, LH, LW), np.float32)
     # photon source plane perpendicular to sun, centred above the table
     up = np.array([0.0, 0.0, 1.0])
@@ -270,7 +309,7 @@ def photon_map(nphot, sun, cone, PO, PU, PV, PN, FID, LEAD, HW, RG, FT, half, ra
     per = nphot // nchunk
     for ch in prange(nchunk):
         np.random.seed(seed + ch * 7919)
-        o = np.empty(3); d = np.empty(3); thr = np.empty(3)
+        o = np.empty(3); d = np.empty(3); thr = np.empty(3); EM = np.zeros(3)
         for it in range(per):
             u = (np.random.random() * 2 - 1) * ext
             v = (np.random.random() * 2 - 1) * ext
@@ -285,7 +324,7 @@ def photon_map(nphot, sun, cone, PO, PU, PV, PN, FID, LEAD, HW, RG, FT, half, ra
                 d[c] /= nn
             thr[0] = 1.0; thr[1] = 1.0; thr[2] = 1.0
             kind, p, dd, tt, ex = propagate(o, d, thr, PO, PU, PV, PN, FID, LEAD, HW, RG, FT, half, ramp,
-                                            GN, GD, gc, GF, YW, WIN, TB, TH, True)
+                                            GN, GD, gc, GF, YW, WIN, TB, TH, EM, sun, sp, True)
             if kind != 1:
                 continue
             fx = (p[0] - LB[0]) / (LB[1] - LB[0]) * (LW - 1)
@@ -337,7 +376,7 @@ def render(H, W, spp, cam, PO, PU, PV, PN, FID, LEAD, HW, RG, FT, half, ramp,
     for yy in prange(row1 - row0):
         y = yy + row0
         np.random.seed(seed + y * 131)
-        o = np.empty(3); d = np.empty(3); thr = np.empty(3); acc = np.empty(3)
+        o = np.empty(3); d = np.empty(3); thr = np.empty(3); acc = np.empty(3); EM = np.zeros(3)
         for x in range(W):
             acc[:] = 0.0
             for s in range(spp):
@@ -360,24 +399,25 @@ def render(H, W, spp, cam, PO, PU, PV, PN, FID, LEAD, HW, RG, FT, half, ramp,
                 for c in range(3):
                     d[c] /= nn
                 thr[0] = 1.0; thr[1] = 1.0; thr[2] = 1.0
+                EM[:] = 0.0
                 kind, p, dd, tt, ex = propagate(o, d, thr, PO, PU, PV, PN, FID, LEAD, HW, RG, FT, half, ramp,
-                                                GN, GD, gc, GF, YW, WIN, TB, TH, False)
+                                                GN, GD, gc, GF, YW, WIN, TB, TH, EM, sun, sp, False)
                 col = np.zeros(3)
                 if kind == 0:
-                    col = sky(dd, sun, sp[0:2])
+                    col = sky(dd, sun, sp)
                 elif kind == 1:
                     L = sample_map(LM, LB, p[0], p[1])
                     ao = sample_map(AO, LB, p[0], p[1])
                     # linen-white sill with a faint weave
                     wv = 1.0
                     alb0 = 0.94 * wv; alb1 = 0.925 * wv; alb2 = 0.92 * wv
-                    sunk = sp[2] * sun[2]
-                    col[0] = alb0 * (L[0] * sunk * 1.0 + sp[3] * 0.92 * ao[0])
-                    col[1] = alb1 * (L[1] * sunk * 0.97 + sp[3] * 0.90 * ao[0])
-                    col[2] = alb2 * (L[2] * sunk * 0.90 + sp[3] * 1.05 * ao[0])
+                    sunk = sp[16] * sun[2]
+                    col[0] = alb0 * (L[0] * sunk * sp[13] + sp[17] * 0.92 * ao[0])
+                    col[1] = alb1 * (L[1] * sunk * sp[14] + sp[17] * 0.90 * ao[0])
+                    col[2] = alb2 * (L[2] * sunk * sp[15] + sp[17] * 1.05 * ao[0])
                 elif kind == 3:
                     # window wall (inside face, in shade): blush plaster lit by the room
-                    col[0] = 0.98 * sp[3] * 1.85; col[1] = 0.90 * sp[3] * 1.85; col[2] = 0.90 * sp[3] * 1.9
+                    col[0] = 1.0 * sp[17] * 2.15 * sp[2] / 1.0; col[1] = 0.91 * sp[17] * 2.1 * sp[3] / 0.90; col[2] = 0.92 * sp[17] * 2.15 * sp[4] / 0.88
                     # window reveal darkening near the opening
                     dxw = min(abs(p[0] - WIN[0]), abs(p[0] - WIN[1]))
                     dzw = min(abs(p[2] - WIN[2]), abs(p[2] - WIN[3]))
@@ -389,7 +429,7 @@ def render(H, W, spp, cam, PO, PU, PV, PN, FID, LEAD, HW, RG, FT, half, ramp,
                 elif kind == 5:
                     q = ex[0]
                     sh = 0.75 + 0.25 * np.sqrt(max(0.0, 1 - q * q))
-                    col[0] = 1.05 * sh * sp[3] * 2.2; col[1] = 1.02 * sh * sp[3] * 2.2; col[2] = 1.0 * sh * sp[3] * 2.2
+                    col[0] = 1.05 * sh * sp[17] * 2.2; col[1] = 1.02 * sh * sp[17] * 2.2; col[2] = 1.0 * sh * sp[17] * 2.2
                 elif kind == 2:
                     # champagne-gold came, rounded profile
                     q = -ex[1] / ex[2]  # 0 at edge, 1 at centre
@@ -399,19 +439,19 @@ def render(H, W, spp, cam, PO, PU, PV, PN, FID, LEAD, HW, RG, FT, half, ramp,
                     base0 = 0.80; base1 = 0.70; base2 = 0.56
                     spec = 0.35 * hl ** 6 + 0.08
                     sh = 0.55 + 0.45 * hl
-                    col[0] = (base0 * sh + spec) * sp[4]
-                    col[1] = (base1 * sh + spec * 0.95) * sp[4]
-                    col[2] = (base2 * sh + spec * 0.85) * sp[4]
+                    col[0] = (base0 * sh + spec) * sp[18]
+                    col[1] = (base1 * sh + spec * 0.95) * sp[18]
+                    col[2] = (base2 * sh + spec * 0.85) * sp[18]
                 elif kind == 4:
                     q = 1 - ex[1]
                     hl = np.sqrt(max(0.0, 1 - q))
                     spec = 0.35 * hl ** 6 + 0.08
                     sh = 0.55 + 0.45 * hl
-                    col[0] = (0.80 * sh + spec) * sp[4]
-                    col[1] = (0.70 * sh + spec * 0.95) * sp[4]
-                    col[2] = (0.56 * sh + spec * 0.85) * sp[4]
+                    col[0] = (0.80 * sh + spec) * sp[18]
+                    col[1] = (0.70 * sh + spec * 0.95) * sp[18]
+                    col[2] = (0.56 * sh + spec * 0.85) * sp[18]
                 for c in range(3):
-                    acc[c] += col[c] * tt[c]
+                    acc[c] += col[c] * tt[c] + EM[c] * sp[17] * 2.2
             for c in range(3):
                 img[yy, x, c] = acc[c] / spp
     return img

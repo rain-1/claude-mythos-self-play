@@ -11,6 +11,7 @@ Seeds, from the live front pages on 2026-10-24:
 | hero | **Ten Drawings of One Globe** | stained-glass suncatchers in a sunlit window: numba ray tracer + photon-mapped sill | 4096² |
 | 2 | **Thirteen, Knitted Two Ways** | stockinette knitting: yarn-leg renderer, Fair-Isle swatch, needles, yarn ball | 4096² |
 | 3 | **Every Coin, One Growth** | sand art in a glass frame: poured strata | 4096² |
+| 4 (go deeper) | **Phosphorus, Hesperus** | the hero's window at dawn and at dusk, a diptych | 4096×2048 + caption |
 
 ## Ten Drawings of One Globe
 ![Ten Drawings of One Globe](glass/ten_drawings_of_one_globe.png)
@@ -53,6 +54,15 @@ needle peaks as the law concentrates and turns singular. The coral seam is the f
 α* ≈ 0.904, beyond which the law is provably singular even though its support is the whole interval.
 Engine: `sand/sand.py` (layer stack, grain speckle with neighbouring-layer grains, relief, glass sheen, mitred birch frame).
 
+## Phosphorus, Hesperus
+![Phosphorus, Hesperus](glass/phosphorus_hesperus.png)
+
+Frege's own example. The same window holds the same five panes and the same globe. On the left is a peach dawn with
+the sun low on the left. On the right is a lilac dusk with the sun low on the right. Venus is a point near the
+horizon in both skies. The sun draws a different set of shadows in each half, and the two sets mirror into a V
+across the seam. The object is the same in both; only the light that names it has changed.
+Same engine, with sky, sun colour and a star added to `cfg_dawn_final.json` / `cfg_dusk_final.json`.
+
 ## Mathematics
 
 **MO 516332, proved** (`math_squares/RESULTS.md`, done with a helper agent; I re-checked it by brute force).
@@ -81,7 +91,17 @@ x²+z² = N with a parity condition, and then uses r₂(N) = 4·d(P)·[Q = □].
 6. *The Eventual Counterexample* (MO 15444): Pólya's L(n) as a knitted temperature scarf that changes colour at 906,150,257. Dropped: the scarf would be a kilometre long.
 
 ## Tweet-sized story
-STORY_PLACEHOLDER
+> Five panes hung in a window, each sure it was the true picture of the globe on the sill. At dawn the sun copied them onto the table, all wrong, all in the same colours. At dusk it copied them again, the other way round. The globe said nothing. It was busy being what they meant.
 
 ## What I learned about generative art
-LEARNED_PLACEHOLDER
+- **Let physics make the extra signs.** When the subject is "many names for one thing", a light source is a free,
+  honest second artist. A parallel projection of a straight-line drawing is again a straight-line drawing, so every
+  shadow on the sill is one more correct drawing that nobody had to draw. Choose geometry whose shadows still mean something.
+- **A knit is a pixel grid that remembers it is soft.** Any chart becomes cosy once each cell is two tapered yarn legs
+  with a ply twist and the rows are laid in the right order (each V sits on the stitch below). The design discipline
+  that made it Fair Isle was *fewer* colours: alternate tiles in one hue on cream. The rainbow checkerboard of the same tiling read as noise.
+- **Stack a family of curves and it becomes a landscape.** A ridgeline plot of 46 densities is a chart. The same
+  densities poured as cumulative sand strata are mountains with grass on their summits. Cumulative sums make silhouettes,
+  and silhouettes make places. Compress the one giant peak with tanh so it does not flatten everything else.
+- Global colour identity (hue = longitude on the globe, the same for a face in every drawing) is what lets very
+  different shapes read as one object. Matching colour across views is the cheapest legend there is.

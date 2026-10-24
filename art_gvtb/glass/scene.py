@@ -84,6 +84,15 @@ def build(cfg):
                 GN=GN, GD=GD, gc=gc, GF=GF, half=0.62, TH=np.array(TH, float))
 
 
+def mksp(cfg):
+    hz = cfg.get('horizon', [1.0, 0.90, 0.88]); zn = cfg.get('zenith', [0.62, 0.76, 1.0])
+    st = cfg.get('star', [0, 1, 0, 0, 0])  # dir xyz, size, power
+    sd = np.array(st[:3], float); sd /= np.linalg.norm(sd)
+    sc = cfg.get('suncol', [1.0, 0.97, 0.90])
+    return np.array([np.radians(0.6), cfg.get('sunpow', 40.0), *hz, *zn, *sd, st[3], st[4], *sc,
+                     cfg.get('sunk', 1.0), cfg.get('amb', 0.42), cfg.get('gold', 1.0)], float)
+
+
 def main(cfg, out):
     S = build(cfg)
     sun = np.array(cfg['sun'], float); sun /= np.linalg.norm(sun)
@@ -97,7 +106,7 @@ def main(cfg, out):
     if lmfile and os.path.exists(lmfile):
         LM = np.load(lmfile)
     else:
-        LM = photon_map(int(cfg['nphot']), sun, np.radians(cfg['cone']), *common, LB, LH, LW, 1234, 8)
+        LM = photon_map(int(cfg['nphot']), sun, np.radians(cfg['cone']), *common, LB, LH, LW, 1234, 8, mksp(cfg))
         if lmfile:
             np.save(lmfile, LM)
     LM = ndimage.gaussian_filter(LM, (0, cfg.get('lmblur', 1.0), cfg.get('lmblur', 1.0)))
@@ -117,8 +126,7 @@ def main(cfg, out):
     rt = np.cross(fw, [0, 0, 1]); rt /= np.linalg.norm(rt); up = np.cross(rt, fw)
     cam = np.r_[eye, fw, rt, up, np.tan(np.radians(c['fov']) / 2), c.get('ap', 0.0), fd]
     H, W = cfg['H'], cfg['W']
-    sp = np.array([np.radians(0.6), cfg.get('sunpow', 40.0), cfg.get('sunk', 1.0), cfg.get('amb', 0.42),
-                   cfg.get('gold', 1.0)])
+    sp = mksp(cfg)
     t = time.time()
     rows = cfg.get('rows', [0, H])
     img = render(H, W, cfg['spp'], cam, *common, LM, LB, AO, sun, sp, 77, rows[0], rows[1])
