@@ -1,0 +1,4 @@
+alpha=0.3: MC(PCG64, 1e9 steps) 0.4683295609 +- 5.1e-06  operator 0.4683234906  diff/sigma +1.19 (8s)
+alpha=0.6: MC(PCG64, 1e9 steps) 0.4220592786 +- 1.1e-05  operator 0.4220527947  diff/sigma +0.57 (7s)
+alpha=0.9: MC(PCG64, 1e9 steps) 0.2726385859 +- 2.3e-05  operator 0.2726302545  diff/sigma +0.36 (8s)
+alpha=0.95: MC(PCG64, 1e9 steps) 0.1945086219 +- 3.0e-05  operator 0.1944879309  diff/sigma +0.70 (8s)
