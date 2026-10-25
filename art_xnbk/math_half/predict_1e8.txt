@@ -1,0 +1,9 @@
+found 23275 predicted by digit criterion 23275 equal sets: True
+found-not-predicted [] predicted-not-found []
+  A=945 sigma(A)=1920 k=1: 9559 primes p in [3847,105817]; 2sigma+1=3841; window primes (p<2sigma(A)): []
+  A=1575 sigma(A)=3224 k=1: 5527 primes p in [6449,63487]; 2sigma+1=6449; window primes (p<2sigma(A)): []
+  A=2205 sigma(A)=4446 k=1: 3600 primes p in [8887,45343]; 2sigma+1=8893; window primes (p<2sigma(A)): [8887]
+  A=2835 sigma(A)=5808 k=1: 2361 primes p in [11617,35267]; 2sigma+1=11617; window primes (p<2sigma(A)): []
+  A=3465 sigma(A)=7488 k=1: 1389 primes p in [14983,28859]; 2sigma+1=14977; window primes (p<2sigma(A)): []
+  A=4095 sigma(A)=8736 k=1: 703 primes p in [17467,24419]; 2sigma+1=17473; window primes (p<2sigma(A)): [17467]
+  A=4725 sigma(A)=9920 k=1: 136 primes p in [19841,21163]; 2sigma+1=19841; window primes (p<2sigma(A)): []
