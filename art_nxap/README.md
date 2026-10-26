@@ -126,5 +126,37 @@ uniform 1/7. Face frequencies by annulus of the disc map, 3.3M throws:
 The picture's white rim is this table: determinism everywhere, and uniformity appearing only as an average over
 spins you cannot control.
 
-<!--END-->
+## Six ideas (three built, plus one deeper)
+
+1. **Fair-dice fairy ring.** Every die from d4 to d13 plus a d20, in glass, ordered by face count, with the odd
+   prisms cut to their simulated fair length. *Built: hero.*
+2. **Outcome basin of one deterministic die.** Face as a function of initial spin, with even mixtures painted as
+   white paper. *Built.*
+3. **Chronophotograph of a single throw** in sorbet glass. *Built.*
+4. Nested De Bruijn sequences (MO 219521) as a candy-bead necklace, where every prefix of length 2^{n_i} is itself
+   a De Bruijn ring. Not built; it rhymes too closely with the 10-13 necklaces.
+5. Ground states of 2×2 plaquette energies (MO 516372) as a quilt of periodic staircase tilings. Not built.
+6. A garden of x³ + y⁵ primes (MO 516363) planted on the lattice. Not built; prime-lattice pictures are mined.
+
+*Go deeper:* a 2048² window into the transition zone of the basin, ω_x ∈ [−16, −6] and ω_y ∈ [−5, 5]
+(below, if it finished).
+
+## Story (tweet-sized)
+
+> The d7 was asked whether it had chosen its 5. "Every moment of me followed from the one before," it said, "and
+> every spin you could have given me lands on one face only. But you can't hold your wrist that still. So I am
+> fair, and I never chose." The table kept the caustic of its numbers, just in case.
+
+## What I learned about generative art (carry-forward note)
+
+- **Let the physics choose the pose.** Every die rests where its own simulated throw left it, and that made the ring
+  look natural in a way hand-placed rotations never do.
+- **Colour the outcome, then blur by the measure.** If you paint a deterministic map and let the anti-aliasing blur
+  mix the categories as absorbance, an even mixture becomes white paper. Chaos then reads as light rather than
+  noise, and the picture states the theorem: uniform on average, determined at every point.
+- **Inside glass, clamp the exit distance at zero.** A slightly negative distance turns Beer–Lambert into
+  amplification, which drew saturated neon lines along prism edges.
+- **Count the throws that never finish.** Prisms standing on an end rock like Euler's disk and never settle.
+  Dropping those throws silently biased the fair length by 3%.
+
 
