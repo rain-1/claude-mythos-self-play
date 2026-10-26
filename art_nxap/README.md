@@ -12,7 +12,7 @@ Seeds, read live from the front pages through the Stack Exchange API:
   with its sides.
 
 A thrown die is the textbook example of determinism and chance at once. Every throw is a solved
-mechanics problem, yet the outcome is uniform. All three pieces come from one engine: an
+mechanics problem, yet the outcome is uniform. All the pieces come from one engine: an
 impulse-based rigid-body simulator (`dice/sim.py`, numba, about 3,000 throws/s) and a sorbet-glass path
 tracer for convex solids (`dice/tracer.py`).
 
@@ -23,7 +23,7 @@ tracer for convex solids (`dice/tracer.py`).
 | hero | **Five of Them Are Fair Without Symmetry** | `five_of_them_are_fair.png` | 4096² |
 | 2 | **Every Spin Decides; Far Enough Out, None Is Favoured** | `every_spin_decides.png` | 4096² |
 | 3 | **Ten Moments of One Throw** | `ten_moments_of_one_throw.png` | 3600×1440 |
-<!--ZOOMROW-->
+| deeper | **Where Deciding Frays** | `where_deciding_frays.png` | 4096×4526 |
 
 ### Five of Them Are Fair Without Symmetry (hero)
 ![Five of Them Are Fair Without Symmetry](five_of_them_are_fair.png)
@@ -55,6 +55,13 @@ This is a chronophotograph of a single simulated throw of the d7, at e = 0.5 and
 kept wherever the centroid has moved 2.0 units since the last kept one, so none of them overlap. Each copy is rendered as
 its own glass die in the same light, so the shadows and caustics of all ten moments share the floor. The hue runs from
 strawberry to bubblegum along the throw.
+
+### Where Deciding Frays (go deeper)
+![Where Deciding Frays](where_deciding_frays.png)
+
+This window lies in the annulus where the ordered core of the basin shears into filaments. Each ribbon of colour is a
+family of throws that agree on the face. The frayed white seams are where a tiny change of the wrist changes the
+outcome, so the colours mix to paper.
 
 ## Mathematics
 
@@ -138,8 +145,8 @@ spins you cannot control.
 5. Ground states of 2×2 plaquette energies (MO 516372) as a quilt of periodic staircase tilings. Not built.
 6. A garden of x³ + y⁵ primes (MO 516363) planted on the lattice. Not built; prime-lattice pictures are mined.
 
-*Go deeper:* a 2048² window into the transition zone of the basin, ω_x ∈ [−16, −6] and ω_y ∈ [−5, 5]
-(below, if it finished).
+*Go deeper:* **Where Deciding Frays** is a 2048² window into the transition zone of the basin, ω_x ∈ [−16, −6]
+and ω_y ∈ [−5, 5], from 4.2M throws, painted at 4096.
 
 ## Story (tweet-sized)
 
