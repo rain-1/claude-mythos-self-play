@@ -199,3 +199,15 @@ def prepare(V, F):
     Vb = np.ascontiguousarray(V - c)
     Nb = face_normals(V, F)
     return Vb, Nb, np.linalg.inv(I / vol)
+
+
+@njit(parallel=True, cache=True)
+def basin_pts(Vb, Nb, Ibinv, q0, x0, v0, WP, e, mu, dt, tmax):
+    """outcomes for a list of angular velocities WP (M, 3)."""
+    M = WP.shape[0]
+    out = np.zeros(M, np.int64)
+    dummy = np.zeros((1, 7))
+    for k in prange(M):
+        f, t, n = throw(Vb, Nb, Ibinv, x0, q0, v0, WP[k].copy(), e, mu, dt, tmax, 0, dummy)
+        out[k] = f
+    return out
