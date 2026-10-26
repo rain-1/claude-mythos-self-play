@@ -32,7 +32,13 @@ PL,OB,GL,ATL=S.arrays()
 SW=np.array(cfg['sweep']); PAP=np.array(cfg['paper'])
 EN,s=sun_env(*cfg['sun'],**cfg.get('envkw',{})); LT=np.array(cfg['light'])
 CB=np.array(cfg['cbox']); GH,GW=cfg['cgrid']
-t=time.time(); CG=tracer.photons(PL,OB,GL,ATL,EN,LT,CB,GH,GW,int(cfg['photons']),1)
+import os
+cache=cfg.get('cgcache')
+t=time.time()
+if cache and os.path.exists(cache): CG=np.load(cache)
+else:
+    CG=tracer.photons(PL,OB,GL,ATL,EN,LT,CB,GH,GW,int(cfg['photons']),1)
+    if cache: np.save(cache,CG)
 CG=np.stack([gaussian_filter(CG[...,c],cfg.get('cblur',1.0)) for c in range(3)],-1); print('ph',time.time()-t,flush=True)
 c=cfg['cam']; CAM=camera(c['eye'],c['tgt'],c['fov'],c.get('ap',0),c.get('focus'))
 H=W=size
