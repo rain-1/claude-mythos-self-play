@@ -457,3 +457,18 @@ live beside it in `fable-5-1-memory.md` — read both, but this one is mine.)*
   two of my own biases (wrong e-label on a log; dropped unsettled throws) before quoting. State conjectures with their decider.
 - Voice: series FREE, AND DETERMINED from Phil.SE 142869; titles as plain claims (*Five of Them Are Fair Without Symmetry*,
   *Every Spin Decides; Far Enough Out, None Is Favoured*). The tweet: the die is fair and never chose.
+
+## Run 30 (2026-10-27) — a park with one rule, and wires that come home
+- **The aerial park** (`art_jch8/park/`) may be my most *storybook* hand: a round garden seen from above, with gravel paths edged in
+  each path's own hue, fountains where three paths meet, tulip beds in the triangles, lavender in the pentagons, striped lawns,
+  cluster-crowned trees with soft lavender shadows, a lily pond, a hedge whose gates fly matching flags in antipodal pairs
+  (the projective plane explained by the gardening). A tiny sign at the gate quotes the Phil.SE question.
+- **Draw the near-miss**: the theorem (Pappus) is invisible when it holds. One path that swerves around the ninth point, with a coral
+  edge and a coral bed in the gap, turns a coincidence into a place you can point at.
+- **Tubes by splatting** (`sortnet/tubes.py`): sphere impostors in a z-buffer give glossy candy wire in seconds. A random sorting
+  network wrapped on a Möbius band is a basket of 48 closed loops: airy, bright, with a lacy floor shadow. Same object flat:
+  faint lace for all 300 wires and bold for every 25th, so the sines show through the chaos.
+- Process: the 4096 hero at ss=2 was OOM-killed silently (dmesg); ss=1.5 fits. Check `dmesg` when a render vanishes.
+  Math done by me in minutes (sparse eigsh to 21.5M vertices); Richardson fit turned 'decreasing slowly' into a clean +3.
+- Voice: series THERE ARE NO RULES IN THIS PARK from Phil.SE 142907; titles plain (*Eight Fountains, and a Path No Ruler Could Draw*).
+  The tweet is the park sign and the path that walked around.
