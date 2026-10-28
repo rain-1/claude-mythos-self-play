@@ -1,0 +1,1 @@
+python3 quilt.py 4096 7 7 everyone_gets_pi.png -1 "Everyone Gets π" "Every whole patch of this quilt has area exactly π.|The pearls are the zeros of a random Gaussian entire function f.|A patch is every point that the flow  ż = z − conj(f′/f)  carries|to its pearl. The coral-stitched patch measures 0.9999 π. (MO 448829)"

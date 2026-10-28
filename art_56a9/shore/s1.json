@@ -1,0 +1,6 @@
+{"W": 1600, "H": 900, "SS": 1, "city": "../city/city_1000.npy", "n": 48, "pad": 0.7, "quay": 0.70, "floor": 0.78,
+ "sun": [0.83, 0.17], "clouds": [[0.62, 0.12, 22], [0.30, 0.09, 18], [0.93, 0.30, 15]],
+ "focus": [15, 31, 47], "flag_pal": [[[0.62,0.86,0.98],[0.99,0.99,0.98],[0.70,0.92,0.72]], [[1.0,0.86,0.50],[0.92,0.66,0.92],[0.99,0.99,0.98]], [[1.0,0.55,0.50],[1.0,0.80,0.70],[0.99,0.99,0.98]]],
+ "boats": [[4.5, 1], [11.2, 4], [21.0, 5], [27.5, 0], [37.6, 3], [43.5, 6]],
+ "cap": [0.035, 0.05], "title": "Each House Sees Its Own Height",
+ "lines": ["The first forty-eight houses of the city-building sequence (OEIS A400000).", "Every house is the shortest that sees exactly as many earlier rooftops as it has floors.", "Three houses string bunting to each rooftop they can see: 10, 10 and 11 strings."]}
