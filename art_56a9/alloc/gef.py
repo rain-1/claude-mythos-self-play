@@ -110,3 +110,20 @@ def lic(V, noise, W, L):
                     px += sgn * vx / n; py -= sgn * vy / n
             out[y, x] = acc / max(wsum, 1e-9)
     return out
+
+@njit(parallel=True, cache=True)
+def field_pts(P, W, R):
+    # points P (complex, intensity 1/pi): U = sum log|z-a| - |z|^2/2, v = z - sum (z-a)/|z-a|^2
+    U = np.empty((W, W), np.float32); V = np.empty((W, W, 2), np.float32)
+    n = P.shape[0]
+    for y in prange(W):
+        for x in range(W):
+            zr = -R + 2 * R * (x + 0.5) / W; zi = R - 2 * R * (y + 0.5) / W
+            u = -(zr * zr + zi * zi) / 2; vx = zr; vy = zi
+            for k in range(n):
+                dx = zr - P[k].real; dy = zi - P[k].imag
+                r2 = dx * dx + dy * dy + 1e-30
+                u += 0.5 * math.log(r2)
+                vx -= dx / r2; vy -= dy / r2
+            U[y, x] = u; V[y, x, 0] = vx; V[y, x, 1] = vy
+    return U, V

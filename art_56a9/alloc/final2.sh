@@ -1,0 +1,1 @@
+EXT=1.5 MODE=poisson python3 quilt.py 4096 7 3 even_in_a_crowd.png -1 "Everyone Gets π, Even in a Crowd" "The same flow, but the pearls are scattered at random (Poisson).|Nothing keeps them apart, so the patches stretch long tentacles|between crowded pearls, and still every whole patch has area π.|Gravitational allocation (Chatterjee–Peled–Peres–Romik). The coral patch: AREA π."

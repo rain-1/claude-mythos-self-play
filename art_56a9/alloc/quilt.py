@@ -3,7 +3,8 @@ import numpy as np, sys, math, time
 from numba import njit, prange
 from scipy import ndimage as ndi
 from PIL import Image, ImageDraw, ImageFont
-from gef import coeffs, field, zeros, basins, lic, fval
+from gef import coeffs, field, zeros, basins, lic, fval, field_pts
+import os
 
 PAL = np.array([[1.00, 0.80, 0.66], [0.99, 0.72, 0.76], [0.94, 0.72, 0.90], [0.80, 0.74, 0.98], [0.68, 0.82, 0.99],
                 [0.64, 0.92, 0.88], [0.80, 0.95, 0.68], [1.00, 0.91, 0.64]])
@@ -41,8 +42,22 @@ def main():
     S = int(sys.argv[1]); R = float(sys.argv[2]); seed = int(sys.argv[3]); out = sys.argv[4]
     margin = int(S * 0.06); cap = int(S * 0.0)
     Wf = S - 2 * margin                       # fabric square
-    K = int(R * R + 8 * R + 40); c = coeffs(K, seed)
-    t = time.time(); U, V = field(c, Wf, R); Z = zeros(c, U, R, Wf)
+    t = time.time()
+    ext = float(os.environ.get('EXT', '1.0'))
+    Wv, Rv = Wf, R
+    Wf = int(round(Wv * ext)); Wf += (Wf - Wv) % 2; R = Rv * Wf / Wv
+    if os.environ.get('MODE') == 'poisson':
+        rng0 = np.random.default_rng(seed); Rb = Rv * 3.0
+        npts = rng0.poisson(Rb * Rb)                 # intensity 1/pi on a disc of radius Rb
+        rr0 = Rb * np.sqrt(rng0.random(npts)); th0 = 2 * np.pi * rng0.random(npts)
+        Pt = rr0 * np.exp(1j * th0)
+        U, V = field_pts(Pt, Wf, R)
+        U = U - np.float32(np.median(U)) - np.float32(0.3)
+        print('U range', np.percentile(U, [1, 50, 99]))
+        Z = Pt[(np.abs(Pt.real) < R * 1.02) & (np.abs(Pt.imag) < R * 1.02)]
+    else:
+        K = int(R * R + 8 * R + 40); c = coeffs(K, seed)
+        U, V = field(c, Wf, R); Z = zeros(c, U, R, Wf)
     px = Wf / (2 * R)
     ZL = np.full((Wf, Wf), -1, np.int32)
     zc = [((z.real + R) * px - 0.5, (R - z.imag) * px - 0.5) for z in Z]
@@ -54,6 +69,13 @@ def main():
         sub = (xx[y0:y1, x0:x1] - cx) ** 2 + (yy[y0:y1, x0:x1] - cy) ** 2 <= r * r
         ZL[y0:y1, x0:x1][sub] = k
     L = basins(V, ZL, Wf, 0.5, 8 * Wf)
+    if Wf != Wv:
+        off = (Wf - Wv) // 2
+        U = np.ascontiguousarray(U[off:off + Wv, off:off + Wv]); V = np.ascontiguousarray(V[off:off + Wv, off:off + Wv])
+        L = np.ascontiguousarray(L[off:off + Wv, off:off + Wv]); Wf = Wv; R = Rv
+        zc = [(x - off, y - off) for (x, y) in zc]
+        yy, xx = np.mgrid[0:Wf, 0:Wf]
+    keep = sorted(set(np.unique(L).tolist()) - {-1})
     print('fields', time.time() - t, 'zeros', len(Z)); t = time.time()
     # fill unlabelled (paths leaving the square) by nearest label
     bad = L < 0
@@ -76,7 +98,9 @@ def main():
         col[k] = free[rng.integers(len(free))] if free else rng.integers(len(PAL))
     base = PAL[col[L]]
     # height = clamped potential, smooth
-    h = 0.5 * np.log(np.exp(2 * U.astype(np.float64)) + math.exp(-1.7))
+    if os.environ.get('MODE') == 'poisson':
+        U = U - ndi.gaussian_filter(U, px * 1.2) + np.float32(0.25)
+    h = 0.5 * np.log(np.exp(2 * np.minimum(U.astype(np.float64), 30)) + math.exp(-1.7))
     h = ndi.gaussian_filter(h, 1.0)
     amp = px * 0.30                            # height in pixels per unit of U
     hp = (h * amp).astype(np.float32)
@@ -203,11 +227,11 @@ def main():
     out_img[yb, xb] = np.array([0.99, 0.97, 0.96]) * (0.80 + 0.20 * np.sin(np.pi * np.clip(dd, 0, 1)))[:, None]
     im = Image.fromarray((np.clip(out_img, 0, 1) * 255).astype(np.uint8))
     if len(sys.argv) > 6:
-        label(im, S, margin, Wf)
+        label(im, S, margin, Wf, area_hl / math.pi)
     im.save(out)
     print('done', time.time() - t)
 
-def label(im, S, margin, Wf):
+def label(im, S, margin, Wf, ahl=1.0):
     d = ImageDraw.Draw(im)
     lw, lh = int(S * 0.335), int(S * 0.128)
     x0 = margin + Wf - lw - int(S * 0.035); y0 = margin + Wf - lh - int(S * 0.035)
@@ -233,7 +257,7 @@ def label(im, S, margin, Wf):
     tx = x0 + int(S * 0.018); ty = y0 + int(S * 0.016)
     d.text((tx, ty), sys.argv[6], font=fb, fill=ink)
     ty += int(S * 0.031)
-    for i, line in enumerate(sys.argv[7].split('|')):
+    for i, line in enumerate(sys.argv[7].replace('AREA', f'{ahl:.4f}').split('|')):
         d.text((tx, ty), line, font=fi if i == 0 else fs, fill=ink)
         ty += int(S * 0.0175)
 

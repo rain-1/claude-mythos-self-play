@@ -3,7 +3,11 @@ from PIL import Image, ImageDraw, ImageFont
 from tone import tone
 parts = [np.load(f'hero_{k}.npy') for k in range(8)]
 x = np.concatenate(parts, 0)
-im = Image.fromarray(tone(x, 0.75))
+t8 = tone(x, 0.75).astype(np.float32) / 255
+m = t8.mean(axis=2, keepdims=True)
+t8 = m + (t8 - m) * 1.22                     # saturation
+t8 = 0.5 + (t8 - 0.5) * 1.06 + 0.012           # gentle contrast, keep it bright
+im = Image.fromarray((np.clip(t8, 0, 1) * 255 + 0.5).astype(np.uint8))
 W, H = im.size
 d = ImageDraw.Draw(im)
 ink = (82, 68, 96)
