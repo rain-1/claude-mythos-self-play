@@ -68,3 +68,15 @@ The computation reproduces the OP's facts. The equality system has rank 6 and F^
 - Floating-point tolerances are 1e-9 relative (Howard) and 1e-7 (certification). The LP is HiGHS in double precision. None of the certificates are exact rational proofs.
 - The p ≤ 10 sweep can miss periods > 10. A positive LP gap flags this, and that is how the period-21 cases were found. A sample with gap 0 is certified regardless of p.
 - "Face" energies use J = 10 for forbidden tiles in the sweep. Certification in the period-21 face example uses hard constraints, so it is a statement about the SFT.
+
+## Follow-up by the main session (independent checks)
+
+- `verify_lp44.py`: an independently written 4×4-window LP (65,536 variables, scipy/HiGHS). For both period-21
+  examples, LP44 equals the periodic energy to within 2e-16 (face10: −0.667047362180058; gauss: −0.828564201052151).
+  The torus energy of the (21,0),(13,1) configuration was also recomputed directly.
+- Fine scan along J[15] += t for the face10 example (step 0.0025, `data/fine_a.txt`, `data/fine_b.txt`): the phases
+  are uniform for t ≤ −0.270, period 30 (lattice (10,0),(3,6)) for −0.268 ≤ t ≤ −0.145, and period 21 for
+  t ≥ −0.143. The transitions are sharp, and no intermediate period appears at this resolution. **Conjecture A
+  (Fibonacci devil's staircase) is weakened**, because this line shows 1 → 30 → 21 rather than a Fibonacci ladder.
+  Caveat: LP44 can only certify what it can express, so a longer-period phase in a gap narrower than 0.0025 is not
+  excluded.
