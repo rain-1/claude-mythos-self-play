@@ -11,4 +11,4 @@ for t in np.linspace(float(sys.argv[2]),float(sys.argv[3]),int(sys.argv[4])):
     den=max(Fraction(v).limit_denominator(200).denominator for v in f)
     print(f"t={t:+.3f} lp44={val:.6f} f15={f[15]:.5f} f11={f[11]:.5f} den={den}",flush=True)
     out.append(dict(t=float(t),lp44=val,f=f.tolist(),den=den))
-json.dump(out,open(f'data/stair_lp_k{k}.json','w'))
+json.dump(out,open(f'data/stair_lp_k{k}_{sys.argv[2]}_{sys.argv[3]}.json','w'))

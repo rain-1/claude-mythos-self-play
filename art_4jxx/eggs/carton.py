@@ -8,7 +8,7 @@ from numba import njit, prange
 from scipy.spatial import cKDTree
 from PIL import Image
 
-CM = 192  # cubemap face size
+CM = 384  # cubemap face size
 
 def bake_cubemap(npz, sharp=0.0):
     d = np.load(npz); V, v = d["V"], d["v"]

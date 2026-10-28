@@ -102,7 +102,9 @@ def render(cfg, out):
         Rx = np.array([[1, 0, 0], [0, np.cos(ax), -np.sin(ax)], [0, np.sin(ax), np.cos(ax)]])
         Ry = np.array([[np.cos(ay), 0, np.sin(ay)], [0, 1, 0], [-np.sin(ay), 0, np.cos(ay)]])
         Rz = np.array([[np.cos(az), -np.sin(az), 0], [np.sin(az), np.cos(az), 0], [0, 0, 1]])
-        Q = P @ (Rz @ Ry @ Rx).T * fl["scale"] + np.array(fl["pos"])
+        yw = np.radians(fl.get("yaw", 0.0))
+        Ryw = np.array([[np.cos(yw), 0, np.sin(yw)], [0, 1, 0], [-np.sin(yw), 0, np.cos(yw)]])
+        Q = P @ (Ryw @ Rz @ Ry @ Rx).T * fl["scale"] + np.array(fl["pos"])
         Q[:, 2] = np.maximum(Q[:, 2], 10)
         ink = np.array(fl["ink"]); hazec = np.array(fl.get("haze_col", cfg["sky_2"]))
         for refl, A, C in ((False, A_up, C_up), (True, A_dn, C_dn)):
