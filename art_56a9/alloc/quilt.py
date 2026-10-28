@@ -146,12 +146,17 @@ def main():
     inside = (L == hlk)
     din = ndi.distance_transform_edt(inside)
     ring = (din > px * 0.07) & (din <= px * 0.07 + max(2.0, px * 0.022))
-    # dash it along the contour by angle around the button
-    cxh, cyh = zc[hlk]
-    angd = np.arctan2(yy - cyh, xx - cxh)
-    rr_ = np.hypot(yy - cyh, xx - cxh)
-    arc = (angd * rr_.clip(1) / (px * 0.06)) % 1.0
-    cm = (ring & (arc < 0.62)).astype(np.float32)
+    # dash by arc length along the ordered contour of the ring's centre-line
+    from skimage import measure
+    from scipy.spatial import cKDTree
+    cs = measure.find_contours(din.astype(np.float32), px * 0.07 + max(1.0, px * 0.011))
+    cpts = max(cs, key=len)
+    al = np.concatenate([[0], np.cumsum(np.hypot(*np.diff(cpts, axis=0).T))])
+    ys_, xs_ = np.nonzero(ring)
+    _, nn = cKDTree(cpts).query(np.c_[ys_, xs_])
+    per = px * 0.06
+    on = (al[nn] % per) < 0.62 * per
+    cm = np.zeros(din.shape, np.float32); cm[ys_[on], xs_[on]] = 1
     cm = ndi.gaussian_filter(cm, 0.6)
     coral = np.array([1.0, 0.45, 0.38])
     img = img * (1 - 0.2 * ndi.shift(cm, (px * 0.008, px * 0.006), order=1)[..., None])
@@ -204,7 +209,7 @@ def main():
 
 def label(im, S, margin, Wf):
     d = ImageDraw.Draw(im)
-    lw, lh = int(S * 0.335), int(S * 0.112)
+    lw, lh = int(S * 0.335), int(S * 0.128)
     x0 = margin + Wf - lw - int(S * 0.035); y0 = margin + Wf - lh - int(S * 0.035)
     # shadow
     sh = Image.new('L', im.size, 0); ImageDraw.Draw(sh).rectangle([x0 + 6, y0 + 9, x0 + lw + 6, y0 + lh + 9], fill=90)
