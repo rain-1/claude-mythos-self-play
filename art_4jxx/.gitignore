@@ -10,3 +10,8 @@ eggs/x.npy
 tiles/t*.png
 __pycache__/
 *.log
+flock/pr*.png
+flock/pb*.png
+flock/pm*.png
+flock/cr_*.json
+flock/cb*.json

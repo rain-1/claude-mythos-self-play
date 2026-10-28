@@ -46,6 +46,7 @@ def make(N=300000, seed=1, T=60, dt=0.05, thick=0.06, shape=(1.6, 0.25, 0.9)):
 
 if __name__ == "__main__":
     N, seed, T, out = int(sys.argv[1]), int(sys.argv[2]), int(sys.argv[3]), sys.argv[4]
-    P = make(N, seed, T)
+    th = float(sys.argv[5]) if len(sys.argv) > 5 else 0.06
+    P = make(N, seed, T, thick=th)
     np.save(out, P)
     print(out, P.min(0), P.max(0))

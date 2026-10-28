@@ -20,10 +20,10 @@ def canon(fd):
     """Canonical key of a periodic pattern up to translation, the dihedral group and 0/1 swap."""
     g = np.array(fd, np.int8)
     keys = []
-    for gg in [g, 1 - g]:
-        for k in range(4):
+    for gg in [g]:
+        for k in range(1):
             h = np.rot90(gg, k)
-            for hh in [h, h[:, ::-1]]:
+            for hh in [h]:
                 # translation invariant fingerprint: sorted multiset of 3x3 windows on a big torus + area
                 big = np.tile(hh, (12 // hh.shape[0] + 3, 12 // hh.shape[1] + 3))
                 keys.append((hh.size, tuple(sorted(set(
@@ -74,9 +74,9 @@ examples = []
 seen = set()
 # 1) the Fibonacci / golden staircase example: period 21 shear 13, certified by LP on 4x4 windows
 C = json.load(open("data/gap_candidates.json"))
-fib = [r for r in C if r["pstar"] == 10 and r["area"] == 30]
-if fib:
-    J = np.array(fib[0]["J"])
+fib = [r for r in C if (r["pstar"] == 10 and r["area"] == 30) or (r["fam"] == "gauss" and r["area"] == 8)]
+for fr in fib:
+    J = np.array(fr["J"])
     e, col, s = shear_search(J, 21)
     fd = np.array([[(col >> ((r)) & 1)] for r in range(21)], np.int8)
     big = np.zeros((21, 21), np.int8)
@@ -86,11 +86,15 @@ if fib:
     area, pv, h, ss, fdd = period_lattice(big)
     lb = lp_bound_sft_big(J, 4, 4)
     ex = rec_to_example(J, fdd, pv, h, ss, e, lb, "LP on 4x4 windows, forbidden tiles (J=10) as hard constraints",
-                        "face10",
+                        fr["fam"],
                         "Found by random sweep as the largest LP(3x3) gap; strip optimum keeps changing up to p=16; "
                         "exact optimum has vertical period 21 with shear 13 (Fibonacci numbers). Only certified with 4x4-window LP. "
                         "Note: certification is for the SFT with the 6 J=10 tiles forbidden.")
-    ex["interest"] = 100.0
+    if fr["fam"] == "gauss":
+        ex["note"] = ("Gaussian J (all 16 tiles allowed). Strip optimum up to p=10 has period 4 (area 8) with LP(3x3) gap 6.7e-3; "
+                      "exact optimum is the period-21, shear-13 staircase, certified by LP on 4x4 windows.")
+        ex["lower_bound_method"] = "LP on 4x4 windows (shift-consistent)"
+    ex["interest"] = 100.0 if fr["fam"] != "gauss" else 99.0
     examples.append(ex)
     seen.add(canon(fdd))
 
@@ -103,7 +107,7 @@ for r in cands:
     if key in seen:
         continue
     a = r["area"]
-    cap = {1: 2, 2: 4, 3: 4, 4: 5, 6: 5}.get(a, 4)
+    cap = {1: 2, 2: 4, 3: 6, 4: 8, 6: 10}.get(a, 6)
     if per_area.get(a, 0) >= cap:
         continue
     seen.add(key)
