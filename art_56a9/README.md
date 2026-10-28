@@ -30,7 +30,16 @@ and every basin has area exactly π. Here it is a tufted satin patchwork quilt (
 potential itself, so the pearl buttons sit in the dimples at the zeros. The satin grain is a line-integral convolution
 along the flow, with an anisotropic sheen. Dashed tufting stitches follow flow lines out from each button, and the
 patches are greedy-coloured from the sorbet box. The coral running stitch marks the patch nearest the centre.
-**Measured: every interior basin has area π to within 0.15 % (34 basins at 1024², mean 1.00002 π).**
+**Measured: every interior basin has area π to within 0.15 % (34 basins at 1024², mean 1.00002 π); the coral patch at 4096 measures 0.99998 π.**
+
+### 2b. Everyone Gets π, Even in a Crowd (4096², the "go deeper" on my favourite)
+![Everyone Gets π, Even in a Crowd](alloc/even_in_a_crowd.png)
+
+The same flow ż = z − Σ(z−a)/|z−a|², but the pearls are a Poisson process of intensity 1/π (gravitational allocation,
+Chatterjee–Peled–Peres–Romik). Zeros of the Gaussian entire function repel each other; Poisson points do not. So
+the patches stretch into feather-like tentacles that meet in starbursts at the maxima of the potential. Still every whole patch has area π
+(coral patch: 0.9998 π). Computed on a 1.5× margin and cropped, so tentacles of off-frame pearls are traced honestly;
+the relief is the potential with its large-scale swell removed.
 
 ### 3. Each House Sees Its Own Height (4096 × 2304)
 ![Each House Sees Its Own Height](shore/each_house_sees_its_own_height.png)
@@ -40,7 +49,7 @@ Row 0 of the city is OEIS A400000 itself: 0,1,1,2,1,2,1,3,1,2,1,3,1,2,1,10,… H
 flower boxes. The garden at n = 0 is the empty lot. The three tall houses (10, 10, 11 floors) string bunting to every
 earlier rooftop they can see: 10, 10 and 11 strings. The script asserts each count.
 
-## The six ideas
+## The six ideas (3 built, plus one go-deeper)
 1. **Miniature city of MO 516465** with sight-line threads (built, hero).
 2. **Gravitational allocation quilt** of GEF zeros (built).
 3. **A400000 waterfront** with bunting (built: the "go deeper" on the city, a frontal elevation in a different register).
@@ -50,7 +59,44 @@ earlier rooftop they can see: 10, 10 and 11 strings. The script asserts each cou
    by complementing 2-regular graphs; my guess at a 10-vertex construction failed a 200k random search, so it stays open here).
 
 ## Mathematics (MO 516465)
-MATH_PLACEHOLDER
+**What I checked.** My `city/citygen.py` reproduces the 30 × 30 table posted on MO (rows 11–19 and the diagonal),
+and row 0 reproduces OEIS A400000. Computed up to 6000 × 6000 (36 M buildings, global max 828).
+
+**Small theorem: every diagonal height is even.** By induction a(i,j) = a(j,i). So for the diagonal cell the row
+seen to the left and the column seen below are the same sequence, and V_{n,n}(h) = 2·v_n(h). The least h with
+2v_n(h) = h is therefore even: a(n,n) = 2m, where m is the least m with v_n(2m) = m.
+
+**Records of the diagonal:** 2 (n=1), 4 (14), 14 (19), 30 (458), 34 (493), 66 (748), 222 (1036). Then nothing higher up to
+n = 6000; the next largest are 192 (5124), 178 (1167), 166 (4112), 126 (5623).
+The bursts come in clusters: n = 1099…1203 has 51 diagonal values ≥ 16.
+
+**Mechanism.** v_n(h) − h/2 behaves like a walk that hugs zero, and a(n,n) is its first return to zero at an even h.
+For n = 1036 the row from height h sees 1,1,3,3,3,5,6,7,… buildings and stays above h/2 until h = 222.
+
+**Conjecture (stated as such).** The diagonal values have a limiting distribution with a power tail,
+P(a(n,n) ≥ x) ≈ C·x^(−α), α ≈ 1.8–2 (C ≈ 9). Fitted on n ≤ 6000; the tail frequencies at x = 8, 16, 32 agree to
+three digits between the first 3000 and the first 6000 entries. So **the diagonal is unbounded**: if the entries
+mixed even weakly, max_{k≤n} a(k,k) would grow like √n (≈ 3√n). What would decide it: a proof that v_n(h) − h/2 has
+no drift, or a computation to n ≈ 25 000 seeing a record near 450.
+
+Curiosity: a(1036,1036) = 222 = 2·111, and 111 is the 1-D record a(0,1245). It's probably a coincidence:
+the next 1-D record is 148 and the next diagonal giant is 192.
+
+**MO 448829 (the flow question).** For finite n the answer is yes: U = Σ log|x − zᵢ| is harmonic off the zᵢ.
+So its critical points (the zeros of p′, for p = ∏(z − zᵢ)) are saddles, not attractors. The trace of the Jacobian of ∇U
+is ΔU = 0, which refutes the asymptotically stable midpoint claimed in the second post. Only the measure-zero
+stable manifolds of the saddles fail to reach a zᵢ. Adding the confining −|z|²/2 turns it into gravitational allocation
+(pieces 2 and 2b), where every basin has area exactly π.
 
 ## Tweet
-TWEET_PLACEHOLDER
+*A city where every tower is exactly as tall as the number of roofs it can see. Down the middle avenue they stay
+two or four storeys, until one, a thousand lots out, rises to 222. Next door a quilt of pearls, each pulling in the same π
+of satin, whether its neighbours keep their distance or crowd in.*
+
+## What I learned about generative art (this run)
+- **Pick the camera that turns a symmetry into composition.** a(i,j) = a(j,i) became a mirror-symmetric diamond once the
+  camera sat on the diagonal. The protagonist went in front of its taller twins, and the sea went where the fog had been.
+- **Let the field draw the texture.** A line-integral convolution along the flow is free satin. The potential itself is
+  the quilt's relief, and the buttons sit exactly where the field has its sinks. Nothing decorative is invented.
+- **Repulsion is calm; independence is wild.** The same flow and the same theorem give a tidy quilt or a paisley
+  of tentacles, depending only on whether the pearls keep their distance.
