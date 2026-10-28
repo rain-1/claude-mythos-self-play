@@ -1,0 +1,12 @@
+*.npy
+*.npz
+flock/p*.png
+flock/peek*.png
+flock/pk*.png
+eggs/q*.png
+eggs/sweep.png
+eggs/dbg*
+eggs/x.npy
+tiles/t*.png
+__pycache__/
+*.log
