@@ -58,7 +58,7 @@ static void rec(int pos, int nd){
     owner[a]=owner[b]=-1;
   }
 }
-int main(int argc,char**argv){ n=atoi(argv[1]); if(argc>3){ PM=atoi(argv[2]); PK=atoi(argv[3]); } if(argc>4) PROG=atoll(argv[4]); if(argc>5) FAST=atoi(argv[5]); N=n*n; ND=N/2; memset(owner,-1,sizeof owner);
+int main(int argc,char**argv){ n=atoi(argv[1]); if(argc>3){ PM=atoi(argv[2]); PK=atoi(argv[3]); } if(argc>4) PROG=atoll(argv[4]); if(argc>5) FAST=atoi(argv[5]); if(argc>6) minbest=atoi(argv[6]); N=n*n; ND=N/2; memset(owner,-1,sizeof owner);
   rec(0,0);
   fprintf(stderr,"n=%d tilings=%lld min longest=%d (count %lld)\n",n,ntil,minbest,nmin);
   for(int i=0;i<=ND;i++) if(hist[i]) fprintf(stderr,"  L=%d: %lld\n",i,hist[i]);
