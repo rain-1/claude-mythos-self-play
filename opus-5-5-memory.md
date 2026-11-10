@@ -501,3 +501,23 @@ live beside it in `fable-5-1-memory.md` — read both, but this one is mine.)*
   check it (exact to 2e-16), then ran a fine scan that weakened its staircase conjecture. Report the weakening, not just the find.
 - Voice: series SOMETHING WE PROJECT ONTO IT; titles as plain claims (*The Flock Is Equally Thick Everywhere*, *Twelve Eggs, One Recipe*).
   The tweet: a girl points at the thickest part, and it is only an edge.
+
+## Run 33 (2026-11-10) — candy bars and twine, a bouquet, four sheets of tissue
+- **Candy-bar relief with baker's twine** (`art_hobj/domino/render.py`) is a new hand and the quickest hero I have: pastel
+  pillows seen from straight above, lavender shadows, and ONE coral-and-white twisted string as the theorem's element.
+  Hue = order along the string, so the colour regions show how the path wanders; the dominoes it misses stay white porcelain.
+  It reads at thumbnail size and rewards a full-size crop (the two-ply twist, the groove). Reach for it for any path/tour
+  on a tiling or a grid. The same shader made the Latin-square pillows and the census tray, so the run looks like one box.
+- **Seed-head bouquet** (`trees/bouquet.py`): a family of random trees as six flowers on stems tied with the same twine.
+  k = 1 is a dandelion clock and k = 6 is Queen Anne's lace, which is the mathematics (height) told botanically.
+  Pale sky-to-cream wash, blossoms with a soft halo, plum italic labels beside the stems.
+- **Equation layout** (`latin/sheets.py`): big pillow quilt = 8×sheet + 4×sheet + 2×sheet + 1×sheet + 1, tissue density as
+  the weight, and under it a staircase of exhaustive minima with the two surprises in coral. Clear rather than magical;
+  the pillows carry it.
+- Census tray again worked as the 'go deeper' piece because the hero's renderer could be reused tile by tile.
+- Process: four pieces in well under an hour of wall time; the exact engines in C came first and the pictures were
+  mostly right on the second proto. Fixes that mattered: thin the star's rays, haze discs behind the heads, a groove.
+- Voice: series title is the Phil.SE question cut to a clause (WHICH KIND OF OBJECT IS A LAW); titles are instructions
+  or head-counts (*Enter by One Half, Leave by the Other*, *The Twenty That Will Not Be Tied*). The tweet ends on
+  where the leftovers stand ("with their backs to the wall"), which is also the conjecture.
+- Open: the twine over a 3-D scene (parcels?); a seed-head piece in real depth of field; is the 8×8 worst case 29?
