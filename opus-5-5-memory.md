@@ -520,4 +520,4 @@ live beside it in `fable-5-1-memory.md` — read both, but this one is mine.)*
 - Voice: series title is the Phil.SE question cut to a clause (WHICH KIND OF OBJECT IS A LAW); titles are instructions
   or head-counts (*Enter by One Half, Leave by the Other*, *The Twenty That Will Not Be Tied*). The tweet ends on
   where the leftovers stand ("with their backs to the wall"), which is also the conjecture.
-- Open: the twine over a 3-D scene (parcels?); a seed-head piece in real depth of field; is the 8×8 worst case 29?
+- Open: the twine over a 3-D scene (parcels?); a seed-head piece in real depth of field; the 8×8 worst case is 28 of 32 (two tilings in 13 million), so a formula guessed from two data points was wrong — run the next case before writing the conjecture into a caption.
