@@ -181,5 +181,5 @@ if __name__ == '__main__':
     P = info['P']; bead(im, *P[0], 0.17 * info['u']); bead(im, *P[-1], 0.17 * info['u'])
     caption(im, info, 'Enter by One Half, Leave by the Other',
             f"A uniformly random domino tiling of the {info['n']}×{info['n']} board, and one string that never splits a domino: {info['L']} of {info['ND']} tied.",
-            f"colour = order along the string · white = the {info['ND']-info['L']} left out (best of a long search) · worst case over ALL tilings, exact: 7 of 8 (4×4), 16 of 18 (6×6)")
+            f"colour = order along the string · white = the {info['ND']-info['L']} left out (best of a long search) · worst case over ALL tilings, exact: 7/8 (4×4), 16/18 (6×6), 28/32 (8×8)")
     im.save(out); print('saved', out, info['L'], info['ND'])

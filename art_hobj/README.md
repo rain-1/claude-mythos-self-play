@@ -1,6 +1,6 @@
 # WHICH KIND OF OBJECT IS A LAW — pastel #54
 
-Four pictures about rules: a rule you must obey at every step, a rule that says where
+Five pictures about rules: a rule you must obey at every step, a rule that says where
 everything ends up, and a rule that compresses a whole table into a few sheets.
 The series title is a Philosophy.SE question
 ([143035, "Which kind of object is a law of nature?"](https://philosophy.stackexchange.com/q/143035));
@@ -10,10 +10,11 @@ the three mathematical objects come from the MathOverflow front page of the same
 |---|---|---|
 | `out/enter_by_one_half_4096.png` | 4096² | **Enter by One Half, Leave by the Other** — hero. A uniformly random domino tiling of the 20×20 board as candy bars, tied by one baker's-twine path that never splits a domino. |
 | `out/the_twenty_3072.png` | 3072² | **The Twenty That Will Not Be Tied** — the 20 worst tilings of the 6×6 board (and the 2 worst of the 4×4), each with one longest string. |
+| `out/two_in_thirteen_million_3072.png` | 3072×1904 | **Two in Thirteen Million** — the only two tilings of the chessboard that cannot be tied past 28 of 32. |
 | `out/six_ways_3072.png` | 3072² | **Six Ways to Arrive at One** — six uniformly random maps *f* on 300 points with *f*ᵏ constant, k = 1…6, as a bouquet of seed heads. |
 | `out/four_sheets_3072.png` | 3072² | **Four Sheets Hold Two Hundred and Fifty-Six Facts** — the 16×16 XOR Latin square as four checkered tissue sheets plus a constant; below, the exact minimum rank for n = 2…7. |
 
-## Six ideas, four made
+## Six ideas, four made (and a postscript)
 
 1. **Domino-respecting paths** (MO 509392) — made, hero.
 2. **The stubborn tilings**, an exhaustive census of worst cases — made, as the "go deeper" on the hero.
@@ -45,12 +46,16 @@ reachability bound):
 | 2×2 | 2 | 2 of 2 | 2 |
 | 4×4 | 36 | 7 of 8 | 2 |
 | 6×6 | 6 728 | 16 of 18 | 20 (1 850 lose one, 4 858 lose none) |
-| 8×8 | 12 988 816 | see the note at the end | |
+| 8×8 | 12 988 816 | **28 of 32** | 2 (a mirror pair) |
 
-In all 22 extremal tilings for n ≤ 6 the dominoes left out touch the boundary of the board.
+The 8×8 row took 12 988 816 exhaustive searches (four slices, about half an hour; `census 8 4 k 200000 1`
+stops each search as soon as it beats the current minimum, so only the minimum and its count are exact there).
+In all 24 extremal tilings the dominoes left out sit against the boundary of the board, bunched in a corner.
 
-**Conjecture (mine, thin evidence).** The worst case loses only a boundary's worth:
-n²/2 − L_min(n) = O(n), and the small cases fit n/2 − 1 exactly. If true, the Θ(n²) theorem
+**A guess that died, and what is left.** After n = 4 and 6 the losses were 1 and 2, and I guessed n/2 − 1.
+The 8×8 census says 4, not 3, so that formula is wrong. The losses 0, 1, 2, 4 are still tiny, and
+still a boundary effect.
+**Conjecture (mine, four data points).** n²/2 − L_min(n) = O(n). If true, the Θ(n²) theorem
 is far from tight in its constant: asymptotically *every* domino can be tied.
 
 **The hero.** One uniform tiling of the 20×20 board (400 sweeps of random flips), and the longest
@@ -125,6 +130,8 @@ cd domino && gcc -O2 -o census census.c && ./census 6 > min6.bin && ./census 4 >
 python3 path.py 20 2 4e8 6 3000          # long search; writes path_20_2_3000.npz
 python3 render.py path_20_2_3000.npz 4096 ../out/enter_by_one_half_4096.png 0.92 0.0
 python3 stubborn.py 3072 ../out/the_twenty_3072.png
+for k in 0 1 2 3; do ./census 8 4 $k 200000 1 > min8_$k.bin & done; wait   # ~30 min
+python3 worst8.py 3072 ../out/two_in_thirteen_million_3072.png
 cd ../trees && python3 count.py && python3 bouquet.py 3072 300 7 ../out/six_ways_3072.png
 cd ../latin && gcc -O2 -o rank rank.c && for n in 2 3 4 5 6 7; do ./rank $n > low$n.txt; done
 python3 sheets.py 3072 ../out/four_sheets_3072.png
