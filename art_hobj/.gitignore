@@ -1,6 +1,6 @@
-art_hobj/domino/min8_*.bin
-art_hobj/domino/census8_*.log
-art_hobj/domino/census
-art_hobj/latin/rank
-art_hobj/latin/anneal.log
+domino/min8_*.bin
+domino/census8_*.log
+domino/census
+latin/rank
+latin/anneal.log
 __pycache__/
