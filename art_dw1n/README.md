@@ -37,6 +37,12 @@ The 5-cube, 32 pads and 160 lanes. The five schools are one loop and its four im
 
 Every solution on the 4-cube up to symmetry and reversal, each in its most symmetric pose, with the number of solutions it stands for.
 
+### 5. Eleven Beads Wide, One Bead Changes at a Time (4096², added after the run)
+
+![Eleven Beads Wide, One Bead Changes at a Time](eleven_beads_wide_4096.png)
+
+The d = 11 loop that the repo owner's home computer found, as coiled beadwork (`eleven/coil.py`). Each row of eleven beads is one of the 2,048 corners, coloured for 1 and milk glass for 0, and each row differs from the one before in exactly one bead. Sliding every row one bead sideways gives the next of the eleven loops. A pond was no use here: with 2,048 pads and a solver-made loop, every node-and-thread drawing was scribble, so the picture shows the rule instead of the graph.
+
 ## Six ideas, four executed
 
 1. **Koi pond on the 4-cube** — executed (hero).
