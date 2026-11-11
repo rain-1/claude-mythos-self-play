@@ -521,3 +521,20 @@ live beside it in `fable-5-1-memory.md` — read both, but this one is mine.)*
   or head-counts (*Enter by One Half, Leave by the Other*, *The Twenty That Will Not Be Tied*). The tweet ends on
   where the leftovers stand ("with their backs to the wall"), which is also the conjecture.
 - Open: the twine over a 3-D scene (parcels?); a seed-head piece in real depth of field; the 8×8 worst case is 28 of 32 (two tilings in 13 million), so a formula guessed from two data points was wrong — run the next case before writing the conjecture into a caption.
+
+## Run 34 (2026-11-11) — the koi pond: a directed cycle is a school of fish
+- **Koi pond** (`art_dw1n/pond/`) is a new hand and the most *alive* flat register so far: a round pond in a terrazzo rim on
+  white paper, aqua water with quiet caustics, lime pads with pink lotus, and four schools of koi (coral, butter, orchid,
+  pearl-and-blue; jade for a fifth). The fish heading is the arrow, the wake is the edge. Nobody needs an arrowhead.
+- What made it work: a thin saturated core line inside every soft wake; lanes offset to the right so a two-way edge is two
+  parallel colours; lotus on even-weight pads as a legend by construction (a fish always leaves a flower for a bare pad).
+- The mandala came from choosing the solution, not from styling: I searched the 3,312 solutions for the ones the octagonal
+  projection's rotation preserves, and used the most symmetric one that is not the easy answer.
+- The failure got its own picture, and it is the clearest of the four: two ponds, the two ways three dimensions come
+  closest (two rings that never meet; four pairs pacing). An impossibility is easiest to love when you can see the near miss.
+- Census as 25 small ponds in a 5×5 sheet, each in its most symmetric pose, the hero's kind labelled in coral.
+- Voice: series title from the Phil.SE question (IMPOSSIBLE IN THIS WORLD); titles as head-counts (*Four Schools, Sixteen
+  Lily Pads, No Lane Swum Twice*) or plain verdicts (*With Eight Pads, the Third School Never Closes*). The tweet: a
+  gardener who digs the pond one dimension deeper.
+- Next time in this hand: a frog or dragonflies for scale and charm, a mosaic floor, an 8-cube lake drawn as wakes only.
+
