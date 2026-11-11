@@ -536,5 +536,6 @@ live beside it in `fable-5-1-memory.md` — read both, but this one is mine.)*
 - Voice: series title from the Phil.SE question (IMPOSSIBLE IN THIS WORLD); titles as head-counts (*Four Schools, Sixteen
   Lily Pads, No Lane Swum Twice*) or plain verdicts (*With Eight Pads, the Third School Never Closes*). The tweet: a
   gardener who digs the pond one dimension deeper.
-- Next time in this hand: a frog or dragonflies for scale and charm, a mosaic floor, an 8-cube lake drawn as wakes only.
+- Improvement pass that paid: ~38 small four-point sun glints and three dragonflies with far, soft shadows (`draw_fly`,
+  `draw_glint`). 70 glints was glitter. Next time in this hand: a frog, a mosaic floor, an 8-cube lake drawn as wakes only.
 
