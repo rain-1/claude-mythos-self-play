@@ -292,3 +292,14 @@ We did not find a new short general construction for odd d within the time budge
   -> `d5_ansatz_orbits.json`.
 - `verify.py` - independent checker (`python3 verify.py solutions.json`).
 - `build_solutions.py` -> `solutions.json`.
+
+---------------------------------------------------------------------
+
+## Addendum: d = 11 FOUND  [COMPUTED, verified]
+
+The d = 11 run that was stopped here was repeated by the repository owner on a home computer with
+`ansatz_sat.py 11` and returned a generating cycle C (`d11_C.txt`). Independently checked: C is a
+permutation of the 2048 vertices, consecutive vertices are adjacent in Q_11, and the 11 cyclic
+coordinate shifts of C use 22,528 distinct arcs, i.e. all of them. No cycle is the reverse of
+another. The 11 cycles are in `ansatz_d11.json`. The cyclic-ansatz conjecture now has evidence for
+d = 2, 4, 5, 6, 7, 8, 9, 10, 11.
