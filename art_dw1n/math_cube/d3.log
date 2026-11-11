@@ -1,0 +1,21 @@
+directed Ham cycles: 12
+  (0, 1, 3, 2, 6, 7, 5, 4) 01020102
+  (0, 1, 3, 7, 5, 4, 6, 2) 01210121
+  (0, 1, 5, 4, 6, 7, 3, 2) 02010201
+  (0, 1, 5, 7, 3, 2, 6, 4) 02120212
+  (0, 2, 3, 1, 5, 7, 6, 4) 10121012
+  (0, 2, 3, 7, 6, 4, 5, 1) 10201020
+  (0, 2, 6, 7, 3, 1, 5, 4) 12021202
+  (0, 2, 6, 4, 5, 7, 3, 1) 12101210
+  (0, 4, 5, 7, 6, 2, 3, 1) 20102010
+  (0, 4, 5, 1, 3, 7, 6, 2) 20212021
+  (0, 4, 6, 7, 5, 1, 3, 2) 21012101
+  (0, 4, 6, 2, 3, 7, 5, 1) 21202120
+undirected Ham cycles: 6
+families of 1 pairwise arc-disjoint directed Ham cycles: 12
+families of 2 pairwise arc-disjoint directed Ham cycles: 12
+families of 3 pairwise arc-disjoint directed Ham cycles: 0
+undirected Hamiltonian double covers of Q3 (3 cycles, each edge twice): 0
+orbits of arc-disjoint pairs under Aut(Q3) x reversal: 2
+{"cycles": [[0, 1, 3, 2, 6, 7, 5, 4], [0, 2, 3, 7, 6, 4, 5, 1]], "orbit_size": 6, "reverse_pair": false, "shared_undirected_edges": 4, "leftover_cycle_lengths": [4, 4], "leftover": [[0, 4], [1, 5], [2, 0], [3, 1], [4, 6], [5, 7], [6, 2], [7, 3]]}
+{"cycles": [[0, 1, 3, 2, 6, 7, 5, 4], [0, 4, 5, 7, 6, 2, 3, 1]], "orbit_size": 6, "reverse_pair": true, "shared_undirected_edges": 8, "leftover_cycle_lengths": [2, 2, 2, 2], "leftover": [[0, 2], [1, 5], [2, 0], [3, 7], [4, 6], [5, 1], [6, 4], [7, 3]]}
