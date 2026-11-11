@@ -13,6 +13,7 @@ SCHOOLS = [
     dict(name='butter', base=hexc('#ffe9a0'), patch=hexc('#ffbe2e'), patch2=hexc('#fff6da'), fin=hexc('#ffe08a'), trail=hexc('#ffc93f')),
     dict(name='orchid', base=hexc('#f0dcfa'), patch=hexc('#b565dc'), patch2=hexc('#dcb6f2'), fin=hexc('#d9a9f0'), trail=hexc('#c07fe3')),
     dict(name='pearl', base=hexc('#ffffff'), patch=hexc('#5f86ea'), patch2=hexc('#ffffff'), fin=hexc('#dfe8ff'), trail=hexc('#6f93ee')),
+    dict(name='jade', base=hexc('#ecfbf3'), patch=hexc('#22a884'), patch2=hexc('#a6e6cf'), fin=hexc('#b5ecd8'), trail=hexc('#35b892')),
     dict(name='rose', base=hexc('#ffd9e8'), patch=hexc('#f0609c'), patch2=hexc('#fff0f5'), fin=hexc('#ffc0d8'), trail=hexc('#f78bb6')),
     dict(name='peach', base=hexc('#ffe2c8'), patch=hexc('#ff9a4d'), patch2=hexc('#fff2e2'), fin=hexc('#ffd0a8'), trail=hexc('#ffb070')),
     dict(name='plum', base=hexc('#d9c8e6'), patch=hexc('#77588f'), patch2=hexc('#f4ecfa'), fin=hexc('#cdb8dc'), trail=hexc('#9a7fb0')),

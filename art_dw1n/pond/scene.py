@@ -18,7 +18,7 @@ def petrie(d):
     return pos
 
 def build(pos, cycles, schools, seed=3, delta=0.045, fish_per_edge=2.0, flen=0.215, fw=0.030, pad_r=0.088,
-          R=1.78, center=(0.5, 0.452), ppu=1 / 4.25, sym=1, rin=0.2, ripples=6, flower=None, trail_w=0.036, padrot=None, petals=46, petal_r0=0.86, fish_density=None):
+          R=1.78, center=(0.5, 0.452), ppu=1 / 4.25, sym=1, rin=0.2, ripples=6, flower=None, trail_w=0.036, padrot=None, petals=46, petal_r0=0.86, fish_density=None, straight=0.0):
     rng = np.random.default_rng(seed)
     n = len(pos); d = int(round(math.log2(n))) if flower is None else 0
     pads = []
@@ -42,7 +42,11 @@ def build(pos, cycles, schools, seed=3, delta=0.045, fish_per_edge=2.0, flen=0.2
             jit = rng.normal(0, 0.012 * sym)
             s = (k + ph0 * 0 + 0.37 + jit) / nf * L
             fl_ = flen * (1 + 0.10 * rng.normal()); fw_ = fw * (fl_ / flen) * (1 + 0.06 * rng.normal())
-            sp = koi.make_fish(path, L, s, fl_, fw_, rng.random(), rng)
+            ph = rng.random()
+            sp = koi.make_fish(path, L, s, fl_, fw_, ph, rng)
+            for tries in range(1, 9):       # never draw a fish folded round a hairpin
+                if np.linalg.norm(sp[0] - sp[-1]) > straight * fl_: break
+                sp = koi.make_fish(path, L, s + tries * 0.06 * (1 if tries % 2 else -1) * ((tries + 1) // 2), fl_, fw_, ph, rng)
             # fins: pectorals + small ventrals; frame from the spine
             K = len(sp); fins = []
             for (tf, a, b, ang) in ((0.25, 0.034, 0.015, 0.95), (0.54, 0.018, 0.008, 0.7)):
