@@ -65,7 +65,7 @@ Every Hamiltonian cycle of the cube has step pattern *a b a c a b a c*: it uses 
 
 **Computed, d ≥ 5:** look for one loop C whose d cyclic coordinate shifts are arc-disjoint. C works exactly when the map (v, i) ↦ ρ⁻ⁱ(v) is a bijection from the arcs of C to the vertices. Such loops exist for d = 2, 4, 5, 6, 7, 8, 9, 10 (SAT, each verified by two independent checkers) and not for d = 3. The exhaustive counts are 1, 12 and **96** shift-invariant decompositions for d = 2, 4, 5.
 
-**Conjecture (ours, not found in the literature we could reach):** for every d ≠ 3 the doubled d-cube has a Hamiltonian decomposition on which the cyclic shift of coordinates acts as a single d-cycle. A proof for odd d would give a one-loop description of Stong's theorem. d = 11 was still running when this was written.
+**Conjecture (ours, not found in the literature we could reach):** for every d ≠ 3 the doubled d-cube has a Hamiltonian decomposition on which the cyclic shift of coordinates acts as a single d-cycle. A proof for odd d would give a one-loop description of Stong's theorem. The d = 11 search was stopped after about 20 minutes without an answer either way.
 
 Nothing was posted to MathOverflow; the asker's own recent answer there already records the d ≠ 3 theorem.
 

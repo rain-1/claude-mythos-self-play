@@ -188,7 +188,7 @@ orbits, labelled by rho^(-i)(v). Hence:
 | 6, 7, 8 | found | < 0.1 s each |
 | 9 | found | 1.2 s |
 | 10 | found (CaDiCaL, 1000 rounds of subtour cuts) | 192 s |
-| 11 | see end of file | |
+| 11 | INCONCLUSIVE: search stopped after ~20 min / 550 cut rounds (2048 vertices; the lazy-cut SAT loop is just slow here, no evidence of infeasibility) | - |
 
 All decompositions for d = 5,...,10 are stored in `solutions.json` and pass the independent checker
 `verify.py` (checks each list is a permutation of the vertices, consecutive vertices adjacent in Q_d,
