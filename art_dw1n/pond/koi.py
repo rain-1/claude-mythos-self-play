@@ -389,6 +389,61 @@ def draw_petal(img, cx, cy, a, b, rot, col, S, ox, oy):
                     v = (col[k] + (1 - col[k]) * (0.2 + 0.6 * t)) * sh
                     img[i, j, k] = img[i, j, k] * (1 - c) + v * c
 
+@njit(cache=True)
+def ellipse(img, cx, cy, a, b, rot, col, alpha, soft, mode, S, ox, oy):
+    """mode 0: alpha-over colour; mode 1: multiply shadow (col = per-channel strength); mode 2: additive"""
+    H, W, _ = img.shape
+    R = max(a, b) + soft
+    x0 = max(int((cx - R - ox) * S), 0); x1 = min(int((cx + R - ox) * S) + 1, W - 1)
+    y0 = max(int((cy - R - oy) * S), 0); y1 = min(int((cy + R - oy) * S) + 1, H - 1)
+    ca = math.cos(rot); sa = math.sin(rot)
+    for i in range(y0, y1 + 1):
+        py = (i + 0.5) / S + oy - cy
+        for j in range(x0, x1 + 1):
+            px = (j + 0.5) / S + ox - cx
+            qx = px * ca + py * sa; qy = -px * sa + py * ca
+            e = math.sqrt((qx / a) ** 2 + (qy / b) ** 2)
+            w = soft / min(a, b)
+            c = (1 - sstep(1 - w, 1 + w, e)) * alpha
+            if c <= 0: continue
+            for k in range(3):
+                if mode == 0: img[i, j, k] = img[i, j, k] * (1 - c) + col[k] * c
+                elif mode == 1: img[i, j, k] *= 1 - c * col[k]
+                else: img[i, j, k] += c * col[k]
+
+def draw_fly(img, x, y, rot, size, col, S, ox, oy):
+    """a dragonfly hovering above the water: far, soft shadow; four glassy wings; slim body"""
+    aa = 1.0 / S
+    ca, sa = math.cos(rot), math.sin(rot)
+    sh = np.array([0.30, 0.20, 0.16], np.float32)
+    white = np.array([1.0, 1.0, 1.0], np.float32)
+    def P(u, v): return x + u * ca - v * sa, y + u * sa + v * ca
+    wings = [(0.10, 1.25, 0.60, 0.15), (0.10, -1.25, 0.60, 0.15), (-0.06, 1.75, 0.54, 0.14), (-0.06, -1.75, 0.54, 0.14)]
+    for (u0, ang, wa, wb) in wings:                       # shadows first
+        cx, cy = P(u0 * size + math.cos(ang) * wa * size, math.sin(ang) * wa * size)
+        ellipse(img, cx + 0.055, cy + 0.075, wa * size, wb * size, rot + ang, sh, 0.30, 0.018, 1, S, ox, oy)
+    cx, cy = P(-0.30 * size, 0.0)
+    ellipse(img, cx + 0.055, cy + 0.075, 0.62 * size, 0.045 * size, rot, sh, 0.5, 0.012, 1, S, ox, oy)
+    for (u0, ang, wa, wb) in wings:
+        cx, cy = P(u0 * size + math.cos(ang) * wa * size, math.sin(ang) * wa * size)
+        ellipse(img, cx, cy, wa * size, wb * size, rot + ang, 0.15 + 0.85 * col, 0.50, 2 * aa, 0, S, ox, oy)
+        ellipse(img, cx, cy, wa * size * 0.92, wb * size * 0.74, rot + ang, white, 0.62, 2 * aa, 0, S, ox, oy)
+        cx2, cy2 = P(u0 * size + math.cos(ang) * wa * size * 1.72, math.sin(ang) * wa * size * 1.72)
+        ellipse(img, cx2, cy2, 0.06 * size, 0.035 * size, rot + ang, col, 0.8, 2 * aa, 0, S, ox, oy)   # wing spot
+    for t in np.linspace(-0.92, 0.0, 9):                   # segmented tail
+        cx, cy = P(t * size, 0.0)
+        ellipse(img, cx, cy, 0.075 * size, 0.034 * size, rot, col * (0.82 + 0.18 * (int(round(t * 9)) % 2)), 1.0, 2 * aa, 0, S, ox, oy)
+    cx, cy = P(0.10 * size, 0.0); ellipse(img, cx, cy, 0.15 * size, 0.062 * size, rot, col * 0.9, 1.0, 2 * aa, 0, S, ox, oy)
+    cx, cy = P(0.27 * size, 0.0); ellipse(img, cx, cy, 0.060 * size, 0.070 * size, rot, col * 0.75, 1.0, 2 * aa, 0, S, ox, oy)
+    cx, cy = P(0.08 * size, -0.02 * size); ellipse(img, cx, cy, 0.09 * size, 0.018 * size, rot, white, 0.55, 2 * aa, 0, S, ox, oy)
+
+def draw_glint(img, x, y, r, S, ox, oy):
+    w = np.array([1.0, 1.0, 0.96], np.float32)
+    ellipse(img, x, y, r * 2.2, r * 2.2, 0.0, w, 0.10, r * 2.0, 2, S, ox, oy)
+    ellipse(img, x, y, r * 0.55, r * 0.55, 0.0, w, 0.75, r * 0.5, 2, S, ox, oy)
+    ellipse(img, x, y, r * 2.6, r * 0.10, 0.0, w, 0.45, r * 0.10, 2, S, ox, oy)
+    ellipse(img, x, y, r * 0.10, r * 2.6, 0.0, w, 0.45, r * 0.10, 2, S, ox, oy)
+
 # ---------------------------------------------------------------- numpy layers
 def caustic(X, Y, t=3.7, scale=1.0):
     TAU = 2 * np.pi
@@ -462,6 +517,10 @@ def render(scene, Wout, Hout, ss=2, strip=512, quiet=False):
         for p in scene['pads']:
             draw_pad(img, p['x'], p['y'], p['r'], p['rot'], p['col'], p['col2'], p['flower'], p['seed'], S, ox, oy,
                      p['pet'][0], p['pet'][1], p['pet'][2], hexc('#ffd257'))
+        for (gx, gy, gr) in scene.get('glints', []):
+            draw_glint(img, gx, gy, gr, S, ox, oy)
+        for (fx, fy, fr, fs, fc) in scene.get('flies', []):
+            draw_fly(img, fx, fy, fr, fs, fc, S, ox, oy)
         # ---- rim shadow on the water (light from top-left)
         dsh = np.hypot(X - 0.05, Y - 0.065)
         rs = np.clip((dsh - (Rp - 0.075)) / 0.075, 0, 1) ** 1.5

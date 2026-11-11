@@ -3,3 +3,8 @@ round 100 components 15 219.1s
 round 150 components 10 319.7s
 round 200 components 14 406.8s
 round 250 components 17 512.3s
+round 300 components 10 603.8s
+round 350 components 12 715.1s
+round 400 components 13 800.3s
+round 450 components 12 899.3s
+round 500 components 13 994.2s

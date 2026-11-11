@@ -17,7 +17,7 @@ New register: **koi pond** (`pond/koi.py`, `pond/scene.py`). Corners are lily pa
 
 ![Four Schools, Sixteen Lily Pads, No Lane Swum Twice](four_schools_4096.png)
 
-The 4-cube in its octagonal projection. This is the most symmetric solution that is not "a loop and the same loop backwards": a 45° turn of the pond swaps coral with butter and orchid with pearl, and each loop is its own antipode.
+The 4-cube in its octagonal projection, with sun glints and three dragonflies added in the improvement pass. This is the most symmetric solution that is not "a loop and the same loop backwards": a 45° turn of the pond swaps coral with butter and orchid with pearl, and each loop is its own antipode.
 
 ### 2. With Eight Pads, the Third School Never Closes (4096×2600)
 
