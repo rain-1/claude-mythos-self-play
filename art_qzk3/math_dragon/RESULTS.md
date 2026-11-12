@@ -1,5 +1,8 @@
 # MO 514916 — nearest missing point of the Binary Dragon
 
+**Status: PROVED.** The closed form below was first read off the table and checked (this file);
+later the same day it was proved for all k — see `PROOF.md` (finite checks: `verify_proof.py`).
+
 `β = 1+i`, `D_0 = {0}`, `D_{k+1} = βD_k ∪ (1 − βD_k)`, `s_k = min{|z|² : z ∈ Z[i] \ D_k}`.
 
 ## 1. The complement obeys the same recursion (proved)
@@ -19,7 +22,7 @@ Immediate consequences:
     s_{k+1} = min( 2 s_k ,  min_{z ∈ M_k} |1 − βz|² ),      |1−βz|² = 2|z|² − 2(x−y) + 1
     (√(2 s_k) − 1)²  ≤  s_{k+1}  ≤  2 s_k .
 
-## 2. Closed form (conjecture; verified exactly for k ≤ 160)
+## 2. Closed form (now a theorem, see PROOF.md; also verified exactly for k ≤ 160)
 
 Let `u_j = (2^(2j+1) + 1)/3` = 1, 3, 11, 43, 171, … (Jacobsthal numbers of odd index). Then
 
@@ -36,7 +39,7 @@ exactly one more step than its predecessor to reach 0, which **proves the upper 
 `s_k ≤` (table) for every k. In particular `s_k ≤ 2^k/18 · (1 + O(2^{-k/2}))`.
 
 The table reproduces all 64 values in the question (e.g. `s_64 = 2·715827883² =
-1024819116160523378`). So, if the conjecture holds:
+1024819116160523378`). So:
 
 * **Q1.** Yes: `s_k ~ 2^k/18`; more precisely `s_k − 2^k/18 = Θ(2^{k/2})` and is positive
   (e.g. `s_{4j+2} = 2^k/18 + 2^{k/2}/9 + 5/9`).
@@ -54,9 +57,9 @@ The table reproduces all 64 values in the question (e.g. `s_64 = 2·715827883² 
   8.9 million at k=160).
 * The second-nearest missing point is at a bounded squared distance beyond the first,
   with period 4: gaps `12, 1, 2, 1` for k ≡ 2, 3, 0, 1 (mod 4) — the "fjord" that reaches
-  closest to 0 has the same local shape every four steps (β⁴ = −4). This is what a proof of the
-  lower bound should exploit: `T⁴(z) = ±(z − c)/4` with `c` depending only on `z mod 4`, so
-  the near-minimal configuration is a fixed point of a finite local rule.
+  closest to 0 has the same local shape every four steps (β⁴ = −4). This observation became the
+  proof: for k ≡ 3 (mod 4) the missing points within `u+1` of 0 are exactly `−u + iy` with `y` a
+  sum of distinct powers of 4.
 
 ## 4. In the picture
 

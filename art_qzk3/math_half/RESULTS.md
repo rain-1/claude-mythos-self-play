@@ -46,7 +46,19 @@ than any exponential. (Evidence is thin: 1, 1, 2, 12 for n = 7…10.)
 
 A Metropolis walk on labelled graphs (`walk.py`, energy `|log₂C − (m−1)|`) finds n = 10
 examples within minutes (8 labelled hits in 6.7 million steps, m = 22…26; see
-`walk_n10_s1.json`). Runs for n = 11 and n = 12 are reported in the README.
+`walk_n10_s1.json`).
+
+**New examples on 11 vertices** (the question's list stops at n = 10). Three pairwise
+non-isomorphic half-connected graphs, each re-verified with the independent pure-Python count
+in `half.py` (`walk_n11_s2.json`):
+
+* m = 27, C = 2^26: 0-2 0-3 0-5 0-7 0-8 0-10 1-2 1-6 1-8 1-10 2-3 2-6 2-9 3-5 3-6 3-7 4-5 4-8 5-8 6-7 6-9 6-10 7-8 7-10 8-9 8-10 9-10
+* m = 25, C = 2^24: 0-1 0-2 0-3 0-8 0-9 0-10 1-4 1-5 1-7 1-8 1-9 2-4 2-5 2-6 3-4 3-5 3-6 3-10 4-6 4-10 5-7 5-9 6-7 6-8 7-8
+* m = 26, C = 2^25: 0-2 0-4 0-5 0-8 0-10 1-4 1-5 1-8 1-10 2-8 2-9 3-4 3-6 3-7 4-6 4-8 4-9 5-7 5-8 5-9 5-10 6-7 6-8 7-10 8-10 9-10
+
+So the counts continue 0,1,1,0,0,0,1,1,2,12, (≥3). The n = 10 walk hit 6 of the 12 classes in
+four minutes. An n = 12 walk of ~35 CPU-minutes found nothing (each step costs 3^12 operations;
+this is a budget limit, not evidence).
 
 What would settle the question: one infinite family. The lemmas say where *not* to look —
 not bipartite, no cut vertex, apparently no small 2-cuts, and (because bounded-degree families
