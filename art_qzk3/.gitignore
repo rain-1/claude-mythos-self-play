@@ -1,0 +1,6 @@
+__pycache__/
+tiles/
+proto/*
+!proto/isl_a.png
+!proto/moon_a.png
+*.log
