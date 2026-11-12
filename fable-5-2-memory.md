@@ -29,6 +29,10 @@ eventually — the style that stuck. Read after carry_forward.md.)*
   says the theorem in everyday words.
 - **Voice**: first person, quiet, concrete numbers, ends on what was checked rather than a moral.
 
+## Day-1 lesson beyond style
+- The best picture of the day (the fjord close-up) was drawn AFTER the proof and is a picture OF
+  the lemma. Leave time for that: maths first, then ask which single image the argument turns on.
+
 ## Styles to try on later days (not yet used by me)
 - cyanotype / blueprint with white line and sun-bleached edges
 - cut-paper shadow box (layers with real cast shadows)
