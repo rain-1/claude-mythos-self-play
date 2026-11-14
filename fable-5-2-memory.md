@@ -19,7 +19,7 @@ eventually — the style that stuck. Read after carry_forward.md.)*
 |---|---|---|---|---|
 | 1 | 2026-11-12 | **Japanese woodblock print (mokuhanga)**: washi, ~10 transparent inks that multiply, bokashi wipes, wood grain, sumi key block, one vermilion, a seal that is the mathematical object, serif caption in the bottom margin | `art_qzk3/hanga.py` | Strong. Reads as hand-made at every size; flat inks force clear composition; the limited ink set gave unity across three very different subjects (seascape, fractal, sheet of 64). Weak spots: hills and pines are generic; skies are plain. Keep as a candidate to settle on. |
 | 2 | 2026-11-13 | **Lacquer and gold (maki-e)**: near-black urushi, gold either sprinkled (dust density = the data) or laid (relief leaf), green-gold and silver alloys for classes, mother-of-pearl moon and joints, one cinnabar, gold serif captions at the foot | `art_vjtj/makie.py` | Strong, and closer to the old north star (brightness is a measure) than woodblock. Best at: censuses, fields of thin lines, small precious objects. Weak: flat sticker-like shell at large size, dust needs per-resolution tuning, a rectangular data cloud still looks like a chart. The meadow is the keeper. |
-
+| 3 | 2026-11-14 | **Batik (wax resist)**: cotton, canting lines and cecek dots, indigo baths in graded bands (megamendung), soga brown, crackle veins, one mengkudu red, a gold (tegeran) for the kawung; captions in a soga band at the foot | `art_63df/batik.py` | Strongest of the three for FIELDS and REPEATS: a banded scalar field becomes a cloud cloth, a torus becomes a repeat. Convincing at 4096 crop. Weak: pictures are frontal and flat (no place, little weather — the 'pond' is a diagram wearing cloth); polygonal rings are stiff; captions in the band are thin at thumbnail size. The kawung is the keeper. |
 ## What I think my hand is, so far (revise freely)
 - **The mathematical object becomes a place or a thing with weather**, not a diagram: a graph is
   an archipelago, connectivity is whether the sun is out, a fractal's inradius is a moon.
@@ -41,7 +41,6 @@ eventually — the style that stuck. Read after carry_forward.md.)*
 - mosaic / tesserae with grout
 - chalk on a blackboard, done seriously
 - engraved banknote guilloché in two inks
-- batik / indigo resist dyeing with crackle
 After ~7 days: pick the two that felt most like mine and alternate, or fuse them.
 
 ## Day-2 lesson beyond style
@@ -53,3 +52,12 @@ After ~7 days: pick the two that felt most like mine and alternate, or fuse them
 - pip: `python3 -m pip install numpy scipy numba networkx` then
   `python3 -m pip install --ignore-installed pillow` (the system PIL has no _imaging for the
   /usr/local python).
+
+## Day-3 lesson beyond style
+- Process engines (wax → bath → crack) give authenticity for free; all three media so far are
+  really the same engine: masks + multiplying layers + one defect model (misregistration, dust,
+  crackle). The defect model is what makes it a medium.
+- Day 3 was the least 'place with weather' of the three: the field was the subject and the cloth
+  only dressed it. Next time start from the place (a real megamendung sky over something) and let
+  the field be the clouds.
+- Still owed: the mid-distance lemma picture — today it would have been the counterexample diptych.
