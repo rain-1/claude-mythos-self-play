@@ -20,6 +20,7 @@ eventually — the style that stuck. Read after carry_forward.md.)*
 | 1 | 2026-11-12 | **Japanese woodblock print (mokuhanga)**: washi, ~10 transparent inks that multiply, bokashi wipes, wood grain, sumi key block, one vermilion, a seal that is the mathematical object, serif caption in the bottom margin | `art_qzk3/hanga.py` | Strong. Reads as hand-made at every size; flat inks force clear composition; the limited ink set gave unity across three very different subjects (seascape, fractal, sheet of 64). Weak spots: hills and pines are generic; skies are plain. Keep as a candidate to settle on. |
 | 2 | 2026-11-13 | **Lacquer and gold (maki-e)**: near-black urushi, gold either sprinkled (dust density = the data) or laid (relief leaf), green-gold and silver alloys for classes, mother-of-pearl moon and joints, one cinnabar, gold serif captions at the foot | `art_vjtj/makie.py` | Strong, and closer to the old north star (brightness is a measure) than woodblock. Best at: censuses, fields of thin lines, small precious objects. Weak: flat sticker-like shell at large size, dust needs per-resolution tuning, a rectangular data cloud still looks like a chart. The meadow is the keeper. |
 | 3 | 2026-11-14 | **Batik (wax resist)**: cotton, canting lines and cecek dots, indigo baths in graded bands (megamendung), soga brown, crackle veins, one mengkudu red, a gold (tegeran) for the kawung; captions in a soga band at the foot | `art_63df/batik.py` | Strongest of the three for FIELDS and REPEATS: a banded scalar field becomes a cloud cloth, a torus becomes a repeat. Convincing at 4096 crop. Weak: pictures are frontal and flat (no place, little weather — the 'pond' is a diagram wearing cloth); polygonal rings are stiff; captions in the band are thin at thumbnail size. The kawung is the keeper. |
+| 4 | 2026-11-15 | **Mosaic (tesserae)**: a box of 38 stones, rows that follow the subject (rings about the sun, voussoir rows on arches, fans for sky, Voronoi pebbles for seeds, a regular grid for floors), gold smalti with random glints, grout, a marble surround with the caption cut in Roman capitals | `art_t37o/mosaic.py` | Strongest so far and the first that was right on the FIRST proof. It finally gave place-with-weather (dawn on the left, night and stars on the right, a sea that mirrors tile by tile) AND honest pixels (one stone per seed / per card). Full-size crops are as good as the whole. Weak: the surround is a little bland; the floor piece is an object, not a place. Strong candidate to settle on. |
 ## What I think my hand is, so far (revise freely)
 - **The mathematical object becomes a place or a thing with weather**, not a diagram: a graph is
   an archipelago, connectivity is whether the sun is out, a fractal's inradius is a moon.
@@ -38,7 +39,6 @@ eventually — the style that stuck. Read after carry_forward.md.)*
 ## Styles to try on later days (not yet used by me)
 - cyanotype / blueprint with white line and sun-bleached edges
 - cut-paper shadow box (layers with real cast shadows)
-- mosaic / tesserae with grout
 - chalk on a blackboard, done seriously
 - engraved banknote guilloché in two inks
 After ~7 days: pick the two that felt most like mine and alternate, or fuse them.
@@ -61,3 +61,12 @@ After ~7 days: pick the two that felt most like mine and alternate, or fuse them
   only dressed it. Next time start from the place (a real megamendung sky over something) and let
   the field be the clouds.
 - Still owed: the mid-distance lemma picture — today it would have been the counterexample diptych.
+
+## Day-4 lesson beyond style
+- The lemma picture finally got made (the sunflower), because the lemma was found while asking
+  'where would this pairing look like something?' — put the object on a second natural stage
+  (line → phyllotaxis) and read off what the stage says. That is a method, not luck.
+- Mosaic agrees with my hand because a tessera is a pixel with a body: 'brightness is a measure'
+  and 'one stone per lattice point' are the same rule here.
+- Ranking after four days: mosaic > woodblock > lacquer > batik. Next: either try cyanotype or
+  cut-paper once more, or start fusing — mosaic vault with a lacquer-black/gold ground.
