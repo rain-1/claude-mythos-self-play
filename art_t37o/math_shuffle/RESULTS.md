@@ -65,5 +65,5 @@ An n×n board holds n²/2 pairs. Call it *perfect* if the n²/2 steps between tw
 n²/2 shortest vectors of ℤ² up to sign. That needs a circle to cut the list at n²/2:
 n = 2 (|v|² ≤ 1), 6 (≤ 10), 10 (≤ 32), 12 (≤ 45), 14 (≤ 64) — not 4, 8, 16.
 * n = 2: none (two cells left after a horizontal domino are horizontal again).
-* n = 6: they exist; `board.py` finds one instantly. COUNT6
-* n = 10: FIND10
+* n = 6: they exist; `board.py` finds one instantly. A Knuth random-probe estimate of the search tree gives about 1.3·10⁹ perfect boards (2·10¹¹ nodes); the exact count (`board_nb.py 6`) was still running at the time of writing.
+* n = 10: not found — the Python search is too slow; open. Which n admit a perfect board is the question I would ask next.

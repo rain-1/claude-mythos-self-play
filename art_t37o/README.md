@@ -42,7 +42,7 @@ that length. The red discs are the step (1, 0).
   of good shuffles decays like ρⁿ with ρ ≈ 0.6554 (a saddle-point heuristic gives 0.6646);
 * the same greedy on ℤ²: 491,618 pairs, never more than 5 places behind the list of steps;
   **conjecture** it uses every step exactly once;
-* perfect Memory boards exist for 6×6. BOARDLINE
+* perfect Memory boards exist for 6×6. There are about 1.3·10⁹ of them (random-probe estimate; exact count still running at the time of writing); 2×2 has none; 10×10 is open.
 
 Nothing was posted anywhere.
 

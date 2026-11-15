@@ -69,7 +69,7 @@ def build(size, seed=4):
     xc = T.uc; yc = yw + T.vc
     depth = (yc - yw) / (y1 - yw)
     rr = rnd(T.id, 41); r2 = rnd(T.id, 42); rowr = rnd(T.row, 43)
-    wob = (rowr - 0.5) * 2 * (0.10 + 0.9 * depth) * 0.55 * U
+    wob = (rowr - 0.5) * 2 * (0.06 + 0.9 * depth) * 0.30 * U
     xm = xc + wob; ym = 2 * yw - yc                      # the mirrored point
     refl = sky(xm, np.maximum(ym, y0 + 1))
     deep = (1 - depth)[..., None] * C("tur2") + depth[..., None] * C("lap0")
