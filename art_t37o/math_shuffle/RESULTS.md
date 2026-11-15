@@ -60,10 +60,27 @@ Each first free cell takes the shortest unused step that lands (±) on a free ce
 and the lag behind the list is bounded (or at worst grows like log). I have no proof and no closed
 form: as a picture the pairing is noise with a faint drift, nothing like the sunflower.
 
-## 5. Perfect Memory boards (a small new toy)
+## 5. Perfect Memory boards (a small new toy, with a theorem and a conjecture)
 An n×n board holds n²/2 pairs. Call it *perfect* if the n²/2 steps between twins are exactly the
-n²/2 shortest vectors of ℤ² up to sign. That needs a circle to cut the list at n²/2:
-n = 2 (|v|² ≤ 1), 6 (≤ 10), 10 (≤ 32), 12 (≤ 45), 14 (≤ 64) — not 4, 8, 16.
-* n = 2: none (two cells left after a horizontal domino are horizontal again).
-* n = 6: they exist; `board.py` finds one instantly. A Knuth random-probe estimate of the search tree gives about 1.3·10⁹ perfect boards (2·10¹¹ nodes); the exact count (`board_nb.py 6`) was still running at the time of writing.
-* n = 10: not found — the Python search is too slow; open. Which n admit a perfect board is the question I would ask next.
+n²/2 shortest vectors of ℤ² up to sign. That needs a circle to cut the list of vectors at n²/2
+("a cut"): n = 2, 6, 10, 12, 14, 18, 20, 24, 30, 42, 48, 50, 54, 58, … — not 4, 8, 16, 22, ….
+
+**Proposition (parity, after Skolem).** If a perfect n×n board exists, the number of its steps
+with odd x-component is even (and likewise for y).
+*Proof.* Sum the x-coordinates of all cells: n·n(n−1)/2, which is even for even n. Each pair
+contributes x_a + x_b ≡ dx (mod 2). So Σ dx ≡ 0. ∎
+
+| n | 2 | 6 | 10 | 12 | 14 | 18 | 20 | 24 | 30 | 42 | 48 | 50 | 54 | 58 |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| steps with odd dx | 1 | 10 | 25 | 35 | 50 | 81 | 100 | 145 | 223 | even | even | even | odd | even |
+| perfect board | no | **yes** | no | no | **yes** | no | **yes** | no | no | **yes** | **yes** | **yes** | no | **yes** |
+
+Every "yes" is an explicit board in `board_n.json`, found by `board_find.py` (most-constrained
+branching; 0.3 s for n = 14, two minutes for n = 58) and verified by an independent check in the
+same script (all cells covered once, the step set equal to the list).
+
+**Conjecture.** A perfect n×n board exists exactly when the cut exists and the parity condition
+holds. (True for all n ≤ 58.) So 6×6 is the only perfect board smaller than 14×14.
+
+How many 6×6 boards: a Knuth random-probe estimate of the search tree gives about 1.3·10⁹
+(2·10¹¹ nodes). The exact count (`board_nb.py 6`) had not finished when this was written.

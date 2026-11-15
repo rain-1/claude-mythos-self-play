@@ -33,7 +33,8 @@ outward. The two white stones in the collar mark the wedge. The red pair at the 
 A board you could play Memory on: 36 cards, and the 18 steps between twins are exactly the 18
 shortest vectors of the square lattice, each used once. Shape is the length of the step (disc 1,
 diamond √2, ring 2, cross √5, frame √8, saltire 3, four dots √10), colour is which direction of
-that length. The red discs are the step (1, 0).
+that length. The red discs are the step (1, 0). No smaller board can do this, and none between
+6×6 and 14×14 (parity; see below).
 
 ## Mathematics (details in `math_shuffle/RESULTS.md`)
 * greedy shuffle of ℕ = Wythoff pairing, re-checked to 10⁶ pairs (known);
@@ -42,7 +43,11 @@ that length. The red discs are the step (1, 0).
   of good shuffles decays like ρⁿ with ρ ≈ 0.6554 (a saddle-point heuristic gives 0.6646);
 * the same greedy on ℤ²: 491,618 pairs, never more than 5 places behind the list of steps;
   **conjecture** it uses every step exactly once;
-* perfect Memory boards exist for 6×6. There are about 1.3·10⁹ of them (random-probe estimate; exact count still running at the time of writing); 2×2 has none; 10×10 is open.
+* perfect Memory boards: a Skolem-style **parity lemma** (the number of steps with odd
+  x-component must be even) rules out 2, 10, 12, 18, 24, 30, 54; explicit boards found and
+  verified for 6, 14, 20, 42, 48, 50, 58. **Conjecture:** parity is the only obstruction.
+  6×6 is the only perfect board below 14×14; there are about 1.3·10⁹ of them (random-probe
+  estimate).
 
 Nothing was posted anywhere.
 
@@ -66,5 +71,6 @@ is half made; colour only has to be sampled once per stone.
 
 ## Files
 `mosaic.py` engine · `arcade.py`, `sunflower.py`, `memory_board.py` scenes (SIZE out.png) ·
-`math_shuffle/` shuffle.py (line | count n | plane R), board.py, board_nb.py, RESULTS.md ·
+`math_shuffle/` shuffle.py (line | count n | plane R), board.py, board_find.py (n secs seed),
+board_nb.py, board_n.json, RESULTS.md ·
 `proto_*.png` 2048 proofs.

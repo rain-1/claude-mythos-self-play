@@ -67,7 +67,7 @@ def build(size, pairs, seed=6, counts=None):
     out_m = ~inbox & ~bo
     slab = marble(size, seed + 9)
     l2 = "Shape is the length of the step and colour its direction."
-    if counts: l2 += " There are %s such boards, %s up to the symmetries of the square." % counts
+    if counts: l2 += " " + counts
     txt = text_mask(size, [
         ("EIGHTEEN PAIRS, EIGHTEEN STEPS", size / 2, 3742 * S, 104 * S, "Regular", 15 * S),
         ("Thirty-six cards. No two pairs lie the same step apart, and the steps used are exactly the eighteen shortest there are.",
@@ -82,7 +82,7 @@ def build(size, pairs, seed=6, counts=None):
 
 if __name__ == "__main__":
     size = int(sys.argv[1]); out = sys.argv[2]; seed = int(sys.argv[3]) if len(sys.argv) > 3 else 3
-    counts = tuple(sys.argv[4:6]) if len(sys.argv) > 5 else None
+    counts = sys.argv[4] if len(sys.argv) > 4 else "No board smaller than fourteen by fourteen can do this, except six by six."
     pairs = B.find(6, 20, seed)
     json.dump(dict(n=6, pairs=pairs), open("math_shuffle/board_6_drawn.json", "w"))
     save(build(size, pairs, counts=counts).finish(), out)
