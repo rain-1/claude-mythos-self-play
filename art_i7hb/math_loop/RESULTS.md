@@ -41,7 +41,7 @@ For m = 4 and m = 8 the survivors at large L are the square waves — exits on a
 (0,1,0,2) → (0,1,0,2) or its mirror — which is the bounded construction of the question.
 
 Independent check (`check_lemma.py`, log in `check_lemma.log`): `hc search` lists every
-unique-cycle deletion set by brute force for 3×11, 3×12, 3×13, 5×8, 5×9, 5×10, 6×9, … and every
+unique-cycle deletion set by brute force for 3×11, 3×12, 3×13, 5×8, 5×9, 5×10, 6×9, 7×8, 7×10, 9×6 (1,874 sets) and every
 one of them has a deletion in every L₀ columns. `hc` itself reproduces 6, 1072, 4638576,
 1076226888605605706 for the 4×4 … 12×12 grids and the m = 3 row of the question's table.
 

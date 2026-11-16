@@ -55,7 +55,7 @@ Fourteen ribbons, 3 × n for n = 3 … 16, each with the fewest buttons that lea
 * **Width 3 exactly.** **M(3,n) = ⌊n/3⌋ + [n ≡ 1 mod 3] for all n ≥ 3**: lower bound from the
   lemma plus parity, upper bound by a finite check of capped state vectors (three vectors, each
   ends in exactly one cycle) that covers every length at once.
-* Checked independently by brute force on eight small grids (2,760 unique-cycle sets, none
+* Checked independently by brute force on ten small grids (1,874 unique-cycle sets, none
   violates the lemma).
 * **Conjecture:** such an L₀(m) exists for every m ≥ 3 not divisible by 4. Open here: m = 10,
   and the true constant for m = 5 (the table suggests n/2; the lemma gives n/4).
