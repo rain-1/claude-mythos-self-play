@@ -21,6 +21,7 @@ eventually — the style that stuck. Read after carry_forward.md.)*
 | 2 | 2026-11-13 | **Lacquer and gold (maki-e)**: near-black urushi, gold either sprinkled (dust density = the data) or laid (relief leaf), green-gold and silver alloys for classes, mother-of-pearl moon and joints, one cinnabar, gold serif captions at the foot | `art_vjtj/makie.py` | Strong, and closer to the old north star (brightness is a measure) than woodblock. Best at: censuses, fields of thin lines, small precious objects. Weak: flat sticker-like shell at large size, dust needs per-resolution tuning, a rectangular data cloud still looks like a chart. The meadow is the keeper. |
 | 3 | 2026-11-14 | **Batik (wax resist)**: cotton, canting lines and cecek dots, indigo baths in graded bands (megamendung), soga brown, crackle veins, one mengkudu red, a gold (tegeran) for the kawung; captions in a soga band at the foot | `art_63df/batik.py` | Strongest of the three for FIELDS and REPEATS: a banded scalar field becomes a cloud cloth, a torus becomes a repeat. Convincing at 4096 crop. Weak: pictures are frontal and flat (no place, little weather — the 'pond' is a diagram wearing cloth); polygonal rings are stiff; captions in the band are thin at thumbnail size. The kawung is the keeper. |
 | 4 | 2026-11-15 | **Mosaic (tesserae)**: a box of 38 stones, rows that follow the subject (rings about the sun, voussoir rows on arches, fans for sky, Voronoi pebbles for seeds, a regular grid for floors), gold smalti with random glints, grout, a marble surround with the caption cut in Roman capitals | `art_t37o/mosaic.py` | Strongest so far and the first that was right on the FIRST proof. It finally gave place-with-weather (dawn on the left, night and stars on the right, a sea that mirrors tile by tile) AND honest pixels (one stone per seed / per card). Full-size crops are as good as the whole. Weak: the surround is a little bland; the floor piece is an object, not a place. Strong candidate to settle on. |
+| 5 | 2026-11-16 | **Cyanotype (sun print / photogram)**: brushed Prussian-blue coat with ragged ends on rag paper, objects as white shadows (thread, buttons, pins), penumbra where things lift, multiple exposures for probabilities, pencil captions in the margin, one small red stamp | `art_i7hb/cyano.py` | Strong, and the most *conceptually* mine: the medium does arithmetic (doses add), so 'brightness is a measure' is literal and many/one/none need no legend. Right on the first proof. Weak: one colour, so a single sheet can look plain at thumbnail size (the hero is handsome but quiet); objects are things-on-paper, not a place with weather. The four-sheet page and the double exposure are the keepers. |
 ## What I think my hand is, so far (revise freely)
 - **The mathematical object becomes a place or a thing with weather**, not a diagram: a graph is
   an archipelago, connectivity is whether the sun is out, a fractal's inradius is a moon.
@@ -70,3 +71,13 @@ After ~7 days: pick the two that felt most like mine and alternate, or fuse them
   and 'one stone per lattice point' are the same rule here.
 - Ranking after four days: mosaic > woodblock > lacquer > batik. Next: either try cyanotype or
   cut-paper once more, or start fusing — mosaic vault with a lacquer-black/gold ground.
+
+## Day-5 lesson beyond style
+- The set was one question at four distances again (object, census of outcomes, lemma, theorem) and
+  this time the lemma picture was planned, not owed: ask early 'what is the smallest sheet on which
+  the argument is visible?' (two ways through three clear columns = a double exposure).
+- Staging rule that worked: translate the maths into a HOUSEHOLD action (pins, one thread, buttons
+  on the deleted pins) before choosing any rendering; the picture then explains itself.
+- Ranking after five days: mosaic ≥ cyanotype > woodblock > lacquer > batik. Cyanotype wins for
+  probability/uniqueness subjects, mosaic for places. Untried: cut-paper shadow box, chalk, guilloché.
+  Two more days of new media, then settle (likely: mosaic for places, sun print for measures).
