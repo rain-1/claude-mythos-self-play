@@ -1,0 +1,58 @@
+m=6 L=1: interfaces 365, path systems 365, rigid 365, possibly-unique (interface,closure) 234, distinct interfaces 171
+    (0, 0, 0, 0, 0, 0) (1, 0, 0, 0, 0, 1)
+    (0, 0, 0, 0, 0, 0) (1, 0, 0, 1, 2, 2)
+    (0, 0, 0, 0, 0, 0) (1, 0, 1, 2, 0, 2)
+    (0, 0, 0, 0, 0, 0) (1, 1, 2, 0, 0, 2)
+    (0, 0, 0, 0, 0, 0) (1, 1, 2, 2, 3, 3)
+    (0, 0, 0, 0, 1, 2) (1, 0, 0, 0, 0, 2)
+    (0, 0, 0, 0, 1, 2) (3, 0, 0, 3, 1, 2)
+    (0, 0, 0, 0, 1, 2) (3, 0, 3, 1, 0, 2)
+    (0, 0, 0, 0, 1, 2) (3, 3, 1, 0, 0, 2)
+    (0, 0, 0, 0, 1, 2) (3, 3, 4, 4, 1, 2)
+    (0, 0, 0, 1, 0, 2) (1, 0, 0, 0, 2, 0)
+    (0, 0, 0, 1, 0, 2) (3, 0, 3, 0, 1, 2)
+m=6 L=2: interfaces 2027, path systems 2364, rigid 1760, possibly-unique (interface,closure) 659, distinct interfaces 593
+    (0, 0, 0, 0, 0, 0) (0, 0, 0, 0, 1, 1)
+    (0, 0, 0, 0, 0, 0) (0, 0, 0, 1, 1, 0)
+    (0, 0, 0, 0, 0, 0) (0, 0, 1, 0, 0, 1)
+    (0, 0, 0, 0, 0, 0) (0, 0, 1, 1, 0, 0)
+    (0, 0, 0, 0, 0, 0) (0, 0, 1, 1, 2, 2)
+    (0, 0, 0, 0, 0, 0) (0, 0, 1, 2, 2, 1)
+    (0, 0, 0, 0, 0, 0) (0, 1, 0, 0, 1, 0)
+    (0, 0, 0, 0, 0, 0) (0, 1, 1, 0, 0, 0)
+    (0, 0, 0, 0, 0, 0) (0, 1, 1, 2, 2, 0)
+    (0, 0, 0, 0, 0, 0) (0, 1, 2, 0, 2, 1)
+    (0, 0, 0, 0, 0, 0) (0, 1, 2, 2, 1, 0)
+    (0, 0, 0, 0, 0, 0) (1, 0, 0, 0, 0, 1)
+m=6 L=3: interfaces 4574, path systems 14077, rigid 1409, possibly-unique (interface,closure) 90, distinct interfaces 84
+    (0, 0, 0, 0, 0, 0) (0, 1, 2, 2, 1, 0)
+    (0, 0, 0, 0, 1, 2) (0, 1, 3, 3, 2, 0)
+    (0, 0, 0, 1, 0, 2) (0, 0, 1, 0, 2, 0)
+    (0, 0, 0, 1, 0, 2) (1, 3, 3, 0, 2, 0)
+    (0, 0, 0, 1, 2, 0) (0, 1, 2, 0, 0, 0)
+    (0, 0, 0, 1, 2, 0) (0, 1, 2, 0, 3, 3)
+    (0, 0, 0, 1, 2, 0) (0, 1, 3, 0, 3, 2)
+    (0, 0, 1, 0, 2, 0) (0, 0, 0, 1, 0, 2)
+    (0, 0, 1, 0, 2, 0) (0, 1, 3, 3, 0, 2)
+    (0, 0, 1, 0, 2, 0) (0, 3, 0, 3, 1, 2)
+    (0, 0, 1, 0, 2, 0) (1, 3, 0, 3, 0, 2)
+    (0, 0, 1, 1, 2, 3) (0, 2, 0, 0, 3, 0)
+m=6 L=4: interfaces 6528, path systems 85358, rigid 475, possibly-unique (interface,closure) 10, distinct interfaces 10
+    (0, 0, 1, 0, 2, 0) (0, 0, 1, 0, 2, 0)
+    (0, 0, 1, 0, 2, 0) (1, 3, 3, 0, 2, 0)
+    (0, 1, 0, 2, 0, 0) (0, 1, 0, 2, 0, 0)
+    (0, 1, 0, 2, 0, 0) (0, 1, 0, 3, 3, 2)
+    (0, 1, 0, 2, 2, 3) (0, 1, 0, 3, 0, 0)
+    (0, 1, 0, 2, 2, 3) (0, 1, 0, 4, 4, 3)
+    (0, 1, 2, 2, 3, 0) (1, 0, 4, 4, 0, 3)
+    (1, 0, 2, 2, 0, 3) (0, 1, 4, 4, 3, 0)
+    (1, 2, 2, 0, 3, 0) (0, 0, 1, 0, 3, 0)
+    (1, 2, 2, 0, 3, 0) (1, 4, 4, 0, 3, 0)
+m=6 L=5: interfaces 7158, path systems 504059, rigid 103, possibly-unique (interface,closure) 0, distinct interfaces 0
+m=6 L=6: interfaces 7270, path systems 2992532, rigid 20, possibly-unique (interface,closure) 0, distinct interfaces 0
+m=6 L=7: interfaces 7272, path systems 17587799, rigid 7, possibly-unique (interface,closure) 0, distinct interfaces 0
+m=6 L=8: interfaces 7272, path systems 103496641, rigid 3, possibly-unique (interface,closure) 0, distinct interfaces 0
+m=6 L=9: interfaces 7272, path systems 606434141, rigid 3, possibly-unique (interface,closure) 0, distinct interfaces 0
+m=6 L=10: interfaces 7272, path systems 3553273934, rigid 3, possibly-unique (interface,closure) 0, distinct interfaces 0
+m=6 L=11: interfaces 7272, path systems 20777671619, rigid 3, possibly-unique (interface,closure) 0, distinct interfaces 0
+m=6 L=12: interfaces 7272, path systems 121452166611, rigid 3, possibly-unique (interface,closure) 0, distinct interfaces 0
