@@ -1,0 +1,207 @@
+8 69 1 1 reduced ++-++-++-+-+----+----+-
+8 70 1 1 reduced +--+-+-+----+++-+--++-+
+8 71 0 0 reduced --+-+++-+--++-------+--
+8 72 0 0 reduced +++++-+++++++-+------+-
+8 73 1 1 reduced ++++++-+-+-+-----++++++
+8 74 1 1 reduced ----++----+++-+-++--+--
+k=8 n=75 parity=0 FOUND |S|=0 after 12651 random patterns (J=3 of 38 odd terms on the minority pan)
+k=8 n=76 parity=0 FOUND |S|=0 after 1602 random patterns (J=3 of 38 odd terms on the minority pan)
+8 77 1 1 reduced +++-+++-+---++-+-------
+8 78 1 1 reduced ++-+-+++---++-+++++++--
+8 79 0 0 reduced +++----++-+-+-+---+----
+8 80 0 0 reduced -+++-+----+--+-+++-++-+
+8 81 1 1 reduced ++++-++-+++--+-+++--+-+
+8 82 1 1 reduced -+-++-+-+---++-+--+---+
+k=8 n=83 parity=0 FOUND |S|=0 after 1524 random patterns (J=5 of 42 odd terms on the minority pan)
+k=8 n=84 parity=0 FOUND |S|=0 after 30 random patterns (J=5 of 42 odd terms on the minority pan)
+8 85 1 1 reduced +-+-+++---++-+-++-++--+
+8 86 1 1 reduced -++++-+-+-++++-+-++--+-
+8 87 0 0 reduced --+-+---+-+--+---++-+-+
+8 88 0 0 reduced -+++----++-+-++-++-++-+
+8 89 1 1 reduced --+-+++--++-+++--+---+-
+8 90 1 1 reduced -+-+++---+++--+-+--+-+-
+k=8 n=91 parity=0 FOUND |S|=0 after 75 random patterns (J=7 of 46 odd terms on the minority pan)
+k=8 n=92 parity=0 FOUND |S|=0 after 219 random patterns (J=7 of 46 odd terms on the minority pan)
+8 93 1 1 reduced ++++--+-----++++-+-+-++
+8 94 1 1 reduced ---++-+-++--++++---+--+
+8 95 0 0 reduced ---++--++--+--++++-++-+
+8 96 0 0 reduced -++--+-+-+-++-++++--+--
+8 97 1 1 reduced -++-+++----+--+-+--+--+
+8 98 1 1 reduced -+-++++++-++--++++--+-+
+k=8 n=99 parity=0 FOUND |S|=0 after 31 random patterns (J=9 of 50 odd terms on the minority pan)
+k=8 n=100 parity=0 FOUND |S|=0 after 72 random patterns (J=9 of 50 odd terms on the minority pan)
+8 101 1 1 reduced +--++---------+-+-+++-
+8 102 1 1 reduced -----++--++-+--++--+--
+8 103 0 0 reduced +--+----+--+-+++++---+
+8 104 0 0 reduced -++-+++++-++++++-+----
+8 105 1 1 reduced +--+-+++++++--++-++---
+8 106 1 1 reduced ++++------+--+++--++++
+k=8 n=107 parity=0 FOUND |S|=0 after 21 random patterns (J=11 of 54 odd terms on the minority pan)
+k=8 n=108 parity=0 FOUND |S|=0 after 1 random patterns (J=11 of 54 odd terms on the minority pan)
+8 109 1 1 reduced -+-+++----+--+++-+--++
+8 110 1 1 reduced +-+----+-+-+-++++++-++
+8 111 0 0 reduced -+-+-++++--++-++-++++-
+8 112 0 0 reduced ++--++++++----++--+++-
+8 113 1 1 reduced ----+-+--++---++----++
+8 114 1 1 reduced +-+--+-+--+--+--+-++++
+Killed
+Killed
+8 117 1 1 reduced +---++----+-+-+-++---+
+8 118 1 1 reduced ++++---+-+-++-++--+-+-
+8 119 0 0 reduced +--+--+-------+++-+-+-
+8 120 0 0 reduced ++++-----+--++-+++++-+
+8 121 1 1 reduced ++-++---+-+--+-+++-++-
+8 122 1 1 reduced -+++++-+--+--+-+-++-+-
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+Aborted
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+Aborted
+8 125 1 1 reduced -++-+++----+-+---+++++
+8 126 1 1 reduced --+-++--+++++-+---+---
+8 127 0 0 reduced +----+--++++--+-------
+8 128 0 0 reduced -+-+-+-+-+-++-+-++++++
+8 129 1 1 reduced ++-++-+-+++----+--++-+
+8 130 1 1 reduced +--++--+-+++++--+---++
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+Aborted
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+Aborted
+8 133 1 1 reduced +-++-+-+++---+++++-+--
+8 134 1 1 reduced ++--++++----++++---++-
+8 135 0 0 reduced ++-++++-+----++++-++--
+8 136 0 0 reduced -+--+++++--++-+---+--+
+8 137 1 1 reduced +----+----+-++++++-+-+
+8 138 1 1 reduced ++---+++------+-+-+++-
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+Aborted
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+Aborted
+8 141 1 1 reduced ++----+--+-++++-+++--+
+8 142 1 1 reduced +-+++--+-+++--+--+++--
+8 143 0 0 reduced +-++-+++--+-++---++--+
+8 144 0 0 reduced +--+-+++--+-++++-+-+++
+8 145 1 1 reduced +--+++--+-++---------+
+8 146 1 1 reduced ++++-++--++--+-+-+--++
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+Aborted
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+Aborted
+8 149 1 1 reduced ++++--++++-+------+++-
+8 150 1 1 reduced -+-++++-++++-++-----++
+8 151 0 0 reduced -+-+++----++----+-++-+
+8 152 0 0 reduced +-+-+++----++-+-------
+8 153 1 1 reduced -+-+++++-+++--++-----+
+8 154 1 1 reduced ++-+--++-+-++++++-----
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+Aborted
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+Aborted
+8 157 1 1 reduced --++---+--+++++----++-
+8 158 1 1 reduced -++----+-+--+----+---+
+8 159 0 0 reduced -++--+-+------+-+++++-
+8 160 0 0 reduced -+-+-+++++----+-++-++-
+8 161 1 1 reduced ++---+----+-+--++-+---
+8 162 1 1 reduced +++++-+++-+-+++++--+--
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+Aborted
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+Aborted
+8 165 1 1 reduced +---+-++--++--++------
+8 166 1 1 reduced --+---+-+-+--+-----++-
+8 167 0 0 reduced +--+++-+-+--+-++++--+-
+8 168 0 0 reduced +--+--+--++++++++++++-
+8 169 1 1 reduced +++++-++-++++--++++---
+8 170 1 1 reduced -+------++--+++---+-++
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+Aborted
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+Aborted
+8 173 1 1 reduced -----+----+--++---+-++
+8 174 1 1 reduced ----+--+----+-++----+-
+8 175 0 0 reduced ++++++-+-+----+++---++
+8 176 0 0 reduced ++-+-+-++-----++++-++-
+8 177 1 1 reduced ---+--+++++-++-+--++--
+8 178 1 1 reduced +-+-+------+---++-+--+
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+Aborted
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+Aborted
+8 181 1 1 reduced ++-+-++-+++-++++-+--+-
+8 182 1 1 reduced -+-+++-+--+++-++--+-+-
+8 183 0 0 reduced +++--+---+--+-++++++--
+8 184 0 0 reduced +---+++--++-+----+-+--
+8 185 1 1 reduced ++----+-+-++++-+-+++-+
+8 186 1 1 reduced +--+++-++++-+--+-++++-
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+Aborted
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+Aborted
+8 189 1 1 reduced ++----+---+++--+-+-++-
+8 190 1 1 reduced ++-+-+----++++-+++-+-+
+8 191 0 0 reduced --+---++----++--+-++-+
+8 192 0 0 reduced -+-+----+---+-+++++--+
+8 193 1 1 reduced +--+-+-+-+++---+--+-+-
+8 194 1 1 reduced ++-+--+-++++--+--++++-
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+Aborted
+terminate called after throwing an instance of 'std::bad_alloc'
+  what():  std::bad_alloc
+Aborted
+8 197 1 1 reduced --++-++-++-+++-+-+-+++
+8 198 1 1 reduced ++-+--+----++-+--+++-+
+8 199 0 0 reduced --++++++-++--+-++--+++
+8 200 0 0 reduced -+++++-++++++------+-+
+8 201 1 1 reduced -----+-++++-+-++-++-+-
+8 202 1 1 reduced +++-+---+--+++++-+--++
+8 203 0 0 reduced ++-+-+--++--+-+--++-+-
+8 204 0 0 reduced ------+++++---++--++++
+8 205 1 1 reduced +++-+-+----+--+----+-+
+8 206 1 1 reduced +++---+-+---+-+-++-++-
+8 207 0 0 reduced +-+++-------++-+------
+8 208 0 0 reduced +-+--+-----+--+++--+++
+8 209 1 1 reduced +++--++-+--++---+-+++-
+8 210 1 1 reduced ++-+++-+++++--+--++-++
+8 211 0 0 reduced +--+++-----++++-++---+
+8 212 0 0 reduced -+-----+++++--+-+----+
+8 213 1 1 reduced +---+---+----+-++++---
+8 214 1 1 reduced +++--++----+----++++-+
+8 215 0 0 reduced --++-+--++-+-++-++-++-
+8 216 0 0 reduced -+-+--++-+++-++-+-+++-
+8 217 1 1 reduced +--+-+--+-++--+----+--
+8 218 1 1 reduced ++--+++--+--+-+--+----
+8 219 0 0 reduced -++-+-++--+--++++-+--+
+8 220 0 0 reduced -++--++++++--++-++-+--
+8 221 1 1 reduced -+-+--++-+-++---+---++
+8 222 1 1 reduced --+---++-----+++-+--++
+8 223 0 0 reduced ++---+++---+-++--+++--
+8 224 0 0 reduced ++++-+--++--+-+---+++-
+8 225 1 1 reduced ++-+--++--+-++-+-----+
+8 226 1 1 reduced ++++--+----+-+--++--+-
+8 227 0 0 reduced -+-----+-+--+-+++-+--+
+8 228 0 0 reduced ++--+++++-+-+-++-++++-
+8 229 1 1 reduced +--++--+-+--++-++++-+-
+8 230 1 1 reduced +--+++--++--+--+---+--
+8 231 0 0 reduced ----+--+-+--+-+-+-++-+
+8 232 0 0 reduced -----+-+-+++-+--+-+-+-
+8 233 1 1 reduced +---+----+-+++---+++-+
+8 234 1 1 reduced -+++-+++--++-+--++--++
+8 235 0 0 reduced ++-++++-+-++-++-++++--
