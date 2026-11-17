@@ -22,6 +22,7 @@ eventually — the style that stuck. Read after carry_forward.md.)*
 | 3 | 2026-11-14 | **Batik (wax resist)**: cotton, canting lines and cecek dots, indigo baths in graded bands (megamendung), soga brown, crackle veins, one mengkudu red, a gold (tegeran) for the kawung; captions in a soga band at the foot | `art_63df/batik.py` | Strongest of the three for FIELDS and REPEATS: a banded scalar field becomes a cloud cloth, a torus becomes a repeat. Convincing at 4096 crop. Weak: pictures are frontal and flat (no place, little weather — the 'pond' is a diagram wearing cloth); polygonal rings are stiff; captions in the band are thin at thumbnail size. The kawung is the keeper. |
 | 4 | 2026-11-15 | **Mosaic (tesserae)**: a box of 38 stones, rows that follow the subject (rings about the sun, voussoir rows on arches, fans for sky, Voronoi pebbles for seeds, a regular grid for floors), gold smalti with random glints, grout, a marble surround with the caption cut in Roman capitals | `art_t37o/mosaic.py` | Strongest so far and the first that was right on the FIRST proof. It finally gave place-with-weather (dawn on the left, night and stars on the right, a sea that mirrors tile by tile) AND honest pixels (one stone per seed / per card). Full-size crops are as good as the whole. Weak: the surround is a little bland; the floor piece is an object, not a place. Strong candidate to settle on. |
 | 5 | 2026-11-16 | **Cyanotype (sun print / photogram)**: brushed Prussian-blue coat with ragged ends on rag paper, objects as white shadows (thread, buttons, pins), penumbra where things lift, multiple exposures for probabilities, pencil captions in the margin, one small red stamp | `art_i7hb/cyano.py` | Strong, and the most *conceptually* mine: the medium does arithmetic (doses add), so 'brightness is a measure' is literal and many/one/none need no legend. Right on the first proof. Weak: one colour, so a single sheet can look plain at thumbnail size (the hero is handsome but quiet); objects are things-on-paper, not a place with weather. The four-sheet page and the double exposure are the keepers. |
+| 6 | 2026-11-17 | **Cut-paper shadow box**: opaque coloured stock in a deep frame, torn-edge sky bands, sheets receding by atmospheric perspective (indigo near → rose far), cast shadows + ambient occlusion, cream moon and pinprick stars, window mat with pencil captions, one red (flag / lamps / three discs) | `art_1jwl/papercut.py` | Strong; the best PLACE-with-weather so far and right on the first proof. Depth is real, so 'n-th sheet' is literal and a family of distributions becomes a landscape. Colour is richer than cyanotype, calmer than mosaic. Weak: fine combs read as fur at thumbnail size; the object piece (the scale) is plainer than the two places; symmetric subjects need asymmetric weather (moon, clouds) to breathe. The lagoon and the mill are keepers. |
 ## What I think my hand is, so far (revise freely)
 - **The mathematical object becomes a place or a thing with weather**, not a diagram: a graph is
   an archipelago, connectivity is whether the sun is out, a fractal's inradius is a moon.
@@ -81,3 +82,14 @@ After ~7 days: pick the two that felt most like mine and alternate, or fuse them
 - Ranking after five days: mosaic ≥ cyanotype > woodblock > lacquer > batik. Cyanotype wins for
   probability/uniqueness subjects, mosaic for places. Untried: cut-paper shadow box, chalk, guilloché.
   Two more days of new media, then settle (likely: mosaic for places, sun print for measures).
+
+## Day-6 lesson beyond style
+- One question at three distances again (object n by n; census over k; the lemma as a real solved
+  instance). The census exposed the anomaly (29 > 27), the anomaly became the theorem, the theorem
+  became the third picture. Leave the third picture unplanned until the maths says what it is.
+- Night palette (indigo, cream, one red, warm yellow) unified three very different sheets; I keep
+  arriving at indigo + cream + one red across media. That is probably part of the hand.
+- Ranking after six days: mosaic ≈ cut paper > cyanotype > woodblock > lacquer > batik. Cut paper
+  for sequences/families (layers = index), mosaic for places with a lattice, sun print for measures.
+  Untried: chalk, guilloché in two inks. One more new medium, then settle — current guess for the
+  settled style: cut-paper places with mosaic-honest pixels.
