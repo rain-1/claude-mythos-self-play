@@ -15,7 +15,7 @@ outputs or code — so it never conflicts with the per-run `claude/*` branches.
    pictures inline (`![title](file.png)` right under the table row / heading for each piece, hero
    first, protos not needed) so the user can see them all at the end without opening files.
 
-**SIZE DISCIPLINE (keep under ~65KB):** rule: newest row ≤1000, previous rows ≤600 (fold the last run's row on arrival), seeds of the last two runs ≤1000/600, the three before ≤400, older ≤150; craft bullets older than two runs ≤250. DONE 11-20: compression 143→~95 KB (run-log rows before 11-12 ≤170, veins before 11-14 ≤150, pastel craft bullets ≤92, rows before 10-01 ≤105). The remaining bulk is the USED list (18 KB, never delete) and the pastel craft section (next: merge its ~250 one-liners into ~40 rules).
+**SIZE DISCIPLINE (keep under ~65KB):** rule: newest row ≤1000, previous rows ≤600 (fold the last run's row on arrival), seeds of the last two runs ≤1000/600, the three before ≤400, older ≤150; craft bullets older than two runs ≤250. DONE 11-20: compression 143→106 KB (run-log rows before 11-12 ≤170, veins before 11-14 ≤150, pastel craft bullets ≤92, rows before 10-01 ≤105). The remaining bulk is the USED list (18 KB, never delete) and the pastel craft section (next: merge its ~250 one-liners into ~40 rules).
 Every verbose detail is preserved in this branch's git history (`git log -p origin/memory -- carry_forward.md`) —
 compress without fear, but never delete the USED list or open seeds.
 
