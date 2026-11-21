@@ -1,0 +1,6 @@
+1 wills: 1 distinct herds: 1 largest: 1 smallest: 1
+2 wills: 2 distinct herds: 2 largest: 5 smallest: 3
+3 wills: 7 distinct herds: 6 largest: 41 smallest: 7
+4 wills: 52 distinct herds: 32 largest: 1805 smallest: 15
+5 wills: 1043 distinct herds: 453 largest: 3263441 smallest: 23
+6 wills: 60613 distinct herds: 20173 largest: 10650056950805 smallest: 35
