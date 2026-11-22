@@ -1,0 +1,9 @@
+math_toss/toss
+math_toss/toss2
+math_toss/gen
+math_toss/tosshash
+math_toss/pairs*.txt
+math_toss/*.log
+math_toss/*.err
+__pycache__/
+math_toss/__pycache__/
