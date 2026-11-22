@@ -1,0 +1,5 @@
+|T|=4 |U|=25: 666688 decompositions, 666688 flips to a different stair
+|T|=5 |U|=20: 1429248 decompositions, 1429248 flips to a different stair
+|T|=10 |U|=10: 125664 decompositions, 125664 flips to a different stair
+|T|=20 |U|=5: 0 decompositions, 0 flips to a different stair
+|T|=25 |U|=4: 48 decompositions, 48 flips to a different stair
