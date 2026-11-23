@@ -1,0 +1,5 @@
+turn 0.25 reached at prime 3 (the 2-th), remaining length 0.480000000000000
+turn 0.50 reached at prime 43 (the 14-th), remaining length 0.403479085153876
+turn 0.75 reached at prime 5119 (the 685-th), remaining length 0.400016369498084
+turn 1.00 reached at prime 141634651 (the 7999137-th), remaining length 0.400000000286391
+primes used 8444396 up to 150000000  angle/2pi = 1.0009722730782238  length 0.4000000002696238
