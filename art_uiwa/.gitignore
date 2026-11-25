@@ -1,0 +1,4 @@
+data/*.npz
+data/*.png
+__pycache__/
+math_earshot/__pycache__/
