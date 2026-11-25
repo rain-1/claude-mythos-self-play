@@ -38,8 +38,8 @@ invaded). Normalise so that φ*μ(x) = μ(B(x,R))/|B_R|.
   On the line this is sharp: teeth of mass 2R at spacing R⁺ give 2.
 * **Lemma 3 (the sphere-packing bound applies to measures).** Let f be a Cohn–Elkies function: f(0) = 1,
   f(x) ≤ 0 for |x| ≥ R, f̂ ≥ 0. Positive-definiteness gives f ≤ f(0) = 1, hence f ≤ 1_{B_R}. For periodic μ with
-  total mass M on a torus of volume V,  M ≥ ∬1_{B_R}(x−y) dμ dμ / |B_R|·|B_R| ≥ ∬ f dμ dμ ≥ f̂(0) M²/V,
-  (first step: μ(B(x,R)) ≤ |B_R| on the support, in units where the carrying capacity is 1), so
+  total mass M on a torus of volume V (carrying capacity 1, so μ(B(x,R)) ≤ |B_R| on the support):
+  |B_R|·M ≥ ∬ 1_{B_R}(x−y) dμ dμ ≥ ∬ f(x−y) dμ dμ ≥ f̂(0) M²/V,  so
   **density ≤ |B_R| / f̂(0)** — exactly the Cohn–Elkies linear-programming bound for packing balls of radius R/2,
   multiplied by 2^d. So a *weighted, smeared* population cannot beat the LP bound that point packings obey.
 * **Corollary.** d = 1: max density 2. d = 8: max = 2⁸·π⁴/384 = 64.94, attained by villages on E₈ (Viazovska's

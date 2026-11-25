@@ -12,11 +12,11 @@ the ring of earshot).
 
 ![Earshot](earshot_4096.png)
 
-| **Four Ways to Fill the Same Land** | 2048² | Sun print. Every village exposes its disc of earshot in proportion to its people; blue = dose, so the mean blue of a panel is its density: 1.00, 1.84, 1.91, 3.63. |
+**Four Ways to Fill the Same Land** (2048²). Sun print. Every village exposes its disc of earshot in proportion to its people; blue = dose, so the mean blue of a panel is its density: 1.00, 1.84, 1.91, 3.63.
 
 ![Four Ways to Fill the Same Land](four_ways_2048.png)
 
-| **The Comb** | 2048² | Ridgeline engraving of the one-dimensional run (R²/D = 3000): 150 moments, latest in front. |
+**The Comb** (2048²). Ridgeline engraving of the one-dimensional run (R²/D = 3000): 150 moments, latest in front.
 
 ![The Comb](the_comb_2048.png)
 
