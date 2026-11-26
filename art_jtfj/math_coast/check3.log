@@ -1,0 +1,21 @@
+Epstein coefficients on divisors of 5040; largest d with a(d)!=0: 2520
+M=      71.0  on-line   63  Langer    81.4  deficit  18.4  off-line found  9: [0.895 +1.399j 0.623+13.008j 0.964+15.559j 0.959+29.953j 0.703+36.304j
+ 0.551+38.279j]
+M=     142.0  on-line   74  Langer    94.6  deficit  20.6  off-line found 10: [0.899 +1.379j 0.575 +9.551j 0.552+12.809j 0.914+15.677j 0.959+29.899j
+ 0.614+33.051j]
+M=     284.0  on-line   81  Langer   107.9  deficit  26.9  off-line found 13: [0.891 +1.38j  0.595 +7.187j 0.58  +9.509j 0.639+12.826j 0.958+15.614j
+ 0.974+29.925j]
+M=     567.9  on-line   99  Langer   121.1  deficit  22.1  off-line found 11: [0.892 +1.385j 0.566 +9.478j 0.665+12.847j 0.924+15.632j 0.591+21.742j
+ 0.96 +29.92j ]
+M=    1135.9  on-line  106  Langer   134.4  deficit  28.4  off-line found 14: [0.895 +1.383j 0.566 +7.133j 0.534 +9.455j 0.673+12.87j  0.946+15.627j
+ 0.584+21.793j]
+M=    2271.8  on-line  125  Langer   147.6  deficit  22.6  off-line found 11: [0.893 +1.382j 0.666+12.89j  0.934+15.625j 0.521+21.834j 0.965+29.921j
+ 0.585+33.013j]
+M=    5040.0  on-line  140  Langer   162.8  deficit  22.8  off-line found 11: [0.893 +1.383j 0.66 +12.863j 0.937+15.626j 0.564+21.727j 0.965+29.919j
+ 0.672+36.175j]
+M=   20160.0  on-line  161  Langer   189.3  deficit  28.3  off-line found 14: [0.893 +1.383j 0.518 +7.229j 0.554 +9.526j 0.654+12.887j 0.938+15.626j
+ 0.566+21.795j]
+M=   80640.0  on-line  189  Langer   215.8  deficit  26.8  off-line found 13: [0.893 +1.383j 0.556 +7.195j 0.55  +9.495j 0.632+12.873j 0.939+15.627j
+ 0.965+29.92j ]
+M= 1058400.0  on-line  238  Langer   264.9  deficit  26.9  off-line found 13: [0.893 +1.383j 0.541 +7.204j 0.546 +9.522j 0.65 +12.874j 0.938+15.627j
+ 0.552+21.741j]
